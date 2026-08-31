@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: astral-sh/setup-uv@v4
+      - uses: astral-sh/setup-uv@v5
         with:
           version: ${{ env.UV_VERSION }}
           enable-cache: true
@@ -42,7 +42,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: astral-sh/setup-uv@v4
+      - uses: astral-sh/setup-uv@v5
         with:
           version: ${{ env.UV_VERSION }}
           enable-cache: true
@@ -82,17 +82,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: docker/setup-buildx-action@v3
-
+      # Built with plain `docker build`, not build-push-action. The action's
+      # `load: true` puts the image in the buildx cache rather than the local
+      # image store, so the `FROM council-base` in each service Dockerfile then
+      # tries to pull it from Docker Hub and fails with insufficient_scope.
+      # scripts/build-base.sh is also what developers run, so CI exercises the
+      # same path they do.
       - name: Build the shared base image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          file: Dockerfile.base
-          tags: council-base:latest
-          load: true
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+        run: bash scripts/build-base.sh
 
       - name: Build service images
         run: docker compose build
