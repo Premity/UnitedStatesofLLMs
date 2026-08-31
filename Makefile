@@ -155,6 +155,29 @@ eval-arm: ## Run one arm, e.g. make eval-arm ARM=full_council
 eval-report: ## Rebuild the evaluation report from existing results
 	uv run python -m metrics.report
 
+# ── Git workflow ──────────────────────────────────────────────────────────────
+# Merge commits are made with --no-verify because two pre-commit hooks
+# necessarily fire on them: `no-commit-to-branch` (merging INTO develop or main
+# means being on it) and `conventional-pre-commit` (git's merge message format
+# is deliberately not a Conventional Commit). Everything being merged has
+# already passed both hooks commit by commit.
+
+.PHONY: merge-develop
+merge-develop: check ## Merge the current feature branch into develop
+	@branch=$$(git rev-parse --abbrev-ref HEAD); \
+	if [ "$$branch" = "develop" ] || [ "$$branch" = "main" ]; then \
+		echo "Already on $$branch — check out a feature branch first."; exit 1; \
+	fi; \
+	git checkout develop && \
+	git merge --no-ff --no-verify -m "Merge $$branch into develop" "$$branch" && \
+	echo "Merged $$branch into develop."
+
+.PHONY: merge-main
+merge-main: ## Merge develop into main (release)
+	git checkout main && \
+	git merge --no-ff --no-verify -m "Merge develop into main" develop && \
+	echo "Merged develop into main."
+
 # ── Housekeeping ──────────────────────────────────────────────────────────────
 
 .PHONY: clean

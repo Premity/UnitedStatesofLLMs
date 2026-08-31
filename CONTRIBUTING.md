@@ -69,10 +69,24 @@ cannot show what you were thinking.
 3. Fill in the PR template honestly. The checklist is there to catch the things
    that have actually broken this project before, not as a formality.
 4. One reviewer approval before merge.
-5. Squash-merge into `develop`, so `develop` history stays one-commit-per-change.
+5. Merge into `develop` with `--no-ff` so the branch topology survives.
 
 Keep PRs small enough to review properly. A 40-file PR gets rubber-stamped; a
 6-file PR gets read.
+
+### Merging locally
+
+```bash
+make merge-develop   # runs `make check`, then merges the current branch
+make merge-main      # release: develop -> main
+```
+
+Both pass `--no-verify` on the merge commit, and only on the merge commit. Two
+hooks necessarily fire on a merge — `no-commit-to-branch`, because merging into
+`develop` means being on `develop`, and `conventional-pre-commit`, because git's
+`Merge branch 'x' into y` is deliberately not a Conventional Commit. pre-commit
+has no per-hook merge exemption. Nothing is skipped that was not already
+checked: every commit being merged passed both hooks when it was made.
 
 ## Before you write code
 

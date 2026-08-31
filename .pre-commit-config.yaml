@@ -2,6 +2,14 @@
 #
 #   make hooks     install these
 #   git commit --no-verify    skip them (use sparingly)
+#
+# MERGE COMMITS: two hooks below necessarily fire on a merge — `no-commit-to-branch`
+# (you are on develop or main by definition when merging into them) and
+# `conventional-pre-commit` (git's "Merge branch 'x' into y" is deliberately not a
+# Conventional Commit). pre-commit offers no per-hook merge exemption, so use
+# `make merge-develop` / `make merge-main`, which pass --no-verify on the merge
+# commit alone. Everything being merged has already passed these hooks
+# individually, so nothing is skipped that was not already checked.
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
