@@ -211,6 +211,37 @@ developing.
 
 ---
 
+## Docker disk usage
+
+Build cache grows quietly. Every rebuild writes new layers, and the old ones
+stay until something evicts them — a few weeks of iterating can leave several
+GB of cache backing images that no longer exist.
+
+```bash
+make docker-usage          # what Docker is holding, and this project's share
+make docker-clean          # dangling images + cache older than 7 days
+make docker-clean-all      # also drop unshared cache (safe; next build slower)
+make docker-clean-project  # remove only council-* images
+```
+
+None of these touch volumes or other projects' images. `make docker-clean` is
+the one to run periodically; the others are for when you actually need the
+space back.
+
+**What not to run.** `docker system prune -a --volumes` removes *every* unused
+image and *every* volume on the machine, including other projects' databases.
+It is the command people reach for when a disk is full and regret afterwards.
+The targets above are scoped deliberately so that reflex is not needed.
+
+**If space seems unreclaimable.** `docker system df` reports what the daemon
+knows about. If it shows little but the disk is still full, the usual causes
+are a stopped container still pinning layers (`docker ps -a`) or a volume
+nothing references (`docker volume ls`). Volumes survive an ordinary prune —
+that is why they accumulate silently — so check `docker volume ls` before
+assuming the space has leaked.
+
+---
+
 ## Evaluation
 
 ```bash
