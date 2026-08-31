@@ -194,3 +194,41 @@ clean-runs: ## Delete all saved debate runs (destructive)
 .PHONY: nuke
 nuke: down ## Stop everything and remove volumes (destructive — wipes the index)
 	@read -p "Remove all Docker volumes, including the Qdrant index? [y/N] " ok && [[ $$ok == [yY] ]] && $(COMPOSE) down -v || echo "Cancelled."
+
+# ── Docker housekeeping ───────────────────────────────────────────────────────
+# Build cache grows quietly: every rebuild writes new layers and the old ones
+# are kept until something evicts them. These targets only ever touch THIS
+# project's images plus genuinely unreferenced cache — they never remove another
+# project's images or any volume.
+
+.PHONY: docker-usage
+docker-usage: ## Show what Docker is holding on disk
+	@docker system df
+	@echo ""
+	@echo "This project's images:"
+	@docker images --filter "reference=council-*" \
+		--format "  {{.Repository}}:{{.Tag}}  {{.Size}}  ({{.CreatedSince}})" || true
+
+.PHONY: docker-clean
+docker-clean: ## Reclaim space: dangling images + build cache older than 7 days
+	@echo "Removing dangling images…"
+	@docker image prune -f
+	@echo "Pruning build cache older than 7 days…"
+	@docker builder prune --filter "until=168h" -f
+	@echo ""
+	@docker system df
+
+.PHONY: docker-clean-all
+docker-clean-all: ## Reclaim harder: also drop unshared build cache (safe; slower next build)
+	@docker image prune -f
+	@docker builder prune -f
+	@echo ""
+	@docker system df
+
+.PHONY: docker-clean-project
+docker-clean-project: ## Remove ONLY this project's images (keeps volumes and other projects)
+	@echo "Removing council-* images. Volumes and other projects are untouched."
+	@docker rmi -f council-api:latest council-frontend:latest council-base:latest 2>/dev/null || true
+	@docker builder prune -f
+	@echo ""
+	@docker system df
