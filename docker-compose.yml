@@ -1,0 +1,105 @@
+# ── Base stack ────────────────────────────────────────────────────────────────
+# Shared by dev and prod. Neither profile is complete on its own:
+#
+#   dev   docker compose up          (override file is picked up automatically)
+#   prod  make prod-up               (adds docker-compose.prod.yml)
+#
+# See docs/development.md for the full command set.
+
+name: council
+
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.12.4
+    volumes:
+      - qdrant_data:/qdrant/storage
+    networks:
+      - council-net
+    healthcheck:
+      # The Qdrant image ships neither curl nor wget, so the check opens a TCP
+      # socket against the service port directly.
+      test: ["CMD-SHELL", "bash -c 'exec 3<>/dev/tcp/127.0.0.1/6333' || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: runtime/api/Dockerfile
+      target: runtime
+    image: council-api:latest
+    depends_on:
+      qdrant:
+        condition: service_healthy
+    environment:
+      QDRANT_URL: "http://qdrant:6333"
+      QDRANT_COLLECTION: "${QDRANT_COLLECTION:-ihl_corpus}"
+      EMBEDDING_MODEL: "${EMBEDDING_MODEL:-BAAI/bge-m3}"
+      LOG_LEVEL: "${LOG_LEVEL:-INFO}"
+
+      # Model roster — see .env.example for the full set.
+      COUNCIL_PRESENTER_MODEL: "${COUNCIL_PRESENTER_MODEL:-mistral/magistral-medium-latest}"
+      COUNCIL_ATTACKER_DOCTRINAL_MODEL: "${COUNCIL_ATTACKER_DOCTRINAL_MODEL:-ollama/qwen3.5:14b}"
+      COUNCIL_ATTACKER_EVIDENTIARY_MODEL: "${COUNCIL_ATTACKER_EVIDENTIARY_MODEL:-ollama/gemma3:12b}"
+      COUNCIL_JUDGE_MODEL: "${COUNCIL_JUDGE_MODEL:-gemini/gemini-2.5-pro}"
+      COUNCIL_OLLAMA_BASE_URL: "${COUNCIL_OLLAMA_BASE_URL:-http://host.docker.internal:11434}"
+
+      MISTRAL_API_KEY: "${MISTRAL_API_KEY:-}"
+      GEMINI_API_KEY: "${GEMINI_API_KEY:-}"
+      CLOUDFLARE_API_KEY: "${CLOUDFLARE_API_KEY:-}"
+      CLOUDFLARE_ACCOUNT_ID: "${CLOUDFLARE_ACCOUNT_ID:-}"
+    volumes:
+      - ./data:/data
+    networks:
+      - council-net
+    # Lets the container reach an Ollama running on the host. On Linux this
+    # needs the explicit host-gateway mapping; Docker Desktop provides it.
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: runtime/frontend/Dockerfile
+      target: production
+    image: council-frontend:latest
+    depends_on:
+      - api
+    networks:
+      - council-net
+    restart: unless-stopped
+
+  # ── Optional: containerised Ollama ─────────────────────────────────────────
+  # Off by default — most teammates already run Ollama on the host and sharing
+  # one model store beats re-pulling ~20GB per machine.
+  #
+  #   docker compose --profile ollama up -d
+  #   COUNCIL_OLLAMA_BASE_URL=http://ollama:11434
+  #
+  # See docs/adr/0006-ollama-host-by-default.md.
+  ollama:
+    image: ollama/ollama:latest
+    profiles: ["ollama"]
+    volumes:
+      - ollama_models:/root/.ollama
+    networks:
+      - council-net
+    healthcheck:
+      test: ["CMD-SHELL", "ollama list >/dev/null 2>&1 || exit 1"]
+      interval: 20s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+
+volumes:
+  qdrant_data:
+  ollama_models:
+
+networks:
+  council-net:
+    driver: bridge

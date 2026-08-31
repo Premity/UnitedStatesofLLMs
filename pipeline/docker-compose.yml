@@ -1,0 +1,43 @@
+# ── Offline corpus pipeline ───────────────────────────────────────────────────
+# Separate from the runtime stack: these run to completion and exit, and only
+# need to touch Qdrant. Run them from the repo root:
+#
+#   make fetch     # download the curated corpus into data/cache/
+#   make index     # chunk, embed, and upsert into Qdrant + citation index
+#
+# The runtime stack must be up first — the indexer writes into its Qdrant.
+
+name: council-pipeline
+
+services:
+  fetcher:
+    build:
+      context: ..
+      dockerfile: pipeline/fetcher/Dockerfile
+    image: council-fetcher:latest
+    environment:
+      CORPUS_DIR: "/corpus"
+      DATA_DIR: "/data"
+      LOG_LEVEL: "${LOG_LEVEL:-INFO}"
+    volumes:
+      - ../corpus:/corpus
+      - ../data:/data
+    network_mode: host
+
+  indexer:
+    build:
+      context: ..
+      dockerfile: pipeline/indexer/Dockerfile
+    image: council-indexer:latest
+    environment:
+      # network_mode: host, so Qdrant is on localhost, not the service name.
+      QDRANT_URL: "${QDRANT_URL:-http://localhost:6333}"
+      QDRANT_COLLECTION: "${QDRANT_COLLECTION:-ihl_corpus}"
+      EMBEDDING_MODEL: "${EMBEDDING_MODEL:-BAAI/bge-m3}"
+      CORPUS_DIR: "/corpus"
+      DATA_DIR: "/data"
+      LOG_LEVEL: "${LOG_LEVEL:-INFO}"
+    volumes:
+      - ../corpus:/corpus
+      - ../data:/data
+    network_mode: host
