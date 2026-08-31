@@ -1,0 +1,26 @@
+# Evaluation harness. Runs the four ablation arms over the case fixtures and
+# scores them. Slow and quota-consuming — never part of `make test`.
+
+[project]
+name = "council-eval"
+version = "0.1.0"
+description = "Ablation harness and metrics for the Council"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "council-core",
+    "httpx>=0.27",
+    "numpy>=2.1",
+    "pandas>=2.2",
+    "scipy>=1.14",
+    "jinja2>=3.1",
+]
+
+[tool.uv.sources]
+council-core = { workspace = true }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["harness", "metrics"]
