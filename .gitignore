@@ -1,0 +1,66 @@
+# ── Environment & secrets ─────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# ── Node ──────────────────────────────────────────────────────────────────────
+node_modules/
+runtime/frontend/dist/
+runtime/frontend/.vite/
+*.tsbuildinfo
+
+# ── Data ──────────────────────────────────────────────────────────────────────
+# Fetched jurisprudence, embeddings, and run artifacts are all reproducible
+# from the manifests and the code. The manifests are committed; this is not.
+data/cache/
+data/index/
+data/runs/
+data/eval/
+data/logs/
+*.log
+
+# Keep the directory structure so a fresh clone has somewhere to write.
+!data/cache/.gitkeep
+!data/index/.gitkeep
+!data/runs/.gitkeep
+!data/eval/.gitkeep
+!data/logs/.gitkeep
+
+# ── Corpus ────────────────────────────────────────────────────────────────────
+# Tier 1 treaty text IS committed — it is small, canonical, and worth diffing.
+# Tier 2 jurisprudence is fetched into data/cache/ and is not.
+corpus/**/*.pdf
+corpus/**/*.raw.html
+
+# ── Evaluation output ─────────────────────────────────────────────────────────
+evaluation/reports/*.html
+evaluation/reports/*.json
+!evaluation/reports/.gitkeep
+
+# ── Editors & OS ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── Docker ────────────────────────────────────────────────────────────────────
+docker-compose.local.yml

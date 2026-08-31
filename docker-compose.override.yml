@@ -1,0 +1,43 @@
+# ── Development overrides ─────────────────────────────────────────────────────
+# Compose loads this automatically, so plain `docker compose up` is the dev
+# stack. Nothing here should ever run in production.
+#
+# What it changes:
+#   - source is bind-mounted and servers reload on edit
+#   - Qdrant's port is published so you can inspect the collection
+#   - the frontend runs Vite with HMR instead of nginx
+
+services:
+  qdrant:
+    ports:
+      - "6333:6333"   # dashboard at http://localhost:6333/dashboard
+      - "6334:6334"
+
+  api:
+    build:
+      target: runtime
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+    ports:
+      - "8000:8000"
+    environment:
+      ENVIRONMENT: "development"
+      LOG_LEVEL: "DEBUG"
+      LOG_JSON: "false"
+    volumes:
+      # Editing app code or a prompt template reloads the server in place.
+      - ./runtime/api/app:/app/app
+      - ./prompts:/app/prompts
+      - ./packages/council-core/src/council_core:/usr/local/lib/python3.12/site-packages/council_core
+      - ./data:/data
+
+  frontend:
+    build:
+      target: dev
+    ports:
+      - "3000:3000"
+    environment:
+      VITE_API_URL: "http://localhost:8000"
+    volumes:
+      - ./runtime/frontend/src:/app/src
+      - ./runtime/frontend/public:/app/public
+      - ./runtime/frontend/index.html:/app/index.html

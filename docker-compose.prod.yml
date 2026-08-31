@@ -1,0 +1,42 @@
+# ── Production overrides ──────────────────────────────────────────────────────
+# Not loaded automatically. Use:
+#
+#   make prod-up      (docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d)
+#
+# What it changes:
+#   - no bind mounts; code is baked into the image
+#   - nothing exposed to the host except the frontend
+#   - JSON logs, tighter restart policy, resource ceilings
+
+services:
+  qdrant:
+    # No published ports — reachable only on the internal network.
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+
+  api:
+    restart: always
+    environment:
+      ENVIRONMENT: "production"
+      LOG_LEVEL: "INFO"
+      LOG_JSON: "true"
+    volumes:
+      # Corpus and index read-only; only run artifacts are writable.
+      - ./data/index:/data/index:ro
+      - ./data/runs:/data/runs
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+
+  frontend:
+    restart: always
+    ports:
+      - "${FRONTEND_PORT:-80}:80"
+    deploy:
+      resources:
+        limits:
+          memory: 256M
