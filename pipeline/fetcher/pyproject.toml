@@ -1,0 +1,27 @@
+# Offline corpus fetcher. Reads the committed case manifest, downloads only the
+# curated jurisprudence into data/cache/, and normalises it to paragraph-addressable
+# documents. Never crawls — the manifest is the scope.
+
+[project]
+name = "council-fetcher"
+version = "0.1.0"
+description = "Fetches and normalises the curated IHL corpus"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "council-core",
+    "httpx>=0.27",
+    "beautifulsoup4>=4.12",
+    "lxml>=5.3",
+    "pypdf>=5.1",
+    "tenacity>=9.0",
+]
+
+[tool.uv.sources]
+council-core = { workspace = true }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]

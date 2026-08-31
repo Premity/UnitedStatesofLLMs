@@ -1,0 +1,24 @@
+# Shared domain library. Every service imports from here; nothing here imports
+# from a service. Holds the debate/citation schemas, the LiteLLM client wrapper,
+# the prompt loader, and the export renderers.
+
+[project]
+name = "council-core"
+version = "0.1.0"
+description = "Shared domain models, LLM client, citation validation, and export for the Council"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "pydantic>=2.9",
+    "pydantic-settings>=2.6",
+    "litellm>=1.52",
+    "jinja2>=3.1",
+    "structlog>=24.4",
+    "tenacity>=9.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/council_core"]

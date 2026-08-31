@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-court-bg font-ui antialiased;
+  }
+
+  /* The record panel is a light surface inside a dark app — opt it out of the
+     dark colour-scheme so form controls and scrollbars inside it match. */
+  .record-surface {
+    color-scheme: light;
+  }
+}
+
+@layer utilities {
+  /* Respect a reader's motion preference: the courtroom is decorative, and
+     nothing in it carries information the transcript does not. */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-bob,
+    .animate-slam,
+    .animate-shake,
+    .animate-pop,
+    .animate-gavel {
+      animation: none !important;
+    }
+  }
+}

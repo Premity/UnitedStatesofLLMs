@@ -1,0 +1,17 @@
+# Keep build context small — it is sent to the daemon on every build.
+.git/
+.github/
+**/node_modules/
+**/__pycache__/
+**/.venv/
+**/.pytest_cache/
+**/.ruff_cache/
+runtime/frontend/dist/
+data/
+docs/
+*.md
+!README.md
+.env
+.env.*
+!.env.example
+evaluation/reports/
