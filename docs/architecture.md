@@ -1,7 +1,9 @@
 # Architecture
 
 How the system is put together and why it is shaped this way. For the reasoning
-behind individual decisions, see [adr/](adr/).
+behind individual decisions, see [adr/](adr/); for the formal system-design
+reference — requirements, contracts, failure modes, capacity — see
+[system-design.md](system-design.md).
 
 ---
 
