@@ -206,7 +206,8 @@ not a code change. ([ADR 0002](docs/adr/0002-litellm-model-gateway.md))
 
 | Document | What it covers |
 | --- | --- |
-| [docs/architecture.md](docs/architecture.md) | System design, the debate graph, why it is shaped this way |
+| [docs/system-design.md](docs/system-design.md) | **Full system design** — requirements, components, data flow, failure modes |
+| [docs/architecture.md](docs/architecture.md) | Narrative walkthrough of the debate graph |
 | [docs/development.md](docs/development.md) | Every command, the dev loop, troubleshooting |
 | [docs/corpus.md](docs/corpus.md) | Corpus tiering, document shapes, chunking rules |
 | [docs/evaluation.md](docs/evaluation.md) | Ablation design, metrics, how to write a case |
