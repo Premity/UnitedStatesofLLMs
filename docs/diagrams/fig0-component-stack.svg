@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000"
+     viewBox="0 0 1200 1000" font-family="Calibri, Carlito, 'Segoe UI', sans-serif">
+<defs>
+  <marker id="a" viewBox="0 0 10 10" refX="9" refY="5"
+          markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#9a9a9a"/>
+  </marker>
+  <marker id="ad" viewBox="0 0 10 10" refX="9" refY="5"
+          markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a1a"/>
+  </marker>
+</defs>
+<rect width="1200" height="1000" fill="#ffffff"/>
+<text x="600.0" y="36" text-anchor="middle" font-size="18" fill="#1a1a1a" font-weight="700">Figure 1 — Component Stack</text>
+<text x="600.0" y="56" text-anchor="middle" font-size="12" fill="#6b6b6b">What the system is built from. Each tier runs on the tier below it.</text>
+<rect x="150" y="82" width="1010" height="86" rx="6" fill="#e4ecf4" fill-opacity="0.5" stroke="#5b7fa6" stroke-width="1.3"/>
+<text x="134" y="122.0" text-anchor="end" font-size="12.5" font-weight="700" fill="#5b7fa6">PRESENTATION</text>
+<text x="134" y="138.0" text-anchor="end" font-size="10.5" fill="#6b6b6b">user's browser</text>
+<rect x="164.0" y="95" width="318.0" height="60" rx="4" fill="#e4ecf4" stroke="#5b7fa6" stroke-width="1.2"/>
+<text x="323.0" y="116.75" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Courtroom view</text>
+<text x="323.0" y="132.25" text-anchor="middle" font-size="11" fill="#6b6b6b">React 18 · TypeScript</text>
+<text x="323.0" y="145.25" text-anchor="middle" font-size="11" fill="#6b6b6b">Framer Motion</text>
+<rect x="496.0" y="95" width="318.0" height="60" rx="4" fill="#e4ecf4" stroke="#5b7fa6" stroke-width="1.2"/>
+<text x="655.0" y="116.75" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Dissent log view</text>
+<text x="655.0" y="132.25" text-anchor="middle" font-size="11" fill="#6b6b6b">overruled objections</text>
+<text x="655.0" y="145.25" text-anchor="middle" font-size="11" fill="#6b6b6b">citation inspection</text>
+<rect x="828.0" y="95" width="318.0" height="60" rx="4" fill="#e4ecf4" stroke="#5b7fa6" stroke-width="1.2"/>
+<text x="987.0" y="116.75" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">nginx</text>
+<text x="987.0" y="132.25" text-anchor="middle" font-size="11" fill="#6b6b6b">static build</text>
+<text x="987.0" y="145.25" text-anchor="middle" font-size="11" fill="#6b6b6b">prod only</text>
+<line x1="655" y1="168" x2="655" y2="196" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
+<text x="665" y="186" text-anchor="start" font-size="10.5" fill="#6b6b6b">HTTP · POST + SSE</text>
+<rect x="150" y="196" width="1010" height="84" rx="6" fill="#e8f0e8" fill-opacity="0.5" stroke="#5f8560" stroke-width="1.3"/>
+<text x="134" y="235.0" text-anchor="end" font-size="12.5" font-weight="700" fill="#5f8560">SERVICE</text>
+<text x="134" y="251.0" text-anchor="end" font-size="10.5" fill="#6b6b6b">runtime/api</text>
+<rect x="164.0" y="209" width="318.0" height="58" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.2"/>
+<text x="323.0" y="229.75" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">FastAPI</text>
+<text x="323.0" y="245.25" text-anchor="middle" font-size="11" fill="#6b6b6b">HTTP surface</text>
+<text x="323.0" y="258.25" text-anchor="middle" font-size="11" fill="#6b6b6b">request validation</text>
+<rect x="496.0" y="209" width="318.0" height="58" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.2"/>
+<text x="655.0" y="229.75" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">SSE stream</text>
+<text x="655.0" y="245.25" text-anchor="middle" font-size="11" fill="#6b6b6b">sse-starlette</text>
+<text x="655.0" y="258.25" text-anchor="middle" font-size="11" fill="#6b6b6b">turn-level events</text>
+<rect x="828.0" y="209" width="318.0" height="58" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.2"/>
+<text x="987.0" y="236.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Uvicorn</text>
+<text x="987.0" y="251.75" text-anchor="middle" font-size="11" fill="#6b6b6b">ASGI server</text>
+<line x1="655" y1="280" x2="655" y2="306" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
+<rect x="150" y="306" width="1010" height="84" rx="6" fill="#e8f0e8" fill-opacity="0.5" stroke="#5f8560" stroke-width="1.3"/>
+<text x="134" y="345.0" text-anchor="end" font-size="12.5" font-weight="700" fill="#5f8560">ORCHESTRATION</text>
+<text x="134" y="361.0" text-anchor="end" font-size="10.5" fill="#6b6b6b">the debate graph</text>
+<rect x="164.0" y="319" width="318.0" height="58" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.2"/>
+<text x="323.0" y="339.75" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">LangGraph StateGraph</text>
+<text x="323.0" y="355.25" text-anchor="middle" font-size="11" fill="#6b6b6b">concurrent nodes</text>
+<text x="323.0" y="368.25" text-anchor="middle" font-size="11" fill="#6b6b6b">conditional loop edge</text>
+<rect x="496.0" y="319" width="318.0" height="58" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.2"/>
+<text x="655.0" y="339.75" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Round control</text>
+<text x="655.0" y="355.25" text-anchor="middle" font-size="11" fill="#6b6b6b">auto / fixed</text>
+<text x="655.0" y="368.25" text-anchor="middle" font-size="11" fill="#6b6b6b">max_rounds ceiling</text>
+<rect x="828.0" y="319" width="318.0" height="58" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.2"/>
+<text x="987.0" y="339.75" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Run persistence</text>
+<text x="987.0" y="355.25" text-anchor="middle" font-size="11" fill="#6b6b6b">JSON artifacts</text>
+<text x="987.0" y="368.25" text-anchor="middle" font-size="11" fill="#6b6b6b">written on failure too</text>
+<line x1="655" y1="390" x2="655" y2="416" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
+<rect x="150" y="416" width="1010" height="86" rx="6" fill="#e8f0e8" fill-opacity="0.5" stroke="#5f8560" stroke-width="1.3"/>
+<text x="134" y="456.0" text-anchor="end" font-size="12.5" font-weight="700" fill="#5f8560">ROLES</text>
+<text x="134" y="472.0" text-anchor="end" font-size="10.5" fill="#6b6b6b">modules, not services</text>
+<rect x="164.0" y="429" width="235.0" height="60" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.2"/>
+<text x="281.5" y="457.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Presenter</text>
+<text x="281.5" y="472.75" text-anchor="middle" font-size="11" fill="#6b6b6b">builds the case</text>
+<rect x="413.0" y="429" width="235.0" height="60" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.2"/>
+<text x="530.5" y="457.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Attacker — doctrinal</text>
+<text x="530.5" y="472.75" text-anchor="middle" font-size="11" fill="#6b6b6b">legal characterisation</text>
+<rect x="662.0" y="429" width="235.0" height="60" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.2"/>
+<text x="779.5" y="457.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Attacker — evidentiary</text>
+<text x="779.5" y="472.75" text-anchor="middle" font-size="11" fill="#6b6b6b">factual predicate</text>
+<rect x="911.0" y="429" width="235.0" height="60" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.2"/>
+<text x="1028.5" y="457.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Judge</text>
+<text x="1028.5" y="472.75" text-anchor="middle" font-size="11" fill="#6b6b6b">rules + calibrates</text>
+<line x1="655" y1="502" x2="655" y2="528" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
+<rect x="150" y="528" width="1010" height="86" rx="6" fill="#f4eee6" fill-opacity="0.5" stroke="#a3835a" stroke-width="1.3"/>
+<text x="134" y="568.0" text-anchor="end" font-size="12.5" font-weight="700" fill="#a3835a">DOMAIN</text>
+<text x="134" y="584.0" text-anchor="end" font-size="10.5" fill="#6b6b6b">packages/council-core</text>
+<rect x="164.0" y="541" width="235.0" height="60" rx="4" fill="#f4eee6" stroke="#a3835a" stroke-width="1.2"/>
+<text x="281.5" y="569.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Pydantic models</text>
+<text x="281.5" y="584.75" text-anchor="middle" font-size="11" fill="#6b6b6b">typed contracts</text>
+<rect x="413.0" y="541" width="235.0" height="60" rx="4" fill="#f4eee6" stroke="#a3835a" stroke-width="1.2"/>
+<text x="530.5" y="569.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Citation resolver</text>
+<text x="530.5" y="584.75" text-anchor="middle" font-size="11" fill="#6b6b6b">4 statuses</text>
+<rect x="662.0" y="541" width="235.0" height="60" rx="4" fill="#f4eee6" stroke="#a3835a" stroke-width="1.2"/>
+<text x="779.5" y="569.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Prompt loader</text>
+<text x="779.5" y="584.75" text-anchor="middle" font-size="11" fill="#6b6b6b">versioned + hashed</text>
+<rect x="911.0" y="541" width="235.0" height="60" rx="4" fill="#f4eee6" stroke="#a3835a" stroke-width="1.2"/>
+<text x="1028.5" y="569.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Exporters</text>
+<text x="1028.5" y="584.75" text-anchor="middle" font-size="11" fill="#6b6b6b">dissent log</text>
+<line x1="430" y1="614" x2="430" y2="640" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
+<line x1="880" y1="614" x2="880" y2="640" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
+<rect x="150" y="640" width="1010" height="80" rx="6" fill="#f4eee6" fill-opacity="0.5" stroke="#a3835a" stroke-width="1.3"/>
+<text x="134" y="677.0" text-anchor="end" font-size="12.5" font-weight="700" fill="#a3835a">INTEGRATION</text>
+<text x="134" y="693.0" text-anchor="end" font-size="10.5" fill="#6b6b6b">one call path</text>
+<rect x="164.0" y="653" width="484.0" height="54" rx="4" fill="#f4eee6" stroke="#a3835a" stroke-width="1.2"/>
+<text x="406.0" y="678.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">LiteLLM gateway</text>
+<text x="406.0" y="693.75" text-anchor="middle" font-size="11" fill="#6b6b6b">structured output + repair retry</text>
+<rect x="662.0" y="653" width="484.0" height="54" rx="4" fill="#f4eee6" stroke="#a3835a" stroke-width="1.2"/>
+<text x="904.0" y="678.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">fastembed · ONNX</text>
+<text x="904.0" y="693.75" text-anchor="middle" font-size="11" fill="#6b6b6b">BGE-M3 · no PyTorch</text>
+<line x1="430" y1="720" x2="430" y2="746" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
+<line x1="880" y1="720" x2="880" y2="746" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
+<rect x="150" y="746" width="1010" height="86" rx="6" fill="#eef2f7" fill-opacity="0.5" stroke="#5b7fa6" stroke-width="1.3"/>
+<text x="134" y="786.0" text-anchor="end" font-size="12.5" font-weight="700" fill="#5b7fa6">INFRASTRUCTURE</text>
+<text x="134" y="802.0" text-anchor="end" font-size="10.5" fill="#6b6b6b">state and models</text>
+<rect x="164.0" y="759" width="235.0" height="60" rx="4" fill="#eef2f7" stroke="#5b7fa6" stroke-width="1.2"/>
+<text x="281.5" y="787.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Qdrant v1.12.4</text>
+<text x="281.5" y="802.75" text-anchor="middle" font-size="11" fill="#6b6b6b">ihl_corpus collection</text>
+<rect x="413.0" y="759" width="235.0" height="60" rx="4" fill="#eef2f7" stroke="#5b7fa6" stroke-width="1.2"/>
+<text x="530.5" y="787.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Filesystem</text>
+<text x="530.5" y="802.75" text-anchor="middle" font-size="11" fill="#6b6b6b">data/runs · citation index</text>
+<rect x="662.0" y="759" width="235.0" height="60" rx="4" fill="#eef2f7" stroke="#5b7fa6" stroke-width="1.2"/>
+<text x="779.5" y="787.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Mistral · Gemini</text>
+<text x="779.5" y="802.75" text-anchor="middle" font-size="11" fill="#6b6b6b">hosted APIs</text>
+<rect x="911.0" y="759" width="235.0" height="60" rx="4" fill="#eef2f7" stroke="#5b7fa6" stroke-width="1.2"/>
+<text x="1028.5" y="780.75" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Ollama</text>
+<text x="1028.5" y="796.25" text-anchor="middle" font-size="11" fill="#6b6b6b">Qwen 3.5 · Gemma 3</text>
+<text x="1028.5" y="809.25" text-anchor="middle" font-size="11" fill="#6b6b6b">local</text>
+<rect x="150" y="862" width="1010" height="76" rx="6" fill="#f0eef4" fill-opacity="0.5" stroke="#7b6f99" stroke-width="1.3"/>
+<text x="134" y="897.0" text-anchor="end" font-size="12.5" font-weight="700" fill="#7b6f99">PIPELINE</text>
+<text x="134" y="913.0" text-anchor="end" font-size="10.5" fill="#6b6b6b">offline, run to completion</text>
+<rect x="164.0" y="875" width="318.0" height="50" rx="4" fill="#f0eef4" stroke="#7b6f99" stroke-width="1.2"/>
+<text x="323.0" y="898.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Manifests</text>
+<text x="323.0" y="913.75" text-anchor="middle" font-size="11" fill="#6b6b6b">defines corpus scope</text>
+<rect x="496.0" y="875" width="318.0" height="50" rx="4" fill="#f0eef4" stroke="#7b6f99" stroke-width="1.2"/>
+<text x="655.0" y="898.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Fetcher</text>
+<text x="655.0" y="913.75" text-anchor="middle" font-size="11" fill="#6b6b6b">never crawls</text>
+<rect x="828.0" y="875" width="318.0" height="50" rx="4" fill="#f0eef4" stroke="#7b6f99" stroke-width="1.2"/>
+<text x="987.0" y="898.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Indexer</text>
+<text x="987.0" y="913.75" text-anchor="middle" font-size="11" fill="#6b6b6b">chunk · embed · upsert</text>
+<line x1="655" y1="862" x2="655" y2="836" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
+<text x="665" y="852" text-anchor="start" font-size="10.5" fill="#6b6b6b">writes the stores above</text>
+<text x="150" y="962" text-anchor="start" font-size="11" fill="#6b6b6b" font-style="italic">Every tier depends only on the tier beneath it. council-core imports nothing from the services above it, so the domain model is testable without Qdrant or a model call.</text>
+<text x="150" y="980" text-anchor="start" font-size="11" fill="#6b6b6b" font-style="italic">The pipeline is drawn apart because it never runs during a request — it populates the infrastructure tier ahead of time.</text>
+</svg>
