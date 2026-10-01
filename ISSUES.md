@@ -58,6 +58,36 @@ Metrics themselves (calibration, independence, citations) are implemented.
 
 ---
 
+### [MEDIUM] Arm E — the compute-matched control
+
+`evaluation/harness/arms.py` defines arms A–D. Arm E, the self-consistency
+control, is specified but not written.
+
+It runs the presenter alone with retrieval, samples it *n* times at a
+temperature that produces genuine variation, and aggregates the samples into one
+answer and one confidence. *n* is set so that total model calls match arm D on
+the same case — that matching is the whole point, so it is computed from D's
+actual call count, not fixed in advance.
+
+Needed:
+
+- An `Arm` variant carrying a sample count rather than an attacker tuple; the
+  current dataclass assumes one call per role
+- An aggregation rule over samples — majority vote on the outcome, with the
+  agreement rate as the confidence, is the obvious starting point
+- The judge runs **once** over the aggregated answer, so E's judge cost stays
+  near arm B's
+
+**Why it matters:** without E, a D-vs-B comparison cannot separate the benefit
+of adversarial structure from the benefit of spending more compute, which is the
+specific criticism levelled at the multi-agent debate literature. Objective 2 is
+stated against this baseline, so the headline claim is unfalsifiable until E
+runs.
+
+See [docs/evaluation.md](docs/evaluation.md) for the full ladder.
+
+---
+
 ### [MEDIUM] Evaluation case fixtures
 
 One sample case in `evaluation/cases/dev/`. Target is 40–80, split dev /

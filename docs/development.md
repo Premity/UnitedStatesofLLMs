@@ -245,7 +245,7 @@ assuming the space has leaked.
 ## Evaluation
 
 ```bash
-make eval                      # all four arms — SLOW, consumes quota
+make eval                      # every implemented arm — SLOW, consumes quota
 make eval-arm ARM=full_council # one arm
 make eval-report               # rebuild the report from existing results
 ```

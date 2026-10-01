@@ -25,8 +25,9 @@ useful *even at the same accuracy*.
 
 ## The ablation ladder
 
-Four arms, each differing from the one above in exactly one respect. Defined in
-`evaluation/harness/arms.py`.
+Five arms. A–D form a ladder, each differing from the one above in exactly one
+respect; E sits beside D as a control rather than on the ladder. A–D are defined
+in `evaluation/harness/arms.py`.
 
 | Arm | Configuration | Isolates |
 | --- | --- | --- |
@@ -34,9 +35,22 @@ Four arms, each differing from the one above in exactly one respect. Defined in
 | **B** `rag` | Single pass + retrieval | What grounding alone contributes |
 | **C** `single_attacker` | Presenter + doctrinal attacker + judge | What adversarial challenge contributes |
 | **D** `full_council` | Both attackers | Whether the second attacker earns its place |
+| **E** `self_consistency` | One model sampled *n* times and aggregated, *n* matched to D's call count | Whether D's gain comes from adversarial structure or merely from more compute |
 
 B exists so the council is not credited for gains that retrieval alone produces.
 Without it, "our system beats a raw LLM" is an uninteresting claim.
+
+E exists for the same reason one step further out. A debate spends several model
+calls per question, and the multi-agent debate literature has been criticised for
+not establishing whether its reported gains come from the adversarial structure
+or from the extra computation that structure consumes. Comparing D against B
+alone inherits that weakness; comparing D against a compute-matched baseline does
+not. **E is the arm that makes the central claim falsifiable**, so a result where
+D fails to beat E is a real finding and should be reported as one.
+
+> **Not yet implemented.** `arms.py` currently defines A–D. E needs
+> compute-matched sampling and an aggregation rule before it can run. See
+> [ISSUES.md](../ISSUES.md).
 
 ---
 
@@ -154,7 +168,7 @@ project whose entire premise is that overconfidence is dangerous.
 ## Running it
 
 ```bash
-make eval                       # all four arms
+make eval                       # every implemented arm (A-D)
 make eval-arm ARM=full_council  # one arm
 make eval-report                # rebuild the report from existing results
 ```
@@ -165,6 +179,10 @@ Slow and quota-consuming. Never part of CI.
 Gemini AI Studio's free tier is 100 requests/day, so a full run spans multiple
 days — or point the judge at a local model for iteration and use the API model
 only for the final scored run. Record which, because it changes the result.
+
+Arm E will not add judge calls in proportion to its sample count: it aggregates
+*n* presenter samples and judges once, so its cost sits close to arm B's. Its
+*n* is set by D's call count, not the other way round.
 
 Results land in `data/eval/`, reports in `evaluation/reports/`.
 
