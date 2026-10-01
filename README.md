@@ -204,8 +204,15 @@ not a code change. ([ADR 0002](docs/adr/0002-litellm-model-gateway.md))
 
 ## Documentation
 
+**New to the project? Start with
+[docs/planning/onboarding.md](docs/planning/onboarding.md).**
+
 | Document | What it covers |
 | --- | --- |
+| [docs/planning/onboarding.md](docs/planning/onboarding.md) | **Start here** — what works today, how to run it, how to pick up work |
+| [docs/planning/implementation-plan.md](docs/planning/implementation-plan.md) | The five tracks, every task, what blocks what |
+| [docs/planning/timeline.md](docs/planning/timeline.md) | Three-week schedule, the quota constraint, what gets cut |
+| [docs/planning/fixtures-guide.md](docs/planning/fixtures-guide.md) | How to write an evaluation case without leaking the holding |
 | [docs/system-design.md](docs/system-design.md) | **Full system design** — requirements, components, data flow, failure modes |
 | [docs/architecture.md](docs/architecture.md) | Narrative walkthrough of the debate graph |
 | [docs/development.md](docs/development.md) | Every command, the dev loop, troubleshooting |
