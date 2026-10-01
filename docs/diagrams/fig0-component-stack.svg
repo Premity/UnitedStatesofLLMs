@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000"
-     viewBox="0 0 1200 1000" font-family="Calibri, Carlito, 'Segoe UI', sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="1270" height="1090"
+     viewBox="0 0 1270 1090" font-family="Calibri, Carlito, 'Segoe UI', sans-serif">
 <defs>
   <marker id="a" viewBox="0 0 10 10" refX="9" refY="5"
           markerWidth="7" markerHeight="7" orient="auto-start-reverse">
@@ -10,131 +10,108 @@
     <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a1a"/>
   </marker>
 </defs>
-<rect width="1200" height="1000" fill="#ffffff"/>
-<text x="600.0" y="36" text-anchor="middle" font-size="18" fill="#1a1a1a" font-weight="700">Figure 1 — Component Stack</text>
-<text x="600.0" y="56" text-anchor="middle" font-size="12" fill="#6b6b6b">What the system is built from. Each tier runs on the tier below it.</text>
-<rect x="150" y="82" width="1010" height="86" rx="6" fill="#e4ecf4" fill-opacity="0.5" stroke="#5b7fa6" stroke-width="1.3"/>
-<text x="134" y="122.0" text-anchor="end" font-size="12.5" font-weight="700" fill="#5b7fa6">PRESENTATION</text>
-<text x="134" y="138.0" text-anchor="end" font-size="10.5" fill="#6b6b6b">user's browser</text>
-<rect x="164.0" y="95" width="318.0" height="60" rx="4" fill="#e4ecf4" stroke="#5b7fa6" stroke-width="1.2"/>
-<text x="323.0" y="116.75" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Courtroom view</text>
-<text x="323.0" y="132.25" text-anchor="middle" font-size="11" fill="#6b6b6b">React 18 · TypeScript</text>
-<text x="323.0" y="145.25" text-anchor="middle" font-size="11" fill="#6b6b6b">Framer Motion</text>
-<rect x="496.0" y="95" width="318.0" height="60" rx="4" fill="#e4ecf4" stroke="#5b7fa6" stroke-width="1.2"/>
-<text x="655.0" y="116.75" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Dissent log view</text>
-<text x="655.0" y="132.25" text-anchor="middle" font-size="11" fill="#6b6b6b">overruled objections</text>
-<text x="655.0" y="145.25" text-anchor="middle" font-size="11" fill="#6b6b6b">citation inspection</text>
-<rect x="828.0" y="95" width="318.0" height="60" rx="4" fill="#e4ecf4" stroke="#5b7fa6" stroke-width="1.2"/>
-<text x="987.0" y="116.75" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">nginx</text>
-<text x="987.0" y="132.25" text-anchor="middle" font-size="11" fill="#6b6b6b">static build</text>
-<text x="987.0" y="145.25" text-anchor="middle" font-size="11" fill="#6b6b6b">prod only</text>
-<line x1="655" y1="168" x2="655" y2="196" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
-<text x="665" y="186" text-anchor="start" font-size="10.5" fill="#6b6b6b">HTTP · POST + SSE</text>
-<rect x="150" y="196" width="1010" height="84" rx="6" fill="#e8f0e8" fill-opacity="0.5" stroke="#5f8560" stroke-width="1.3"/>
-<text x="134" y="235.0" text-anchor="end" font-size="12.5" font-weight="700" fill="#5f8560">SERVICE</text>
-<text x="134" y="251.0" text-anchor="end" font-size="10.5" fill="#6b6b6b">runtime/api</text>
-<rect x="164.0" y="209" width="318.0" height="58" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.2"/>
-<text x="323.0" y="229.75" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">FastAPI</text>
-<text x="323.0" y="245.25" text-anchor="middle" font-size="11" fill="#6b6b6b">HTTP surface</text>
-<text x="323.0" y="258.25" text-anchor="middle" font-size="11" fill="#6b6b6b">request validation</text>
-<rect x="496.0" y="209" width="318.0" height="58" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.2"/>
-<text x="655.0" y="229.75" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">SSE stream</text>
-<text x="655.0" y="245.25" text-anchor="middle" font-size="11" fill="#6b6b6b">sse-starlette</text>
-<text x="655.0" y="258.25" text-anchor="middle" font-size="11" fill="#6b6b6b">turn-level events</text>
-<rect x="828.0" y="209" width="318.0" height="58" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.2"/>
-<text x="987.0" y="236.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Uvicorn</text>
-<text x="987.0" y="251.75" text-anchor="middle" font-size="11" fill="#6b6b6b">ASGI server</text>
-<line x1="655" y1="280" x2="655" y2="306" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
-<rect x="150" y="306" width="1010" height="84" rx="6" fill="#e8f0e8" fill-opacity="0.5" stroke="#5f8560" stroke-width="1.3"/>
-<text x="134" y="345.0" text-anchor="end" font-size="12.5" font-weight="700" fill="#5f8560">ORCHESTRATION</text>
-<text x="134" y="361.0" text-anchor="end" font-size="10.5" fill="#6b6b6b">the debate graph</text>
-<rect x="164.0" y="319" width="318.0" height="58" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.2"/>
-<text x="323.0" y="339.75" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">LangGraph StateGraph</text>
-<text x="323.0" y="355.25" text-anchor="middle" font-size="11" fill="#6b6b6b">concurrent nodes</text>
-<text x="323.0" y="368.25" text-anchor="middle" font-size="11" fill="#6b6b6b">conditional loop edge</text>
-<rect x="496.0" y="319" width="318.0" height="58" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.2"/>
-<text x="655.0" y="339.75" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Round control</text>
-<text x="655.0" y="355.25" text-anchor="middle" font-size="11" fill="#6b6b6b">auto / fixed</text>
-<text x="655.0" y="368.25" text-anchor="middle" font-size="11" fill="#6b6b6b">max_rounds ceiling</text>
-<rect x="828.0" y="319" width="318.0" height="58" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.2"/>
-<text x="987.0" y="339.75" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Run persistence</text>
-<text x="987.0" y="355.25" text-anchor="middle" font-size="11" fill="#6b6b6b">JSON artifacts</text>
-<text x="987.0" y="368.25" text-anchor="middle" font-size="11" fill="#6b6b6b">written on failure too</text>
-<line x1="655" y1="390" x2="655" y2="416" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
-<rect x="150" y="416" width="1010" height="86" rx="6" fill="#e8f0e8" fill-opacity="0.5" stroke="#5f8560" stroke-width="1.3"/>
-<text x="134" y="456.0" text-anchor="end" font-size="12.5" font-weight="700" fill="#5f8560">ROLES</text>
-<text x="134" y="472.0" text-anchor="end" font-size="10.5" fill="#6b6b6b">modules, not services</text>
-<rect x="164.0" y="429" width="235.0" height="60" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.2"/>
-<text x="281.5" y="457.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Presenter</text>
-<text x="281.5" y="472.75" text-anchor="middle" font-size="11" fill="#6b6b6b">builds the case</text>
-<rect x="413.0" y="429" width="235.0" height="60" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.2"/>
-<text x="530.5" y="457.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Attacker — doctrinal</text>
-<text x="530.5" y="472.75" text-anchor="middle" font-size="11" fill="#6b6b6b">legal characterisation</text>
-<rect x="662.0" y="429" width="235.0" height="60" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.2"/>
-<text x="779.5" y="457.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Attacker — evidentiary</text>
-<text x="779.5" y="472.75" text-anchor="middle" font-size="11" fill="#6b6b6b">factual predicate</text>
-<rect x="911.0" y="429" width="235.0" height="60" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.2"/>
-<text x="1028.5" y="457.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Judge</text>
-<text x="1028.5" y="472.75" text-anchor="middle" font-size="11" fill="#6b6b6b">rules + calibrates</text>
-<line x1="655" y1="502" x2="655" y2="528" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
-<rect x="150" y="528" width="1010" height="86" rx="6" fill="#f4eee6" fill-opacity="0.5" stroke="#a3835a" stroke-width="1.3"/>
-<text x="134" y="568.0" text-anchor="end" font-size="12.5" font-weight="700" fill="#a3835a">DOMAIN</text>
-<text x="134" y="584.0" text-anchor="end" font-size="10.5" fill="#6b6b6b">packages/council-core</text>
-<rect x="164.0" y="541" width="235.0" height="60" rx="4" fill="#f4eee6" stroke="#a3835a" stroke-width="1.2"/>
-<text x="281.5" y="569.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Pydantic models</text>
-<text x="281.5" y="584.75" text-anchor="middle" font-size="11" fill="#6b6b6b">typed contracts</text>
-<rect x="413.0" y="541" width="235.0" height="60" rx="4" fill="#f4eee6" stroke="#a3835a" stroke-width="1.2"/>
-<text x="530.5" y="569.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Citation resolver</text>
-<text x="530.5" y="584.75" text-anchor="middle" font-size="11" fill="#6b6b6b">4 statuses</text>
-<rect x="662.0" y="541" width="235.0" height="60" rx="4" fill="#f4eee6" stroke="#a3835a" stroke-width="1.2"/>
-<text x="779.5" y="569.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Prompt loader</text>
-<text x="779.5" y="584.75" text-anchor="middle" font-size="11" fill="#6b6b6b">versioned + hashed</text>
-<rect x="911.0" y="541" width="235.0" height="60" rx="4" fill="#f4eee6" stroke="#a3835a" stroke-width="1.2"/>
-<text x="1028.5" y="569.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Exporters</text>
-<text x="1028.5" y="584.75" text-anchor="middle" font-size="11" fill="#6b6b6b">dissent log</text>
-<line x1="430" y1="614" x2="430" y2="640" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
-<line x1="880" y1="614" x2="880" y2="640" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
-<rect x="150" y="640" width="1010" height="80" rx="6" fill="#f4eee6" fill-opacity="0.5" stroke="#a3835a" stroke-width="1.3"/>
-<text x="134" y="677.0" text-anchor="end" font-size="12.5" font-weight="700" fill="#a3835a">INTEGRATION</text>
-<text x="134" y="693.0" text-anchor="end" font-size="10.5" fill="#6b6b6b">one call path</text>
-<rect x="164.0" y="653" width="484.0" height="54" rx="4" fill="#f4eee6" stroke="#a3835a" stroke-width="1.2"/>
-<text x="406.0" y="678.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">LiteLLM gateway</text>
-<text x="406.0" y="693.75" text-anchor="middle" font-size="11" fill="#6b6b6b">structured output + repair retry</text>
-<rect x="662.0" y="653" width="484.0" height="54" rx="4" fill="#f4eee6" stroke="#a3835a" stroke-width="1.2"/>
-<text x="904.0" y="678.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">fastembed · ONNX</text>
-<text x="904.0" y="693.75" text-anchor="middle" font-size="11" fill="#6b6b6b">BGE-M3 · no PyTorch</text>
-<line x1="430" y1="720" x2="430" y2="746" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
-<line x1="880" y1="720" x2="880" y2="746" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
-<rect x="150" y="746" width="1010" height="86" rx="6" fill="#eef2f7" fill-opacity="0.5" stroke="#5b7fa6" stroke-width="1.3"/>
-<text x="134" y="786.0" text-anchor="end" font-size="12.5" font-weight="700" fill="#5b7fa6">INFRASTRUCTURE</text>
-<text x="134" y="802.0" text-anchor="end" font-size="10.5" fill="#6b6b6b">state and models</text>
-<rect x="164.0" y="759" width="235.0" height="60" rx="4" fill="#eef2f7" stroke="#5b7fa6" stroke-width="1.2"/>
-<text x="281.5" y="787.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Qdrant v1.12.4</text>
-<text x="281.5" y="802.75" text-anchor="middle" font-size="11" fill="#6b6b6b">ihl_corpus collection</text>
-<rect x="413.0" y="759" width="235.0" height="60" rx="4" fill="#eef2f7" stroke="#5b7fa6" stroke-width="1.2"/>
-<text x="530.5" y="787.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Filesystem</text>
-<text x="530.5" y="802.75" text-anchor="middle" font-size="11" fill="#6b6b6b">data/runs · citation index</text>
-<rect x="662.0" y="759" width="235.0" height="60" rx="4" fill="#eef2f7" stroke="#5b7fa6" stroke-width="1.2"/>
-<text x="779.5" y="787.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Mistral · Gemini</text>
-<text x="779.5" y="802.75" text-anchor="middle" font-size="11" fill="#6b6b6b">hosted APIs</text>
-<rect x="911.0" y="759" width="235.0" height="60" rx="4" fill="#eef2f7" stroke="#5b7fa6" stroke-width="1.2"/>
-<text x="1028.5" y="780.75" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Ollama</text>
-<text x="1028.5" y="796.25" text-anchor="middle" font-size="11" fill="#6b6b6b">Qwen 3.5 · Gemma 3</text>
-<text x="1028.5" y="809.25" text-anchor="middle" font-size="11" fill="#6b6b6b">local</text>
-<rect x="150" y="862" width="1010" height="76" rx="6" fill="#f0eef4" fill-opacity="0.5" stroke="#7b6f99" stroke-width="1.3"/>
-<text x="134" y="897.0" text-anchor="end" font-size="12.5" font-weight="700" fill="#7b6f99">PIPELINE</text>
-<text x="134" y="913.0" text-anchor="end" font-size="10.5" fill="#6b6b6b">offline, run to completion</text>
-<rect x="164.0" y="875" width="318.0" height="50" rx="4" fill="#f0eef4" stroke="#7b6f99" stroke-width="1.2"/>
-<text x="323.0" y="898.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Manifests</text>
-<text x="323.0" y="913.75" text-anchor="middle" font-size="11" fill="#6b6b6b">defines corpus scope</text>
-<rect x="496.0" y="875" width="318.0" height="50" rx="4" fill="#f0eef4" stroke="#7b6f99" stroke-width="1.2"/>
-<text x="655.0" y="898.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Fetcher</text>
-<text x="655.0" y="913.75" text-anchor="middle" font-size="11" fill="#6b6b6b">never crawls</text>
-<rect x="828.0" y="875" width="318.0" height="50" rx="4" fill="#f0eef4" stroke="#7b6f99" stroke-width="1.2"/>
-<text x="987.0" y="898.25" text-anchor="middle" font-size="12.5" fill="#1a1a1a" font-weight="600">Indexer</text>
-<text x="987.0" y="913.75" text-anchor="middle" font-size="11" fill="#6b6b6b">chunk · embed · upsert</text>
-<line x1="655" y1="862" x2="655" y2="836" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
-<text x="665" y="852" text-anchor="start" font-size="10.5" fill="#6b6b6b">writes the stores above</text>
-<text x="150" y="962" text-anchor="start" font-size="11" fill="#6b6b6b" font-style="italic">Every tier depends only on the tier beneath it. council-core imports nothing from the services above it, so the domain model is testable without Qdrant or a model call.</text>
-<text x="150" y="980" text-anchor="start" font-size="11" fill="#6b6b6b" font-style="italic">The pipeline is drawn apart because it never runs during a request — it populates the infrastructure tier ahead of time.</text>
+<rect width="1270" height="1090" fill="#ffffff"/>
+<text x="635.0" y="34" text-anchor="middle" font-size="18" fill="#1a1a1a" font-weight="700">Figure 1 — Component Architecture</text>
+<text x="635.0" y="54" text-anchor="middle" font-size="12" fill="#6b6b6b">Every box is a deployment unit: its own container, image and lifecycle</text>
+<rect x="56" y="86" width="1158" height="342" rx="7" fill="#f0eef4" fill-opacity="0.30" stroke="#7b6f99" stroke-width="1.4"/>
+<rect x="60" y="90" width="1150" height="334" rx="4" fill="none" stroke="#7b6f99" stroke-width="0.9" stroke-opacity="0.65"/>
+<rect x="74" y="77" width="450.5" height="19" rx="3" fill="#ffffff" stroke="#7b6f99" stroke-width="1"/>
+<text x="85" y="90" font-size="11.5" font-weight="700" fill="#7b6f99" letter-spacing="0.7">OFFLINE PIPELINE  ·  pipeline/docker-compose.yml  ·  run to completion</text>
+<text x="96" y="126" text-anchor="start" font-size="11.5" fill="#1a1a1a" font-weight="600">ICRC Treaty Database</text>
+<text x="96" y="141" text-anchor="start" font-size="10" fill="#6b6b6b" font-family="Consolas, 'DejaVu Sans Mono', monospace">ihl-databases.icrc.org</text>
+<text x="352" y="126" text-anchor="start" font-size="11.5" fill="#1a1a1a" font-weight="600">ICC · ICJ · ICTY</text>
+<text x="352" y="141" text-anchor="start" font-size="10" fill="#6b6b6b" font-family="Consolas, 'DejaVu Sans Mono', monospace">named decisions only</text>
+<text x="596" y="126" text-anchor="start" font-size="11.5" fill="#1a1a1a" font-weight="600">UN Digital Library</text>
+<text x="596" y="141" text-anchor="start" font-size="10" fill="#6b6b6b" font-family="Consolas, 'DejaVu Sans Mono', monospace">General Assembly resolutions</text>
+<polyline points="150,148 150,178" fill="none" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
+<polyline points="404,148 404,178" fill="none" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
+<polyline points="650,148 650,178" fill="none" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
+<text x="820" y="166" text-anchor="start" font-size="10.5" fill="#6b6b6b">fetched only if named in a manifest — the fetcher never crawls</text>
+<rect x="86" y="178" width="1068" height="76" rx="4" fill="#f0eef4" stroke="#7b6f99" stroke-width="1.3"/>
+<text x="100" y="200" font-size="13" font-weight="700" fill="#1a1a1a">FETCHER</text>
+<text x="1140" y="200" font-size="10.5" fill="#6b6b6b" text-anchor="end" font-family="Consolas, 'DejaVu Sans Mono', monospace">council-fetcher  ·  FROM council-base</text>
+<text x="100" y="218" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  manifest-scoped download: corpus/manifests/{treaties,cases,resolutions}.json</text>
+<text x="100" y="233" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  Tier 1 instruments committed to the repo · Tier 2 fetched · Tier 3 never indexed</text>
+<polyline points="620,254 620,276" fill="none" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
+<text x="636" y="270" text-anchor="start" font-size="10.5" fill="#6b6b6b">data/cache/  — raw documents on disk</text>
+<rect x="86" y="282" width="1068" height="104" rx="4" fill="#f0eef4" stroke="#7b6f99" stroke-width="1.3"/>
+<text x="100" y="304" font-size="13" font-weight="700" fill="#1a1a1a">INDEXER</text>
+<text x="1140" y="304" font-size="10.5" fill="#6b6b6b" text-anchor="end" font-family="Consolas, 'DejaVu Sans Mono', monospace">council-indexer  ·  FROM council-base</text>
+<text x="100" y="322" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  1  chunk at citation granularity — treaty article, judgment paragraph</text>
+<text x="100" y="337" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  2  embed with BGE-M3 via fastembed (ONNX runtime, no PyTorch)</text>
+<text x="100" y="352" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  3  upsert vectors into the Qdrant collection</text>
+<text x="100" y="367" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  4  write the citation index the resolver reads at runtime</text>
+<polyline points="330,386 330,436" fill="none" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
+<polyline points="900,386 900,436" fill="none" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
+<rect x="150" y="438" width="360" height="92" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.3"/>
+<text x="164" y="460" font-size="13" font-weight="700" fill="#1a1a1a">Qdrant</text>
+<text x="496" y="460" font-size="10.5" fill="#6b6b6b" text-anchor="end" font-family="Consolas, 'DejaVu Sans Mono', monospace">:6333  ·  v1.12.4</text>
+<text x="164" y="478" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  collection ihl_corpus</text>
+<text x="164" y="493" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  BGE-M3 dense vectors, cosine</text>
+<text x="164" y="508" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  volume qdrant_data</text>
+<rect x="730" y="438" width="360" height="92" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.3"/>
+<text x="744" y="460" font-size="13" font-weight="700" fill="#1a1a1a">Filesystem</text>
+<text x="1076" y="460" font-size="10.5" fill="#6b6b6b" text-anchor="end" font-family="Consolas, 'DejaVu Sans Mono', monospace">bind mount</text>
+<text x="744" y="478" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  citation index — locator → source text</text>
+<text x="744" y="493" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  data/runs/ — one JSON artifact per run</text>
+<text x="744" y="508" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  written even when a debate fails</text>
+<text x="548" y="474" text-anchor="middle" font-size="10.5" fill="#6b6b6b">the only channel</text>
+<text x="548" y="488" text-anchor="middle" font-size="10.5" fill="#6b6b6b">between the two</text>
+<text x="548" y="502" text-anchor="middle" font-size="10.5" fill="#6b6b6b">regions</text>
+<rect x="56" y="586" width="1158" height="330" rx="7" fill="#e8f0e8" fill-opacity="0.30" stroke="#5f8560" stroke-width="1.4"/>
+<rect x="60" y="590" width="1150" height="322" rx="4" fill="none" stroke="#5f8560" stroke-width="0.9" stroke-opacity="0.65"/>
+<rect x="74" y="577" width="438.20000000000005" height="19" rx="3" fill="#ffffff" stroke="#5f8560" stroke-width="1"/>
+<text x="85" y="590" font-size="11.5" font-weight="700" fill="#5f8560" letter-spacing="0.7">RUNTIME STACK  ·  docker-compose.yml  ·  serves one debate at a time</text>
+<polyline points="330,532 330,626" fill="none" stroke="#1a1a1a" stroke-width="1.4" marker-end="url(#ad)"/>
+<text x="342" y="564" text-anchor="start" font-size="10.5" fill="#6b6b6b">read: top-k retrieval</text>
+<polyline points="900,532 900,626" fill="none" stroke="#1a1a1a" stroke-width="1.4" marker-end="url(#ad)"/>
+<text x="760" y="564" text-anchor="start" font-size="10.5" fill="#6b6b6b">read + write: citations, runs</text>
+<rect x="86" y="626" width="740" height="116" rx="4" fill="#e8f0e8" stroke="#5f8560" stroke-width="1.3"/>
+<text x="100" y="648" font-size="13" font-weight="700" fill="#1a1a1a">api</text>
+<text x="812" y="648" font-size="10.5" fill="#6b6b6b" text-anchor="end" font-family="Consolas, 'DejaVu Sans Mono', monospace">:8000  ·  council-api 924 MB  ·  FROM council-base</text>
+<text x="100" y="666" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  FastAPI + LangGraph StateGraph, compiled once at import</text>
+<text x="100" y="681" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  roles as modules: presenter · attacker ×2 · judge — not four services</text>
+<text x="100" y="696" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  citation resolver invoked at every role boundary</text>
+<text x="100" y="711" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  SSE turn-level stream (POST body, so not EventSource)</text>
+<rect x="860" y="626" width="280" height="116" rx="4" fill="#eef2f7" stroke="#5b7fa6" stroke-width="1.3"/>
+<text x="874" y="648" font-size="13" font-weight="700" fill="#1a1a1a">ollama</text>
+<text x="1126" y="648" font-size="10.5" fill="#6b6b6b" text-anchor="end" font-family="Consolas, 'DejaVu Sans Mono', monospace">:11434</text>
+<text x="874" y="666" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  host by default</text>
+<text x="874" y="681" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  opt-in compose profile</text>
+<text x="874" y="696" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  qwen3.5:14b — doctrinal</text>
+<text x="874" y="711" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  gemma3:12b — evidentiary</text>
+<line x1="828" y1="670" x2="858" y2="670" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
+<text x="760" y="762" text-anchor="start" font-size="10" fill="#6b6b6b" font-family="Consolas, 'DejaVu Sans Mono', monospace">host.docker.internal</text>
+<rect x="86" y="782" width="740" height="104" rx="4" fill="#e4ecf4" stroke="#5b7fa6" stroke-width="1.3"/>
+<text x="100" y="804" font-size="13" font-weight="700" fill="#1a1a1a">frontend</text>
+<text x="812" y="804" font-size="10.5" fill="#6b6b6b" text-anchor="end" font-family="Consolas, 'DejaVu Sans Mono', monospace">:3000 dev · :80 prod  ·  council-frontend 375 MB</text>
+<text x="100" y="822" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  React 18 + TypeScript + Vite 6 + Tailwind + Zustand</text>
+<text x="100" y="837" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  courtroom view — Framer Motion, sprites enact the debate turn by turn</text>
+<text x="100" y="852" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  dissent log view — overruled objections with the judge's reason</text>
+<text x="100" y="867" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  dev: Vite HMR with source bind-mounted · prod: static build behind nginx</text>
+<polyline points="456,744 456,780" fill="none" stroke="#1a1a1a" stroke-width="1.4" marker-end="url(#ad)"/>
+<text x="468" y="766" text-anchor="start" font-size="10.5" fill="#6b6b6b">SSE</text>
+<rect x="860" y="782" width="280" height="104" rx="4" fill="#f4eee6" stroke="#a3835a" stroke-width="1.3"/>
+<text x="874" y="804" font-size="13" font-weight="700" fill="#1a1a1a">council-base</text>
+<text x="1126" y="804" font-size="10.5" fill="#6b6b6b" text-anchor="end" font-family="Consolas, 'DejaVu Sans Mono', monospace">578 MB</text>
+<text x="874" y="822" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  python:3.12-slim</text>
+<text x="874" y="837" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  uv + pinned runtime</text>
+<text x="874" y="852" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  council-core installed</text>
+<text x="874" y="867" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  built once, shared by</text>
+<text x="874" y="882" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  api · fetcher · indexer</text>
+<polyline points="998,780 998,746" fill="none" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
+<text x="1010" y="766" text-anchor="start" font-size="10" fill="#6b6b6b" font-family="Consolas, 'DejaVu Sans Mono', monospace">FROM</text>
+<text x="86" y="942" text-anchor="start" font-size="11.5" fill="#5b7fa6" font-weight="700">EXTERNAL MODEL PROVIDERS</text>
+<rect x="86" y="952" width="520" height="62" rx="4" fill="#eef2f7" stroke="#5b7fa6" stroke-width="1.3"/>
+<text x="100" y="974" font-size="12" font-weight="700" fill="#1a1a1a">Mistral  ·  magistral-medium</text>
+<text x="592" y="974" font-size="10.5" fill="#6b6b6b" text-anchor="end" font-family="Consolas, 'DejaVu Sans Mono', monospace">presenter  ·  free tier</text>
+<text x="100" y="992" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  builds the position — sets the quality ceiling for the debate</text>
+<rect x="634" y="952" width="520" height="62" rx="4" fill="#eef2f7" stroke="#5b7fa6" stroke-width="1.3"/>
+<text x="648" y="974" font-size="12" font-weight="700" fill="#1a1a1a">Google AI Studio  ·  gemini-2.5-pro</text>
+<text x="1140" y="974" font-size="10.5" fill="#6b6b6b" text-anchor="end" font-family="Consolas, 'DejaVu Sans Mono', monospace">judge  ·  100 req/day</text>
+<text x="648" y="992" font-size="11" fill="#6b6b6b"><tspan fill="#9a9a9a">•</tspan>  rules on every objection, calibrates confidence — the binding quota</text>
+<polyline points="346,950 346,928 26,928 26,684 84,684" fill="none" stroke="#9a9a9a" stroke-width="1.4" marker-end="url(#a)"/>
+<text x="360" y="924" text-anchor="start" font-size="10.5" fill="#6b6b6b">LiteLLM gateway — one call path for every role</text>
+<text x="56" y="1048" text-anchor="start" font-size="11" fill="#6b6b6b" font-style="italic">The two regions have separate compose files and never run at the same time. The pipeline produces the stores; the runtime consumes them. Re-run the pipeline only when the corpus changes.</text>
+<text x="56" y="1066" text-anchor="start" font-size="11" fill="#6b6b6b" font-style="italic">Roles are modules inside the api container, not separate services: the debate is sequential, so four containers would buy network hops and nothing else (ADR 0003).</text>
 </svg>

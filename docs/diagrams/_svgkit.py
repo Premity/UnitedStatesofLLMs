@@ -168,3 +168,49 @@ def write(path, parts):
     with open(path, "w", encoding="utf-8") as fh:
         fh.write("".join(parts))
     print(f"wrote {path}")
+
+
+def region(x, y, w, h, title, kind="plain", gap=4):
+    """A double-ruled container, the SVG equivalent of a box-drawing ╔══╗ frame.
+
+    Used for deployment regions that are genuinely separate — a different
+    compose file, a different lifecycle — as opposed to `band`, which groups
+    components that merely belong together.
+    """
+    s = STROKES[kind]
+    f = FILLS[kind]
+    return (
+        f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="7" fill="{f}" '
+        f'fill-opacity="0.30" stroke="{s}" stroke-width="1.4"/>\n'
+        f'<rect x="{x + gap}" y="{y + gap}" width="{w - 2 * gap}" height="{h - 2 * gap}" '
+        f'rx="4" fill="none" stroke="{s}" stroke-width="0.9" stroke-opacity="0.65"/>\n'
+        f'<rect x="{x + 18}" y="{y - 9}" width="{len(title) * 6.15 + 20}" height="19" rx="3" '
+        f'fill="#ffffff" stroke="{s}" stroke-width="1"/>\n'
+        f'<text x="{x + 29}" y="{y + 4}" font-size="11.5" font-weight="700" '
+        f'fill="{s}" letter-spacing="0.7">{esc(title)}</text>\n'
+    )
+
+
+def unit(x, y, w, h, name, meta, lines, kind="local", fs=13):
+    """A deployable unit: bold name, a dim meta string on the same line
+    (port, image), then bulleted internals."""
+    f, s = FILLS[kind], STROKES[kind]
+    out = (
+        f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="4" fill="{f}" '
+        f'stroke="{s}" stroke-width="1.3"/>\n'
+        f'<text x="{x + 14}" y="{y + 22}" font-size="{fs}" font-weight="700" '
+        f'fill="{INK}">{esc(name)}</text>\n'
+    )
+    if meta:
+        out += (
+            f'<text x="{x + w - 14}" y="{y + 22}" font-size="10.5" fill="{MUTED}" '
+            f'text-anchor="end" font-family="{MONO}">{esc(meta)}</text>\n'
+        )
+    ty = y + 40
+    for ln in lines:
+        out += (
+            f'<text x="{x + 14}" y="{ty}" font-size="11" fill="{MUTED}">'
+            f'<tspan fill="{LINE}">•</tspan>  {esc(ln)}</text>\n'
+        )
+        ty += 15
+    return out
