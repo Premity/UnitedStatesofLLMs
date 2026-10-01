@@ -78,6 +78,7 @@ ignore = [
 [tool.ruff.lint.per-file-ignores]
 "**/tests/**" = ["S101"]      # asserts are the point of a test
 "**/__init__.py" = ["F401"]   # re-exports are intentional
+"docs/diagrams/*" = ["RUF001"] # en dashes and × are deliberate in figure labels
 
 [tool.ruff.lint.isort]
 known-first-party = ["council_core", "app", "harness", "metrics"]
