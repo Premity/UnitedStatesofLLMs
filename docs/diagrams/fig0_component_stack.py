@@ -1,4 +1,4 @@
-"""Figure 1 — Component architecture (deployment view).
+"""Component architecture — the deployment view.
 
 Components are *deployment units* — things that start, stop and are versioned
 independently. Each box is one such unit, annotated with the port it listens on
@@ -17,7 +17,7 @@ from _svgkit import arrow, caption, footer, header, poly, region, text, unit, wr
 W, H = 1270, 1090
 p = [header(W, H)]
 
-p.append(text(W / 2, 34, "Figure 1 — Component Architecture", fs=18, weight="700", anchor="middle"))
+p.append(text(W / 2, 34, "Component Architecture", fs=18, weight="700", anchor="middle"))
 p.append(
     text(
         W / 2,

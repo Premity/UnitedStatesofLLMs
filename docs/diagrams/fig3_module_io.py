@@ -1,4 +1,4 @@
-"""Figure 3 — Module input/processing/output.
+"""Module input/processing/output.
 
 One row per major module. Reads left to right: what the module receives, what
 it does with it, what it hands on. The right-hand column names the contract the
@@ -86,7 +86,7 @@ p.append(
     text(
         W / 2,
         34,
-        "Figure 3 — Module Input, Processing and Output",
+        "Module Input, Processing and Output",
         fs=17,
         weight="700",
         anchor="middle",

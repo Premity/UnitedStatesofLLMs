@@ -1,4 +1,4 @@
-"""Figure 2 — Debate workflow flowchart.
+"""Debate workflow flowchart.
 
 One request, start to finish. Two swimlanes: the offline pipeline that must
 have completed before any debate runs, and the per-request flow through the
@@ -13,7 +13,7 @@ from _svgkit import arrow, band, box, caption, diamond, footer, header, poly, st
 W, H = 1180, 1080
 p = [header(W, H)]
 
-p.append(text(W / 2, 34, "Figure 2 — Debate Workflow", fs=17, weight="700", anchor="middle"))
+p.append(text(W / 2, 34, "Debate Workflow", fs=17, weight="700", anchor="middle"))
 p.append(
     text(
         W / 2,

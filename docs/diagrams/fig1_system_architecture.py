@@ -1,4 +1,4 @@
-"""Figure 2 — System architecture (data flow).
+"""System architecture — the data-flow view.
 
 The same components as the stack figure, but arranged by how data moves rather
 than by what sits on what. Reserved gutters keep every long connector clear of
@@ -18,7 +18,7 @@ from _svgkit import arrow, band, box, caption, footer, header, poly, text, write
 W, H = 1300, 900
 p = [header(W, H)]
 
-p.append(text(W / 2, 34, "Figure 2 — System Architecture", fs=17, weight="700", anchor="middle"))
+p.append(text(W / 2, 34, "System Architecture", fs=17, weight="700", anchor="middle"))
 p.append(
     text(
         W / 2,
