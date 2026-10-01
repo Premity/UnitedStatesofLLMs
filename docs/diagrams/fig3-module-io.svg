@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="832"
+     viewBox="0 0 1200 832" font-family="Calibri, Carlito, 'Segoe UI', sans-serif">
+<defs>
+  <marker id="a" viewBox="0 0 10 10" refX="9" refY="5"
+          markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#9a9a9a"/>
+  </marker>
+  <marker id="ad" viewBox="0 0 10 10" refX="9" refY="5"
+          markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a1a"/>
+  </marker>
+</defs>
+<rect width="1200" height="832" fill="#ffffff"/>
+<text x="600.0" y="34" text-anchor="middle" font-size="17" fill="#1a1a1a" font-weight="700">Figure 3 — Module Input, Processing and Output</text>
+<text x="600.0" y="53" text-anchor="middle" font-size="12" fill="#6b6b6b">Each row is one module; the final column is the contract it must not break</text>
+<text x="50" y="116" text-anchor="start" font-size="10.5" fill="#5b7fa6" font-weight="700">MODULE</text>
+<text x="250" y="116" text-anchor="start" font-size="10.5" fill="#5b7fa6" font-weight="700">INPUT</text>
+<text x="490" y="116" text-anchor="start" font-size="10.5" fill="#5b7fa6" font-weight="700">PROCESSING</text>
+<text x="750" y="116" text-anchor="start" font-size="10.5" fill="#5b7fa6" font-weight="700">OUTPUT</text>
+<text x="960" y="116" text-anchor="start" font-size="10.5" fill="#5b7fa6" font-weight="700">MUST NOT BREAK</text>
+<line x1="40" y1="124" x2="1160" y2="124" stroke="#5b7fa6" stroke-width="1.2"/>
+<rect x="40" y="128" width="1120" height="76" fill="#f7f8fa"/>
+<text x="50" y="156" text-anchor="start" font-size="13" fill="#1a1a1a" font-weight="700">Retriever</text>
+<text x="50" y="173" text-anchor="start" font-size="10.5" fill="#6b6b6b" font-family="Consolas, 'DejaVu Sans Mono', monospace">runtime/api</text>
+<rect x="240" y="138" width="230" height="56" rx="3" fill="#eef2f7" stroke="#5b7fa6" stroke-width="0.9"/>
+<text x="250" y="159.0" text-anchor="start" font-size="11" fill="#1a1a1a">question + facts</text>
+<text x="250" y="173.0" text-anchor="start" font-size="11" fill="#1a1a1a">top_k (1–50)</text>
+<rect x="480" y="138" width="250" height="56" rx="3" fill="#e8f0e8" stroke="#5f8560" stroke-width="0.9"/>
+<text x="490" y="159.0" text-anchor="start" font-size="11" fill="#1a1a1a">embed query (BGE-M3, ONNX)</text>
+<text x="490" y="173.0" text-anchor="start" font-size="11" fill="#1a1a1a">cosine search over ihl_corpus</text>
+<rect x="740" y="138" width="200" height="56" rx="3" fill="#f4eee6" stroke="#a3835a" stroke-width="0.9"/>
+<text x="750" y="159.0" text-anchor="start" font-size="11" fill="#1a1a1a">ranked passages</text>
+<text x="750" y="173.0" text-anchor="start" font-size="11" fill="#1a1a1a">each with a locator</text>
+<text x="956" y="159.0" text-anchor="start" font-size="10.5" fill="#6b6b6b">Query embedding model must match</text>
+<text x="956" y="173.0" text-anchor="start" font-size="10.5" fill="#6b6b6b">the indexer's</text>
+<line x1="40" y1="204" x2="1160" y2="204" stroke="#dcdcdc" stroke-width="0.8"/>
+<text x="50" y="232" text-anchor="start" font-size="13" fill="#1a1a1a" font-weight="700">Presenter</text>
+<text x="50" y="249" text-anchor="start" font-size="10.5" fill="#6b6b6b" font-family="Consolas, 'DejaVu Sans Mono', monospace">roles/presenter</text>
+<rect x="240" y="214" width="230" height="56" rx="3" fill="#eef2f7" stroke="#5b7fa6" stroke-width="0.9"/>
+<text x="250" y="228.0" text-anchor="start" font-size="11" fill="#1a1a1a">question + facts</text>
+<text x="250" y="242.0" text-anchor="start" font-size="11" fill="#1a1a1a">retrieved passages</text>
+<text x="250" y="256.0" text-anchor="start" font-size="11" fill="#1a1a1a">prior objections</text>
+<rect x="480" y="214" width="250" height="56" rx="3" fill="#e8f0e8" stroke="#5f8560" stroke-width="0.9"/>
+<text x="490" y="235.0" text-anchor="start" font-size="11" fill="#1a1a1a">build the position</text>
+<text x="490" y="249.0" text-anchor="start" font-size="11" fill="#1a1a1a">rebut in later rounds</text>
+<rect x="740" y="214" width="200" height="56" rx="3" fill="#f4eee6" stroke="#a3835a" stroke-width="0.9"/>
+<text x="750" y="235.0" text-anchor="start" font-size="11" fill="#1a1a1a">Argument[]</text>
+<text x="750" y="249.0" text-anchor="start" font-size="11" fill="#1a1a1a">each with Citation[]</text>
+<text x="956" y="228.0" text-anchor="start" font-size="10.5" fill="#6b6b6b">Sets the quality ceiling —</text>
+<text x="956" y="242.0" text-anchor="start" font-size="10.5" fill="#6b6b6b">attackers can only test the case</text>
+<text x="956" y="256.0" text-anchor="start" font-size="10.5" fill="#6b6b6b">given</text>
+<line x1="40" y1="280" x2="1160" y2="280" stroke="#dcdcdc" stroke-width="0.8"/>
+<rect x="40" y="280" width="1120" height="76" fill="#f7f8fa"/>
+<text x="50" y="308" text-anchor="start" font-size="13" fill="#1a1a1a" font-weight="700">Doctrinal attacker</text>
+<text x="50" y="325" text-anchor="start" font-size="10.5" fill="#6b6b6b" font-family="Consolas, 'DejaVu Sans Mono', monospace">roles/attacker</text>
+<rect x="240" y="290" width="230" height="56" rx="3" fill="#eef2f7" stroke="#5b7fa6" stroke-width="0.9"/>
+<text x="250" y="311.0" text-anchor="start" font-size="11" fill="#1a1a1a">arguments</text>
+<text x="250" y="325.0" text-anchor="start" font-size="11" fill="#1a1a1a">retrieved passages</text>
+<rect x="480" y="290" width="250" height="56" rx="3" fill="#e8f0e8" stroke="#5f8560" stroke-width="0.9"/>
+<text x="490" y="311.0" text-anchor="start" font-size="11" fill="#1a1a1a">attack legal characterisation:</text>
+<text x="490" y="325.0" text-anchor="start" font-size="11" fill="#1a1a1a">tests, elements, interpretation</text>
+<rect x="740" y="290" width="200" height="56" rx="3" fill="#f4eee6" stroke="#a3835a" stroke-width="0.9"/>
+<text x="750" y="311.0" text-anchor="start" font-size="11" fill="#1a1a1a">Objection[]</text>
+<text x="750" y="325.0" text-anchor="start" font-size="11" fill="#1a1a1a">raised_by = doctrinal</text>
+<text x="956" y="311.0" text-anchor="start" font-size="10.5" fill="#6b6b6b">Must leave factual sufficiency to</text>
+<text x="956" y="325.0" text-anchor="start" font-size="10.5" fill="#6b6b6b">its counterpart</text>
+<line x1="40" y1="356" x2="1160" y2="356" stroke="#dcdcdc" stroke-width="0.8"/>
+<text x="50" y="384" text-anchor="start" font-size="13" fill="#1a1a1a" font-weight="700">Evidentiary attacker</text>
+<text x="50" y="401" text-anchor="start" font-size="10.5" fill="#6b6b6b" font-family="Consolas, 'DejaVu Sans Mono', monospace">roles/attacker</text>
+<rect x="240" y="366" width="230" height="56" rx="3" fill="#eef2f7" stroke="#5b7fa6" stroke-width="0.9"/>
+<text x="250" y="387.0" text-anchor="start" font-size="11" fill="#1a1a1a">arguments</text>
+<text x="250" y="401.0" text-anchor="start" font-size="11" fill="#1a1a1a">retrieved passages</text>
+<rect x="480" y="366" width="250" height="56" rx="3" fill="#e8f0e8" stroke="#5f8560" stroke-width="0.9"/>
+<text x="490" y="387.0" text-anchor="start" font-size="11" fill="#1a1a1a">attack the factual predicate:</text>
+<text x="490" y="401.0" text-anchor="start" font-size="11" fill="#1a1a1a">sufficiency, mens rea, attribution</text>
+<rect x="740" y="366" width="200" height="56" rx="3" fill="#f4eee6" stroke="#a3835a" stroke-width="0.9"/>
+<text x="750" y="387.0" text-anchor="start" font-size="11" fill="#1a1a1a">Objection[]</text>
+<text x="750" y="401.0" text-anchor="start" font-size="11" fill="#1a1a1a">raised_by = evidentiary</text>
+<text x="956" y="387.0" text-anchor="start" font-size="10.5" fill="#6b6b6b">Runs concurrently; writes only</text>
+<text x="956" y="401.0" text-anchor="start" font-size="10.5" fill="#6b6b6b">append-only channels</text>
+<line x1="40" y1="432" x2="1160" y2="432" stroke="#dcdcdc" stroke-width="0.8"/>
+<rect x="40" y="432" width="1120" height="76" fill="#f7f8fa"/>
+<text x="50" y="460" text-anchor="start" font-size="13" fill="#1a1a1a" font-weight="700">Citation resolver</text>
+<text x="50" y="477" text-anchor="start" font-size="10.5" fill="#6b6b6b" font-family="Consolas, 'DejaVu Sans Mono', monospace">council-core</text>
+<rect x="240" y="442" width="230" height="56" rx="3" fill="#eef2f7" stroke="#5b7fa6" stroke-width="0.9"/>
+<text x="250" y="463.0" text-anchor="start" font-size="11" fill="#1a1a1a">Citation[] from a role</text>
+<text x="250" y="477.0" text-anchor="start" font-size="11" fill="#1a1a1a">citation index</text>
+<rect x="480" y="442" width="250" height="56" rx="3" fill="#e8f0e8" stroke="#5f8560" stroke-width="0.9"/>
+<text x="490" y="463.0" text-anchor="start" font-size="11" fill="#1a1a1a">look up locator</text>
+<text x="490" y="477.0" text-anchor="start" font-size="11" fill="#1a1a1a">fuzzy-match quote (τ = 0.6)</text>
+<rect x="740" y="442" width="200" height="56" rx="3" fill="#f4eee6" stroke="#a3835a" stroke-width="0.9"/>
+<text x="750" y="463.0" text-anchor="start" font-size="11" fill="#1a1a1a">ResolvedCitation[]</text>
+<text x="750" y="477.0" text-anchor="start" font-size="11" fill="#1a1a1a">one of four statuses</text>
+<text x="956" y="456.0" text-anchor="start" font-size="10.5" fill="#6b6b6b">unresolved ≠ out_of_corpus —</text>
+<text x="956" y="470.0" text-anchor="start" font-size="10.5" fill="#6b6b6b">merging them voids the fabrication</text>
+<text x="956" y="484.0" text-anchor="start" font-size="10.5" fill="#6b6b6b">metric</text>
+<line x1="40" y1="508" x2="1160" y2="508" stroke="#dcdcdc" stroke-width="0.8"/>
+<text x="50" y="536" text-anchor="start" font-size="13" fill="#1a1a1a" font-weight="700">Judge</text>
+<text x="50" y="553" text-anchor="start" font-size="10.5" fill="#6b6b6b" font-family="Consolas, 'DejaVu Sans Mono', monospace">roles/judge</text>
+<rect x="240" y="518" width="230" height="56" rx="3" fill="#eef2f7" stroke="#5b7fa6" stroke-width="0.9"/>
+<text x="250" y="539.0" text-anchor="start" font-size="11" fill="#1a1a1a">arguments + objections</text>
+<text x="250" y="553.0" text-anchor="start" font-size="11" fill="#1a1a1a">with citation statuses</text>
+<rect x="480" y="518" width="250" height="56" rx="3" fill="#e8f0e8" stroke="#5f8560" stroke-width="0.9"/>
+<text x="490" y="539.0" text-anchor="start" font-size="11" fill="#1a1a1a">rule on every objection</text>
+<text x="490" y="553.0" text-anchor="start" font-size="11" fill="#1a1a1a">price residual uncertainty</text>
+<rect x="740" y="518" width="200" height="56" rx="3" fill="#f4eee6" stroke="#a3835a" stroke-width="0.9"/>
+<text x="750" y="539.0" text-anchor="start" font-size="11" fill="#1a1a1a">Verdict</text>
+<text x="750" y="553.0" text-anchor="start" font-size="11" fill="#1a1a1a">confidence ∈ [0,1]</text>
+<text x="956" y="539.0" text-anchor="start" font-size="10.5" fill="#6b6b6b">Must rule on every objection —</text>
+<text x="956" y="553.0" text-anchor="start" font-size="10.5" fill="#6b6b6b">silence is not a ruling</text>
+<line x1="40" y1="584" x2="1160" y2="584" stroke="#dcdcdc" stroke-width="0.8"/>
+<rect x="40" y="584" width="1120" height="76" fill="#f7f8fa"/>
+<text x="50" y="612" text-anchor="start" font-size="13" fill="#1a1a1a" font-weight="700">Orchestrator</text>
+<text x="50" y="629" text-anchor="start" font-size="10.5" fill="#6b6b6b" font-family="Consolas, 'DejaVu Sans Mono', monospace">graph/workflow</text>
+<rect x="240" y="594" width="230" height="56" rx="3" fill="#eef2f7" stroke="#5b7fa6" stroke-width="0.9"/>
+<text x="250" y="615.0" text-anchor="start" font-size="11" fill="#1a1a1a">DebateConfig</text>
+<text x="250" y="629.0" text-anchor="start" font-size="11" fill="#1a1a1a">GraphState</text>
+<rect x="480" y="594" width="250" height="56" rx="3" fill="#e8f0e8" stroke="#5f8560" stroke-width="0.9"/>
+<text x="490" y="615.0" text-anchor="start" font-size="11" fill="#1a1a1a">sequence roles</text>
+<text x="490" y="629.0" text-anchor="start" font-size="11" fill="#1a1a1a">apply termination rules</text>
+<rect x="740" y="594" width="200" height="56" rx="3" fill="#f4eee6" stroke="#a3835a" stroke-width="0.9"/>
+<text x="750" y="615.0" text-anchor="start" font-size="11" fill="#1a1a1a">completed debate</text>
+<text x="750" y="629.0" text-anchor="start" font-size="11" fill="#1a1a1a">turn stream</text>
+<text x="956" y="615.0" text-anchor="start" font-size="10.5" fill="#6b6b6b">max_rounds is an absolute ceiling</text>
+<text x="956" y="629.0" text-anchor="start" font-size="10.5" fill="#6b6b6b">in every mode</text>
+<line x1="40" y1="660" x2="1160" y2="660" stroke="#dcdcdc" stroke-width="0.8"/>
+<text x="50" y="688" text-anchor="start" font-size="13" fill="#1a1a1a" font-weight="700">Exporter</text>
+<text x="50" y="705" text-anchor="start" font-size="10.5" fill="#6b6b6b" font-family="Consolas, 'DejaVu Sans Mono', monospace">council-core</text>
+<rect x="240" y="670" width="230" height="56" rx="3" fill="#eef2f7" stroke="#5b7fa6" stroke-width="0.9"/>
+<text x="250" y="698.0" text-anchor="start" font-size="11" fill="#1a1a1a">completed run artifact</text>
+<rect x="480" y="670" width="250" height="56" rx="3" fill="#e8f0e8" stroke="#5f8560" stroke-width="0.9"/>
+<text x="490" y="691.0" text-anchor="start" font-size="11" fill="#1a1a1a">render dissent log</text>
+<text x="490" y="705.0" text-anchor="start" font-size="11" fill="#1a1a1a">resolve citations for display</text>
+<rect x="740" y="670" width="200" height="56" rx="3" fill="#f4eee6" stroke="#a3835a" stroke-width="0.9"/>
+<text x="750" y="691.0" text-anchor="start" font-size="11" fill="#1a1a1a">reviewable document</text>
+<text x="750" y="705.0" text-anchor="start" font-size="11" fill="#1a1a1a">Markdown / JSON</text>
+<text x="956" y="691.0" text-anchor="start" font-size="10.5" fill="#6b6b6b">Overruled objections are the</text>
+<text x="956" y="705.0" text-anchor="start" font-size="10.5" fill="#6b6b6b">deliverable, not an appendix</text>
+<line x1="40" y1="736" x2="1160" y2="736" stroke="#dcdcdc" stroke-width="0.8"/>
+<text x="40" y="764" text-anchor="start" font-size="11" fill="#6b6b6b" font-style="italic">The two attackers share one implementation class, differing only by prompt template and model, so disabling one changes nothing about the other.</text>
+<text x="40" y="782" text-anchor="start" font-size="11" fill="#6b6b6b" font-style="italic">raised_by is overwritten with the true role after parsing, so a model cannot attribute objections to its counterpart and distort the independence metric.</text>
+<text x="40" y="800" text-anchor="start" font-size="11" fill="#6b6b6b" font-style="italic">Every module's output is validated against a schema before the next module sees it; a parse failure is retried once with the validation error attached.</text>
+</svg>
