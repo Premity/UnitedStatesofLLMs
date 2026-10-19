@@ -141,6 +141,12 @@ test-cov: ## Run tests with a coverage report
 .PHONY: check
 check: lint test ## Everything CI runs, locally
 
+# ── Figures ───────────────────────────────────────────────────────────────────
+
+.PHONY: figures
+figures: ## Regenerate the design figures (SVG, stdlib only)
+	@cd docs/diagrams && for f in fig*.py; do python3 "$$f"; done
+
 # ── Evaluation ────────────────────────────────────────────────────────────────
 
 .PHONY: eval

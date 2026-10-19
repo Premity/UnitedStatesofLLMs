@@ -27,22 +27,58 @@ retrieve → present ───┤                        ├──→ judge ─�
 
 ## Components
 
-| Component | Path | Responsibility |
-| --- | --- | --- |
-| **council-core** | `packages/council-core/` | Domain models, LLM gateway, citation validation, prompt loading, exports |
-| **api** | `runtime/api/` | LangGraph orchestration, SSE streaming, run persistence |
-| **frontend** | `runtime/frontend/` | Courtroom view, dissent log, citation inspection |
-| **fetcher** | `pipeline/fetcher/` | Downloads the manifest-defined corpus |
-| **indexer** | `pipeline/indexer/` | Chunks, embeds, writes Qdrant + citation index |
-| **evaluation** | `evaluation/` | Ablation arms, metrics, case fixtures |
+**A component is a deployment unit:** its own container image, its own
+lifecycle, and a boundary other components cross only through a declared
+interface — a port, a file format, a function signature. Three questions decide
+whether something qualifies:
+
+1. Can it be started, stopped, rebuilt or versioned without rebuilding its
+   neighbours?
+2. Do its neighbours reach it only through that declared interface, never
+   through its internals?
+3. Can it fail without taking the rest down, observably from outside?
+
+| Component | Path | Interface | Responsibility |
+| --- | --- | --- | --- |
+| **api** | `runtime/api/` | `:8000` HTTP + SSE | Debate orchestration, citation resolution, run persistence |
+| **frontend** | `runtime/frontend/` | `:3000` dev, `:80` prod | Courtroom view, dissent log, citation inspection |
+| **qdrant** | *(image)* | `:6333` | Holds the `ihl_corpus` collection |
+| **ollama** | *(image)* | `:11434` | Serves both attacker models locally |
+| **fetcher** | `pipeline/fetcher/` | reads manifests → `data/cache/` | Downloads the manifest-defined corpus |
+| **indexer** | `pipeline/indexer/` | `data/cache/` → Qdrant + index | Chunks, embeds, writes the citation index |
+
+### What is deliberately *not* a component
+
+This matters more than the list above, because the exclusions are where the
+word usually gets stretched.
+
+- **The four roles** — presenter, two attackers, judge — are Python modules
+  inside the `api` container, sharing its process and lifecycle. They look like
+  independent agents and are often drawn as four boxes, but the debate is
+  sequential: only the attacker pair ever overlaps, and that pair shares memory
+  rather than a network. Four containers would buy serialisation and network
+  hops and nothing else — [ADR 0003](adr/0003-single-orchestrator-service.md).
+- **`council-core`** is a library, compiled into whatever imports it. It ships
+  as the `council-base` image that `api`, `fetcher` and `indexer` all build
+  `FROM`, which is the only form in which it is deployed.
+- **`evaluation`** is a harness run by hand, not a service. It has no image, no
+  port and no uptime.
 
 The dependency arrow points one way: services import from `council-core`;
 `council-core` imports from nothing in the repo. That keeps the domain model
 testable without standing up Qdrant or calling a model.
 
-**One orchestrator service, not four.** The debate is sequential and the roles
-share nearly everything, so roles are modules rather than containers — see
-[ADR 0003](adr/0003-single-orchestrator-service.md).
+### Two regions, one interface
+
+The components divide into an **offline pipeline** (`fetcher`, `indexer`) and an
+**online runtime** (`api`, `frontend`, `qdrant`, `ollama`). They have separate
+compose files and never run at the same time.
+
+The only channel between them is the two datastores: the pipeline writes the
+Qdrant collection and the citation index, the runtime reads them. There is no
+network path, no shared process, no API call. That is what makes a corpus
+rebuild safe to run while the service is up, and what lets the runtime be tested
+against a frozen corpus snapshot.
 
 ---
 

@@ -2,6 +2,20 @@
 
 Current as of the initial scaffold, 2026-08-31.
 
+> **Planning this work?** These items are scheduled as tracks and tasks in
+> [docs/planning/implementation-plan.md](docs/planning/implementation-plan.md).
+> This file records *what* is missing; the plan records *who does it when* and
+> what "done" means.
+
+| Item below | Track |
+| --- | --- |
+| Corpus fetcher | T1-2, T1-3 |
+| Corpus indexer | T1-4, T1-5, T1-6 |
+| Evaluation harness runner | T4-1, T4-2, T4-3 |
+| Arm E — the compute-matched control | T2-4, T2-5 |
+| Evaluation case fixtures | TF |
+| Sprite artwork | T3 stretch |
+
 ---
 
 ## Not yet implemented
@@ -55,6 +69,36 @@ to `data/cache/<id>.json`, and flips the manifest entry's `status` to `fetched`.
 - Reasoning-overlap scoring (rubric or LLM judge)
 
 Metrics themselves (calibration, independence, citations) are implemented.
+
+---
+
+### [MEDIUM] Arm E — the compute-matched control
+
+`evaluation/harness/arms.py` defines arms A–D. Arm E, the self-consistency
+control, is specified but not written.
+
+It runs the presenter alone with retrieval, samples it *n* times at a
+temperature that produces genuine variation, and aggregates the samples into one
+answer and one confidence. *n* is set so that total model calls match arm D on
+the same case — that matching is the whole point, so it is computed from D's
+actual call count, not fixed in advance.
+
+Needed:
+
+- An `Arm` variant carrying a sample count rather than an attacker tuple; the
+  current dataclass assumes one call per role
+- An aggregation rule over samples — majority vote on the outcome, with the
+  agreement rate as the confidence, is the obvious starting point
+- The judge runs **once** over the aggregated answer, so E's judge cost stays
+  near arm B's
+
+**Why it matters:** without E, a D-vs-B comparison cannot separate the benefit
+of adversarial structure from the benefit of spending more compute, which is the
+specific criticism levelled at the multi-agent debate literature. Objective 2 is
+stated against this baseline, so the headline claim is unfalsifiable until E
+runs.
+
+See [docs/evaluation.md](docs/evaluation.md) for the full ladder.
 
 ---
 

@@ -490,7 +490,8 @@ miss looks like fabrication and §9.3 measures nothing.
 
 ### 9.1 Ablation ladder
 
-Each arm differs from the one above in **exactly one** respect.
+Arms A–D form a ladder, each differing from the one above in **exactly one**
+respect. Arm E sits beside D as a control, not on the ladder.
 
 | Arm | Retrieval | Attackers | Max rounds | Isolates |
 | --- | --- | --- | --- | --- |
@@ -498,9 +499,22 @@ Each arm differs from the one above in **exactly one** respect.
 | **B** `rag` | ✓ | 0 | 1 | Contribution of grounding alone |
 | **C** `single_attacker` | ✓ | 1 (doctrinal) | 2 | Contribution of adversarial challenge |
 | **D** `full_council` | ✓ | 2 | 3 | Whether the second attacker earns its place |
+| **E** `self_consistency` | ✓ | 0, sampled *n*× | 1 | Whether D's gain is structural or merely more compute |
 
 Arm B exists so the council is not credited for gains produced by retrieval
 alone — without it, "beats a raw LLM" is an uninteresting claim.
+
+**Arm E is the control that makes the claim falsifiable.** A debate spends
+several model calls per question. The multi-agent debate literature reports
+gains but has been criticised for not separating the contribution of the
+adversarial structure from that of the additional computation the structure
+consumes. D-vs-B inherits that weakness; D-vs-E does not. Its *n* is set so that
+total model calls match arm D on the same case, and the comparison is reported
+whichever way it falls.
+
+> **Status:** `arms.py` implements A–D. Arm E requires compute-matched sampling
+> and an aggregation rule over the samples; neither is written. Tracked in
+> [ISSUES.md](../ISSUES.md).
 
 ### 9.2 Ground truth
 
@@ -584,10 +598,12 @@ The judge's daily cap is the binding constraint. `MAX_CONCURRENT_DEBATES`
 (default 2) bounds concurrency via semaphore — unbounded concurrency exhausts
 the quota and every in-flight run fails together.
 
-**Capacity implication:** a 4-arm × 60-case evaluation exceeds 100 judge calls
+**Capacity implication:** a full ablation over 60 cases exceeds 100 judge calls
 and must span days, or run the judge locally for iteration and use the API model
 only for the final scored run. Which was used **changes the result** and must be
-recorded.
+recorded. Arm E does not change this materially — it aggregates several
+presenter samples but judges once per case, so its judge cost is close to arm
+B's.
 
 ### 10.3 Streaming
 
