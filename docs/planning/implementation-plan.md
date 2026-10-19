@@ -83,9 +83,12 @@ subparagraphs, not just articles. If `ap_i/art.51` is the finest granularity we
 index, that citation cannot resolve, and it will be reported as `unresolved` —
 which reads as fabrication and poisons the headline metric.
 
-Settle: separator, case, how subparagraphs and sub-subparagraphs are expressed,
-and what a judgment paragraph looks like. Then write
-[ADR 0008](../adr/).
+**The code has in fact already settled this.** `Citation.locator()` renders
+`ap_i/art.51(2)` and `icty_galic_tj/para.58`, with subparagraphs carried inside
+the article string. So D1 is a *confirmation*, not an open choice: agree the
+existing format is right, write [ADR 0008](../adr/) to record it, and extend
+`test_locator_formats_are_stable` to cover subparagraphs. Do not invent a second
+format.
 
 > **This format is permanent.** It is written into every stored run artifact.
 > See non-negotiable #5 in [CLAUDE.md](../../CLAUDE.md).
@@ -95,6 +98,10 @@ and what a judgment paragraph looks like. Then write
 ## T0 — First light
 
 **Goal:** prove the debate graph runs against four live models.
+
+> **This track has a step-by-step runbook:
+> [t0-runbook.md](t0-runbook.md).** Use it — the tasks below say what done looks
+> like, the runbook says what to type and in what order.
 
 Why this is first: ~2,900 lines of domain and orchestration code have never
 executed against a real model. If the parallel fan-in breaks, or a 12B model cannot produce

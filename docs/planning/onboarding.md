@@ -218,3 +218,4 @@ working four times as long. See [fixtures-guide.md](fixtures-guide.md).
 | What is the corpus? | [corpus.md](../corpus.md) |
 | How do I write a fixture? | [fixtures-guide.md](fixtures-guide.md) |
 | What am I doing this week? | [implementation-plan.md](implementation-plan.md) · [timeline.md](timeline.md) |
+| How do I get the first debate running? | [t0-runbook.md](t0-runbook.md) |
