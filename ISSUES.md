@@ -2,6 +2,20 @@
 
 Current as of the initial scaffold, 2026-08-31.
 
+> **Planning this work?** These items are scheduled as tracks and tasks in
+> [docs/planning/implementation-plan.md](docs/planning/implementation-plan.md).
+> This file records *what* is missing; the plan records *who does it when* and
+> what "done" means.
+
+| Item below | Track |
+| --- | --- |
+| Corpus fetcher | T1-2, T1-3 |
+| Corpus indexer | T1-4, T1-5, T1-6 |
+| Evaluation harness runner | T4-1, T4-2, T4-3 |
+| Arm E — the compute-matched control | T2-4, T2-5 |
+| Evaluation case fixtures | TF |
+| Sprite artwork | T3 stretch |
+
 ---
 
 ## Not yet implemented

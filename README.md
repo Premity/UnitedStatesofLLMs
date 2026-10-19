@@ -91,8 +91,8 @@ it, because the check never reads the model's prose.
 ## Does it actually work?
 
 That is an empirical question, and the repo is set up to answer it honestly
-rather than to flatter the design. Four arms, each differing from the last in
-exactly one respect:
+rather than to flatter the design. Arms A–D form a ladder, each differing from
+the last in exactly one respect. Arm E sits beside D as a control:
 
 | Arm | Configuration | Isolates |
 | --- | --- | --- |
@@ -100,6 +100,13 @@ exactly one respect:
 | **B** | Single pass + retrieval | What grounding alone contributes |
 | **C** | Presenter + 1 attacker + judge | What adversarial challenge contributes |
 | **D** | Full council (2 attackers) | Whether the second attacker earns its place |
+| **E** | One model sampled *n* times, *n* matched to D's call count | Whether D's gain is structural, or just more compute |
+
+Arm E is the one that makes the central claim falsifiable. A debate spends
+several model calls per question, and the multi-agent debate literature has been
+criticised for not separating the benefit of the adversarial structure from the
+benefit of the extra computation it consumes. If the council cannot beat a
+compute-matched baseline, that is a real finding and we report it.
 
 Scored against adjudicated cases where a tribunal's holding is the ground truth:
 
@@ -138,9 +145,29 @@ Then open **http://localhost:3000**.
 
 Run `make help` for everything else.
 
-> **Note:** the corpus fetcher and indexer are scaffolded but not yet
-> implemented — see [ISSUES.md](ISSUES.md). Until they are, retrieval returns
-> nothing and every citation resolves as `out_of_corpus`.
+### Project status
+
+**This is a scaffold under active construction.** The domain model, debate
+graph, roles, API and frontend are written; the corpus pipeline is not, and the
+system has not yet been run end to end against live models.
+
+| Area | State |
+| --- | --- |
+| Domain model, citation resolver | Written, tested |
+| Debate graph, roles, SSE, persistence | Written, tested — not yet run live |
+| Frontend | Written — not yet run against a real stream |
+| Evaluation metrics | Written, untested |
+| Evaluation harness runner | Not started |
+| Corpus fetcher and indexer | **Scaffold only** |
+
+Until the pipeline lands, `make corpus` does nothing, retrieval returns nothing,
+and every citation resolves as `out_of_corpus`.
+
+Building on this? Start with
+**[docs/planning/onboarding.md](docs/planning/onboarding.md)**, then pick up a
+task from the
+[implementation plan](docs/planning/implementation-plan.md). Open items are in
+[ISSUES.md](ISSUES.md).
 
 ---
 
@@ -162,6 +189,16 @@ Whimsy in the presentation, sobriety in the record.
 ---
 
 ## How it is put together
+
+![Component architecture](docs/diagrams/fig0-component-stack.svg)
+
+Two regions that never run at the same time. The **offline pipeline** fetches
+and indexes the corpus; the **online runtime** serves debates. They share no
+network path and no process — the only channel between them is the two
+datastores drawn in the middle. That is what makes a corpus rebuild safe to run
+while the service is up.
+
+The debate itself happens inside the `api` container:
 
 ```
                         ┌─ attacker: doctrinal ──┐
@@ -192,9 +229,10 @@ the debate once the attackers stop raising anything new. Always bounded.
 ```
 
 **No PyTorch anywhere.** Embeddings run through fastembed's ONNX runtime —
-66MB against PyTorch+CUDA's ~2.5GB — so there is no shared-base-image dance, no
-CUDA wheel variants, and nobody downloads CUDA fifteen times.
-([ADR 0001](docs/adr/0001-no-torch-fastembed.md))
+66MB against PyTorch+CUDA's ~2.5GB — so there are no CUDA wheel variants and
+nobody downloads CUDA fifteen times. The three Python services still share a
+`council-base` image holding the pinned runtime, `uv` and `council-core`, built
+once and reused. ([ADR 0001](docs/adr/0001-no-torch-fastembed.md))
 
 **Every model behind one gateway.** LiteLLM means switching the attackers from
 local Ollama to Cloudflare Workers AI for a hosted demo is an env-var change,
@@ -204,8 +242,15 @@ not a code change. ([ADR 0002](docs/adr/0002-litellm-model-gateway.md))
 
 ## Documentation
 
+**New to the project? Start with
+[docs/planning/onboarding.md](docs/planning/onboarding.md).**
+
 | Document | What it covers |
 | --- | --- |
+| [docs/planning/onboarding.md](docs/planning/onboarding.md) | **Start here** — what works today, how to run it, how to pick up work |
+| [docs/planning/implementation-plan.md](docs/planning/implementation-plan.md) | The five tracks, every task, what blocks what |
+| [docs/planning/timeline.md](docs/planning/timeline.md) | Three-week schedule, the quota constraint, what gets cut |
+| [docs/planning/fixtures-guide.md](docs/planning/fixtures-guide.md) | How to write an evaluation case without leaking the holding |
 | [docs/system-design.md](docs/system-design.md) | **Full system design** — requirements, components, data flow, failure modes |
 | [docs/architecture.md](docs/architecture.md) | Narrative walkthrough of the debate graph |
 | [docs/development.md](docs/development.md) | Every command, the dev loop, troubleshooting |
