@@ -113,6 +113,10 @@ fetch: ## Download the curated corpus (reads corpus/manifests/)
 index: ## Chunk, embed, and index the corpus (runtime stack must be up)
 	$(COMPOSE_PIPE) run --rm indexer
 
+.PHONY: index-local
+index-local: ## Index on the host under a memory cap (no Docker; see MEM_CAP)
+	@bash scripts/index-safely.sh
+
 .PHONY: corpus
 corpus: fetch index ## Fetch and index in one go
 

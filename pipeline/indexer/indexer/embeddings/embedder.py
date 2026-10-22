@@ -44,17 +44,24 @@ class Embedder:
             f"Run TextEmbedding.list_supported_models() to see what is available."
         )
 
-    def embed_spans(self, spans: list[Span], *, batch_size: int = 32) -> Iterator[list[float]]:
+    def embed_spans(self, spans: list[Span], *, batch_size: int = 16) -> Iterator[list[float]]:
         """Embed each span in order.
 
         A span is embedded with its parent's locator prepended when it has one:
         some treaty articles are a single line, and "those which are not
         directed at a specific military objective" retrieves poorly without
         the article it qualifies.
+
+        Spans are fed through in slices rather than handed over whole, so peak
+        memory does not scale with the size of the document. The Rome Statute
+        is 946 spans; embedding them in one call alongside a 1.2GB model is
+        enough to get the process OOM-killed on a 16GB laptop.
         """
-        texts = [self._embedding_text(span) for span in spans]
-        for vector in self.model.embed(texts, batch_size=batch_size):
-            yield vector.tolist()
+        for start in range(0, len(spans), batch_size):
+            window = spans[start : start + batch_size]
+            texts = [self._embedding_text(span) for span in window]
+            for vector in self.model.embed(texts, batch_size=batch_size):
+                yield vector.tolist()
 
     @staticmethod
     def _embedding_text(span: Span) -> str:
