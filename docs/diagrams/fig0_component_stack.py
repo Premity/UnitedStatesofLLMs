@@ -248,7 +248,7 @@ p.append(
         EY + 14,
         520,
         62,
-        "Mistral  ·  magistral-medium",
+        "Groq  ·  gpt-oss-120b",
         "presenter  ·  free tier",
         ["builds the position — sets the quality ceiling for the debate"],
         kind="external",

@@ -140,10 +140,15 @@ judge swap mid-run makes the calibration numbers incomparable.
 
 ### [MEDIUM] Presenter moved from Mistral to Groq
 
-Mistral returned 429 on the first request from a fresh free-tier account. The
-presenter now defaults to Groq (`groq/llama-3.3-70b-versatile`; one machine runs
-`groq/openai/gpt-oss-120b`). This changes the system under evaluation: state the
-presenter model in the report. Needs an ADR if it stays.
+Mistral returned 429 on the first request from a fresh free-tier account.
+
+Settled by [ADR 0009](docs/adr/0009-presenter-on-groq.md): the presenter is
+**`groq/openai/gpt-oss-120b`**, one pinned id. During T0 the two machines ran
+different Groq models, which are different families and not comparable — if you
+have results from `llama-3.3-70b-versatile`, they were produced on a different
+system under test.
+
+The roster is frozen from the start of the scored run until it finishes.
 
 ### [MEDIUM] Retrieval off means no citations at all
 
