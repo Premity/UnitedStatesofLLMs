@@ -18,9 +18,10 @@ from enum import StrEnum
 
 from pydantic import BaseModel, Field, field_validator, model_validator
 
-# Matches the two locator forms in ADR 0008:
+# Matches the locator forms in ADR 0008:
 #   <instrument>/art.<article>    ap_i/art.51(2), rome_statute/art.8(2)(b)(iv)
 #   <case_id>/para.<paragraph>    icty_galic_tj/para.58
+#   customary_ihl/rule.<n>        customary_ihl/rule.14
 #
 # Sub-paragraphs are parenthesised, so `ap_i/art.51.2` and `ap_i/art.51/para.2`
 # are rejected rather than silently indexed alongside `ap_i/art.51(2)` -- two
@@ -29,6 +30,7 @@ LOCATOR_RE = re.compile(
     r"^[a-z0-9_]+/(?:"
     r"art\.[0-9]+[a-z]?(?:\s?(?:bis|ter|quater))?(?:\([0-9A-Za-z]+\))*"
     r"|para\.[0-9]+[a-z]?"
+    r"|rule\.[0-9]+"
     r")$"
 )
 
@@ -38,6 +40,7 @@ class DocumentType(StrEnum):
 
     TREATY = "treaty"
     CASE = "case"
+    CUSTOMARY = "customary"
     RESOLUTION = "resolution"
 
 
@@ -57,6 +60,9 @@ class Span(BaseModel):
     )
     paragraph: str | None = Field(
         default=None, description="Paragraph number for case spans, e.g. '58'."
+    )
+    rule_number: int | None = Field(
+        default=None, description="Rule number for customary IHL spans, 1-161."
     )
     heading: str | None = Field(
         default=None, description="The provision's own title, where the source gives one."
@@ -115,10 +121,13 @@ class CorpusDocument(BaseModel):
         A span filed under the wrong document is indexed under a locator nobody
         cites, so the provision silently goes missing from the corpus.
         """
-        # A treaty is cited by article and a judgment by paragraph. Mixing the
-        # forms produces a locator no model will ever emit, so the provision is
-        # indexed but unreachable.
-        expected = "para." if self.type is DocumentType.CASE else "art."
+        # Each kind of authority has one citation form. Mixing them produces a
+        # locator no model will ever emit, so the provision is indexed but
+        # unreachable.
+        expected = {
+            DocumentType.CASE: "para.",
+            DocumentType.CUSTOMARY: "rule.",
+        }.get(self.type, "art.")
 
         seen: set[str] = set()
         for span in self.spans:

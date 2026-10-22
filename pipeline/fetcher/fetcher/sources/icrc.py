@@ -6,6 +6,7 @@ which is public and unauthenticated:
 
     /jsonapi/node/treaty                              every treaty, 50 per page
     /jsonapi/node/treaty/{uuid}/field_treaty_content  one treaty, by article
+    /jsonapi/node/rule                                the 161 customary rules
 
 That API is **undocumented**. There is no published contract, no versioning and
 no deprecation notice, so every raw response is written to the cache before
@@ -28,6 +29,7 @@ log = structlog.get_logger(__name__)
 
 BASE_URL = "https://ihl-databases.icrc.org"
 NODE_PATH = "/jsonapi/node/treaty"
+RULE_PATH = "/jsonapi/node/rule"
 
 # These are public institutional archives. Identify the client, and keep the
 # request count to roughly one per document.
@@ -116,6 +118,32 @@ class IcrcClient:
             offset += page_size
         log.info("icrc_treaties_listed", count=len(rows))
         return rows
+
+    def fetch_customary_rules(self, *, page_size: int = 50) -> list[dict]:
+        """Every customary IHL rule node, following pagination.
+
+        Snapshotted like a treaty: the endpoint is just as undocumented.
+        """
+        rows: list[dict] = []
+        offset = 0
+        while True:
+            payload = self._get(
+                RULE_PATH,
+                params={"page[offset]": offset, "page[limit]": page_size},
+            )
+            batch = payload.get("data", [])
+            rows.extend(batch)
+            if len(batch) < page_size:
+                break
+            offset += page_size
+
+        if not rows:
+            raise IcrcFetchError(
+                "The customary rules endpoint returned nothing. It has probably moved."
+            )
+        self._snapshot("customary_rules", {"data": rows})
+        log.info("icrc_rules_fetched", count=len(rows))
+        return [row.get("attributes", {}) for row in rows]
 
     def fetch_treaty_content(self, node_uuid: str) -> list[dict]:
         """The article entries of one treaty, newest snapshot written to cache.

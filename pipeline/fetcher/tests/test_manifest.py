@@ -79,15 +79,42 @@ def test_unindexed_rome_amendments_record_why(by_id: dict) -> None:
         assert gap["icrc_node"]
 
 
-def test_the_planned_instruments_are_all_present(by_id: dict) -> None:
-    assert set(by_id) == {
-        "gc_i",
-        "gc_ii",
-        "gc_iii",
-        "gc_iv",
-        "ap_i",
-        "ap_ii",
-        "rome_statute",
-        "hague_iv",
-        "hague_iv_regs",
-    }
+CORE_INSTRUMENTS = {
+    "gc_i",
+    "gc_ii",
+    "gc_iii",
+    "gc_iv",
+    "ap_i",
+    "ap_ii",
+    "rome_statute",
+    "hague_iv",
+    "hague_iv_regs",
+}
+
+
+def test_the_core_instruments_are_all_present(by_id: dict) -> None:
+    """The set the evaluation fixtures actually turn on."""
+    assert set(by_id) >= CORE_INSTRUMENTS
+
+
+def test_every_ccw_protocol_is_its_own_corpus_id(by_id: dict) -> None:
+    """Each protocol numbers its articles from 1, so one shared id would make
+    `ccw/art.2` ambiguous across five documents -- the Hague IV problem again
+    (ADR 0010)."""
+    for protocol in ("ccw_p_ii", "ccw_p_iii", "ccw_p_iv", "ccw_p_v"):
+        assert protocol in by_id
+        assert by_id[protocol]["icrc_node"] != by_id["ccw"]["icrc_node"]
+
+
+def test_each_instrument_has_a_distinct_source_node(manifest: dict) -> None:
+    """Two ids on one node is how Hague IV works, and only Hague IV: anywhere
+    else it means a copy-pasted uuid, which would index the wrong treaty."""
+    from collections import Counter
+
+    shared = [
+        node
+        for node, count in Counter(i["icrc_node"] for i in manifest["instruments"]).items()
+        if count > 1
+    ]
+    hague = {i["icrc_node"] for i in manifest["instruments"] if i["id"].startswith("hague_iv")}
+    assert set(shared) <= hague

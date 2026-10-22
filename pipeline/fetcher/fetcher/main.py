@@ -21,6 +21,7 @@ from pathlib import Path
 import structlog
 
 from council_core.telemetry import configure_logging
+from fetcher.parsers.customary import parse_customary_rules
 from fetcher.parsers.treaty import parse_treaty
 from fetcher.sources.icrc import IcrcClient, IcrcFetchError
 
@@ -90,6 +91,31 @@ def fetch_treaties(manifest: dict, client: IcrcClient) -> tuple[int, int]:
     return fetched, failed
 
 
+def fetch_customary(client: IcrcClient) -> bool:
+    """Fetch the 161 customary IHL rules.
+
+    `CitationType.CUSTOMARY` has always rendered `customary_ihl/rule.14`, and
+    until this lands nothing resolves it -- every correct citation to a
+    customary rule reads as a model inventing authority.
+    """
+    try:
+        document = parse_customary_rules(entries=client.fetch_customary_rules())
+        if len(document.spans) < 150:
+            raise IcrcFetchError(
+                f"Only {len(document.spans)} customary rules parsed; the study has 161. "
+                "The rule body markup has probably changed."
+            )
+        out = CACHE_DIR / f"{document.id}.json"
+        out.write_text(
+            document.model_dump_json(indent=2, exclude_none=True) + "\n", encoding="utf-8"
+        )
+        log.info("customary_fetched", rules=len(document.spans), path=str(out))
+        return True
+    except Exception as exc:
+        log.error("customary_failed", error=str(exc))
+        return False
+
+
 def main() -> None:
     """Fetch everything the manifests list."""
     configure_logging(level=os.getenv("LOG_LEVEL", "INFO"))
@@ -107,6 +133,10 @@ def main() -> None:
 
     with IcrcClient(cache_dir=RAW_DIR) as client:
         fetched, failed = fetch_treaties(treaties, client)
+        if fetch_customary(client):
+            fetched += 1
+        else:
+            failed += 1
 
     log.info("fetch_complete", fetched=fetched, failed=failed)
 
