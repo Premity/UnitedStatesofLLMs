@@ -35,8 +35,7 @@ Expect **one to two days**. Most of it is step 3.
 make setup
 ```
 
-This also copies `corpus/stub/citation_index.json` into `data/index/`, which is
-gitignored. Then edit `.env`:
+Then edit `.env`:
 
 | Variable | Get it from | Free tier |
 | --- | --- | --- |
@@ -104,26 +103,40 @@ so a bad key or a retired model id shows up here rather than mid-debate.
 
 ## Step 2 — Citation index (T0-2)
 
-Retrieval returns nothing until the indexer exists, so without an index every
-citation resolves `out_of_corpus` and the dissent log is uninteresting.
+Without an index every citation resolves `out_of_corpus` and the dissent log
+is uninteresting.
 
-**The index is already committed** at `corpus/stub/citation_index.json` — 24
-treaty articles across AP I, GC III, GC IV and the Rome Statute. `make setup`
-copies it to `data/index/citation_index.json`. This is throwaway; T1 replaces
-it.
+**T1 has replaced the hand-written stub.** The corpus is fetched from the ICRC
+and built by the pipeline:
+
+```bash
+make fetch          # 23 instruments + 161 customary rules, seconds
+make index-local    # embed and upsert -- slow, see the warning below
+```
+
+`make fetch` alone is enough for this step: it writes
+`data/index/citation_index.json`, which is what the resolver reads. Embedding
+is only needed for semantic retrieval.
+
+> **`make index-local` is the heavy one.** It embeds ~2,200 spans with a 1.2GB
+> model and runs under a memory cap so the job dies rather than your editor.
+> Raise it with `MEM_CAP=6G` if the job is what gets killed.
 
 ### 2.1 The locator format is settled
 
-[ADR 0008](../adr/0008-citation-locator-format.md) records it:
+[ADR 0008](../adr/0008-citation-locator-format.md) records it, and
+[ADR 0010](../adr/0010-corpus-identity-and-amendments.md) covers the two
+instruments that needed a decision:
 
 ```
 <instrument>/art.<article>      e.g.  ap_i/art.51(2)
 <case_id>/para.<paragraph>      e.g.  icty_galic_tj/para.58
+customary_ihl/rule.<n>          e.g.  customary_ihl/rule.14
 ```
 
 Sub-paragraphs live inside the article string, outermost first —
-`rome_statute/art.8(2)(b)(i)`. There is no separate paragraph field, and a whole
-article does not resolve its paragraphs or the reverse.
+`rome_statute/art.8(2)(b)(i)`. There is no separate paragraph field, and a
+whole article does not resolve its paragraphs or the reverse.
 
 ### 2.2 Check all four statuses
 
@@ -131,14 +144,10 @@ article does not resolve its paragraphs or the reverse.
 uv run python scripts/check_resolver.py
 ```
 
-Expected:
-
-```
-OK   resolved       ap_i/art.51(2)         -> resolved
-OK   unresolved     ap_i/art.999           -> unresolved
-OK   out_of_corpus  gc_i/art.3             -> out_of_corpus
-OK   misquoted      ap_i/art.51(2)         -> misquoted
-```
+The script's `out_of_corpus` case expects an instrument that is **not** in the
+corpus. Most IHL treaties now are, so if it reports a mismatch there, check
+whether the instrument it names has since been indexed rather than assuming
+the resolver is broken.
 
 > `instruments` is what separates `unresolved` from `out_of_corpus`. An
 > instrument listed there but with no matching entry means "we indexed this
@@ -146,14 +155,15 @@ OK   misquoted      ap_i/art.51(2)         -> misquoted
 > means "we never indexed this" → coverage limit. Getting this wrong makes the
 > fabrication metric meaningless — non-negotiable #2.
 
-### 2.3 If you add entries
+### 2.3 Known gaps
 
-Copy the text **verbatim** from the source. A paraphrase makes correct
-quotations resolve as `misquoted`, which reads in the metrics as the model
-misquoting the law. Add to `corpus/stub/citation_index.json` (the committed
-one), then re-copy into `data/index/`.
+Three Rome Statute weapons amendments are **not** indexed: the source gives
+the inserted sentence with no article number, and a guessed locator is
+indistinguishable from a fabrication. A citation to one resolves `unresolved`,
+which the metrics read as fabrication. See
+[corpus-findings.md](../corpus-findings.md).
 
-**Done when:** all four statuses print OK.
+**Done when:** all four statuses are produced on demand.
 
 ---
 
@@ -210,7 +220,7 @@ Each line is a `run_debate.py` invocation:
 | # | Flags | Proves |
 | --- | --- | --- |
 | 1 | `--rounds 1 --max-rounds 1` | Graph wiring, nothing else |
-| 2 | `… --retrieval` | The stub index is reachable from the retrieve node |
+| 2 | `… --retrieval` | The citation index is reachable from the retrieve node |
 | 3 | `… --retrieval --attackers doctrinal` | Role boundary and citation grounding |
 | 4 | `… --retrieval --attackers doctrinal evidentiary` | ← **`InvalidUpdateError` lives here** |
 | 5 | `--rounds 2`, then `--rounds auto --max-rounds 3` | Termination |

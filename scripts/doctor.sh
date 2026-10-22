@@ -94,16 +94,18 @@ print(len(d.get('entries',{})), len(d.get('instruments',[])))
     )
     if [[ "$n_entries" == "0" ]]; then
         bad "$LIVE is present but has no entries"
-        fix "cp $STUB $LIVE"
+        fix "make fetch"
     else
         ok "$n_entries entries across $n_instruments instruments"
         if [[ -f "$STUB" ]] && cmp -s "$STUB" "$LIVE"; then
-            note "this is the hand-built stub — the indexer (T1) replaces it"
+            warn "this is the placeholder index, not the real corpus"
+            note "24 hand-written articles; the corpus is 23 instruments + 161 rules"
+            fix "make fetch"
         fi
     fi
 else
     bad "no citation index — every citation will resolve out_of_corpus"
-    fix "cp $STUB $LIVE   (or: make setup)"
+    fix "make fetch   (or: cp $STUB $LIVE for the placeholder)"
 fi
 
 # ── Qdrant ────────────────────────────────────────────────────────────────────

@@ -44,15 +44,17 @@ else
 fi
 
 # ── Development citation index ────────────────────────────────────────────────
-# data/index/ is gitignored because the real index is built by the indexer.
-# Until that exists (T1), copy in the hand-built stub so citations resolve.
-info "Installing the development citation index"
+# data/index/ is gitignored because the real index is built by `make fetch`.
+# This 24-article stub is a placeholder so a fresh checkout resolves citations
+# before the corpus is fetched; `make fetch` overwrites it with the real thing.
+info "Installing the placeholder citation index"
 if [[ -f data/index/citation_index.json ]]; then
     ok "data/index/citation_index.json already exists — leaving it alone"
 else
     mkdir -p data/index
     cp corpus/stub/citation_index.json data/index/citation_index.json
-    ok "Copied the stub index from corpus/stub/ ($(grep -c 'source_url' corpus/stub/citation_index.json) entries)"
+    ok "Copied the placeholder index ($(grep -c 'source_url' corpus/stub/citation_index.json) articles)"
+    warn "Run 'make fetch' for the real corpus -- 23 instruments and 161 customary rules."
 fi
 
 # ── Python ────────────────────────────────────────────────────────────────────

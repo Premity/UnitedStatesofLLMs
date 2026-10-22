@@ -155,13 +155,13 @@ The roster is frozen from the start of the scored run until it finishes.
 With `retrieval_enabled=False` the context template tells every role to argue
 "from principle", so the presenter emitted zero citations and nothing was
 resolved. A T0 run with retrieval off proves the wiring but exercises no
-citation checking. Until the indexer lands, set `RETRIEVAL_BACKEND=stub`: the
-retrieve node then serves spans from `data/index/citation_index.json`, ranked by
-word overlap. Development only, never for a scored run.
+citation checking.
 
-`data/index/` is gitignored, so the index itself lives at
-`corpus/stub/citation_index.json` (24 articles) and `make setup` copies it into
-place. `source scripts/dev-env.sh` sets `RETRIEVAL_BACKEND=stub` for you.
+T1 has since built the real corpus, so run with `--retrieval` against Qdrant.
+`RETRIEVAL_BACKEND=stub` remains as a way to work without Qdrant running: it
+serves word-overlap matches from the citation index, which is not semantic
+search and must never be used for a scored run. It logs a warning on every
+call so a stray one is visible in the output.
 
 ### [MEDIUM] Doctrinal attacker on a smaller model
 

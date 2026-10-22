@@ -38,29 +38,33 @@ If you read nothing else, read [docs/architecture.md](../architecture.md).
 
 ## 2. What actually works today
 
-Be clear about this before you start: **the system has never run end to end.**
+Be clear about this before you start: **the debate has never run end to end
+against live models.** The corpus it would argue over does exist.
 
 | Area | State |
 | --- | --- |
-| Domain models, LLM gateway, citation resolver | Written, tested (9 tests) |
-| Debate graph, roles, SSE, run persistence | Written, tested (12 tests) — **never run against live models** |
+| Domain models, LLM gateway, citation resolver | Written, tested |
+| Debate graph, roles, SSE, run persistence | Written, tested — **never completed a live run** |
 | Frontend | Written in full — **never run against a real stream** |
+| Corpus fetcher and parsers | **Working** — 23 instruments plus the 161 customary rules |
+| Citation index | **Working** — all four statuses resolve against real text |
+| Qdrant embedding and upsert | Written; the first full index run is slow and memory-hungry |
 | Evaluation metrics | Written — **zero tests** |
 | Evaluation harness runner | **Does not exist** |
-| Corpus fetcher | **Stub** — 70 lines, no source parsers |
-| Corpus indexer | **Stub** — 65 lines, no chunking or embedding |
 
 Consequences you will hit immediately:
 
-- Retrieval has no real corpus. A **hand-built 24-article index** at
-  `corpus/stub/citation_index.json` stands in, enabled by
-  `RETRIEVAL_BACKEND=stub` — development only, never a scored run.
+- **The judge has never returned a verdict.** `gemini-2.5-pro` was retired
+  mid-project; see ISSUES.md for what to set instead.
+- `data/runs/` is empty, so there is no example artifact to look at.
 - `make eval` cannot run — there is no runner.
 
-**First light (T0) is partly done** on `feature/first-light`: development
-scripts, the stub retrieval backend, and ADR 0008. What it turned up is under
-"Found during first light" in [ISSUES.md](../../ISSUES.md) — read that before
-you start, it will save you a day.
+**Two things worth reading before you start**, both of which will save you a
+day. [ISSUES.md](../../ISSUES.md) lists what is broken and what was found
+running the system for the first time. [corpus-findings.md](../corpus-findings.md)
+collects the ten problems that came up building the corpus — seven of which
+produced plausible wrong output rather than an error, which is the failure
+mode this project can least afford.
 
 This is the work. See [implementation-plan.md](implementation-plan.md).
 
@@ -101,15 +105,34 @@ Then, in every shell you work in:
 source scripts/dev-env.sh
 ```
 
-That sets the data paths, points Ollama at localhost, and selects the stub
-retrieval backend. Scripts run outside Docker also need `--env-file .env` to
-see your API keys: `uv run --env-file .env python scripts/...`.
+That sets the data paths and points Ollama at localhost. Scripts run outside
+Docker also need `--env-file .env` to see your API keys:
+`uv run --env-file .env python scripts/...`.
 
 > **Cannot run the attackers locally?** Two documented alternatives, both
 > config-only (ADR 0002, ADR 0006): `make up-ollama` for a containerised Ollama
 > with a shared model store, or point the attackers at Cloudflare Workers AI
 > (~10,000 neurons/day free, roughly 30 single-case runs). Either way, **record
 > which models you ran** — it changes what the results mean.
+
+### Getting the corpus
+
+```bash
+make fetch          # 23 instruments + 161 customary rules, ~20 requests
+make index-local    # embed and upsert, under a memory cap
+```
+
+`make fetch` takes seconds. **`make index-local` does not** — it embeds ~2,200
+spans with a 1.2GB model, and on a 16GB laptop that is enough to get something
+OOM-killed. It runs inside a systemd scope with a hard memory ceiling so the
+job dies rather than your editor; raise it with `MEM_CAP=6G` if the job is
+what gets killed. Safe to interrupt: point ids come from locators, so
+re-running overwrites rather than duplicating.
+
+> **Working without Qdrant?** `RETRIEVAL_BACKEND=stub` serves word-overlap
+> matches from the citation index instead. It is not semantic search and must
+> never be used for a scored run — it logs a warning on every call so a stray
+> one is visible in the output.
 
 ### Running
 
@@ -125,7 +148,7 @@ does not, and you will get `council-base: image not found`.
 ### Verify your setup
 
 ```bash
-make check     # 23 tests — proves the code is sound
+make check     # lint + the full suite — proves the code is sound
 make doctor    # proves YOUR machine is set up
 ```
 
@@ -140,7 +163,7 @@ whenever something behaves oddly; it is faster than guessing.
 | --- | --- | --- |
 | `make clean` | caches, build artifacts | everything in `data/` |
 | `make reset-qdrant` | the Qdrant volume | pulled Ollama models |
-| `make reindex` | the Qdrant collection, then rebuilds | the development stub index |
+| `make reindex` | the Qdrant collection, then rebuilds | `data/cache/`, so no re-fetch |
 | `make clean-runs` | saved debate runs | everything else |
 | `make nuke` | **all** volumes — full clean slate | nothing |
 
