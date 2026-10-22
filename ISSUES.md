@@ -121,6 +121,53 @@ art drops into `Sprite.tsx` without touching anything else.
 
 ---
 
+## Found during first light (T0)
+
+Things the first live runs turned up, 2026-10-22. Each changes either what runs
+or what the results mean.
+
+### [HIGH] Default judge model retired
+
+`gemini/gemini-2.5-pro` now returns 404 for new AI Studio users ("use
+`models/gemini-3.1-pro-preview`"). The first full run failed at the judge. Set
+`COUNCIL_JUDGE_MODEL` to a model the key can reach and record which one: the
+judge sets every confidence the calibration metrics score.
+
+### [MEDIUM] Presenter moved from Mistral to Groq
+
+Mistral returned 429 on the first request from a fresh free-tier account. The
+presenter now defaults to Groq (`groq/llama-3.3-70b-versatile`; one machine runs
+`groq/openai/gpt-oss-120b`). This changes the system under evaluation: state the
+presenter model in the report. Needs an ADR if it stays.
+
+### [MEDIUM] Retrieval off means no citations at all
+
+With `retrieval_enabled=False` the context template tells every role to argue
+"from principle", so the presenter emitted zero citations and nothing was
+resolved. A T0 run with retrieval off proves the wiring but exercises no
+citation checking. Until the indexer lands, set `RETRIEVAL_BACKEND=stub`: the
+retrieve node then serves spans from `data/index/citation_index.json`, ranked by
+word overlap. Development only, never for a scored run.
+
+### [MEDIUM] Doctrinal attacker on a smaller model
+
+One machine runs `ollama/qwen3.5:9b` instead of `qwen3.5:14b`. Record the model
+with any result produced on it.
+
+### [LOW] Blank `COUNCIL_SEED=` crashed settings
+
+`.env.example` ships `COUNCIL_SEED=` empty, which failed integer parsing in
+`RoleModels`. Fixed with `env_ignore_empty=True`.
+
+### [LOW] Local runs need `--env-file .env`
+
+Only Docker Compose exports `.env` into the process environment. LiteLLM reads
+provider keys from the environment, so scripts run outside Docker see no keys
+unless started with `uv run --env-file .env ...`. `.env` lines must be
+`NAME=value` with no spaces around `=`.
+
+---
+
 ## Decisions still open
 
 ### Judge model during development
@@ -163,3 +210,6 @@ Things that are correct now and easy to break later.
   inlined prompt cannot be tracked.
 - **Debate termination is quota-critical.** An unbounded loop drains a free tier
   in minutes.
+
+## Index
+| Ask Adya for the stub index
