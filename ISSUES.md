@@ -129,9 +129,14 @@ or what the results mean.
 ### [HIGH] Default judge model retired
 
 `gemini/gemini-2.5-pro` now returns 404 for new AI Studio users ("use
-`models/gemini-3.1-pro-preview`"). The first full run failed at the judge. Set
-`COUNCIL_JUDGE_MODEL` to a model the key can reach and record which one: the
-judge sets every confidence the calibration metrics score.
+`models/gemini-3.1-pro-preview`"). The first full run failed at the judge.
+
+The default is now `gemini/gemini-3.1-pro-preview` everywhere
+(`.env.example`, `docker-compose.yml`, `RoleModels`). **This has not been
+confirmed against a live key** — if it 404s too, set `COUNCIL_JUDGE_MODEL` to
+whatever the key can reach. Whichever model is used, record it with the
+results: the judge sets every confidence the calibration metrics score, so a
+judge swap mid-run makes the calibration numbers incomparable.
 
 ### [MEDIUM] Presenter moved from Mistral to Groq
 
@@ -148,6 +153,10 @@ resolved. A T0 run with retrieval off proves the wiring but exercises no
 citation checking. Until the indexer lands, set `RETRIEVAL_BACKEND=stub`: the
 retrieve node then serves spans from `data/index/citation_index.json`, ranked by
 word overlap. Development only, never for a scored run.
+
+`data/index/` is gitignored, so the index itself lives at
+`corpus/stub/citation_index.json` (24 articles) and `make setup` copies it into
+place. `source scripts/dev-env.sh` sets `RETRIEVAL_BACKEND=stub` for you.
 
 ### [MEDIUM] Doctrinal attacker on a smaller model
 
@@ -210,6 +219,3 @@ Things that are correct now and easy to break later.
   inlined prompt cannot be tracked.
 - **Debate termination is quota-critical.** An unbounded loop drains a free tier
   in minutes.
-
-## Index
-| Ask Adya for the stub index
