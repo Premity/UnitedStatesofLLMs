@@ -1,0 +1,169 @@
+#!/usr/bin/env bash
+# What state is this checkout in, and what should I run next?
+#
+# Read-only: it changes nothing, so it is always safe to run. Every line is
+# either OK, a warning, or a thing to fix with the command to fix it.
+#
+#   make doctor
+set -uo pipefail
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$REPO_ROOT"
+
+QDRANT_URL="${QDRANT_URL:-http://localhost:6333}"
+COLLECTION="${QDRANT_COLLECTION:-ihl_corpus}"
+
+if [[ -t 1 ]]; then
+    G=$'\033[32m'; Y=$'\033[33m'; R=$'\033[31m'; D=$'\033[2m'; N=$'\033[0m'
+else
+    G=""; Y=""; R=""; D=""; N=""
+fi
+
+todo=()
+ok()   { echo "  ${G}ok${N}    $1"; }
+warn() { echo "  ${Y}warn${N}  $1"; }
+bad()  { echo "  ${R}no${N}    $1"; }
+note() { echo "        ${D}$1${N}"; }
+fix()  { todo+=("$1"); }
+
+section() { echo; echo "$1"; }
+
+# ── Tooling ───────────────────────────────────────────────────────────────────
+section "Tooling"
+
+if command -v uv >/dev/null 2>&1; then
+    ok "uv $(uv --version 2>/dev/null | awk '{print $2}')"
+else
+    bad "uv not installed"; note "https://docs.astral.sh/uv/"
+    fix "install uv, then: make setup"
+fi
+
+if docker info >/dev/null 2>&1; then
+    ok "docker $(docker info --format '{{.ServerVersion}}' 2>/dev/null)"
+    DOCKER_UP=1
+else
+    bad "docker is not running"
+    note "Qdrant, the indexer and the dev stack all need it"
+    fix "start Docker, then: make up"
+    DOCKER_UP=0
+fi
+
+if command -v ollama >/dev/null 2>&1; then
+    tags=$(ollama list 2>/dev/null | tail -n +2 | awk '{print $1}' | paste -sd' ' -)
+    [[ -n "$tags" ]] && ok "ollama — $tags" || warn "ollama installed, no models pulled"
+else
+    warn "ollama not installed — the two attackers have no backend"
+    note "alternatives: make up-ollama, or Cloudflare Workers AI (ADR 0006)"
+fi
+
+# ── Configuration ─────────────────────────────────────────────────────────────
+section "Configuration"
+
+if [[ -f .env ]]; then
+    ok ".env exists"
+    for key in GROQ_API_KEY GEMINI_API_KEY; do
+        val=$(grep -E "^${key}=" .env 2>/dev/null | head -1 | cut -d= -f2-)
+        if [[ -n "$val" ]]; then
+            ok "$key set"
+        else
+            warn "$key is empty"
+            note "$([[ $key == GROQ_API_KEY ]] && echo 'console.groq.com' || echo 'aistudio.google.com')"
+        fi
+    done
+    if grep -qE "^\s*[A-Z_]+\s+=|=\s+" .env 2>/dev/null; then
+        warn ".env has spaces around '=' — those lines will not parse"
+    fi
+else
+    bad ".env missing"
+    fix "make setup"
+fi
+
+# ── Citation index ────────────────────────────────────────────────────────────
+section "Citation index"
+
+STUB="corpus/stub/citation_index.json"
+LIVE="data/index/citation_index.json"
+
+if [[ -f "$LIVE" ]]; then
+    read -r n_entries n_instruments < <(
+        python3 -c "
+import json,sys
+d=json.load(open('$LIVE'))
+print(len(d.get('entries',{})), len(d.get('instruments',[])))
+" 2>/dev/null || echo "0 0"
+    )
+    if [[ "$n_entries" == "0" ]]; then
+        bad "$LIVE is present but has no entries"
+        fix "cp $STUB $LIVE"
+    else
+        ok "$n_entries entries across $n_instruments instruments"
+        if [[ -f "$STUB" ]] && cmp -s "$STUB" "$LIVE"; then
+            note "this is the hand-built stub — the indexer (T1) replaces it"
+        fi
+    fi
+else
+    bad "no citation index — every citation will resolve out_of_corpus"
+    fix "cp $STUB $LIVE   (or: make setup)"
+fi
+
+# ── Qdrant ────────────────────────────────────────────────────────────────────
+section "Qdrant"
+
+if [[ "$DOCKER_UP" == "1" ]] && curl -fsS "$QDRANT_URL/healthz" >/dev/null 2>&1; then
+    ok "reachable at $QDRANT_URL"
+    points=$(curl -fsS "$QDRANT_URL/collections/$COLLECTION" 2>/dev/null \
+        | python3 -c "import json,sys; print(json.load(sys.stdin)['result']['points_count'])" 2>/dev/null)
+    if [[ -z "$points" ]]; then
+        warn "collection '$COLLECTION' does not exist yet"
+        note "expected until the indexer lands (T1-5)"
+        fix "make corpus   (once the fetcher and indexer are implemented)"
+    elif [[ "$points" == "0" ]]; then
+        warn "collection '$COLLECTION' exists but is empty"
+        fix "make index"
+    else
+        ok "collection '$COLLECTION' holds $points points"
+    fi
+else
+    if [[ "$DOCKER_UP" == "1" ]]; then
+        warn "not reachable at $QDRANT_URL"
+        fix "make up"
+    else
+        warn "skipped — Docker is not running"
+    fi
+fi
+
+# ── Corpus ────────────────────────────────────────────────────────────────────
+section "Corpus"
+
+fetched=$(ls data/cache/*.json 2>/dev/null | wc -l | tr -d ' ')
+if [[ "$fetched" -gt 0 ]]; then
+    ok "$fetched instrument(s) fetched to data/cache/"
+else
+    warn "nothing fetched yet — the fetcher is still a stub (T1-2)"
+fi
+
+runs=$(ls data/runs/*.json 2>/dev/null | wc -l | tr -d ' ')
+if [[ "$runs" -gt 0 ]]; then
+    ok "$runs saved run(s) in data/runs/"
+else
+    warn "no saved runs — the system has not completed a debate yet"
+fi
+
+fixture="runtime/frontend/src/fixtures/sample-run.json"
+if [[ -f "$fixture" ]]; then
+    ok "frontend replay fixture present"
+else
+    warn "no frontend fixture — the frontend track is blocked on this (T0-5)"
+    note "uv run --env-file .env python scripts/record_fixture.py"
+fi
+
+# ── Next ──────────────────────────────────────────────────────────────────────
+echo
+if [[ ${#todo[@]} -eq 0 ]]; then
+    echo "${G}Nothing to fix.${N}"
+    echo "${D}Where the work is: docs/planning/implementation-plan.md${N}"
+else
+    echo "Next:"
+    for t in "${todo[@]}"; do echo "  - $t"; done
+fi
+echo

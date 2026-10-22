@@ -23,9 +23,19 @@ curl -fsS -X DELETE "$QDRANT_URL/collections/$COLLECTION" >/dev/null \
     && echo " ✓ collection dropped" \
     || echo " !  collection did not exist (or Qdrant is not running)"
 
-echo "==> Removing the citation index"
-rm -f "$REPO_ROOT/data/index/citation_index.json"
-echo " ✓ citation index removed"
+echo "==> Resetting the citation index"
+STUB="$REPO_ROOT/corpus/stub/citation_index.json"
+LIVE="$REPO_ROOT/data/index/citation_index.json"
+rm -f "$LIVE"
+# Until the indexer emits one (T1-6), the hand-built stub IS the index, and
+# deleting it leaves every citation resolving out_of_corpus. Put it back.
+if [[ -f "$STUB" ]]; then
+    mkdir -p "$(dirname "$LIVE")"
+    cp "$STUB" "$LIVE"
+    echo " ✓ restored the development stub from corpus/stub/"
+else
+    echo " ✓ citation index removed"
+fi
 
 echo
 echo "Run 'make index' to rebuild."

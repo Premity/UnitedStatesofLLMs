@@ -86,6 +86,7 @@ echo
 echo "  Next:"
 echo "    1. Fill in API keys in .env"
 echo "    2. make up          start the stack"
-echo "    3. make corpus      fetch and index the corpus"
-echo "    4. open http://localhost:3000"
+echo "    3. make doctor      check what is set up and what is missing"
+echo "    4. make corpus      fetch and index the corpus"
+echo "    5. open http://localhost:3000"
 echo
