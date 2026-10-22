@@ -16,6 +16,6 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 # stall on a download.
 RUN python -c "from fastembed import TextEmbedding; TextEmbedding(model_name='BAAI/bge-m3')"
 
-COPY pipeline/indexer/app /app/app
+COPY pipeline/indexer/indexer /app/indexer
 
-CMD ["python", "-m", "app.main"]
+CMD ["python", "-m", "indexer.main"]

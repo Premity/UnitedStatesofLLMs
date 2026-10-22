@@ -90,7 +90,13 @@ indent-style = "space"
 # ── Pytest ────────────────────────────────────────────────────────────────────
 
 [tool.pytest.ini_options]
-testpaths = ["runtime/api/tests", "packages/council-core/tests", "evaluation/tests"]
+testpaths = [
+    "runtime/api/tests",
+    "packages/council-core/tests",
+    "evaluation/tests",
+    "pipeline/indexer/tests",
+    "pipeline/fetcher/tests",
+]
 asyncio_mode = "auto"
 addopts = "-v --tb=short --strict-markers"
 markers = [
