@@ -132,6 +132,41 @@ else
     fi
 fi
 
+# ── Base image ────────────────────────────────────────────────────────────────
+section "Base image"
+
+if [[ "$DOCKER_UP" == "1" ]]; then
+    built=$(docker image inspect council-base:latest --format '{{.Created}}' 2>/dev/null)
+    if [[ -z "$built" ]]; then
+        warn "council-base not built yet"
+        note "make up builds it; a bare 'docker compose build' does not"
+        fix "make build-base"
+    else
+        # council-core is installed into the base image, so an edit there
+        # leaves containers importing a stale copy -- which shows up as
+        # ModuleNotFoundError for a module that exists locally. Compare
+        # content, not timestamps: a cached rebuild keeps the original layer
+        # date, and git checkout changes mtimes without changing anything.
+        # Hash the file contents alone -- paths differ between the checkout
+        # and site-packages, and sorting the hashes makes order irrelevant.
+        here=$(find packages/council-core/src/council_core -name '*.py' -type f \
+               -exec sha1sum {} + 2>/dev/null | awk '{print $1}' | sort | sha1sum | cut -c1-12)
+        there=$(docker run --rm --entrypoint sh council-base:latest -c \
+                "find /usr/local/lib/python3.12/site-packages/council_core -name '*.py' -type f \
+                 -exec sha1sum {} + 2>/dev/null | awk '{print \$1}' | sort | sha1sum | cut -c1-12" \
+                2>/dev/null)
+        if [[ -n "$there" && "$here" == "$there" ]]; then
+            ok "council-base carries the current council-core"
+        else
+            warn "council-core has changed since council-base was built"
+            note "containers will import the old copy; local runs are unaffected"
+            fix "make build-base   (~90s, only needed before running containers)"
+        fi
+    fi
+else
+    warn "skipped — Docker is not running"
+fi
+
 # ── Corpus ────────────────────────────────────────────────────────────────────
 section "Corpus"
 
