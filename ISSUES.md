@@ -182,6 +182,25 @@ unless started with `uv run --env-file .env ...`. `.env` lines must be
 
 ---
 
+## Found while building the corpus (T1)
+
+Ten problems, written up with causes and fixes in
+[docs/corpus-findings.md](docs/corpus-findings.md). Seven of them produced
+plausible wrong output rather than an error, which is the failure mode this
+project can least afford.
+
+The ones that are still open rather than fixed:
+
+- **Three Rome Statute weapons amendments are not indexed.** The source gives
+  the inserted sentence with no article number, and a guessed locator is
+  indistinguishable from a fabrication. A citation to one resolves
+  `unresolved`, which the metrics read as fabrication — state it in the report.
+- **UN resolutions are scanned images** in the UN Digital Library, with no
+  text layer. Only the resolutions the ICRC serves as structured text are in
+  scope.
+
+---
+
 ## Decisions still open
 
 ### Judge model during development

@@ -252,6 +252,7 @@ working four times as long. See [fixtures-guide.md](fixtures-guide.md).
 | What is broken or missing? | [ISSUES.md](../../ISSUES.md) |
 | How do I evaluate it? | [evaluation.md](../evaluation.md) |
 | What is the corpus? | [corpus.md](../corpus.md) |
+| What went wrong building it? | [corpus-findings.md](../corpus-findings.md) |
 | How do I write a fixture? | [fixtures-guide.md](fixtures-guide.md) |
 | What am I doing this week? | [implementation-plan.md](implementation-plan.md) · [timeline.md](timeline.md) |
 | How do I get the first debate running? | [t0-runbook.md](t0-runbook.md) |
