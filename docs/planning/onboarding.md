@@ -125,11 +125,28 @@ does not, and you will get `council-base: image not found`.
 ### Verify your setup
 
 ```bash
-make check
+make check     # 23 tests — proves the code is sound
+make doctor    # proves YOUR machine is set up
 ```
 
-23 tests should pass. If they do, your environment is correct — even though the
-system itself is incomplete.
+`make doctor` is read-only and changes nothing. It reports what is installed,
+whether `.env` has keys, whether the citation index is in place, whether Qdrant
+is up and how many points it holds — then prints what to run next. Run it
+whenever something behaves oddly; it is faster than guessing.
+
+### Resetting things
+
+| Command | Removes | Keeps |
+| --- | --- | --- |
+| `make clean` | caches, build artifacts | everything in `data/` |
+| `make reset-qdrant` | the Qdrant volume | pulled Ollama models |
+| `make reindex` | the Qdrant collection, then rebuilds | the development stub index |
+| `make clean-runs` | saved debate runs | everything else |
+| `make nuke` | **all** volumes — full clean slate | nothing |
+
+All of these prompt before destroying anything. `make nuke` is the start-over
+button; `make reset-qdrant` is there for when only the index is wrong and
+re-pulling ~17GB of models would be beside the point.
 
 ---
 

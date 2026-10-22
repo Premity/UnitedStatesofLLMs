@@ -30,6 +30,10 @@ setup: ## First-time setup: env file, Python deps, git hooks
 env: ## Create .env from .env.example if it does not exist
 	@test -f .env || (cp .env.example .env && echo "Created .env — fill in your API keys.")
 
+.PHONY: doctor
+doctor: ## Check what is set up, what is missing, and what to run next
+	@bash scripts/doctor.sh
+
 .PHONY: sync
 sync: ## Install/update Python dependencies (uv)
 	uv sync --all-extras
@@ -198,8 +202,16 @@ clean-runs: ## Delete all saved debate runs (destructive)
 	@read -p "Delete every run in data/runs/? [y/N] " ok && [[ $$ok == [yY] ]] && rm -rf data/runs/* || echo "Cancelled."
 
 .PHONY: nuke
-nuke: down ## Stop everything and remove volumes (destructive — wipes the index)
-	@read -p "Remove all Docker volumes, including the Qdrant index? [y/N] " ok && [[ $$ok == [yY] ]] && $(COMPOSE) down -v || echo "Cancelled."
+nuke: down ## Stop everything and remove volumes (destructive — wipes the index and pulled models)
+	@read -p "Remove all Docker volumes, including the Qdrant index and pulled models? [y/N] " ok && [[ $$ok == [yY] ]] && $(COMPOSE) down -v || echo "Cancelled."
+
+.PHONY: reset-qdrant
+reset-qdrant: ## Delete the Qdrant volume and start clean (keeps pulled models)
+	@read -p "Delete the Qdrant volume and rebuild it empty? [y/N] " ok && [[ $$ok == [yY] ]] || { echo "Cancelled."; exit 0; }; \
+	$(COMPOSE) rm -sf qdrant >/dev/null 2>&1 || true; \
+	docker volume rm council_qdrant_data >/dev/null 2>&1 || true; \
+	$(COMPOSE) up -d qdrant; \
+	echo "Qdrant volume recreated, empty. Run 'make corpus' to repopulate."
 
 # ── Docker housekeeping ───────────────────────────────────────────────────────
 # Build cache grows quietly: every rebuild writes new layers and the old ones
