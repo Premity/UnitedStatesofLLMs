@@ -41,13 +41,13 @@ services:
       LOG_LEVEL: "${LOG_LEVEL:-INFO}"
 
       # Model roster — see .env.example for the full set.
-      COUNCIL_PRESENTER_MODEL: "${COUNCIL_PRESENTER_MODEL:-mistral/magistral-medium-latest}"
+      COUNCIL_PRESENTER_MODEL: "${COUNCIL_PRESENTER_MODEL:-groq/openai/gpt-oss-120b}"
       COUNCIL_ATTACKER_DOCTRINAL_MODEL: "${COUNCIL_ATTACKER_DOCTRINAL_MODEL:-ollama/qwen3.5:14b}"
       COUNCIL_ATTACKER_EVIDENTIARY_MODEL: "${COUNCIL_ATTACKER_EVIDENTIARY_MODEL:-ollama/gemma3:12b}"
       COUNCIL_JUDGE_MODEL: "${COUNCIL_JUDGE_MODEL:-gemini/gemini-2.5-pro}"
       COUNCIL_OLLAMA_BASE_URL: "${COUNCIL_OLLAMA_BASE_URL:-http://host.docker.internal:11434}"
 
-      MISTRAL_API_KEY: "${MISTRAL_API_KEY:-}"
+      GROQ_API_KEY: "${GROQ_API_KEY:-}"
       GEMINI_API_KEY: "${GEMINI_API_KEY:-}"
       CLOUDFLARE_API_KEY: "${CLOUDFLARE_API_KEY:-}"
       CLOUDFLARE_ACCOUNT_ID: "${CLOUDFLARE_ACCOUNT_ID:-}"

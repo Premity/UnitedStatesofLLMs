@@ -40,7 +40,7 @@ if [[ -f .env ]]; then
 else
     cp .env.example .env
     ok "Created .env from .env.example"
-    warn "Fill in MISTRAL_API_KEY and GEMINI_API_KEY before running a debate."
+    warn "Fill in GROQ_API_KEY and GEMINI_API_KEY before running a debate."
 fi
 
 # ── Python ────────────────────────────────────────────────────────────────────
