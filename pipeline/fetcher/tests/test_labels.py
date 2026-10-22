@@ -86,6 +86,21 @@ def test_a_list_starting_part_way_through_is_still_captured() -> None:
     assert numbers(["2. second para", "3. third para"]) == ["(2)", "(3)"]
 
 
+def test_a_paragraph_and_its_first_subparagraph_can_share_a_line() -> None:
+    """Rome article 36(8) is written `8. (a) The States Parties shall...`.
+
+    Dropping the inline `(a)` leaves the roman list beneath it with no letter
+    parent, which minted `36(8)(i)(ii)` for what is really `36(8)(a)(ii)`.
+    """
+    chunks = [
+        "8. (a) The States Parties shall take into account the need for:",
+        "(i) The principal legal systems of the world;",
+        "(ii) Equitable geographical representation; and",
+        "(b) States Parties shall also take into account:",
+    ]
+    assert numbers(chunks) == ["(8)(a)", "(8)(a)(i)", "(8)(a)(ii)", "(8)(b)"]
+
+
 def test_unnumbered_prose_yields_no_subparagraphs() -> None:
     """Most Geneva Convention articles are prose with no labels at all.
 

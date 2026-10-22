@@ -102,11 +102,17 @@ class _Stack:
         if value is None:
             return None
 
-        # A list normally opens at 1. Opening at any other number is only
-        # right when nothing of this kind is already running -- an article
-        # quoted from part-way through, say -- because otherwise `(ii)` would
-        # start a fresh list rather than continue the one above it.
-        if value == 1 or not any(lv.kind == kind for lv in self._levels):
+        # A new list opens at 1.
+        if value == 1:
+            self._levels.append(_Level(kind, label, value))
+            return [lv.label for lv in self._levels]
+
+        # Opening above 1 happens when text is quoted from part-way through:
+        # an amendment restating `(b)` onwards, or an article beginning at
+        # paragraph 2. It is only safe where no list of this kind is already
+        # running -- otherwise `(i)` followed by `(iv)` would read as a nested
+        # list and mint `(i)(iv)`, a locator that addresses nothing.
+        if not any(lv.kind == kind for lv in self._levels):
             self._levels.append(_Level(kind, label, value))
             return [lv.label for lv in self._levels]
 
@@ -150,6 +156,15 @@ def parse_subparagraphs(chunks: list[str]) -> list[Subparagraph]:
             labels = stack.place("arabic", m.group(1))
             if labels is not None:
                 body = text[m.end() :].strip()
+                # Some articles open a paragraph and its first sub-paragraph
+                # on one line: "8. (a) The States Parties shall...". Dropping
+                # the `(a)` leaves any roman list under it with no letter
+                # parent, so `(8)(a)(ii)` would be minted as `(8)(i)(ii)`.
+                if inner := BRACKETED.match(body):
+                    for kind, label in _candidates(inner.group(1)):
+                        if (placed := stack.place(kind, label)) is not None:
+                            labels, body = placed, body[inner.end() :].strip()
+                            break
         elif m := BRACKETED.match(text):
             raw = m.group(1)
             for kind, label in _candidates(raw):
