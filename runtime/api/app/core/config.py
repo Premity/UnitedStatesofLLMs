@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from functools import lru_cache
 from pathlib import Path
+from typing import Literal
 
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -24,6 +25,13 @@ class Settings(BaseSettings):
     log_level: str = "INFO"
     log_json: bool = Field(default=False, description="True in production.")
 
+    retrieval_backend: Literal["qdrant", "stub"] = Field(
+        default="qdrant",
+        description=(
+            "'stub' serves context from the hand-written citation index instead of Qdrant. "
+            "Development only, until the indexer (T1) exists."
+        ),
+    )
     qdrant_url: str = "http://qdrant:6333"
     qdrant_collection: str = "ihl_corpus"
     embedding_model: str = Field(

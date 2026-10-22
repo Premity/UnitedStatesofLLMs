@@ -39,3 +39,5 @@ Keep them short. A page is plenty.
 | [0005](0005-json-run-artifacts.md) | Run artifacts as JSON files, not a database | Accepted |
 | [0006](0006-ollama-host-by-default.md) | Ollama on the host by default, compose profile optional | Accepted |
 | [0007](0007-curated-corpus.md) | Curated corpus scoped by manifest, not a crawl | Accepted |
+| [0008](0008-citation-locator-format.md) | One citation locator format, sub-paragraphs inside the article | Proposed |
+| [0009](0009-presenter-on-groq.md) | The presenter runs on Groq, not Mistral | Proposed |

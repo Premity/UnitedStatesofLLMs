@@ -52,9 +52,15 @@ Be clear about this before you start: **the system has never run end to end.**
 
 Consequences you will hit immediately:
 
-- Retrieval returns nothing, so **every citation resolves as `out_of_corpus`**.
-- `data/runs/` is empty. There is no example artifact to look at yet.
+- Retrieval has no real corpus. A **hand-built 24-article index** at
+  `corpus/stub/citation_index.json` stands in, enabled by
+  `RETRIEVAL_BACKEND=stub` — development only, never a scored run.
 - `make eval` cannot run — there is no runner.
+
+**First light (T0) is partly done** on `feature/first-light`: development
+scripts, the stub retrieval backend, and ADR 0008. What it turned up is under
+"Found during first light" in [ISSUES.md](../../ISSUES.md) — read that before
+you start, it will save you a day.
 
 This is the work. See [implementation-plan.md](implementation-plan.md).
 
@@ -79,7 +85,7 @@ Then edit `.env` and add two keys — both have free tiers:
 
 | Variable | Where from | Used by |
 | --- | --- | --- |
-| `MISTRAL_API_KEY` | console.mistral.ai | presenter |
+| `GROQ_API_KEY` | console.groq.com | presenter |
 | `GEMINI_API_KEY` | aistudio.google.com | judge |
 
 Pull the attacker models:
@@ -89,8 +95,21 @@ ollama pull qwen3.5:14b     # doctrinal attacker
 ollama pull gemma3:12b      # evidentiary attacker
 ```
 
-> **No GPU?** The attackers still run on CPU, just slowly. Alternatively use the
-> containerised Ollama profile — see [docs/development.md](../development.md).
+Then, in every shell you work in:
+
+```bash
+source scripts/dev-env.sh
+```
+
+That sets the data paths, points Ollama at localhost, and selects the stub
+retrieval backend. Scripts run outside Docker also need `--env-file .env` to
+see your API keys: `uv run --env-file .env python scripts/...`.
+
+> **Cannot run the attackers locally?** Two documented alternatives, both
+> config-only (ADR 0002, ADR 0006): `make up-ollama` for a containerised Ollama
+> with a shared model store, or point the attackers at Cloudflare Workers AI
+> (~10,000 neurons/day free, roughly 30 single-case runs). Either way, **record
+> which models you ran** — it changes what the results mean.
 
 ### Running
 

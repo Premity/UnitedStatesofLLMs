@@ -27,7 +27,19 @@ export default {
         "deps",
       ],
     ],
-    "subject-case": [2, "always", "lower-case"],
+    // `lower-case` rejects proper nouns and class names that are correctly
+    // capitalised -- "Groq", "RoleModels", "Mistral". Forbidding these styles
+    // instead allows a capital *inside* the subject while still blocking
+    // "Add a thing" and "Stream Turn Level Events".
+    //
+    // `sentence-case` fires on any capital first letter, so a subject that
+    // opens with an acronym ("ADR 0008 ...") is still rejected. Reword it to
+    // put the acronym later: "adr 0008 ..." or "record ADR 0008".
+    "subject-case": [
+      2,
+      "never",
+      ["sentence-case", "start-case", "pascal-case", "upper-case"],
+    ],
     "header-max-length": [2, "always", 100],
     "body-max-line-length": [1, "always", 100],
   },

@@ -138,3 +138,8 @@ def test_locator_formats_are_stable() -> None:
 
     customary = Citation(type=CitationType.CUSTOMARY, instrument="icrc_customary", rule_number=14)
     assert customary.locator() == "customary_ihl/rule.14"
+
+    assert (
+        Citation(type=CitationType.TREATY, instrument="ap_i", article="51(2)").locator()
+        == "ap_i/art.51(2)"
+    )

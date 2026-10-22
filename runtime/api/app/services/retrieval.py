@@ -12,6 +12,7 @@ block the event loop while four model calls are in flight.
 from __future__ import annotations
 
 import asyncio
+import json
 from functools import lru_cache
 
 import structlog
@@ -97,7 +98,60 @@ class RetrievalService:
         return True
 
 
+class StubRetrievalService:
+    """Serves context from the hand-written citation index, ranked by word overlap.
+
+    Stands in for Qdrant until the indexer exists (T0-2), so roles have real
+    authority to cite. Not semantic search, and never used unless
+    `RETRIEVAL_BACKEND=stub` is set explicitly.
+    """
+
+    def __init__(self) -> None:
+        self._path = get_settings().citation_index_path
+
+    def _entries(self) -> dict[str, dict[str, str]]:
+        if not self._path.exists():
+            raise FileNotFoundError(f"Stub retrieval needs a citation index at {self._path}.")
+        return json.loads(self._path.read_text(encoding="utf-8")).get("entries", {})
+
+    async def search(self, query: str, *, top_k: int = 8) -> list[ResolvedCitation]:
+        """Return the index entries sharing the most words with the query."""
+        query_tokens = set(query.lower().split())
+        ranked = sorted(
+            self._entries().items(),
+            key=lambda item: len(query_tokens & set(item[1]["text"].lower().split())),
+            reverse=True,
+        )
+        spans = [
+            ResolvedCitation(
+                citation=_citation_from_locator(locator),
+                status=CitationStatus.RESOLVED,
+                corpus_text=entry["text"],
+                source_url=entry.get("source_url"),
+            )
+            for locator, entry in ranked[:top_k]
+        ]
+        log.warning("retrieval_stub_used", returned=len(spans), index=str(self._path))
+        return spans
+
+    async def health(self) -> bool:
+        """Whether the stub index file exists."""
+        return self._path.exists()
+
+
+def _citation_from_locator(locator: str) -> Citation:
+    """Invert `Citation.locator()` for the treaty and case forms the stub index holds."""
+    head, _, tail = locator.partition("/")
+    if tail.startswith("art."):
+        return Citation(type=CitationType.TREATY, instrument=head, article=tail[4:])
+    if tail.startswith("para."):
+        return Citation(type=CitationType.CASE, instrument=head, case_id=head, paragraph=tail[5:])
+    raise ValueError(f"Stub index locator not understood: {locator}")
+
+
 @lru_cache
-def get_retrieval_service() -> RetrievalService:
-    """Cached service singleton."""
+def get_retrieval_service() -> RetrievalService | StubRetrievalService:
+    """Cached service singleton. The backend is chosen by `RETRIEVAL_BACKEND`."""
+    if get_settings().retrieval_backend == "stub":
+        return StubRetrievalService()
     return RetrievalService()

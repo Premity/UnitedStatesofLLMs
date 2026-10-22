@@ -36,10 +36,10 @@ model play-acting a dispute with itself:
 
 | Role | What it does | Model | Where it runs |
 | --- | --- | --- | --- |
-| **Presenter** | Argues the position | Mistral Magistral | Mistral API (free tier) |
+| **Presenter** | Argues the position | GPT-OSS 120B | Groq API (free tier) |
 | **Doctrinal attacker** | Challenges the *legal characterisation* | Qwen3.5 | Local, Ollama |
 | **Evidentiary attacker** | Challenges the *factual predicate* | Gemma 3 12B | Local, Ollama |
-| **Judge** | Rules on every objection, calibrates confidence | Gemini 2.5 Pro | Google AI Studio (free tier) |
+| **Judge** | Rules on every objection, calibrates confidence | Gemini 3.1 Pro | Google AI Studio (free tier) |
 
 Capability is allocated by difficulty. Building a defensible legal argument is
 harder than attacking one, and the presenter sets the quality ceiling for the
@@ -132,7 +132,7 @@ bootstrap intervals and we do not oversell small gaps.
 git clone <repo-url> && cd UnitedStatesofLLMs
 
 make setup            # env file, Python deps, git hooks
-# fill in MISTRAL_API_KEY and GEMINI_API_KEY in .env
+# fill in GROQ_API_KEY and GEMINI_API_KEY in .env
 
 ollama pull qwen3.5:14b
 ollama pull gemma3:12b

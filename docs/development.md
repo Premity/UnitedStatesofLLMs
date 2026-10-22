@@ -17,7 +17,7 @@ Then fill in `.env`:
 
 | Key | Where to get it |
 | --- | --- |
-| `MISTRAL_API_KEY` | https://console.mistral.ai/ — free tier, ~1B tokens/month |
+| `GROQ_API_KEY` | https://console.groq.com/keys/ — free tier, ~1B tokens/month |
 | `GEMINI_API_KEY` | https://aistudio.google.com/apikey — free tier, 100 req/day |
 
 And pull the attacker models:

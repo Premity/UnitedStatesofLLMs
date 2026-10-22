@@ -121,6 +121,67 @@ art drops into `Sprite.tsx` without touching anything else.
 
 ---
 
+## Found during first light (T0)
+
+Things the first live runs turned up, 2026-10-22. Each changes either what runs
+or what the results mean.
+
+### [HIGH] Default judge model retired
+
+`gemini/gemini-2.5-pro` now returns 404 for new AI Studio users ("use
+`models/gemini-3.1-pro-preview`"). The first full run failed at the judge.
+
+The default is now `gemini/gemini-3.1-pro-preview` everywhere
+(`.env.example`, `docker-compose.yml`, `RoleModels`). **This has not been
+confirmed against a live key** — if it 404s too, set `COUNCIL_JUDGE_MODEL` to
+whatever the key can reach. Whichever model is used, record it with the
+results: the judge sets every confidence the calibration metrics score, so a
+judge swap mid-run makes the calibration numbers incomparable.
+
+### [MEDIUM] Presenter moved from Mistral to Groq
+
+Mistral returned 429 on the first request from a fresh free-tier account.
+
+Settled by [ADR 0009](docs/adr/0009-presenter-on-groq.md): the presenter is
+**`groq/openai/gpt-oss-120b`**, one pinned id. During T0 the two machines ran
+different Groq models, which are different families and not comparable — if you
+have results from `llama-3.3-70b-versatile`, they were produced on a different
+system under test.
+
+The roster is frozen from the start of the scored run until it finishes.
+
+### [MEDIUM] Retrieval off means no citations at all
+
+With `retrieval_enabled=False` the context template tells every role to argue
+"from principle", so the presenter emitted zero citations and nothing was
+resolved. A T0 run with retrieval off proves the wiring but exercises no
+citation checking. Until the indexer lands, set `RETRIEVAL_BACKEND=stub`: the
+retrieve node then serves spans from `data/index/citation_index.json`, ranked by
+word overlap. Development only, never for a scored run.
+
+`data/index/` is gitignored, so the index itself lives at
+`corpus/stub/citation_index.json` (24 articles) and `make setup` copies it into
+place. `source scripts/dev-env.sh` sets `RETRIEVAL_BACKEND=stub` for you.
+
+### [MEDIUM] Doctrinal attacker on a smaller model
+
+One machine runs `ollama/qwen3.5:9b` instead of `qwen3.5:14b`. Record the model
+with any result produced on it.
+
+### [LOW] Blank `COUNCIL_SEED=` crashed settings
+
+`.env.example` ships `COUNCIL_SEED=` empty, which failed integer parsing in
+`RoleModels`. Fixed with `env_ignore_empty=True`.
+
+### [LOW] Local runs need `--env-file .env`
+
+Only Docker Compose exports `.env` into the process environment. LiteLLM reads
+provider keys from the environment, so scripts run outside Docker see no keys
+unless started with `uv run --env-file .env ...`. `.env` lines must be
+`NAME=value` with no spaces around `=`.
+
+---
+
 ## Decisions still open
 
 ### Judge model during development
