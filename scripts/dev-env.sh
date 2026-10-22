@@ -1,5 +1,10 @@
 # Usage: source scripts/dev-env.sh   (from the project root)
-ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -W)"
+# This file is sourced, so $0 is the shell, not the script. bash and zsh each
+# expose the sourced path differently, and `pwd -W` gives a Windows path under
+# Git Bash but is not an option anywhere else.
+_src="${BASH_SOURCE[0]:-${(%):-%x}}"
+ROOT="$(cd "$(dirname "$_src")/.." && { pwd -W 2>/dev/null || pwd; })"
+unset _src
 export DATA_DIR="$ROOT/data"
 export PROMPTS_DIR="$ROOT/prompts"
 export CORPUS_DIR="$ROOT/corpus"
