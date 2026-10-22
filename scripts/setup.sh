@@ -43,6 +43,18 @@ else
     warn "Fill in GROQ_API_KEY and GEMINI_API_KEY before running a debate."
 fi
 
+# ── Development citation index ────────────────────────────────────────────────
+# data/index/ is gitignored because the real index is built by the indexer.
+# Until that exists (T1), copy in the hand-built stub so citations resolve.
+info "Installing the development citation index"
+if [[ -f data/index/citation_index.json ]]; then
+    ok "data/index/citation_index.json already exists — leaving it alone"
+else
+    mkdir -p data/index
+    cp corpus/stub/citation_index.json data/index/citation_index.json
+    ok "Copied the stub index from corpus/stub/ ($(grep -c 'source_url' corpus/stub/citation_index.json) entries)"
+fi
+
 # ── Python ────────────────────────────────────────────────────────────────────
 info "Installing Python dependencies"
 uv sync --all-extras
