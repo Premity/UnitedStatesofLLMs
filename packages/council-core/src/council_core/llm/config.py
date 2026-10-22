@@ -16,7 +16,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class ModelConfig(BaseModel):
     """How one role talks to one model."""
 
-    model_id: str = Field(description="LiteLLM model id, e.g. 'mistral/magistral-medium-latest'.")
+    model_id: str = Field(description="LiteLLM model id, e.g. 'groq/llama-3.3-70b-versatile'.")
     temperature: float = Field(default=0.3, ge=0.0, le=2.0)
     max_tokens: int = Field(default=4096, gt=0)
     timeout_seconds: int = Field(default=180, gt=0)
@@ -39,10 +39,11 @@ class RoleModels(BaseSettings):
     model_config = SettingsConfigDict(
         env_prefix="COUNCIL_",
         env_file=".env",
+        env_ignore_empty=True,  # .env.example ships `COUNCIL_SEED=` blank
         extra="ignore",
     )
 
-    presenter_model: str = "mistral/magistral-medium-latest"
+    presenter_model: str = "groq/openai/gpt-oss-120b"
     presenter_temperature: float = 0.4
 
     attacker_doctrinal_model: str = "ollama/qwen3.5:14b"
