@@ -14,7 +14,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 
 # Bake the ONNX embedding weights into the image so the first run does not
 # stall on a download.
-RUN python -c "from fastembed import TextEmbedding; TextEmbedding(model_name='BAAI/bge-m3')"
+RUN python -c "from fastembed import TextEmbedding; TextEmbedding(model_name='BAAI/bge-large-en-v1.5')"
 
 COPY pipeline/indexer/indexer /app/indexer
 

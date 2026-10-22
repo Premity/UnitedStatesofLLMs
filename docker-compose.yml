@@ -37,7 +37,7 @@ services:
     environment:
       QDRANT_URL: "http://qdrant:6333"
       QDRANT_COLLECTION: "${QDRANT_COLLECTION:-ihl_corpus}"
-      EMBEDDING_MODEL: "${EMBEDDING_MODEL:-BAAI/bge-m3}"
+      EMBEDDING_MODEL: "${EMBEDDING_MODEL:-BAAI/bge-large-en-v1.5}"
       LOG_LEVEL: "${LOG_LEVEL:-INFO}"
 
       # Model roster — see .env.example for the full set.
