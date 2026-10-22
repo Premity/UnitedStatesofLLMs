@@ -52,7 +52,7 @@ class RoleModels(BaseSettings):
     attacker_evidentiary_model: str = "ollama/gemma3:12b"
     attacker_evidentiary_temperature: float = 0.7
 
-    judge_model: str = "gemini/gemini-2.5-pro"
+    judge_model: str = "gemini/gemini-3.1-pro-preview"
     judge_temperature: float = 0.2
 
     ollama_base_url: str = Field(

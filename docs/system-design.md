@@ -272,7 +272,7 @@ the LLM client, prompt rendering, turn bookkeeping, and citation grounding.
 | `presenter` | Build the position; rebut in later rounds | `mistral/magistral-medium-latest` | 0.4 | `{arguments: Argument[]}` |
 | `attacker_doctrinal` | Legal characterisation: tests, elements, interpretation | `ollama/qwen3.5:14b` | 0.7 | `{objections: Objection[]}` |
 | `attacker_evidentiary` | Factual predicate: sufficiency, mens rea, attribution | `ollama/gemma3:12b` | 0.7 | `{objections: Objection[]}` |
-| `judge` | Rule on every objection; calibrate confidence | `gemini/gemini-2.5-pro` | 0.2 | `{conclusion, reasoning, confidence, rulings[], …}` |
+| `judge` | Rule on every objection; calibrate confidence | `gemini/gemini-3.1-pro-preview` | 0.2 | `{conclusion, reasoning, confidence, rulings[], …}` |
 
 **Capability allocation is deliberate.** Constructing a defensible argument is
 harder than attacking one, and the presenter sets the quality ceiling for the
@@ -793,7 +793,7 @@ as `out_of_corpus`.** This is stated in the README, `ISSUES.md`, `CLAUDE.md`, an
 | `COUNCIL_PRESENTER_MODEL` | api | `mistral/magistral-medium-latest` | |
 | `COUNCIL_ATTACKER_DOCTRINAL_MODEL` | api | `ollama/qwen3.5:14b` | |
 | `COUNCIL_ATTACKER_EVIDENTIARY_MODEL` | api | `ollama/gemma3:12b` | |
-| `COUNCIL_JUDGE_MODEL` | api | `gemini/gemini-2.5-pro` | |
+| `COUNCIL_JUDGE_MODEL` | api | `gemini/gemini-3.1-pro-preview` | |
 | `COUNCIL_OLLAMA_BASE_URL` | api | `http://host.docker.internal:11434` | Injected only for `ollama/` ids |
 | `EMBEDDING_MODEL` | api, indexer | `BAAI/bge-m3` | **Must match** |
 | `QDRANT_URL` | api, indexer | `http://qdrant:6333` | `localhost` in pipeline |

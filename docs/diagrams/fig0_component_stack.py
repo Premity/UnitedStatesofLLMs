@@ -261,7 +261,7 @@ p.append(
         EY + 14,
         520,
         62,
-        "Google AI Studio  ·  gemini-2.5-pro",
+        "Google AI Studio  ·  gemini-3.1-pro-preview",
         "judge  ·  100 req/day",
         ["rules on every objection, calibrates confidence — the binding quota"],
         kind="external",
