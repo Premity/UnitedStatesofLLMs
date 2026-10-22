@@ -10,7 +10,9 @@ requires-python = ">=3.12,<3.13"
 dependencies = [
     "council-core",
     "fastembed>=0.4.2",
-    "qdrant-client>=1.12",
+    # Must track the server image in docker-compose.yml: the client warns
+    # and may misbehave when major versions differ or minor drifts by >1.
+    "qdrant-client>=1.12,<1.14",
 ]
 
 [tool.uv.sources]

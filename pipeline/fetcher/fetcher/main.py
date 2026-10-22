@@ -41,6 +41,27 @@ def load_manifest(name: str) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def mark_fetched(manifest_name: str, fetched_ids: set[str]) -> None:
+    """Flip `status` to "fetched" for what actually landed.
+
+    The manifest is the corpus scope and the record of what is in it, so a
+    status left at "pending" after a successful fetch makes the manifest lie
+    about the corpus. Written back in place: this is a committed file, so the
+    change is a reviewable diff.
+    """
+    path = CORPUS_DIR / "manifests" / f"{manifest_name}.json"
+    data = json.loads(path.read_text(encoding="utf-8"))
+    changed = 0
+    for entry in data.get("instruments", []):
+        want = "fetched" if entry["id"] in fetched_ids else "pending"
+        if entry.get("status") != want:
+            entry["status"] = want
+            changed += 1
+    if changed:
+        path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        log.info("manifest_updated", manifest=manifest_name, changed=changed)
+
+
 def fetch_treaties(manifest: dict, client: IcrcClient) -> tuple[int, int]:
     """Fetch every instrument the treaty manifest lists.
 
@@ -48,7 +69,8 @@ def fetch_treaties(manifest: dict, client: IcrcClient) -> tuple[int, int]:
     says what is missing is more useful than no corpus at all.
     """
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    fetched = failed = 0
+    fetched_ids: set[str] = set()
+    failed = 0
 
     # Hague IV and its annexed Regulations are two corpus ids served by one
     # node (ADR 0010), so the same response is parsed twice with a different
@@ -81,14 +103,15 @@ def fetch_treaties(manifest: dict, client: IcrcClient) -> tuple[int, int]:
                 document.model_dump_json(indent=2, exclude_none=True) + "\n",
                 encoding="utf-8",
             )
-            fetched += 1
+            fetched_ids.add(corpus_id)
             log.info("instrument_fetched", id=corpus_id, spans=len(document.spans), path=str(out))
 
         except Exception as exc:
             failed += 1
             log.error("instrument_failed", id=corpus_id, error=str(exc))
 
-    return fetched, failed
+    mark_fetched("treaties", fetched_ids)
+    return len(fetched_ids), failed
 
 
 def fetch_customary(client: IcrcClient) -> bool:
