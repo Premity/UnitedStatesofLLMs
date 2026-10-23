@@ -123,7 +123,20 @@ if [[ "$DOCKER_UP" == "1" ]] && curl -fsS "$QDRANT_URL/healthz" >/dev/null 2>&1;
         warn "collection '$COLLECTION' exists but is empty"
         fix "make index"
     else
-        ok "collection '$COLLECTION' holds $points points"
+        # A partial index looks healthy from outside: the collection exists,
+        # queries return results, and the spans that never got embedded are
+        # simply never retrieved.
+        expected=$(python3 -c "
+import json
+print(len(json.load(open('$LIVE')).get('entries', {})))
+" 2>/dev/null || echo 0)
+        if [[ "$expected" -gt 0 && "$points" -lt "$expected" ]]; then
+            warn "collection holds $points points but the index has $expected entries"
+            note "an interrupted index run; the missing spans are never retrieved"
+            fix "make index-local"
+        else
+            ok "collection '$COLLECTION' holds $points points"
+        fi
     fi
 else
     if [[ "$DOCKER_UP" == "1" ]]; then
