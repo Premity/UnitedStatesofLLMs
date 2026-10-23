@@ -62,7 +62,7 @@ Consequences you will hit immediately:
 **Two things worth reading before you start**, both of which will save you a
 day. [ISSUES.md](../../ISSUES.md) lists what is broken and what was found
 running the system for the first time. [corpus-findings.md](../corpus-findings.md)
-collects the ten problems that came up building the corpus — seven of which
+collects the eleven problems that came up building the corpus — eight of which
 produced plausible wrong output rather than an error, which is the failure
 mode this project can least afford.
 

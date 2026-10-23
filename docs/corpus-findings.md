@@ -260,10 +260,52 @@ boundaries.
 
 ---
 
+## 11. The documented setup path did not work from a clean clone
+
+Found by cloning the repo into an empty directory and following
+`docs/planning/onboarding.md` exactly. Three separate problems, none of which
+show up when you have been working in the repo all along.
+
+**`docker compose run` reuses a stale image.** `make fetch` fetched 23
+instruments, reported `failed=0`, and silently skipped all 161 customary rules
+— the fetcher image predated that code. Nothing in the output said so, in
+either direction.
+
+**The base image carried an old `council-core`.** Rebuilding the fetcher
+surfaced the next layer: `Value error, Locator 'customary_ihl/rule.54' does
+not match ADR 0008`. The container was validating against the regex from
+before customary rules existed. `make doctor` does catch this, but only if you
+already suspect it.
+
+**The containers wrote `data/` as root**, so the user could not delete their
+own cache:
+
+```
+rm: cannot remove 'data/cache/raw/icrc_….json': Permission denied
+```
+
+**Fix.** `make fetch` and `make index` now build the base and the service
+image first, as `make up` already did. The pipeline containers run as the
+invoking user, with `UID`/`GID` passed in from the Makefile because compose
+cannot see shell variables. And the data directories are created by the
+Makefile beforehand: Docker creates a missing bind-mount target as root before
+the container starts, so an unprivileged container cannot write into one it
+did not already have.
+
+**Worth repeating:** the only way to find these was to clone into an empty
+directory and follow the written instructions. Every one of them is invisible
+from a working checkout.
+
+---
+
 ## The pattern
 
-Seven of these ten produce **plausible wrong output rather than an error**. The
-defences that actually caught things:
+Eight of these eleven produce **plausible wrong output rather than an error**.
+The defences that actually caught things:
+
+0. **Follow your own instructions from an empty directory.** Finding 11 was
+   invisible from a working checkout, and would have cost the next person an
+   afternoon.
 
 1. **Check content, not status.** HTTP 200, a non-empty file and a parse that
    returns something are all compatible with total failure.

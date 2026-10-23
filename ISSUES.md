@@ -184,8 +184,8 @@ unless started with `uv run --env-file .env ...`. `.env` lines must be
 
 ## Found while building the corpus (T1)
 
-Ten problems, written up with causes and fixes in
-[docs/corpus-findings.md](docs/corpus-findings.md). Seven of them produced
+Eleven problems, written up with causes and fixes in
+[docs/corpus-findings.md](docs/corpus-findings.md). Eight of them produced
 plausible wrong output rather than an error, which is the failure mode this
 project can least afford.
 

@@ -15,6 +15,9 @@ services:
       context: ..
       dockerfile: pipeline/fetcher/Dockerfile
     image: council-fetcher:latest
+    # Write data/ as the invoking user. Without this the container writes as
+    # root into the host working tree, and nobody can delete their own cache.
+    user: "${UID:-1000}:${GID:-1000}"
     environment:
       CORPUS_DIR: "/corpus"
       DATA_DIR: "/data"
@@ -29,6 +32,7 @@ services:
       context: ..
       dockerfile: pipeline/indexer/Dockerfile
     image: council-indexer:latest
+    user: "${UID:-1000}:${GID:-1000}"
     environment:
       # network_mode: host, so Qdrant is on localhost, not the service name.
       QDRANT_URL: "${QDRANT_URL:-http://localhost:6333}"

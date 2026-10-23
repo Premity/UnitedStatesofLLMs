@@ -3,7 +3,7 @@
 What the system retrieves over, how it is scoped, and the rules that make
 citation validation possible.
 
-> Building this turned up ten problems, almost none of which raised an
+> Building this turned up eleven problems, almost none of which raised an
 > exception. If you are about to change the fetcher, the parsers or the
 > embedding model, read [corpus-findings.md](corpus-findings.md) first.
 
