@@ -9,6 +9,12 @@ export DATA_DIR="$ROOT/data"
 export PROMPTS_DIR="$ROOT/prompts"
 export CORPUS_DIR="$ROOT/corpus"
 export COUNCIL_OLLAMA_BASE_URL="http://localhost:11434"
+# Compose resolves `qdrant` on its own network; from the host it is localhost.
+export QDRANT_URL="${QDRANT_URL:-http://localhost:6333}"
 export PYTHONUTF8=1
-export RETRIEVAL_BACKEND=stub   # context from data/index/citation_index.json until T1 lands
+# The real corpus now exists (T1), so retrieval goes to Qdrant. Set
+# RETRIEVAL_BACKEND=stub by hand only to work without Qdrant running -- it
+# serves word-overlap matches from the citation index and is not semantic
+# search, so it must never be used for a scored run.
+export RETRIEVAL_BACKEND="${RETRIEVAL_BACKEND:-qdrant}"
 echo "dev env set: DATA_DIR=$DATA_DIR RETRIEVAL_BACKEND=$RETRIEVAL_BACKEND"

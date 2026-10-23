@@ -795,7 +795,7 @@ as `out_of_corpus`.** This is stated in the README, `ISSUES.md`, `CLAUDE.md`, an
 | `COUNCIL_ATTACKER_EVIDENTIARY_MODEL` | api | `ollama/gemma3:12b` | |
 | `COUNCIL_JUDGE_MODEL` | api | `gemini/gemini-3.1-pro-preview` | |
 | `COUNCIL_OLLAMA_BASE_URL` | api | `http://host.docker.internal:11434` | Injected only for `ollama/` ids |
-| `EMBEDDING_MODEL` | api, indexer | `BAAI/bge-m3` | **Must match** |
+| `EMBEDDING_MODEL` | api, indexer | `BAAI/bge-large-en-v1.5` | **Must match** |
 | `QDRANT_URL` | api, indexer | `http://qdrant:6333` | `localhost` in pipeline |
 | `QDRANT_COLLECTION` | api, indexer | `ihl_corpus` | |
 | `MAX_CONCURRENT_DEBATES` | api | `2` | Quota guard |

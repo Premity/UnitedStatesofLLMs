@@ -293,7 +293,7 @@ requires-dist = [
     { name = "fastembed", specifier = ">=0.4.2" },
     { name = "httpx", specifier = ">=0.27" },
     { name = "langgraph", specifier = ">=0.2.45" },
-    { name = "qdrant-client", specifier = ">=1.12" },
+    { name = "qdrant-client", specifier = ">=1.12,<1.14" },
     { name = "sse-starlette", specifier = ">=2.1" },
     { name = "uvicorn", extras = ["standard"], specifier = ">=0.32" },
 ]
@@ -381,7 +381,7 @@ dependencies = [
 requires-dist = [
     { name = "council-core", editable = "packages/council-core" },
     { name = "fastembed", specifier = ">=0.4.2" },
-    { name = "qdrant-client", specifier = ">=1.12" },
+    { name = "qdrant-client", specifier = ">=1.12,<1.14" },
 ]
 
 [[package]]
@@ -552,6 +552,29 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/3d/fa/f0586c56bdfb8a7a2adda01e0ac2413447cde3141ab09411a5d5afdcffd3/grpcio-1.83.1-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:9e703effe3ae779925c82ac24fdb82cf4105e1096810151ed9501c5f34546b9c", size = 7984321, upload-time = "2026-08-28T07:08:22.114Z" },
     { url = "https://files.pythonhosted.org/packages/25/8a/14ec05669f9eb295801e26c2ea8c561a1b786b0e3557c2c22131165ab010/grpcio-1.83.1-cp312-cp312-win32.whl", hash = "sha256:a2aea8bd6e0a34f12cbaddb7bb70bec836818789fa5c7ab7572c6b745396a2d4", size = 4395604, upload-time = "2026-08-28T07:08:24.08Z" },
     { url = "https://files.pythonhosted.org/packages/e9/37/8c2f7cc16089e36a3fbacaacc7a3d043912aa0d2dfae5556f6450414ea6e/grpcio-1.83.1-cp312-cp312-win_amd64.whl", hash = "sha256:583bf2e8255040a4a312f9572dfe62a05271437b149550e1a536d5c47d2d1e8a", size = 5161512, upload-time = "2026-08-28T07:08:25.81Z" },
+]
+
+[[package]]
+name = "grpcio-tools"
+version = "1.83.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "grpcio" },
+    { name = "protobuf" },
+    { name = "setuptools" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/8b/79/8b4131bcb94f09c2cac4919e627f20c09ba9b22320a307697d72b1f881d4/grpcio_tools-1.83.1.tar.gz", hash = "sha256:a8148eece396f8a349097958bc00f14882003331f3b7c2ae8079c1c632d17d6f", size = 6399877, upload-time = "2026-08-28T07:10:56.19Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/03/91/79261571a7e5f6b5526f2da0fb7bff680af94f5322c8e8923961cbe801ae/grpcio_tools-1.83.1-cp312-cp312-linux_armv7l.whl", hash = "sha256:3a8931c167e52741f72795c67f45435faaefb7ce8e9aa9413ba523ddaa358998", size = 2653283, upload-time = "2026-08-28T07:09:59.056Z" },
+    { url = "https://files.pythonhosted.org/packages/03/b2/ea313245d23b0a77edc83b1f01b86304664e79e2221d11cc8cf92985f18b/grpcio_tools-1.83.1-cp312-cp312-macosx_11_0_universal2.whl", hash = "sha256:d559e85272145a979e9ad10be2740d953dcd21c37cdad159f06cd7eaf887c898", size = 5965913, upload-time = "2026-08-28T07:10:00.727Z" },
+    { url = "https://files.pythonhosted.org/packages/31/ce/125baf82bba77fad398f6139bda5e4383208a5a7f9f1ffc42dd8d973c402/grpcio_tools-1.83.1-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:169518957cbc23034950006f3eb77514516476496b2951576c531336c61baffb", size = 2705430, upload-time = "2026-08-28T07:10:02.324Z" },
+    { url = "https://files.pythonhosted.org/packages/bc/7c/cc727ab1b4ecc0a6dfe706a714c959d86736153c811e38b5b6723cb7576d/grpcio_tools-1.83.1-cp312-cp312-manylinux2014_i686.manylinux_2_17_i686.whl", hash = "sha256:d0e9b58917beb6e13d40bb694390dc79c8d7652a1d9ff412e98bdb416d8b135e", size = 3033411, upload-time = "2026-08-28T07:10:04.255Z" },
+    { url = "https://files.pythonhosted.org/packages/84/57/e0312f16529cde4de03f532bb8dd4a8ccbf314e7c40cdfdc5586b6c23f85/grpcio_tools-1.83.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:70c74bb6fe0b57b7f4f49caa21d3263e149c2f1e2ef9d53c3d78d622e8564deb", size = 2774499, upload-time = "2026-08-28T07:10:05.928Z" },
+    { url = "https://files.pythonhosted.org/packages/b7/83/0ecd3ee6ae20da8454481adf489969f854c56f702fcd2f27b5583fc14eae/grpcio_tools-1.83.1-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:91a3d0939364e688773c2735286e61107fbacdc104711b0003bd665986b79993", size = 3229873, upload-time = "2026-08-28T07:10:07.576Z" },
+    { url = "https://files.pythonhosted.org/packages/09/03/92d4a193578efc5e4a061339dd0dbdcf516eebdb0577646b1bfaf144c803/grpcio_tools-1.83.1-cp312-cp312-musllinux_1_2_i686.whl", hash = "sha256:479bb9f4bde497471717e0ee59ed5635b490af954224825bd7006608d1e76d79", size = 3803165, upload-time = "2026-08-28T07:10:09.67Z" },
+    { url = "https://files.pythonhosted.org/packages/b2/51/9921cf100111c0e1ba375767cab93be3036b231f22533985ddb497111d4f/grpcio_tools-1.83.1-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:b57f41c87ba0ea0d13d98b696058864d3dea949ecb4a376c3a4a52857330b83f", size = 3461813, upload-time = "2026-08-28T07:10:11.594Z" },
+    { url = "https://files.pythonhosted.org/packages/75/77/7fd50b572b38670886e1c41986b785720e24a4b0be8b164fa09e2d915782/grpcio_tools-1.83.1-cp312-cp312-win32.whl", hash = "sha256:eaf9217d67960016fdd2932f28239ec14716a15b783baa8d4b012937098531f1", size = 1022492, upload-time = "2026-08-28T07:10:13.144Z" },
+    { url = "https://files.pythonhosted.org/packages/cd/68/45e04d9a921e10158b84b099dbdd25e6d56776d508872c68922a61ff85fd/grpcio_tools-1.83.1-cp312-cp312-win_amd64.whl", hash = "sha256:dcbdd3422ca50ed6f880f9974df50796fb355f4051c55a464423a6423a3f0393", size = 1192288, upload-time = "2026-08-28T07:10:14.777Z" },
 ]
 
 [[package]]
@@ -1238,14 +1261,14 @@ wheels = [
 
 [[package]]
 name = "portalocker"
-version = "3.2.0"
+version = "2.10.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pywin32", marker = "sys_platform == 'win32'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/5e/77/65b857a69ed876e1951e88aaba60f5ce6120c33703f7cb61a3c894b8c1b6/portalocker-3.2.0.tar.gz", hash = "sha256:1f3002956a54a8c3730586c5c77bf18fae4149e07eaf1c29fc3faf4d5a3f89ac", size = 95644, upload-time = "2025-06-14T13:20:40.03Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/ed/d3/c6c64067759e87af98cc668c1cc75171347d0f1577fab7ca3749134e3cd4/portalocker-2.10.1.tar.gz", hash = "sha256:ef1bf844e878ab08aee7e40184156e1151f228f103aa5c6bd0724cc330960f8f", size = 40891, upload-time = "2024-07-13T23:15:34.86Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/4b/a6/38c8e2f318bf67d338f4d629e93b0b4b9af331f455f0390ea8ce4a099b26/portalocker-3.2.0-py3-none-any.whl", hash = "sha256:3cdc5f565312224bc570c49337bd21428bba0ef363bbcf58b9ef4a9f11779968", size = 22424, upload-time = "2025-06-14T13:20:38.083Z" },
+    { url = "https://files.pythonhosted.org/packages/9b/fb/a70a4214956182e0d7a9099ab17d50bfcba1056188e9b14f35b9e2b62a0d/portalocker-2.10.1-py3-none-any.whl", hash = "sha256:53a5984ebc86a025552264b459b46a2086e269b21823cb572f8f28ee759e45bf", size = 18423, upload-time = "2024-07-13T23:15:32.602Z" },
 ]
 
 [[package]]
@@ -1506,20 +1529,20 @@ wheels = [
 
 [[package]]
 name = "qdrant-client"
-version = "1.19.0"
+version = "1.13.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "grpcio" },
+    { name = "grpcio-tools" },
     { name = "httpx", extra = ["http2"] },
     { name = "numpy" },
     { name = "portalocker" },
-    { name = "protobuf" },
     { name = "pydantic" },
     { name = "urllib3" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/3a/33/c6e4ec45b4fca5a0b808e8804e60be54a6d7505b68b53c0b1d0d62ba86c1/qdrant_client-1.19.0.tar.gz", hash = "sha256:365395a04b0a26c309b25b7d8b1c99ef2071ec9a2b74bc8a5fd3b7a3642fe963", size = 350953, upload-time = "2026-08-04T14:32:56.923Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/eb/58/1e4acd7ff7637ed56a66e5044699e7af6067232703d0b34f05068fc6234b/qdrant_client-1.13.3.tar.gz", hash = "sha256:61ca09e07c6d7ac0dfbdeb13dca4fe5f3e08fa430cb0d74d66ef5d023a70adfc", size = 266278, upload-time = "2025-03-05T22:43:24.773Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/fc/3c/480c61cc8d5a3e76bb44e86231f408c93643e5498beadbbeb381ab55d02b/qdrant_client-1.19.0-py3-none-any.whl", hash = "sha256:13602a2b3478a95ecdf42f97b93d7f703b63a3361cd912a04495a33a5ac14121", size = 396157, upload-time = "2026-08-04T14:32:55.734Z" },
+    { url = "https://files.pythonhosted.org/packages/dd/b4/bd676f91f5234ab59282e4a110f324029684482cbe08e7a1c77b6338013b/qdrant_client-1.13.3-py3-none-any.whl", hash = "sha256:f52cacbb936e547d3fceb1aaed3e3c56be0ebfd48e8ea495ea3dbc89c671d1d2", size = 306674, upload-time = "2025-03-05T22:43:23.382Z" },
 ]
 
 [[package]]
@@ -1679,6 +1702,15 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/91/4c/075e4f66471bac101141ac739e9e135549be1bae584571bd03a530c056e1/scipy-1.18.1-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:d2924a03db38dc2e848bca2fe9f077dafb891480b91a00a0963a8cf86dfc31c1", size = 37480330, upload-time = "2026-08-21T23:24:19.608Z" },
     { url = "https://files.pythonhosted.org/packages/39/e7/979fd14e75008623df31ba70d6bb144700f68feadcea042021c06a05bf82/scipy-1.18.1-cp312-cp312-win_amd64.whl", hash = "sha256:5e4d44984abc0020154ea81b247adeddcc3ac5527b975ff798bd1ba0adc513c2", size = 36658278, upload-time = "2026-08-21T23:24:25.463Z" },
     { url = "https://files.pythonhosted.org/packages/c7/0b/e1525354ff9d7d5feb6d1b31af6d14072e5c91e9607b421fa1ec889660b3/scipy-1.18.1-cp312-cp312-win_arm64.whl", hash = "sha256:d65d448389b8436493abcf629cc94ad0cf32aecaf06e1acca1de53cc795f2f12", size = 24400588, upload-time = "2026-08-21T23:24:30.579Z" },
+]
+
+[[package]]
+name = "setuptools"
+version = "84.2.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz", hash = "sha256:3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc", size = 1230289, upload-time = "2026-10-20T19:01:37.742Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ef/55/6dc6d6bb953bdfc52519a0059592c52b6e3b8ad51cf8256dffceb55b0610/setuptools-84.2.1-py3-none-any.whl", hash = "sha256:ca140b45d5325a9478f880e351484f62fef15f336462e449ca0c03c873d589c2", size = 876263, upload-time = "2026-10-20T19:01:35.678Z" },
 ]
 
 [[package]]

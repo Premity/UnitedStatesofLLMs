@@ -27,12 +27,12 @@ echo "==> Resetting the citation index"
 STUB="$REPO_ROOT/corpus/stub/citation_index.json"
 LIVE="$REPO_ROOT/data/index/citation_index.json"
 rm -f "$LIVE"
-# Until the indexer emits one (T1-6), the hand-built stub IS the index, and
-# deleting it leaves every citation resolving out_of_corpus. Put it back.
+# Leaving no index at all makes every citation resolve out_of_corpus, so drop
+# back to the placeholder. `make fetch` restores the real corpus.
 if [[ -f "$STUB" ]]; then
     mkdir -p "$(dirname "$LIVE")"
     cp "$STUB" "$LIVE"
-    echo " ✓ restored the development stub from corpus/stub/"
+    echo " ✓ restored the placeholder index (run 'make fetch' for the real corpus)"
 else
     echo " ✓ citation index removed"
 fi

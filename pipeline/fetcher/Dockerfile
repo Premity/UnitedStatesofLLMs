@@ -14,6 +14,6 @@ RUN --mount=type=cache,target=/root/.cache/uv \
         "pypdf>=5.1" \
         "tenacity>=9.0"
 
-COPY pipeline/fetcher/app /app/app
+COPY pipeline/fetcher/fetcher /app/fetcher
 
-CMD ["python", "-m", "app.main"]
+CMD ["python", "-m", "fetcher.main"]

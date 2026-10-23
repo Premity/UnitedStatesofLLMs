@@ -155,13 +155,13 @@ The roster is frozen from the start of the scored run until it finishes.
 With `retrieval_enabled=False` the context template tells every role to argue
 "from principle", so the presenter emitted zero citations and nothing was
 resolved. A T0 run with retrieval off proves the wiring but exercises no
-citation checking. Until the indexer lands, set `RETRIEVAL_BACKEND=stub`: the
-retrieve node then serves spans from `data/index/citation_index.json`, ranked by
-word overlap. Development only, never for a scored run.
+citation checking.
 
-`data/index/` is gitignored, so the index itself lives at
-`corpus/stub/citation_index.json` (24 articles) and `make setup` copies it into
-place. `source scripts/dev-env.sh` sets `RETRIEVAL_BACKEND=stub` for you.
+T1 has since built the real corpus, so run with `--retrieval` against Qdrant.
+`RETRIEVAL_BACKEND=stub` remains as a way to work without Qdrant running: it
+serves word-overlap matches from the citation index, which is not semantic
+search and must never be used for a scored run. It logs a warning on every
+call so a stray one is visible in the output.
 
 ### [MEDIUM] Doctrinal attacker on a smaller model
 
@@ -179,6 +179,25 @@ Only Docker Compose exports `.env` into the process environment. LiteLLM reads
 provider keys from the environment, so scripts run outside Docker see no keys
 unless started with `uv run --env-file .env ...`. `.env` lines must be
 `NAME=value` with no spaces around `=`.
+
+---
+
+## Found while building the corpus (T1)
+
+Eleven problems, written up with causes and fixes in
+[docs/corpus-findings.md](docs/corpus-findings.md). Eight of them produced
+plausible wrong output rather than an error, which is the failure mode this
+project can least afford.
+
+The ones that are still open rather than fixed:
+
+- **Three Rome Statute weapons amendments are not indexed.** The source gives
+  the inserted sentence with no article number, and a guessed locator is
+  indistinguishable from a fabrication. A citation to one resolves
+  `unresolved`, which the metrics read as fabrication — state it in the report.
+- **UN resolutions are scanned images** in the UN Digital Library, with no
+  text layer. Only the resolutions the ICRC serves as structured text are in
+  scope.
 
 ---
 
