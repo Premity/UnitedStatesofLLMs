@@ -115,10 +115,14 @@ Docker also need `--env-file .env` to see your API keys:
 > (~10,000 neurons/day free, roughly 30 single-case runs). Either way, **record
 > which models you ran** — it changes what the results mean.
 
+> **The canonical setup steps, in order, are the quickstart in
+> [README.md](../../README.md#quick-start).** This section explains what each
+> one does; the README is what to follow.
+
 ### Getting the corpus
 
 ```bash
-make fetch          # 23 instruments + 161 customary rules, ~20 requests
+make fetch          # 24 documents: 23 treaties + the 161 customary rules
 make index-local    # embed and upsert, under a memory cap
 ```
 

@@ -87,8 +87,11 @@ ok "Setup complete."
 echo
 echo "  Next:"
 echo "    1. Fill in API keys in .env"
-echo "    2. make up          start the stack"
-echo "    3. make doctor      check what is set up and what is missing"
-echo "    4. make corpus      fetch and index the corpus"
-echo "    5. open http://localhost:3000"
+echo "    2. make up            start the stack"
+echo "    3. make fetch         the corpus, ~30 seconds"
+echo "    4. make index-local   embed and index -- around 45 minutes"
+echo "    5. make doctor        confirm the result"
+echo "    6. open http://localhost:3000"
+echo
+echo "  The same list, with the detail, is the quickstart in README.md."
 echo

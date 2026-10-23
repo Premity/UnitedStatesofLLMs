@@ -134,14 +134,25 @@ git clone <repo-url> && cd UnitedStatesofLLMs
 make setup            # env file, Python deps, git hooks
 # fill in GROQ_API_KEY and GEMINI_API_KEY in .env
 
-ollama pull qwen3.5:14b
+ollama pull qwen3.5:14b       # the two attackers, ~17GB
 ollama pull gemma3:12b
 
-make up               # start the stack
-make corpus           # fetch and index the corpus (first run only)
+make up               # start the stack (Qdrant, API, frontend)
+make fetch            # the corpus: 24 documents, ~30 seconds
+make index-local      # embed and index -- SLOW, see below
+make doctor           # confirm the result
 ```
 
 Then open **http://localhost:3000**.
+
+**`make index-local` takes around 45 minutes** and is the only slow step. It
+embeds ~2,200 spans with a 1.2GB model, which on a 16GB machine is enough to
+get something OOM-killed, so it runs under a memory cap — the job dies rather
+than your editor. Raise it with `MEM_CAP=6G` if the job is what gets killed.
+Safe to interrupt and re-run: it overwrites rather than duplicating.
+
+`make doctor` is read-only and tells you what is set up, what is missing, and
+what to run next. Reach for it whenever something behaves oddly.
 
 Run `make help` for everything else.
 
