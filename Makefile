@@ -8,7 +8,10 @@ SHELL := /bin/bash
 
 COMPOSE      := docker compose
 COMPOSE_PROD := docker compose -f docker-compose.yml -f docker-compose.prod.yml
-COMPOSE_PIPE := docker compose -f pipeline/docker-compose.yml
+# UID/GID are shell variables, not environment ones, so compose cannot see
+# them unless they are passed in. Without them the pipeline containers write
+# data/ as root into the host working tree.
+COMPOSE_PIPE := UID=$(shell id -u) GID=$(shell id -g) docker compose -f pipeline/docker-compose.yml
 
 .PHONY: help
 help: ## Show this help
@@ -105,13 +108,30 @@ prod-logs: ## Tail production logs
 
 # ── Corpus pipeline ───────────────────────────────────────────────────────────
 
+# These build first on purpose. `docker compose run` happily reuses a stale
+# image, and council-core lives in the base image, so a pipeline run against
+# an old build fails in ways that point at the data rather than the image.
+
+# Docker creates a missing bind-mount target as root before the container
+# starts, and the container then runs unprivileged and cannot write into it.
+# Making the directories here, as the invoking user, avoids both halves.
+.PHONY: data-dirs
+data-dirs:
+	@mkdir -p data/cache/raw data/index data/runs data/scratch
+
 .PHONY: fetch
-fetch: ## Download the curated corpus (reads corpus/manifests/)
+fetch: build-base data-dirs ## Download the curated corpus (reads corpus/manifests/)
+	$(COMPOSE_PIPE) build fetcher
 	$(COMPOSE_PIPE) run --rm fetcher
 
 .PHONY: index
-index: ## Chunk, embed, and index the corpus (runtime stack must be up)
+index: build-base data-dirs ## Chunk, embed, and index the corpus (runtime stack must be up)
+	$(COMPOSE_PIPE) build indexer
 	$(COMPOSE_PIPE) run --rm indexer
+
+.PHONY: index-local
+index-local: ## Index on the host under a memory cap (no Docker; see MEM_CAP)
+	@bash scripts/index-safely.sh
 
 .PHONY: corpus
 corpus: fetch index ## Fetch and index in one go

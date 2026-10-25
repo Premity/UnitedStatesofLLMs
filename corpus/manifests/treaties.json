@@ -7,6 +7,7 @@
       "title": "Geneva Convention (I) for the Amelioration of the Condition of the Wounded and Sick in Armed Forces in the Field",
       "year": 1949,
       "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gci-1949",
+      "icrc_node": "377f0d4f-59c4-4a94-938d-8200ac9eaeaa",
       "path": "treaties/geneva/gc_i.json",
       "status": "pending"
     },
@@ -15,6 +16,7 @@
       "title": "Geneva Convention (II) for the Amelioration of the Condition of Wounded, Sick and Shipwrecked Members of Armed Forces at Sea",
       "year": 1949,
       "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gcii-1949",
+      "icrc_node": "1ec3c2dd-86ee-428b-b3c1-c31d42d07bdf",
       "path": "treaties/geneva/gc_ii.json",
       "status": "pending"
     },
@@ -23,6 +25,7 @@
       "title": "Geneva Convention (III) relative to the Treatment of Prisoners of War",
       "year": 1949,
       "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+      "icrc_node": "7fabb6cd-9e92-4413-b731-0d429e1f5fa6",
       "path": "treaties/geneva/gc_iii.json",
       "status": "pending"
     },
@@ -31,6 +34,7 @@
       "title": "Geneva Convention (IV) relative to the Protection of Civilian Persons in Time of War",
       "year": 1949,
       "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+      "icrc_node": "c60b4739-8816-4da1-ac31-a1133ce11bb5",
       "path": "treaties/geneva/gc_iv.json",
       "status": "pending"
     },
@@ -41,32 +45,230 @@
       "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
       "path": "treaties/geneva/ap_i.json",
       "status": "pending",
-      "notes": "Articles 48-58 carry distinction and proportionality — the core of most questions."
+      "notes": "Articles 48-58 carry distinction and proportionality — the core of most questions.",
+      "icrc_node": "2755c477-f860-4531-a3c6-bdf05c53d901"
     },
     {
       "id": "ap_ii",
       "title": "Protocol Additional (II) relating to the Protection of Victims of Non-International Armed Conflicts",
       "year": 1977,
       "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+      "icrc_node": "dfa36a84-0821-4e00-9d25-da85afaa5864",
       "path": "treaties/geneva/ap_ii.json",
       "status": "pending"
     },
     {
       "id": "rome_statute",
-      "title": "Rome Statute of the International Criminal Court",
+      "title": "Rome Statute of the International Criminal Court (as amended)",
       "year": 1998,
       "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
       "path": "treaties/rome-statute/rome_statute.json",
       "status": "pending",
-      "notes": "Article 8 (war crimes) subdivides deeply; the parser must preserve full subparagraph locators like 8(2)(b)(iv)."
+      "notes": "Consolidated by us from the ICRC base text plus the 2010 amendments -- not an official consolidation. The base node already carries the 2019 starvation clause but stops at 8(2)(e)(xii). Merge rules in ADR 0010.",
+      "icrc_node": "24376ac5-3a48-4e8e-ab7d-5986c31453e6",
+      "amendments": [
+        {
+          "id": "rome_statute_amd_war_crimes_2010",
+          "title": "Amendment on War Crimes, amended article 8, 10 June 2010",
+          "icrc_node": "4e15e58f-cdde-4afb-a30b-69dc3977aa92",
+          "merge": "replace_article",
+          "affects": [
+            "8"
+          ],
+          "notes": "Restates article 8 in full and adds 8(2)(e)(xiii)-(xv)."
+        },
+        {
+          "id": "rome_statute_amd_aggression_2010",
+          "title": "Amendment on the Crime of Aggression, articles 8bis, 15bis, 15ter, 11 June 2010",
+          "icrc_node": "c1f3cdda-c5ef-426b-a9e2-5c7a5435e6b4",
+          "merge": "add_articles",
+          "affects": [
+            "8bis",
+            "15bis",
+            "15ter"
+          ]
+        },
+        {
+          "id": "rome_statute_amd_art124_2015",
+          "title": "Amendment on War Crimes, amended article 124, 26 November 2015",
+          "icrc_node": "6295db40-2ce3-49be-a7c7-0ce87d59e908",
+          "merge": "delete_article",
+          "affects": [
+            "124"
+          ]
+        }
+      ],
+      "not_indexed": [
+        {
+          "icrc_node": "1664ead7-69a0-459f-98c0-826300935d4e",
+          "title": "Weapons using microbial or other biological agents, or toxins",
+          "reason": "The ICRC source gives the inserted sentence with no article number. Guessing a locator is worse than omitting it: a wrong locator is indistinguishable from a fabrication. ADR 0010."
+        },
+        {
+          "icrc_node": "4d9b258c-69e0-4f53-aa7c-4d1e7dfd5cdc",
+          "title": "Blinding laser weapons",
+          "reason": "The ICRC source gives the inserted sentence with no article number. Guessing a locator is worse than omitting it: a wrong locator is indistinguishable from a fabrication. ADR 0010."
+        },
+        {
+          "icrc_node": "58f3117f-43ca-4f75-a33a-5da0b4e99492",
+          "title": "Weapons injuring by fragments undetectable by x-rays",
+          "reason": "The ICRC source gives the inserted sentence with no article number. Guessing a locator is worse than omitting it: a wrong locator is indistinguishable from a fabrication. ADR 0010."
+        }
+      ]
     },
     {
       "id": "hague_iv",
-      "title": "Hague Convention (IV) respecting the Laws and Customs of War on Land and its annexed Regulations",
+      "title": "Hague Convention (IV) respecting the Laws and Customs of War on Land",
       "year": 1907,
       "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/hague-conv-iv-1907",
       "path": "treaties/hague/hague_iv.json",
+      "status": "pending",
+      "icrc_node": "d2ee0b30-a892-4033-8bf4-43acde1c8b04",
+      "notes": "Convention only, 9 articles. The annexed Regulations renumber from 1 and are a separate corpus id, hague_iv_regs -- see ADR 0010.",
+      "icrc_section": "Article"
+    },
+    {
+      "id": "hague_iv_regs",
+      "title": "Regulations respecting the Laws and Customs of War on Land, annexed to Hague Convention (IV)",
+      "year": 1907,
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/hague-conv-iv-1907",
+      "icrc_node": "d2ee0b30-a892-4033-8bf4-43acde1c8b04",
+      "icrc_section": "Annex",
+      "path": "treaties/hague/hague_iv_regs.json",
+      "status": "pending",
+      "notes": "56 articles, numbered from 1 independently of the Convention. A citation to 'Hague IV art. 23' almost always means this document. ADR 0010."
+    },
+    {
+      "id": "ap_iii",
+      "title": "Protocol Additional (III) relating to the Adoption of an Additional Distinctive Emblem",
+      "year": 2005,
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apiii-2005",
+      "icrc_node": "c863b087-59f9-4035-bd8c-cdd0c12ceb8f",
+      "path": "treaties/other/ap_iii.json",
+      "status": "pending"
+    },
+    {
+      "id": "hague_cp",
+      "title": "Convention for the Protection of Cultural Property in the Event of Armed Conflict",
+      "year": 1954,
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/hague-conv-1954",
+      "icrc_node": "0cf0abdf-55d1-4379-aaa9-16870ea36f93",
+      "path": "treaties/other/hague_cp.json",
+      "status": "pending"
+    },
+    {
+      "id": "genocide",
+      "title": "Convention on the Prevention and Punishment of the Crime of Genocide",
+      "year": 1948,
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/genocide-conv-1948",
+      "icrc_node": "ec4325e0-f84d-4814-af0d-abe27dc43ca9",
+      "path": "treaties/other/genocide.json",
+      "status": "pending"
+    },
+    {
+      "id": "bwc",
+      "title": "Biological Weapons Convention",
+      "year": 1972,
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/bwc-1972",
+      "icrc_node": "9c137830-3a0b-4b9f-816c-9021c598100a",
+      "path": "treaties/other/bwc.json",
+      "status": "pending"
+    },
+    {
+      "id": "enmod",
+      "title": "Convention on the Prohibition of Military or Any Hostile Use of Environmental Modification Techniques",
+      "year": 1976,
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/enmod-1976",
+      "icrc_node": "61570b1c-8ad7-4929-8ba2-77144e7b25f6",
+      "path": "treaties/other/enmod.json",
+      "status": "pending"
+    },
+    {
+      "id": "ccw",
+      "title": "Convention on Certain Conventional Weapons",
+      "year": 1980,
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-1980",
+      "icrc_node": "232690cd-bb42-452e-8cee-86eefaf9de88",
+      "path": "treaties/other/ccw.json",
+      "status": "pending",
+      "notes": "The framework convention. Its protocols are separate corpus ids, as each is cited on its own."
+    },
+    {
+      "id": "ccw_p_ii",
+      "title": "Protocol (II) on Prohibitions or Restrictions on the Use of Mines, Booby-Traps and Other Devices",
+      "year": 1980,
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-ii-1980",
+      "icrc_node": "05b9e6a2-79da-4517-8772-1598392cd300",
+      "path": "treaties/other/ccw_p_ii.json",
+      "status": "pending"
+    },
+    {
+      "id": "ccw_p_iii",
+      "title": "Protocol (III) on Prohibitions or Restrictions on the Use of Incendiary Weapons",
+      "year": 1980,
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+      "icrc_node": "58c6abea-6241-4246-9226-369abea82868",
+      "path": "treaties/other/ccw_p_iii.json",
+      "status": "pending"
+    },
+    {
+      "id": "ccw_p_iv",
+      "title": "Protocol (IV) on Blinding Laser Weapons",
+      "year": 1995,
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iv-1995",
+      "icrc_node": "d52fe2d4-d5d8-4c0f-b2db-a332214ec950",
+      "path": "treaties/other/ccw_p_iv.json",
+      "status": "pending"
+    },
+    {
+      "id": "ccw_p_v",
+      "title": "Protocol (V) on Explosive Remnants of War",
+      "year": 2003,
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-v-2003",
+      "icrc_node": "d11b068c-a3ea-429d-9a49-f2d42be1eae3",
+      "path": "treaties/other/ccw_p_v.json",
+      "status": "pending"
+    },
+    {
+      "id": "cwc",
+      "title": "Chemical Weapons Convention",
+      "year": 1993,
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/cwc-1993",
+      "icrc_node": "8dd95241-fb6b-4363-bb77-8c5ce2f72bcf",
+      "path": "treaties/other/cwc.json",
+      "status": "pending"
+    },
+    {
+      "id": "ottawa",
+      "title": "Convention on the Prohibition of Anti-Personnel Mines (Ottawa Treaty)",
+      "year": 1997,
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ottawa-1997",
+      "icrc_node": "fe53f59b-c094-4623-a44d-a13bb4088a36",
+      "path": "treaties/other/ottawa.json",
+      "status": "pending"
+    },
+    {
+      "id": "ccm",
+      "title": "Convention on Cluster Munitions",
+      "year": 2008,
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+      "icrc_node": "a18183fc-cf92-409d-8380-d72d8ca55551",
+      "path": "treaties/other/ccm.json",
+      "status": "pending"
+    },
+    {
+      "id": "crc_opac",
+      "title": "Optional Protocol to the CRC on the Involvement of Children in Armed Conflict",
+      "year": 2000,
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+      "icrc_node": "790a0d40-845d-4052-8f83-63d4eb8996d1",
+      "path": "treaties/other/crc_opac.json",
       "status": "pending"
     }
-  ]
+  ],
+  "source": {
+    "name": "ICRC IHL Databases JSON:API",
+    "base": "https://ihl-databases.icrc.org/jsonapi/node/treaty",
+    "notes": "Undocumented but public and unauthenticated. Raw responses are snapshotted so a breaking change cannot silently empty retrieval."
+  }
 }

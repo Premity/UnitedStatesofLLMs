@@ -6,6 +6,11 @@ from council_core.models.citation import (
     CitationType,
     ResolvedCitation,
 )
+from council_core.models.corpus import (
+    CorpusDocument,
+    DocumentType,
+    Span,
+)
 from council_core.models.debate import (
     Argument,
     DebateConfig,
@@ -23,8 +28,10 @@ __all__ = [
     "Citation",
     "CitationStatus",
     "CitationType",
+    "CorpusDocument",
     "DebateConfig",
     "DebateState",
+    "DocumentType",
     "Objection",
     "ObjectionDisposition",
     "ResolvedCitation",
@@ -32,6 +39,7 @@ __all__ = [
     "RunArtifact",
     "RunMetadata",
     "RunStatus",
+    "Span",
     "Turn",
     "Verdict",
 ]

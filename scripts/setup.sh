@@ -44,15 +44,17 @@ else
 fi
 
 # ── Development citation index ────────────────────────────────────────────────
-# data/index/ is gitignored because the real index is built by the indexer.
-# Until that exists (T1), copy in the hand-built stub so citations resolve.
-info "Installing the development citation index"
+# data/index/ is gitignored because the real index is built by `make fetch`.
+# This 24-article stub is a placeholder so a fresh checkout resolves citations
+# before the corpus is fetched; `make fetch` overwrites it with the real thing.
+info "Installing the placeholder citation index"
 if [[ -f data/index/citation_index.json ]]; then
     ok "data/index/citation_index.json already exists — leaving it alone"
 else
     mkdir -p data/index
     cp corpus/stub/citation_index.json data/index/citation_index.json
-    ok "Copied the stub index from corpus/stub/ ($(grep -c 'source_url' corpus/stub/citation_index.json) entries)"
+    ok "Copied the placeholder index ($(grep -c 'source_url' corpus/stub/citation_index.json) articles)"
+    warn "Run 'make fetch' for the real corpus -- 23 instruments and 161 customary rules."
 fi
 
 # ── Python ────────────────────────────────────────────────────────────────────
@@ -85,8 +87,11 @@ ok "Setup complete."
 echo
 echo "  Next:"
 echo "    1. Fill in API keys in .env"
-echo "    2. make up          start the stack"
-echo "    3. make doctor      check what is set up and what is missing"
-echo "    4. make corpus      fetch and index the corpus"
-echo "    5. open http://localhost:3000"
+echo "    2. make up            start the stack"
+echo "    3. make fetch         the corpus, ~30 seconds"
+echo "    4. make index-local   embed and index -- around 45 minutes"
+echo "    5. make doctor        confirm the result"
+echo "    6. open http://localhost:3000"
+echo
+echo "  The same list, with the detail, is the quickstart in README.md."
 echo

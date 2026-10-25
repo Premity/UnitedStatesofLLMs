@@ -35,7 +35,7 @@ class Settings(BaseSettings):
     qdrant_url: str = "http://qdrant:6333"
     qdrant_collection: str = "ihl_corpus"
     embedding_model: str = Field(
-        default="BAAI/bge-m3",
+        default="BAAI/bge-large-en-v1.5",
         description="fastembed model name. Must match what the indexer used.",
     )
 

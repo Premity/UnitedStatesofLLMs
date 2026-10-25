@@ -171,15 +171,15 @@ fixture cites AP I — which is in the treaty set. Cases are a stretch goal.
 ### T1-1 · Decide the locator format (D1) — `S`
 
 - **Depends on** nothing
-- **Touches** `docs/adr/0008-citation-locator-format.md` (new)
+- **Touches** `docs/adr/0008-citation-locator-format.md`
 - **Done when** the ADR is merged and `test_locator_formats_are_stable` is
   extended to cover subparagraph locators
 
 ### T1-2 · ICRC source parser — `L`
 
 - **Depends on** T1-1
-- **Touches** `pipeline/fetcher/app/sources/icrc.py` (new),
-  `pipeline/fetcher/app/parsers/treaty.py` (new)
+- **Touches** `pipeline/fetcher/fetcher/sources/icrc.py`,
+  `pipeline/fetcher/fetcher/parsers/treaty.py`
 - **Done when** all 8 instruments in `corpus/manifests/treaties.json` fetch to
   `data/cache/<id>.json`, each with ≥1 article, and manifest `status` flips to
   `fetched`
@@ -187,7 +187,7 @@ fixture cites AP I — which is in the treaty set. Cases are a stretch goal.
 ### T1-3 · Fetcher tests — `M`
 
 - **Depends on** T1-2
-- **Touches** `pipeline/fetcher/tests/` (new)
+- **Touches** `pipeline/fetcher/tests/`
 - **Done when** parser tests run against **saved HTML fixtures, not the
   network**, and `make test` still passes with no network access
 
@@ -196,21 +196,21 @@ fixture cites AP I — which is in the treaty set. Cases are a stretch goal.
 The correctness-critical task of this track.
 
 - **Depends on** T1-1, T1-2
-- **Touches** `pipeline/indexer/app/chunking/` (new)
+- **Touches** `pipeline/indexer/indexer/chunking/`
 - **Done when** GC III Article 13 and AP I Article 51(2) each produce a chunk
   whose locator round-trips through the resolver, proven by test
 
 ### T1-5 · Embed and upsert — `M`
 
 - **Depends on** T1-4, D2 (payload shape)
-- **Touches** `pipeline/indexer/app/embeddings/`, `pipeline/indexer/app/index/`
+- **Touches** `pipeline/indexer/indexer/embeddings/`, `pipeline/indexer/indexer/index/`
 - **Done when** `make index` populates `ihl_corpus` and a semantic query for
   "attacks intended to terrorise civilians" returns AP I Art 51(2) in the top 5
 
 ### T1-6 · Citation index — `M`
 
 - **Depends on** T1-4
-- **Touches** `pipeline/indexer/app/index/citation_index.py` (new)
+- **Touches** `pipeline/indexer/indexer/index/citation_index.py`
 - **Done when** `data/index/citation_index.json` contains **both** `entries` and
   `instruments`, and a citation to a real-but-unindexed instrument resolves
   `out_of_corpus` rather than `unresolved`
@@ -221,7 +221,7 @@ The correctness-critical task of this track.
 ### T1-7 · End-to-end corpus test — `M`
 
 - **Depends on** T1-5, T1-6
-- **Touches** `pipeline/indexer/tests/test_end_to_end.py` (new)
+- **Touches** `pipeline/indexer/tests/test_end_to_end.py`
 - **Done when** fetch → chunk → embed → index runs on 2 instruments and all four
   citation statuses are produced by a crafted input
 

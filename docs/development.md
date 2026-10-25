@@ -6,6 +6,10 @@ Everything you need to work on this repo day to day.
 
 ## First-time setup
 
+**The canonical steps, in order, are the quickstart in
+[README.md](../README.md#quick-start).** Run those first; this page covers what
+each one does and what to do when something goes wrong.
+
 ```bash
 make setup
 ```

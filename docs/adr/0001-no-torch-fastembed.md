@@ -2,10 +2,12 @@
 
 **Status:** Accepted
 **Date:** 2026-08-31
+**Amended:** 2026-10-22 — the model is `BAAI/bge-large-en-v1.5`; see "The
+model" below. The decision itself is unchanged.
 
 ## Context
 
-The system needs BGE-M3 embeddings for retrieval over the IHL corpus. The
+The system needs dense embeddings for retrieval over the IHL corpus. The
 obvious route is `sentence-transformers`, which pulls in PyTorch.
 
 That has a real cost. A prior project in this codebase family
@@ -23,8 +25,8 @@ API or Ollama, both of which are HTTP calls.
 
 ## Decision
 
-Use **fastembed**, which runs BGE-M3 through the ONNX runtime. No PyTorch
-anywhere in the repository.
+Use **fastembed**, which runs the embedding model through the ONNX runtime. No
+PyTorch anywhere in the repository.
 
 The shared base image (`Dockerfile.base`) is kept, but it now holds the pinned
 Python runtime, `uv`, and the `council-core` package rather than gigabytes of ML
@@ -60,6 +62,23 @@ though we use four providers and not the fifty it supports. Avoiding torch kept
 roughly 2.4GB out of the image; it did not produce a small image. If image size
 becomes a problem, LiteLLM's transitive provider SDKs are the place to look,
 not the embedder — see [ADR 0002](0002-litellm-model-gateway.md).
+
+## The model
+
+**`BAAI/bge-large-en-v1.5`** — 1024 dimensions, ~1.2GB of ONNX weights.
+
+This ADR originally named BGE-M3, which was wrong: fastembed does not ship it,
+in any of `TextEmbedding`, `SparseTextEmbedding` or
+`LateInteractionTextEmbedding`. `TextEmbedding(model_name="BAAI/bge-m3")`
+raises `ValueError`. The name sat in `.env.example`, both compose files, the
+API settings and the indexer's Dockerfile from the start, and nothing caught it
+because nothing had embedded anything yet.
+
+The corpus is English-only treaty text, so BGE-M3's multilingual training buys
+nothing here. Of what fastembed does offer, `bge-large-en-v1.5` is the
+strongest, and at ~2,200 spans the corpus is far too small for its size to
+matter: indexing is a one-off offline job, and the weights are downloaded once
+into the image.
 
 **Constraint this creates:** the embedding model must be identical in the
 indexer and the API. A collection built with one model and queried with another
