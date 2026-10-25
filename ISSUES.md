@@ -163,10 +163,19 @@ serves word-overlap matches from the citation index, which is not semantic
 search and must never be used for a scored run. It logs a warning on every
 call so a stray one is visible in the output.
 
-### [MEDIUM] Doctrinal attacker on a smaller model
+### [RESOLVED] Doctrinal attacker default pointed at a tag that does not exist
 
-One machine runs `ollama/qwen3.5:9b` instead of `qwen3.5:14b`. Record the model
-with any result produced on it.
+`ollama/qwen3.5:14b` was the configured default in `RoleModels`,
+`.env.example`, and throughout the docs. Qwen3.5 has no 14b release — Ollama's
+library only ships `0.8b / 2b / 4b / 9b / 27b / 35b / 122b`. `ollama pull
+qwen3.5:14b` fails outright with "pull model manifest: file does not exist";
+it was never a matter of one machine drifting from another.
+
+Changed the default to `ollama/qwen3.5:9b` — closest in weight class to
+`gemma3:12b`, the other attacker, keeping the two attackers comparably sized
+for the independence metric. Still record the resolved model id with any
+result, per `RunMetadata.role_models` — that discipline stays right even
+though the original reason for writing it down here was wrong.
 
 ### [LOW] Blank `COUNCIL_SEED=` crashed settings
 

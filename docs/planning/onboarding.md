@@ -95,7 +95,7 @@ Then edit `.env` and add two keys — both have free tiers:
 Pull the attacker models:
 
 ```bash
-ollama pull qwen3.5:14b     # doctrinal attacker
+ollama pull qwen3.5:9b      # doctrinal attacker
 ollama pull gemma3:12b      # evidentiary attacker
 ```
 

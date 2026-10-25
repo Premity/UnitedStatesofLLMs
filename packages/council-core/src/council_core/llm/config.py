@@ -46,7 +46,7 @@ class RoleModels(BaseSettings):
     presenter_model: str = "groq/openai/gpt-oss-120b"
     presenter_temperature: float = 0.4
 
-    attacker_doctrinal_model: str = "ollama/qwen3.5:14b"
+    attacker_doctrinal_model: str = "ollama/qwen3.5:9b"
     attacker_doctrinal_temperature: float = 0.7
 
     attacker_evidentiary_model: str = "ollama/gemma3:12b"

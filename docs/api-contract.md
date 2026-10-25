@@ -140,7 +140,7 @@ kept in sync by hand**.
   "id": "turn_a1b2c3d4",
   "round_number": 1,
   "role": "attacker_doctrinal",
-  "model_id": "ollama/qwen3.5:14b",
+  "model_id": "ollama/qwen3.5:9b",
   "prompt_id": "attacker_doctrinal/challenge",
   "prompt_hash": "sha256…",
   "arguments": [],

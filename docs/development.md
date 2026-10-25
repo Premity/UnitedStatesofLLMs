@@ -27,7 +27,7 @@ Then fill in `.env`:
 And pull the attacker models:
 
 ```bash
-ollama pull qwen3.5:14b
+ollama pull qwen3.5:9b
 ollama pull gemma3:12b
 ```
 

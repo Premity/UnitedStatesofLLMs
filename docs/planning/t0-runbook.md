@@ -62,7 +62,7 @@ rather than `host.docker.internal`, and sets `RETRIEVAL_BACKEND=stub`.
 ### 1.2 Pull the attacker models
 
 ```bash
-ollama pull qwen3.5:14b     # doctrinal  (~9 GB)
+ollama pull qwen3.5:9b      # doctrinal  (~9 GB)
 ollama pull gemma3:12b      # evidentiary (~8 GB)
 ```
 

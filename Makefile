@@ -169,7 +169,7 @@ check: lint test ## Everything CI runs, locally
 
 .PHONY: figures
 figures: ## Regenerate the design figures (SVG, stdlib only)
-	@cd docs/diagrams && for f in fig*.py; do python3 "$$f"; done
+	@cd docs/diagrams && for f in fig*.py; do uv run python3 "$$f"; done
 
 # ── Evaluation ────────────────────────────────────────────────────────────────
 

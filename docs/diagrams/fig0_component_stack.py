@@ -189,7 +189,7 @@ p.append(
         [
             "host by default",
             "opt-in compose profile",
-            "qwen3.5:14b — doctrinal",
+            "qwen3.5:9b — doctrinal",
             "gemma3:12b — evidentiary",
         ],
         kind="external",
