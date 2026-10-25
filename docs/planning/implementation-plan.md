@@ -112,7 +112,7 @@ work built on top.
 
 - **Depends on** nothing
 - **Touches** `.env` (local only, never committed)
-- **Done when** `make check` passes, `ollama list` shows `qwen3.5:14b` and
+- **Done when** `make check` passes, `ollama list` shows `qwen3.5:9b` and
   `gemma3:12b`, and both API keys are set
 
 ### T0-2 · Stub corpus for retrieval — `S`

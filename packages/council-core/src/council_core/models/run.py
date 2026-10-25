@@ -31,7 +31,7 @@ class RunMetadata(BaseModel):
     """Everything needed to reproduce a run, recorded at execution time.
 
     Model *ids* are resolved rather than templated: if config says
-    `ollama/qwen3.5` and Ollama serves `qwen3.5:14b-q4`, the resolved string is
+    `ollama/qwen3.5` and Ollama serves `qwen3.5:9b-q4`, the resolved string is
     what gets recorded, because that is what actually answered.
     """
 

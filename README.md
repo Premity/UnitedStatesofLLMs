@@ -134,7 +134,7 @@ git clone <repo-url> && cd UnitedStatesofLLMs
 make setup            # env file, Python deps, git hooks
 # fill in GROQ_API_KEY and GEMINI_API_KEY in .env
 
-ollama pull qwen3.5:14b       # the two attackers, ~17GB
+ollama pull qwen3.5:9b        # the two attackers, ~15GB
 ollama pull gemma3:12b
 
 make up               # start the stack (Qdrant, API, frontend)

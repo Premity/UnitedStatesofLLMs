@@ -167,7 +167,7 @@ Everything needed to reproduce a run.
 
 | Field | Why it matters |
 | --- | --- |
-| `role_models` | Model ids **as resolved** — if config said `ollama/qwen3.5` and Ollama served `qwen3.5:14b-q4`, that is what is recorded |
+| `role_models` | Model ids **as resolved** — if config said `ollama/qwen3.5` and Ollama served `qwen3.5:9b-q4`, that is what is recorded |
 | `temperatures`, `seed` | Sampling settings |
 | `prompt_hashes` | Detects silent prompt drift — a result cannot be attributed to a prompt that has since changed |
 | `corpus_version` | Which index the retrieval came from |
