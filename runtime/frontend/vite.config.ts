@@ -1,7 +1,8 @@
 import { fileURLToPath, URL } from "node:url";
 
 import react from "@vitejs/plugin-react";
-import { defineConfig } from "vite";
+// From vitest/config, not vite — `defineConfig` from vite does not type `test`.
+import { defineConfig } from "vitest/config";
 
 // The frontend talks to the API through a /api prefix that this proxy strips.
 // Inside Docker the target must be the service name, not localhost — a
@@ -26,5 +27,13 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
+  },
+  test: {
+    environment: "jsdom",
+    setupFiles: ["./src/test/setup.ts"],
+    // Only files under src/test. Keeping tests out of the component tree means
+    // `tsc -b` for the production build does not have to exclude them.
+    include: ["src/test/**/*.test.{ts,tsx}"],
+    restoreMocks: true,
   },
 });

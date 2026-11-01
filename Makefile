@@ -157,6 +157,21 @@ fmt: ## Auto-fix lint issues and format
 .PHONY: test
 test: ## Run the unit test suite (fast, no network, no model calls)
 	uv run pytest
+	@cd runtime/frontend && npm run test --silent
+
+.PHONY: test-py
+test-py: ## Python tests only
+	uv run pytest
+
+.PHONY: test-fe
+test-fe: ## Frontend tests only (vitest)
+	@cd runtime/frontend && npm run test --silent
+
+.PHONY: replay
+replay: ## Frontend alone, replaying the fixture — no API, no models, no Docker
+	@cd runtime/frontend && [ -d node_modules ] || npm install
+	@echo "Open http://localhost:3000/?replay=1 and press 'Play the recorded debate'."
+	@cd runtime/frontend && npm run dev
 
 .PHONY: test-cov
 test-cov: ## Run tests with a coverage report
