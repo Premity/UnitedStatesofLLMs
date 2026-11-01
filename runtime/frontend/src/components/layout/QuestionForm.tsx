@@ -1,7 +1,9 @@
 import { useState } from "react";
 
+import { isReplayEnabled } from "@/api/replay";
 import { useCourtStore } from "@/store/courtStore";
 import { useDebateStream } from "@/hooks/useDebateStream";
+import { useReplay } from "@/hooks/useReplay";
 import type { DebateConfig, Role } from "@/types";
 
 /**
@@ -10,10 +12,19 @@ import type { DebateConfig, Role } from "@/types";
  * The attacker toggles and round mode are exposed because they are exactly the
  * ablation dimensions the evaluation varies — being able to run a single-attacker
  * debate by hand makes the harness results legible.
+ *
+ * Under `?replay=1` the form plays a fixture instead of calling the API, so the
+ * courtroom can be worked on without four reachable models. Both hooks are
+ * instantiated unconditionally — hook order cannot depend on a flag — and only
+ * the chosen one is driven.
  */
 export function QuestionForm() {
   const { phase } = useCourtStore();
-  const { start, stop } = useDebateStream();
+  const live = useDebateStream();
+  const replay = useReplay();
+
+  const replaying = isReplayEnabled();
+  const { start, stop } = replaying ? replay : live;
 
   const [question, setQuestion] = useState("");
   const [facts, setFacts] = useState("");
@@ -25,6 +36,12 @@ export function QuestionForm() {
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (replaying) {
+      void replay.start();
+      return;
+    }
+
     if (!question.trim()) return;
 
     const attackers: Role[] = [];
@@ -49,6 +66,16 @@ export function QuestionForm() {
       onSubmit={submit}
       className="rounded-xl border border-court-rail bg-court-panel/60 p-5"
     >
+      {replaying && (
+        <p
+          data-testid="replay-banner"
+          className="mb-4 rounded border border-court-gold/40 bg-court-gold/10 px-3 py-2 font-ui text-xs text-court-gold"
+        >
+          Replay mode — playing a recorded fixture, not calling the models. The
+          question below is ignored.
+        </p>
+      )}
+
       <label className="block">
         <span className="font-ui text-xs uppercase tracking-wider text-court-gold">
           Question
@@ -112,10 +139,10 @@ export function QuestionForm() {
       <div className="mt-4 flex gap-2">
         <button
           type="submit"
-          disabled={running || !question.trim()}
+          disabled={running || (!replaying && !question.trim())}
           className="rounded bg-court-gold px-5 py-2 font-display text-sm font-bold text-court-ink transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
         >
-          Convene the council
+          {replaying ? "Play the recorded debate" : "Convene the council"}
         </button>
 
         {running && (

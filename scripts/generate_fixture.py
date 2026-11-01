@@ -404,6 +404,10 @@ if __name__ == "__main__":
     p.add_argument(
         "--check",
         action="store_true",
-        help="verify the committed fixture matches what this script would write",
+        help=(
+            "verify the committed fixture matches what this script would write. "
+            "Local only: data/index/ is gitignored, so CI has no corpus to resolve "
+            "against. CI guards the fixture through the frontend contract test instead."
+        ),
     )
     main(p.parse_args())

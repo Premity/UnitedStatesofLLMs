@@ -31,7 +31,10 @@ export function DissentLog() {
   );
 
   return (
-    <aside className="rounded-xl border border-record-rule bg-record-paper text-record-ink shadow-lg">
+    <aside
+      aria-label="Dissent log"
+      className="rounded-xl border border-record-rule bg-record-paper text-record-ink shadow-lg"
+    >
       <header className="border-b border-record-rule px-8 py-6">
         <h2 className="font-display text-2xl font-bold">Dissent Log</h2>
         {runId && (

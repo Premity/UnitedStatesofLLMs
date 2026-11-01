@@ -30,7 +30,7 @@ export function Transcript() {
   if (turns.length === 0) return null;
 
   return (
-    <section className="space-y-3">
+    <section aria-label="Transcript" className="space-y-3">
       <h2 className="font-ui text-xs uppercase tracking-widest text-court-gold/70">
         Transcript
       </h2>
