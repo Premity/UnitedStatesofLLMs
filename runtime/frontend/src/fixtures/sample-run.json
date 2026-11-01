@@ -1,0 +1,574 @@
+[
+  {
+    "event": "start",
+    "data": {
+      "run_id": "run_f1xtur3g3n0"
+    }
+  },
+  {
+    "event": "turn",
+    "data": {
+      "id": "turn_presenter_r1",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "arguments": [
+        {
+          "id": "arg_terror_prohibition",
+          "claim": "A campaign of sniping and shelling whose primary purpose is to spread terror among civilians violates the prohibition in Article 51(2) of Additional Protocol I.",
+          "reasoning": "Article 51(2) contains two distinct prohibitions. The first protects civilians from being made the object of attack. The second is wider: it forbids acts or threats of violence whose primary purpose is to spread terror, and it does not require that any particular attack be unlawful on other grounds. A sustained campaign undertaken for that purpose therefore falls squarely within it.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "51(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "51(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "corpus_text": "The civilian population as such, as well as individual civilians, shall not be the object of attack. Acts or threats of violence the primary purpose of which is to spread terror among the civilian population are prohibited.",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_indiscriminate",
+          "claim": "The same conduct constitutes an indiscriminate attack and, where it causes death, a grave breach.",
+          "reasoning": "Shelling directed at civilian areas of a besieged city does not distinguish between military objectives and civilians, which Article 51(4) prohibits. Article 85(3)(a) makes making the civilian population the object of attack a grave breach when committed wilfully and causing death or serious injury.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "51(4)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "85(3)(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "51(4)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "corpus_text": "Indiscriminate attacks are prohibited. Indiscriminate attacks are:",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "85(3)(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "corpus_text": "making the civilian population or individual civilians the object of attack;",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_jurisprudence",
+          "claim": "The Tribunal has held that terror against a civilian population is a violation of the laws or customs of war attracting individual criminal responsibility.",
+          "reasoning": "The trial judgment treats the terror prohibition as customary and as giving rise to individual criminal liability, which answers the objection that Article 51(2) binds states but not persons.",
+          "citations": [
+            {
+              "type": "case",
+              "instrument": "icty_galic_tj",
+              "article": null,
+              "case_id": "icty_galic_tj",
+              "paragraph": "58",
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "case",
+                "instrument": "icty_galic_tj",
+                "article": null,
+                "case_id": "icty_galic_tj",
+                "paragraph": "58",
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "out_of_corpus",
+              "corpus_text": null,
+              "source_url": null,
+              "note": "Instrument 'icty_galic_tj' is not in the indexed corpus."
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "[generated fixture — no model output]",
+      "started_at": "2026-11-01T12:00:00Z",
+      "completed_at": "2026-11-01T12:00:41Z",
+      "prompt_tokens": 3180,
+      "completion_tokens": 842,
+      "error": null
+    }
+  },
+  {
+    "event": "turn",
+    "data": {
+      "id": "turn_doctrinal_r1",
+      "round_number": 1,
+      "role": "attacker_doctrinal",
+      "model_id": "ollama/qwen3.5:14b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_treaty_applicability",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_terror_prohibition",
+          "ground": "Additional Protocol I governs international armed conflict; its application to a siege within a single state is not established.",
+          "reasoning": "Article 1 limits the Protocol's field of application. If the conflict is non-international, Article 51(2) does not apply of its own force and the argument must rest on Additional Protocol II or on custom. Article 51(9) further confines the reach of this Part.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "51(3)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "51(9)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "51(3)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "corpus_text": "Civilians shall enjoy the protection afforded by this Section, unless and for such time as they take a direct part in hostilities.",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "51(9)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "unresolved",
+              "corpus_text": null,
+              "source_url": null,
+              "note": "No span at ap_i/art.51(9) in an indexed instrument."
+            }
+          ],
+          "disposition": "overruled",
+          "disposition_reasoning": "The terror prohibition is customary and applies in both international and non-international armed conflict, so the characterisation of the conflict does not dispose of the claim. The objection also cites Article 51(9), which does not exist; Article 51 ends at paragraph 8."
+        },
+        {
+          "id": "obj_proportionality",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_indiscriminate",
+          "ground": "Characterising the attacks as indiscriminate skips the proportionality assessment each individual attack requires.",
+          "reasoning": "Articles 51(5)(b) and 57(2)(a)(iii) frame an attack's lawfulness in relation to the concrete and direct military advantage anticipated at the time. A besieged city contains military objectives, so an aggregate finding cannot substitute for that assessment.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "51(5)(b)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "57(2)(a)(iii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "51(5)(b)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "corpus_text": "an attack which may be expected to cause incidental loss of civilian life, injury to civilians, damage to civilian objects, or a combination thereof, which would be excessive in relation to the concrete and direct military advantage anticipated.",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "57(2)(a)(iii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "corpus_text": "refrain from deciding to launch any attack which may be expected to cause incidental loss of civilian life, injury to civilians, damage to civilian objects, or a combination thereof, which would be excessive in relation to the concrete and direct military advantage anticipated;",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ],
+          "disposition": "partial",
+          "disposition_reasoning": "Sound as to the indiscriminate-attack argument, which is narrowed accordingly. It does not reach the terror claim, where purpose rather than proportionality is the operative question."
+        }
+      ],
+      "raw_response": "[generated fixture — no model output]",
+      "started_at": "2026-11-01T12:00:41Z",
+      "completed_at": "2026-11-01T12:01:58Z",
+      "prompt_tokens": 4210,
+      "completion_tokens": 1104,
+      "error": null
+    }
+  },
+  {
+    "event": "turn",
+    "data": {
+      "id": "turn_evidentiary_r1",
+      "round_number": 1,
+      "role": "attacker_evidentiary",
+      "model_id": "ollama/gemma3:12b",
+      "prompt_id": "attacker_evidentiary/challenge",
+      "prompt_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_misquote",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_terror_prohibition",
+          "ground": "The presenter's reading overstates what Article 51(2) says.",
+          "reasoning": "The provision does not contain an absolute, exceptionless prohibition framed against military necessity. Resting the case on wording the instrument does not use weakens it.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "51(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Attacks against the civilian population are prohibited in all circumstances and without exception, regardless of military necessity."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "51(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Attacks against the civilian population are prohibited in all circumstances and without exception, regardless of military necessity."
+              },
+              "status": "misquoted",
+              "corpus_text": "The civilian population as such, as well as individual civilians, shall not be the object of attack. Acts or threats of violence the primary purpose of which is to spread terror among the civilian population are prohibited.",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": "Quoted text does not appear at this locator."
+            }
+          ],
+          "disposition": "sustained",
+          "disposition_reasoning": "The quoted wording does not appear in Article 51(2). The presenter's own reasoning, however, tracks the actual text, so the defect is in the quotation rather than the argument."
+        },
+        {
+          "id": "obj_evidentiary_basis",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_jurisprudence",
+          "ground": "The factual predicate does not establish that spreading terror was the primary purpose rather than an effect.",
+          "reasoning": "Article 51(2) turns on primary purpose. The stated facts describe sustained sniping and shelling over 23 months but do not identify the evidence from which purpose is inferred — orders, patterns of targeting, or statements of intent. Without that, the terror finding is asserted rather than shown.",
+          "citations": [
+            {
+              "type": "case",
+              "instrument": "icty_galic_tj",
+              "article": null,
+              "case_id": "icty_galic_tj",
+              "paragraph": "769",
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 156,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "case",
+                "instrument": "icty_galic_tj",
+                "article": null,
+                "case_id": "icty_galic_tj",
+                "paragraph": "769",
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "out_of_corpus",
+              "corpus_text": null,
+              "source_url": null,
+              "note": "Instrument 'icty_galic_tj' is not in the indexed corpus."
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 156,
+                "quoted_text": null
+              },
+              "status": "out_of_corpus",
+              "corpus_text": null,
+              "source_url": null,
+              "note": "Instrument 'customary_ihl' is not in the indexed corpus."
+            }
+          ],
+          "disposition": "overruled",
+          "disposition_reasoning": "Purpose may be inferred from the pattern and duration of the attacks, and the facts as given describe a campaign rather than isolated incidents. The objection is noted as a limit on the confidence attached to the holding, and both authorities it cites are outside the indexed corpus and so unverified here."
+        }
+      ],
+      "raw_response": "[generated fixture — no model output]",
+      "started_at": "2026-11-01T12:00:41Z",
+      "completed_at": "2026-11-01T12:02:11Z",
+      "prompt_tokens": 4180,
+      "completion_tokens": 967,
+      "error": null
+    }
+  },
+  {
+    "event": "turn",
+    "data": {
+      "id": "turn_judge_r1",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "gemini/gemini-3.1-pro-preview",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "[generated fixture — no model output]",
+      "started_at": "2026-11-01T12:02:11Z",
+      "completed_at": "2026-11-01T12:03:16Z",
+      "prompt_tokens": 6420,
+      "completion_tokens": 1388,
+      "error": null
+    }
+  },
+  {
+    "event": "verdict",
+    "data": {
+      "conclusion": "A sustained campaign of sniping and shelling directed at civilians with the primary purpose of spreading terror violates the laws or customs of war.",
+      "reasoning": "The prohibition in Article 51(2) of Additional Protocol I is twofold, and its second limb turns on the purpose of the violence rather than on the lawfulness of any single attack. That limb is customary and applies irrespective of how the conflict is characterised, which disposes of the applicability objection. The indiscriminate-attack argument is narrowed: an aggregate finding cannot replace the proportionality assessment each attack requires, and it is retained only as to attacks for which no military objective is identified. The terror holding does not depend on it.\n\nPurpose is established here by the duration and pattern of the attacks rather than by direct evidence of intent, and the evidentiary objection on that point is recorded in dissent. The supporting jurisprudence could not be verified against the corpus, so the holding rests on the treaty text and custom.",
+      "confidence": 0.78,
+      "confidence_reasoning": "The legal proposition is well settled and the treaty text was verified directly. Confidence is held below 0.9 because the inference of primary purpose rests on the pattern of conduct rather than direct evidence, and because the cited judgment is outside the indexed corpus and could not be checked.",
+      "surviving_argument_ids": [
+        "arg_terror_prohibition",
+        "arg_indiscriminate"
+      ],
+      "dissent": [
+        {
+          "id": "obj_treaty_applicability",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_terror_prohibition",
+          "ground": "Additional Protocol I governs international armed conflict; its application to a siege within a single state is not established.",
+          "reasoning": "Article 1 limits the Protocol's field of application. If the conflict is non-international, Article 51(2) does not apply of its own force and the argument must rest on Additional Protocol II or on custom. Article 51(9) further confines the reach of this Part.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "51(3)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "51(9)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "51(3)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "corpus_text": "Civilians shall enjoy the protection afforded by this Section, unless and for such time as they take a direct part in hostilities.",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "51(9)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "unresolved",
+              "corpus_text": null,
+              "source_url": null,
+              "note": "No span at ap_i/art.51(9) in an indexed instrument."
+            }
+          ],
+          "disposition": "overruled",
+          "disposition_reasoning": "The terror prohibition is customary and applies in both international and non-international armed conflict, so the characterisation of the conflict does not dispose of the claim. The objection also cites Article 51(9), which does not exist; Article 51 ends at paragraph 8."
+        },
+        {
+          "id": "obj_evidentiary_basis",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_jurisprudence",
+          "ground": "The factual predicate does not establish that spreading terror was the primary purpose rather than an effect.",
+          "reasoning": "Article 51(2) turns on primary purpose. The stated facts describe sustained sniping and shelling over 23 months but do not identify the evidence from which purpose is inferred — orders, patterns of targeting, or statements of intent. Without that, the terror finding is asserted rather than shown.",
+          "citations": [
+            {
+              "type": "case",
+              "instrument": "icty_galic_tj",
+              "article": null,
+              "case_id": "icty_galic_tj",
+              "paragraph": "769",
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 156,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "case",
+                "instrument": "icty_galic_tj",
+                "article": null,
+                "case_id": "icty_galic_tj",
+                "paragraph": "769",
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "out_of_corpus",
+              "corpus_text": null,
+              "source_url": null,
+              "note": "Instrument 'icty_galic_tj' is not in the indexed corpus."
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 156,
+                "quoted_text": null
+              },
+              "status": "out_of_corpus",
+              "corpus_text": null,
+              "source_url": null,
+              "note": "Instrument 'customary_ihl' is not in the indexed corpus."
+            }
+          ],
+          "disposition": "overruled",
+          "disposition_reasoning": "Purpose may be inferred from the pattern and duration of the attacks, and the facts as given describe a campaign rather than isolated incidents. The objection is noted as a limit on the confidence attached to the holding, and both authorities it cites are outside the indexed corpus and so unverified here."
+        }
+      ]
+    }
+  },
+  {
+    "event": "done",
+    "data": {
+      "run_id": "run_f1xtur3g3n0",
+      "status": "completed"
+    }
+  }
+]
