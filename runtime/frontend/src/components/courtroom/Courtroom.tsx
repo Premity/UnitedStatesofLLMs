@@ -24,7 +24,7 @@ const PHASE_CAPTION: Record<string, string> = {
 };
 
 export function Courtroom() {
-  const { phase, round, activeRole, utterance, flourish, verdict, turns } =
+  const { phase, round, activeRole, utterance, flourish, verdict, turns, replayed } =
     useCourtStore();
 
   // Model ids come off the most recent turn each role took.
@@ -92,8 +92,17 @@ export function Courtroom() {
 
       {/* Status rail */}
       <div className="relative z-10 mt-6 flex items-center justify-between border-t border-court-rail/60 pt-3">
-        <span className="font-ui text-xs uppercase tracking-widest text-court-gold/80">
+        <span className="flex items-center gap-2 font-ui text-xs uppercase tracking-widest text-court-gold/80">
           {PHASE_CAPTION[phase] ?? phase}
+          {replayed && (
+            <span
+              data-testid="replay-marker"
+              title="A recorded fixture. No models were called."
+              className="rounded border border-court-gold/40 px-1.5 py-0.5 text-[10px] tracking-wider text-court-gold/70"
+            >
+              Recorded
+            </span>
+          )}
         </span>
         <span className="font-ui text-xs text-white/40">
           {round > 0 && `Round ${round}`}

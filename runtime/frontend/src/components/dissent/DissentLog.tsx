@@ -13,7 +13,7 @@ import { CitationChip } from "@/components/citations/CitationChip";
  * system, so it gets the most room.
  */
 export function DissentLog() {
-  const { verdict, runId, turns } = useCourtStore();
+  const { verdict, runId, turns, replayed } = useCourtStore();
 
   if (!verdict) {
     return (
@@ -39,6 +39,17 @@ export function DissentLog() {
         <h2 className="font-display text-2xl font-bold">Dissent Log</h2>
         {runId && (
           <p className="mt-1 font-ui text-xs text-record-margin">Run {runId}</p>
+        )}
+
+        {/* The record is the part that leaves the screen, so a fixture-derived
+            one says so plainly rather than in a tooltip. */}
+        {replayed && (
+          <p
+            data-testid="replay-provenance"
+            className="mt-3 rounded border border-court-crimson/30 bg-court-crimson/5 px-3 py-2 font-ui text-xs text-court-crimson"
+          >
+            Recorded sample — no models were consulted. Not a real proceeding.
+          </p>
         )}
 
         {runId && (

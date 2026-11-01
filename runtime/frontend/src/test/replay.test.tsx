@@ -1,4 +1,5 @@
 import { render, screen, waitFor, within } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 
 import App from "@/App";
@@ -133,6 +134,50 @@ describe("the app under replay", () => {
     // Both raisers are labelled, not shown as raw role slugs.
     expect(log.getByText("Doctrinal Counsel")).toBeInTheDocument();
     expect(log.getByText("Evidentiary Counsel")).toBeInTheDocument();
+  });
+
+  it("offers a replay button in dev, so the flag is not secret knowledge", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    // No URL flag: the live path is still the default and the primary button.
+    expect(screen.queryByTestId("replay-banner")).not.toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /convene the council/i }),
+    ).toBeInTheDocument();
+
+    await user.click(screen.getByTestId("replay-offer"));
+
+    await waitFor(
+      () => expect(useCourtStore.getState().turns.length).toBeGreaterThan(0),
+      { timeout: 4000 },
+    );
+    expect(useCourtStore.getState().replayed).toBe(true);
+  });
+
+  it("marks a replayed run as recorded in both the courtroom and the record", async () => {
+    render(<App />);
+
+    await replayDebate(
+      { ...sink(), startRun: (id: string) => useCourtStore.getState().startRun(id, { replayed: true }) },
+      { sleep: instant },
+    );
+
+    await waitFor(() => {
+      expect(screen.getByTestId("replay-marker")).toBeInTheDocument();
+    });
+    // The record is what leaves the screen, so it says so in words.
+    expect(screen.getByTestId("replay-provenance")).toHaveTextContent(
+      /no models were consulted/i,
+    );
+  });
+
+  it("does not mark a live run as recorded", async () => {
+    render(<App />);
+    await replayDebate(sink(), { sleep: instant });
+
+    expect(screen.queryByTestId("replay-marker")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("replay-provenance")).not.toBeInTheDocument();
   });
 
   it("shows a replay banner so a fixture is never mistaken for a live run", () => {

@@ -32,7 +32,7 @@ export function useReplay() {
     try {
       await replayDebate(
         {
-          startRun,
+          startRun: (runId: string) => startRun(runId, { replayed: true }),
           setVerdict,
           setError,
           addTurn: (turn: Turn) => {

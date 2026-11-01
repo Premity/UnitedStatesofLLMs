@@ -26,6 +26,10 @@ export function QuestionForm() {
   const replaying = isReplayEnabled();
   const { start, stop } = replaying ? replay : live;
 
+  // Replay is reachable from the page in dev, not only from a URL nobody can
+  // guess. Gated on import.meta.env.DEV so it never ships in a built bundle.
+  const offerReplay = import.meta.env.DEV && !replaying;
+
   const [question, setQuestion] = useState("");
   const [facts, setFacts] = useState("");
   const [doctrinal, setDoctrinal] = useState(true);
@@ -144,6 +148,19 @@ export function QuestionForm() {
         >
           {replaying ? "Play the recorded debate" : "Convene the council"}
         </button>
+
+        {offerReplay && (
+          <button
+            type="button"
+            data-testid="replay-offer"
+            onClick={() => void replay.start()}
+            disabled={running}
+            title="Plays a recorded fixture. No models are called."
+            className="rounded border border-court-gold/50 px-4 py-2 font-ui text-sm text-court-gold/90 transition hover:bg-court-gold/10 disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            Play sample debate
+          </button>
+        )}
 
         {running && (
           <button

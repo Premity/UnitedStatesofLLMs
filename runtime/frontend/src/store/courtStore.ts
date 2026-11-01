@@ -15,6 +15,15 @@ interface CourtState {
   phase: CourtPhase;
   round: number;
 
+  /**
+   * Whether this run came from a fixture rather than the models.
+   *
+   * Fabricated proceedings must never be mistakable for real ones, so the
+   * provenance travels with the run itself rather than with the control that
+   * started it — the courtroom and the record can both read it.
+   */
+  replayed: boolean;
+
   turns: Turn[];
   verdict: Verdict | null;
   error: string | null;
@@ -26,7 +35,7 @@ interface CourtState {
   /** Speech bubble text for the active role. */
   utterance: string | null;
 
-  startRun: (runId: string) => void;
+  startRun: (runId: string, options?: { replayed?: boolean }) => void;
   setPhase: (phase: CourtPhase) => void;
   addTurn: (turn: Turn) => void;
   setVerdict: (verdict: Verdict) => void;
@@ -39,6 +48,7 @@ const initial = {
   runId: null,
   phase: "idle" as CourtPhase,
   round: 0,
+  replayed: false,
   turns: [],
   verdict: null,
   error: null,
@@ -59,7 +69,13 @@ const PHASE_FOR_ROLE: Record<string, CourtPhase> = {
 export const useCourtStore = create<CourtState>((set) => ({
   ...initial,
 
-  startRun: (runId) => set({ ...initial, runId, phase: "retrieving" }),
+  startRun: (runId, options) =>
+    set({
+      ...initial,
+      runId,
+      phase: "retrieving",
+      replayed: options?.replayed ?? false,
+    }),
 
   setPhase: (phase) => set({ phase }),
 
