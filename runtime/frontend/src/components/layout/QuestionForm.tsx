@@ -155,7 +155,7 @@ export function QuestionForm() {
             data-testid="replay-offer"
             onClick={() => void replay.start()}
             disabled={running}
-            title="Plays a recorded fixture. No models are called."
+            title="Plays a recorded fixture end to end. No models are called."
             className="rounded border border-court-gold/50 px-4 py-2 font-ui text-sm text-court-gold/90 transition hover:bg-court-gold/10 disabled:cursor-not-allowed disabled:opacity-40"
           >
             Play sample debate
@@ -172,6 +172,45 @@ export function QuestionForm() {
           </button>
         )}
       </div>
+
+      {/* Stepping. A debate plays in about nine seconds, which is too fast to
+          read, and the states worth inspecting — the objection flourish, the
+          citation chips — are the transient ones. */}
+      {offerReplay && (
+        <div
+          data-testid="replay-stepper"
+          className="mt-3 flex flex-wrap items-center gap-2 border-t border-court-rail/40 pt-3"
+        >
+          <button
+            type="button"
+            data-testid="replay-step"
+            onClick={replay.step}
+            disabled={replay.finished}
+            className="rounded border border-court-gold/50 bg-court-gold/10 px-4 py-1.5 font-ui text-sm text-court-gold transition hover:bg-court-gold/20 disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            {replay.progress.applied === 0 ? "Step through it" : "Next step"}
+          </button>
+
+          <button
+            type="button"
+            data-testid="replay-restart"
+            onClick={replay.restart}
+            disabled={replay.progress.applied === 0}
+            className="rounded border border-court-rail px-3 py-1.5 font-ui text-xs text-white/60 transition hover:bg-white/5 disabled:cursor-not-allowed disabled:opacity-30"
+          >
+            Restart
+          </button>
+
+          <span className="font-ui text-xs text-white/40">
+            {replay.finished
+              ? `Done · ${replay.progress.total} of ${replay.progress.total}`
+              : replay.nextLabel
+                ? `Next: ${replay.nextLabel}`
+                : "Steps one event at a time"}
+          </span>
+        </div>
+      )}
+
     </form>
   );
 }

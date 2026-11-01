@@ -56,6 +56,46 @@ const defaultSleep = (ms: number) =>
   new Promise<void>((resolve) => window.setTimeout(resolve, ms));
 
 /**
+ * Applies one fixture event to the store.
+ *
+ * Shared by auto-play and by stepping, so the two cannot diverge: a bug in
+ * how a turn reaches the store would otherwise be reproducible in one mode
+ * and not the other.
+ *
+ * Returns false for an event that ends the run (`error`), true otherwise.
+ * `done` is ignored, as the stream handler ignores it — the verdict is what
+ * moves the courtroom to `adjourned`.
+ */
+export function applyEvent(sink: ReplaySink, { event, data }: ReplayEvent): boolean {
+  switch (event) {
+    case "start":
+      sink.startRun((data as { run_id: string }).run_id);
+      return true;
+    case "turn":
+      sink.addTurn(data as Turn);
+      return true;
+    case "verdict":
+      sink.setVerdict(data as Verdict);
+      return true;
+    case "error":
+      sink.setError((data as { error: string }).error);
+      return false;
+    case "done":
+      return true;
+  }
+}
+
+/** How long to pause before an event when playing automatically. */
+export function delayFor(
+  event: ReplayEvent["event"],
+  { turnDelay = 1600, verdictDelay = 2400 }: Pick<ReplayOptions, "turnDelay" | "verdictDelay">,
+): number {
+  if (event === "turn") return turnDelay;
+  if (event === "verdict") return verdictDelay;
+  return 0;
+}
+
+/**
  * Pushes the fixture's events into the store in order.
  *
  * Deliberately ignores `done`, as the stream handler does — the verdict is what
@@ -65,39 +105,17 @@ export async function replayDebate(
   sink: ReplaySink,
   options: ReplayOptions = {},
 ): Promise<void> {
-  const {
-    turnDelay = 1600,
-    verdictDelay = 2400,
-    signal,
-    sleep = defaultSleep,
-  } = options;
+  const { signal, sleep = defaultSleep } = options;
 
-  for (const { event, data } of replayEvents) {
+  for (const replayEvent of replayEvents) {
     if (signal?.aborted) return;
 
-    switch (event) {
-      case "start":
-        sink.startRun((data as { run_id: string }).run_id);
-        break;
-
-      case "turn":
-        await sleep(turnDelay);
-        if (signal?.aborted) return;
-        sink.addTurn(data as Turn);
-        break;
-
-      case "verdict":
-        await sleep(verdictDelay);
-        if (signal?.aborted) return;
-        sink.setVerdict(data as Verdict);
-        break;
-
-      case "error":
-        sink.setError((data as { error: string }).error);
-        return;
-
-      case "done":
-        break;
+    const pause = delayFor(replayEvent.event, options);
+    if (pause > 0) {
+      await sleep(pause);
+      if (signal?.aborted) return;
     }
+
+    if (!applyEvent(sink, replayEvent)) return;
   }
 }

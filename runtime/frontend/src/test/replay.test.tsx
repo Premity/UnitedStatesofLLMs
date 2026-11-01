@@ -148,12 +148,47 @@ describe("the app under replay", () => {
 
     await user.click(screen.getByTestId("replay-offer"));
 
+    // Only that the button starts a replayed run; the sequence is covered
+    // below without paying nine seconds of real delay. Leaving the loop in
+    // flight is safe because useReplay aborts on unmount — asserted further on.
     await waitFor(
       () => expect(useCourtStore.getState().turns.length).toBeGreaterThan(0),
-      { timeout: 4000 },
+      { timeout: 5000 },
     );
     expect(useCourtStore.getState().replayed).toBe(true);
+  }, 10000);
+
+  it("plays every event in order when started", async () => {
+    // The button path above proves the wiring; this proves the sequence
+    // without paying nine seconds of real delay for it.
+    await replayDebate(sink(), { sleep: instant });
+
+    expect(useCourtStore.getState().turns.map((t) => t.id)).toEqual([
+      "turn_presenter_r1",
+      "turn_doctrinal_r1",
+      "turn_evidentiary_r1",
+      "turn_judge_r1",
+    ]);
   });
+
+  it("aborts an in-flight auto-play when unmounted", async () => {
+    const { unmount } = render(<App />);
+
+    const user = userEvent.setup();
+    await user.click(screen.getByTestId("replay-offer"));
+    // The first turn lands at the 1.6s turn delay, past waitFor's 1s default.
+    await waitFor(
+      () => expect(useCourtStore.getState().turns.length).toBeGreaterThan(0),
+      { timeout: 5000 },
+    );
+
+    const atUnmount = useCourtStore.getState().turns.length;
+    unmount();
+
+    // Past two more turn delays. A loop still running would have written more.
+    await new Promise((r) => setTimeout(r, 3600));
+    expect(useCourtStore.getState().turns).toHaveLength(atUnmount);
+  }, 20000);
 
   it("marks a replayed run as recorded in both the courtroom and the record", async () => {
     render(<App />);
@@ -178,6 +213,90 @@ describe("the app under replay", () => {
 
     expect(screen.queryByTestId("replay-marker")).not.toBeInTheDocument();
     expect(screen.queryByTestId("replay-provenance")).not.toBeInTheDocument();
+  });
+
+  it("steps one event at a time, and the first press shows something", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    const step = screen.getByTestId("replay-step");
+    expect(step).toHaveTextContent(/step through it/i);
+
+    // The first press must put a turn on screen. `start` alone only sets a run
+    // id, so consuming it silently would read as a dead button.
+    await user.click(step);
+    expect(useCourtStore.getState().turns).toHaveLength(1);
+    expect(useCourtStore.getState().runId).toBe("run_f1xtur3g3n0");
+    expect(step).toHaveTextContent(/next step/i);
+
+    await user.click(step);
+    expect(useCourtStore.getState().turns).toHaveLength(2);
+    expect(useCourtStore.getState().verdict).toBeNull();
+
+    await user.click(step);
+    await user.click(step);
+    expect(useCourtStore.getState().turns).toHaveLength(4);
+    expect(useCourtStore.getState().verdict).toBeNull();
+
+    // The verdict, and with it `done` — which carries nothing to show.
+    await user.click(step);
+    expect(useCourtStore.getState().verdict).not.toBeNull();
+    expect(useCourtStore.getState().phase).toBe("adjourned");
+
+    await waitFor(() => expect(step).toBeDisabled());
+  });
+
+  it("names what the next step will show", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    expect(screen.getByTestId("replay-stepper")).toHaveTextContent(
+      /next: presenting counsel/i,
+    );
+
+    await user.click(screen.getByTestId("replay-step"));
+    expect(screen.getByTestId("replay-stepper")).toHaveTextContent(
+      /next: doctrinal counsel/i,
+    );
+  });
+
+  it("holds the objection flourish between steps", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    const step = screen.getByTestId("replay-step");
+
+    // Presenter: arguments only, so no flourish.
+    await user.click(step);
+    expect(useCourtStore.getState().flourish).toBeNull();
+
+    // Doctrinal objects. In auto-play this clears after 1.4s; stepping holds
+    // it, because inspecting it is the entire point.
+    await user.click(step);
+    expect(useCourtStore.getState().flourish?.id).toBe("obj_treaty_applicability");
+    expect(screen.getByText(/objection!/i)).toBeInTheDocument();
+
+    // Still there well past the auto-play timeout.
+    await new Promise((r) => setTimeout(r, 1600));
+    expect(useCourtStore.getState().flourish?.id).toBe("obj_treaty_applicability");
+
+    // The next step replaces it with the evidentiary attacker's.
+    await user.click(step);
+    expect(useCourtStore.getState().flourish?.id).toBe("obj_misquote");
+  });
+
+  it("restarts to an empty courtroom", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByTestId("replay-step"));
+    await user.click(screen.getByTestId("replay-step"));
+    expect(useCourtStore.getState().turns).toHaveLength(2);
+
+    await user.click(screen.getByTestId("replay-restart"));
+
+    expect(useCourtStore.getState().turns).toHaveLength(0);
+    expect(useCourtStore.getState().phase).toBe("idle");
+    expect(screen.getByTestId("replay-step")).toHaveTextContent(/step through it/i);
   });
 
   it("shows a replay banner so a fixture is never mistaken for a live run", () => {
