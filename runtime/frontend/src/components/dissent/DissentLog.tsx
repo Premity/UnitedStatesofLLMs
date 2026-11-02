@@ -13,7 +13,7 @@ import { CitationChip } from "@/components/citations/CitationChip";
  * system, so it gets the most room.
  */
 export function DissentLog() {
-  const { verdict, runId, turns, replayed } = useCourtStore();
+  const { verdict, runId, turns, replayed, question, facts } = useCourtStore();
 
   if (!verdict) {
     return (
@@ -71,6 +71,26 @@ export function DissentLog() {
       </header>
 
       <div className="space-y-8 px-8 py-6">
+        {/* The export has carried the question from the start; the screen did
+            not, so a holding could be read with no sight of what was asked. */}
+        {question && (
+          <section>
+            <h3 className="font-display text-lg font-semibold">Question</h3>
+            <p className="mt-2 font-record leading-relaxed">{question}</p>
+
+            {facts && (
+              <>
+                <h4 className="mt-4 font-ui text-xs uppercase tracking-wider text-record-margin">
+                  Facts as given
+                </h4>
+                <p className="mt-1 font-record text-sm leading-relaxed text-record-ink/80">
+                  {facts}
+                </p>
+              </>
+            )}
+          </section>
+        )}
+
         <section>
           <h3 className="font-display text-lg font-semibold">Holding</h3>
           <p className="mt-2 font-record leading-relaxed">{verdict.conclusion}</p>

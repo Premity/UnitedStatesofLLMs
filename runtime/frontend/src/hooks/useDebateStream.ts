@@ -1,6 +1,7 @@
 import { useCallback, useRef } from "react";
 
 import { api } from "@/api/client";
+import { headlineObjection } from "@/components/courtroom/ObjectionFlourish";
 import { useCourtStore } from "@/store/courtStore";
 import type { DebateConfig, Objection, Turn, Verdict } from "@/types";
 
@@ -64,15 +65,21 @@ export function useDebateStream() {
 
             switch (event.name) {
               case "start":
-                startRun(JSON.parse(event.data).run_id as string);
+                // The start event carries only a run id (see the API
+                // contract), so the question comes from the config we sent.
+                startRun(JSON.parse(event.data).run_id as string, {
+                  question: config.question,
+                  facts: config.facts,
+                });
                 break;
 
               case "turn": {
                 const turn = JSON.parse(event.data) as Turn;
                 addTurn(turn);
                 // An attacker's first objection gets the OBJECTION! flourish.
-                if (turn.objections.length > 0) {
-                  flourishFor(turn.objections[0], showFlourish);
+                const headline = headlineObjection(turn.objections);
+                if (headline) {
+                  flourishFor(headline, showFlourish);
                 }
                 break;
               }

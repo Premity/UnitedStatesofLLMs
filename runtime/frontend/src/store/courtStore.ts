@@ -24,6 +24,15 @@ interface CourtState {
    */
   replayed: boolean;
 
+  /**
+   * What was put to the council.
+   *
+   * The Markdown export has carried these from the start; the screen did not,
+   * so a holding could be read with no sight of the question it answers.
+   */
+  question: string | null;
+  facts: string | null;
+
   turns: Turn[];
   verdict: Verdict | null;
   error: string | null;
@@ -35,7 +44,10 @@ interface CourtState {
   /** Speech bubble text for the active role. */
   utterance: string | null;
 
-  startRun: (runId: string, options?: { replayed?: boolean }) => void;
+  startRun: (
+    runId: string,
+    options?: { replayed?: boolean; question?: string; facts?: string },
+  ) => void;
   setPhase: (phase: CourtPhase) => void;
   addTurn: (turn: Turn) => void;
   setVerdict: (verdict: Verdict) => void;
@@ -49,6 +61,8 @@ const initial = {
   phase: "idle" as CourtPhase,
   round: 0,
   replayed: false,
+  question: null,
+  facts: null,
   turns: [],
   verdict: null,
   error: null,
@@ -75,6 +89,8 @@ export const useCourtStore = create<CourtState>((set) => ({
       runId,
       phase: "retrieving",
       replayed: options?.replayed ?? false,
+      question: options?.question ?? null,
+      facts: options?.facts ?? null,
     }),
 
   setPhase: (phase) => set({ phase }),

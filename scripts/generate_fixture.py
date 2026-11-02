@@ -32,6 +32,8 @@ from collections import Counter
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
+from run_debate import FACTS, QUESTION  # the same test case record_fixture.py uses
+
 from council_core.citations import CitationResolver
 from council_core.citations.resolver import JsonCorpusIndex
 from council_core.models.citation import Citation, CitationType
@@ -356,8 +358,17 @@ def main(args: argparse.Namespace) -> None:
 
     turns, verdict = build_turns(resolver.resolve_all)
 
-    # Same envelope and ordering as app.routers.debate.stream_debate.
-    events: list[dict[str, object]] = [{"event": "start", "data": {"run_id": RUN_ID}}]
+    # Same envelope and ordering as app.routers.debate.stream_debate. The
+    # `start` event carries only a run id, exactly as the API contract says —
+    # the question travels beside the stream, as it does for a live run where
+    # the client already holds the config it sent.
+    events: list[dict[str, object]] = [
+        {
+            "event": "start",
+            "data": {"run_id": RUN_ID},
+            "config": {"question": QUESTION, "facts": FACTS},
+        }
+    ]
     for turn in turns:
         events.append({"event": "turn", "data": json.loads(turn.model_dump_json())})
     events.append({"event": "verdict", "data": json.loads(verdict.model_dump_json())})

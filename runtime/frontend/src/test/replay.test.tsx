@@ -121,7 +121,8 @@ describe("the app under replay", () => {
     // same prose, so an unscoped query matches several nodes.
     const log = within(screen.getByRole("complementary", { name: "Dissent log" }));
 
-    expect(log.getByText(/primary purpose of spreading terror/i)).toBeInTheDocument();
+    // Twice within the record now: the question asked and the holding given.
+    expect(log.getAllByText(/primary purpose of spreading terror/i)).toHaveLength(2);
     expect(log.getByText("78%")).toBeInTheDocument();
 
     // The dissent is the system's headline output: two overruled objections,
@@ -271,13 +272,15 @@ describe("the app under replay", () => {
 
     // Doctrinal objects. In auto-play this clears after 1.4s; stepping holds
     // it, because inspecting it is the entire point.
+    // The doctrinal turn's headline is its *grounded* objection, not its
+    // first — a fully resolved objection earns the slam.
     await user.click(step);
-    expect(useCourtStore.getState().flourish?.id).toBe("obj_treaty_applicability");
+    expect(useCourtStore.getState().flourish?.id).toBe("obj_proportionality");
     expect(screen.getByText(/objection!/i)).toBeInTheDocument();
 
     // Still there well past the auto-play timeout.
     await new Promise((r) => setTimeout(r, 1600));
-    expect(useCourtStore.getState().flourish?.id).toBe("obj_treaty_applicability");
+    expect(useCourtStore.getState().flourish?.id).toBe("obj_proportionality");
 
     // The next step replaces it with the evidentiary attacker's.
     await user.click(step);
@@ -310,6 +313,73 @@ describe("the app under replay", () => {
     ).toBeEnabled();
 
     window.history.pushState({}, "", "/");
+  });
+});
+
+describe("the record and the rulings", () => {
+  it("shows the question the holding answers", async () => {
+    render(<App />);
+    await replayDebate(sink(), { sleep: instant });
+
+    const log = within(screen.getByRole("complementary", { name: "Dissent log" }));
+    expect(log.getByText("Question")).toBeInTheDocument();
+    // Appears as the question and again in the holding that answers it.
+    expect(log.getAllByText(/sustained campaign of sniping and shelling/i)).toHaveLength(2);
+    // The form has a field with the same label, so match the record's heading.
+    expect(log.getByRole("heading", { name: /Facts as given/i })).toBeInTheDocument();
+  });
+
+  it("shows the bench's rulings rather than an empty card", async () => {
+    render(<App />);
+    await replayDebate(sink(), { sleep: instant });
+
+    // The judge emits no arguments or objections of its own, so this card was
+    // structurally always empty before.
+    const transcript = within(screen.getByRole("region", { name: "Transcript" }));
+    expect(transcript.getByText("The Bench")).toBeInTheDocument();
+
+    // Every disposition in the fixture, named.
+    expect(transcript.getAllByText("Overruled").length).toBeGreaterThan(0);
+    expect(transcript.getAllByText("Sustained").length).toBeGreaterThan(0);
+    expect(transcript.getAllByText("Partly sustained").length).toBeGreaterThan(0);
+
+    // And the reason, which only ever existed in the data.
+    expect(
+      transcript.getByText(/terror prohibition is customary/i),
+    ).toBeInTheDocument();
+  });
+
+  it("marks each objection's outcome where it was raised", async () => {
+    render(<App />);
+    await replayDebate(sink(), { sleep: instant });
+
+    // obj_misquote was sustained; its badge belongs on the evidentiary turn,
+    // not only on the bench's card.
+    const transcript = screen.getByRole("region", { name: "Transcript" });
+    // The bench's card repeats the ground when it rules, so take the one on
+    // the turn that raised it.
+    const [raised] = within(transcript).getAllByText(
+      /overstates what Article 51\(2\) says/i,
+    );
+    const card = raised.closest("article");
+    expect(card).not.toBeNull();
+    expect(within(card!).getByText("Sustained")).toBeInTheDocument();
+  });
+});
+
+describe("the objection flourish", () => {
+  it("slams for a grounded objection and stays quiet otherwise", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    const step = screen.getByTestId("replay-step");
+
+    await user.click(step); // presenter
+    await user.click(step); // doctrinal — obj_proportionality, fully resolved
+    expect(screen.getByText(/objection!/i)).toBeInTheDocument();
+
+    await user.click(step); // evidentiary — obj_misquote, not grounded
+    expect(screen.queryByText(/objection!/i)).not.toBeInTheDocument();
+    expect(screen.getByText(/Objection · Evidentiary Counsel/i)).toBeInTheDocument();
   });
 });
 

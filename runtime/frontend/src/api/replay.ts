@@ -22,6 +22,12 @@ import type { Turn, Verdict } from "@/types";
 export interface ReplayEvent {
   event: "start" | "turn" | "verdict" | "error" | "done";
   data: unknown;
+  /**
+   * Fixture metadata, not part of the wire format. A live client knows the
+   * question because it sent it; a replay has to read it from somewhere, and
+   * the `start` event carries only a run id (see docs/api-contract.md).
+   */
+  config?: { question: string; facts: string };
 }
 
 export const replayEvents = fixture as ReplayEvent[];
@@ -35,7 +41,7 @@ export function isReplayEnabled(search: string = window.location.search): boolea
 
 /** Store methods replay drives. Matches the subset `useDebateStream` uses. */
 export interface ReplaySink {
-  startRun: (runId: string) => void;
+  startRun: (runId: string, config?: { question: string; facts: string }) => void;
   addTurn: (turn: Turn) => void;
   setVerdict: (verdict: Verdict) => void;
   setError: (error: string) => void;
@@ -66,10 +72,13 @@ const defaultSleep = (ms: number) =>
  * `done` is ignored, as the stream handler ignores it — the verdict is what
  * moves the courtroom to `adjourned`.
  */
-export function applyEvent(sink: ReplaySink, { event, data }: ReplayEvent): boolean {
+export function applyEvent(
+  sink: ReplaySink,
+  { event, data, config }: ReplayEvent,
+): boolean {
   switch (event) {
     case "start":
-      sink.startRun((data as { run_id: string }).run_id);
+      sink.startRun((data as { run_id: string }).run_id, config);
       return true;
     case "turn":
       sink.addTurn(data as Turn);

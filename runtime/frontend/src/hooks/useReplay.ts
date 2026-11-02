@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { applyEvent, replayDebate, replayEvents } from "@/api/replay";
 import type { ReplayOptions, ReplaySink } from "@/api/replay";
+import { headlineObjection } from "@/components/courtroom/ObjectionFlourish";
 import { useCourtStore } from "@/store/courtStore";
 import type { Turn } from "@/types";
 
@@ -35,13 +36,15 @@ export function useReplay() {
    */
   const makeSink = useCallback(
     ({ hold }: { hold: boolean }): ReplaySink => ({
-      startRun: (runId: string) => startRun(runId, { replayed: true }),
+      startRun: (runId: string, config?: { question: string; facts: string }) =>
+        startRun(runId, { replayed: true, ...config }),
       setVerdict,
       setError,
       addTurn: (turn: Turn) => {
         addTurn(turn);
-        if (turn.objections.length > 0) {
-          showFlourish(turn.objections[0]);
+        const headline = headlineObjection(turn.objections);
+        if (headline) {
+          showFlourish(headline);
           if (!hold) {
             window.setTimeout(() => showFlourish(null), 1400);
           }
