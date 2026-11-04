@@ -123,20 +123,35 @@ art drops into `Sprite.tsx` without touching anything else.
 
 ## Found during first light (T0)
 
-Things the first live runs turned up, 2026-10-22. Each changes either what runs
-or what the results mean.
+Things the first live runs turned up, 2026-10-22 through 2026-11-03. Each
+changes either what runs or what the results mean.
 
-### [HIGH] Default judge model retired
+### [HIGH] Judge model: the whole Gemini free tier turned out to be a dead end
 
-`gemini/gemini-2.5-pro` now returns 404 for new AI Studio users ("use
-`models/gemini-3.1-pro-preview`"). The first full run failed at the judge.
+`gemini/gemini-2.5-pro` returned 404 for new AI Studio users ("use
+`models/gemini-3.1-pro-preview`"). Switching to it didn't help — confirmed
+against a live key across checks a week and a half apart (2026-10-25 and
+2026-11-03), it returns `429` with `limit: 0` for this model specifically: not
+a daily quota exhausted, a standing exclusion from the free tier. The
+suggested successor, `gemini-3.8-flash`, has no quota/billing block at all but
+returned `503 UNAVAILABLE` ("high demand") on **every** check across the same
+week and a half — not a launch-week spike, sustained unavailability. The older
+`gemini-2.0-flash` and `gemini-2.5-flash` have both been retired outright and
+404 straight back to `gemini-3.8-flash`.
 
-The default is now `gemini/gemini-3.1-pro-preview` everywhere
-(`.env.example`, `docker-compose.yml`, `RoleModels`). **This has not been
-confirmed against a live key** — if it 404s too, set `COUNCIL_JUDGE_MODEL` to
-whatever the key can reach. Whichever model is used, record it with the
-results: the judge sets every confidence the calibration metrics score, so a
-judge swap mid-run makes the calibration numbers incomparable.
+**No free Gemini path currently works for this key.** Judge is now
+`groq/openai/gpt-oss-120b` — the same model as the presenter — purely to
+unblock testing the graph. This is a real regression against the "four
+different model families" design (ADR intent): presenter and judge are now
+identical, so any agreement between them is not independent corroboration the
+way it would be across model families. **Do not use this pairing for a scored
+run.** Before that: either re-check Gemini (a provisioning fix on Google's side
+could resolve the `limit: 0` silently), or set `COUNCIL_JUDGE_MODEL` to a paid
+model from a fourth family (Claude Sonnet 5.5 was costed out at ~$3–45 for the
+full 40–80 case eval and is the likely candidate). Whichever model is used,
+record it with the results: the judge sets every confidence the calibration
+metrics score, so a judge swap mid-run makes the calibration numbers
+incomparable.
 
 ### [MEDIUM] Presenter moved from Mistral to Groq
 
@@ -176,6 +191,63 @@ Changed the default to `ollama/qwen3.5:9b` — closest in weight class to
 for the independence metric. Still record the resolved model id with any
 result, per `RunMetadata.role_models` — that discipline stays right even
 though the original reason for writing it down here was wrong.
+
+### [RESOLVED] Every attacker turn failed: `Objection.raised_by` had no default
+
+`Objection.raised_by: Role` was required with no default, but neither
+attacker prompt's JSON example shows that field — a model following the
+prompt exactly always omits it, `_AttackerResponse` validation always failed,
+and the one repair attempt failed the same way. Confirmed live: the doctrinal
+attacker never once returned valid structured output before this fix.
+
+`AttackerRole.run()` already overwrites `raised_by` unconditionally after
+parsing (`roles/attacker.py`) — the model's value, if any, was never used. So
+a default is free: added `default=Role.ATTACKER_DOCTRINAL` to the field with
+a docstring explaining it's a placeholder that is always replaced, never a
+real value. Fixed in `models/debate.py`.
+
+### [HIGH] `qwen3.5:9b`'s thinking mode can exhaust its own token budget
+
+Qwen3.5 is a hybrid-reasoning model: it generates an invisible `<think>` block
+before the answer (visible via Ollama's raw API as a `thinking` field;
+`reasoning_content` through LiteLLM comes back `None` for this provider — it
+isn't surfaced at all). On a short test prompt, `max_tokens=4096` (the
+previous default) was consumed entirely by thinking, `content` came back
+empty, and `complete_structured` failed with "No JSON object found."
+
+Raised `max_tokens` to 16000 and `timeout_seconds` to 600 for every
+`ollama/`-backed role (`RoleModels.for_role`). Confirmed this produces two
+substantive, correctly-reasoned objections on an ungrounded test prompt
+(~6,300 completion tokens, ~354s). **It is not a reliable fix.** On a real
+graph run with retrieval on — a bigger prompt, real retrieved citations to
+reason about — the same model burned 467s and returned nothing again, the
+identical empty-content signature. The failure threshold scales with prompt
+complexity, not a fixed token count, so there may be no `max_tokens` ceiling
+that is safe for every round of a real debate (context accumulates round over
+round, so later rounds are the most at risk).
+
+Open. Options, not yet decided: raise the ceiling further (diminishing
+returns, and per-call latency is already 6–8 minutes); disable thinking
+outright via Ollama's `think: false` (tested — reliably fast, but the model
+then returns an empty `{"objections": []}` on every prompt tried, including
+ones with real substance to object to: it looks like *wrong*, not merely
+*faster*, and should not be shipped without separately verifying it against
+several real prompts); or swap the doctrinal attacker to a non-hybrid-reasoning
+model.
+
+### [RESOLVED] SSE frame separator mismatch silently broke the frontend
+
+`sse-starlette`'s default frame separator is `\r\n\r\n`. The frontend splits
+incoming frames on `\n\n` (`useDebateStream.ts`), which never matches —
+confirmed directly against the installed `sse-starlette` version. Every event
+stayed buffered for the whole debate and nothing rendered live; the buffer
+was then discarded at `done`. The backend was never broken — a real debate ran
+to completion and saved a correct artifact throughout — the browser would just
+never have shown any of it.
+
+Fixed server-side: `EventSourceResponse(events(), sep="\n")` in
+`routers/debate.py`. Verified against a live request — raw bytes now contain
+`\n\n` exactly where the frontend's parser expects it.
 
 ### [LOW] Blank `COUNCIL_SEED=` crashed settings
 

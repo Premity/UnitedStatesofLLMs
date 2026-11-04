@@ -38,25 +38,30 @@ If you read nothing else, read [docs/architecture.md](../architecture.md).
 
 ## 2. What actually works today
 
-Be clear about this before you start: **the debate has never run end to end
-against live models.** The corpus it would argue over does exist.
+As of 2026-11-03: **the debate has run end to end against live models, at
+least once.** `data/runs/run_404ea44ab227` is a real completed artifact —
+grounded arguments, both attackers, a judge ruling, a dissent log.
 
 | Area | State |
 | --- | --- |
 | Domain models, LLM gateway, citation resolver | Written, tested |
-| Debate graph, roles, SSE, run persistence | Written, tested — **never completed a live run** |
-| Frontend | Written in full — **never run against a real stream** |
+| Debate graph, roles, SSE, run persistence | **Completed a real live run** — parallel attacker join confirmed working |
+| Frontend | Written in full — the SSE framing bug that would have silently broken it is fixed; **no one has yet watched it render a live run in a browser** |
 | Corpus fetcher and parsers | **Working** — 23 instruments plus the 161 customary rules |
-| Citation index | **Working** — all four statuses resolve against real text |
-| Qdrant embedding and upsert | Written; the first full index run is slow and memory-hungry |
+| Citation index | **Working** — all four statuses resolve against real text; every citation in the one real run so far resolved |
+| Qdrant embedding and upsert | Working — 3,482 points indexed and confirmed queryable |
 | Evaluation metrics | Written — **zero tests** |
 | Evaluation harness runner | **Does not exist** |
 
 Consequences you will hit immediately:
 
-- **The judge has never returned a verdict.** `gemini-2.5-pro` was retired
-  mid-project; see ISSUES.md for what to set instead.
-- `data/runs/` is empty, so there is no example artifact to look at.
+- **The judge is currently on `groq/openai/gpt-oss-120b` — the same model as
+  the presenter, not a real fourth model family.** Every free Gemini option
+  turned out to be a dead end; see ISSUES.md for the full saga and what to fix
+  before a scored run.
+- **The doctrinal attacker (`qwen3.5:9b`) is unreliable on real, grounded
+  prompts** — a hybrid-reasoning model that can burn its entire token budget
+  thinking and return nothing. See ISSUES.md; this is open, not fixed.
 - `make eval` cannot run — there is no runner.
 
 **Two things worth reading before you start**, both of which will save you a
