@@ -66,12 +66,19 @@ Runs a debate and streams turn-level events. Returns `text/event-stream`.
 | --- | --- | --- |
 | `start` | `{"run_id": "run_a1b2c3d4e5f6"}` | Immediately |
 | `turn` | Full `Turn` object | Each role completes |
-| `verdict` | `Verdict` object | The judge rules (once per round) |
+| `verdict` | `Verdict` object | The judge rules — once per round, and only when the ruling changed |
 | `error` | `{"error": "..."}` | The run fails |
 | `done` | `{"run_id": "...", "status": "completed"}` | Stream ends |
 
 Turn-level, not token-level: a four-model debate runs for minutes, and turn
 boundaries are what the courtroom animates against.
+
+**A verdict does not mean the debate has ended.** The judge rules at the end of
+every round, so a multi-round run emits several, each superseding the last;
+`done` is what ends the stream. The verdict stands in graph state once written,
+so the server suppresses a repeat of an unchanged ruling — a client still sees
+one event per actual ruling, including a revision that leaves the conclusion
+alone and changes only the dissent.
 
 **Client note:** this is a POST, so `EventSource` cannot be used — it issues GETs
 only. Read the response body as a stream and parse frames manually; see

@@ -3,6 +3,7 @@ import { useCourtStore } from "@/store/courtStore";
 import type { Objection } from "@/types";
 
 import { CitationChip } from "@/components/citations/CitationChip";
+import { Confidence } from "@/components/dissent/Confidence";
 
 /**
  * The record.
@@ -13,11 +14,14 @@ import { CitationChip } from "@/components/citations/CitationChip";
  * system, so it gets the most room.
  */
 export function DissentLog() {
-  const { verdict, runId, turns } = useCourtStore();
+  const { verdict, runId, turns, replayed, question, facts } = useCourtStore();
 
   if (!verdict) {
     return (
-      <aside className="rounded-xl border border-record-rule bg-record-paper/95 p-8 text-center">
+      <aside
+        aria-label="Dissent log"
+        className="rounded-xl border border-record-rule bg-record-paper/95 p-8 text-center"
+      >
         <p className="font-record italic text-record-margin">
           The dissent log appears once the court has ruled.
         </p>
@@ -25,17 +29,43 @@ export function DissentLog() {
     );
   }
 
+  const roundOf = new Map(
+    turns.flatMap((t) => t.objections.map((o) => [o.id, t.round_number])),
+  );
+  const rounds = turns.reduce((n, t) => Math.max(n, t.round_number), 0);
+
   const allArguments = turns.flatMap((t) => t.arguments);
   const surviving = allArguments.filter((a) =>
     verdict.surviving_argument_ids.includes(a.id),
   );
 
   return (
-    <aside className="rounded-xl border border-record-rule bg-record-paper text-record-ink shadow-lg">
+    <aside
+      aria-label="Dissent log"
+      className="rounded-xl border border-record-rule bg-record-paper text-record-ink shadow-lg"
+    >
       <header className="border-b border-record-rule px-8 py-6">
         <h2 className="font-display text-2xl font-bold">Dissent Log</h2>
         {runId && (
-          <p className="mt-1 font-ui text-xs text-record-margin">Run {runId}</p>
+          <p className="mt-1 font-ui text-xs text-record-margin">
+            Run {runId}
+            {/* How much challenge the holding survived is part of the record:
+                without it a two-round debate reads exactly like a one-round
+                one. */}
+            {rounds > 0 &&
+              ` · ${rounds} ${rounds === 1 ? "round" : "rounds"}`}
+          </p>
+        )}
+
+        {/* The record is the part that leaves the screen, so a fixture-derived
+            one says so plainly rather than in a tooltip. */}
+        {replayed && (
+          <p
+            data-testid="replay-provenance"
+            className="mt-3 rounded border border-court-crimson/30 bg-court-crimson/5 px-3 py-2 font-ui text-xs text-court-crimson"
+          >
+            Recorded sample — no models were consulted. Not a real proceeding.
+          </p>
         )}
 
         {runId && (
@@ -57,25 +87,31 @@ export function DissentLog() {
       </header>
 
       <div className="space-y-8 px-8 py-6">
+        {/* The export has carried the question from the start; the screen did
+            not, so a holding could be read with no sight of what was asked. */}
+        {question && (
+          <section>
+            <h3 className="font-display text-lg font-semibold">Question</h3>
+            <p className="mt-2 font-record leading-relaxed">{question}</p>
+
+            {facts && (
+              <>
+                <h4 className="mt-4 font-ui text-xs uppercase tracking-wider text-record-margin">
+                  Facts as given
+                </h4>
+                <p className="mt-1 font-record text-sm leading-relaxed text-record-ink/80">
+                  {facts}
+                </p>
+              </>
+            )}
+          </section>
+        )}
+
         <section>
           <h3 className="font-display text-lg font-semibold">Holding</h3>
           <p className="mt-2 font-record leading-relaxed">{verdict.conclusion}</p>
 
-          <div className="mt-4 rounded border border-record-rule bg-white/50 p-4">
-            <div className="flex items-baseline justify-between">
-              <span className="font-ui text-xs uppercase tracking-wider text-record-margin">
-                Calibrated confidence
-              </span>
-              <span className="font-display text-2xl font-bold">
-                {Math.round(verdict.confidence * 100)}%
-              </span>
-            </div>
-            {verdict.confidence_reasoning && (
-              <p className="mt-2 font-record text-sm italic text-record-margin">
-                {verdict.confidence_reasoning}
-              </p>
-            )}
-          </div>
+          <Confidence verdict={verdict} />
 
           <p className="mt-4 font-record leading-relaxed">{verdict.reasoning}</p>
         </section>
@@ -120,7 +156,11 @@ export function DissentLog() {
               </p>
               <ol className="mt-4 space-y-6">
                 {verdict.dissent.map((obj) => (
-                  <DissentEntry key={obj.id} objection={obj} />
+                  <DissentEntry
+                    key={obj.id}
+                    objection={obj}
+                    round={roundOf.get(obj.id)}
+                  />
                 ))}
               </ol>
             </>
@@ -136,12 +176,20 @@ const RAISER_LABEL: Record<string, string> = {
   attacker_evidentiary: "Evidentiary Counsel",
 };
 
-function DissentEntry({ objection }: { objection: Objection }) {
+function DissentEntry({
+  objection,
+  round,
+}: {
+  objection: Objection;
+  /** The round it was raised in, where the debate ran to more than one. */
+  round?: number;
+}) {
   return (
     <li className="border-l-2 border-court-crimson/50 pl-4">
       <p className="font-record font-semibold">{objection.ground}</p>
       <p className="mt-0.5 font-ui text-xs uppercase tracking-wider text-record-margin">
         {RAISER_LABEL[objection.raised_by] ?? objection.raised_by}
+        {round !== undefined && ` · Round ${round}`}
       </p>
 
       <p className="mt-2 font-record text-sm leading-relaxed">

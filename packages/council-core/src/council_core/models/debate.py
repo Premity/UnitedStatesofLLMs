@@ -133,7 +133,7 @@ class Turn(BaseModel):
 
 
 class Verdict(BaseModel):
-    """The judge's ruling, with calibrated confidence and the dissent log."""
+    """The judge's ruling, its stated confidence, and the dissent log."""
 
     conclusion: str = Field(description="The holding, stated plainly.")
     reasoning: str = Field(description="How the surviving arguments support it.")
@@ -142,8 +142,11 @@ class Verdict(BaseModel):
         ge=0.0,
         le=1.0,
         description=(
-            "Calibrated probability the conclusion is correct. Scored against "
-            "tribunal outcomes via Brier score in the evaluation harness."
+            "The judge's own probability that the conclusion is correct. Self-reported, "
+            "not measured: whether these numbers track how often the system is right is "
+            "what the evaluation harness scores, via Brier score and ECE. Until an "
+            "evaluation has been run, present it as the judge's estimate rather than a "
+            "calibrated quantity."
         ),
     )
     confidence_reasoning: str = Field(
@@ -159,6 +162,24 @@ class Verdict(BaseModel):
             "the judge's stated reason for rejecting it."
         ),
     )
+
+    def confidence_band(self) -> str:
+        """The confidence as the band the judge was instructed to use.
+
+        Thresholds from `prompts/shared/judge_system.md`: 0.9+ settled law,
+        0.5-0.7 genuinely contested, below 0.5 the opposing position is more
+        likely right. Reported alongside the number because a bare figure
+        reads as a measurement, and this one is not.
+
+        Mirrored by `bandFor` in the frontend; change both together.
+        """
+        if self.confidence >= 0.9:
+            return "settled"
+        if self.confidence >= 0.7:
+            return "supported"
+        if self.confidence >= 0.5:
+            return "contested"
+        return "against"
 
 
 class DebateConfig(BaseModel):
