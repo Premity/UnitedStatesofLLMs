@@ -45,7 +45,7 @@ export const THEMES = {
     rail: "#3b2a5c",
     ink: "#0f0a1a",
     gold: "#e8b84b",
-    crimson: "#c2384a",
+    crimson: "#e4647a",
     benchPresenter: "#3d7ea6",
     benchDoctrinal: "#c2384a",
     benchEvidentiary: "#d4763a",
@@ -66,7 +66,7 @@ export const THEMES = {
     rail: "#4a3028",
     ink: "#0f0908",
     gold: "#d9a441",
-    crimson: "#b33a3a",
+    crimson: "#d96060",
     benchPresenter: "#4a7c7e",
     benchDoctrinal: "#b33a3a",
     benchEvidentiary: "#c67a3e",
@@ -75,6 +75,41 @@ export const THEMES = {
     recordInk: "#1f1813",
     recordRule: "#ddd2bc",
     recordMargin: "#8a7656",
+  },
+
+  /**
+   * Burned Fantasy, placed by contrast rather than by swatch order.
+   *
+   * The source palette is buccaneer #682c2f, copper #b56c30, tumbleweed
+   * #d7b77e, mine shaft #3d3d3d and mocha #7d2e1c. Only two of the five carry
+   * text on a dark ground: tumbleweed at 9.9:1 and copper at 4.6:1. So
+   * tumbleweed takes the accent that gold held, copper becomes the evidentiary
+   * bench, and the three dark tones — which read as decorative at 1.7–2.1:1 —
+   * become grounds and bench fills where nothing small sits on them.
+   *
+   * The ground is mocha taken down to #140c09; the source has no colour dark
+   * enough to sit a courtroom on, and mine shaft is a neutral grey that would
+   * have flattened the warmth. Mine shaft is kept as the rail instead, where
+   * its neutrality separates the warm tones rather than competing with them.
+   */
+  ember: {
+    bg: "#140c09",
+    panel: "#241310",
+    rail: "#3d3d3d",
+    ink: "#0b0605",
+    gold: "#d7b77e",
+    // Lifted off mocha, which at 2.1:1 on this ground cannot carry the small
+    // text the objection styles put on it. #cf6347 clears AA on both the
+    // ground and the panel while staying a burnt red rather than an orange.
+    crimson: "#cf6347",
+    benchPresenter: "#5e7a74",
+    benchDoctrinal: "#7d2e1c",
+    benchEvidentiary: "#b56c30",
+    benchJudge: "#d7b77e",
+    paper: "#f3ebdd",
+    recordInk: "#241310",
+    recordRule: "#d9cab0",
+    recordMargin: "#8a6b4d",
   },
 
   /**
@@ -87,7 +122,7 @@ export const THEMES = {
     rail: "#2e3f58",
     ink: "#070c16",
     gold: "#d6b068",
-    crimson: "#c0455a",
+    crimson: "#e4697f",
     benchPresenter: "#4b86b4",
     benchDoctrinal: "#c0455a",
     benchEvidentiary: "#cf8b4a",
@@ -106,6 +141,7 @@ export const THEME_NAMES = Object.keys(THEMES) as ThemeName[];
 export const THEME_LABELS: Record<ThemeName, string> = {
   dusk: "Dusk",
   chambers: "Chambers",
+  ember: "Ember",
   tribunal: "Tribunal",
 };
 

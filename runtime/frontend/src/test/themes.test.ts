@@ -33,6 +33,37 @@ describe("the palettes", () => {
   it("names a label for each", () => {
     expect(Object.keys(THEME_LABELS).sort()).toEqual([...THEME_NAMES].sort());
   });
+
+  /**
+   * Relative luminance, per WCAG 2.1. Kept here rather than pulled in as a
+   * dependency: it is six lines and only the tests need it.
+   */
+  const luminance = (hex: string) => {
+    const channels = [1, 3, 5]
+      .map((i) => parseInt(hex.slice(i, i + 2), 16) / 255)
+      .map((v) => (v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4));
+    return 0.2126 * channels[0] + 0.7152 * channels[1] + 0.0722 * channels[2];
+  };
+
+  const contrast = (a: string, b: string) => {
+    const [hi, lo] = [luminance(a), luminance(b)].sort((x, y) => y - x);
+    return (hi + 0.05) / (lo + 0.05);
+  };
+
+  // The objection styles put 10–11px text directly on crimson, and headings
+  // and the primary control on gold, so both have to clear AA (4.5:1) against
+  // the panel they sit on. A palette that fails this is unreadable, not just
+  // ugly — which is easy to miss when choosing colours by eye.
+  it.each(THEME_NAMES)("%s keeps its accents readable on the panel", (name) => {
+    const theme = THEMES[name];
+    expect(contrast(theme.crimson, theme.panel)).toBeGreaterThanOrEqual(4.5);
+    expect(contrast(theme.gold, theme.panel)).toBeGreaterThanOrEqual(4.5);
+  });
+
+  it.each(THEME_NAMES)("%s keeps the record legible", (name) => {
+    const theme = THEMES[name];
+    expect(contrast(theme.recordInk, theme.paper)).toBeGreaterThanOrEqual(4.5);
+  });
 });
 
 describe("applying a theme", () => {

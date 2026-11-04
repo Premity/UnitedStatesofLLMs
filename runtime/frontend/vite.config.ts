@@ -13,6 +13,11 @@ export default defineConfig({
     // Mirrors the `paths` entry in tsconfig.json. tsc reads that file; Vite
     // does not, so the alias has to be declared in both or the build fails
     // while the type check passes.
+    //
+    // That entry carries no `baseUrl`: it is deprecated in TypeScript 6 and
+    // removed in 7, and has been unnecessary since 4.1 — paths resolve
+    // relative to the tsconfig. (No comment there: the JSON hook rejects
+    // JSONC, even though tsc accepts it.)
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
