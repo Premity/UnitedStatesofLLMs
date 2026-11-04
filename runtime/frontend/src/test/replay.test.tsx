@@ -37,14 +37,19 @@ describe("replayDebate", () => {
     const state = useCourtStore.getState();
     expect(state.phase).toBe("adjourned");
     expect(state.runId).toBe("run_f1xtur3g3n0");
-    expect(state.turns).toHaveLength(4);
+    expect(state.turns).toHaveLength(8);
     expect(state.verdict).not.toBeNull();
   });
 
   it("replays turns in the fixture's order", async () => {
     await replayDebate(sink(), { sleep: instant });
 
+    // Two rounds: the graph loops judge -> present.
     expect(useCourtStore.getState().turns.map((t) => t.role)).toEqual([
+      "presenter",
+      "attacker_doctrinal",
+      "attacker_evidentiary",
+      "judge",
       "presenter",
       "attacker_doctrinal",
       "attacker_evidentiary",
@@ -125,7 +130,7 @@ describe("the app under replay", () => {
 
     // Twice within the record now: the question asked and the holding given.
     expect(log.getAllByText(/primary purpose of spreading terror/i)).toHaveLength(2);
-    expect(log.getByText("78%")).toBeInTheDocument();
+    expect(log.getByText("81%")).toBeInTheDocument();
 
     // The dissent is the system's headline output: two overruled objections,
     // and only the overruled ones. The sustained misquote must not appear here.
@@ -135,8 +140,8 @@ describe("the app under replay", () => {
     expect(log.queryByText(/overstates what Article 51\(2\) says/i)).not.toBeInTheDocument();
 
     // Both raisers are labelled, not shown as raw role slugs.
-    expect(log.getByText("Doctrinal Counsel")).toBeInTheDocument();
-    expect(log.getByText("Evidentiary Counsel")).toBeInTheDocument();
+    expect(log.getAllByText("Doctrinal Counsel").length).toBeGreaterThan(0);
+    expect(log.getAllByText("Evidentiary Counsel").length).toBeGreaterThan(0);
   });
 
   it("offers a replay button in dev, so the flag is not secret knowledge", async () => {
@@ -171,6 +176,10 @@ describe("the app under replay", () => {
       "turn_doctrinal_r1",
       "turn_evidentiary_r1",
       "turn_judge_r1",
+      "turn_presenter_r2",
+      "turn_doctrinal_r2",
+      "turn_evidentiary_r2",
+      "turn_judge_r2",
     ]);
   });
 
@@ -241,9 +250,15 @@ describe("the app under replay", () => {
     expect(useCourtStore.getState().turns).toHaveLength(4);
     expect(useCourtStore.getState().verdict).toBeNull();
 
-    // The verdict, and with it `done` — which carries nothing to show.
+    // Round one's verdict. The debate is not over — a second round follows.
     await user.click(step);
-    expect(useCourtStore.getState().verdict).not.toBeNull();
+    expect(useCourtStore.getState().verdict?.confidence).toBe(0.78);
+    expect(step).not.toBeDisabled();
+
+    // Round two, ending in the revised verdict and `done`.
+    for (let i = 0; i < 5; i++) await user.click(step);
+    expect(useCourtStore.getState().turns).toHaveLength(8);
+    expect(useCourtStore.getState().verdict?.confidence).toBe(0.81);
     expect(useCourtStore.getState().phase).toBe("adjourned");
 
     await waitFor(() => expect(step).toBeDisabled());
@@ -338,7 +353,7 @@ describe("the record and the rulings", () => {
     // The judge emits no arguments or objections of its own, so this card was
     // structurally always empty before.
     const transcript = within(screen.getByRole("region", { name: "Transcript" }));
-    expect(transcript.getByText("The Bench")).toBeInTheDocument();
+    expect(transcript.getAllByText("The Bench")).toHaveLength(2);
 
     // Every disposition in the fixture, named.
     expect(transcript.getAllByText("Overruled").length).toBeGreaterThan(0);
@@ -346,9 +361,10 @@ describe("the record and the rulings", () => {
     expect(transcript.getAllByText("Partly sustained").length).toBeGreaterThan(0);
 
     // And the reason, which only ever existed in the data.
+    // Both judge cards repeat the ruling they carried.
     expect(
-      transcript.getByText(/terror prohibition is customary/i),
-    ).toBeInTheDocument();
+      transcript.getAllByText(/terror prohibition is customary/i).length,
+    ).toBeGreaterThan(0);
   });
 
   it("marks each objection's outcome where it was raised", async () => {
@@ -385,6 +401,85 @@ describe("the objection flourish", () => {
   });
 });
 
+describe("a debate that runs past one round", () => {
+  // Round one's ruling, not the standing one.
+  const verdict = replayEvents.find((e) => e.event === "verdict")!.data as Verdict;
+
+  it("does not declare the debate over when round one is ruled", async () => {
+    render(<App />);
+
+    const turns = replayEvents
+      .filter((x) => x.event === "turn")
+      .map((x) => x.data as Turn);
+
+    const s = sink();
+    s.startRun("run_x");
+    for (const t of turns.filter((t) => t.round_number === 1)) s.addTurn(t);
+    s.setVerdict(verdict);
+
+    // Round two opens with the presenter's rebuttal.
+    s.addTurn(turns.find((t) => t.round_number === 2)!);
+
+    await waitFor(() => {
+      expect(screen.getAllByText(/Round 2/).length).toBeGreaterThan(0);
+    });
+
+    // The form must stay locked: a run is still in flight, and re-enabling
+    // "Convene the council" mid-debate invites a second concurrent run.
+    expect(
+      screen.getByRole("button", { name: /convene the council/i }),
+    ).toBeDisabled();
+    expect(screen.getByText(/opposing counsel are reviewing/i)).toBeInTheDocument();
+  });
+});
+
+describe("a second round's ruling", () => {
+  it("supersedes the first in the record", async () => {
+    render(<App />);
+    await replayDebate(sink(), { sleep: instant });
+
+    const log = within(screen.getByRole("complementary", { name: "Dissent log" }));
+
+    // Round two raised confidence and added an overruled objection. The
+    // record shows the standing ruling, not the one it replaced.
+    expect(log.getByText("81%")).toBeInTheDocument();
+    expect(log.queryByText("78%")).not.toBeInTheDocument();
+    expect(log.getByText(/still assumes the absence of an identified objective/i))
+      .toBeInTheDocument();
+  });
+
+  it("shows the rebuttal as its own turn", async () => {
+    render(<App />);
+    await replayDebate(sink(), { sleep: instant });
+
+    const transcript = within(screen.getByRole("region", { name: "Transcript" }));
+
+    // The presenter speaks twice: opening, then rebuttal.
+    expect(transcript.getAllByText("Presenting Counsel")).toHaveLength(2);
+    expect(
+      transcript.getByText(/Confined to attacks for which no military objective/i),
+    ).toBeInTheDocument();
+  });
+
+  it("renders an attacker turn that raised nothing", async () => {
+    render(<App />);
+    await replayDebate(sink(), { sleep: instant });
+
+    // Round two's evidentiary turn has neither arguments nor objections —
+    // that is what ends a debate in `auto` mode, and the card still has to
+    // identify itself rather than render as a blank block.
+    // The label also names objection raisers, so find the turn card itself:
+    // it reports a round and a model, and carries no claim or objection.
+    const transcript = screen.getByRole("region", { name: "Transcript" });
+    const silent = within(transcript)
+      .getAllByRole("article")
+      .find((card) => card.textContent?.includes("Round 2 · gemma3:12b"));
+
+    expect(silent).toBeDefined();
+    expect(within(silent!).getByText("Evidentiary Counsel")).toBeInTheDocument();
+  });
+});
+
 describe("the record panel", () => {
   it("opens itself when the court rules", async () => {
     render(<App />);
@@ -413,7 +508,7 @@ describe("the record panel", () => {
 
     // The rail reports what is waiting inside it.
     const rail = screen.getByTestId("dissent-open");
-    expect(rail).toHaveTextContent(/2 overruled/);
+    expect(rail).toHaveTextContent(/3 overruled/);
 
     await user.click(rail);
     expect(
@@ -516,10 +611,11 @@ describe("the fixture itself", () => {
 
     expect(names[0]).toBe("start");
     expect(names.at(-1)).toBe("done");
-    expect(names.filter((n) => n === "turn")).toHaveLength(4);
-    expect(names.filter((n) => n === "verdict")).toHaveLength(1);
-    // A verdict after the last turn, never before.
-    expect(names.indexOf("verdict")).toBeGreaterThan(names.lastIndexOf("turn"));
+    expect(names.filter((n) => n === "turn")).toHaveLength(8);
+    // One ruling per round — the judge rules at the end of each.
+    expect(names.filter((n) => n === "verdict")).toHaveLength(2);
+    // Each round's verdict closes it, so the last one follows the last turn.
+    expect(names.lastIndexOf("verdict")).toBeGreaterThan(names.lastIndexOf("turn"));
   });
 
   it("exercises all four citation statuses", () => {

@@ -569,6 +569,352 @@
     }
   },
   {
+    "event": "turn",
+    "data": {
+      "id": "turn_presenter_r2",
+      "round_number": 2,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/rebuttal",
+      "prompt_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "arguments": [
+        {
+          "id": "arg_narrowed_indiscriminate",
+          "claim": "Confined to attacks for which no military objective has been identified, the indiscriminate-attack argument survives the proportionality objection.",
+          "reasoning": "The objection is accepted as far as it goes: lawfulness under Articles 51(5)(b) and 57(2)(a)(iii) is assessed attack by attack against the anticipated military advantage. That assessment cannot be made where no objective is identified at all, and the claim is narrowed to those attacks rather than withdrawn.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "51(5)(b)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "57(2)(a)(iii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "51(5)(b)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "corpus_text": "an attack which may be expected to cause incidental loss of civilian life, injury to civilians, damage to civilian objects, or a combination thereof, which would be excessive in relation to the concrete and direct military advantage anticipated.",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "57(2)(a)(iii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "corpus_text": "refrain from deciding to launch any attack which may be expected to cause incidental loss of civilian life, injury to civilians, damage to civilian objects, or a combination thereof, which would be excessive in relation to the concrete and direct military advantage anticipated;",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "[generated fixture — no model output]",
+      "started_at": "2026-11-01T12:03:16Z",
+      "completed_at": "2026-11-01T12:03:54Z",
+      "prompt_tokens": 7100,
+      "completion_tokens": 610,
+      "error": null
+    }
+  },
+  {
+    "event": "turn",
+    "data": {
+      "id": "turn_doctrinal_r2",
+      "round_number": 2,
+      "role": "attacker_doctrinal",
+      "model_id": "ollama/qwen3.5:14b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_precaution_standard",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_narrowed_indiscriminate",
+          "ground": "The narrowed claim still assumes the absence of an identified objective can be established from the record as given.",
+          "reasoning": "Article 57(2)(b) requires an attack to be cancelled or suspended once it becomes apparent the objective is not a military one. Whether that point was reached is a finding about what commanders knew at the time, which the stated facts do not supply.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "57(2)(b)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "57(2)(b)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "corpus_text": "an attack shall be cancelled or suspended if it becomes apparent that the objective is not a military one or is subject to special protection or that the attack may be expected to cause incidental loss of civilian life, injury to civilians, damage to civilian objects, or a combination thereof, which would be excessive in relation to the concrete and direct military advantage anticipated;",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ],
+          "disposition": "overruled",
+          "disposition_reasoning": "The narrowing is to attacks where no objective is identified on the record at all, which does not depend on what was apparent at the time. The point is noted as a limit on how far the finding extends."
+        }
+      ],
+      "raw_response": "[generated fixture — no model output]",
+      "started_at": "2026-11-01T12:03:54Z",
+      "completed_at": "2026-11-01T12:04:58Z",
+      "prompt_tokens": 8250,
+      "completion_tokens": 720,
+      "error": null
+    }
+  },
+  {
+    "event": "turn",
+    "data": {
+      "id": "turn_evidentiary_r2",
+      "round_number": 2,
+      "role": "attacker_evidentiary",
+      "model_id": "ollama/gemma3:12b",
+      "prompt_id": "attacker_evidentiary/challenge",
+      "prompt_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "[generated fixture — no model output]",
+      "started_at": "2026-11-01T12:03:54Z",
+      "completed_at": "2026-11-01T12:04:41Z",
+      "prompt_tokens": 8190,
+      "completion_tokens": 140,
+      "error": null
+    }
+  },
+  {
+    "event": "turn",
+    "data": {
+      "id": "turn_judge_r2",
+      "round_number": 2,
+      "role": "judge",
+      "model_id": "gemini/gemini-3.1-pro-preview",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "[generated fixture — no model output]",
+      "started_at": "2026-11-01T12:04:58Z",
+      "completed_at": "2026-11-01T12:05:52Z",
+      "prompt_tokens": 9400,
+      "completion_tokens": 1210,
+      "error": null
+    }
+  },
+  {
+    "event": "verdict",
+    "data": {
+      "conclusion": "A sustained campaign of sniping and shelling directed at civilians with the primary purpose of spreading terror violates the laws or customs of war.",
+      "reasoning": "The prohibition in Article 51(2) of Additional Protocol I is twofold, and its second limb turns on the purpose of the violence rather than on the lawfulness of any single attack. That limb is customary and applies irrespective of how the conflict is characterised, which disposes of the applicability objection. The indiscriminate-attack argument is narrowed: an aggregate finding cannot replace the proportionality assessment each attack requires, and it is retained only as to attacks for which no military objective is identified. The terror holding does not depend on it.\n\nPurpose is established here by the duration and pattern of the attacks rather than by direct evidence of intent, and the evidentiary objection on that point is recorded in dissent. The supporting jurisprudence could not be verified against the corpus, so the holding rests on the treaty text and custom.\n\nOn the second round the indiscriminate-attack argument was narrowed to attacks for which no military objective is identified on the record, and in that form it survives. The precautionary objection is overruled but recorded: it marks the limit of the finding rather than defeating it.",
+      "confidence": 0.81,
+      "confidence_reasoning": "Raised from 0.78: the indiscriminate-attack argument was narrowed to a form that survived challenge, and no novel objection was raised against the terror holding in the second round. It remains below 0.9 for the reasons given above.",
+      "surviving_argument_ids": [
+        "arg_terror_prohibition",
+        "arg_narrowed_indiscriminate"
+      ],
+      "dissent": [
+        {
+          "id": "obj_treaty_applicability",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_terror_prohibition",
+          "ground": "Additional Protocol I governs international armed conflict; its application to a siege within a single state is not established.",
+          "reasoning": "Article 1 limits the Protocol's field of application. If the conflict is non-international, Article 51(2) does not apply of its own force and the argument must rest on Additional Protocol II or on custom. Article 51(9) further confines the reach of this Part.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "51(3)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "51(9)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "51(3)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "corpus_text": "Civilians shall enjoy the protection afforded by this Section, unless and for such time as they take a direct part in hostilities.",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "51(9)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "unresolved",
+              "corpus_text": null,
+              "source_url": null,
+              "note": "No span at ap_i/art.51(9) in an indexed instrument."
+            }
+          ],
+          "disposition": "overruled",
+          "disposition_reasoning": "The terror prohibition is customary and applies in both international and non-international armed conflict, so the characterisation of the conflict does not dispose of the claim. The objection also cites Article 51(9), which does not exist; Article 51 ends at paragraph 8."
+        },
+        {
+          "id": "obj_evidentiary_basis",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_jurisprudence",
+          "ground": "The factual predicate does not establish that spreading terror was the primary purpose rather than an effect.",
+          "reasoning": "Article 51(2) turns on primary purpose. The stated facts describe sustained sniping and shelling over 23 months but do not identify the evidence from which purpose is inferred — orders, patterns of targeting, or statements of intent. Without that, the terror finding is asserted rather than shown.",
+          "citations": [
+            {
+              "type": "case",
+              "instrument": "icty_galic_tj",
+              "article": null,
+              "case_id": "icty_galic_tj",
+              "paragraph": "769",
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 156,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "case",
+                "instrument": "icty_galic_tj",
+                "article": null,
+                "case_id": "icty_galic_tj",
+                "paragraph": "769",
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "out_of_corpus",
+              "corpus_text": null,
+              "source_url": null,
+              "note": "Instrument 'icty_galic_tj' is not in the indexed corpus."
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 156,
+                "quoted_text": null
+              },
+              "status": "out_of_corpus",
+              "corpus_text": null,
+              "source_url": null,
+              "note": "Instrument 'customary_ihl' is not in the indexed corpus."
+            }
+          ],
+          "disposition": "overruled",
+          "disposition_reasoning": "Purpose may be inferred from the pattern and duration of the attacks, and the facts as given describe a campaign rather than isolated incidents. The objection is noted as a limit on the confidence attached to the holding, and both authorities it cites are outside the indexed corpus and so unverified here."
+        },
+        {
+          "id": "obj_precaution_standard",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_narrowed_indiscriminate",
+          "ground": "The narrowed claim still assumes the absence of an identified objective can be established from the record as given.",
+          "reasoning": "Article 57(2)(b) requires an attack to be cancelled or suspended once it becomes apparent the objective is not a military one. Whether that point was reached is a finding about what commanders knew at the time, which the stated facts do not supply.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "57(2)(b)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "57(2)(b)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "corpus_text": "an attack shall be cancelled or suspended if it becomes apparent that the objective is not a military one or is subject to special protection or that the attack may be expected to cause incidental loss of civilian life, injury to civilians, damage to civilian objects, or a combination thereof, which would be excessive in relation to the concrete and direct military advantage anticipated;",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ],
+          "disposition": "overruled",
+          "disposition_reasoning": "The narrowing is to attacks where no objective is identified on the record at all, which does not depend on what was apparent at the time. The point is noted as a limit on how far the finding extends."
+        }
+      ]
+    }
+  },
+  {
     "event": "done",
     "data": {
       "run_id": "run_f1xtur3g3n0",

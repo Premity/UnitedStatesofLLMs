@@ -12,9 +12,12 @@ import type { Turn, Verdict } from "@/types";
  * courtroom spends most of a debate pointing at the wrong bench.
  */
 
-const turns = replayEvents
+const allTurns = replayEvents
   .filter((e) => e.event === "turn")
   .map((e) => e.data as Turn);
+
+/** Round one on its own — these tests walk a round's hand-offs in order. */
+const turns = allTurns.filter((t) => t.round_number === 1);
 
 const verdict = replayEvents.find((e) => e.event === "verdict")?.data as Verdict;
 
@@ -85,6 +88,39 @@ describe("inferring who is thinking", () => {
     // so the clock must not reset.
     store().addTurn(turns[1]);
     expect(store().pendingSince).toBe(attackersSince);
+  });
+
+  it("keeps going when the judge rules but the debate continues", () => {
+    store().startRun("run_x");
+    for (const turn of turns) store().addTurn(turn);
+
+    // The judge rules every round, and the server re-emits the standing
+    // verdict on each stream chunk. Treating the first one as the end of the
+    // debate is what made a two-round run look frozen after round one.
+    store().setVerdict(verdict);
+    expect(store().phase).toBe("adjourned");
+
+    store().addTurn({ ...turns[0], id: "turn_presenter_r2", round_number: 2 });
+
+    expect(store().phase).not.toBe("adjourned");
+    expect(store().pendingRoles).toEqual([
+      "attacker_doctrinal",
+      "attacker_evidentiary",
+    ]);
+  });
+
+  it("ignores a verdict it has already seen", () => {
+    store().startRun("run_x");
+    for (const turn of turns) store().addTurn(turn);
+
+    store().setVerdict(verdict);
+    const firstSince = store().pendingSince;
+
+    // The router emits the standing verdict again on the next chunk. It must
+    // not restart anything or clobber a round already under way.
+    store().setVerdict(verdict);
+    expect(store().phase).toBe("adjourned");
+    expect(store().pendingSince).toBe(firstSince);
   });
 
   it("works again in a later round, where every role has spoken before", () => {

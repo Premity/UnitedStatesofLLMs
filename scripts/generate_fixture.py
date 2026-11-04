@@ -88,8 +88,13 @@ def customary(rule: int) -> Citation:
     return Citation(type=CitationType.CUSTOMARY, instrument="customary_ihl", rule_number=rule)
 
 
-def build_turns(resolve) -> tuple[list[Turn], Verdict]:
-    """Assemble the debate record. `resolve` is the real resolver's resolve_all."""
+def build_rounds(resolve) -> list[tuple[list[Turn], Verdict]]:
+    """Assemble the debate record, round by round.
+
+    `resolve` is the real resolver's resolve_all. Each round is its turns plus
+    the verdict the judge gave at the end of it — the judge rules every round,
+    and a later ruling supersedes the earlier one.
+    """
 
     # ── Presenter ────────────────────────────────────────────────────────────
     # Three arguments: two resting on indexed treaty text, one reaching for a
@@ -348,7 +353,140 @@ def build_turns(resolve) -> tuple[list[Turn], Verdict]:
         completion_tokens=1388,
     )
 
-    return [presenter, doctrinal, evidentiary, judge], verdict
+    # ── Round two ────────────────────────────────────────────────────────────
+    # The graph loops judge -> present, and the presenter switches to the
+    # rebuttal prompt from round two. The fixture covers it because the round
+    # boundary is the part of the UI nothing else exercises: a one-round
+    # recording cannot show that a second verdict supersedes the first.
+    a4_cites = [treaty("ap_i", "51(5)(b)"), treaty("ap_i", "57(2)(a)(iii)")]
+    a4 = Argument(
+        id="arg_narrowed_indiscriminate",
+        claim=(
+            "Confined to attacks for which no military objective has been identified, the "
+            "indiscriminate-attack argument survives the proportionality objection."
+        ),
+        reasoning=(
+            "The objection is accepted as far as it goes: lawfulness under Articles 51(5)(b) "
+            "and 57(2)(a)(iii) is assessed attack by attack against the anticipated military "
+            "advantage. That assessment cannot be made where no objective is identified at "
+            "all, and the claim is narrowed to those attacks rather than withdrawn."
+        ),
+        citations=a4_cites,
+        resolved_citations=resolve(a4_cites),
+    )
+
+    presenter_r2 = Turn(
+        id="turn_presenter_r2",
+        round_number=2,
+        role=Role.PRESENTER,
+        model_id=MODELS[Role.PRESENTER],
+        prompt_id="presenter/rebuttal",
+        prompt_hash=PROMPT_HASH,
+        arguments=[a4],
+        raw_response="[generated fixture — no model output]",
+        started_at=T0 + timedelta(seconds=196),
+        completed_at=T0 + timedelta(seconds=234),
+        prompt_tokens=7100,
+        completion_tokens=610,
+    )
+
+    o5_cites = [treaty("ap_i", "57(2)(b)")]
+    o5 = Objection(
+        id="obj_precaution_standard",
+        raised_by=Role.ATTACKER_DOCTRINAL,
+        target_argument_id=a4.id,
+        ground=(
+            "The narrowed claim still assumes the absence of an identified objective can be "
+            "established from the record as given."
+        ),
+        reasoning=(
+            "Article 57(2)(b) requires an attack to be cancelled or suspended once it becomes "
+            "apparent the objective is not a military one. Whether that point was reached is a "
+            "finding about what commanders knew at the time, which the stated facts do not "
+            "supply."
+        ),
+        citations=o5_cites,
+        resolved_citations=resolve(o5_cites),
+        disposition=ObjectionDisposition.OVERRULED,
+        disposition_reasoning=(
+            "The narrowing is to attacks where no objective is identified on the record at "
+            "all, which does not depend on what was apparent at the time. The point is noted "
+            "as a limit on how far the finding extends."
+        ),
+    )
+
+    doctrinal_r2 = Turn(
+        id="turn_doctrinal_r2",
+        round_number=2,
+        role=Role.ATTACKER_DOCTRINAL,
+        model_id=MODELS[Role.ATTACKER_DOCTRINAL],
+        prompt_id="attacker_doctrinal/challenge",
+        prompt_hash=PROMPT_HASH,
+        objections=[o5],
+        raw_response="[generated fixture — no model output]",
+        started_at=T0 + timedelta(seconds=234),
+        completed_at=T0 + timedelta(seconds=298),
+        prompt_tokens=8250,
+        completion_tokens=720,
+    )
+
+    evidentiary_r2 = Turn(
+        id="turn_evidentiary_r2",
+        round_number=2,
+        role=Role.ATTACKER_EVIDENTIARY,
+        model_id=MODELS[Role.ATTACKER_EVIDENTIARY],
+        prompt_id="attacker_evidentiary/challenge",
+        prompt_hash=PROMPT_HASH,
+        # No new objections: this is what ends the debate in `auto` mode, and
+        # an attacker turn with nothing to say is a real state the UI must
+        # handle — the transcript card has neither arguments nor objections.
+        raw_response="[generated fixture — no model output]",
+        started_at=T0 + timedelta(seconds=234),
+        completed_at=T0 + timedelta(seconds=281),
+        prompt_tokens=8190,
+        completion_tokens=140,
+    )
+
+    # The holding stands; what changed is what it survived. A client that
+    # deduped verdicts by conclusion alone would drop this.
+    verdict_r2 = Verdict(
+        conclusion=verdict.conclusion,
+        reasoning=(
+            verdict.reasoning
+            + "\n\nOn the second round the indiscriminate-attack argument was narrowed to "
+            "attacks for which no military objective is identified on the record, and in that "
+            "form it survives. The precautionary objection is overruled but recorded: it marks "
+            "the limit of the finding rather than defeating it."
+        ),
+        confidence=0.81,
+        confidence_reasoning=(
+            "Raised from 0.78: the indiscriminate-attack argument was narrowed to a form that "
+            "survived challenge, and no novel objection was raised against the terror holding "
+            "in the second round. It remains below 0.9 for the reasons given above."
+        ),
+        surviving_argument_ids=[a1.id, a4.id],
+        dissent=[o1, o4, o5],
+    )
+
+    judge_r2 = Turn(
+        id="turn_judge_r2",
+        round_number=2,
+        role=Role.JUDGE,
+        model_id=MODELS[Role.JUDGE],
+        prompt_id="judge/rule",
+        prompt_hash=PROMPT_HASH,
+        raw_response="[generated fixture — no model output]",
+        started_at=T0 + timedelta(seconds=298),
+        completed_at=T0 + timedelta(seconds=352),
+        prompt_tokens=9400,
+        completion_tokens=1210,
+    )
+
+    rounds = [
+        ([presenter, doctrinal, evidentiary, judge], verdict),
+        ([presenter_r2, doctrinal_r2, evidentiary_r2, judge_r2], verdict_r2),
+    ]
+    return rounds
 
 
 def main(args: argparse.Namespace) -> None:
@@ -356,12 +494,13 @@ def main(args: argparse.Namespace) -> None:
     index.load()
     resolver = CitationResolver(index)
 
-    turns, verdict = build_turns(resolver.resolve_all)
+    rounds = build_rounds(resolver.resolve_all)
 
-    # Same envelope and ordering as app.routers.debate.stream_debate. The
-    # `start` event carries only a run id, exactly as the API contract says —
-    # the question travels beside the stream, as it does for a live run where
-    # the client already holds the config it sent.
+    # Same envelope and ordering as app.routers.debate.stream_debate: the
+    # judge's ruling closes each round, so a verdict follows that round's
+    # turns. The `start` event carries only a run id, exactly as the API
+    # contract says — the question travels beside the stream, as it does for a
+    # live run where the client already holds the config it sent.
     events: list[dict[str, object]] = [
         {
             "event": "start",
@@ -369,10 +508,14 @@ def main(args: argparse.Namespace) -> None:
             "config": {"question": QUESTION, "facts": FACTS},
         }
     ]
-    for turn in turns:
-        events.append({"event": "turn", "data": json.loads(turn.model_dump_json())})
-    events.append({"event": "verdict", "data": json.loads(verdict.model_dump_json())})
+    for turns, verdict in rounds:
+        for turn in turns:
+            events.append({"event": "turn", "data": json.loads(turn.model_dump_json())})
+        events.append({"event": "verdict", "data": json.loads(verdict.model_dump_json())})
     events.append({"event": "done", "data": {"run_id": RUN_ID, "status": "completed"}})
+
+    turns = [t for round_turns, _ in rounds for t in round_turns]
+    verdict = rounds[-1][1]
 
     statuses = Counter(
         rc["status"]
@@ -384,6 +527,7 @@ def main(args: argparse.Namespace) -> None:
 
     print(f"index:      {INDEX.relative_to(ROOT)}")
     print(f"sequence:   {' -> '.join(dict.fromkeys(e['event'] for e in events))}")
+    print(f"rounds:     {len(rounds)}")
     print(f"turns:      {len(turns)}")
     print(f"objections: {sum(len(t.objections) for t in turns)}")
     print(f"dissent:    {len(verdict.dissent)}")
