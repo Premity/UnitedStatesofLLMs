@@ -17,7 +17,7 @@ import litellm
 import structlog
 from litellm import acompletion
 from pydantic import BaseModel, ValidationError
-from tenacity import retry, retry_if_exception_type, stop_after_attempt, wait_exponential
+from tenacity import retry, retry_if_exception, stop_after_attempt, wait_exponential
 
 from council_core.llm.config import ModelConfig
 
@@ -26,6 +26,36 @@ log = structlog.get_logger(__name__)
 T = TypeVar("T", bound=BaseModel)
 
 _JSON_BLOCK = re.compile(r"```(?:json)?\s*(\{.*?\}|\[.*?\])\s*```", re.DOTALL)
+
+# 429 is rate limiting; the rest are transient server-side failures that go
+# away on their own. Deliberately excludes 400/401/403/404 and the like --
+# those are permanent, and retrying them just delays the failure by a minute.
+_RETRYABLE_STATUS_CODES = {429, 500, 502, 503, 504}
+
+
+def _is_retryable(exc: BaseException) -> bool:
+    """True for transport failures and transient server errors from any provider.
+
+    Started as a fixed tuple of LiteLLM exception types (RateLimitError,
+    APIConnectionError, Timeout, InternalServerError) after a live run hit
+    Groq's per-minute token limit and wasn't retried at all. That tuple then
+    missed `ServiceUnavailableError` (Gemini's 503 "high demand", the same
+    error that made `gemini-3.8-flash` unusable for over a week) and a whole
+    debate failed outright on the first hit -- no retry attempt at all.
+
+    Every LiteLLM exception sets `status_code` unconditionally in `__init__`
+    (confirmed against the installed version's source for RateLimitError,
+    APIConnectionError, Timeout, InternalServerError, and
+    ServiceUnavailableError), so matching on the code generalizes across
+    provider-specific subclasses instead of enumerating them one at a time --
+    this predicate has already needed extending twice.
+    """
+    # litellm.Timeout sets status_code=408, which isn't a server error and
+    # deliberately isn't in the retryable set above -- a request timeout is
+    # always worth retrying regardless of code, so it's checked by type.
+    if isinstance(exc, (TimeoutError, ConnectionError, litellm.exceptions.Timeout)):
+        return True
+    return getattr(exc, "status_code", None) in _RETRYABLE_STATUS_CODES
 
 
 class StructuredOutputError(RuntimeError):
@@ -56,33 +86,11 @@ class CouncilLLM:
 
     @retry(
         stop=stop_after_attempt(6),
+        # 6 attempts at this backoff spans ~62s cumulative before the last
+        # one -- needed to actually cross Groq's per-minute rate-limit
+        # window, confirmed against a live run that hit it.
         wait=wait_exponential(multiplier=1, min=2, max=60),
-        # TimeoutError/ConnectionError are the builtins -- LiteLLM never raises
-        # them. It raises its own hierarchy (ultimately subclassing openai's),
-        # which this tuple missed entirely: a live run hit Groq's per-minute
-        # token limit, got told "try again in 25.425s", and was not retried at
-        # all -- it just failed the whole debate. Confirmed against the
-        # installed litellm that these four actually subclass litellm's
-        # RateLimitError/APIConnectionError/Timeout/InternalServerError.
-        #
-        # A first fix (4 attempts, 30s cap) retried correctly but still
-        # failed: Groq's limit is per MINUTE, and 4 attempts only spans ~30s
-        # cumulative wait -- nowhere near enough for a token bucket to
-        # refill. litellm.RateLimitError doesn't expose the provider's
-        # "try again in Ns" hint as a structured field (checked: only
-        # code/param/status_code), so there's nothing to parse reliably
-        # across providers. 6 attempts at this backoff spans ~62s cumulative
-        # before the last one, which actually crosses a one-minute window.
-        retry=retry_if_exception_type(
-            (
-                TimeoutError,
-                ConnectionError,
-                litellm.RateLimitError,
-                litellm.APIConnectionError,
-                litellm.Timeout,
-                litellm.InternalServerError,
-            )
-        ),
+        retry=retry_if_exception(_is_retryable),
         reraise=True,
     )
     async def complete(

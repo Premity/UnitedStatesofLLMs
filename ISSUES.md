@@ -284,6 +284,58 @@ Fixed server-side: `EventSourceResponse(events(), sep="\n")` in
 `routers/debate.py`. Verified against a live request — raw bytes now contain
 `\n\n` exactly where the frontend's parser expects it.
 
+### [RESOLVED] LiteLLM retry predicate missed `ServiceUnavailableError`
+
+Discovered live with the new Gemma 4 attackers (above): a debate failed
+outright on a single `503 Service Unavailable` ("high demand") from
+`gemma-4-31b-it` — the same error signature that made `gemini-3.8-flash`
+unusable for over a week. `CouncilLLM.complete()`'s retry predicate was a
+fixed tuple of LiteLLM exception types (`RateLimitError`, `APIConnectionError`,
+`Timeout`, `InternalServerError`), extended once already for Groq's rate
+limit. `ServiceUnavailableError` isn't a subclass of any of those — it's a
+sibling under `litellm.APIError` — so it fell straight through with no retry
+at all.
+
+Every LiteLLM exception sets `status_code` in `__init__` (checked against the
+installed version's source for all five classes above). Replaced the type
+tuple with a predicate matching on `status_code in {429, 500, 502, 503, 504}`,
+plus an explicit check for `TimeoutError`/`ConnectionError`/`litellm.Timeout`
+(the last sets `status_code=408`, which deliberately isn't in the retryable
+set — a timeout is always worth retrying regardless of code, so it's checked
+by type instead). This generalizes instead of enumerating: the predicate has
+now needed extending twice for two different providers' exception subclasses,
+and a code-based check closes that whole class of gap rather than the next
+instance of it. Confirmed against 9 cases (5 retryable, including
+`ServiceUnavailableError` and `Timeout`; 4 not, including `BadRequestError`
+and `AuthenticationError`, which should fail fast rather than waste the retry
+budget on a permanent error).
+
+### [RESOLVED] Rebuttal prompt's vague schema reference produced a bare JSON array
+
+A live debate died in round 2: the presenter (`groq/openai/gpt-oss-120b`)
+returned a bare JSON array of arguments instead of the required
+`{"arguments": [...]}` object, failed `_PresenterResponse` validation, failed
+identically on the one repair attempt, and crashed the whole run.
+
+Root cause: `prompts/presenter/opening.md` shows a concrete JSON example with
+the `arguments` wrapper key. `prompts/presenter/rebuttal.md` — used for every
+round after the first — did not; it only said "return the same JSON shape as
+your opening: **a complete list of the arguments** you now stand on," which
+the model read literally and returned a JSON *list*. This is the same root
+cause as the `art.art.` locator bug above: the rebuttal prompt never
+re-anchors the model with a worked example, so it free-associates from the
+English description instead, and round 2+ carries the most accumulated
+context to free-associate from. Two independent failures now trace to this
+exact gap.
+
+Fixed by giving `rebuttal.md` the same fenced JSON example `opening.md` has,
+instead of a cross-reference. Worth checking whether any other
+prompt template describes its schema only in prose rather than showing it —
+`attacker_doctrinal/challenge.md`, `attacker_evidentiary/challenge.md`, and
+`judge/rule.md` are single templates reused every round (no opening/rebuttal
+split), so they don't have this specific vulnerability, but it's worth
+keeping in mind for any future per-round prompt variants.
+
 ### [LOW] Blank `COUNCIL_SEED=` crashed settings
 
 `.env.example` ships `COUNCIL_SEED=` empty, which failed integer parsing in
