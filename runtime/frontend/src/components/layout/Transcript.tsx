@@ -29,11 +29,20 @@ export function Transcript() {
 
   if (turns.length === 0) return null;
 
-  // Every objection raised so far, by id. The judge rules by mutating these
-  // rather than by emitting anything of its own, so its card has to look them
-  // up — see the comment on JudgeCard.
-  const objections = new Map(
-    turns.flatMap((t) => t.objections).map((o) => [o.id, o]),
+  // The judge rules by mutating the objections already raised rather than by
+  // emitting anything of its own, so its card has to look them up — see the
+  // comment on JudgeCard.
+  //
+  // Scoped to the round: a later ruling addresses that round's challenges, and
+  // handing every card the whole run made each judge card a copy of the last.
+  const objectionsForRound = (round: number) =>
+    turns.filter((t) => t.round_number === round).flatMap((t) => t.objections);
+
+  // The standing ruling is the last judge turn. (Not findLastIndex: the
+  // tsconfig targets ES2022, and widening it for one call is not worth it.)
+  const lastJudgeIndex = turns.reduce(
+    (last, t, i) => (t.role === "judge" ? i : last),
+    -1,
   );
 
   return (
@@ -41,13 +50,17 @@ export function Transcript() {
       <h2 className="font-ui text-xs uppercase tracking-widest text-court-gold/70">
         Transcript
       </h2>
-      {turns.map((turn) =>
+      {turns.map((turn, i) =>
         turn.role === "judge" ? (
           <JudgeCard
             key={turn.id}
             turn={turn}
-            objections={[...objections.values()]}
-            verdict={verdict}
+            objections={objectionsForRound(turn.round_number)}
+            // Only the standing ruling carries the verdict: an earlier round's
+            // holding was superseded, and repeating it would show two
+            // different confidences as though both were current.
+            verdict={i === lastJudgeIndex ? verdict : null}
+            superseded={i !== lastJudgeIndex}
           />
         ) : (
           <TurnCard key={turn.id} turn={turn} />
@@ -104,10 +117,13 @@ function JudgeCard({
   turn,
   objections,
   verdict,
+  superseded = false,
 }: {
   turn: Turn;
   objections: Objection[];
   verdict: Verdict | null;
+  /** An earlier round's ruling, since replaced by a later one. */
+  superseded?: boolean;
 }) {
   const ruled = objections.filter((o) => o.disposition !== "unaddressed");
 
@@ -152,7 +168,14 @@ function JudgeCard({
         </div>
       )}
 
-      {ruled.length === 0 && !verdict && (
+      {superseded && (
+        <p className="mt-3 font-ui text-[11px] text-court-fg/35">
+          Ruling on round {turn.round_number}; superseded by the court's final
+          holding.
+        </p>
+      )}
+
+      {ruled.length === 0 && !verdict && !superseded && (
         <p className="mt-3 font-record text-sm italic text-court-fg/40">
           The court is deliberating.
         </p>

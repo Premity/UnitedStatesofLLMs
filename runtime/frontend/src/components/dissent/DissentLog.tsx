@@ -28,6 +28,11 @@ export function DissentLog() {
     );
   }
 
+  const roundOf = new Map(
+    turns.flatMap((t) => t.objections.map((o) => [o.id, t.round_number])),
+  );
+  const rounds = turns.reduce((n, t) => Math.max(n, t.round_number), 0);
+
   const allArguments = turns.flatMap((t) => t.arguments);
   const surviving = allArguments.filter((a) =>
     verdict.surviving_argument_ids.includes(a.id),
@@ -41,7 +46,14 @@ export function DissentLog() {
       <header className="border-b border-record-rule px-8 py-6">
         <h2 className="font-display text-2xl font-bold">Dissent Log</h2>
         {runId && (
-          <p className="mt-1 font-ui text-xs text-record-margin">Run {runId}</p>
+          <p className="mt-1 font-ui text-xs text-record-margin">
+            Run {runId}
+            {/* How much challenge the holding survived is part of the record:
+                without it a two-round debate reads exactly like a one-round
+                one. */}
+            {rounds > 0 &&
+              ` · ${rounds} ${rounds === 1 ? "round" : "rounds"}`}
+          </p>
         )}
 
         {/* The record is the part that leaves the screen, so a fixture-derived
@@ -157,7 +169,11 @@ export function DissentLog() {
               </p>
               <ol className="mt-4 space-y-6">
                 {verdict.dissent.map((obj) => (
-                  <DissentEntry key={obj.id} objection={obj} />
+                  <DissentEntry
+                    key={obj.id}
+                    objection={obj}
+                    round={roundOf.get(obj.id)}
+                  />
                 ))}
               </ol>
             </>
@@ -173,12 +189,20 @@ const RAISER_LABEL: Record<string, string> = {
   attacker_evidentiary: "Evidentiary Counsel",
 };
 
-function DissentEntry({ objection }: { objection: Objection }) {
+function DissentEntry({
+  objection,
+  round,
+}: {
+  objection: Objection;
+  /** The round it was raised in, where the debate ran to more than one. */
+  round?: number;
+}) {
   return (
     <li className="border-l-2 border-court-crimson/50 pl-4">
       <p className="font-record font-semibold">{objection.ground}</p>
       <p className="mt-0.5 font-ui text-xs uppercase tracking-wider text-record-margin">
         {RAISER_LABEL[objection.raised_by] ?? objection.raised_by}
+        {round !== undefined && ` · Round ${round}`}
       </p>
 
       <p className="mt-2 font-record text-sm leading-relaxed">

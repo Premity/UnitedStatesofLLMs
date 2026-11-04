@@ -140,8 +140,9 @@ describe("the app under replay", () => {
     expect(log.queryByText(/overstates what Article 51\(2\) says/i)).not.toBeInTheDocument();
 
     // Both raisers are labelled, not shown as raw role slugs.
-    expect(log.getAllByText("Doctrinal Counsel").length).toBeGreaterThan(0);
-    expect(log.getAllByText("Evidentiary Counsel").length).toBeGreaterThan(0);
+    // Each entry names its raiser and the round it was raised in.
+    expect(log.getAllByText(/Doctrinal Counsel · Round \d/).length).toBeGreaterThan(0);
+    expect(log.getAllByText(/Evidentiary Counsel · Round \d/).length).toBeGreaterThan(0);
   });
 
   it("offers a replay button in dev, so the flag is not secret knowledge", async () => {
@@ -446,6 +447,48 @@ describe("a second round's ruling", () => {
     expect(log.queryByText("78%")).not.toBeInTheDocument();
     expect(log.getByText(/still assumes the absence of an identified objective/i))
       .toBeInTheDocument();
+  });
+
+  it("gives each judge card its own round's rulings", async () => {
+    render(<App />);
+    await replayDebate(sink(), { sleep: instant });
+
+    const cards = within(screen.getByRole("region", { name: "Transcript" }))
+      .getAllByRole("article")
+      .filter((c) => c.textContent?.includes("The Bench"));
+
+    expect(cards).toHaveLength(2);
+
+    // Round one ruled on the applicability and proportionality objections;
+    // round two on the precautionary one. Handing every card the whole run
+    // made the second a copy of the first.
+    expect(cards[0].textContent).toMatch(/Additional Protocol I governs/);
+    expect(cards[0].textContent).not.toMatch(/still assumes the absence/);
+    expect(cards[1].textContent).toMatch(/still assumes the absence/);
+    expect(cards[1].textContent).not.toMatch(/Additional Protocol I governs/);
+  });
+
+  it("puts the standing holding on the last ruling only", async () => {
+    render(<App />);
+    await replayDebate(sink(), { sleep: instant });
+
+    const cards = within(screen.getByRole("region", { name: "Transcript" }))
+      .getAllByRole("article")
+      .filter((c) => c.textContent?.includes("The Bench"));
+
+    // Two confidences on screen at once, both looking current, would be worse
+    // than showing one — the earlier ruling says it was superseded instead.
+    expect(cards[0].textContent).toMatch(/superseded/i);
+    expect(cards[0].textContent).not.toMatch(/Confidence \d+%/);
+    expect(cards[1].textContent).toMatch(/Confidence 81%/);
+  });
+
+  it("records how many rounds the holding survived", async () => {
+    render(<App />);
+    await replayDebate(sink(), { sleep: instant });
+
+    const log = within(screen.getByRole("complementary", { name: "Dissent log" }));
+    expect(log.getByText(/2 rounds/)).toBeInTheDocument();
   });
 
   it("shows the rebuttal as its own turn", async () => {
