@@ -46,13 +46,13 @@ class RoleModels(BaseSettings):
     presenter_model: str = "groq/openai/gpt-oss-120b"
     presenter_temperature: float = 0.4
 
-    attacker_doctrinal_model: str = "gemini/gemma-4-31b-it"
+    attacker_doctrinal_model: str = "groq/qwen/qwen3.8-27b"
     attacker_doctrinal_temperature: float = 0.7
 
-    attacker_evidentiary_model: str = "gemini/gemma-4-26b-a4b-it"
+    attacker_evidentiary_model: str = "groq/openai/gpt-oss-20b"
     attacker_evidentiary_temperature: float = 0.7
 
-    judge_model: str = "groq/openai/gpt-oss-120b"
+    judge_model: str = "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
     judge_temperature: float = 0.2
 
     ollama_base_url: str = Field(
@@ -74,21 +74,29 @@ class RoleModels(BaseSettings):
         Ollama-backed roles get `api_base` injected so one setting moves every
         local model between host and container.
 
-        Hybrid-reasoning models -- Qwen3.5 under Ollama, and Gemma 4 under the
-        Gemini API -- spend tokens on an invisible thinking block before the
-        answer, and the default 4096-token budget can be entirely consumed by
-        that thinking with nothing left for the structured JSON response.
-        Confirmed empirically against qwen3.5:9b (~6,300 completion tokens for
-        one attacker turn) and again against gemma-4-26b-a4b-it, which hit the
-        4096 ceiling with *all 4093 tokens spent on reasoning* and returned
-        empty content (`finish_reason: length`) -- the identical failure, on a
-        hosted API rather than a local model. Both families get the same much
-        larger `max_tokens` and `timeout_seconds` as a result.
+        Hybrid-reasoning models -- Qwen3.5 under Ollama, Gemma 4 under the
+        Gemini API, and nemotron-3-ultra under OpenRouter -- spend tokens on
+        thinking before the answer, and the default 4096-token budget can be
+        entirely consumed by that thinking with nothing left for the
+        structured JSON response. Confirmed empirically against qwen3.5:9b
+        (~6,300 completion tokens for one attacker turn), gemma-4-26b-a4b-it
+        (hit the 4096 ceiling with *all 4093 tokens spent on reasoning*,
+        returned empty content), and nemotron-3-ultra as judge in round 3 of a
+        real debate (the dissent log grows every round, so the judge's
+        response is the one place the correlation isn't just model-driven --
+        round 3's ruling returned empty content on the first attempt and a
+        JSON response truncated right near the end on the repair attempt,
+        both the 4096-ceiling signature). All three families get the same
+        much larger `max_tokens` and `timeout_seconds` as a result.
         """
         model_id: str = getattr(self, f"{role}_model")
         temperature: float = getattr(self, f"{role}_temperature")
         is_ollama = model_id.startswith("ollama/")
-        is_hybrid_reasoning = is_ollama or model_id.startswith("gemini/gemma")
+        is_hybrid_reasoning = (
+            is_ollama
+            or model_id.startswith("gemini/gemma")
+            or model_id.startswith("openrouter/nvidia/nemotron")
+        )
 
         return ModelConfig(
             model_id=model_id,

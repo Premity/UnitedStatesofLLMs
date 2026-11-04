@@ -131,7 +131,7 @@ the licensing constraint on any background image.
 Things the first live runs turned up, 2026-10-22 through 2026-11-03. Each
 changes either what runs or what the results mean.
 
-### [HIGH] Judge model: the whole Gemini free tier turned out to be a dead end
+### [RESOLVED] Judge model: Gemini was a dead end, Groq broke independence, settled on OpenRouter
 
 `gemini/gemini-2.5-pro` returned 404 for new AI Studio users ("use
 `models/gemini-3.1-pro-preview`"). Switching to it didn't help — confirmed
@@ -142,21 +142,60 @@ suggested successor, `gemini-3.8-flash`, has no quota/billing block at all but
 returned `503 UNAVAILABLE` ("high demand") on **every** check across the same
 week and a half — not a launch-week spike, sustained unavailability. The older
 `gemini-2.0-flash` and `gemini-2.5-flash` have both been retired outright and
-404 straight back to `gemini-3.8-flash`.
+404 straight back to `gemini-3.8-flash`. **No free Gemini path works for this
+key**, full stop.
 
-**No free Gemini path currently works for this key.** Judge is now
-`groq/openai/gpt-oss-120b` — the same model as the presenter — purely to
-unblock testing the graph. This is a real regression against the "four
-different model families" design (ADR intent): presenter and judge are now
-identical, so any agreement between them is not independent corroboration the
-way it would be across model families. **Do not use this pairing for a scored
-run.** Before that: either re-check Gemini (a provisioning fix on Google's side
-could resolve the `limit: 0` silently), or set `COUNCIL_JUDGE_MODEL` to a paid
-model from a fourth family (Claude Sonnet 5.5 was costed out at ~$3–45 for the
-full 40–80 case eval and is the likely candidate). Whichever model is used,
-record it with the results: the judge sets every confidence the calibration
-metrics score, so a judge swap mid-run makes the calibration numbers
-incomparable.
+`groq/openai/gpt-oss-120b` unblocked testing but put judge in the same model
+family as the presenter — any agreement between them is not independent
+corroboration the way it would be across families, a real regression against
+the "four different model families" design intent. Not fixed by also moving
+the attackers to Groq (see below): that just meant 3 of 4 roles were one
+vendor.
+
+**Settled on `openrouter/nvidia/nemotron-3-ultra-550b-a55b:free`** — NVIDIA,
+a genuinely independent fourth family from Groq (OpenAI/Qwen), reachable via
+a free OpenRouter account (`OPENROUTER_API_KEY`, no payment method required
+for `:free`-suffixed models). Checked directly before switching:
+
+- Parses cleanly against the real `Verdict` schema on a realistic judge-sized
+  prompt — all six fields, correctly reasoned, correctly distinguished
+  distinction from proportionality.
+- `reasoning` comes back as a field separate from `content` rather than
+  sharing one pool the way Ollama's raw thinking block does — but this does
+  **not** mean the model is exempt from the hybrid-reasoning budget problem,
+  just that the failure surfaces later. A round-1-sized test prompt fit
+  comfortably in the plain 4096-token default (933 reasoning tokens, 3260
+  chars of content). **A real round-3 judge call did not**: the dissent log
+  grows every round, so round 3's response is the largest of the debate, and
+  it hit the same 4096 ceiling — empty content on the first attempt, a JSON
+  response truncated right near the end on the repair attempt. Fixed by
+  extending `RoleModels.for_role()`'s elevated budget (16000/600s) to
+  `openrouter/nvidia/nemotron`-prefixed models too, same as Ollama and
+  Gemma 4. **Confirmed working after the fix**: a full 3-round debate
+  completed end to end — every role, every round, zero failures, the first
+  time this session a debate has gone the full distance.
+- `reasoning_effort` is listed as a supported parameter in OpenRouter's own
+  catalog, but LiteLLM's OpenRouter integration rejects it for this model
+  (`UnsupportedParamsError`) — not usable through this stack as installed.
+- **Latency is real and prompt-dependent, not a red flag**: three trivial
+  "Say OK" calls all landed in under 1.1s, a round-1-sized judge call took
+  78–146s, and the round-3 call (post-fix) took longer still. Consistent with
+  a large model doing proportional work, not the "fails even on hello"
+  pattern that doomed Gemma 4 (see below) — but meaningfully slower than
+  Groq's ~5s judge turns, extending a 3-round debate's wall time by several
+  minutes just for judge calls. Judge isn't on the time-critical parallel
+  path the attackers are, so this is a cost, not a correctness problem.
+
+**[HIGH] OpenRouter's free-model daily limit is 50 requests, shared across
+every `:free` model on the account** — confirmed via the key's own
+introspection endpoint (`GET /api/v1/key`), not a third-party estimate:
+`free_model_daily_requests: { used: 13, limit: 50, remaining: 37 }` after
+today's testing. A 3-round debate uses at least 3 judge calls (more if any
+repair/retry fires), capping this at roughly **16 debates/day** before the
+key is throttled — and the evaluation harness (40–80 cases, ISSUES.md) would
+need 120–240+ judge calls, completely infeasible on this tier alone. Fine for
+continued dev/validation; not viable for a real scored run without either a
+paid OpenRouter tier or swapping the judge again before that eval.
 
 ### [MEDIUM] Presenter moved from Mistral to Groq
 
@@ -234,35 +273,72 @@ reliably returns an empty `{"objections": []}` on every prompt tested,
 including ones with real substance to object to. It looks like *wrong*, not
 merely *faster*.
 
-### [RESOLVED] Attackers moved from local Ollama to hosted Gemma 4
+### [SUPERSEDED] Attackers moved from local Ollama to hosted Gemma 4, then off it again
 
 Local Ollama models tied the attacker roles to whoever's machine was running
 the stack, and qwen3.5's thinking-budget problem (above) was never fully
 solved. Checked whether Google AI Studio's Gemma 4 models
-(`gemma-4-31b-it`, `gemma-4-26b-a4b-it` — released 2026-04-02) were reachable
-on the same free-tier key already used for the judge: both are, confirmed via
-direct REST calls and via LiteLLM's `gemini/` provider.
+(`gemma-4-31b-it`, `gemma-4-26b-a4b-it`) were reachable on the same
+free-tier key already used for the judge: both are, confirmed via direct REST
+calls and via LiteLLM's `gemini/` provider.
 
 **The exact same hybrid-reasoning budget bug reproduced on the hosted API.**
 At `max_tokens=4096` against a realistic attacker-sized prompt,
 `gemma-4-26b-a4b-it` hit the ceiling with all 4093 completion tokens spent on
 reasoning and returned empty content (`finish_reason: length`) — bit-for-bit
-the qwen3.5 failure, just on a different provider. LiteLLM does separate
-`reasoning_tokens` from visible content in `usage` for this provider (unlike
-Ollama, where the split isn't surfaced at all), which makes the failure easy
-to diagnose but doesn't avoid it.
+the qwen3.5 failure, just on a different provider. Fixed by generalizing
+`RoleModels.for_role()`'s elevated budget (16000 tokens / 600s) to any
+`gemini/gemma`-prefixed model, not just `ollama/`.
 
-Fixed by generalizing `RoleModels.for_role()`'s elevated budget (16000
-tokens / 600s) to any `gemini/gemma`-prefixed model, not just `ollama/`.
-Confirmed working after the fix: `gemma-4-31b-it` returned a complete,
-correctly-shaped objection (1518 reasoning + ~400 content tokens).
+That fix worked, but the models themselves didn't hold up. Both return
+`500 INTERNAL` and occasionally `503` ("high demand") often enough that two
+separate live multi-round debates died outright after exhausting the
+retry-with-backoff budget (6 attempts, ~90s span) — not a one-off: a search of
+Google's AI Studio developer forum turned up the identical problem reported
+independently by other developers, at a much larger scale (one report of
+error rates swinging from 2–5% to 70% within a week; another of 95% failures,
+including on a trivial "hello" prompt), with speculation but no confirmation
+that free-tier serving of open-weight models like Gemma gets less dedicated
+capacity than the proprietary Gemini line. No fix or acknowledgment from
+Google as of that thread. Given that, no retry budget we pick is reliably
+going to be enough — this isn't a bug our code can route around.
 
-Both models also return transient `500 INTERNAL` fairly often — consistent
-with being newly released and under load, not a standing block like
-`gemini-3.1-pro-preview`'s `limit: 0`. Across test calls, both succeeded
-within 1–3 attempts every time. `litellm.InternalServerError` is already in
-`CouncilLLM.complete()`'s retry predicate, so this should self-heal in a live
-run; not yet confirmed against a full multi-round debate.
+**Moved the attackers to Groq instead** (see entry below) rather than attempt
+a Gemini->Gemma fallback or push the retry budget further. The elevated
+hybrid-reasoning budget logic in `for_role()` is left in place (harmless, and
+documents the lesson) even though nothing uses `gemini/gemma*` by default
+any more.
+
+### [RESOLVED] Attackers moved to Groq (`qwen3.8-27b`, `gpt-oss-20b`)
+
+Groq hosts no Gemma models at all for this key (confirmed via its `/models`
+endpoint — the catalog is OpenAI's `gpt-oss` family, Qwen's `qwen3.8-27b`, a
+couple of small guard/safety models, and audio models). No like-for-like
+replacement exists, so this is a deliberate pairing rather than a mechanical
+swap:
+
+- `attacker_doctrinal` -> `groq/qwen/qwen3.8-27b` (Alibaba — a different
+  vendor from presenter/judge, which are both `groq/openai/gpt-oss-120b`)
+- `attacker_evidentiary` -> `groq/openai/gpt-oss-20b` (same family as
+  presenter/judge, smaller size)
+
+This means 3 of 4 roles are now OpenAI-family models (just two different
+sizes), which further erodes the "four different model families" design
+intent beyond the presenter/judge overlap already flagged above. Attackers
+sharing a vendor with the judge is lower-risk than presenter and judge
+sharing one, though, since the attackers don't corroborate each other or the
+verdict — they're adversarial roles, not agreeing judges. **This pairing was
+a deliberate choice, not a default to leave unexamined** if a fourth
+independent model family becomes available later (e.g. a working paid Claude
+or Gemini judge, freeing Groq's `gpt-oss-120b` to be attacker-only).
+
+Both models were checked against a realistic attacker-sized prompt at the
+default 4096-token budget before switching: `qwen3.8-27b` completed in 745
+tokens with no reasoning-token overhead recorded; `gpt-oss-20b` used 1365 of
+4096 on reasoning with the rest free for content, comfortable headroom on a
+single test. Not yet confirmed under round 2+ accumulated-context load, the
+same caveat that applied to qwen3.5 and Gemma 4 before their own failures
+surfaced — this is a single data point, not a guarantee.
 
 New defaults: `attacker_doctrinal` → `gemini/gemma-4-31b-it` (flagship
 quality, 256K context — matches the doctrinal mandate's deeper legal-test
