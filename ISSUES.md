@@ -1,6 +1,6 @@
 # Known issues & pending work
 
-Current as of the initial scaffold, 2026-08-31.
+Current as of 2026-11-04, after the corpus (T1) and the first frontend pass (T3).
 
 > **Planning this work?** These items are scheduled as tracks and tasks in
 > [docs/planning/implementation-plan.md](docs/planning/implementation-plan.md).
@@ -15,6 +15,8 @@ Current as of the initial scaffold, 2026-08-31.
 | Arm E — the compute-matched control | T2-4, T2-5 |
 | Evaluation case fixtures | TF |
 | Sprite artwork | T3 stretch |
+| Courtroom staging and background | T3 stretch |
+| Case picker for the question form | T3 / TF |
 
 ---
 
@@ -118,6 +120,9 @@ without leaking the holding into the facts.
 `runtime/frontend/public/sprites/README.md` has the spec. Currently coloured
 plinths with role initials; the animation and state machine are done, so real
 art drops into `Sprite.tsx` without touching anything else.
+
+See **Courtroom staging** below for the layout this is blocked behind, and for
+the licensing constraint on any background image.
 
 ---
 
@@ -279,6 +284,91 @@ The ones that are still open rather than fixed:
 - **UN resolutions are scanned images** in the UN Digital Library, with no
   text layer. Only the resolutions the ICRC serves as structured text are in
   scope.
+
+---
+
+## Frontend (T3) — open after the first pass
+
+The courtroom, transcript, record, replay and theming are built and tested
+(117 frontend tests). What follows is what was raised while looking at the
+running UI and has not been done.
+
+### [MEDIUM] Courtroom staging
+
+Three changes, which interact and are best done in this order:
+
+1. **A subtitle band under the courtroom**, replacing the floating speech
+   bubble. The bubble is capped at `max-w-md` and occludes the scene; a claim
+   of two or three lines gets cramped. A fixed-height band has the full width,
+   gives the role name a stable place, and can say what is being waited on
+   during a long generation. `SpeechBubble` already carries an unused `side`
+   prop from an earlier attempt at this.
+
+2. **Judge at the back, counsel flanking, presenter centred.** The present
+   layout puts all three counsel in a row, which does not read as a courtroom.
+   The presenter at centre also expresses the geometry of the thing: it is the
+   role being attacked from both sides. Fix which attacker sits on which side
+   and keep it stable across runs.
+
+3. **Localise the objection flourish to the objecting sprite** rather than
+   taking the whole courtroom. Depends on (1): once the burst is sprite-sized
+   the objection's text has to live in the band. The loud/quiet distinction
+   already built still applies — quiet becomes "sprite flashes, band updates".
+
+### [MEDIUM] Courtroom background art
+
+**No usable image yet.** Two candidates were proposed and both were the Ace
+Attorney courtroom, © Capcom — the second with the watermark cropped out,
+which removes copyright management information and makes it worse rather than
+better. This repository is public; shipping either is infringement.
+
+Options, in the order worth trying:
+
+- **Build the room in SVG.** Panelling, benches and columns are gradients and
+  rectangles. It themes with the palette, which a fixed image cannot — there
+  are four palettes and a warm-gold photograph fights Tribunal and Oak. Scales
+  to any aspect, costs a few KB, and sprite anchors become real coordinates
+  rather than percentages tuned to one picture.
+- **Genuinely free sources**, checking the licence on each file's own page:
+  [Openclipart](https://openclipart.org) (CC0 site-wide),
+  [Wikimedia Commons](https://commons.wikimedia.org) (per-file; some are
+  CC BY-SA and need attribution). Search "courtroom interior", not "courtroom",
+  or the results are gavels and scales.
+- Commission or draw one.
+
+Note that "free" and "royalty-free" on the stock sites are not "free to
+redistribute", which is what committing to a public repo does.
+
+A fixed-ratio background also constrains the layout: the panel can no longer
+grow with its content, and every sprite position becomes an offset tuned to
+one image.
+
+### [MEDIUM] Case picker for the question form
+
+`evaluation/cases/dev/*.json` holds prepared cases — question, facts, and the
+tribunal's actual holding — but nothing exposes them to the UI, so a question
+has to be typed by hand. Two constraints:
+
+- **The case file contains the ground truth.** `holding`, `outcome` and
+  `key_reasoning` must never reach the browser, or the demo shows the answer
+  next to the question.
+- `runtime/api` does not depend on `evaluation`; both depend only on
+  `council-core`. A case endpoint either inverts that or duplicates the
+  loader. Worth an ADR.
+
+### [LOW] `role_started` stream event
+
+`NEXT_ROLES` in `courtStore.ts` duplicates `build_graph()` to infer which
+model is generating, because the stream carries only completed turns. It works
+and is tested, but it is a second copy of the graph's shape that nothing keeps
+in sync. A `role_started` event would remove the duplication.
+
+### [LOW] Objection severity
+
+`isLoud()` decides which objections earn the full flourish from whether every
+citation resolved — the strongest signal available, but an inference. An
+`Objection` carries no severity, and adding one would also give the evaluation
+metrics something to weigh objections by.
 
 ---
 

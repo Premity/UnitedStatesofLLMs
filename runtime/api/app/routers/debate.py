@@ -88,6 +88,7 @@ async def stream_debate(config: DebateConfig) -> EventSourceResponse:
     async def events() -> AsyncIterator[dict[str, str]]:
         started = datetime.now(UTC)
         seen_turns = 0
+        last_verdict: str | None = None
 
         yield {"event": "start", "data": json.dumps({"run_id": state.run_id})}
 
@@ -107,8 +108,17 @@ async def stream_debate(config: DebateConfig) -> EventSourceResponse:
                         }
                     seen_turns = len(turns)
 
+                    # `verdict` is a single-value channel: once the judge
+                    # writes it, it stands in state for every later chunk. Only
+                    # emit it when it has actually changed, or a multi-round
+                    # debate re-sends round one's holding on each chunk and the
+                    # client — which reads a verdict as the court adjourning —
+                    # stops following the run.
                     if (verdict := chunk.get("verdict")) is not None:
-                        yield {"event": "verdict", "data": verdict.model_dump_json()}
+                        payload = verdict.model_dump_json()
+                        if payload != last_verdict:
+                            last_verdict = payload
+                            yield {"event": "verdict", "data": payload}
 
                     state.turns = turns
                     state.arguments = chunk.get("arguments", [])

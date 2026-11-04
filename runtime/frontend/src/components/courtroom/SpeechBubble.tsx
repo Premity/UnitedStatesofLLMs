@@ -32,7 +32,7 @@ export function SpeechBubble({ role, text, side = "center" }: SpeechBubbleProps)
         ROLE_ACCENT[role] ?? "border-court-rail",
       )}
     >
-      <p className="font-record text-sm leading-relaxed text-white/90">{text}</p>
+      <p className="font-record text-sm leading-relaxed text-court-fg/90">{text}</p>
 
       {/* Tail */}
       <div
