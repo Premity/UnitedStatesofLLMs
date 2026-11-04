@@ -17,7 +17,10 @@ export function DissentLog() {
 
   if (!verdict) {
     return (
-      <aside className="rounded-xl border border-record-rule bg-record-paper/95 p-8 text-center">
+      <aside
+        aria-label="Dissent log"
+        className="rounded-xl border border-record-rule bg-record-paper/95 p-8 text-center"
+      >
         <p className="font-record italic text-record-margin">
           The dissent log appears once the court has ruled.
         </p>

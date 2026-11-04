@@ -105,8 +105,10 @@ describe("the app under replay", () => {
 
     expect(screen.getByText("United States of LLMs")).toBeInTheDocument();
     expect(screen.getByText(/court is not in session/i)).toBeInTheDocument();
-    // The dissent log holds its empty state until the court rules.
-    expect(screen.getByText(/appears once the court has ruled/i)).toBeInTheDocument();
+    // The record is put away until there is one: a rail, not 26rem of
+    // "the dissent log appears once the court has ruled".
+    expect(screen.getByTestId("dissent-open")).toBeInTheDocument();
+    expect(screen.queryByText(/appears once the court has ruled/i)).not.toBeInTheDocument();
   });
 
   it("renders the full proceeding and its dissent log", async () => {
@@ -380,6 +382,74 @@ describe("the objection flourish", () => {
     await user.click(step); // evidentiary — obj_misquote, not grounded
     expect(screen.queryByText(/objection!/i)).not.toBeInTheDocument();
     expect(screen.getByText(/Objection · Evidentiary Counsel/i)).toBeInTheDocument();
+  });
+});
+
+describe("the record panel", () => {
+  it("opens itself when the court rules", async () => {
+    render(<App />);
+    expect(screen.getByTestId("dissent-open")).toBeInTheDocument();
+
+    await replayDebate(sink(), { sleep: instant });
+
+    await waitFor(() => {
+      expect(
+        screen.getByRole("complementary", { name: "Dissent log" }),
+      ).toBeInTheDocument();
+    });
+    expect(screen.queryByTestId("dissent-open")).not.toBeInTheDocument();
+  });
+
+  it("can be put away and brought back", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await replayDebate(sink(), { sleep: instant });
+    await waitFor(() => screen.getByTestId("dissent-close"));
+
+    await user.click(screen.getByTestId("dissent-close"));
+    expect(
+      screen.queryByRole("complementary", { name: "Dissent log" }),
+    ).not.toBeInTheDocument();
+
+    // The rail reports what is waiting inside it.
+    const rail = screen.getByTestId("dissent-open");
+    expect(rail).toHaveTextContent(/2 overruled/);
+
+    await user.click(rail);
+    expect(
+      screen.getByRole("complementary", { name: "Dissent log" }),
+    ).toBeInTheDocument();
+  });
+
+  it("can be opened before there is a record, and says so", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    const rail = screen.getByTestId("dissent-open");
+    expect(rail).toHaveTextContent(/not yet/i);
+
+    await user.click(rail);
+    expect(
+      screen.getByText(/appears once the court has ruled/i),
+    ).toBeInTheDocument();
+  });
+
+  it("stays shut if it was deliberately closed after the ruling", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await replayDebate(sink(), { sleep: instant });
+    await waitFor(() => screen.getByTestId("dissent-close"));
+
+    await user.click(screen.getByTestId("dissent-close"));
+
+    // A re-render must not reopen it: the panel announces a run once, and
+    // fighting someone who just closed it is worse than leaving it shut.
+    sink().setVerdict(
+      replayEvents.find((e) => e.event === "verdict")!.data as Verdict,
+    );
+    await waitFor(() =>
+      expect(screen.getByTestId("dissent-open")).toBeInTheDocument(),
+    );
   });
 });
 
