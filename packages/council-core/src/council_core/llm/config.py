@@ -46,10 +46,10 @@ class RoleModels(BaseSettings):
     presenter_model: str = "groq/openai/gpt-oss-120b"
     presenter_temperature: float = 0.4
 
-    attacker_doctrinal_model: str = "ollama/qwen3.5:9b"
+    attacker_doctrinal_model: str = "gemini/gemma-4-31b-it"
     attacker_doctrinal_temperature: float = 0.7
 
-    attacker_evidentiary_model: str = "ollama/gemma3:12b"
+    attacker_evidentiary_model: str = "gemini/gemma-4-26b-a4b-it"
     attacker_evidentiary_temperature: float = 0.7
 
     judge_model: str = "groq/openai/gpt-oss-120b"
@@ -72,22 +72,28 @@ class RoleModels(BaseSettings):
         """Build the `ModelConfig` for a role name.
 
         Ollama-backed roles get `api_base` injected so one setting moves every
-        local model between host and container. They also get a much larger
-        `max_tokens` and `timeout_seconds`: hybrid-reasoning models (Qwen3.5
-        and similar) spend tokens on an invisible <think> block before the
-        answer, and the default 4096-token budget is entirely consumed by
-        that thinking with nothing left for the structured JSON response --
-        confirmed empirically against qwen3.5:9b, which needed ~6,300
-        completion tokens (thinking + answer) for one attacker turn.
+        local model between host and container.
+
+        Hybrid-reasoning models -- Qwen3.5 under Ollama, and Gemma 4 under the
+        Gemini API -- spend tokens on an invisible thinking block before the
+        answer, and the default 4096-token budget can be entirely consumed by
+        that thinking with nothing left for the structured JSON response.
+        Confirmed empirically against qwen3.5:9b (~6,300 completion tokens for
+        one attacker turn) and again against gemma-4-26b-a4b-it, which hit the
+        4096 ceiling with *all 4093 tokens spent on reasoning* and returned
+        empty content (`finish_reason: length`) -- the identical failure, on a
+        hosted API rather than a local model. Both families get the same much
+        larger `max_tokens` and `timeout_seconds` as a result.
         """
         model_id: str = getattr(self, f"{role}_model")
         temperature: float = getattr(self, f"{role}_temperature")
         is_ollama = model_id.startswith("ollama/")
+        is_hybrid_reasoning = is_ollama or model_id.startswith("gemini/gemma")
 
         return ModelConfig(
             model_id=model_id,
             temperature=temperature,
             api_base=self.ollama_base_url if is_ollama else None,
-            max_tokens=16000 if is_ollama else 4096,
-            timeout_seconds=600 if is_ollama else 180,
+            max_tokens=16000 if is_hybrid_reasoning else 4096,
+            timeout_seconds=600 if is_hybrid_reasoning else 180,
         )

@@ -211,7 +211,7 @@ a default is free: added `default=Role.ATTACKER_DOCTRINAL` to the field with
 a docstring explaining it's a placeholder that is always replaced, never a
 real value. Fixed in `models/debate.py`.
 
-### [HIGH] `qwen3.5:9b`'s thinking mode can exhaust its own token budget
+### [RESOLVED] `qwen3.5:9b`'s thinking mode could exhaust its own token budget
 
 Qwen3.5 is a hybrid-reasoning model: it generates an invisible `<think>` block
 before the answer (visible via Ollama's raw API as a `thinking` field;
@@ -220,25 +220,55 @@ isn't surfaced at all). On a short test prompt, `max_tokens=4096` (the
 previous default) was consumed entirely by thinking, `content` came back
 empty, and `complete_structured` failed with "No JSON object found."
 
-Raised `max_tokens` to 16000 and `timeout_seconds` to 600 for every
-`ollama/`-backed role (`RoleModels.for_role`). Confirmed this produces two
-substantive, correctly-reasoned objections on an ungrounded test prompt
-(~6,300 completion tokens, ~354s). **It is not a reliable fix.** On a real
-graph run with retrieval on — a bigger prompt, real retrieved citations to
-reason about — the same model burned 467s and returned nothing again, the
+Raising `max_tokens` to 16000 and `timeout_seconds` to 600 for every
+`ollama/`-backed role (`RoleModels.for_role`) was not a reliable fix: on a
+real graph run with retrieval on — a bigger prompt, real retrieved citations
+to reason about — the same model burned 467s and returned nothing again, the
 identical empty-content signature. The failure threshold scales with prompt
-complexity, not a fixed token count, so there may be no `max_tokens` ceiling
-that is safe for every round of a real debate (context accumulates round over
-round, so later rounds are the most at risk).
+complexity, not a fixed token count, so there was no `max_tokens` ceiling that
+was safe for every round of a real debate.
 
-Open. Options, not yet decided: raise the ceiling further (diminishing
-returns, and per-call latency is already 6–8 minutes); disable thinking
-outright via Ollama's `think: false` (tested — reliably fast, but the model
-then returns an empty `{"objections": []}` on every prompt tried, including
-ones with real substance to object to: it looks like *wrong*, not merely
-*faster*, and should not be shipped without separately verifying it against
-several real prompts); or swap the doctrinal attacker to a non-hybrid-reasoning
-model.
+Superseded by moving both attackers off Ollama entirely — see the Gemma 4
+entry below. `think: false` was tried as an alternative fix and rejected: it
+reliably returns an empty `{"objections": []}` on every prompt tested,
+including ones with real substance to object to. It looks like *wrong*, not
+merely *faster*.
+
+### [RESOLVED] Attackers moved from local Ollama to hosted Gemma 4
+
+Local Ollama models tied the attacker roles to whoever's machine was running
+the stack, and qwen3.5's thinking-budget problem (above) was never fully
+solved. Checked whether Google AI Studio's Gemma 4 models
+(`gemma-4-31b-it`, `gemma-4-26b-a4b-it` — released 2026-04-02) were reachable
+on the same free-tier key already used for the judge: both are, confirmed via
+direct REST calls and via LiteLLM's `gemini/` provider.
+
+**The exact same hybrid-reasoning budget bug reproduced on the hosted API.**
+At `max_tokens=4096` against a realistic attacker-sized prompt,
+`gemma-4-26b-a4b-it` hit the ceiling with all 4093 completion tokens spent on
+reasoning and returned empty content (`finish_reason: length`) — bit-for-bit
+the qwen3.5 failure, just on a different provider. LiteLLM does separate
+`reasoning_tokens` from visible content in `usage` for this provider (unlike
+Ollama, where the split isn't surfaced at all), which makes the failure easy
+to diagnose but doesn't avoid it.
+
+Fixed by generalizing `RoleModels.for_role()`'s elevated budget (16000
+tokens / 600s) to any `gemini/gemma`-prefixed model, not just `ollama/`.
+Confirmed working after the fix: `gemma-4-31b-it` returned a complete,
+correctly-shaped objection (1518 reasoning + ~400 content tokens).
+
+Both models also return transient `500 INTERNAL` fairly often — consistent
+with being newly released and under load, not a standing block like
+`gemini-3.1-pro-preview`'s `limit: 0`. Across test calls, both succeeded
+within 1–3 attempts every time. `litellm.InternalServerError` is already in
+`CouncilLLM.complete()`'s retry predicate, so this should self-heal in a live
+run; not yet confirmed against a full multi-round debate.
+
+New defaults: `attacker_doctrinal` → `gemini/gemma-4-31b-it` (flagship
+quality, 256K context — matches the doctrinal mandate's deeper legal-test
+analysis), `attacker_evidentiary` → `gemini/gemma-4-26b-a4b-it`
+(cost-efficient, high-throughput). This pairing is a judgment call, not a
+measured one — swap if the live results say otherwise.
 
 ### [RESOLVED] SSE frame separator mismatch silently broke the frontend
 
