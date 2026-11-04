@@ -67,7 +67,14 @@ def render_markdown(artifact: RunArtifact) -> str:
     out.append("")
     out.append(verdict.conclusion)
     out.append("")
-    out.append(f"**Confidence:** {verdict.confidence:.0%}")
+    # Band first: a bare percentage in a document that leaves the system reads
+    # as a measured quantity, and this is the judge's own estimate.
+    out.append(f"**Confidence:** {verdict.confidence_band()} ({verdict.confidence:.2f})")
+    out.append("")
+    out.append(
+        "*Self-reported by the judge model, not scored against decided cases. "
+        "The reasoning below is the part that can be checked.*"
+    )
     if verdict.confidence_reasoning:
         out.append("")
         out.append(f"> {verdict.confidence_reasoning}")

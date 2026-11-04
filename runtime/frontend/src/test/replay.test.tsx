@@ -130,7 +130,8 @@ describe("the app under replay", () => {
 
     // Twice within the record now: the question asked and the holding given.
     expect(log.getAllByText(/primary purpose of spreading terror/i)).toHaveLength(2);
-    expect(log.getByText("81%")).toBeInTheDocument();
+    expect(log.getByTestId("confidence-band")).toHaveTextContent(/supported/i);
+    expect(log.getByText("0.81")).toBeInTheDocument();
 
     // The dissent is the system's headline output: two overruled objections,
     // and only the overruled ones. The sustained misquote must not appear here.
@@ -443,8 +444,8 @@ describe("a second round's ruling", () => {
 
     // Round two raised confidence and added an overruled objection. The
     // record shows the standing ruling, not the one it replaced.
-    expect(log.getByText("81%")).toBeInTheDocument();
-    expect(log.queryByText("78%")).not.toBeInTheDocument();
+    expect(log.getByText("0.81")).toBeInTheDocument();
+    expect(log.queryByText("0.78")).not.toBeInTheDocument();
     expect(log.getByText(/still assumes the absence of an identified objective/i))
       .toBeInTheDocument();
   });
@@ -479,8 +480,8 @@ describe("a second round's ruling", () => {
     // Two confidences on screen at once, both looking current, would be worse
     // than showing one — the earlier ruling says it was superseded instead.
     expect(cards[0].textContent).toMatch(/superseded/i);
-    expect(cards[0].textContent).not.toMatch(/Confidence \d+%/);
-    expect(cards[1].textContent).toMatch(/Confidence 81%/);
+    expect(cards[0].textContent).not.toMatch(/full reasoning in the dissent log/);
+    expect(cards[1].textContent).toMatch(/Supported · full reasoning/);
   });
 
   it("records how many rounds the holding survived", async () => {

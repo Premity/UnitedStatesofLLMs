@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import { bandFor } from "@/components/dissent/Confidence";
 import { useCourtStore } from "@/store/courtStore";
 import type { Role } from "@/types";
 
@@ -162,7 +163,14 @@ export function Courtroom() {
             </span>
           )}
           {round > 0 && `Round ${round}`}
-          {verdict && ` · Confidence ${Math.round(verdict.confidence * 100)}%`}
+          {verdict && (
+            <>
+              {" · "}
+              <span title={bandFor(verdict.confidence).gloss}>
+                {bandFor(verdict.confidence).label}
+              </span>
+            </>
+          )}
         </span>
       </div>
     </section>

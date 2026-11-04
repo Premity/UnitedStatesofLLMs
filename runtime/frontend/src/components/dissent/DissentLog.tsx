@@ -3,6 +3,7 @@ import { useCourtStore } from "@/store/courtStore";
 import type { Objection } from "@/types";
 
 import { CitationChip } from "@/components/citations/CitationChip";
+import { Confidence } from "@/components/dissent/Confidence";
 
 /**
  * The record.
@@ -110,21 +111,7 @@ export function DissentLog() {
           <h3 className="font-display text-lg font-semibold">Holding</h3>
           <p className="mt-2 font-record leading-relaxed">{verdict.conclusion}</p>
 
-          <div className="mt-4 rounded border border-record-rule bg-white/50 p-4">
-            <div className="flex items-baseline justify-between">
-              <span className="font-ui text-xs uppercase tracking-wider text-record-margin">
-                Calibrated confidence
-              </span>
-              <span className="font-display text-2xl font-bold">
-                {Math.round(verdict.confidence * 100)}%
-              </span>
-            </div>
-            {verdict.confidence_reasoning && (
-              <p className="mt-2 font-record text-sm italic text-record-margin">
-                {verdict.confidence_reasoning}
-              </p>
-            )}
-          </div>
+          <Confidence verdict={verdict} />
 
           <p className="mt-4 font-record leading-relaxed">{verdict.reasoning}</p>
         </section>

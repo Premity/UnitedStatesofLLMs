@@ -1,5 +1,6 @@
 import { useCourtStore } from "@/store/courtStore";
 import { CitationChip } from "@/components/citations/CitationChip";
+import { bandFor } from "@/components/dissent/Confidence";
 import type { Objection, Turn, Verdict } from "@/types";
 
 /**
@@ -162,8 +163,8 @@ function JudgeCard({
             {verdict.conclusion}
           </p>
           <p className="mt-1 font-ui text-[11px] text-court-fg/35">
-            Confidence {Math.round(verdict.confidence * 100)}% · full reasoning in
-            the dissent log
+            {bandFor(verdict.confidence).label} · full reasoning in the dissent
+            log
           </p>
         </div>
       )}

@@ -122,7 +122,11 @@ def test_unresolved_citations_are_marked_not_hidden() -> None:
 
 def test_confidence_is_reported_with_its_justification() -> None:
     md = render_markdown(build_artifact())
-    assert "62%" in md
+    # Band and figure together, and the figure is not a percentage: the export
+    # is the document that leaves the system, so a bare "62%" there reads as a
+    # measurement rather than the judge's own estimate.
+    assert "contested (0.62)" in md
+    assert "Self-reported by the judge model" in md
     assert "genuinely contested" in md
 
 
