@@ -93,7 +93,16 @@ class Objection(BaseModel):
     """A challenge raised by one of the attackers against a specific argument."""
 
     id: str = Field(default_factory=lambda: f"obj_{uuid4().hex[:8]}")
-    raised_by: Role
+    raised_by: Role = Field(
+        default=Role.ATTACKER_DOCTRINAL,
+        description=(
+            "Which attacker raised this. The attacker prompts' JSON examples never "
+            "show this field, so the model never supplies it; AttackerRole.run() "
+            "overwrites it unconditionally with the true role after parsing. The "
+            "default here exists only so that omission validates — it is never "
+            "the value actually recorded."
+        ),
+    )
     target_argument_id: str = Field(description="The `Argument.id` under challenge.")
     ground: str = Field(description="The basis of the objection, in one sentence.")
     reasoning: str

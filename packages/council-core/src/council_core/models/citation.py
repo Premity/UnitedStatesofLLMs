@@ -12,9 +12,29 @@ for why this is a first-class module.
 
 from __future__ import annotations
 
+import re
 from enum import StrEnum
 
 from pydantic import BaseModel, Field
+
+_ARTICLE_PREFIX_RE = re.compile(r"^\s*art(?:icle)?\.?\s*", re.IGNORECASE)
+
+
+def _strip_article_prefix(article: str | None) -> str | None:
+    """Drop a redundant 'art.'/'article' prefix a model put inside the field.
+
+    `locator()` always prepends 'art.' itself. A model echoing its own prose
+    ("Article 51(2) of Additional Protocol I") sometimes puts 'art.51(2)' in
+    the structured field instead of '51(2)', which then doubles up to
+    'ap_i/art.art.51(2)' -- a locator nothing in the index can match. A real
+    provision then resolves as fabricated. Confirmed live: round 1 of a real
+    debate produced the clean form, round 2 (rebuttal, with the model's own
+    prior natural-language reasoning in context) produced the doubled one for
+    every citation in that turn.
+    """
+    if article is None:
+        return None
+    return _ARTICLE_PREFIX_RE.sub("", article)
 
 
 class CitationType(StrEnum):
@@ -97,7 +117,7 @@ class Citation(BaseModel):
         """
         match self.type:
             case CitationType.TREATY:
-                return f"{self.instrument}/art.{self.article}"
+                return f"{self.instrument}/art.{_strip_article_prefix(self.article)}"
             case CitationType.CASE:
                 return f"{self.case_id}/para.{self.paragraph}"
             case CitationType.CUSTOMARY:

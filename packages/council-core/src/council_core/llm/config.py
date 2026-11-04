@@ -52,7 +52,7 @@ class RoleModels(BaseSettings):
     attacker_evidentiary_model: str = "ollama/gemma3:12b"
     attacker_evidentiary_temperature: float = 0.7
 
-    judge_model: str = "gemini/gemini-3.1-pro-preview"
+    judge_model: str = "groq/openai/gpt-oss-120b"
     judge_temperature: float = 0.2
 
     ollama_base_url: str = Field(
@@ -72,13 +72,22 @@ class RoleModels(BaseSettings):
         """Build the `ModelConfig` for a role name.
 
         Ollama-backed roles get `api_base` injected so one setting moves every
-        local model between host and container.
+        local model between host and container. They also get a much larger
+        `max_tokens` and `timeout_seconds`: hybrid-reasoning models (Qwen3.5
+        and similar) spend tokens on an invisible <think> block before the
+        answer, and the default 4096-token budget is entirely consumed by
+        that thinking with nothing left for the structured JSON response --
+        confirmed empirically against qwen3.5:9b, which needed ~6,300
+        completion tokens (thinking + answer) for one attacker turn.
         """
         model_id: str = getattr(self, f"{role}_model")
         temperature: float = getattr(self, f"{role}_temperature")
+        is_ollama = model_id.startswith("ollama/")
 
         return ModelConfig(
             model_id=model_id,
             temperature=temperature,
-            api_base=self.ollama_base_url if model_id.startswith("ollama/") else None,
+            api_base=self.ollama_base_url if is_ollama else None,
+            max_tokens=16000 if is_ollama else 4096,
+            timeout_seconds=600 if is_ollama else 180,
         )

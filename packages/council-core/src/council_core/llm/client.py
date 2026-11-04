@@ -13,6 +13,7 @@ import re
 import time
 from typing import Any, TypeVar
 
+import litellm
 import structlog
 from litellm import acompletion
 from pydantic import BaseModel, ValidationError
@@ -54,9 +55,34 @@ class CouncilLLM:
         self._role = role
 
     @retry(
-        stop=stop_after_attempt(3),
-        wait=wait_exponential(multiplier=1, min=2, max=20),
-        retry=retry_if_exception_type((TimeoutError, ConnectionError)),
+        stop=stop_after_attempt(6),
+        wait=wait_exponential(multiplier=1, min=2, max=60),
+        # TimeoutError/ConnectionError are the builtins -- LiteLLM never raises
+        # them. It raises its own hierarchy (ultimately subclassing openai's),
+        # which this tuple missed entirely: a live run hit Groq's per-minute
+        # token limit, got told "try again in 25.425s", and was not retried at
+        # all -- it just failed the whole debate. Confirmed against the
+        # installed litellm that these four actually subclass litellm's
+        # RateLimitError/APIConnectionError/Timeout/InternalServerError.
+        #
+        # A first fix (4 attempts, 30s cap) retried correctly but still
+        # failed: Groq's limit is per MINUTE, and 4 attempts only spans ~30s
+        # cumulative wait -- nowhere near enough for a token bucket to
+        # refill. litellm.RateLimitError doesn't expose the provider's
+        # "try again in Ns" hint as a structured field (checked: only
+        # code/param/status_code), so there's nothing to parse reliably
+        # across providers. 6 attempts at this backoff spans ~62s cumulative
+        # before the last one, which actually crosses a one-minute window.
+        retry=retry_if_exception_type(
+            (
+                TimeoutError,
+                ConnectionError,
+                litellm.RateLimitError,
+                litellm.APIConnectionError,
+                litellm.Timeout,
+                litellm.InternalServerError,
+            )
+        ),
         reraise=True,
     )
     async def complete(
