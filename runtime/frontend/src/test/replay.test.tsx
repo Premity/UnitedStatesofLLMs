@@ -383,6 +383,44 @@ describe("the objection flourish", () => {
   });
 });
 
+describe("waiting on a model", () => {
+  it("names who is working, not who last spoke", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    const step = screen.getByTestId("replay-step");
+
+    // Idle: nothing is generating, so the rail shows the phase.
+    expect(screen.getByText(/court is not in session/i)).toBeInTheDocument();
+
+    await user.click(step); // presenter reports
+    // The presenter has finished — both attackers are now generating, and
+    // that is what the rail should say rather than "Counsel is presenting".
+    expect(screen.getByText(/opposing counsel are reviewing/i)).toBeInTheDocument();
+
+    await user.click(step); // doctrinal reports, evidentiary still out
+    expect(screen.getByText(/evidentiary counsel is reviewing/i)).toBeInTheDocument();
+
+    await user.click(step); // evidentiary reports
+    expect(screen.getByText(/court is deliberating/i)).toBeInTheDocument();
+  });
+
+  it("shows elapsed time while waiting, and stops once the court rules", async () => {
+    render(<App />);
+    // Idle shows no clock; a started run does.
+    expect(screen.queryByTestId("elapsed")).not.toBeInTheDocument();
+
+    sink().startRun("run_x");
+    await waitFor(() =>
+      expect(screen.getByTestId("elapsed")).toBeInTheDocument(),
+    );
+
+    await replayDebate(sink(), { sleep: instant });
+
+    // Nothing is generating after the verdict, so no clock.
+    expect(screen.queryByTestId("elapsed")).not.toBeInTheDocument();
+  });
+});
+
 describe("the palette switcher", () => {
   it("switches the courtroom palette without a reload", async () => {
     const user = userEvent.setup();

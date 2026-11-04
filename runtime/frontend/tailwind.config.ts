@@ -59,6 +59,18 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-6px)" },
         },
+        // A role whose model is generating: a slow breath with a halo that
+        // swells. Distinct from `bob`, which is faster and means speaking.
+        consider: {
+          "0%, 100%": {
+            transform: "translateY(0) scale(1)",
+            boxShadow: "0 0 0 0 rgb(var(--court-gold) / 0.35)",
+          },
+          "50%": {
+            transform: "translateY(-2px) scale(1.02)",
+            boxShadow: "0 0 0 10px rgb(var(--court-gold) / 0)",
+          },
+        },
         // The objection flourish: slam in, overshoot, settle.
         slam: {
           "0%": { transform: "scale(0.3) rotate(-12deg)", opacity: "0" },
@@ -86,6 +98,7 @@ export default {
       },
       animation: {
         bob: "bob 2.2s ease-in-out infinite",
+        consider: "consider 2.6s ease-in-out infinite",
         slam: "slam 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards",
         shake: "shake 0.4s ease-in-out",
         pop: "pop 0.25s ease-out forwards",
