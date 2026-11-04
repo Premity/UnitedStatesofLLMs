@@ -66,10 +66,10 @@ function Card({ turn, children }: { turn: Turn; children: React.ReactNode }) {
       }`}
     >
       <header className="flex items-baseline justify-between">
-        <span className="font-display text-sm font-semibold text-white/85">
+        <span className="font-display text-sm font-semibold text-court-fg/85">
           {ROLE_LABEL[turn.role] ?? turn.role}
         </span>
-        <span className="font-ui text-[11px] text-white/35">
+        <span className="font-ui text-[11px] text-court-fg/35">
           Round {turn.round_number} · {turn.model_id.split("/").pop()}
         </span>
       </header>
@@ -82,7 +82,7 @@ const DISPOSITION_STYLE: Record<string, string> = {
   sustained: "border-emerald-600/50 bg-emerald-950/40 text-emerald-200",
   overruled: "border-court-crimson/50 bg-court-crimson/10 text-court-crimson",
   partial: "border-amber-600/50 bg-amber-950/30 text-amber-200",
-  unaddressed: "border-court-rail bg-white/5 text-white/40",
+  unaddressed: "border-court-rail bg-court-fg/5 text-court-fg/40",
 };
 
 const DISPOSITION_LABEL: Record<string, string> = {
@@ -125,13 +125,13 @@ function JudgeCard({
                 >
                   {DISPOSITION_LABEL[obj.disposition] ?? obj.disposition}
                 </span>
-                <span className="font-ui text-[11px] text-white/35">
+                <span className="font-ui text-[11px] text-court-fg/35">
                   {ROLE_LABEL[obj.raised_by] ?? obj.raised_by}
                 </span>
               </div>
-              <p className="mt-1 font-record text-sm text-white/80">{obj.ground}</p>
+              <p className="mt-1 font-record text-sm text-court-fg/80">{obj.ground}</p>
               {obj.disposition_reasoning && (
-                <p className="mt-1 font-record text-sm leading-relaxed text-white/55">
+                <p className="mt-1 font-record text-sm leading-relaxed text-court-fg/55">
                   {obj.disposition_reasoning}
                 </p>
               )}
@@ -145,7 +145,7 @@ function JudgeCard({
           <p className="font-record text-sm font-semibold text-court-gold">
             {verdict.conclusion}
           </p>
-          <p className="mt-1 font-ui text-[11px] text-white/35">
+          <p className="mt-1 font-ui text-[11px] text-court-fg/35">
             Confidence {Math.round(verdict.confidence * 100)}% · full reasoning in
             the dissent log
           </p>
@@ -153,7 +153,7 @@ function JudgeCard({
       )}
 
       {ruled.length === 0 && !verdict && (
-        <p className="mt-3 font-record text-sm italic text-white/40">
+        <p className="mt-3 font-record text-sm italic text-court-fg/40">
           The court is deliberating.
         </p>
       )}
@@ -171,10 +171,10 @@ function TurnCard({ turn }: { turn: Turn }) {
 
       {turn.arguments.map((arg) => (
         <div key={arg.id} className="mt-3">
-          <p className="font-record text-sm font-semibold text-white/90">
+          <p className="font-record text-sm font-semibold text-court-fg/90">
             {arg.claim}
           </p>
-          <p className="mt-1 font-record text-sm leading-relaxed text-white/65">
+          <p className="mt-1 font-record text-sm leading-relaxed text-court-fg/65">
             {arg.reasoning}
           </p>
           <div className="mt-2 flex flex-wrap gap-1.5">
@@ -190,7 +190,7 @@ function TurnCard({ turn }: { turn: Turn }) {
           <p className="font-record text-sm font-semibold text-court-crimson">
             {obj.ground}
           </p>
-          <p className="mt-1 font-record text-sm leading-relaxed text-white/65">
+          <p className="mt-1 font-record text-sm leading-relaxed text-court-fg/65">
             {obj.reasoning}
           </p>
           <div className="mt-2 flex flex-wrap items-center gap-1.5">

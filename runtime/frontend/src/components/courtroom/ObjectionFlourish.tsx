@@ -70,7 +70,7 @@ function Burst() {
     >
       <polygon
         points={points}
-        fill="rgb(var(--court-crimson))"
+        fill="rgb(var(--court-crimson-deep))"
         stroke="rgb(var(--record-paper))"
         strokeWidth="1.5"
         vectorEffect="non-scaling-stroke"
@@ -92,7 +92,7 @@ function QuietObjection({ objection }: ObjectionFlourishProps) {
         <div className="font-ui text-[10px] uppercase tracking-widest text-court-crimson">
           Objection · {RAISER_LABEL[objection.raised_by] ?? objection.raised_by}
         </div>
-        <p className="mt-0.5 font-record text-sm leading-snug text-white/85">
+        <p className="mt-0.5 font-record text-sm leading-snug text-court-fg/85">
           {objection.ground}
         </p>
       </div>
@@ -113,7 +113,7 @@ export function ObjectionFlourish({ objection }: ObjectionFlourishProps) {
 
         <div className="relative px-[12%] py-[9%] text-center">
           <div
-            className="font-display text-4xl font-black uppercase leading-none tracking-tight text-white sm:text-5xl md:text-6xl"
+            className="font-display text-4xl font-black uppercase leading-none tracking-tight text-record-paper sm:text-5xl md:text-6xl"
             style={{ textShadow: "0 3px 0 rgba(0,0,0,0.35)" }}
           >
             Objection!
@@ -123,7 +123,7 @@ export function ObjectionFlourish({ objection }: ObjectionFlourishProps) {
             {RAISER_LABEL[objection.raised_by] ?? objection.raised_by}
           </div>
 
-          <p className="mx-auto mt-1 max-w-md font-record text-sm leading-snug text-white">
+          <p className="mx-auto mt-1 max-w-md font-record text-sm leading-snug text-record-paper">
             {objection.ground}
           </p>
         </div>

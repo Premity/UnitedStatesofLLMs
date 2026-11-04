@@ -15,6 +15,12 @@ import {
 
 const KEYS = Object.keys(THEMES.dusk) as (keyof Theme)[];
 
+/** The colour keys — everything but `scheme`, which is not a colour. */
+const COLOUR_KEYS = KEYS.filter((k) => k !== "scheme") as Exclude<
+  keyof Theme,
+  "scheme"
+>[];
+
 describe("the palettes", () => {
   it("define every key, so no theme is half-applied", () => {
     for (const name of THEME_NAMES) {
@@ -24,7 +30,7 @@ describe("the palettes", () => {
 
   it("are all valid six-digit hex", () => {
     for (const name of THEME_NAMES) {
-      for (const key of KEYS) {
+      for (const key of COLOUR_KEYS) {
         expect(THEMES[name][key]).toMatch(/^#[0-9a-f]{6}$/);
       }
     }
@@ -63,6 +69,72 @@ describe("the palettes", () => {
   it.each(THEME_NAMES)("%s keeps the record legible", (name) => {
     const theme = THEMES[name];
     expect(contrast(theme.recordInk, theme.paper)).toBeGreaterThanOrEqual(4.5);
+  });
+
+  // Body text is the foreground on the panel and on the recessed `ink`
+  // surface that holds the inputs. Both have to be readable, and `fg` is
+  // white only because every theme but Oak is dark — the token exists so that
+  // assumption is not baked into the components.
+  it.each(THEME_NAMES)("%s keeps body text readable", (name) => {
+    const theme = THEMES[name];
+    expect(contrast(theme.fg, theme.panel)).toBeGreaterThanOrEqual(4.5);
+    expect(contrast(theme.fg, theme.ink)).toBeGreaterThanOrEqual(4.5);
+    expect(contrast(theme.fg, theme.bg)).toBeGreaterThanOrEqual(4.5);
+  });
+
+  // The primary button's label sits on gold, so it contrasts with gold rather
+  // than with the page.
+  it.each(THEME_NAMES)("%s keeps the primary button legible", (name) => {
+    const theme = THEMES[name];
+    expect(contrast(theme.onGold, theme.gold)).toBeGreaterThanOrEqual(4.5);
+  });
+
+  // The objection burst and the sprite letters sit on coloured fills rather
+  // than on the page, so they use `paper` and have to read against those
+  // fills whichever way the theme runs. 3:1 is the bar: these are large,
+  // bold glyphs, which is what WCAG's large-text threshold covers.
+  //
+  // The judge's bench is the accent — light in every theme — so its letter
+  // uses `onGold` instead. That split is in Sprite's ROLE_INITIAL_COLOR.
+  it.each(THEME_NAMES)("%s keeps text on coloured fills legible", (name) => {
+    const theme = THEMES[name];
+
+    // The burst carries small prose, so it needs the full 4.5:1.
+    expect(contrast(theme.paper, theme.crimsonDeep)).toBeGreaterThanOrEqual(4.5);
+
+    for (const fill of [
+      theme.benchPresenter,
+      theme.benchDoctrinal,
+      theme.benchEvidentiary,
+    ]) {
+      expect(contrast(theme.paper, fill)).toBeGreaterThanOrEqual(3);
+    }
+
+    expect(contrast(theme.onGold, theme.benchJudge)).toBeGreaterThanOrEqual(4.5);
+  });
+
+  it.each(THEME_NAMES)("%s declares which way it reads", (name) => {
+    expect(["dark", "light"]).toContain(THEMES[name].scheme);
+  });
+
+  it("has at least one light palette, which is what fg and scheme are for", () => {
+    const light = THEME_NAMES.filter((n) => THEMES[n].scheme === "light");
+    expect(light.length).toBeGreaterThan(0);
+
+    // A light theme's ground must actually be light, or `scheme` is lying and
+    // native controls will be wrong.
+    for (const name of light) {
+      expect(luminance(THEMES[name].bg)).toBeGreaterThan(0.5);
+      expect(luminance(THEMES[name].fg)).toBeLessThan(0.2);
+    }
+  });
+
+  it("sets color-scheme so native controls follow the palette", () => {
+    applyTheme("oak");
+    expect(document.documentElement.style.colorScheme).toBe("light");
+
+    applyTheme("chambers");
+    expect(document.documentElement.style.colorScheme).toBe("dark");
   });
 });
 
@@ -108,13 +180,16 @@ describe("the stylesheet's default palette", () => {
   const toChannels = (hex: string) =>
     [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16)).join(" ");
 
-  const VARIABLE: Record<keyof Theme, string> = {
+  const VARIABLE: Record<Exclude<keyof Theme, "scheme">, string> = {
     bg: "--court-bg",
     panel: "--court-panel",
     rail: "--court-rail",
     ink: "--court-ink",
+    fg: "--court-fg",
+    onGold: "--court-on-gold",
     gold: "--court-gold",
     crimson: "--court-crimson",
+    crimsonDeep: "--court-crimson-deep",
     benchPresenter: "--bench-presenter",
     benchDoctrinal: "--bench-doctrinal",
     benchEvidentiary: "--bench-evidentiary",
@@ -125,7 +200,7 @@ describe("the stylesheet's default palette", () => {
     recordMargin: "--record-margin",
   };
 
-  it.each(KEYS)("matches THEMES.%s for the default theme", (key) => {
+  it.each(COLOUR_KEYS)("matches THEMES.%s for the default theme", (key) => {
     const expected = toChannels(THEMES[DEFAULT_THEME][key]);
     expect(css).toContain(`${VARIABLE[key]}: ${expected};`);
   });

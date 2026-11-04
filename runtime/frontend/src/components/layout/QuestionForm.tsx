@@ -90,7 +90,7 @@ export function QuestionForm() {
           rows={2}
           disabled={running}
           placeholder="Does the strike constitute a war crime under Article 8(2)(b)(iv) of the Rome Statute?"
-          className="mt-1 w-full rounded border border-court-rail bg-court-ink/60 p-3 font-record text-sm text-white/90 placeholder:text-white/25 focus:border-court-gold focus:outline-none disabled:opacity-50"
+          className="mt-1 w-full rounded border border-court-rail bg-court-ink/60 p-3 font-record text-sm text-court-fg/90 placeholder:text-court-fg/25 focus:border-court-gold focus:outline-none disabled:opacity-50"
         />
       </label>
 
@@ -104,7 +104,7 @@ export function QuestionForm() {
           rows={4}
           disabled={running}
           placeholder="The factual predicate the council must reason from…"
-          className="mt-1 w-full rounded border border-court-rail bg-court-ink/60 p-3 font-record text-sm text-white/90 placeholder:text-white/25 focus:border-court-gold focus:outline-none disabled:opacity-50"
+          className="mt-1 w-full rounded border border-court-rail bg-court-ink/60 p-3 font-record text-sm text-court-fg/90 placeholder:text-court-fg/25 focus:border-court-gold focus:outline-none disabled:opacity-50"
         />
       </label>
 
@@ -123,14 +123,14 @@ export function QuestionForm() {
         />
 
         <label className="flex items-center gap-2">
-          <span className="font-ui text-xs text-white/60">Rounds</span>
+          <span className="font-ui text-xs text-court-fg/60">Rounds</span>
           <select
             value={String(rounds)}
             onChange={(e) =>
               setRounds(e.target.value === "auto" ? "auto" : Number(e.target.value))
             }
             disabled={running}
-            className="rounded border border-court-rail bg-court-ink/60 px-2 py-1 font-ui text-xs text-white/80 disabled:opacity-50"
+            className="rounded border border-court-rail bg-court-ink/60 px-2 py-1 font-ui text-xs text-court-fg/80 disabled:opacity-50"
           >
             <option value="auto">Auto</option>
             <option value="1">1</option>
@@ -144,7 +144,7 @@ export function QuestionForm() {
         <button
           type="submit"
           disabled={running || (!replaying && !question.trim())}
-          className="rounded bg-court-gold px-5 py-2 font-display text-sm font-bold text-court-ink transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
+          className="rounded bg-court-gold px-5 py-2 font-display text-sm font-bold text-court-on-gold transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
         >
           {replaying ? "Play the recorded debate" : "Convene the council"}
         </button>
@@ -166,7 +166,7 @@ export function QuestionForm() {
           <button
             type="button"
             onClick={stop}
-            className="rounded border border-court-crimson px-4 py-2 font-ui text-sm text-court-crimson transition hover:bg-court-crimson hover:text-white"
+            className="rounded border border-court-crimson px-4 py-2 font-ui text-sm text-court-crimson transition hover:bg-court-crimson hover:text-court-fg"
           >
             Adjourn
           </button>
@@ -196,12 +196,12 @@ export function QuestionForm() {
             data-testid="replay-restart"
             onClick={replay.restart}
             disabled={replay.progress.applied === 0}
-            className="rounded border border-court-rail px-3 py-1.5 font-ui text-xs text-white/60 transition hover:bg-white/5 disabled:cursor-not-allowed disabled:opacity-30"
+            className="rounded border border-court-rail px-3 py-1.5 font-ui text-xs text-court-fg/60 transition hover:bg-court-fg/5 disabled:cursor-not-allowed disabled:opacity-30"
           >
             Restart
           </button>
 
-          <span className="font-ui text-xs text-white/40">
+          <span className="font-ui text-xs text-court-fg/40">
             {replay.finished
               ? `Done · ${replay.progress.total} of ${replay.progress.total}`
               : replay.nextLabel
@@ -235,7 +235,7 @@ function Toggle({
         onChange={(e) => onChange(e.target.checked)}
         className="h-4 w-4 accent-court-gold"
       />
-      <span className="font-ui text-xs text-white/60">{label}</span>
+      <span className="font-ui text-xs text-court-fg/60">{label}</span>
     </label>
   );
 }

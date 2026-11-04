@@ -29,8 +29,11 @@ export default {
           panel: withAlpha("--court-panel", "#2a1c18"),
           rail: withAlpha("--court-rail", "#4a3028"),
           gold: withAlpha("--court-gold", "#d9a441"),      // brass fittings, the bench
-          crimson: withAlpha("--court-crimson", "#b33a3a"), // objection!
+          crimson: withAlpha("--court-crimson", "#d96060"), // objection!
+          "crimson-deep": withAlpha("--court-crimson-deep", "#8f2b2b"),
           ink: withAlpha("--court-ink", "#0f0908"),
+          fg: withAlpha("--court-fg", "#ffffff"),
+          "on-gold": withAlpha("--court-on-gold", "#0f0908"),
         },
         bench: {
           presenter: withAlpha("--bench-presenter", "#4a7c7e"),

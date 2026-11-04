@@ -104,7 +104,7 @@ export function Courtroom() {
             </span>
           )}
         </span>
-        <span className="font-ui text-xs text-white/40">
+        <span className="font-ui text-xs text-court-fg/40">
           {round > 0 && `Round ${round}`}
           {verdict && ` · Confidence ${Math.round(verdict.confidence * 100)}%`}
         </span>

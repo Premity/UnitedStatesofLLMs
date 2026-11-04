@@ -21,10 +21,41 @@ export interface Theme {
   panel: string;
   rail: string;
   ink: string;
+  /**
+   * Text on the courtroom's ground.
+   *
+   * A token rather than a hardcoded white, so a theme can put a dark
+   * courtroom on a light ground. Components use `text-court-fg/70` and the
+   * like; the alpha steps still work because the variable holds channels.
+   */
+  fg: string;
+  /**
+   * Which way round this theme reads. Drives `color-scheme`, so form controls
+   * and scrollbars match, and lets a component pick a contrasting fill where
+   * one is genuinely needed.
+   */
+  scheme: "dark" | "light";
   /** The accent: bench fittings, headings, the primary control. */
   gold: string;
-  /** Objections and errors. */
+  /**
+   * Text on a gold fill — the primary button's label.
+   *
+   * Its own token because it has to contrast with gold, not with the page.
+   * It was `ink`, which also means "a surface recessed below the panel";
+   * those two jobs pull opposite ways once a theme is light.
+   */
+  onGold: string;
+  /** Objections and errors, as text on the page. */
   crimson: string;
+  /**
+   * Crimson as a *fill* — the objection burst.
+   *
+   * Separate from `crimson` because the two pull opposite ways: crimson has
+   * to be light enough to read as small text on a dark panel, while a fill
+   * carrying light prose has to be dark enough for that prose. One token
+   * cannot satisfy both.
+   */
+  crimsonDeep: string;
   /** Per-role bench colours, used by the sprites and the transcript rules. */
   benchPresenter: string;
   benchDoctrinal: string;
@@ -41,14 +72,18 @@ export const THEMES = {
   /** The original. Deep violet dusk — reads more game than courtroom. */
   dusk: {
     bg: "#1a1229",
+    fg: "#ffffff",
+    scheme: "dark",
     panel: "#241a3a",
     rail: "#3b2a5c",
     ink: "#0f0a1a",
     gold: "#e8b84b",
+    onGold: "#0f0a1a",
     crimson: "#e4647a",
+    crimsonDeep: "#a8203a",
     benchPresenter: "#3d7ea6",
     benchDoctrinal: "#c2384a",
-    benchEvidentiary: "#d4763a",
+    benchEvidentiary: "#c56a30",
     benchJudge: "#e8b84b",
     paper: "#f7f3e9",
     recordInk: "#1f1a14",
@@ -62,14 +97,18 @@ export const THEMES = {
    */
   chambers: {
     bg: "#1c1210",
+    fg: "#ffffff",
+    scheme: "dark",
     panel: "#2a1c18",
     rail: "#4a3028",
     ink: "#0f0908",
     gold: "#d9a441",
+    onGold: "#0f0908",
     crimson: "#d96060",
+    crimsonDeep: "#8f2b2b",
     benchPresenter: "#4a7c7e",
     benchDoctrinal: "#b33a3a",
-    benchEvidentiary: "#c67a3e",
+    benchEvidentiary: "#b86d33",
     benchJudge: "#d9a441",
     paper: "#f5efe2",
     recordInk: "#1f1813",
@@ -94,14 +133,18 @@ export const THEMES = {
    */
   ember: {
     bg: "#140c09",
+    fg: "#ffffff",
+    scheme: "dark",
     panel: "#241310",
     rail: "#3d3d3d",
     ink: "#0b0605",
     gold: "#d7b77e",
+    onGold: "#0b0605",
     // Lifted off mocha, which at 2.1:1 on this ground cannot carry the small
     // text the objection styles put on it. #cf6347 clears AA on both the
     // ground and the panel while staying a burnt red rather than an orange.
     crimson: "#cf6347",
+    crimsonDeep: "#8f3a26",
     benchPresenter: "#5e7a74",
     benchDoctrinal: "#7d2e1c",
     benchEvidentiary: "#b56c30",
@@ -113,19 +156,63 @@ export const THEMES = {
   },
 
   /**
+   * Oak. A daylit courtroom: light tan ground, walnut accents, oxblood for
+   * objections — panelled wood and morning light rather than a dark room.
+   *
+   * The only light theme, which is why `fg` and `scheme` exist: every other
+   * palette assumed white text on a dark ground.
+   *
+   * One trade-off worth knowing. In the dark themes the record reads as a
+   * bright page against a dark room — roughly 12:1 — and that contrast is
+   * most of what separates the proceeding from the record. Here both are
+   * light and the ratio falls to about 1.2:1, so the separation has to come
+   * from the record's border and shadow instead. That is why `paper` is kept
+   * near-white rather than another tan: it is the most distinction available
+   * once both registers are light.
+   */
+  oak: {
+    bg: "#ede0cc",
+    fg: "#33251a",
+    scheme: "light",
+    panel: "#e2d2b8",
+    rail: "#c4ad8c",
+    // `ink` is "a surface recessed below the panel" — input fields, the sprite
+    // caption — and is also the label on the gold button, so it has to read
+    // against gold as well as against the panel. A deeper tan, not a lighter
+    // one: inverting it would make the inputs float above the form.
+    ink: "#d2bb98",
+    gold: "#7a4a20",
+    onGold: "#fbf7ee",
+    crimson: "#9e2f2f",
+    crimsonDeep: "#8f2525",
+    benchPresenter: "#3c6470",
+    benchDoctrinal: "#9e2f2f",
+    benchEvidentiary: "#a35a22",
+    benchJudge: "#7a4a20",
+    paper: "#fbf7ee",
+    recordInk: "#241a12",
+    recordRule: "#d8c7a8",
+    recordMargin: "#7d6244",
+  },
+
+  /**
    * Slate and navy. Institutional and cool — closest to a real court's
    * sobriety, and the least decorative of the three.
    */
   tribunal: {
     bg: "#0f172a",
+    fg: "#ffffff",
+    scheme: "dark",
     panel: "#1a2436",
     rail: "#2e3f58",
     ink: "#070c16",
     gold: "#d6b068",
+    onGold: "#070c16",
     crimson: "#e4697f",
+    crimsonDeep: "#a8324a",
     benchPresenter: "#4b86b4",
     benchDoctrinal: "#c0455a",
-    benchEvidentiary: "#cf8b4a",
+    benchEvidentiary: "#b67134",
     benchJudge: "#d6b068",
     paper: "#f4f2ec",
     recordInk: "#161b22",
@@ -142,17 +229,21 @@ export const THEME_LABELS: Record<ThemeName, string> = {
   dusk: "Dusk",
   chambers: "Chambers",
   ember: "Ember",
+  oak: "Oak",
   tribunal: "Tribunal",
 };
 
 /** Maps a theme key to the CSS custom property Tailwind reads. */
-const VARIABLE: Record<keyof Theme, string> = {
+const VARIABLE: Record<Exclude<keyof Theme, "scheme">, string> = {
   bg: "--court-bg",
   panel: "--court-panel",
   rail: "--court-rail",
   ink: "--court-ink",
+  fg: "--court-fg",
   gold: "--court-gold",
+  onGold: "--court-on-gold",
   crimson: "--court-crimson",
+  crimsonDeep: "--court-crimson-deep",
   benchPresenter: "--bench-presenter",
   benchDoctrinal: "--bench-doctrinal",
   benchEvidentiary: "--bench-evidentiary",
@@ -184,9 +275,13 @@ export function applyTheme(name: ThemeName): void {
   const root = document.documentElement;
 
   for (const [key, variable] of Object.entries(VARIABLE)) {
-    root.style.setProperty(variable, channels(theme[key as keyof Theme]));
+    root.style.setProperty(variable, channels(theme[key as keyof typeof VARIABLE]));
   }
+
   root.dataset.theme = name;
+  // Form controls and scrollbars follow this; without it a light theme gets
+  // dark native widgets.
+  root.style.colorScheme = theme.scheme;
 
   // A preference, not state the app depends on — a blocked or full store is
   // not an error, it just means the choice does not survive a reload.

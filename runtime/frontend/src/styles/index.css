@@ -14,11 +14,14 @@
     --court-panel: 42 28 24;
     --court-rail: 74 48 40;
     --court-ink: 15 9 8;
+    --court-fg: 255 255 255;
+    --court-on-gold: 15 9 8;
     --court-gold: 217 164 65;
     --court-crimson: 217 96 96;
+    --court-crimson-deep: 143 43 43;
     --bench-presenter: 74 124 126;
     --bench-doctrinal: 179 58 58;
-    --bench-evidentiary: 198 122 62;
+    --bench-evidentiary: 184 109 51;
     --bench-judge: 217 164 65;
     --record-paper: 245 239 226;
     --record-ink: 31 24 19;
@@ -26,6 +29,8 @@
     --record-margin: 138 118 86;
   }
 
+  /* The default theme is dark. applyTheme() overwrites this inline for a
+     light palette; this is only what the first paint uses. */
   html {
     color-scheme: dark;
   }

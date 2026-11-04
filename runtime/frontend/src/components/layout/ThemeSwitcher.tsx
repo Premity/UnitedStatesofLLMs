@@ -48,7 +48,7 @@ export function ThemeSwitcher() {
             className={`flex items-center gap-1.5 rounded border px-2 py-1 font-ui text-[11px] transition ${
               active
                 ? "border-court-gold/60 bg-court-gold/10 text-court-gold"
-                : "border-court-rail text-white/45 hover:border-court-gold/30 hover:text-white/70"
+                : "border-court-rail text-court-fg/45 hover:border-court-gold/30 hover:text-court-fg/70"
             }`}
           >
             <span aria-hidden className="flex overflow-hidden rounded-sm">

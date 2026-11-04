@@ -27,6 +27,15 @@ const ROLE_COLOR: Record<string, string> = {
   judge: "bg-bench-judge",
 };
 
+/**
+ * The initial sits on the bench fill, so its colour follows that fill rather
+ * than the page. The judge's bench is the accent in every theme, which is
+ * light — hence the same token the primary button's label uses.
+ */
+const ROLE_INITIAL_COLOR: Record<string, string> = {
+  judge: "text-court-on-gold/90",
+};
+
 const ROLE_INITIAL: Record<string, string> = {
   presenter: "P",
   attacker_doctrinal: "D",
@@ -57,7 +66,12 @@ export function Sprite({
           speaking && "animate-bob",
         )}
       >
-        <span className="font-display text-3xl font-bold text-white/90 drop-shadow">
+        <span
+          className={clsx(
+            "font-display text-3xl font-bold drop-shadow",
+            ROLE_INITIAL_COLOR[role] ?? "text-record-paper/90",
+          )}
+        >
           {ROLE_INITIAL[role] ?? "?"}
         </span>
 
@@ -72,7 +86,7 @@ export function Sprite({
           {label}
         </div>
         {modelId && (
-          <div className="truncate font-ui text-[10px] text-white/40">
+          <div className="truncate font-ui text-[10px] text-court-fg/40">
             {modelId.split("/").pop()}
           </div>
         )}
