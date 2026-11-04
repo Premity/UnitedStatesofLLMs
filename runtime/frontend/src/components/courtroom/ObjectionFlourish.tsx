@@ -70,8 +70,8 @@ function Burst() {
     >
       <polygon
         points={points}
-        fill="#c2384a"
-        stroke="#f7f3e9"
+        fill="rgb(var(--court-crimson))"
+        stroke="rgb(var(--record-paper))"
         strokeWidth="1.5"
         vectorEffect="non-scaling-stroke"
       />

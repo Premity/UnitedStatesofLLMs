@@ -1,32 +1,48 @@
 import type { Config } from "tailwindcss";
 
+/**
+ * A colour read from a CSS variable that still supports Tailwind's opacity
+ * modifiers (`bg-court-gold/10`). The variable holds bare RGB channels —
+ * "217 164 65" — because `rgb(var(--x) / <alpha>)` cannot be built from a hex
+ * string. The fallback is the default theme, so the page is styled before any
+ * JavaScript runs.
+ */
+const withAlpha = (variable: string, fallback: string) => {
+  const [r, g, b] = [1, 3, 5].map((i) => parseInt(fallback.slice(i, i + 2), 16));
+  return `rgb(var(${variable}, ${r} ${g} ${b}) / <alpha-value>)`;
+};
+
 // The palette is deliberately two-register: a warm, saturated courtroom for the
 // live debate, and a sober parchment/ink register for the dissent log. Whimsy in
 // the presentation, sobriety in the record.
+//
+// Values come from CSS custom properties so the palette can be switched at
+// runtime — see src/styles/themes.ts, which owns them. The fallbacks here are
+// the default theme, so the page is never unstyled before JS runs.
 export default {
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
         court: {
-          bg: "#1a1229",        // deep courtroom dusk
-          panel: "#241a3a",
-          rail: "#3b2a5c",
-          gold: "#e8b84b",      // brass fittings, the judge's bench
-          crimson: "#c2384a",   // objection!
-          ink: "#0f0a1a",
+          bg: withAlpha("--court-bg", "#1c1210"),
+          panel: withAlpha("--court-panel", "#2a1c18"),
+          rail: withAlpha("--court-rail", "#4a3028"),
+          gold: withAlpha("--court-gold", "#d9a441"),      // brass fittings, the bench
+          crimson: withAlpha("--court-crimson", "#b33a3a"), // objection!
+          ink: withAlpha("--court-ink", "#0f0908"),
         },
         bench: {
-          presenter: "#3d7ea6",   // defence blue
-          doctrinal: "#c2384a",   // prosecution crimson
-          evidentiary: "#d4763a", // prosecution amber
-          judge: "#e8b84b",       // the bench
+          presenter: withAlpha("--bench-presenter", "#4a7c7e"),
+          doctrinal: withAlpha("--bench-doctrinal", "#b33a3a"),
+          evidentiary: withAlpha("--bench-evidentiary", "#c67a3e"),
+          judge: withAlpha("--bench-judge", "#d9a441"),
         },
         record: {
-          paper: "#f7f3e9",
-          ink: "#1f1a14",
-          rule: "#d9d0bd",
-          margin: "#8a7a5c",
+          paper: withAlpha("--record-paper", "#f5efe2"),
+          ink: withAlpha("--record-ink", "#1f1813"),
+          rule: withAlpha("--record-rule", "#ddd2bc"),
+          margin: withAlpha("--record-margin", "#8a7656"),
         },
       },
       fontFamily: {

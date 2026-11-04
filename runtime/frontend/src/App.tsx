@@ -1,6 +1,7 @@
 import { Courtroom } from "@/components/courtroom/Courtroom";
 import { DissentLog } from "@/components/dissent/DissentLog";
 import { QuestionForm } from "@/components/layout/QuestionForm";
+import { ThemeSwitcher } from "@/components/layout/ThemeSwitcher";
 import { Transcript } from "@/components/layout/Transcript";
 import { useCourtStore } from "@/store/courtStore";
 
@@ -13,14 +14,18 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-court-bg text-white">
-      <header className="border-b border-court-rail/60 px-6 py-4">
-        <h1 className="font-display text-xl font-bold tracking-tight text-court-gold">
-          United States of LLMs
-        </h1>
-        <p className="font-ui text-xs text-white/40">
-          Adversarial review of international humanitarian law questions ·
-          research prototype, not legal advice
-        </p>
+      <header className="flex flex-wrap items-center justify-between gap-4 border-b border-court-rail/60 px-6 py-4">
+        <div>
+          <h1 className="font-display text-xl font-bold tracking-tight text-court-gold">
+            United States of LLMs
+          </h1>
+          <p className="font-ui text-xs text-white/40">
+            Adversarial review of international humanitarian law questions ·
+            research prototype, not legal advice
+          </p>
+        </div>
+
+        <ThemeSwitcher />
       </header>
 
       {error && (

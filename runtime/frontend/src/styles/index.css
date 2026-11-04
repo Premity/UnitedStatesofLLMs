@@ -3,6 +3,29 @@
 @tailwind utilities;
 
 @layer base {
+  /* The default palette (Chambers), as bare RGB channels so Tailwind can
+     compose opacity: rgb(var(--x) / <alpha>). applyTheme() overwrites these on
+     <html> at startup; having them here means the page is correctly styled
+     before any JavaScript runs, and that raw `rgb(var(--x))` uses outside
+     Tailwind — the SVG burst, the panelling gradient — always resolve.
+     Owned by src/styles/themes.ts; keep in sync with THEMES.chambers. */
+  :root {
+    --court-bg: 28 18 16;
+    --court-panel: 42 28 24;
+    --court-rail: 74 48 40;
+    --court-ink: 15 9 8;
+    --court-gold: 217 164 65;
+    --court-crimson: 179 58 58;
+    --bench-presenter: 74 124 126;
+    --bench-doctrinal: 179 58 58;
+    --bench-evidentiary: 198 122 62;
+    --bench-judge: 217 164 65;
+    --record-paper: 245 239 226;
+    --record-ink: 31 24 19;
+    --record-rule: 221 210 188;
+    --record-margin: 138 118 86;
+  }
+
   html {
     color-scheme: dark;
   }

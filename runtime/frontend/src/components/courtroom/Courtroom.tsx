@@ -39,7 +39,7 @@ export function Courtroom() {
         className="pointer-events-none absolute inset-0 opacity-[0.07]"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(90deg, #e8b84b 0 2px, transparent 2px 28px)",
+            "repeating-linear-gradient(90deg, rgb(var(--court-gold)) 0 2px, transparent 2px 28px)",
         }}
       />
 

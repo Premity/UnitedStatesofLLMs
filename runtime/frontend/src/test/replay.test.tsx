@@ -383,6 +383,25 @@ describe("the objection flourish", () => {
   });
 });
 
+describe("the palette switcher", () => {
+  it("switches the courtroom palette without a reload", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    const group = within(screen.getByRole("group", { name: /palette/i }));
+    const tribunal = group.getByRole("button", { name: /tribunal/i });
+
+    await user.click(tribunal);
+
+    expect(tribunal).toHaveAttribute("aria-pressed", "true");
+    expect(document.documentElement.dataset.theme).toBe("tribunal");
+    // #0f172a -> 15 23 42, as channels so Tailwind's alpha still composes.
+    expect(
+      document.documentElement.style.getPropertyValue("--court-bg"),
+    ).toBe("15 23 42");
+  });
+});
+
 describe("the fixture itself", () => {
   it("runs start -> turn* -> verdict -> done", () => {
     const names = replayEvents.map((e) => e.event);

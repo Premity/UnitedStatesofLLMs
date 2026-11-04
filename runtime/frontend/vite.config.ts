@@ -33,7 +33,7 @@ export default defineConfig({
     setupFiles: ["./src/test/setup.ts"],
     // Only files under src/test. Keeping tests out of the component tree means
     // `tsc -b` for the production build does not have to exclude them.
-    include: ["src/test/**/*.test.{ts,tsx}"],
+    include: ["src/test/**/*.test.ts", "src/test/**/*.test.tsx"],
     restoreMocks: true,
   },
 });

@@ -11,4 +11,13 @@ import { useCourtStore } from "@/store/courtStore";
 afterEach(() => {
   cleanup();
   useCourtStore.getState().reset();
+
+  // The theme is written onto <html> and persisted, so it outlives a render.
+  document.documentElement.removeAttribute("style");
+  document.documentElement.removeAttribute("data-theme");
+  try {
+    localStorage.clear();
+  } catch {
+    /* ignore */
+  }
 });
