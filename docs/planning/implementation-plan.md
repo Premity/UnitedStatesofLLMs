@@ -259,7 +259,7 @@ number the report will contain. Fully independent of other tracks — start day 
 ### T2-4 · Decide the Arm E aggregation rule (D3) — `S`
 
 - **Depends on** nothing
-- **Touches** `docs/adr/0009-self-consistency-arm.md` (new)
+- **Touches** `docs/adr/0011-self-consistency-arm.md` (new)
 - **Done when** the ADR states the sampling temperature, how *n* is derived from
   arm D's call count, and the aggregation rule (majority vote with agreement
   rate as confidence is the obvious start)
