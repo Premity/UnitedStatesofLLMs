@@ -36,7 +36,9 @@ services:
     ports:
       - "3000:3000"
     environment:
-      VITE_API_URL: "http://localhost:8000"
+      # Inside this container "localhost" is the frontend itself, not the
+      # api container -- use the compose service name on the shared network.
+      VITE_API_URL: "http://api:8000"
     volumes:
       - ./runtime/frontend/src:/app/src
       - ./runtime/frontend/public:/app/public

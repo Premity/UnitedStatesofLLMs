@@ -150,7 +150,12 @@ async def stream_debate(config: DebateConfig) -> EventSourceResponse:
             "data": json.dumps({"run_id": state.run_id, "status": metadata.status.value}),
         }
 
-    return EventSourceResponse(events())
+    # sse-starlette's default frame separator is "\r\n\r\n". The frontend
+    # splits incoming frames on "\n\n" (useDebateStream.ts), which never
+    # matches that separator -- every event stays buffered until the stream
+    # ends and nothing renders live. Match the frontend's expectation instead
+    # of changing it, since "\n\n" is the separator the SSE spec itself uses.
+    return EventSourceResponse(events(), sep="\n")
 
 
 @router.get("/runs")
