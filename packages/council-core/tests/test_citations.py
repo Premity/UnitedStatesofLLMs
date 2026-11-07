@@ -143,3 +143,30 @@ def test_locator_formats_are_stable() -> None:
         Citation(type=CitationType.TREATY, instrument="ap_i", article="51(2)").locator()
         == "ap_i/art.51(2)"
     )
+
+
+def test_redundant_article_prefix_is_normalized_once_at_construction() -> None:
+    """A model-supplied 'art.51(2)' must not double up with locator()'s own 'art.' label.
+
+    Normalizing at the field (not just inside locator()) means the stored field,
+    the frontend, and any export that reads `.article` directly all see the
+    clean value too (GitHub #11-1).
+    """
+    treaty = Citation(type=CitationType.TREATY, instrument="ap_i", article="art.51(2)")
+    assert treaty.article == "51(2)"
+    assert treaty.locator() == "ap_i/art.51(2)"
+
+    assert Citation(
+        type=CitationType.TREATY, instrument="ap_i", article="Article 51(2)"
+    ).article == ("51(2)")
+
+
+def test_article_prefix_normalization_does_not_mangle_non_prefixed_values() -> None:
+    """A value that merely starts with 'art' must survive untouched (GitHub #8)."""
+    assert Citation(type=CitationType.TREATY, instrument="x", article="artifact-3").article == (
+        "artifact-3"
+    )
+    assert (
+        Citation(type=CitationType.TREATY, instrument="x", article="articles 51 and 52").article
+        == "articles 51 and 52"
+    )

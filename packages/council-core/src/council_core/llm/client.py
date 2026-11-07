@@ -8,6 +8,7 @@ artifact, and logging that names the role rather than the raw model id.
 
 from __future__ import annotations
 
+import asyncio
 import json
 import re
 import time
@@ -84,15 +85,6 @@ class CouncilLLM:
         self._config = config
         self._role = role
 
-    @retry(
-        stop=stop_after_attempt(6),
-        # 6 attempts at this backoff spans ~62s cumulative before the last
-        # one -- needed to actually cross Groq's per-minute rate-limit
-        # window, confirmed against a live run that hit it.
-        wait=wait_exponential(multiplier=1, min=2, max=60),
-        retry=retry_if_exception(_is_retryable),
-        reraise=True,
-    )
     async def complete(
         self,
         *,
@@ -100,10 +92,56 @@ class CouncilLLM:
         user: str,
         seed: int | None = None,
     ) -> ModelResponse:
-        """Send one completion request.
+        """Send one completion request, bounded by a total wall-clock deadline.
 
-        Transport failures are retried with backoff; a model that answers badly
-        is not retried here — that is the caller's business.
+        `_complete_with_retry` retries individual transport failures with
+        backoff, but `stop_after_attempt(6)` alone caps *attempts*, not time --
+        six attempts at `timeout_seconds` each (plus backoff) is unbounded
+        with respect to the role's actual time budget: for a hybrid-reasoning
+        role at 600s/attempt that is ~62 minutes for one `complete()` call, and
+        `complete_structured` can call it twice (initial + one repair) -- close
+        to two hours holding a debate slot for a single stuck model (GitHub
+        #11-2). `total_timeout_seconds` is a second, independent ceiling on
+        the whole retry loop, so a stuck model fails the turn in minutes
+        instead of hours regardless of how the per-attempt numbers above
+        change.
+        """
+        try:
+            async with asyncio.timeout(self._config.total_timeout_seconds):
+                return await self._complete_with_retry(system=system, user=user, seed=seed)
+        except TimeoutError:
+            log.error(
+                "llm_total_timeout",
+                role=self._role,
+                model=self._config.model_id,
+                total_timeout_seconds=self._config.total_timeout_seconds,
+            )
+            raise
+
+    @retry(
+        stop=stop_after_attempt(6),
+        # 6 attempts at this backoff spans 62s cumulative before the last one
+        # (2+4+8+16+32, verified against the installed tenacity) -- needed
+        # to actually cross Groq's per-minute rate-limit window, confirmed
+        # against a live run that hit it. multiplier=1 only reaches 32s here
+        # (GitHub #10) and would exhaust the whole retry budget still inside
+        # the rate-limit window.
+        wait=wait_exponential(multiplier=2, min=2, max=60),
+        retry=retry_if_exception(_is_retryable),
+        reraise=True,
+    )
+    async def _complete_with_retry(
+        self,
+        *,
+        system: str,
+        user: str,
+        seed: int | None = None,
+    ) -> ModelResponse:
+        """One completion request, retried on transport failure.
+
+        A model that answers badly is not retried here — that is the caller's
+        business. Called only through `complete()`, which adds the total
+        wall-clock deadline this retry loop has no concept of on its own.
         """
         started = time.perf_counter()
 
