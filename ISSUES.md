@@ -1,6 +1,7 @@
 # Known issues & pending work
 
-Current as of 2026-11-04, after the corpus (T1) and the first frontend pass (T3).
+Current as of 2026-11-07, after the corpus (T1), the first frontend pass (T3),
+and the PR #7 review fixes (GitHub #8–#11).
 
 > **Planning this work?** These items are scheduled as tracks and tasks in
 > [docs/planning/implementation-plan.md](docs/planning/implementation-plan.md).
@@ -340,12 +341,6 @@ single test. Not yet confirmed under round 2+ accumulated-context load, the
 same caveat that applied to qwen3.5 and Gemma 4 before their own failures
 surfaced — this is a single data point, not a guarantee.
 
-New defaults: `attacker_doctrinal` → `gemini/gemma-4-31b-it` (flagship
-quality, 256K context — matches the doctrinal mandate's deeper legal-test
-analysis), `attacker_evidentiary` → `gemini/gemma-4-26b-a4b-it`
-(cost-efficient, high-throughput). This pairing is a judgment call, not a
-measured one — swap if the live results say otherwise.
-
 ### [RESOLVED] SSE frame separator mismatch silently broke the frontend
 
 `sse-starlette`'s default frame separator is `\r\n\r\n`. The frontend splits
@@ -423,6 +418,124 @@ Only Docker Compose exports `.env` into the process environment. LiteLLM reads
 provider keys from the environment, so scripts run outside Docker see no keys
 unless started with `uv run --env-file .env ...`. `.env` lines must be
 `NAME=value` with no spaces around `=`.
+
+---
+
+## Found reviewing PR #7 (GitHub #8–#11)
+
+Four issues filed against the T0 fixes above, after they were pushed for
+review. All fixed; each links the GitHub issue it closes.
+
+### [RESOLVED] Article-prefix strip mangled any value starting with 'art' (#8)
+
+`_ARTICLE_PREFIX_RE` in `citation.py` made both the `.` delimiter and the
+trailing whitespace optional, so it also matched a bare `art` with no
+delimiter and stripped those three letters off any value beginning with
+them — `"artifact-3"` → `"ifact-3"`, `"articles 51 and 52"` → `"s 51 and
+52"`. A mangled locator cannot resolve, so a model citing multiple articles
+in prose (`"articles 51 and 52"`) would be scored as fabricating authority —
+exactly the false positive the function exists to prevent. No real locator
+in the live corpus index was affected (checked all 1,380), so this only fired
+on malformed model output, not on anything already indexed.
+
+Fixed by requiring a delimiter: `^\s*art(?:icle)?(?:\.|\s)\s*`. Covered by
+`test_article_prefix_normalization_does_not_mangle_non_prefixed_values`.
+
+### [RESOLVED] `art. art.51(2)` doubling reached the stored field, not just `locator()` (#11, finding 1)
+
+`_strip_article_prefix` was applied inside `Citation.locator()` only, so the
+stored `article` field kept the raw `"art.51(2)"` a model sometimes echoes
+from its own prose. Every renderer that reads `.article` directly instead of
+calling `locator()` — the frontend's `CitationChip`, the Markdown export —
+then prepended its own `"art. "` label on top, doubling to `"art.
+art.51(2)"`.
+
+Fixed by moving the normalization into a `field_validator` on `Citation.article`,
+so the stored value is already clean at construction and every reader agrees.
+`locator()` no longer needs to strip anything itself.
+
+### [RESOLVED] Groq attacker models missed the reasoning-token budget they need (#9)
+
+`RoleModels.for_role()`'s hybrid-reasoning allowlist (16000 tokens / 600s
+instead of the 4096 / 180s default) matched Ollama, Gemini's Gemma models,
+and OpenRouter's nemotron — not the Groq models the attackers were switched
+to in the same PR (`qwen/qwen3.8-27b`, `openai/gpt-oss-20b`), which are
+reasoning models too. This is the identical failure signature that already
+hit qwen3.5 and Gemma 4 (both above): round 1 fits in 4096 tokens, a later
+round with more accumulated context does not, and the symptom —
+`StructuredOutputError` starting in round 2 or 3 — reads like "the model is
+too small" rather than a budget problem.
+
+Not a `groq/` prefix match: Groq also hosts the presenter
+(`groq/openai/gpt-oss-120b`), which is not a reasoning model and does not
+need the larger budget. Named the two attacker models individually instead.
+Covered by `test_llm_config.py`'s table test over every shipped default,
+including a non-reasoning Groq model to confirm the allowlist doesn't
+accidentally widen to the whole `groq/` prefix.
+
+### [RESOLVED] Retry backoff only reached 32s, not the ~62s it was sized for (#10)
+
+The comment on `CouncilLLM.complete()`'s retry decorator claimed 6 attempts
+at `wait_exponential(multiplier=1, min=2, max=60)` spans ~62s, sized to cross
+Groq's per-minute rate-limit window. The actual sum (verified against the
+installed tenacity) is 32s — `multiplier=1` produces waits of 2, 2, 4, 8, 16,
+not 2, 4, 8, 16, 32. A debate hitting Groq's per-minute limit could exhaust
+all 6 attempts without ever crossing the window.
+
+Fixed by setting `multiplier=2`, which actually produces 2+4+8+16+32 = 62s —
+confirmed against the same installed tenacity, not assumed from the formula.
+
+### [RESOLVED] A stuck judge could hold a debate slot for about two hours (#11, finding 2)
+
+`timeout_seconds` bounds one *attempt*, not the whole retry loop.
+`stop_after_attempt(6)` meant a judge call that fails every attempt could
+spend up to `timeout_seconds × 6` just on attempts (600 × 6 = 3600s for a
+hybrid-reasoning role), plus backoff, and `complete_structured`'s one repair
+attempt doubles that — close to two hours for a single stuck model, with
+`MAX_CONCURRENT_DEBATES=2` meaning two stuck judges block every new debate.
+
+Fixed by adding `ModelConfig.total_timeout_seconds`, a second ceiling wrapped
+around the *entire* retry loop with `asyncio.timeout()` — independent of how
+many attempts or repairs it takes. Set to 1200s for hybrid-reasoning roles,
+300s otherwise, roughly bounding two full-length attempts plus backoff
+instead of six. Covered by `test_llm_client.py`.
+
+### [RESOLVED] ISSUES.md contradicted its own section heading (#11, finding 3)
+
+The "Attackers moved to Groq" entry above ended with a leftover "New
+defaults" paragraph still naming the Gemma models that section's own title
+says were replaced — left behind when the section was rewritten. Deleted.
+
+### [RESOLVED] `onboarding.md` still named the models this PR replaced (#11, finding 4)
+
+`docs/planning/onboarding.md` named the judge as `gpt-oss-120b` and the
+doctrinal attacker as `qwen3.5:9b` — both changed earlier in the same PR;
+`docs/system-design.md` was updated at the time, onboarding was missed. It
+also still told a new teammate to install Ollama and set `GEMINI_API_KEY`,
+neither of which the current default roster needs. This is the document a
+new teammate reads first, so a wrong roster there costs more than elsewhere.
+
+Updated to the current roster (Groq for presenter + both attackers,
+OpenRouter for the judge), and to note explicitly that 3 of 4 roles are now
+OpenAI-family — the "four different model families" claim quoted earlier in
+the same doc no longer fully holds.
+
+### [RESOLVED] A stored objection with no `raised_by` silently defaulted to doctrinal (#11, finding 5)
+
+`Objection.raised_by` gaining a default (above) fixed live parsing — a model
+never supplies the field, `AttackerRole.run()` overwrites it with the truth
+regardless. But the same default meant a **stored** artifact missing
+`raised_by` would load silently as `attacker_doctrinal` instead of raising.
+`independence.measure_independence` counts objections by `raised_by` to
+score how differently the two attackers behave, so a mislabelled objection
+would quietly skew that metric rather than error.
+
+Fixed at the load boundary rather than the field: `RunArtifact.from_json`
+now inspects the raw JSON before validating and rejects any objection — in
+`state.objections`, any `turn.objections`, or `verdict.dissent` — that has no
+explicit `raised_by` key. The default stays on the field itself, since that's
+still what makes live parsing lenient; only loading a stored artifact is
+strict. Covered by `test_run_artifact.py`.
 
 ---
 
@@ -532,14 +645,17 @@ metrics something to weigh objections by.
 
 ## Decisions still open
 
-### Judge model during development
+### Judge model for the scored run
 
-Gemini AI Studio's free tier is 100 requests/day. A full four-arm evaluation
-over 60 cases exceeds that across multiple days.
+The judge is now `openrouter/nvidia/nemotron-3-ultra-550b-a55b:free` (see the
+T0 section above) — Gemini AI Studio's free tier was a dead end, not a
+request-budget problem. OpenRouter's free tier caps at 50 requests/day
+account-wide, roughly 16 debates/day, which covers continued dev/validation
+but not a 40–80 case evaluation (120–240+ judge calls).
 
-Options: run the judge locally while iterating and use the API only for the
-final scored run (record which — it changes the result), or spread the run
-across days, or use a second key.
+Options for the scored run itself: a paid OpenRouter tier, spreading the run
+across multiple days, or swapping the judge to a model with more headroom
+before that run starts (the roster must then freeze — see ADR 0009).
 
 ### Reasoning-overlap scoring
 
