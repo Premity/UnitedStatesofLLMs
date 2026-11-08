@@ -1,11 +1,12 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { Courtroom } from "@/components/courtroom/Courtroom";
+import { isLoud } from "@/components/courtroom/ObjectionFlourish";
 import { SubtitleBand } from "@/components/courtroom/SubtitleBand";
 import { roleSentence, roleShort, roleTitle } from "@/lib/roles";
 import { useCourtStore } from "@/store/courtStore";
-import type { Turn } from "@/types";
+import type { Objection, Turn } from "@/types";
 
 /**
  * Courtroom staging: the subtitle band and the bench layout.
@@ -15,6 +16,28 @@ import type { Turn } from "@/types";
  * named, a long claim does not stretch the band, and the sprites sit in a
  * fixed order rather than wherever the turns arrived.
  */
+
+function objection(
+  raisedBy: Turn["role"],
+  ground: string,
+  grounded: boolean,
+): Objection {
+  return {
+    id: `obj_${raisedBy}`,
+    raised_by: raisedBy,
+    ground,
+    target_claim: "the claim",
+    resolved_citations: grounded
+      ? [
+          {
+            status: "resolved",
+            citation: { type: "treaty", instrument: "gc_iv", article: "51" },
+          },
+        ]
+      : [],
+    disposition: "unaddressed",
+  } as unknown as Objection;
+}
 
 function turn(role: Turn["role"], claim: string, round = 1): Turn {
   return {
@@ -151,5 +174,146 @@ describe("role names", () => {
   it("falls back to the raw id, so an unknown role is visible not blank", () => {
     expect(roleTitle("bailiff")).toBe("bailiff");
     expect(roleShort("bailiff")).toBe("bailiff");
+  });
+});
+
+describe("the objection flourish, localised", () => {
+  /** The sprite wrapper an element sits inside, via its flex column. */
+  function spriteOf(el: HTMLElement): HTMLElement {
+    const sprite = el.closest("div.flex.flex-col");
+    if (!sprite) throw new Error("no sprite ancestor");
+    return sprite as HTMLElement;
+  }
+
+  it("bursts over the objecting sprite, not the courtroom", () => {
+    const flourish = objection(
+      "attacker_doctrinal",
+      "Proportionality fails.",
+      true,
+    );
+    expect(isLoud(flourish)).toBe(true);
+
+    useCourtStore
+      .getState()
+      .addTurn(turn("presenter", "The strike was lawful."));
+    useCourtStore.getState().showFlourish(flourish);
+    render(<Courtroom />);
+
+    const slam = screen.getByTestId("objection-slam");
+    expect(
+      within(spriteOf(slam)).getByTestId("sprite-plate"),
+    ).toHaveTextContent("Doctrinal");
+  });
+
+  it("hangs from the outer corner, mirrored per bench", () => {
+    // Doctrinal sits left of the room and evidentiary right, so the bursts
+    // open outward and neither lands on the presenter between them.
+    useCourtStore
+      .getState()
+      .showFlourish(
+        objection("attacker_doctrinal", "Proportionality fails.", true),
+      );
+    const { unmount } = render(<Courtroom />);
+    let slam = screen.getByTestId("objection-slam");
+    expect(slam).toHaveAttribute("data-side", "left");
+    expect(slam.className).toContain("-left-10");
+    expect(slam.className).not.toContain("-right-10");
+    unmount();
+
+    useCourtStore
+      .getState()
+      .showFlourish(objection("attacker_evidentiary", "Misquoted.", true));
+    render(<Courtroom />);
+    slam = screen.getByTestId("objection-slam");
+    expect(slam).toHaveAttribute("data-side", "right");
+    expect(slam.className).toContain("-right-10");
+    expect(slam.className).not.toContain("-left-10");
+  });
+
+  it("puts the quiet tag on the same corner as the slam", () => {
+    useCourtStore
+      .getState()
+      .showFlourish(objection("attacker_evidentiary", "Misquoted.", false));
+    render(<Courtroom />);
+
+    const quiet = screen.getByTestId("objection-quiet");
+    expect(quiet).toHaveAttribute("data-side", "right");
+    expect(quiet.className).toContain("-right-2");
+  });
+
+  it("leaves the other benches alone", () => {
+    useCourtStore
+      .getState()
+      .showFlourish(
+        objection("attacker_evidentiary", "The source is misquoted.", true),
+      );
+    render(<Courtroom />);
+
+    const slam = screen.getByTestId("objection-slam");
+    expect(
+      within(spriteOf(slam)).getByTestId("sprite-plate"),
+    ).toHaveTextContent("Evidentiary");
+    // Exactly one burst: the previous version covered the whole scene, so
+    // "which sprite" was not a question that could be asked.
+    expect(screen.getAllByTestId("objection-slam")).toHaveLength(1);
+  });
+
+  it("reads the ground in the band, attributed to the raiser", () => {
+    // The active role is the presenter — the band must still name the
+    // objector, because an objection speaks for whoever raised it.
+    useCourtStore
+      .getState()
+      .addTurn(turn("presenter", "The strike was lawful."));
+    useCourtStore
+      .getState()
+      .showFlourish(
+        objection("attacker_doctrinal", "Proportionality fails.", true),
+      );
+    render(<Courtroom />);
+
+    const band = screen.getByTestId("subtitle-band");
+    expect(band).toHaveTextContent("Doctrinal Counsel · Objection");
+    expect(band).toHaveTextContent("Proportionality fails.");
+    expect(band).not.toHaveTextContent("The strike was lawful.");
+    expect(band.className).toContain("border-l-court-crimson");
+  });
+
+  it("shows a quiet tag, not a burst, for an ungrounded objection", () => {
+    const flourish = objection(
+      "attacker_evidentiary",
+      "The source is misquoted.",
+      false,
+    );
+    expect(isLoud(flourish)).toBe(false);
+
+    useCourtStore.getState().showFlourish(flourish);
+    render(<Courtroom />);
+
+    expect(screen.queryByTestId("objection-slam")).not.toBeInTheDocument();
+    const quiet = screen.getByTestId("objection-quiet");
+    expect(
+      within(spriteOf(quiet)).getByTestId("sprite-plate"),
+    ).toHaveTextContent("Evidentiary");
+    // Still reads in the band — only the burst is withheld.
+    expect(screen.getByTestId("subtitle-band")).toHaveTextContent(
+      "The source is misquoted.",
+    );
+  });
+
+  it("keeps the objecting sprite lit even when another role is speaking", () => {
+    // Without this the burst lands on a figure already dimmed to 45%.
+    useCourtStore
+      .getState()
+      .addTurn(turn("presenter", "The strike was lawful."));
+    useCourtStore
+      .getState()
+      .showFlourish(
+        objection("attacker_doctrinal", "Proportionality fails.", true),
+      );
+    render(<Courtroom />);
+
+    const sprite = spriteOf(screen.getByTestId("objection-slam"));
+    expect(sprite.className).toContain("opacity-100");
+    expect(sprite.className).not.toContain("opacity-45");
   });
 });

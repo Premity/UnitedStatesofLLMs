@@ -1,6 +1,8 @@
 import clsx from "clsx";
 
-import type { Role } from "@/types";
+import type { Objection, Role } from "@/types";
+
+import { ObjectionFlourish } from "./ObjectionFlourish";
 
 /**
  * One participant at the bench.
@@ -26,6 +28,20 @@ interface SpriteProps {
   thinking?: boolean;
   /** Judge sits elevated and centred; counsel sit at the benches. */
   variant?: "bench" | "judge";
+  /**
+   * An objection this role just raised, shown over its own figure.
+   *
+   * Passed down rather than read from the store so the sprite stays a pure
+   * presentational component — the courtroom decides whose objection it is.
+   */
+  objection?: Objection | null;
+  /**
+   * Which side of the courtroom this sprite sits on.
+   *
+   * Only used to hang the objection burst from the outer corner. A sprite is
+   * placed by the courtroom, so it cannot infer this itself.
+   */
+  side?: "left" | "right";
 }
 
 const ROLE_COLOR: Record<string, string> = {
@@ -83,10 +99,13 @@ export function Sprite({
   speaking,
   thinking = false,
   variant = "bench",
+  objection = null,
+  side = "left",
 }: SpriteProps) {
   // A thinking role is as present as a speaking one — it is the one everybody
-  // is waiting on.
-  const lit = speaking || thinking;
+  // is waiting on. So is one mid-objection: the burst must not sit on a figure
+  // that has already faded out.
+  const lit = speaking || thinking || Boolean(objection);
 
   return (
     <div
@@ -107,6 +126,8 @@ export function Sprite({
         )}
       >
         {thinking && <ThinkingDots />}
+
+        {objection && <ObjectionFlourish objection={objection} side={side} />}
 
         <span
           className={clsx(

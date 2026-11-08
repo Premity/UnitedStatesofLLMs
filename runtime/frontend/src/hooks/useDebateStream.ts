@@ -1,7 +1,10 @@
 import { useCallback, useRef } from "react";
 
 import { api } from "@/api/client";
-import { headlineObjection } from "@/components/courtroom/ObjectionFlourish";
+import {
+  FLOURISH_MS,
+  headlineObjection,
+} from "@/components/courtroom/ObjectionFlourish";
 import { useCourtStore } from "@/store/courtStore";
 import type { DebateConfig, Objection, Turn, Verdict } from "@/types";
 
@@ -118,7 +121,7 @@ function flourishFor(
   show: (o: Objection | null) => void,
 ): void {
   show(objection);
-  window.setTimeout(() => show(null), 1400);
+  window.setTimeout(() => show(null), FLOURISH_MS);
 }
 
 interface Frame {

@@ -56,7 +56,7 @@ interface CourtState {
   pendingSince: number | null;
   /** Objection currently shown with the slam flourish, if any. */
   flourish: Objection | null;
-  /** Speech bubble text for the active role. */
+  /** Subtitle band text for the active role: its turn's headline. */
   utterance: string | null;
 
   startRun: (

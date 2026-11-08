@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 import { roleTitle } from "@/lib/roles";
-import type { Role } from "@/types";
+import type { Objection, Role } from "@/types";
 
 /**
  * A fixed band under the courtroom carrying whatever is being said right now.
@@ -27,6 +27,15 @@ interface SubtitleBandProps {
   role: Role | null;
   /** The headline of the current turn: first claim, or first objection. */
   text: string | null;
+  /**
+   * An objection on screen right now, which takes precedence over `text`.
+   *
+   * The burst over the sprite carries only the word "Objection!" — it is
+   * bench-sized and has no room for prose — so the ground is read here. It
+   * overrides rather than appending because they describe the same instant:
+   * `text` is already that turn's headline.
+   */
+  objection?: Objection | null;
 }
 
 const ROLE_ACCENT: Record<string, string> = {
@@ -36,8 +45,16 @@ const ROLE_ACCENT: Record<string, string> = {
   judge: "border-l-bench-judge",
 };
 
-export function SubtitleBand({ role, text }: SubtitleBandProps) {
-  const speaking = Boolean(role && text);
+export function SubtitleBand({
+  role,
+  text,
+  objection = null,
+}: SubtitleBandProps) {
+  // An objection speaks for whoever raised it, which is not necessarily the
+  // role whose turn is active by the time it renders.
+  const shownRole = objection ? (objection.raised_by as Role) : role;
+  const shownText = objection ? objection.ground : text;
+  const speaking = Boolean(shownRole && shownText);
 
   return (
     <div
@@ -48,19 +65,27 @@ export function SubtitleBand({ role, text }: SubtitleBandProps) {
       aria-atomic="true"
       className={clsx(
         "relative z-20 flex min-h-[4.75rem] flex-col justify-center gap-1 rounded-lg border border-court-rail/60 border-l-4 bg-court-ink/70 px-4 py-3 backdrop-blur transition-colors duration-300",
-        (role && ROLE_ACCENT[role]) ?? "border-l-court-rail",
+        objection
+          ? "border-l-court-crimson"
+          : ((shownRole && ROLE_ACCENT[shownRole]) ?? "border-l-court-rail"),
       )}
     >
       {speaking ? (
         <>
-          <span className="font-display text-[11px] font-semibold uppercase tracking-widest text-court-gold/80">
-            {roleTitle(role as Role)}
+          <span
+            className={clsx(
+              "font-display text-[11px] font-semibold uppercase tracking-widest",
+              objection ? "text-court-crimson" : "text-court-gold/80",
+            )}
+          >
+            {roleTitle(shownRole as Role)}
+            {objection && " · Objection"}
           </span>
           {/* The headline only — the full argument lives in the transcript.
               Two lines, then an ellipsis: a hard cap keeps the band's height
               honest, and anything longer belongs in the record anyway. */}
           <p className="line-clamp-2 font-record text-sm leading-relaxed text-court-fg/90">
-            {text}
+            {shownText}
           </p>
         </>
       ) : (

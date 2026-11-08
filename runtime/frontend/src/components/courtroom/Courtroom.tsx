@@ -5,7 +5,6 @@ import { roleShort } from "@/lib/roles";
 import { useCourtStore } from "@/store/courtStore";
 import type { Role } from "@/types";
 
-import { ObjectionFlourish } from "./ObjectionFlourish";
 import { Sprite } from "./Sprite";
 import { SubtitleBand } from "./SubtitleBand";
 
@@ -92,6 +91,13 @@ export function Courtroom() {
         ? ROLE_WAITING[pendingRoles[0]]
         : null;
 
+  // The flourish belongs to the sprite that raised it. Anything other than
+  // the two attackers is ignored rather than falling through to a default
+  // bench: a judge cannot object, and a burst over the wrong figure would be
+  // a lie about who said what.
+  const objectionFor = (role: string) =>
+    flourish?.raised_by === role ? flourish : null;
+
   // Model ids come off the most recent turn each role took.
   const modelFor = (role: string) =>
     [...turns].reverse().find((t) => t.role === role)?.model_id;
@@ -107,8 +113,6 @@ export function Courtroom() {
             "repeating-linear-gradient(90deg, rgb(var(--court-gold)) 0 2px, transparent 2px 28px)",
         }}
       />
-
-      {flourish && <ObjectionFlourish objection={flourish} />}
 
       {/* Judge, elevated */}
       <div className="relative z-10 flex justify-center pb-2">
@@ -136,6 +140,8 @@ export function Courtroom() {
             modelId={modelFor("attacker_doctrinal")}
             speaking={activeRole === "attacker_doctrinal"}
             thinking={isThinking("attacker_doctrinal")}
+            objection={objectionFor("attacker_doctrinal")}
+            side="left"
           />
         </div>
 
@@ -156,13 +162,15 @@ export function Courtroom() {
             modelId={modelFor("attacker_evidentiary")}
             speaking={activeRole === "attacker_evidentiary"}
             thinking={isThinking("attacker_evidentiary")}
+            objection={objectionFor("attacker_evidentiary")}
+            side="right"
           />
         </div>
       </div>
 
       {/* What is being said, under the scene rather than over it. */}
       <div className="relative mt-6">
-        <SubtitleBand role={activeRole} text={utterance} />
+        <SubtitleBand role={activeRole} text={utterance} objection={flourish} />
       </div>
 
       {/* Status rail */}

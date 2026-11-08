@@ -395,11 +395,38 @@ describe("the objection flourish", () => {
 
     await user.click(step); // presenter
     await user.click(step); // doctrinal — obj_proportionality, fully resolved
+    expect(screen.getByTestId("objection-slam")).toBeInTheDocument();
     expect(screen.getByText(/objection!/i)).toBeInTheDocument();
 
     await user.click(step); // evidentiary — obj_misquote, not grounded
+    expect(screen.queryByTestId("objection-slam")).not.toBeInTheDocument();
     expect(screen.queryByText(/objection!/i)).not.toBeInTheDocument();
-    expect(screen.getByText(/Objection · Evidentiary Counsel/i)).toBeInTheDocument();
+    expect(screen.getByTestId("objection-quiet")).toBeInTheDocument();
+
+    // The attribution and the ground moved to the band — the burst is
+    // bench-sized and carries only the word.
+    expect(screen.getByTestId("subtitle-band")).toHaveTextContent(
+      /Evidentiary Counsel · Objection/i,
+    );
+  });
+
+  it("puts the burst on the sprite that raised it, not over the courtroom", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    const step = screen.getByTestId("replay-step");
+
+    await user.click(step); // presenter
+    await user.click(step); // doctrinal objects
+
+    // Walk up from the burst to the figure it covers, and check the nameplate
+    // in that sprite. A burst over the wrong bench misattributes the
+    // objection, which is the thing this change exists to get right.
+    const slam = screen.getByTestId("objection-slam");
+    const sprite = slam.closest("div.flex.flex-col");
+    expect(sprite).not.toBeNull();
+    expect(within(sprite as HTMLElement).getByTestId("sprite-plate")).toHaveTextContent(
+      "Doctrinal",
+    );
   });
 });
 

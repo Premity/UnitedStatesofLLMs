@@ -2,7 +2,10 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { applyEvent, replayDebate, replayEvents } from "@/api/replay";
 import type { ReplayOptions, ReplaySink } from "@/api/replay";
-import { headlineObjection } from "@/components/courtroom/ObjectionFlourish";
+import {
+  FLOURISH_MS,
+  headlineObjection,
+} from "@/components/courtroom/ObjectionFlourish";
 import { useCourtStore } from "@/store/courtStore";
 import type { Turn } from "@/types";
 
@@ -46,7 +49,7 @@ export function useReplay() {
         if (headline) {
           showFlourish(headline);
           if (!hold) {
-            window.setTimeout(() => showFlourish(null), 1400);
+            window.setTimeout(() => showFlourish(null), FLOURISH_MS);
           }
         }
       },

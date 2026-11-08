@@ -85,7 +85,7 @@ export default {
           "60%": { transform: "translateX(-4px)" },
           "80%": { transform: "translateX(4px)" },
         },
-        // Speech bubbles arrive with a small pop.
+        // The quiet objection tag arrives with a small pop.
         pop: {
           "0%": { transform: "scale(0.9) translateY(8px)", opacity: "0" },
           "100%": { transform: "scale(1) translateY(0)", opacity: "1" },
