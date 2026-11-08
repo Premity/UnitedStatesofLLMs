@@ -133,7 +133,7 @@ describe("the palettes", () => {
     applyTheme("oak");
     expect(document.documentElement.style.colorScheme).toBe("light");
 
-    applyTheme("chambers");
+    applyTheme("dusk");
     expect(document.documentElement.style.colorScheme).toBe("dark");
   });
 });
@@ -145,18 +145,18 @@ describe("applying a theme", () => {
   });
 
   it("writes bare RGB channels, which is what Tailwind's alpha needs", () => {
-    applyTheme("chambers");
+    applyTheme("dusk");
 
     const root = document.documentElement;
-    // #d9a441 -> 217 164 65. A hex value here would silently break every
+    // #e8b84b -> 232 184 75. A hex value here would silently break every
     // opacity modifier in the app.
-    expect(root.style.getPropertyValue("--court-gold")).toBe("217 164 65");
-    expect(root.dataset.theme).toBe("chambers");
+    expect(root.style.getPropertyValue("--court-gold")).toBe("232 184 75");
+    expect(root.dataset.theme).toBe("dusk");
   });
 
   it("remembers the choice and reads it back", () => {
-    applyTheme("tribunal");
-    expect(storedTheme()).toBe("tribunal");
+    applyTheme("dusk");
+    expect(storedTheme()).toBe("dusk");
   });
 
   it("falls back to the default when nothing is stored", () => {

@@ -3,36 +3,36 @@
 @tailwind utilities;
 
 @layer base {
-  /* The default palette (Chambers), as bare RGB channels so Tailwind can
+  /* The default palette (Oak), as bare RGB channels so Tailwind can
      compose opacity: rgb(var(--x) / <alpha>). applyTheme() overwrites these on
      <html> at startup; having them here means the page is correctly styled
      before any JavaScript runs, and that raw `rgb(var(--x))` uses outside
      Tailwind — the SVG burst, the panelling gradient — always resolve.
-     Owned by src/styles/themes.ts; keep in sync with THEMES.chambers. */
+     Owned by src/styles/themes.ts; keep in sync with THEMES.oak. */
   :root {
-    --court-bg: 28 18 16;
-    --court-panel: 42 28 24;
-    --court-rail: 74 48 40;
-    --court-ink: 15 9 8;
-    --court-fg: 255 255 255;
-    --court-on-gold: 15 9 8;
-    --court-gold: 217 164 65;
-    --court-crimson: 217 96 96;
-    --court-crimson-deep: 143 43 43;
-    --bench-presenter: 74 124 126;
-    --bench-doctrinal: 179 58 58;
-    --bench-evidentiary: 184 109 51;
-    --bench-judge: 217 164 65;
-    --record-paper: 245 239 226;
-    --record-ink: 31 24 19;
-    --record-rule: 221 210 188;
-    --record-margin: 138 118 86;
+    --court-bg: 237 224 204;
+    --court-panel: 226 210 184;
+    --court-rail: 196 173 140;
+    --court-ink: 210 187 152;
+    --court-fg: 51 37 26;
+    --court-on-gold: 251 247 238;
+    --court-gold: 122 74 32;
+    --court-crimson: 158 47 47;
+    --court-crimson-deep: 143 37 37;
+    --bench-presenter: 60 100 112;
+    --bench-doctrinal: 158 47 47;
+    --bench-evidentiary: 163 90 34;
+    --bench-judge: 122 74 32;
+    --record-paper: 251 247 238;
+    --record-ink: 36 26 18;
+    --record-rule: 216 199 168;
+    --record-margin: 125 98 68;
   }
 
-  /* The default theme is dark. applyTheme() overwrites this inline for a
-     light palette; this is only what the first paint uses. */
+  /* Oak is a light palette. applyTheme() overwrites this inline when the
+     reader has chosen Dusk; this is only what the first paint uses. */
   html {
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   body {
