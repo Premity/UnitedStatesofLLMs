@@ -1,6 +1,6 @@
 # Known issues & pending work
 
-Current as of 2026-11-07, after the corpus (T1), the first frontend pass (T3),
+Current as of 2026-11-08, after the corpus (T1), the frontend passes (T3),
 and the PR #7 review fixes (GitHub #8–#11).
 
 > **Planning this work?** These items are scheduled as tracks and tasks in
@@ -16,7 +16,7 @@ and the PR #7 review fixes (GitHub #8–#11).
 | Arm E — the compute-matched control | T2-4, T2-5 |
 | Evaluation case fixtures | TF |
 | Sprite artwork | T3 stretch |
-| Courtroom staging and background | T3 stretch |
+| Courtroom background art | T3 stretch |
 | Case picker for the question form | T3 / TF |
 
 ---
@@ -558,33 +558,38 @@ The ones that are still open rather than fixed:
 
 ---
 
-## Frontend (T3) — open after the first pass
+## Frontend (T3) — open after the staging pass
 
-The courtroom, transcript, record, replay and theming are built and tested
-(117 frontend tests). What follows is what was raised while looking at the
-running UI and has not been done.
+The courtroom, transcript, record, replay, theming and staging are built and
+tested (121 frontend tests). What follows is what was raised while looking at
+the running UI and has not been done.
 
-### [MEDIUM] Courtroom staging
+### [DONE] Courtroom staging
 
-Three changes, which interact and are best done in this order:
+All three changes landed on `feature/courtroom-staging`.
 
-1. **A subtitle band under the courtroom**, replacing the floating speech
-   bubble. The bubble is capped at `max-w-md` and occludes the scene; a claim
-   of two or three lines gets cramped. A fixed-height band has the full width,
-   gives the role name a stable place, and can say what is being waited on
-   during a long generation. `SpeechBubble` already carries an unused `side`
-   prop from an earlier attempt at this.
+1. **Subtitle band** under the courtroom, replacing the floating speech
+   bubble. Full width, fixed height, headline only, clamped to two lines; it
+   keeps the last utterance while the next model generates rather than
+   blanking, since a turn runs 40 to 90 seconds and the status rail already
+   names who is being waited on.
+2. **Counsel seated around the bench** — doctrinal left, presenter centre,
+   evidentiary right, judge elevated. Three grid columns rather than a flex
+   row, so a long model id cannot push the presenter off the courtroom's
+   axis. The order is fixed, not turn-arrival order.
+3. **Objection localised to the objecting sprite**, hanging from its outer
+   top corner and mirrored per bench. The ground moved to the band, which
+   attributes it to `raised_by` rather than the active role. The quiet form is
+   a tag on the same corner. Dwell is 5s from one shared constant; stepping
+   mode still holds until the next click.
 
-2. **Judge at the back, counsel flanking, presenter centred.** The present
-   layout puts all three counsel in a row, which does not read as a courtroom.
-   The presenter at centre also expresses the geometry of the thing: it is the
-   role being attacked from both sides. Fix which attacker sits on which side
-   and keep it stable across runs.
-
-3. **Localise the objection flourish to the objecting sprite** rather than
-   taking the whole courtroom. Depends on (1): once the burst is sprite-sized
-   the objection's text has to live in the band. The loud/quiet distinction
-   already built still applies — quiet becomes "sprite flashes, band updates".
+Two things settled along the way: role display names live in
+`src/lib/roles.ts` in three forms (title, sentence, short) instead of three
+diverging copies, and the palettes are down to **Oak** (default, light) and
+**Dusk** (dark) behind a single toggle with a wave out of the button. The wave
+has to be a View Transition — a plain element is either an opaque fill over
+the text or invisible behind the app's own opaque surfaces; `index.css` says
+so where someone would otherwise try it again.
 
 ### [MEDIUM] Courtroom background art
 
@@ -596,10 +601,10 @@ better. This repository is public; shipping either is infringement.
 Options, in the order worth trying:
 
 - **Build the room in SVG.** Panelling, benches and columns are gradients and
-  rectangles. It themes with the palette, which a fixed image cannot — there
-  are four palettes and a warm-gold photograph fights Tribunal and Oak. Scales
-  to any aspect, costs a few KB, and sprite anchors become real coordinates
-  rather than percentages tuned to one picture.
+  rectangles. It themes with the palette, which a fixed image cannot — a
+  warm-gold photograph that suits Dusk fights Oak's daylight, and Oak is the
+  default. Scales to any aspect, costs a few KB, and sprite anchors become
+  real coordinates rather than percentages tuned to one picture.
 - **Genuinely free sources**, checking the licence on each file's own page:
   [Openclipart](https://openclipart.org) (CC0 site-wide),
   [Wikimedia Commons](https://commons.wikimedia.org) (per-file; some are
