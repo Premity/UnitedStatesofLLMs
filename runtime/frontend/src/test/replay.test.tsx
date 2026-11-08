@@ -657,22 +657,63 @@ describe("waiting on a model", () => {
   });
 });
 
-describe("the palette switcher", () => {
+describe("the palette toggle", () => {
   it("switches the courtroom palette without a reload", async () => {
     const user = userEvent.setup();
     render(<App />);
 
-    const group = within(screen.getByRole("group", { name: /palette/i }));
-    const tribunal = group.getByRole("button", { name: /tribunal/i });
+    // Labelled with where it is going, not where it is: the default is Oak,
+    // so the button offers Dusk.
+    const toggle = screen.getByTestId("theme-switcher");
+    expect(toggle).toHaveAccessibleName(/dusk/i);
 
-    await user.click(tribunal);
+    await user.click(toggle);
 
-    expect(tribunal).toHaveAttribute("aria-pressed", "true");
-    expect(document.documentElement.dataset.theme).toBe("tribunal");
-    // #0f172a -> 15 23 42, as channels so Tailwind's alpha still composes.
+    expect(document.documentElement.dataset.theme).toBe("dusk");
+    // #1a1229 -> 26 18 41, as channels so Tailwind's alpha still composes.
     expect(
       document.documentElement.style.getPropertyValue("--court-bg"),
-    ).toBe("15 23 42");
+    ).toBe("26 18 41");
+    // And now it offers the way back.
+    expect(toggle).toHaveAccessibleName(/oak/i);
+  });
+
+  it("toggles back to the default", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    const toggle = screen.getByTestId("theme-switcher");
+
+    await user.click(toggle);
+    await user.click(toggle);
+
+    expect(document.documentElement.dataset.theme).toBe("oak");
+  });
+
+  it("centres the wave on the button it was clicked from", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    // jsdom reports a zero-sized box, so assert the properties are set and
+    // in pixels rather than pinning coordinates a real layout would decide.
+    await user.click(screen.getByTestId("theme-switcher"));
+
+    const root = document.documentElement.style;
+    expect(root.getPropertyValue("--wave-x")).toMatch(/^-?[\d.]+px$/);
+    expect(root.getPropertyValue("--wave-y")).toMatch(/^-?[\d.]+px$/);
+    // The radius has to reach the furthest corner, so it is never zero.
+    expect(parseFloat(root.getPropertyValue("--wave-r"))).toBeGreaterThan(0);
+  });
+
+  it("still switches where the browser has no view transitions", async () => {
+    // jsdom has none, which is the fallback path — the palette must change
+    // anyway, because an unanimated switch is a complete outcome.
+    expect("startViewTransition" in document).toBe(false);
+
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(screen.getByTestId("theme-switcher"));
+
+    expect(document.documentElement.dataset.theme).toBe("dusk");
   });
 });
 

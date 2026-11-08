@@ -60,3 +60,49 @@
     }
   }
 }
+
+/* ---------------------------------------------------------------------------
+   The theme wave.
+
+   A palette change rewrites custom properties on <html>, so every themed
+   surface flips in the same frame. A View Transition snapshots the old page,
+   lets the new one paint underneath, and this grows a circle out of the
+   toggle — so the new palette arrives as a wave from the button that caused
+   it rather than everywhere at once.
+
+   The centre comes from --wave-x / --wave-y, which the switcher sets from the
+   button's own position before starting the transition. The radius is set
+   there too: it has to reach the furthest corner, which depends on where the
+   button is.
+
+   Only the incoming snapshot is clipped. The outgoing one is held still
+   underneath at a raised z-index, so the old palette stays put and the new
+   one is revealed over it, instead of the two cross-fading into a muddle.
+   --------------------------------------------------------------------------- */
+::view-transition-old(root) {
+  animation: none;
+  /* The old page does not move; it is simply uncovered. */
+  z-index: 0;
+}
+
+::view-transition-new(root) {
+  animation: theme-wave 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  z-index: 1;
+}
+
+@keyframes theme-wave {
+  from {
+    clip-path: circle(0 at var(--wave-x, 50%) var(--wave-y, 0%));
+  }
+  to {
+    clip-path: circle(var(--wave-r, 150vmax) at var(--wave-x, 50%) var(--wave-y, 0%));
+  }
+}
+
+/* A wave is motion for its own sake, so drop it rather than slow it down:
+   the switch still happens, just immediately. */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}

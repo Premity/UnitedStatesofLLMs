@@ -1,69 +1,94 @@
 import { useState } from "react";
 
 import {
+  ALTERNATE_THEME,
   applyTheme,
+  DEFAULT_THEME,
   storedTheme,
-  THEMES,
   THEME_LABELS,
-  THEME_NAMES,
+  THEMES,
   type ThemeName,
 } from "@/styles/themes";
 
 /**
- * Picks a courtroom palette.
+ * Toggles between the two courtroom palettes.
  *
- * Exists so the palette can be chosen by looking at the running courtroom
- * rather than by reading hex codes. Each option carries a swatch of the three
- * colours that actually distinguish the themes — ground, accent, objection.
+ * One button rather than a row of swatches: there are two palettes, Oak for
+ * daylight and Dusk for dark, so a picker would be a list of length two. It
+ * shows where it is going, not where it is — a control labelled with the
+ * current state reads as a status display.
  *
- * Whether this survives the design decision is an open question: once a
- * palette is settled it may be better as a fixed theme than a visible control.
+ * The change arrives as a wave out of this button. See `theme-wave` in
+ * index.css for the mechanism; this supplies the origin, because only the
+ * button knows where it is on the page.
  */
+
+/** A View Transition, where the browser has them. */
+type WithViewTransition = Document & {
+  startViewTransition?: (cb: () => void) => { finished: Promise<void> };
+};
+
 export function ThemeSwitcher() {
   const [current, setCurrent] = useState<ThemeName>(storedTheme);
 
-  const choose = (name: ThemeName) => {
-    applyTheme(name);
-    setCurrent(name);
+  const next = current === DEFAULT_THEME ? ALTERNATE_THEME : DEFAULT_THEME;
+
+  const toggle = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const root = document.documentElement;
+
+    // Centre the wave on the button, and give it a radius that reaches the
+    // furthest corner — a fixed radius would leave a corner unpainted when
+    // the button is inset, or overshoot wildly when it is central.
+    const box = event.currentTarget.getBoundingClientRect();
+    const x = box.left + box.width / 2;
+    const y = box.top + box.height / 2;
+    const reach = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y),
+    );
+    root.style.setProperty("--wave-x", `${x}px`);
+    root.style.setProperty("--wave-y", `${y}px`);
+    root.style.setProperty("--wave-r", `${Math.ceil(reach)}px`);
+
+    const apply = () => {
+      applyTheme(next);
+      setCurrent(next);
+    };
+
+    // Without the API the switch still happens, just instantly. Checked at
+    // the call site rather than polyfilled: a palette change that does not
+    // animate is a complete outcome, not a degraded one.
+    const doc = document as WithViewTransition;
+    if (typeof doc.startViewTransition !== "function") {
+      apply();
+      return;
+    }
+    doc.startViewTransition(apply);
   };
 
-  return (
-    <div
-      data-testid="theme-switcher"
-      role="group"
-      aria-label="Courtroom palette"
-      className="flex items-center gap-1"
-    >
-      {THEME_NAMES.map((name) => {
-        const theme = THEMES[name];
-        const active = name === current;
+  const theme = THEMES[next];
 
-        return (
-          <button
-            key={name}
-            type="button"
-            onClick={() => choose(name)}
-            aria-pressed={active}
-            title={THEME_LABELS[name]}
-            className={`flex items-center gap-1.5 rounded border px-2 py-1 font-ui text-[11px] transition ${
-              active
-                ? "border-court-gold/60 bg-court-gold/10 text-court-gold"
-                : "border-court-rail text-court-fg/45 hover:border-court-gold/30 hover:text-court-fg/70"
-            }`}
-          >
-            <span aria-hidden className="flex overflow-hidden rounded-sm">
-              {[theme.bg, theme.gold, theme.crimson].map((colour) => (
-                <span
-                  key={colour}
-                  style={{ background: colour }}
-                  className="h-3 w-2"
-                />
-              ))}
-            </span>
-            {THEME_LABELS[name]}
-          </button>
-        );
-      })}
-    </div>
+  return (
+    <button
+      data-testid="theme-switcher"
+      type="button"
+      onClick={toggle}
+      // The accessible name says what pressing it does; `data-theme` on <html>
+      // is what a test or a stylesheet reads for the current palette.
+      aria-label={`Switch to the ${THEME_LABELS[next]} palette`}
+      title={`Switch to ${THEME_LABELS[next]}`}
+      className="flex items-center gap-1.5 rounded border border-court-rail px-2 py-1 font-ui text-[11px] text-court-fg/55 transition hover:border-court-gold/40 hover:text-court-fg/80"
+    >
+      <span aria-hidden className="flex overflow-hidden rounded-sm">
+        {[theme.bg, theme.gold, theme.crimson].map((colour) => (
+          <span
+            key={colour}
+            style={{ background: colour }}
+            className="h-3 w-2"
+          />
+        ))}
+      </span>
+      {THEME_LABELS[next]}
+    </button>
   );
 }
