@@ -42,9 +42,16 @@ retires or rate-limits this model, and switching is a config change (ADR 0002) �
 but it is a **deliberate** switch that gets recorded here and in the report, not
 a per-machine default.
 
-The four-family property is preserved: presenter (OpenAI OSS, via Groq),
-doctrinal attacker (Qwen), evidentiary attacker (Gemma), judge (Gemini). No two
-roles share a base model.
+The four-family property is preserved **as of this decision**: presenter
+(OpenAI OSS, via Groq), doctrinal attacker (Qwen), evidentiary attacker
+(Gemma), judge (Gemini). No two roles share a base model.
+
+> **No longer true.** Subsequent moves — both attackers off Gemma to Groq,
+> judge off Gemini to OpenRouter — leave 3 of 4 roles on OpenAI-family models
+> (presenter and evidentiary attacker share `gpt-oss`). See ISSUES.md,
+> "Attackers moved to Groq", for the full roster history and why this
+> regression was accepted rather than blocking. Revisit before the scored run
+> if a genuinely independent fourth family becomes available.
 
 Every result carries the model that produced it. `ModelConfig.model_id` is
 already written into each turn of the run artifact, so this is a reporting

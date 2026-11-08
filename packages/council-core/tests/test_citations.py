@@ -143,3 +143,54 @@ def test_locator_formats_are_stable() -> None:
         Citation(type=CitationType.TREATY, instrument="ap_i", article="51(2)").locator()
         == "ap_i/art.51(2)"
     )
+
+
+def test_redundant_article_prefix_is_normalized_once_at_construction() -> None:
+    """A model-supplied 'art.51(2)' must not double up with locator()'s own 'art.' label.
+
+    Normalizing at the field (not just inside locator()) means the stored field,
+    the frontend, and any export that reads `.article` directly all see the
+    clean value too (GitHub #11-1).
+    """
+    treaty = Citation(type=CitationType.TREATY, instrument="ap_i", article="art.51(2)")
+    assert treaty.article == "51(2)"
+    assert treaty.locator() == "ap_i/art.51(2)"
+
+    assert Citation(
+        type=CitationType.TREATY, instrument="ap_i", article="Article 51(2)"
+    ).article == ("51(2)")
+
+
+def test_article_prefix_normalization_does_not_mangle_non_prefixed_values() -> None:
+    """A value that merely starts with 'art' must survive untouched (GitHub #8)."""
+    assert Citation(type=CitationType.TREATY, instrument="x", article="artifact-3").article == (
+        "artifact-3"
+    )
+    assert (
+        Citation(type=CitationType.TREATY, instrument="x", article="articles 51 and 52").article
+        == "articles 51 and 52"
+    )
+
+
+def test_a_doubled_article_prefix_normalizes_to_a_stable_locator() -> None:
+    """Stripping must be idempotent, or one artifact yields two locators.
+
+    Matching a single prefix left `art.art.51` as `art.51` -- still prefixed,
+    so the next validation pass stripped again. A stored run then resolved
+    `gc_iv/art.art.51` on the first read and `gc_iv/art.51` after a load/save
+    cycle, which silently changes a citation's status (and so the fabrication
+    metric) for an artifact nobody edited.
+    """
+    once = Citation(type=CitationType.TREATY, instrument="gc_iv", article="art.art.51")
+    twice = Citation.model_validate_json(once.model_dump_json())
+
+    assert once.article == twice.article == "51"
+    assert once.locator() == twice.locator() == "gc_iv/art.51"
+
+
+def test_spaced_and_mixed_doubled_prefixes_are_also_stripped_whole() -> None:
+    """The repeated form has to cover the spellings a model actually mixes."""
+    for raw in ("art. art. 51", "Article art.51", "art.art.art.8(2)(b)"):
+        article = Citation(type=CitationType.TREATY, instrument="x", article=raw).article
+        assert article is not None
+        assert not article.lower().startswith("art"), raw
