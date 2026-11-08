@@ -124,7 +124,10 @@ export function Sprite({
 
       {/* Nameplate */}
       <div className="min-w-[7rem] rounded border border-court-gold/30 bg-court-ink/80 px-2 py-1 text-center">
-        <div className="font-display text-xs font-semibold tracking-wide text-court-gold">
+        <div
+          data-testid="sprite-plate"
+          className="font-display text-xs font-semibold tracking-wide text-court-gold"
+        >
           {label}
         </div>
         {modelId && (

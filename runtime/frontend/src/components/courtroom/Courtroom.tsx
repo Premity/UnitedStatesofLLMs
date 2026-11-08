@@ -1,20 +1,26 @@
 import { useEffect, useState } from "react";
 
 import { bandFor } from "@/components/dissent/Confidence";
+import { roleShort } from "@/lib/roles";
 import { useCourtStore } from "@/store/courtStore";
 import type { Role } from "@/types";
 
 import { ObjectionFlourish } from "./ObjectionFlourish";
-import { SpeechBubble } from "./SpeechBubble";
 import { Sprite } from "./Sprite";
+import { SubtitleBand } from "./SubtitleBand";
 
 /**
  * The live view: four benches, a gallery, and whatever is happening right now.
  *
  * Layout mirrors an adversarial proceeding — the judge elevated at the back,
- * presenting counsel at the left bench, the two challengers at the right. The
- * sprite whose model is currently generating bobs and holds the speech bubble;
- * everyone else dims out.
+ * presenting counsel centred below, and the two challengers flanking. The
+ * presenter at centre is the geometry of the thing: it is the role being
+ * attacked from both sides. Doctrinal sits left and evidentiary right, fixed,
+ * so a sprite does not move between runs.
+ *
+ * The sprite whose model is currently generating bobs; everyone else dims out.
+ * What is being said goes in the band underneath, not in a bubble over the
+ * scene.
  */
 
 const PHASE_CAPTION: Record<string, string> = {
@@ -52,13 +58,27 @@ function Elapsed({ since }: { since: number }) {
   }, [since]);
 
   const seconds = Math.max(0, Math.floor((now - since) / 1000));
-  return <>{seconds < 60 ? `${seconds}s` : `${Math.floor(seconds / 60)}m ${seconds % 60}s`}</>;
+  return (
+    <>
+      {seconds < 60
+        ? `${seconds}s`
+        : `${Math.floor(seconds / 60)}m ${seconds % 60}s`}
+    </>
+  );
 }
 
 export function Courtroom() {
   const {
-    phase, round, activeRole, utterance, flourish, verdict, turns, replayed,
-    pendingRoles, pendingSince,
+    phase,
+    round,
+    activeRole,
+    utterance,
+    flourish,
+    verdict,
+    turns,
+    replayed,
+    pendingRoles,
+    pendingSince,
   } = useCourtStore();
 
   const isThinking = (role: string) => pendingRoles.includes(role as Role);
@@ -94,7 +114,7 @@ export function Courtroom() {
       <div className="relative z-10 flex justify-center pb-2">
         <Sprite
           role="judge"
-          label="The Bench"
+          label={roleShort("judge")}
           variant="judge"
           modelId={modelFor("judge")}
           speaking={activeRole === "judge"}
@@ -102,41 +122,47 @@ export function Courtroom() {
         />
       </div>
 
-      {/* Speech bubble sits between the bench and the counsel tables */}
-      <div className="relative z-20 mx-auto flex min-h-[5.5rem] max-w-2xl items-center justify-center px-4">
-        {utterance && activeRole && (
-          <SpeechBubble role={activeRole} text={utterance} />
-        )}
-      </div>
+      {/* Counsel: doctrinal left, presenter centre, evidentiary right.
 
-      {/* Counsel benches */}
-      <div className="relative z-10 grid grid-cols-2 gap-8 pt-2">
+          Three equal columns rather than a flex row so the presenter stays on
+          the courtroom's axis under the bench whatever the nameplates are
+          doing — a model id is as wide as it happens to be, and a flex row
+          would let the longest one push the centre off. */}
+      <div className="relative z-10 grid grid-cols-3 items-end gap-4 pt-6 sm:gap-8">
+        <div className="flex justify-center sm:justify-end">
+          <Sprite
+            role="attacker_doctrinal"
+            label={roleShort("attacker_doctrinal")}
+            modelId={modelFor("attacker_doctrinal")}
+            speaking={activeRole === "attacker_doctrinal"}
+            thinking={isThinking("attacker_doctrinal")}
+          />
+        </div>
+
         <div className="flex justify-center">
           <Sprite
             role="presenter"
-            label="Presenting Counsel"
+            label={roleShort("presenter")}
             modelId={modelFor("presenter")}
             speaking={activeRole === "presenter"}
-          thinking={isThinking("presenter")}
+            thinking={isThinking("presenter")}
           />
         </div>
 
-        <div className="flex justify-center gap-6">
-          <Sprite
-            role="attacker_doctrinal"
-            label="Doctrinal"
-            modelId={modelFor("attacker_doctrinal")}
-            speaking={activeRole === "attacker_doctrinal"}
-          thinking={isThinking("attacker_doctrinal")}
-          />
+        <div className="flex justify-center sm:justify-start">
           <Sprite
             role="attacker_evidentiary"
-            label="Evidentiary"
+            label={roleShort("attacker_evidentiary")}
             modelId={modelFor("attacker_evidentiary")}
             speaking={activeRole === "attacker_evidentiary"}
-          thinking={isThinking("attacker_evidentiary")}
+            thinking={isThinking("attacker_evidentiary")}
           />
         </div>
+      </div>
+
+      {/* What is being said, under the scene rather than over it. */}
+      <div className="relative mt-6">
+        <SubtitleBand role={activeRole} text={utterance} />
       </div>
 
       {/* Status rail */}
