@@ -669,7 +669,10 @@ describe("the palette toggle", () => {
 
     await user.click(toggle);
 
-    expect(document.documentElement.dataset.theme).toBe("dusk");
+    // The swap happens under the wave rather than on click, so wait for it.
+    await waitFor(() =>
+      expect(document.documentElement.dataset.theme).toBe("dusk"),
+    );
     // #1a1229 -> 26 18 41, as channels so Tailwind's alpha still composes.
     expect(
       document.documentElement.style.getPropertyValue("--court-bg"),
@@ -684,9 +687,26 @@ describe("the palette toggle", () => {
     const toggle = screen.getByTestId("theme-switcher");
 
     await user.click(toggle);
+    await waitFor(() =>
+      expect(document.documentElement.dataset.theme).toBe("dusk"),
+    );
     await user.click(toggle);
+    await waitFor(() =>
+      expect(document.documentElement.dataset.theme).toBe("oak"),
+    );
+  });
 
-    expect(document.documentElement.dataset.theme).toBe("oak");
+  it("flips the coin to the face it is offering", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    // Oak is light, so the coin shows the dark face it would switch to.
+    expect(screen.getByTestId("theme-coin")).toHaveAttribute("data-face", "dark");
+
+    await user.click(screen.getByTestId("theme-switcher"));
+    await waitFor(() =>
+      expect(screen.getByTestId("theme-coin")).toHaveAttribute("data-face", "light"),
+    );
   });
 
   it("centres the wave on the button it was clicked from", async () => {
@@ -704,16 +724,47 @@ describe("the palette toggle", () => {
     expect(parseFloat(root.getPropertyValue("--wave-r"))).toBeGreaterThan(0);
   });
 
-  it("still switches where the browser has no view transitions", async () => {
-    // jsdom has none, which is the fallback path — the palette must change
-    // anyway, because an unanimated switch is a complete outcome.
-    expect("startViewTransition" in document).toBe(false);
+  it("interrupts a running wave so every click gets one", async () => {
+    // jsdom has no view transitions, so stand one in. A browser runs one at a
+    // time and drops any started while another is live; without the
+    // interrupt a fast second click changed the palette with no animation.
+    const skips: number[] = [];
+    let live = 0;
+    const started: (() => void)[] = [];
 
-    const user = userEvent.setup();
-    render(<App />);
-    await user.click(screen.getByTestId("theme-switcher"));
+    Object.defineProperty(document, "startViewTransition", {
+      configurable: true,
+      writable: true,
+      value: (cb: () => void) => {
+        const id = ++live;
+        started.push(cb);
+        cb();
+        return {
+          // Never settles: a real wave runs for 0.6s, so it is still live
+          // when the next click arrives. Resolving here would let the
+          // component forget it and the interrupt would not be exercised.
+          finished: new Promise<void>(() => {}),
+          skipTransition: () => skips.push(id),
+        };
+      },
+    });
 
-    expect(document.documentElement.dataset.theme).toBe("dusk");
+    try {
+      const user = userEvent.setup();
+      render(<App />);
+      const toggle = screen.getByTestId("theme-switcher");
+
+      await user.click(toggle);
+      await user.click(toggle);
+      await user.click(toggle);
+
+      // One transition per click, and each later click cut the previous short.
+      expect(started).toHaveLength(3);
+      expect(skips.length).toBeGreaterThanOrEqual(2);
+    } finally {
+      delete (document as Partial<Document> & { startViewTransition?: unknown })
+        .startViewTransition;
+    }
   });
 });
 

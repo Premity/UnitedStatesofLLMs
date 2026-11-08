@@ -78,6 +78,14 @@
    Only the incoming snapshot is clipped. The outgoing one is held still
    underneath at a raised z-index, so the old palette stays put and the new
    one is revealed over it, instead of the two cross-fading into a muddle.
+
+   It has to be a View Transition and not a plain element. The snapshot being
+   clipped is the real page, text and all, so nothing is ever hidden by the
+   animation. An ordinary disc was tried twice and fails either way round: on
+   top it is an opaque fill that covers every word until it finishes, and
+   underneath it is invisible, because the courtroom, the panels and the
+   record all paint their own opaque backgrounds over it. There is no z-index
+   that makes a solid colour read as a page.
    --------------------------------------------------------------------------- */
 ::view-transition-old(root) {
   animation: none;
@@ -104,5 +112,32 @@
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-new(root) {
     animation: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   The toggle's coin flip. The face spins on Y and the two sides are placed
+   back to back, so the sun leaves as the moon arrives.
+   --------------------------------------------------------------------------- */
+.coin {
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.coin[data-face="dark"] {
+  transform: rotateY(180deg);
+}
+
+.coin-face {
+  backface-visibility: hidden;
+}
+
+.coin-face[data-side="back"] {
+  transform: rotateY(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coin {
+    transition: none;
   }
 }
