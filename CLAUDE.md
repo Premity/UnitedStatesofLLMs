@@ -89,6 +89,40 @@ These are load-bearing. Breaking one produces silent, hard-to-diagnose failure.
 8. **`make test` never touches the network.** Live tests are
    `@pytest.mark.live` and excluded from CI.
 
+## Asking before acting
+
+Hamd decides anything that leaves this machine or that another person sees.
+These are not guidelines to weigh — ask, every time, and wait.
+
+**Do without asking:** read code, run tests and lint, `git status`/`log`/`diff`/
+`show`/`fetch`, check out an existing branch, verify a claim empirically, write
+scratch files outside the repo.
+
+**Ask first, every time:**
+
+- `git push`, or creating a branch meant to be pushed
+- `git commit` — the decision to commit is his, and he wants logical chunks
+- Opening, closing, editing or commenting on a PR or an issue
+- Any other change visible on GitHub
+- Long-running jobs (16GB machine; the indexer OOM-killed his editor twice)
+
+**Never:** merge. He merges. Not even when a PR is clearly ready.
+
+**The scope of a request is exactly what it says.** "File the issue" is not
+"and open a PR". "Push the fix" is not "and comment on the PR". "Do a PR" means
+open one, in `.github/pull_request_template.md` format, into `develop` — it is
+not standing permission to open PRs later, or to do anything beyond opening it.
+Finish the thing asked for, then stop and report.
+
+**Size is not a reason.** A one-character diff needs the same permission as a
+large one. The gate is who can see the action, never how small it is.
+
+**Never write his name, or attribute a decision to him, anywhere public.** Not
+in a commit message, PR, issue or comment — not even to be transparent about
+why a change was made. If something public needs explaining, draft it and let
+him post it. Everything on GitHub goes out under his real name, and `gh` posts
+*as him*: there is no separate bot identity.
+
 ## Conventions
 
 **Commits:** Conventional Commits, enforced by hook and CI.
