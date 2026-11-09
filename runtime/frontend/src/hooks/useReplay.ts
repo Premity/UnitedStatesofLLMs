@@ -10,6 +10,15 @@ import { useCourtStore } from "@/store/courtStore";
 import type { Turn } from "@/types";
 
 /**
+ * Events a step passes over rather than stopping on.
+ *
+ * Neither puts anything new on screen by itself: `role_started` lights a
+ * bench that is about to speak, and `done` carries only a run id. Stopping on
+ * either would spend a press showing nothing.
+ */
+const PASSIVE_EVENTS = new Set<string | undefined>(["role_started", "done"]);
+
+/**
  * Drives a debate from the fixture instead of the network.
  *
  * Two modes over the same events. Auto-play mirrors `useDebateStream`'s
@@ -29,7 +38,7 @@ export function useReplay() {
   const abortRef = useRef<AbortController | null>(null);
   const [cursor, setCursor] = useState(0);
 
-  const { startRun, addTurn, setVerdict, setError, showFlourish, reset } =
+  const { startRun, addTurn, roleStarted, setVerdict, setError, showFlourish, reset } =
     useCourtStore();
 
   /**
@@ -41,6 +50,7 @@ export function useReplay() {
     ({ hold }: { hold: boolean }): ReplaySink => ({
       startRun: (runId: string, config?: { question: string; facts: string }) =>
         startRun(runId, { replayed: true, ...config }),
+      roleStarted,
       setVerdict,
       setError,
       addTurn: (turn: Turn) => {
@@ -54,7 +64,7 @@ export function useReplay() {
         }
       },
     }),
-    [addTurn, setError, setVerdict, showFlourish, startRun],
+    [addTurn, roleStarted, setError, setVerdict, showFlourish, startRun],
   );
 
   const autoSink = useMemo(() => makeSink({ hold: false }), [makeSink]);
@@ -107,13 +117,21 @@ export function useReplay() {
     }
     if (index >= replayEvents.length) return;
 
-    // `done` carries nothing to show, so take it with whatever precedes it.
+    // A press advances to the next thing there is something to *look* at.
+    //
+    // `role_started` lights a bench and `done` carries nothing at all, so
+    // neither ends a step: a press that consumed only an announcement would
+    // read as a dead button, and the two attackers are announced as a pair,
+    // which would cost two presses before either spoke. They ride along with
+    // the event that follows them instead.
     let next = index;
     while (next < replayEvents.length) {
       const consumed = applyEvent(stepSink, replayEvents[next]);
       next += 1;
       if (!consumed) break;
-      if (replayEvents[next]?.event !== "done") break;
+      if (!PASSIVE_EVENTS.has(replayEvents[next - 1]?.event)) {
+        if (replayEvents[next]?.event !== "done") break;
+      }
     }
 
     setCursor(next);
@@ -130,7 +148,12 @@ export function useReplay() {
 
   /** What the next press will show, for labelling the button. */
   const nextLabel = useMemo(() => {
-    const event = replayEvents[cursor === 0 ? 1 : cursor];
+    // Skip past the announcements a press will consume on the way, so the
+    // label names what will actually appear rather than "nothing".
+    let index = cursor === 0 ? 1 : cursor;
+    while (PASSIVE_EVENTS.has(replayEvents[index]?.event)) index += 1;
+
+    const event = replayEvents[index];
     if (!event) return null;
     if (event.event === "turn") return roleLabel((event.data as Turn).role);
     if (event.event === "verdict") return "the verdict";

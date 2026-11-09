@@ -155,6 +155,9 @@ describe("the bench layout", () => {
     useCourtStore
       .getState()
       .addTurn(turn("presenter", "The strike was lawful."));
+    // The graph announces the attackers once the presenter's turn lands.
+    useCourtStore.getState().roleStarted("attacker_doctrinal");
+    useCourtStore.getState().roleStarted("attacker_evidentiary");
     render(<Courtroom />);
 
     expect(useCourtStore.getState().pendingRoles).toContain(

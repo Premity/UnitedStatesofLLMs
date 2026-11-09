@@ -50,3 +50,15 @@ export function roleSentence(role: Role | string): string {
 export function roleShort(role: Role | string): string {
   return ROLE_NAMES[role]?.short ?? role;
 }
+
+/**
+ * Whether a string from the wire is a role the courtroom can seat.
+ *
+ * The stream is a network boundary, and `Role` is a TypeScript type that does
+ * not exist at runtime -- so a cast would make any string a `Role` and a new
+ * graph node would reach the store as a bench that does not exist. Checked
+ * against the display names, which is the set the UI can actually render.
+ */
+export function isRole(value: unknown): value is Role {
+  return typeof value === "string" && value in ROLE_NAMES;
+}
