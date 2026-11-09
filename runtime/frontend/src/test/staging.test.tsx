@@ -1,4 +1,5 @@
-import { render, screen, within } from "@testing-library/react";
+import { render, screen, waitFor, within } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 
 import App from "@/App";
@@ -473,5 +474,30 @@ describe("the chamber", () => {
     const plate = screen.getAllByTestId("sprite-plate")[0];
     const sprite = plate.closest("div")?.parentElement as HTMLElement;
     expect(sprite.className).not.toMatch(/\bopacity-\d/);
+  });
+});
+
+describe("the fold", () => {
+  it("folds when running and unfolds when adjourned", async () => {
+    render(<App />);
+    const q = () => screen.queryByPlaceholderText(/Does the strike/);
+    expect(q()).not.toBeNull();
+
+    useCourtStore.setState({ phase: "presenting" });
+    await waitFor(() => expect(q()).toBeNull());
+    // The stepper must survive the fold.
+    expect(screen.getByTestId("replay-step")).toBeVisible();
+
+    useCourtStore.setState({ phase: "adjourned" });
+    await waitFor(() => expect(q()).not.toBeNull());
+  });
+
+  it("can be folded and unfolded by hand", async () => {
+    render(<App />);
+    const user = userEvent.setup();
+    await user.click(screen.getByTestId("question-fold"));
+    expect(screen.queryByPlaceholderText(/Does the strike/)).toBeNull();
+    await user.click(screen.getByTestId("question-fold"));
+    expect(screen.queryByPlaceholderText(/Does the strike/)).not.toBeNull();
   });
 });

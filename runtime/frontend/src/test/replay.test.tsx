@@ -453,8 +453,15 @@ describe("a debate that runs past one round", () => {
       expect(screen.getAllByText(/Round 2/).length).toBeGreaterThan(0);
     });
 
-    // The form must stay locked: a run is still in flight, and re-enabling
-    // "Convene the council" mid-debate invites a second concurrent run.
+    // No way to start a second run while this one is in flight. The form
+    // folds away for the length of a debate, so the control is gone rather
+    // than merely disabled -- and if it is ever unfolded by hand mid-debate,
+    // it must still be disabled.
+    expect(
+      screen.queryByRole("button", { name: /convene the council/i }),
+    ).toBeNull();
+
+    await userEvent.click(screen.getByTestId("question-fold"));
     expect(
       screen.getByRole("button", { name: /convene the council/i }),
     ).toBeDisabled();
