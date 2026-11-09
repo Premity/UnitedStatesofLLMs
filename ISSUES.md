@@ -605,7 +605,7 @@ The ones that are still open rather than fixed:
 ## Frontend (T3) — open after the staging pass
 
 The courtroom, transcript, record, replay, theming and staging are built and
-tested (141 frontend tests). What follows is what was raised while looking at
+tested (152 frontend tests). What follows is what was raised while looking at
 the running UI and has not been done.
 
 ### [DONE] Courtroom staging

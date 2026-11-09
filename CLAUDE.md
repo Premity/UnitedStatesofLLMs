@@ -141,7 +141,7 @@ or `develop` (the pre-commit hook blocks it).
 
 Audited 2026-11-09 against the tree, not against this file's previous claims.
 
-**Built and tested** (291 tests: 150 Python, 141 frontend): the domain model,
+**Built and tested** (311 tests: 159 Python, 152 frontend): the domain model,
 citation resolver, LLM gateway, prompts, LangGraph orchestrator, SSE, run
 persistence, the corpus fetcher, the indexer, the frontend courtroom,
 transcript, dissent log, replay and theming.
@@ -180,7 +180,10 @@ See [ISSUES.md](ISSUES.md).
   imperfect JSON. `complete_structured` retries once with the validation error
   attached; persistent failures usually mean the model is too small.
 - **The TS types in `runtime/frontend/src/types/index.ts` mirror the Pydantic
-  models by hand.** Update both in the same PR.
+  models by hand.** Update both in the same PR. A field added to a model that
+  stored runs already lack must be optional on both sides, and absence must
+  not collapse into a default that means something (`Objection.severity` is
+  the worked example: `None` means "not stated", never `minor`).
 - **A manifest `status: "fetched"` describes the machine that fetched it.**
   `mark_fetched()` writes it and it is committed, so it travels; the documents
   do not. `status: "fetched"` on all 23 treaties alongside a 9-instrument local
