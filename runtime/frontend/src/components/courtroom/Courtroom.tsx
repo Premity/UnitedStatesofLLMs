@@ -145,11 +145,15 @@ export function Courtroom() {
               bench is fixed furniture at y=54..112 of the room's 240, and
               the judge rises further above it the higher he sits. The
               nameplate is a child of the sprite, so it comes along. */}
-          {/* The judge stands behind the bench, whose lip is at y=54 of the
-              room's 240 -- 22.5%. Anchored by the bottom of the row so the
-              figure's feet meet that line rather than its head meeting an
-              offset measured from the top. */}
-          <div className="absolute inset-x-0 bottom-[77.5%] z-10 flex justify-center">
+          {/* The judge stands behind the bench, anchored by the bottom of
+              the row so the figure's feet meet the desk rather than its
+              head meeting an offset measured from the top.
+
+              At the lip itself (y=54) the head ran past the top of the
+              scene, so the feet sit at y=68 -- inside the bench front's
+              y=58..94, which drops the figure a little further into the
+              desk. 240-68 = 71.7%. */}
+          <div className="absolute inset-x-0 bottom-[71.7%] z-10 flex justify-center">
             <Sprite
               role="judge"
               label={roleShort("judge")}
