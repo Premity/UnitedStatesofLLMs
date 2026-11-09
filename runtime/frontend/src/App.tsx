@@ -51,7 +51,14 @@ export default function App() {
 
         {/* The record gives its column back when it is put away, so the
             transcript widens instead of leaving a gap. Below `lg` it stacks
-            under the transcript rather than squeezing it further. */}
+            under the transcript rather than squeezing it further.
+
+            The transcript's cell is held open by this wrapper. `Transcript`
+            renders nothing at all until the first turn arrives, and a grid
+            child that renders null is not a child -- so the row had one
+            element in it and the closed record sat in the first column, on
+            the left of the page, until a turn appeared and pushed it over.
+            The wrapper is always a child, so the record is always second. */}
         <div
           className={`grid gap-6 ${
             dissentOpen
@@ -59,7 +66,9 @@ export default function App() {
               : "lg:grid-cols-[minmax(0,1fr)_auto]"
           }`}
         >
-          <Transcript />
+          <div>
+            <Transcript />
+          </div>
           <DissentPanel />
         </div>
       </main>

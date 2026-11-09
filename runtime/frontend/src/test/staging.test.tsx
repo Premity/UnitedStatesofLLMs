@@ -477,6 +477,21 @@ describe("the chamber", () => {
   });
 });
 
+describe("the record's rail", () => {
+  it("stays in the second column before any turn arrives", () => {
+    render(<App />);
+
+    // `Transcript` renders null until the first turn, and a grid child that
+    // renders null is not a child -- so the row held one element and the
+    // closed rail sat in the first column, on the left of the page, until a
+    // turn appeared and pushed it across.
+    const rail = screen.getByTestId("dissent-open").closest("aside")!;
+    const row = rail.parentElement!;
+    expect(row.children.length).toBe(2);
+    expect(Array.from(row.children).indexOf(rail)).toBe(1);
+  });
+});
+
 describe("a role that says nothing", () => {
   const emptyTurn = (role: string): Turn => ({
     id: `t_${role}`,
