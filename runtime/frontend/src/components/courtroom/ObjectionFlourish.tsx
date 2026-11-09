@@ -46,11 +46,17 @@ interface ObjectionFlourishProps {
 /**
  * Whether an objection earns the full OBJECTION! slam.
  *
- * A flourish that fires on every attacker turn carries no information. There
- * is no severity field on an Objection (see ISSUES.md), so this uses the
- * strongest signal the data actually holds: an objection is loud when it is
- * *fully grounded* — it cites authority and every citation resolved against
- * the corpus. That is an attacker catching something with the text to back it.
+ * A flourish that fires on every attacker turn carries no information, so
+ * this has to discriminate. It reads the attacker's own `severity` when there
+ * is one: `fatal` and `material` are the objections that would change the
+ * argument if sustained, and a `minor` one is shown quietly however well it
+ * is cited.
+ *
+ * Without a severity -- a run recorded before the field existed, or a model
+ * that did not supply one -- it falls back to whether the objection is fully
+ * grounded, which is what this used to do for every objection: it cites
+ * authority and every citation resolved. That is the strongest signal the
+ * rest of the data holds.
  *
  * Deliberately not keyed to `unresolved` or `misquoted` citations. Those mark
  * the objection's own authority as bad, so slamming for them would celebrate
@@ -58,6 +64,9 @@ interface ObjectionFlourishProps {
  * the transcript is what flags them.
  */
 export function isLoud(objection: Objection): boolean {
+  if (objection.severity) {
+    return objection.severity !== "minor";
+  }
   return (
     objection.resolved_citations.length > 0 &&
     objection.resolved_citations.every((rc) => rc.status === "resolved")
@@ -72,7 +81,28 @@ export function isLoud(objection: Objection): boolean {
  * represented by whichever objection the model happened to emit first.
  */
 export function headlineObjection(objections: Objection[]): Objection | null {
-  return objections.find(isLoud) ?? objections[0] ?? null;
+  // Hardest first, so a turn that lands a fatal objection is represented by
+  // it rather than by whichever objection the model happened to emit first.
+  // Among equals the model's own order stands: `sort` is stable, and nothing
+  // better distinguishes two objections of the same severity.
+  const ranked = [...objections].sort(
+    (a, b) => severityRank(b) - severityRank(a),
+  );
+  return ranked.find(isLoud) ?? ranked[0] ?? objections[0] ?? null;
+}
+
+/** Orders objections by how hard they hit. Unrated sits below every rating. */
+function severityRank(objection: Objection): number {
+  switch (objection.severity) {
+    case "fatal":
+      return 3;
+    case "material":
+      return 2;
+    case "minor":
+      return 1;
+    default:
+      return 0;
+  }
 }
 
 /**

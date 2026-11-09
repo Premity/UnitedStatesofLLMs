@@ -176,6 +176,33 @@ const RAISER_LABEL: Record<string, string> = {
   attacker_evidentiary: "Evidentiary Counsel",
 };
 
+/**
+ * How counsel rated the objection the court went on to overrule.
+ *
+ * The sharpest thing a dissent log can record: an objection its author called
+ * fatal, rejected by the bench. Stated as counsel's own claim, because that is
+ * what it is -- self-reported and advisory, never a finding of the court.
+ *
+ * Absent on runs recorded before the field existed, and on a model that did
+ * not rate one. Nothing is shown then, rather than a guess.
+ */
+const SEVERITY_LABEL: Record<string, { label: string; title: string }> = {
+  fatal: {
+    label: "Counsel: fatal",
+    title: "Counsel rated this objection fatal — if sustained, the argument fails entirely.",
+  },
+  material: {
+    label: "Counsel: material",
+    title:
+      "Counsel rated this objection material — the argument survives but must be narrowed.",
+  },
+  minor: {
+    label: "Counsel: minor",
+    title:
+      "Counsel rated this objection minor — worth recording, but the argument stands as put.",
+  },
+};
+
 function DissentEntry({
   objection,
   round,
@@ -184,12 +211,24 @@ function DissentEntry({
   /** The round it was raised in, where the debate ran to more than one. */
   round?: number;
 }) {
+  const severity = objection.severity
+    ? SEVERITY_LABEL[objection.severity]
+    : undefined;
+
   return (
     <li className="border-l-2 border-court-crimson/50 pl-4">
       <p className="font-record font-semibold">{objection.ground}</p>
       <p className="mt-0.5 font-ui text-xs uppercase tracking-wider text-record-margin">
         {RAISER_LABEL[objection.raised_by] ?? objection.raised_by}
         {round !== undefined && ` · Round ${round}`}
+        {severity && (
+          <>
+            {" · "}
+            <span data-testid="dissent-severity" title={severity.title}>
+              {severity.label}
+            </span>
+          </>
+        )}
       </p>
 
       <p className="mt-2 font-record text-sm leading-relaxed">

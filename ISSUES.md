@@ -703,12 +703,38 @@ Three things worth knowing:
 
 Documented in [docs/api-contract.md](docs/api-contract.md).
 
-### [LOW] Objection severity
+### [RESOLVED] Objection severity
 
-`isLoud()` decides which objections earn the full flourish from whether every
-citation resolved — the strongest signal available, but an inference. An
-`Objection` carries no severity, and adding one would also give the evaluation
-metrics something to weigh objections by.
+`Objection.severity` is now a three-step enum — `fatal`, `material`, `minor` —
+self-reported by the attacker that raised the objection, and both attacker
+prompts ask for it with a stated meaning for each step.
+
+Three named steps rather than a score, for the reason ADR 0011 gives about the
+judge's confidence: a model asked for a number invents precision it does not
+have. It is advisory, and the judge rules on the reasoning, never on the label.
+
+`isLoud()` reads it, so the flourish follows weight rather than citation luck
+— a well-cited `minor` objection no longer slams, and a `fatal` one does even
+where its authority is not indexed. `headlineObjection()` now puts the hardest
+objection on screen rather than whichever the model emitted first, with a
+stable sort so the model's order stands among equals. The old grounding
+heuristic remains as the fallback.
+
+The dissent log shows the rating as **counsel's** claim ("Counsel: fatal"),
+and the Markdown export as "Counsel rated it:" — an objection its author
+called fatal and the bench overruled is the sharpest entry a dissent log can
+carry, but it is not a finding of the court.
+
+**The field is optional, and that is load-bearing.** Every run artifact
+written before this lacks it; `None` means "not stated", never `minor`.
+Pinned by `test_an_objection_recorded_before_severity_existed_still_loads`.
+
+**One consequence to know:** the attacker prompts changed, so their hashes
+changed. Runs scored before and after are not prompt-comparable — relevant
+when the evaluation ladder is run, per ADR 0009's roster freeze.
+
+Still open: the evaluation metrics do not yet weigh objections by severity.
+The data is now there to do it.
 
 ---
 
