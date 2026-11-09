@@ -25,6 +25,35 @@ local citation status.
 
 ---
 
+## What is left, in order
+
+Audited 2026-11-09. The critical path is one item long: **nothing can be
+measured until the evaluation runner exists.** Everything below it is either
+blocked on that or cosmetic beside it.
+
+| # | Item | Why it is where it is |
+| --- | --- | --- |
+| 1 | **Evaluation harness runner** | `run.py` and `report.py` do not exist. The arms, the case schema and all three metrics are written and tested; nothing drives arms over cases. Also needs retrieval exclusion for a case's own `source_case_id`, or a case leaks its own judgment into its evidence |
+| 2 | **Arm E — the compute-matched control** | Without it, D-vs-B cannot separate adversarial structure from simply spending more compute, which is *the* standing criticism of the multi-agent debate literature. Objective 2 is stated against this baseline, so the headline claim is unfalsifiable until E runs |
+| 3 | **Case fixtures: 1 of a target 40–80** | Below ~40 the bootstrap intervals are too wide for any arm comparison to mean anything. Team task, and the long pole in wall-clock terms |
+| 4 | **Judge model for the scored run** | OpenRouter's free tier is ~16 debates/day; 40–80 cases need 120–240+ judge calls. Decide before the roster freezes (ADR 0009) |
+| 5 | **Run artifacts do not record their corpus** | Citation statuses are only interpretable against a known corpus, and nothing in an artifact says which one scored it. Becomes a correctness problem the moment two machines' results are compared |
+| 6 | **Case picker for the question form** | Needs an ADR first: `runtime/api` does not depend on `evaluation`, so a case endpoint either inverts that or duplicates the loader. And the ground truth must never reach the browser |
+| 7 | **Severity-weighted metrics** | `Objection.severity` now exists and nothing weighs objections by it |
+| 8 | **Sprite artwork** | Spec written, state machine done; drops into `Sprite.tsx` |
+
+Two open decisions that do not block the above: **reasoning-overlap scoring**
+(rubric vs LLM-judge — leaning LLM-judge with a manually-scored subset to
+validate it) and a **hosted demo** target, which has none chosen.
+
+One known limit to state in the report rather than fix: three Rome Statute
+weapons amendments are not indexed, because the source gives the inserted
+sentence with no article number and a guessed locator is indistinguishable
+from a fabrication. A citation to one resolves `unresolved`, which the metrics
+read as fabrication.
+
+---
+
 ## Open work
 
 Was "Not yet implemented", which stopped being true once the pipelines were
