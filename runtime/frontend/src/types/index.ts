@@ -16,6 +16,8 @@ export type CitationStatus =
   | "out_of_corpus"
   | "misquoted";
 
+export type ObjectionSeverity = "fatal" | "material" | "minor";
+
 export type ObjectionDisposition =
   | "sustained"
   | "overruled"
@@ -56,6 +58,8 @@ export interface Objection {
   reasoning: string;
   citations: Citation[];
   resolved_citations: ResolvedCitation[];
+  /** Self-reported by the attacker. Absent on runs predating the field. */
+  severity?: ObjectionSeverity | null;
   disposition: ObjectionDisposition;
   disposition_reasoning?: string | null;
 }

@@ -15,8 +15,15 @@ from __future__ import annotations
 import json
 
 import pytest
+from pydantic import ValidationError
 
-from council_core.models.debate import DebateConfig, DebateState, Objection, Role
+from council_core.models.debate import (
+    DebateConfig,
+    DebateState,
+    Objection,
+    ObjectionSeverity,
+    Role,
+)
 from council_core.models.run import RunArtifact, RunMetadata
 
 
@@ -46,3 +53,58 @@ def test_rejects_a_stored_objection_with_no_explicit_raised_by() -> None:
 
     with pytest.raises(ValueError, match="raised_by"):
         RunArtifact.from_json(json.dumps(raw))
+
+
+def test_an_objection_recorded_before_severity_existed_still_loads() -> None:
+    """The field is additive, and stored runs are permanent.
+
+    Every run artifact ever written lacks `severity`. If adding it made those
+    files unreadable, the past runs would be lost -- so a missing value must
+    validate, and must mean "not stated" rather than any particular rating.
+    """
+    stored = {
+        "id": "obj_legacy01",
+        "raised_by": "attacker_doctrinal",
+        "target_argument_id": "arg_abc12345",
+        "ground": "The Protocol does not apply.",
+        "reasoning": "Article 1 limits its field of application.",
+        "citations": [],
+        "resolved_citations": [],
+        "disposition": "overruled",
+        "disposition_reasoning": "The prohibition is customary.",
+    }
+
+    objection = Objection.model_validate(stored)
+
+    assert objection.severity is None
+
+
+def test_severity_round_trips_through_a_stored_artifact() -> None:
+    """A rating written into a run artifact must survive being read back."""
+    objection = Objection(
+        target_argument_id="arg_abc12345",
+        ground="The factual predicate is not established.",
+        reasoning="No evidence of purpose is identified.",
+        raised_by=Role.ATTACKER_EVIDENTIARY,
+        severity=ObjectionSeverity.FATAL,
+    )
+
+    restored = Objection.model_validate_json(objection.model_dump_json())
+
+    assert restored.severity is ObjectionSeverity.FATAL
+
+
+def test_rejects_a_severity_outside_the_three_steps() -> None:
+    """Three named steps, not a free-text field or a number.
+
+    A model asked for a score invents precision it does not have, so the
+    vocabulary is closed and anything else is a validation error the structured
+    output repair can show the model.
+    """
+    with pytest.raises(ValidationError):
+        Objection(
+            target_argument_id="arg_abc12345",
+            ground="g",
+            reasoning="r",
+            severity="catastrophic",  # type: ignore[arg-type]
+        )

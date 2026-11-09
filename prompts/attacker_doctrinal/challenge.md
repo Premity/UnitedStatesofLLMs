@@ -51,6 +51,7 @@ Return JSON:
       "target_argument_id": "arg_xxxxxxxx",
       "ground": "One sentence stating the basis of the objection.",
       "reasoning": "The full argument for why this claim fails as a matter of law.",
+      "severity": "fatal | material | minor",
       "citations": [
         {"type": "case", "instrument": "icty", "case_id": "icty_galic_tj",
          "paragraph": "58"}
@@ -59,5 +60,15 @@ Return JSON:
   ]
 }
 ```
+
+Rate each objection's `severity`, which is your assessment of how hard it
+hits if sustained:
+
+- `fatal` — the argument fails entirely.
+- `material` — the argument survives but must be narrowed or qualified.
+- `minor` — worth recording, but the argument stands substantially as put.
+
+Rate honestly. The rating does not decide the ruling — the judge rules on your
+reasoning — and marking everything `fatal` tells the court nothing.
 
 Return an empty `objections` list if the arguments are doctrinally sound.

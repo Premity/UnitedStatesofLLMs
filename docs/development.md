@@ -172,7 +172,7 @@ In dev, `prompts/` is bind-mounted, so a change reloads immediately.
 ### A corpus source
 
 1. Add the entry to the right manifest in `corpus/manifests/`
-2. Implement the source in `pipeline/fetcher/app/sources/`
+2. Implement the source in `pipeline/fetcher/fetcher/sources/`
 3. `make fetch && make index`
 
 Citation ids are **stable identifiers**. Renaming one breaks citation resolution

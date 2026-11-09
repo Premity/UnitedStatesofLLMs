@@ -4,7 +4,10 @@ import { describe, expect, it } from "vitest";
 
 import App from "@/App";
 import { Courtroom } from "@/components/courtroom/Courtroom";
-import { isLoud } from "@/components/courtroom/ObjectionFlourish";
+import {
+  headlineObjection,
+  isLoud,
+} from "@/components/courtroom/ObjectionFlourish";
 import { SubtitleBand } from "@/components/courtroom/SubtitleBand";
 import { roleSentence, roleShort, roleTitle } from "@/lib/roles";
 import { useCourtStore } from "@/store/courtStore";
@@ -155,6 +158,9 @@ describe("the bench layout", () => {
     useCourtStore
       .getState()
       .addTurn(turn("presenter", "The strike was lawful."));
+    // The graph announces the attackers once the presenter's turn lands.
+    useCourtStore.getState().roleStarted("attacker_doctrinal");
+    useCourtStore.getState().roleStarted("attacker_evidentiary");
     render(<Courtroom />);
 
     expect(useCourtStore.getState().pendingRoles).toContain(
@@ -556,5 +562,66 @@ describe("the fold", () => {
     expect(screen.queryByPlaceholderText(/Does the strike/)).toBeNull();
     await user.click(screen.getByTestId("question-fold"));
     expect(screen.queryByPlaceholderText(/Does the strike/)).not.toBeNull();
+  });
+});
+
+describe("objection severity", () => {
+  /** An objection rated by counsel, with citations that may or may not resolve. */
+  function rated(
+    severity: Objection["severity"],
+    grounded: boolean,
+  ): Objection {
+    return {
+      ...objection("attacker_doctrinal", "The test is misstated.", grounded),
+      severity,
+    };
+  }
+
+  it("slams for a fatal or material objection, however it is cited", () => {
+    // The rating is the attacker's claim about its own objection, and it is
+    // a better signal of weight than whether the citations happened to
+    // resolve. A fatal objection with nothing indexed behind it is still the
+    // thing the courtroom should shout about.
+    expect(isLoud(rated("fatal", false))).toBe(true);
+    expect(isLoud(rated("material", false))).toBe(true);
+  });
+
+  it("stays quiet for a minor objection, however well it is cited", () => {
+    // The case the old heuristic got wrong: fully grounded, so it slammed,
+    // while counsel itself says the argument stands substantially as put.
+    expect(isLoud(rated("minor", true))).toBe(false);
+  });
+
+  it("falls back to grounding when nothing rated the objection", () => {
+    // Every run recorded before the field existed, and any model that does
+    // not supply one. Absence must not read as `minor`.
+    expect(isLoud(rated(undefined, true))).toBe(true);
+    expect(isLoud(rated(undefined, false))).toBe(false);
+    expect(isLoud(rated(null, true))).toBe(true);
+  });
+
+  it("puts the hardest objection on screen, not the first emitted", () => {
+    const minor = { ...rated("minor", true), id: "obj_minor" };
+    const fatal = { ...rated("fatal", false), id: "obj_fatal" };
+
+    // A turn's objections arrive in whatever order the model emitted them.
+    expect(headlineObjection([minor, fatal])?.id).toBe("obj_fatal");
+  });
+
+  it("keeps the model's order among objections of equal weight", () => {
+    const first = { ...rated("material", true), id: "obj_first" };
+    const second = { ...rated("material", true), id: "obj_second" };
+
+    // Nothing distinguishes them, and a stable sort means the model's own
+    // ordering stands rather than being quietly reshuffled.
+    expect(headlineObjection([first, second])?.id).toBe("obj_first");
+  });
+
+  it("still returns something when every objection is quiet", () => {
+    const quiet = { ...rated("minor", false), id: "obj_quiet" };
+
+    // The band attributes whatever is returned, so a turn that raised
+    // objections must never render as having raised none.
+    expect(headlineObjection([quiet])?.id).toBe("obj_quiet");
   });
 });

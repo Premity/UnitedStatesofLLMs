@@ -50,6 +50,11 @@ ROOT = Path(__file__).resolve().parents[1]
 INDEX = ROOT / "data/index/citation_index.json"
 OUT = ROOT / "runtime/frontend/src/fixtures/sample-run.json"
 
+# The attackers fan out in parallel in `build_graph()`, so both are announced
+# before either reports. Derived from the roles rather than written as a pair
+# of strings, so a third attacker would be carried along.
+CONCURRENT_ROLES = frozenset({Role.ATTACKER_DOCTRINAL, Role.ATTACKER_EVIDENTIARY})
+
 RUN_ID = "run_f1xtur3g3n0"
 ROUND = 1
 
@@ -508,9 +513,47 @@ def main(args: argparse.Namespace) -> None:
             "config": {"question": QUESTION, "facts": FACTS},
         }
     ]
-    for turns, verdict in rounds:
-        for turn in turns:
-            events.append({"event": "turn", "data": json.loads(turn.model_dump_json())})
+    # `role_started` precedes each turn, as the graph's task events do for a
+    # live run. Without it a replay never shows a thinking bench -- which is
+    # most of what a real debate looks like, since a turn runs 40 to 90
+    # seconds and the courtroom spends that time waiting.
+    #
+    # The attackers are announced as a pair before either reports, because
+    # they run concurrently in the graph. Reproducing that here is the point:
+    # the fixture is what the frontend tests drive, so an ordering the live
+    # stream can produce and the fixture cannot is an untested path.
+    for round_index, (turns, verdict) in enumerate(rounds):
+        if round_index == 0:
+            events.append(
+                {"event": "role_started", "data": {"role": Role.RETRIEVER.value, "round": 0}}
+            )
+
+        # Walk the round in graph order, announcing a run of concurrent roles
+        # together before any of them reports. The attackers fan out in
+        # parallel in `build_graph()`, so the live stream announces both and
+        # only then delivers their turns -- and the frontend's fan-in handling
+        # is exactly what that ordering exercises. Emitting each announcement
+        # immediately before its own turn would make the fixture a sequence
+        # the live stream never produces.
+        index = 0
+        while index < len(turns):
+            group = [turns[index]]
+            if turns[index].role in CONCURRENT_ROLES:
+                while index + 1 < len(turns) and turns[index + 1].role in CONCURRENT_ROLES:
+                    index += 1
+                    group.append(turns[index])
+            index += 1
+
+            for turn in group:
+                events.append(
+                    {
+                        "event": "role_started",
+                        "data": {"role": turn.role.value, "round": round_index},
+                    }
+                )
+            for turn in group:
+                events.append({"event": "turn", "data": json.loads(turn.model_dump_json())})
+
         events.append({"event": "verdict", "data": json.loads(verdict.model_dump_json())})
     events.append({"event": "done", "data": {"run_id": RUN_ID, "status": "completed"}})
 

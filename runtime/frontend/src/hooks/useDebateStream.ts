@@ -5,6 +5,7 @@ import {
   FLOURISH_MS,
   headlineObjection,
 } from "@/components/courtroom/ObjectionFlourish";
+import { isRole } from "@/lib/roles";
 import { useCourtStore } from "@/store/courtStore";
 import type { DebateConfig, Objection, Turn, Verdict } from "@/types";
 
@@ -22,7 +23,7 @@ import type { DebateConfig, Objection, Turn, Verdict } from "@/types";
 export function useDebateStream() {
   const abortRef = useRef<AbortController | null>(null);
 
-  const { startRun, addTurn, setVerdict, setError, showFlourish } =
+  const { startRun, addTurn, roleStarted, setVerdict, setError, showFlourish } =
     useCourtStore();
 
   const stop = useCallback(() => {
@@ -76,6 +77,17 @@ export function useDebateStream() {
                 });
                 break;
 
+              case "role_started":
+                // Who is generating, straight from the graph. An unknown
+                // role is ignored rather than shown: a node added to the
+                // graph that the courtroom has no bench for would otherwise
+                // appear as an empty figure.
+                {
+                  const { role } = JSON.parse(event.data) as { role: unknown };
+                  if (isRole(role)) roleStarted(role);
+                }
+                break;
+
               case "turn": {
                 const turn = JSON.parse(event.data) as Turn;
                 addTurn(turn);
@@ -109,7 +121,7 @@ export function useDebateStream() {
         abortRef.current = null;
       }
     },
-    [addTurn, setError, setVerdict, showFlourish, startRun, stop],
+    [addTurn, roleStarted, setError, setVerdict, showFlourish, startRun, stop],
   );
 
   return { start, stop };

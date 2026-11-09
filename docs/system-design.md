@@ -151,7 +151,7 @@ believed only if its locator resolves against the index (§6).
                                     ▲
                                     │ writes collection + citation index
 ┌───────────────────────────────────┴─────────────────────────────┐
-│ PIPELINE (offline, run-to-completion)        [SCAFFOLD ONLY]    │
+│ PIPELINE (offline, run-to-completion)   BUILT; run per machine  │
 │   fetcher ──► data/cache/ ──► indexer ──► Qdrant + index.json   │
 └─────────────────────────────────────────────────────────────────┘
 

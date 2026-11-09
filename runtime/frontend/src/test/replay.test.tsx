@@ -22,6 +22,7 @@ function sink() {
   const s = useCourtStore.getState();
   return {
     startRun: s.startRun,
+    roleStarted: s.roleStarted,
     addTurn: s.addTurn,
     setVerdict: s.setVerdict,
     setError: s.setError,
@@ -465,7 +466,8 @@ describe("a debate that runs past one round", () => {
     expect(
       screen.getByRole("button", { name: /convene the council/i }),
     ).toBeDisabled();
-    expect(screen.getByText(/opposing counsel are reviewing/i)).toBeInTheDocument();
+    // Mid-debate: a round is under way and the court has not adjourned.
+    expect(screen.queryByText(/court has ruled/i)).toBeNull();
   });
 });
 
@@ -635,15 +637,21 @@ describe("waiting on a model", () => {
     // Idle: nothing is generating, so the rail shows the phase.
     expect(screen.getByText(/court is not in session/i)).toBeInTheDocument();
 
+    // A press stops on the next thing to look at, so this one ends with the
+    // presenter's turn on screen. Nobody has been announced since, so the
+    // rail names the phase rather than a bench -- the attackers are announced
+    // at the top of the next press, which is when the graph reports them.
     await user.click(step); // presenter reports
-    // The presenter has finished — both attackers are now generating, and
-    // that is what the rail should say rather than "Counsel is presenting".
-    expect(screen.getByText(/opposing counsel are reviewing/i)).toBeInTheDocument();
+    expect(screen.getByText(/counsel is presenting/i)).toBeInTheDocument();
 
-    await user.click(step); // doctrinal reports, evidentiary still out
+    // Both attackers announced; doctrinal has reported, evidentiary has not.
+    await user.click(step);
     expect(screen.getByText(/evidentiary counsel is reviewing/i)).toBeInTheDocument();
 
     await user.click(step); // evidentiary reports
+    expect(screen.getByText(/counsel objects/i)).toBeInTheDocument();
+
+    await user.click(step); // the judge is announced, then rules
     expect(screen.getByText(/court is deliberating/i)).toBeInTheDocument();
   });
 
@@ -652,7 +660,10 @@ describe("waiting on a model", () => {
     // Idle shows no clock; a started run does.
     expect(screen.queryByTestId("elapsed")).not.toBeInTheDocument();
 
+    // The clock measures a wait on a role, and a role is only pending once
+    // the graph announces it -- `startRun` no longer assumes the clerk.
     sink().startRun("run_x");
+    sink().roleStarted("retriever");
     await waitFor(() =>
       expect(screen.getByTestId("elapsed")).toBeInTheDocument(),
     );

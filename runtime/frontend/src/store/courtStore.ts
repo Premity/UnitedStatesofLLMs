@@ -64,6 +64,7 @@ interface CourtState {
     options?: { replayed?: boolean; question?: string; facts?: string },
   ) => void;
   setPhase: (phase: CourtPhase) => void;
+  roleStarted: (role: Role) => void;
   addTurn: (turn: Turn) => void;
   setVerdict: (verdict: Verdict) => void;
   setError: (error: string) => void;
@@ -89,27 +90,14 @@ const initial = {
 };
 
 /**
- * Who works next, given the role that just finished.
- *
- * Mirrors the graph in runtime/api/app/graph/workflow.py:
- *
- *   retrieve -> present -> [doctrinal || evidentiary] -> judge -> (loop or end)
- *
- * The attackers fan out together and the judge waits for both, so a wait can
- * belong to two roles at once. The judge is followed by nothing: either the
- * verdict arrives or another round begins with the presenter, and which it is
- * only becomes clear when the next event lands.
- *
- * Duplicated from the backend by necessity — the stream says nothing about
- * what is coming. If build_graph() changes, this has to change with it.
+ * Which role is working comes from the server's `role_started` event, not from
+ * a copy of the graph held here. This used to be a NEXT_ROLES table that
+ * mirrored `build_graph()` and had to reproduce its fan-in by hand -- the
+ * first attacker to report must not start the judge while the other is still
+ * generating. Nothing kept that table in sync with the graph, so adding a
+ * node silently showed the wrong bench thinking. The graph now reports its
+ * own task starts (ISSUES.md, resolved).
  */
-const NEXT_ROLES: Record<string, Role[]> = {
-  retriever: ["presenter"],
-  presenter: ["attacker_doctrinal", "attacker_evidentiary"],
-  attacker_doctrinal: ["judge"],
-  attacker_evidentiary: ["judge"],
-  judge: [],
-};
 
 /** Maps the role that just spoke to the phase the courtroom should show. */
 const PHASE_FOR_ROLE: Record<string, CourtPhase> = {
@@ -147,9 +135,13 @@ export const useCourtStore = create<CourtState>((set) => ({
       ...initial,
       runId,
       phase: "retrieving",
-      // Retrieval runs before anyone speaks, then the presenter opens.
-      pendingRoles: ["retriever"] as Role[],
-      pendingSince: Date.now(),
+      // Left empty: the server announces `retriever` with a `role_started`
+      // event of its own. Seeding it here as well would make the courtroom
+      // claim the clerk is working before the graph says so -- and in replay,
+      // where events come from a fixture, would show a role the fixture never
+      // reported.
+      pendingRoles: [] as Role[],
+      pendingSince: null,
       replayed: options?.replayed ?? false,
       question: options?.question ?? null,
       facts: options?.facts ?? null,
@@ -157,35 +149,36 @@ export const useCourtStore = create<CourtState>((set) => ({
 
   setPhase: (phase) => set({ phase }),
 
+  /**
+   * A role began working, as reported by the graph.
+   *
+   * Additive and idempotent: the server announces both attackers before
+   * either finishes, and a reconnect can repeat an announcement. Clearing is
+   * `addTurn`'s job -- a role stops being pending when its turn lands.
+   */
+  roleStarted: (role) =>
+    set((state) => {
+      if (state.pendingRoles.includes(role)) return state;
+      return {
+        pendingRoles: [...state.pendingRoles, role],
+        phase: PHASE_FOR_ROLE[role] ?? state.phase,
+        // The clock measures the wait that is running now. The first role of
+        // a concurrent pair starts it; the second joins a wait already under
+        // way, so restarting it would reset the visible timer mid-wait.
+        pendingSince: state.pendingSince ?? Date.now(),
+      };
+    }),
+
   addTurn: (turn) =>
     set((state) => {
-      // This role is done. Whoever follows it is now working — unless they
-      // have already reported, which happens when the slower attacker lands
-      // after the faster one and both point at the judge.
+      // This role has reported, so it is no longer pending. Who works *next*
+      // is not inferred here -- the server's `role_started` event says so.
       //
-      // Scoped to this round: in round two every role has spoken before, so
-      // judging against the whole run would leave nothing ever pending.
-      const done = new Set(
-        state.turns
-          .filter((t) => t.round_number === turn.round_number)
-          .map((t) => t.role),
-      );
-      done.add(turn.role);
       // Retrieval emits no turn of its own, so it can only be cleared by
-      // someone else reporting — once anyone speaks, the clerk is finished.
-      const stillPending = state.pendingRoles.filter(
-        (r) => r !== turn.role && r !== "retriever" && !done.has(r),
+      // someone else reporting: once anyone speaks, the clerk is finished.
+      const pendingRoles = state.pendingRoles.filter(
+        (r) => r !== turn.role && r !== "retriever",
       );
-      // A role starts only when nothing it waits on is outstanding. The judge
-      // is a fan-in: both attackers feed it, so the first one to report must
-      // not start it while the other is still generating.
-      const started = (NEXT_ROLES[turn.role] ?? []).filter(
-        (r) =>
-          !done.has(r) &&
-          !stillPending.includes(r) &&
-          !stillPending.some((p) => (NEXT_ROLES[p] ?? []).includes(r)),
-      );
-      const pendingRoles = [...stillPending, ...started];
 
       return {
         turns: [...state.turns, turn],
@@ -193,13 +186,10 @@ export const useCourtStore = create<CourtState>((set) => ({
         activeRole: turn.role,
         phase: PHASE_FOR_ROLE[turn.role] ?? state.phase,
         pendingRoles,
-        // Restart the clock only when this wait is a new one.
-        pendingSince:
-          pendingRoles.length === 0
-            ? null
-            : started.length > 0
-              ? Date.now()
-              : state.pendingSince,
+        // Nothing outstanding stops the clock. Otherwise the wait that is
+        // still running keeps the time it started with, so a concurrent
+        // attacker landing does not reset the other's timer.
+        pendingSince: pendingRoles.length === 0 ? null : state.pendingSince,
         // The headline of what the role just said: its first claim, or its
         // first objection -- or, when it said neither, that it had nothing
         // to say. Resolved here rather than in the band because this is the
