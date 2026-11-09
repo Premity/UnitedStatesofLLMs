@@ -137,6 +137,18 @@ or `develop` (the pre-commit hook blocks it).
 
 **Decisions with trade-offs get an ADR** in `docs/adr/`.
 
+**Docs are updated in the PR that outdates them.** Not afterwards — there is no
+afterwards. `CLAUDE.md` called the corpus fetcher a stub for two weeks after it
+was built and running, and the next person to read it proposed building it
+again. The PR template's **Docs** section lists what to check, and
+`tests/test_docs_are_current.py` enforces the mechanical parts: a subsystem
+described as a stub while its code is importable, a documented path that
+resolves nowhere, a quoted test count that has drifted, an `ISSUES.md` index
+row whose section is resolved, and a `make` target documented but absent.
+
+Those tests are deliberately narrow — they check claims verifiable against the
+tree, not prose. Everything they cannot check is on you.
+
 ## Current state
 
 Audited 2026-11-09 against the tree, not against this file's previous claims.
