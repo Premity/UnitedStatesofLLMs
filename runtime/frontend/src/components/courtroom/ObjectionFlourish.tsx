@@ -151,14 +151,21 @@ export function ObjectionFlourish({
       // sprite stays readable underneath. Sized in its own right rather than
       // by inset, because an inset burst is only ever as big as the bench.
       className={clsx(
-        "animate-slam pointer-events-none absolute -top-10 z-30 grid h-24 w-40 place-items-center sm:h-28 sm:w-48",
-        side === "left" ? "-left-10" : "-right-10",
+        // Hung from the figure's shoulder rather than above its head: at
+        // -top-8 the burst cleared the sprite entirely and rode up into the
+        // judge's bench, which made it look like the bench was objecting.
+        "animate-slam pointer-events-none absolute -top-2 z-30 grid h-16 w-28 place-items-center sm:h-20 sm:w-36",
+        // Hung from the corner, clear of the frame edge. At w-40 over a w-20
+        // sprite the burst covered the whole figure and overhung the
+        // courtroom's left edge -- the objector disappeared behind their own
+        // objection, which is the one thing it must not do.
+        side === "left" ? "-left-6" : "-right-6",
       )}
     >
       <Burst />
 
       <div
-        className="relative px-[10%] text-center font-display text-xl font-black uppercase leading-none tracking-tight text-record-paper sm:text-2xl"
+        className="relative px-[10%] text-center font-display text-base font-black uppercase leading-none tracking-tight text-record-paper sm:text-xl"
         style={{ textShadow: "0 2px 0 rgba(0,0,0,0.35)" }}
       >
         Objection!

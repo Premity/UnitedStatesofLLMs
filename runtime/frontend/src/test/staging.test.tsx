@@ -216,8 +216,10 @@ describe("the objection flourish, localised", () => {
     const { unmount } = render(<Courtroom />);
     let slam = screen.getByTestId("objection-slam");
     expect(slam).toHaveAttribute("data-side", "left");
-    expect(slam.className).toContain("-left-10");
-    expect(slam.className).not.toContain("-right-10");
+    // Asserts the side, not the exact offset: which corner it hangs from is
+    // the behaviour, how far out it hangs is a tuning value.
+    expect(slam.className).toMatch(/-left-\d/);
+    expect(slam.className).not.toMatch(/-right-\d/);
     unmount();
 
     useCourtStore
@@ -226,8 +228,8 @@ describe("the objection flourish, localised", () => {
     render(<Courtroom />);
     slam = screen.getByTestId("objection-slam");
     expect(slam).toHaveAttribute("data-side", "right");
-    expect(slam.className).toContain("-right-10");
-    expect(slam.className).not.toContain("-left-10");
+    expect(slam.className).toMatch(/-right-\d/);
+    expect(slam.className).not.toMatch(/-left-\d/);
   });
 
   it("puts the quiet tag on the same corner as the slam", () => {
@@ -313,8 +315,11 @@ describe("the objection flourish, localised", () => {
     render(<Courtroom />);
 
     const sprite = spriteOf(screen.getByTestId("objection-slam"));
-    expect(sprite.className).toContain("opacity-100");
-    expect(sprite.className).not.toContain("opacity-45");
+    // Lit is full brightness and full saturation. Not opacity: an inactive
+    // sprite is darkened rather than faded, because a translucent figure let
+    // the drawn chamber show through it.
+    expect(sprite.className).toContain("brightness-100");
+    expect(sprite.className).not.toContain("brightness-75");
   });
 });
 
@@ -348,5 +353,86 @@ describe("the chamber", () => {
     expect(markup).toContain("var(--court-rail)");
     expect(markup).toContain("var(--court-ink)");
     expect(markup).not.toMatch(/#[0-9a-f]{6}/i);
+  });
+
+  it("keeps the figures opaque and in front of the room", () => {
+    render(<Courtroom />);
+
+    // The chamber showed through the sprites: the seal behind the bench
+    // appeared inside the judge's head, and floor boards ran through the
+    // nameplates. Both are solved the same way — opaque fill, raised above
+    // the drawing — so both are pinned here.
+    for (const plate of screen.getAllByTestId("sprite-plate")) {
+      const box = plate.parentElement as HTMLElement;
+      expect(box.className).toContain("bg-court-ink");
+      // An alpha suffix on the fill is what let the room through.
+      expect(box.className).not.toMatch(/bg-court-ink\//);
+      // Above the room, whichever layer that takes: counsel's plates clear
+      // the chamber, the judge's also has to clear the bench.
+      expect(box.className).toMatch(/\bz-(10|20|30)\b/);
+    }
+  });
+
+  it("paints the furniture opaquely, so it does not tint what it covers", () => {
+    render(<Courtroom />);
+
+    // The bench greyed out because it filled with translucent `ink` while
+    // sitting over the judge's dark brown plinth — a light tan at 60-86%
+    // over dark brown composites to a wash, and because the gradient
+    // crossed the figure's edge the bench came out two colours with a seam
+    // down the middle. A solid object is one colour whatever is behind it.
+    for (const id of ["judge-bench", "presenter-stand"]) {
+      const markup = screen.getByTestId(id).innerHTML;
+      expect(markup).toContain("color-mix");
+      // `fill-opacity` on a wood fill is the bug returning.
+      expect(markup).not.toMatch(/fill-opacity="0\.[0-9]+"[^>]*url\(#/);
+    }
+  });
+
+  it("keeps the nameplates out from under the furniture", () => {
+    render(<Courtroom />);
+
+    // Every plate that sat under its figure ended up behind woodwork --
+    // the bench across the judge, the rail across counsel, both opaque.
+    // Beside the figure there is nothing in front of them.
+    for (const plate of screen.getAllByTestId("sprite-plate")) {
+      const box = plate.parentElement as HTMLElement;
+      expect(box.className).toMatch(/\b(left-full|right-full)\b/);
+      expect(box.className).toContain("absolute");
+    }
+  });
+
+  it("stacks the bench, the lectern and the rail over the figures", () => {
+    render(<Courtroom />);
+
+    // The judge rising from behind the bench is the whole reason the
+    // furniture is a separate layer rather than part of the back drawing.
+    // If these ever render inside `chamber` again the stacking silently
+    // inverts and the judge sits on top of the bench, which is what it
+    // looked like before.
+    const chamber = screen.getByTestId("chamber");
+    for (const id of ["judge-bench", "presenter-stand", "gallery-rail"]) {
+      expect(chamber.contains(screen.getByTestId(id))).toBe(false);
+    }
+    // The rail divides the court from the gallery, which only reads if it
+    // crosses in front of counsel.
+    expect(screen.getByTestId("gallery-rail").getAttribute("class")).toContain("z-20");
+    // The bench paints over the judge -- that is the whole reason the
+    // furniture is a separate layer. If it ever renders inside `chamber`
+    // again the stacking silently inverts and the judge sits on top of it.
+    expect(screen.getByTestId("judge-bench").getAttribute("class")).toContain("z-20");
+    // The lectern crosses the presenter the way the bench crosses the
+    // judge: counsel stands behind it, so it paints over the figure.
+    expect(screen.getByTestId("presenter-stand").getAttribute("class")).toContain("z-20");
+  });
+
+  it("does not fade an inactive figure to translucent", () => {
+    render(<Courtroom />);
+
+    // An unlit sprite is out of the light, not half-absent. Opacity here let
+    // the drawn room show through whoever was not speaking.
+    const plate = screen.getAllByTestId("sprite-plate")[0];
+    const sprite = plate.closest("div")?.parentElement as HTMLElement;
+    expect(sprite.className).not.toMatch(/\bopacity-\d/);
   });
 });

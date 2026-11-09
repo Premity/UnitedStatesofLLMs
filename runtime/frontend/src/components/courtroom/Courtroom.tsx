@@ -5,7 +5,7 @@ import { roleShort } from "@/lib/roles";
 import { useCourtStore } from "@/store/courtStore";
 import type { Role } from "@/types";
 
-import { Chamber } from "./Chamber";
+import { Chamber, GalleryRail, JudgeBench, PresenterStand } from "./Chamber";
 import { Sprite } from "./Sprite";
 import { SubtitleBand } from "./SubtitleBand";
 
@@ -104,86 +104,88 @@ export function Courtroom() {
     [...turns].reverse().find((t) => t.role === role)?.model_id;
 
   return (
-    <section className="relative overflow-hidden rounded-xl border border-court-rail bg-gradient-to-b from-court-bg to-court-ink p-6 shadow-2xl">
-      <Chamber />
+    <div className="flex flex-col gap-4">
+      <section className="relative overflow-hidden rounded-xl border border-court-rail bg-gradient-to-b from-court-bg to-court-ink p-6 pb-10 shadow-2xl">
+        <Chamber />
+        {/* The bench is drawn in the room's coordinates but painted over the
+            judge, so it sits here rather than inside the sprite: it spans
+            the frame, and a sprite-scoped overlay cannot. */}
+        <JudgeBench />
+        {/* Likewise the lectern: drawn on the room's centre line, under the
+            presenter rather than over them. */}
+        <PresenterStand />
+        {/* The rail crosses in front of counsel, so the gallery reads as
+            behind them. Last of the furniture, and the frontmost. */}
+        <GalleryRail />
 
-      {/* Judge, elevated */}
-      <div className="relative z-10 flex justify-center pb-2">
-        <Sprite
-          role="judge"
-          label={roleShort("judge")}
-          variant="judge"
-          modelId={modelFor("judge")}
-          speaking={activeRole === "judge"}
-          thinking={isThinking("judge")}
-        />
-      </div>
-
-      {/* Counsel: doctrinal left, presenter centre, evidentiary right.
-
-          Three equal columns rather than a flex row so the presenter stays on
-          the courtroom's axis under the bench whatever the nameplates are
-          doing — a model id is as wide as it happens to be, and a flex row
-          would let the longest one push the centre off. */}
-      <div className="relative z-10 grid grid-cols-3 items-end gap-4 pt-6 sm:gap-8">
-        <div className="flex justify-center sm:justify-end">
+        {/* Judge, elevated. The bench crosses the figure at y=54..112 of the
+            room's 240, so the judge's height here decides how much of him
+            rises above it. */}
+        <div className="relative z-10 flex justify-center pb-2">
           <Sprite
-            role="attacker_doctrinal"
-            label={roleShort("attacker_doctrinal")}
-            modelId={modelFor("attacker_doctrinal")}
-            speaking={activeRole === "attacker_doctrinal"}
-            thinking={isThinking("attacker_doctrinal")}
-            objection={objectionFor("attacker_doctrinal")}
-            side="left"
-          />
-        </div>
-
-        <div className="flex justify-center">
-          <Sprite
-            role="presenter"
-            label={roleShort("presenter")}
-            modelId={modelFor("presenter")}
-            speaking={activeRole === "presenter"}
-            thinking={isThinking("presenter")}
-          />
-        </div>
-
-        <div className="flex justify-center sm:justify-start">
-          <Sprite
-            role="attacker_evidentiary"
-            label={roleShort("attacker_evidentiary")}
-            modelId={modelFor("attacker_evidentiary")}
-            speaking={activeRole === "attacker_evidentiary"}
-            thinking={isThinking("attacker_evidentiary")}
-            objection={objectionFor("attacker_evidentiary")}
+            role="judge"
+            label={roleShort("judge")}
+            variant="judge"
+            modelId={modelFor("judge")}
+            speaking={activeRole === "judge"}
+            thinking={isThinking("judge")}
             side="right"
           />
         </div>
-      </div>
 
-      {/* What is being said, under the scene rather than over it. */}
-      <div className="relative mt-6">
-        <SubtitleBand role={activeRole} text={utterance} objection={flourish} />
-      </div>
+        {/* Counsel: doctrinal left, presenter centre, evidentiary right.
 
-      {/* Status rail */}
-      <div className="relative z-10 mt-6 flex items-center justify-between border-t border-court-rail/60 pt-3">
-        <span className="flex items-center gap-2 font-ui text-xs uppercase tracking-widest text-court-gold/80">
-          {/* Who is actually working beats a generic phase caption: a debate
-              spends most of its time waiting, and "presenting" while the
-              attackers generate names the wrong bench. */}
-          {waitingOn ?? PHASE_CAPTION[phase] ?? phase}
-          {replayed && (
-            <span
-              data-testid="replay-marker"
-              title="A recorded fixture. No models were called."
-              className="rounded border border-court-gold/40 px-1.5 py-0.5 text-[10px] tracking-wider text-court-gold/70"
-            >
-              Recorded
-            </span>
-          )}
-        </span>
-        <span className="font-ui text-xs text-court-fg/40">
+            Three equal columns rather than a flex row so the presenter stays on
+            the courtroom's axis under the bench whatever the nameplates are
+            doing — a model id is as wide as it happens to be, and a flex row
+            would let the longest one push the centre off. */}
+        <div className="relative z-10 grid grid-cols-3 items-end gap-4 pt-6 sm:gap-8">
+          <div className="flex justify-center sm:justify-end">
+            <Sprite
+              role="attacker_doctrinal"
+              label={roleShort("attacker_doctrinal")}
+              modelId={modelFor("attacker_doctrinal")}
+              speaking={activeRole === "attacker_doctrinal"}
+              thinking={isThinking("attacker_doctrinal")}
+              objection={objectionFor("attacker_doctrinal")}
+              side="left"
+            />
+          </div>
+
+          {/* The presenter stands forward of the two attackers, nearer the
+              viewer, and at the stand: offset down so the three do not sit
+              on one flat line, which read as a row of cutouts rather than a
+              room with depth. */}
+          <div className="flex justify-center pt-12">
+            <Sprite
+              role="presenter"
+              label={roleShort("presenter")}
+              modelId={modelFor("presenter")}
+              speaking={activeRole === "presenter"}
+              thinking={isThinking("presenter")}
+              side="right"
+            />
+          </div>
+
+          <div className="flex justify-center sm:justify-start">
+            <Sprite
+              role="attacker_evidentiary"
+              label={roleShort("attacker_evidentiary")}
+              modelId={modelFor("attacker_evidentiary")}
+              speaking={activeRole === "attacker_evidentiary"}
+              thinking={isThinking("attacker_evidentiary")}
+              objection={objectionFor("attacker_evidentiary")}
+              side="right"
+            />
+          </div>
+        </div>
+
+        {/* Round and clock, pinned to the frame's top corner.
+
+            Out of the rail and into the corner because they answer "where
+            are we", not "what is happening": a glance target that should
+            not share a line with the caption and compete with it. */}
+        <div className="pointer-events-none absolute right-4 top-3 z-10 font-ui text-xs text-court-fg/40">
           {pendingSince !== null && (
             <span data-testid="elapsed" className="mr-2 tabular-nums">
               <Elapsed since={pendingSince} />
@@ -198,8 +200,35 @@ export function Courtroom() {
               </span>
             </>
           )}
-        </span>
-      </div>
-    </section>
+        </div>
+
+        {/* The caption, centred under the scene. It names whoever the court
+            is waiting on, which is the one thing worth reading mid-debate,
+            so it sits on the courtroom's axis rather than off to one side. */}
+        <div className="relative z-10 mt-6 flex items-center justify-center gap-2 border-t border-court-rail/60 pt-3">
+          <span className="flex items-center gap-2 font-ui text-xs uppercase tracking-widest text-court-gold/80">
+            {/* Who is actually working beats a generic phase caption: a debate
+                spends most of its time waiting, and "presenting" while the
+                attackers generate names the wrong bench. */}
+            {waitingOn ?? PHASE_CAPTION[phase] ?? phase}
+            {replayed && (
+              <span
+                data-testid="replay-marker"
+                title="A recorded fixture. No models were called."
+                className="rounded border border-court-gold/40 px-1.5 py-0.5 text-[10px] tracking-wider text-court-gold/70"
+              >
+                Recorded
+              </span>
+            )}
+          </span>
+        </div>
+      </section>
+
+      {/* What is being said. Outside the courtroom frame, not floating over
+          it: inside the section the drawn chamber ran behind the band, so the
+          gallery rail disappeared underneath it. A separate block below the
+          frame leaves the room whole and gives the band its own ground. */}
+      <SubtitleBand role={activeRole} text={utterance} objection={flourish} />
+    </div>
   );
 }

@@ -110,14 +110,26 @@ export function Sprite({
   return (
     <div
       className={clsx(
-        "flex flex-col items-center gap-2 transition-all duration-300",
-        lit ? "opacity-100" : "opacity-45 saturate-50",
+        "relative flex flex-col items-center gap-2 transition-all duration-300",
+        // Dimmed, never faded. `opacity` on the wrapper made the whole figure
+        // translucent and the drawn chamber showed straight through it — the
+        // seal behind the bench appeared inside the judge's head. A person is
+        // an opaque object whether or not they are the one talking, so an
+        // inactive sprite is desaturated and darkened instead, which reads as
+        // "out of the light" rather than as "partly not there".
+        lit ? "brightness-100 saturate-100" : "brightness-75 saturate-[.45]",
       )}
     >
-      {/* Figure — replace this block with real sprite art. */}
+      {/* Figure — replace this block with real sprite art.
+
+          The room's furniture is not positioned against this: the bench and
+          the lectern are drawn in the courtroom's own coordinates, because
+          every sprite-relative version of them came out off-centre. */}
       <div
         className={clsx(
-          "relative grid place-items-center rounded-t-full shadow-lg ring-2 ring-black/30",
+          // `relative z-10` plus an opaque fill: the figure sits in front of
+          // the chamber, so the room stops at its edge.
+          "relative z-10 grid place-items-center rounded-t-full shadow-lg ring-2 ring-black/30",
           ROLE_COLOR[role] ?? "bg-court-rail",
           variant === "judge" ? "h-28 w-24" : "h-24 w-20",
           speaking && "animate-bob",
@@ -143,8 +155,22 @@ export function Sprite({
         )}
       </div>
 
-      {/* Nameplate */}
-      <div className="min-w-[7rem] rounded border border-court-gold/30 bg-court-ink/80 px-2 py-1 text-center">
+      {/* Nameplate, beside the figure rather than under it.
+
+          Under it, a plate sits exactly where the room's furniture paints:
+          the bench crosses the judge, the gallery rail crosses counsel, and
+          both are opaque, so the names were unreadable behind woodwork.
+          Beside the figure there is nothing in front of them at all.
+
+          Counsel's plates go to the outer side -- doctrinal's to the left,
+          evidentiary's to the right -- so neither leans into the presenter
+          at the centre. The judge's goes right, where the room is empty. */}
+      <div
+        className={clsx(
+          "absolute top-8 z-30 min-w-[7rem] whitespace-nowrap rounded border border-court-gold/30 bg-court-ink px-2 py-1 text-center",
+          side === "left" ? "right-full mr-3" : "left-full ml-3",
+        )}
+      >
         <div
           data-testid="sprite-plate"
           className="font-display text-xs font-semibold tracking-wide text-court-gold"
