@@ -317,3 +317,36 @@ describe("the objection flourish, localised", () => {
     expect(sprite.className).not.toContain("opacity-45");
   });
 });
+
+
+describe("the chamber", () => {
+  it("draws the room behind the sprites", () => {
+    render(<Courtroom />);
+
+    const chamber = screen.getByTestId("chamber");
+    // Decorative: it must not be announced, and nothing in it carries
+    // information the transcript does not also state.
+    expect(chamber).toHaveAttribute("aria-hidden");
+    expect(chamber.tagName.toLowerCase()).toBe("svg");
+  });
+
+  it("stretches instead of imposing an aspect ratio", () => {
+    render(<Courtroom />);
+
+    // The reason it is drawn rather than photographed: the panel has to grow
+    // with its content, so the room cannot dictate the layout.
+    expect(screen.getByTestId("chamber")).toHaveAttribute("preserveAspectRatio", "none");
+  });
+
+  it("is painted in theme tokens, so it follows the palette", () => {
+    render(<Courtroom />);
+
+    // A fixed image cannot do this, which is the whole argument for the SVG:
+    // every fill reads a custom property rather than a literal colour.
+    const markup = screen.getByTestId("chamber").innerHTML;
+    expect(markup).toContain("var(--court-gold)");
+    expect(markup).toContain("var(--court-rail)");
+    expect(markup).toContain("var(--court-ink)");
+    expect(markup).not.toMatch(/#[0-9a-f]{6}/i);
+  });
+});

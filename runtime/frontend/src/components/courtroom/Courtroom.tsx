@@ -5,6 +5,7 @@ import { roleShort } from "@/lib/roles";
 import { useCourtStore } from "@/store/courtStore";
 import type { Role } from "@/types";
 
+import { Chamber } from "./Chamber";
 import { Sprite } from "./Sprite";
 import { SubtitleBand } from "./SubtitleBand";
 
@@ -104,15 +105,7 @@ export function Courtroom() {
 
   return (
     <section className="relative overflow-hidden rounded-xl border border-court-rail bg-gradient-to-b from-court-bg to-court-ink p-6 shadow-2xl">
-      {/* Wood panelling suggestion behind the benches */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.07]"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(90deg, rgb(var(--court-gold)) 0 2px, transparent 2px 28px)",
-        }}
-      />
+      <Chamber />
 
       {/* Judge, elevated */}
       <div className="relative z-10 flex justify-center pb-2">
