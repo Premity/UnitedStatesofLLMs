@@ -253,13 +253,21 @@ def test_reference_artwork_stays_out_of_a_public_repository() -> None:
     """
     import subprocess
 
-    tracked = subprocess.run(
-        ["git", "ls-files", "runtime/frontend/src/img/"],
-        capture_output=True,
-        text=True,
-        cwd=ROOT,
-        check=True,
-    ).stdout.split()
+    try:
+        result = subprocess.run(
+            ["git", "ls-files", "runtime/frontend/src/img/"],
+            capture_output=True,
+            text=True,
+            cwd=ROOT,
+            check=True,
+        )
+    except (OSError, subprocess.CalledProcessError) as exc:
+        # No git, or not a work tree -- a source tarball, or a container that
+        # copied the files in. There is nothing to check, and crashing here
+        # would report a licensing failure that did not happen.
+        pytest.skip(f"git is not usable here: {exc}")
+
+    tracked = result.stdout.split()
 
     allowed = {"runtime/frontend/src/img/favicon.png"}
     unexpected = set(tracked) - allowed
