@@ -477,6 +477,48 @@ describe("the chamber", () => {
   });
 });
 
+describe("a role that says nothing", () => {
+  const emptyTurn = (role: string): Turn => ({
+    id: `t_${role}`,
+    role: role as Turn["role"],
+    round_number: 1,
+    arguments: [],
+    objections: [],
+    model_id: "m",
+    prompt_id: "p",
+    prompt_hash: "h",
+    raw_response: "",
+    started_at: new Date().toISOString(),
+  });
+
+  it("names the silence rather than showing none", () => {
+    const s = useCourtStore.getState();
+    s.startRun("run_empty");
+
+    // An empty turn is a designed outcome: the attackers are told not to
+    // manufacture an objection against a sound argument. Rendering it as
+    // silence hid a finding -- an objection never raised cannot be
+    // overruled.
+    s.addTurn(emptyTurn("attacker_doctrinal"));
+    expect(useCourtStore.getState().utterance).toBe("No objection.");
+
+    s.addTurn(emptyTurn("presenter"));
+    expect(useCourtStore.getState().utterance).toBe("Nothing further.");
+  });
+
+  it("is not the same as a turn that has not arrived", () => {
+    const s = useCourtStore.getState();
+    s.startRun("run_waiting");
+
+    // Before any turn, the band genuinely has nothing to show. The store
+    // used to collapse both cases to null, so the two were indistinguishable.
+    expect(useCourtStore.getState().utterance).toBeNull();
+
+    s.addTurn(emptyTurn("attacker_evidentiary"));
+    expect(useCourtStore.getState().utterance).not.toBeNull();
+  });
+});
+
 describe("the fold", () => {
   it("folds when running and unfolds when adjourned", async () => {
     render(<App />);

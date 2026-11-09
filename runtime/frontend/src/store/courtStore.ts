@@ -120,6 +120,25 @@ const PHASE_FOR_ROLE: Record<string, CourtPhase> = {
   judge: "ruling",
 };
 
+/**
+ * What a role saying nothing actually means.
+ *
+ * An empty turn is a designed outcome, not a failure: the attackers are
+ * told not to manufacture an objection against a sound argument (see
+ * `attacker_doctrinal_system.md`). An attacker that raises nothing is
+ * conceding the point, which for a dissent log is a finding in itself --
+ * an objection never raised cannot be overruled. Rendering that as silence
+ * hid it.
+ *
+ * Counsel presenting and counsel attacking are doing different things, so
+ * they decline differently.
+ */
+function nothingToSay(role: string): string {
+  if (role === "presenter") return "Nothing further.";
+  if (role.startsWith("attacker_")) return "No objection.";
+  return "Nothing to add.";
+}
+
 export const useCourtStore = create<CourtState>((set) => ({
   ...initial,
 
@@ -181,10 +200,16 @@ export const useCourtStore = create<CourtState>((set) => ({
             : started.length > 0
               ? Date.now()
               : state.pendingSince,
-        // The bubble shows the headline of what the role just said: its first
-        // claim, or its first objection.
+        // The headline of what the role just said: its first claim, or its
+        // first objection -- or, when it said neither, that it had nothing
+        // to say. Resolved here rather than in the band because this is the
+        // only place that knows a turn arrived at all: `null` from a turn
+        // with no content and `null` from a turn that has not come yet are
+        // the same value, and they do not mean the same thing.
         utterance:
-          turn.arguments[0]?.claim ?? turn.objections[0]?.ground ?? null,
+          turn.arguments[0]?.claim ??
+          turn.objections[0]?.ground ??
+          nothingToSay(turn.role),
       };
     }),
 
