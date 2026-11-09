@@ -389,6 +389,32 @@ describe("the chamber", () => {
     }
   });
 
+  it("confines the room to the scene, not the whole panel", () => {
+    render(<Courtroom />);
+
+    // The furniture stretches to `inset-0` of its container, and its 240
+    // vertical units are mapped onto that container's height. When it was
+    // the whole section, the rail landed at 77.5% of a box that also held
+    // the caption and the corner readout -- so the banisters cut through
+    // the caption text and the round indicator sat inside the panelling.
+    const scene = screen.getByTestId("chamber").parentElement as HTMLElement;
+    expect(scene.contains(screen.getByTestId("gallery-rail"))).toBe(true);
+    // The caption and the corner readout live outside it.
+    expect(scene.textContent).not.toContain("not in session");
+  });
+
+  it("gives the scene a bounded height, not one tied to its width", () => {
+    render(<Courtroom />);
+
+    // The room draws with preserveAspectRatio="none" so it can stretch.
+    // Tying the scene box to the room's 5/3 ratio instead made a wide
+    // panel over 1000px tall -- past the viewport, with the furniture
+    // scattered away from the figures it belongs to.
+    const scene = screen.getByTestId("chamber").parentElement as HTMLElement;
+    expect(scene.className).not.toMatch(/aspect-/);
+    expect(scene.className).toMatch(/\bh-\[/);
+  });
+
   it("keeps the nameplates out from under the furniture", () => {
     render(<Courtroom />);
 
@@ -421,9 +447,9 @@ describe("the chamber", () => {
     // furniture is a separate layer. If it ever renders inside `chamber`
     // again the stacking silently inverts and the judge sits on top of it.
     expect(screen.getByTestId("judge-bench").getAttribute("class")).toContain("z-20");
-    // The lectern crosses the presenter the way the bench crosses the
-    // judge: counsel stands behind it, so it paints over the figure.
-    expect(screen.getByTestId("presenter-stand").getAttribute("class")).toContain("z-20");
+    // The lectern goes behind: the presenter must be fully visible, and in
+    // front it crossed the face and the role's letter.
+    expect(screen.getByTestId("presenter-stand").getAttribute("class")).toContain("z-0");
   });
 
   it("does not fade an inactive figure to translucent", () => {

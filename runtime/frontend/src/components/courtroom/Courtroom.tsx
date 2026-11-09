@@ -105,79 +105,120 @@ export function Courtroom() {
 
   return (
     <div className="flex flex-col gap-4">
-      <section className="relative overflow-hidden rounded-xl border border-court-rail bg-gradient-to-b from-court-bg to-court-ink p-6 pb-10 shadow-2xl">
-        <Chamber />
-        {/* The bench is drawn in the room's coordinates but painted over the
-            judge, so it sits here rather than inside the sprite: it spans
-            the frame, and a sprite-scoped overlay cannot. */}
-        <JudgeBench />
-        {/* Likewise the lectern: drawn on the room's centre line, under the
-            presenter rather than over them. */}
-        <PresenterStand />
-        {/* The rail crosses in front of counsel, so the gallery reads as
-            behind them. Last of the furniture, and the frontmost. */}
-        <GalleryRail />
+      <section className="relative overflow-hidden rounded-xl border border-court-rail bg-gradient-to-b from-court-bg to-court-ink p-6 shadow-2xl">
+        {/* The scene's own box.
 
-        {/* Judge, elevated. The bench crosses the figure at y=54..112 of the
-            room's 240, so the judge's height here decides how much of him
-            rises above it. */}
-        <div className="relative z-10 flex justify-center pb-2">
-          <Sprite
-            role="judge"
-            label={roleShort("judge")}
-            variant="judge"
-            modelId={modelFor("judge")}
-            speaking={activeRole === "judge"}
-            thinking={isThinking("judge")}
-            side="right"
-          />
-        </div>
+            The furniture stretches to `inset-0` of whatever contains it, so
+            that container decides where the room's 240 vertical units land.
+            Spanning the whole section put the rail at 77.5% of a box that
+            also held the caption and the corner readout -- which is why the
+            banisters cut through "The court is not in session" and the
+            round indicator sat inside the panelling. The room ends here.
 
-        {/* Counsel: doctrinal left, presenter centre, evidentiary right.
+            It needs a height of its own, because the furniture is absolute
+            and adds nothing to the box: a bare `relative` div collapses to
+            whatever the sprite rows need, which crushed the room's 240
+            vertical units into a few hundred pixels.
 
-            Three equal columns rather than a flex row so the presenter stays on
-            the courtroom's axis under the bench whatever the nameplates are
-            doing — a model id is as wide as it happens to be, and a flex row
-            would let the longest one push the centre off. */}
-        <div className="relative z-10 grid grid-cols-3 items-end gap-4 pt-6 sm:gap-8">
-          <div className="flex justify-center sm:justify-end">
+            A fixed height, not the room's 5/3 aspect ratio. The room is
+            drawn with `preserveAspectRatio="none"` precisely so it can
+            stretch, and tying the box to 5/3 made a wide panel 1000px tall
+            -- taller than the viewport, which is not a courtroom but a
+            mural. The scene is as tall as the figures need and the room
+            stretches to fit. */}
+        <div className="relative h-[22rem] w-full sm:h-[26rem]">
+          <Chamber />
+          {/* The bench is drawn in the room's coordinates but painted over the
+              judge, so it sits here rather than inside the sprite: it spans
+              the frame, and a sprite-scoped overlay cannot. */}
+          <JudgeBench />
+          {/* Likewise the lectern: drawn on the room's centre line, under the
+              presenter rather than over them. */}
+          <PresenterStand />
+          {/* The rail crosses in front of counsel, so the gallery reads as
+              behind them. Last of the furniture, and the frontmost. */}
+          <GalleryRail />
+
+          {/* Judge, elevated.
+
+              Raised by pulling the figure up, not by moving the bench: the
+              bench is fixed furniture at y=54..112 of the room's 240, and
+              the judge rises further above it the higher he sits. The
+              nameplate is a child of the sprite, so it comes along. */}
+          {/* The judge stands behind the bench, whose lip is at y=54 of the
+              room's 240 -- 22.5%. Anchored by the bottom of the row so the
+              figure's feet meet that line rather than its head meeting an
+              offset measured from the top. */}
+          <div className="absolute inset-x-0 bottom-[77.5%] z-10 flex justify-center">
             <Sprite
-              role="attacker_doctrinal"
-              label={roleShort("attacker_doctrinal")}
-              modelId={modelFor("attacker_doctrinal")}
-              speaking={activeRole === "attacker_doctrinal"}
-              thinking={isThinking("attacker_doctrinal")}
-              objection={objectionFor("attacker_doctrinal")}
-              side="left"
-            />
-          </div>
-
-          {/* The presenter stands forward of the two attackers, nearer the
-              viewer, and at the stand: offset down so the three do not sit
-              on one flat line, which read as a row of cutouts rather than a
-              room with depth. */}
-          <div className="flex justify-center pt-12">
-            <Sprite
-              role="presenter"
-              label={roleShort("presenter")}
-              modelId={modelFor("presenter")}
-              speaking={activeRole === "presenter"}
-              thinking={isThinking("presenter")}
+              role="judge"
+              label={roleShort("judge")}
+              variant="judge"
+              modelId={modelFor("judge")}
+              speaking={activeRole === "judge"}
+              thinking={isThinking("judge")}
               side="right"
             />
           </div>
 
-          <div className="flex justify-center sm:justify-start">
-            <Sprite
-              role="attacker_evidentiary"
-              label={roleShort("attacker_evidentiary")}
-              modelId={modelFor("attacker_evidentiary")}
-              speaking={activeRole === "attacker_evidentiary"}
-              thinking={isThinking("attacker_evidentiary")}
-              objection={objectionFor("attacker_evidentiary")}
-              side="right"
-            />
+          {/* Counsel: doctrinal left, presenter centre, evidentiary right.
+
+              Three equal columns rather than a flex row so the presenter stays on
+              the courtroom's axis under the bench whatever the nameplates are
+              doing — a model id is as wide as it happens to be, and a flex row
+              would let the longest one push the centre off. */}
+          {/* Counsel stand behind the rail, so it crosses them.
+
+              Their feet go to y=200 -- inside the rail's y=186..210, not on
+              its top edge. Anchored at the top edge the rail clipped the
+              figures off at the ankle instead of passing in front of them,
+              which is the whole point of a barrier. 240-200 = 16.7%. */}
+          <div className="absolute inset-x-0 bottom-[16.7%] z-10 grid grid-cols-3 items-end gap-4 sm:gap-8">
+            <div className="flex justify-center sm:justify-end">
+              <Sprite
+                role="attacker_doctrinal"
+                label={roleShort("attacker_doctrinal")}
+                modelId={modelFor("attacker_doctrinal")}
+                speaking={activeRole === "attacker_doctrinal"}
+                thinking={isThinking("attacker_doctrinal")}
+                objection={objectionFor("attacker_doctrinal")}
+                side="left"
+              />
+            </div>
+
+            {/* The presenter stands a little forward of the attackers, so
+                the lectern (y=152..176) crosses the body rather than the
+                floor beneath it, and the three do not sit on one flat line.
+
+                The row is bottom-aligned, so dropping this cell is a margin
+                on the cell itself. A translate was the wrong tool earlier:
+                it moves the figure without moving the box it is aligned in,
+                so the presenter slid down through the rail while the
+                lectern stayed put over their face. */}
+            <div className="flex justify-center pt-6">
+              <Sprite
+                role="presenter"
+                label={roleShort("presenter")}
+                modelId={modelFor("presenter")}
+                speaking={activeRole === "presenter"}
+                thinking={isThinking("presenter")}
+                side="right"
+              />
+            </div>
+
+            <div className="flex justify-center sm:justify-start">
+              <Sprite
+                role="attacker_evidentiary"
+                label={roleShort("attacker_evidentiary")}
+                modelId={modelFor("attacker_evidentiary")}
+                speaking={activeRole === "attacker_evidentiary"}
+                thinking={isThinking("attacker_evidentiary")}
+                objection={objectionFor("attacker_evidentiary")}
+                side="right"
+              />
+            </div>
           </div>
+
         </div>
 
         {/* Round and clock, pinned to the frame's top corner.

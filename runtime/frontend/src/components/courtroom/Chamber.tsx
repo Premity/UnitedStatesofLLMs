@@ -247,10 +247,11 @@ export function PresenterStand() {
       data-testid="presenter-stand"
       viewBox="0 0 400 240"
       preserveAspectRatio="none"
-      // In front of the figure, like the bench: counsel stands behind a
-      // lectern, so it crosses the body rather than hiding behind it. At
-      // z-0 the figure covered it and it read as a tray on the floor.
-      className="pointer-events-none absolute inset-0 z-20 h-full w-full"
+      // Behind the figure. The presenter has to be fully visible -- at
+      // z-20 the lectern crossed the face and the role's letter, and no
+      // amount of moving it down fixed that, because the problem was the
+      // layer and not the height.
+      className="pointer-events-none absolute inset-0 z-0 h-full w-full"
     >
       <defs>
         {/* Opaque, for the same reason as the bench: a lectern that changes
@@ -268,12 +269,20 @@ export function PresenterStand() {
         </linearGradient>
       </defs>
 
-      {/* The face, centred on x=200 and widening toward the viewer, so it
-          reads as a surface coming forward out of the room. Narrowing it
-          downward instead made the near edge the far one, and the presenter
-          appeared to be standing on the wrong side of their own lectern. */}
+      {/* The face, centred on x=200 and widening toward the viewer.
+
+          Sized against the presenter, not against the room: a lectern is a
+          personal stand, so a bit wider than the figure and no more. At
+          x=160..240 it was 80 of the room's 400 units -- four times the
+          sprite's width, which is a bench, and it swallowed whoever stood
+          at it. The judge's bench is six times its figure because a bench
+          genuinely is a long desk; a lectern is not.
+
+          Drawn behind the figure, it reads only where it extends past the
+          silhouette, so it is a little wider than the sprite rather than
+          exactly its width. */}
       <path
-        d="M172 150 L228 150 L240 178 L160 178 Z"
+        d="M175 176 L225 176 L232 202 L168 202 Z"
         fill="url(#stand-wood)"
         stroke="rgb(var(--court-gold))"
         strokeOpacity="0.7"
@@ -282,9 +291,9 @@ export function PresenterStand() {
       {/* The lit top edge, which is what makes it a surface rather than a
           shape painted on the floor. */}
       <rect
-        x="169"
-        y="146"
-        width="62"
+        x="173"
+        y="172"
+        width="54"
         height="5"
         rx="2"
         fill="rgb(var(--court-gold))"
