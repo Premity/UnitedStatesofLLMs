@@ -101,6 +101,27 @@ print(len(d.get('entries',{})), len(d.get('instruments',[])))
             warn "this is the placeholder index, not the real corpus"
             note "24 hand-written articles; the corpus is 23 instruments + 161 rules"
             fix "make fetch"
+        else
+            # A real index that is merely incomplete looks identical to a
+            # complete one from the outside, and reports most citations
+            # out_of_corpus -- indistinguishable from fabrication unless the
+            # gap is named. Compared against the manifest, which is the
+            # declared scope, rather than against a hard-coded count.
+            missing=$(python3 -c "
+import json, pathlib
+listed = {i['id'] for i in json.load(open('corpus/manifests/treaties.json'))['instruments']}
+have = set(json.load(open('$LIVE')).get('instruments', []))
+gap = sorted(listed - have)
+if not any('customary' in h for h in have):
+    gap.append('customary_ihl')
+print(' '.join(gap))
+" 2>/dev/null || true)
+            if [[ -n "$missing" ]]; then
+                warn "partial corpus — $(wc -w <<< "$missing" | tr -d ' ') declared instrument(s) not indexed"
+                note "missing: $missing"
+                note "citations to these resolve out_of_corpus, not unresolved"
+                note "fine on a dev machine; scored runs need the full corpus"
+            fi
         fi
     fi
 else
@@ -189,7 +210,8 @@ fetched=$(ls data/cache/*.json 2>/dev/null | wc -l | tr -d ' ')
 if [[ "$fetched" -gt 0 ]]; then
     ok "$fetched instrument(s) fetched to data/cache/"
 else
-    warn "nothing fetched yet — the fetcher is still a stub (T1-2)"
+    warn "nothing fetched in data/cache/ — resolving against the placeholder index"
+    note "expected if this machine does not run the indexer; see CLAUDE.md"
 fi
 
 runs=$(ls data/runs/*.json 2>/dev/null | wc -l | tr -d ' ')
