@@ -16,6 +16,7 @@ from typing import Any
 
 import pytest
 
+from app.graph.workflow import compiled_graph
 from app.routers import debate as debate_router
 from app.services.run_store import RunStore
 from council_core.models.debate import (
@@ -52,20 +53,37 @@ def verdict(conclusion: str) -> Verdict:
 class ScriptedGraph:
     """Stands in for the compiled graph, yielding chunks the router consumes.
 
-    `stream_mode="values"` means each chunk is the whole accumulated state, so
-    `turns` grows and `verdict` persists once written — which is precisely the
-    behaviour under test.
+    The router asks for `stream_mode=["values", "tasks"]`, and LangGraph tags
+    every chunk with its mode when more than one is requested. This mirrors
+    that contract: a bare dict is taken as a `values` chunk so the existing
+    state-accumulation tests stay readable, and a `(mode, payload)` tuple
+    passes through as written.
+
+    `values` chunks are the whole accumulated state, so `turns` grows and
+    `verdict` persists once written — which is precisely the behaviour under
+    test.
     """
 
-    def __init__(self, chunks: list[dict[str, Any]]) -> None:
+    def __init__(self, chunks: list[Any]) -> None:
         self._chunks = chunks
 
-    def astream(self, _initial: dict[str, Any], **_kwargs: Any) -> AsyncIterator[dict]:
-        async def gen() -> AsyncIterator[dict]:
+    def astream(self, _initial: dict[str, Any], **_kwargs: Any) -> AsyncIterator[tuple]:
+        async def gen() -> AsyncIterator[tuple]:
             for chunk in self._chunks:
-                yield chunk
+                yield chunk if isinstance(chunk, tuple) else ("values", chunk)
 
         return gen()
+
+
+def task_started(name: str) -> tuple[str, dict[str, Any]]:
+    """A `tasks` chunk for a node that just began — no `result` key."""
+    return ("tasks", {"id": f"t-{name}", "name": name, "input": {}, "triggers": []})
+
+
+def task_finished(name: str) -> tuple[str, dict[str, Any]]:
+    """A `tasks` chunk for a node that completed. The router ignores these:
+    the `turn` event built from `values` already reports a finish."""
+    return ("tasks", {"id": f"t-{name}", "name": name, "result": [], "error": None})
 
 
 async def collect(
@@ -202,3 +220,113 @@ async def test_arguments_carry_through_rounds(
     emitted = [json.loads(e["data"]) for e in events if e["event"] == "turn"]
     assert [t["round_number"] for t in emitted] == [1, 2]
     assert emitted[1]["arguments"][0]["claim"] == "A claim."
+
+
+@pytest.mark.asyncio
+async def test_a_node_beginning_emits_role_started(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    """The point of the event: a role is announced before it has produced a turn.
+
+    This is what the frontend had to infer from a hand-maintained copy of the
+    graph's shape. A turn runs 40 to 90 seconds, so the gap between starting
+    and finishing is most of the debate.
+    """
+    events = await collect(
+        monkeypatch,
+        tmp_path,
+        [task_started("present"), {"turns": [turn(Role.PRESENTER, 1)], "current_round": 1}],
+    )
+
+    assert names(events)[:2] == ["start", "role_started"]
+    payload = json.loads(events[1]["data"])
+    assert payload["role"] == "presenter"
+    # Announced before any turn existed, so nothing has advanced the round.
+    assert payload["round"] == 0
+
+
+@pytest.mark.asyncio
+async def test_both_attackers_are_announced_before_either_finishes(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    """The fan-out is concurrent, and the judge is a fan-in.
+
+    The store previously had to work out that the first attacker to report
+    must not start the judge while the other was still generating. Reading the
+    graph's own task events removes that inference.
+    """
+    events = await collect(
+        monkeypatch,
+        tmp_path,
+        [
+            task_started("attacker_doctrinal"),
+            task_started("attacker_evidentiary"),
+            {"turns": [turn(Role.ATTACKER_EVIDENTIARY, 1)], "current_round": 1},
+            task_finished("attacker_evidentiary"),
+            {
+                "turns": [turn(Role.ATTACKER_EVIDENTIARY, 1), turn(Role.ATTACKER_DOCTRINAL, 1)],
+                "current_round": 1,
+            },
+            task_started("judge"),
+        ],
+    )
+
+    started = [json.loads(e["data"])["role"] for e in events if e["event"] == "role_started"]
+    assert started == ["attacker_doctrinal", "attacker_evidentiary", "judge"]
+
+
+@pytest.mark.asyncio
+async def test_a_finished_task_does_not_emit_role_started(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    """`tasks` reports finishes too; the `turn` event already covers those."""
+    events = await collect(
+        monkeypatch,
+        tmp_path,
+        [task_started("judge"), task_finished("judge")],
+    )
+
+    assert names(events).count("role_started") == 1
+
+
+@pytest.mark.asyncio
+async def test_the_retrieve_node_is_announced_as_the_retriever(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    """`retrieve` is the one node named for its work rather than its role.
+
+    The courtroom shows a clerk consulting the corpus, so the node name is
+    mapped to `Role.RETRIEVER` instead of leaking a graph-internal name into
+    the event contract.
+    """
+    events = await collect(monkeypatch, tmp_path, [task_started("retrieve")])
+
+    payload = json.loads(events[1]["data"])
+    assert payload["role"] == Role.RETRIEVER.value
+
+
+@pytest.mark.asyncio
+async def test_a_non_role_node_is_not_announced(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    """A future router or aggregator node means nothing to a courtroom."""
+    events = await collect(monkeypatch, tmp_path, [task_started("__start__")])
+
+    assert "role_started" not in names(events)
+
+
+def test_every_graph_node_is_either_a_streamed_role_or_deliberately_not() -> None:
+    """The guard against the duplication coming back.
+
+    `STREAMED_ROLES` is derived from `Role`, so a node added to `build_graph()`
+    with a role's name reports without anyone editing a list. This fails if a
+    node is added whose name is neither a role nor a known alias — which is
+    the moment to decide whether the courtroom should show it.
+    """
+    nodes = set(compiled_graph.get_graph().nodes) - {"__start__", "__end__"}
+    unmapped = {
+        n
+        for n in nodes
+        if n not in debate_router.STREAMED_ROLES and n not in debate_router._TASK_ROLE_ALIASES
+    }
+    assert not unmapped, f"graph nodes not mapped to a role: {sorted(unmapped)}"
