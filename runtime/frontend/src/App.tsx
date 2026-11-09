@@ -36,22 +36,32 @@ export default function App() {
         </div>
       )}
 
-      {/* The record gives its column back when it is put away, so the
-          courtroom widens instead of leaving a gap. */}
-      <main
-        className={`mx-auto grid max-w-[1600px] gap-6 p-6 ${
-          dissentOpen
-            ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)]"
-            : "lg:grid-cols-[minmax(0,1fr)_auto]"
-        }`}
-      >
-        <div className="space-y-6">
-          <QuestionForm />
-          <Courtroom />
-          <Transcript />
-        </div>
+      {/* The courtroom spans the page; the record splits the row beneath it.
 
-        <DissentPanel />
+          The dissent log used to be a column beside this whole stack, which
+          meant opening it narrowed the courtroom. The room is drawn with
+          `preserveAspectRatio="none"` over a box of fixed height, so
+          narrowing it re-stretches the room horizontally while its height
+          stays put, and every piece of furniture shifts relative to the
+          figures standing at it. The scene's geometry must not depend on
+          whether a panel elsewhere is open, so the split happens below it. */}
+      <main className="mx-auto max-w-[1600px] space-y-6 p-6">
+        <QuestionForm />
+        <Courtroom />
+
+        {/* The record gives its column back when it is put away, so the
+            transcript widens instead of leaving a gap. Below `lg` it stacks
+            under the transcript rather than squeezing it further. */}
+        <div
+          className={`grid gap-6 ${
+            dissentOpen
+              ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)]"
+              : "lg:grid-cols-[minmax(0,1fr)_auto]"
+          }`}
+        >
+          <Transcript />
+          <DissentPanel />
+        </div>
       </main>
     </div>
   );

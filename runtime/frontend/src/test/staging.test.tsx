@@ -1,6 +1,7 @@
 import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
+import App from "@/App";
 import { Courtroom } from "@/components/courtroom/Courtroom";
 import { isLoud } from "@/components/courtroom/ObjectionFlourish";
 import { SubtitleBand } from "@/components/courtroom/SubtitleBand";
@@ -401,6 +402,18 @@ describe("the chamber", () => {
     expect(scene.contains(screen.getByTestId("gallery-rail"))).toBe(true);
     // The caption and the corner readout live outside it.
     expect(scene.textContent).not.toContain("not in session");
+  });
+
+  it("keeps the courtroom out of the column the dissent log toggles", () => {
+    render(<App />);
+
+    // The scene stretches to whatever width it is given, over a box of
+    // fixed height, so any container that changes width changes where the
+    // furniture lands relative to the figures. The dissent log opening is
+    // such a change -- it must not reach the courtroom.
+    const scene = screen.getByTestId("chamber").parentElement as HTMLElement;
+    const toggling = scene.closest('[class*="lg:grid-cols-"]');
+    expect(toggling).toBeNull();
   });
 
   it("gives the scene a bounded height, not one tied to its width", () => {
