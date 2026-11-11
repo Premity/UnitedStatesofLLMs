@@ -54,18 +54,18 @@ class QuotaTracker:
     def load(self) -> dict[str, Any]:
         """Load current quota data from disk."""
         if not self.log_path.exists():
-            return {"daily_usage": {}, "total_calls": 0, "history": []}
+            return {"daily_usage": {}, "total_calls": 0, "total_attempts": 0, "history": []}
         try:
             return json.loads(self.log_path.read_text(encoding="utf-8"))
         except Exception:
-            return {"daily_usage": {}, "total_calls": 0, "history": []}
+            return {"daily_usage": {}, "total_calls": 0, "total_attempts": 0, "history": []}
 
     def get_today_usage(self, date_str: str | None = None) -> int:
-        """Get the number of judge calls consumed today (or on date_str) in UTC."""
+        """Get the number of API judge attempts consumed today (or on date_str) in UTC."""
         date_key = date_str or self._today_utc()
         data = self.load()
         daily = data.get("daily_usage", {}).get(date_key, {})
-        return int(daily.get("calls", 0))
+        return int(daily.get("attempts", daily.get("calls", 0)))
 
     def check_quota(
         self,
@@ -74,10 +74,10 @@ class QuotaTracker:
         date_str: str | None = None,
         max_quota: int = MAX_DAILY_QUOTA,
     ) -> tuple[bool, int, int]:
-        """Verify that expected_calls will not breach max_quota.
+        """Verify that reserved judge attempts will not breach max_quota.
 
         Returns:
-            Tuple of (allowed, current_today_usage, remaining_after_expected).
+            Tuple of (allowed, current_today_usage, remaining_after_reservation).
 
         Raises:
             QuotaExceededError if today's usage + expected_calls > max_quota.
@@ -86,8 +86,8 @@ class QuotaTracker:
         projected = today_usage + expected_calls
         if projected > max_quota:
             raise QuotaExceededError(
-                f"Judge call quota exceeded: {today_usage} calls used today (UTC), "
-                f"{expected_calls} expected. Projected total {projected} exceeds "
+                f"Judge attempt quota exceeded: {today_usage} attempts used today (UTC), "
+                f"{expected_calls} reserved. Projected total {projected} exceeds "
                 f"the daily safety limit of {max_quota} (account ceiling: {ACCOUNT_DAILY_CEILING})."
             )
         remaining = max_quota - projected
@@ -99,21 +99,29 @@ class QuotaTracker:
         arm_key: str,
         calls: int = 1,
         *,
+        attempts: int | None = None,
+        failures: int = 0,
         backend: str = "api",
         notes: str = "",
     ) -> int:
-        """Record judge call(s) in the quota log and return new today total."""
+        """Record judge HTTP attempts and quota-charged API attempts."""
+        attempt_count = calls if attempts is None else attempts
         self.log_path.parent.mkdir(parents=True, exist_ok=True)
         data = self.load()
         today = self._today_utc()
 
         daily_usage = data.setdefault("daily_usage", {})
         today_entry = daily_usage.setdefault(
-            today, {"calls": 0, "limit": MAX_DAILY_QUOTA, "ceiling": ACCOUNT_DAILY_CEILING}
+            today,
+            {"calls": 0, "attempts": 0, "limit": MAX_DAILY_QUOTA, "ceiling": ACCOUNT_DAILY_CEILING},
         )
-        if calls > 0:
-            today_entry["calls"] = int(today_entry.get("calls", 0)) + calls
-            data["total_calls"] = int(data.get("total_calls", 0)) + calls
+        quota_attempts = attempt_count if backend == "api" else 0
+        if quota_attempts > 0:
+            previous_attempts = int(today_entry.get("attempts", today_entry.get("calls", 0)))
+            today_entry["calls"] = int(today_entry.get("calls", 0)) + quota_attempts
+            today_entry["attempts"] = previous_attempts + quota_attempts
+            data["total_calls"] = int(data.get("total_calls", 0)) + quota_attempts
+        data["total_attempts"] = int(data.get("total_attempts", 0)) + attempt_count
 
         history = data.setdefault("history", [])
         history.append(
@@ -122,6 +130,8 @@ class QuotaTracker:
                 "case_id": case_id,
                 "arm": arm_key,
                 "calls": calls,
+                "attempts": attempt_count,
+                "failures": failures,
                 "backend": backend,
                 "notes": notes,
             }

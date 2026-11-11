@@ -109,15 +109,22 @@ def _bootstrap_ratio_ci(
     return (float(np.percentile(samples, 2.5)), float(np.percentile(samples, 97.5)))
 
 
-def _format_metric(value: float | None, ci: tuple[float, float] | None) -> str:
+def _format_metric(
+    value: float | None,
+    ci: tuple[float, float] | None,
+    *,
+    sample_size: int | None = None,
+) -> str:
+    sample_note = f" (n={sample_size})" if sample_size is not None else ""
     if value is None or not np.isfinite(value):
-        return "N/A"
+        return f"N/A{sample_note}"
     if ci is None or not all(np.isfinite(bound) for bound in ci):
-        return f"{value:.3f} (95% CI N/A)"
-    return f"{value:.3f} ({ci[0]:.3f}-{ci[1]:.3f})"
+        return f"{value:.3f}{sample_note} (95% CI N/A)"
+    return f"{value:.3f}{sample_note} ({ci[0]:.3f}-{ci[1]:.3f})"
 
 
 def _summarize_arm(results: list[dict[str, Any]]) -> dict[str, Any]:
+    completed = [result for result in results if result.get("status") != "error"]
     accuracy = [
         float(
             result.get(
@@ -125,11 +132,11 @@ def _summarize_arm(results: list[dict[str, Any]]) -> dict[str, Any]:
                 result.get("predicted_outcome") == result.get("ground_truth_outcome"),
             )
         )
-        for result in results
+        for result in completed
     ]
     scored = [
         result
-        for result in results
+        for result in completed
         if isinstance(result.get("confidence"), (int, float))
         and result.get("outcome_correct") is not None
     ]
@@ -167,6 +174,25 @@ def _summarize_arm(results: list[dict[str, Any]]) -> dict[str, Any]:
 
     return {
         "n": len(results),
+        "completed_n": len(completed),
+        "error_n": sum(
+            result.get("status") == "error" and result.get("error_type") != "timeout"
+            for result in results
+        ),
+        "timeout_n": sum(
+            result.get("status") == "error" and result.get("error_type") == "timeout"
+            for result in results
+        ),
+        "wrong_n": sum(
+            result.get(
+                "outcome_correct",
+                result.get("predicted_outcome") == result.get("ground_truth_outcome"),
+            )
+            is False
+            for result in completed
+        ),
+        "accuracy_n": len(completed),
+        "calibration_n": len(scored),
         "accuracy": float(np.mean(accuracy)) if accuracy else None,
         "accuracy_ci": _bootstrap_ci(accuracy, average, seed_offset=1),
         "brier": float(np.mean(brier_values)) if brier_values else None,
@@ -241,23 +267,31 @@ def render_report(results: list[dict[str, Any]], *, allow_mixed_results: bool = 
             by_arm[str(result.get("arm", "unknown"))].append(result)
         lines.extend(
             (
-                "| Arm | Cases | Accuracy | Brier score | ECE | Overconfidence | "
+                "| Arm | Cases | Completed | Wrong | Errors | Timed out | "
+                "Accuracy | Brier score | ECE | Overconfidence | "
                 "Citation fabrication rate | Attacker independence | Judge backend |",
-                "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
+                "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | "
+                "---: | ---: | ---: | --- |",
             )
         )
         summaries = {arm: _summarize_arm(rows) for arm, rows in sorted(by_arm.items())}
         for arm, summary in summaries.items():
             lines.append(
-                f"| {arm} | {summary['n']} | "
-                f"{_format_metric(summary['accuracy'], summary['accuracy_ci'])} | "
-                f"{_format_metric(summary['brier'], summary['brier_ci'])} | "
-                f"{_format_metric(summary['ece'], summary['ece_ci'])} | "
+                f"| {arm} | {summary['n']} | {summary['completed_n']} | "
+                f"{summary['wrong_n']} | {summary['error_n']} | {summary['timeout_n']} | "
+                f"{_format_metric(summary['accuracy'], summary['accuracy_ci'], sample_size=summary['accuracy_n'])} | "
+                f"{_format_metric(summary['brier'], summary['brier_ci'], sample_size=summary['calibration_n'])} | "
+                f"{_format_metric(summary['ece'], summary['ece_ci'], sample_size=summary['calibration_n'])} | "
                 f"{_format_metric(summary['overconfidence'], summary['overconfidence_ci'])} | "
                 f"{_format_metric(summary['fabrication_rate'], summary['fabrication_ci'])} | "
                 f"{_format_metric(summary['independence'], summary['independence_ci'])} | "
                 f"{', '.join(summary['judge_backends'])} |"
             )
+            if summary["completed_n"] < 5:
+                lines.append(
+                    f"> **Warning:** arm `{arm}` has only {summary['completed_n']} completed "
+                    "cases; fewer than 5 completed cases."
+                )
         lines.extend(("", "### Prompt hashes", ""))
         for arm, summary in summaries.items():
             lines.append(f"**{arm}**")

@@ -19,12 +19,17 @@ import hashlib
 import json
 import os
 import sys
+import time
+from collections.abc import Iterator
+from contextlib import contextmanager
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 from uuid import uuid4
 
 import structlog
+
+import council_core.llm.client as llm_client
 
 # Ensure local LiteLLM model cost map is used to prevent network timeouts in sandbox
 os.environ.setdefault("LITELLM_LOCAL_MODEL_COST_MAP", "True")
@@ -76,6 +81,60 @@ from metrics.provenance import (
 )
 
 log = structlog.get_logger(__name__)
+
+DEFAULT_CASE_TIMEOUT_SECONDS = 300.0
+DEFAULT_MAX_CONSECUTIVE_FAILURES = 2
+
+
+class _JudgeRequestCounter:
+    """Counts judge HTTP attempts from the LLM client's structured log events."""
+
+    def __init__(self) -> None:
+        self.attempts = 0
+        self.responses = 0
+        self.structured_failures = 0
+
+    @property
+    def failures(self) -> int:
+        """Return failed HTTP attempts plus terminal structured-output failures."""
+        return max(0, self.attempts - self.responses) + self.structured_failures
+
+
+class _CountingLLMLogger:
+    """Intercept judge request events while forwarding normal LLM logging."""
+
+    def __init__(self, wrapped: Any, counter: _JudgeRequestCounter) -> None:
+        self._wrapped = wrapped
+        self._counter = counter
+
+    def info(self, event: str, *args: Any, **kwargs: Any) -> Any:
+        if kwargs.get("role") == "judge":
+            if event == "llm_request":
+                self._counter.attempts += 1
+            elif event == "llm_response":
+                self._counter.responses += 1
+        return self._wrapped.info(event, *args, **kwargs)
+
+    def error(self, event: str, *args: Any, **kwargs: Any) -> Any:
+        if event == "structured_output_failed" and kwargs.get("role") == "judge":
+            self._counter.structured_failures += 1
+        return self._wrapped.error(event, *args, **kwargs)
+
+    def __getattr__(self, name: str) -> Any:
+        return getattr(self._wrapped, name)
+
+
+@contextmanager
+def _capture_judge_requests() -> Iterator[_JudgeRequestCounter]:
+    """Capture each judge request event for one sequential harness case."""
+    counter = _JudgeRequestCounter()
+    original_logger = llm_client.log
+    llm_client.log = _CountingLLMLogger(original_logger, counter)
+    try:
+        yield counter
+    finally:
+        llm_client.log = original_logger
+
 
 ARM_ALIASES: dict[str, str] = {
     "a": "raw",
@@ -233,7 +292,6 @@ async def _run_standard_arm(
     *,
     judge_backend: str,
     output_dir: Path,
-    quota_tracker: QuotaTracker,
 ) -> dict[str, Any]:
     """Execute one standard debate arm (A, B, C, or D) over a case fixture."""
     config = DebateConfig(
@@ -292,27 +350,8 @@ async def _run_standard_arm(
             "context": [],
             "verdict": mock_verdict,
         }
-        quota_tracker.record_call(case_id=case.id, arm_key=arm.key, calls=0, backend=judge_backend)
     else:
-        # For live backends the provider counts failed requests too: record the
-        # expected call count in a finally block so it is logged even on error.
-        expected = get_expected_calls(arm.key, 1)
-        actual_judge_calls_live = 0
-        try:
-            final_state = await compiled_graph.ainvoke(initial_state)
-            judge_turns_live = [t for t in final_state.get("turns", []) if t.role == Role.JUDGE]
-            actual_judge_calls_live = len(judge_turns_live)
-        except Exception:
-            # Provider billed us even though the call failed; charge the expected count.
-            actual_judge_calls_live = expected
-            raise
-        finally:
-            quota_tracker.record_call(
-                case_id=case.id,
-                arm_key=arm.key,
-                calls=actual_judge_calls_live,
-                backend=judge_backend,
-            )
+        final_state = await compiled_graph.ainvoke(initial_state)
 
     duration = (datetime.now(UTC) - started).total_seconds()
 
@@ -329,7 +368,7 @@ async def _run_standard_arm(
         objections = final_state.get("objections", [])
         context = final_state.get("context", [])
         verdict = final_state.get("verdict")
-        actual_judge_calls = actual_judge_calls_live  # type: ignore[assignment]
+        actual_judge_calls = sum(1 for turn in turns if turn.role == Role.JUDGE)
 
     predicted_outcome = (
         normalize_outcome(verdict.conclusion) if verdict else Outcome.INDETERMINATE.value
@@ -390,7 +429,6 @@ async def _run_arm_e(
     *,
     judge_backend: str,
     output_dir: Path,
-    quota_tracker: QuotaTracker,
 ) -> dict[str, Any]:
     """Execute Arm E: Compute-matched self-consistency control over a case fixture (ADR 0011)."""
     started = datetime.now(UTC)
@@ -474,13 +512,6 @@ async def _run_arm_e(
     duration = (datetime.now(UTC) - started).total_seconds()
     actual_judge_calls = 1 if judge_backend != "mock" else 0
 
-    quota_tracker.record_call(
-        case_id=case.id,
-        arm_key=arm.key,
-        calls=actual_judge_calls,
-        backend=judge_backend,
-    )
-
     predicted_outcome = normalize_outcome(agg.winning_outcome)
     outcome_correct = predicted_outcome == case.outcome.value
     confidence = agg.agreement_rate
@@ -544,76 +575,139 @@ async def run_case(
     judge_backend: str,
     output_dir: Path,
     quota_tracker: QuotaTracker,
+    case_timeout: float = DEFAULT_CASE_TIMEOUT_SECONDS,
 ) -> dict[str, Any]:
     """Run an arm over one case fixture and return the result payload."""
-    prompt_hashes = compute_prompt_hashes()
-    composite_hash = composite_prompt_hash(prompt_hashes)
-    models = get_role_models()
-    model_roster = {
-        role: models.for_role(role).model_id
-        for role in (
-            "presenter",
-            "attacker_doctrinal",
-            "attacker_evidentiary",
-            "judge",
-        )
-    }
+    started = time.perf_counter()
+    prompt_hashes: dict[str, str] = {}
+    model_roster: dict[str, str] = {}
 
-    try:
-        if isinstance(arm, SelfConsistencyArm):
-            result = await _run_arm_e(
-                arm,
-                case,
-                judge_backend=judge_backend,
-                output_dir=output_dir,
-                quota_tracker=quota_tracker,
+    with _capture_judge_requests() as request_counter:
+        timeout_scope = asyncio.timeout(case_timeout)
+        try:
+            async with timeout_scope:
+                prompt_hashes = compute_prompt_hashes()
+                models = get_role_models()
+                model_roster = {
+                    role: models.for_role(role).model_id
+                    for role in (
+                        "presenter",
+                        "attacker_doctrinal",
+                        "attacker_evidentiary",
+                        "judge",
+                    )
+                }
+
+                if isinstance(arm, SelfConsistencyArm):
+                    result = await _run_arm_e(
+                        arm,
+                        case,
+                        judge_backend=judge_backend,
+                        output_dir=output_dir,
+                    )
+                else:
+                    result = await _run_standard_arm(
+                        arm,
+                        case,
+                        judge_backend=judge_backend,
+                        output_dir=output_dir,
+                    )
+            result["status"] = "completed"
+        except TimeoutError as exc:
+            timed_out = timeout_scope.expired()
+            message = (
+                f"Case timed out after {case_timeout:g} seconds"
+                if timed_out
+                else str(exc) or "Judge request timed out"
             )
-        else:
-            result = await _run_standard_arm(
-                arm,
-                case,
-                judge_backend=judge_backend,
-                output_dir=output_dir,
-                quota_tracker=quota_tracker,
+            log.exception("eval_case_failed", arm=arm.key, case_id=case.id)
+            result = {
+                "case_id": case.id,
+                "case_title": case.title,
+                "court": case.court,
+                "year": case.year,
+                "difficulty": case.difficulty,
+                "arm": arm.key,
+                "arm_label": arm.label,
+                "run_id": f"eval_err_{uuid4().hex[:8]}",
+                "question": case.question,
+                "facts": case.facts,
+                "ground_truth_outcome": case.outcome.value,
+                "holding": case.holding,
+                "predicted_outcome": None,
+                "outcome_correct": None,
+                "confidence": None,
+                "confidence_reasoning": "",
+                "rounds": 0,
+                "judge_backend": judge_backend,
+                "judge_calls": 0,
+                "total_calls": 0,
+                "verdict": None,
+                "dissent": [],
+                "arguments": [],
+                "objections": [],
+                "context": [],
+                "turns": [],
+                "timestamp": datetime.now(UTC).isoformat(),
+                "duration_seconds": 0.0,
+                "status": "error",
+                "error_type": "timeout" if timed_out else "error",
+                "error": message,
+            }
+        except Exception as exc:
+            log.exception("eval_case_failed", arm=arm.key, case_id=case.id)
+            result = {
+                "case_id": case.id,
+                "case_title": case.title,
+                "court": case.court,
+                "year": case.year,
+                "difficulty": case.difficulty,
+                "arm": arm.key,
+                "arm_label": arm.label,
+                "run_id": f"eval_err_{uuid4().hex[:8]}",
+                "question": case.question,
+                "facts": case.facts,
+                "ground_truth_outcome": case.outcome.value,
+                "holding": case.holding,
+                "predicted_outcome": None,
+                "outcome_correct": None,
+                "confidence": None,
+                "confidence_reasoning": "",
+                "rounds": 0,
+                "judge_backend": judge_backend,
+                "judge_calls": 0,
+                "total_calls": 0,
+                "verdict": None,
+                "dissent": [],
+                "arguments": [],
+                "objections": [],
+                "context": [],
+                "turns": [],
+                "timestamp": datetime.now(UTC).isoformat(),
+                "duration_seconds": 0.0,
+                "status": "error",
+                "error_type": "error",
+                "error": str(exc),
+            }
+        finally:
+            attempts = request_counter.attempts
+            quota_tracker.record_call(
+                case_id=case.id,
+                arm_key=arm.key,
+                calls=attempts if judge_backend == "api" else 0,
+                attempts=attempts,
+                failures=request_counter.failures,
+                backend=judge_backend,
             )
-    except Exception as exc:
-        log.exception("eval_case_failed", arm=arm.key, case_id=case.id)
-        result = {
-            "case_id": case.id,
-            "case_title": case.title,
-            "court": case.court,
-            "year": case.year,
-            "difficulty": case.difficulty,
-            "arm": arm.key,
-            "arm_label": arm.label,
-            "run_id": f"eval_err_{uuid4().hex[:8]}",
-            "question": case.question,
-            "facts": case.facts,
-            "ground_truth_outcome": case.outcome.value,
-            "holding": case.holding,
-            "predicted_outcome": None,
-            "outcome_correct": False,
-            "confidence": None,
-            "confidence_reasoning": "",
-            "rounds": 0,
-            "judge_backend": judge_backend,
-            "judge_calls": 0,
-            "total_calls": 0,
-            "verdict": None,
-            "dissent": [],
-            "arguments": [],
-            "objections": [],
-            "context": [],
-            "turns": [],
-            "timestamp": datetime.now(UTC).isoformat(),
-            "duration_seconds": 0.0,
-            "error": str(exc),
-        }
 
     result["prompt_hashes"] = prompt_hashes
-    result["composite_prompt_hash"] = composite_hash
+    result["composite_prompt_hash"] = composite_prompt_hash(prompt_hashes)
     result["model_roster"] = model_roster
     result["synthetic"] = judge_backend == "mock"
+    result["judge_attempts"] = request_counter.attempts
+    result["judge_failures"] = request_counter.failures
+    result["judge_failed"] = result["status"] == "error" and request_counter.failures > 0
+    result["duration_seconds"] = time.perf_counter() - started
     return result
 
 
@@ -637,8 +731,16 @@ async def run_evaluation(
     resume: bool = False,
     auto_go: bool = False,
     allow_mixed_results: bool = False,
+    case_timeout: float = DEFAULT_CASE_TIMEOUT_SECONDS,
+    max_consecutive_failures: int = DEFAULT_MAX_CONSECUTIVE_FAILURES,
 ) -> list[dict[str, Any]]:
     """Drive one or more arms across case fixtures, handling quota and persistence."""
+    if case_timeout <= 0:
+        raise ValueError("case_timeout must be greater than zero")
+    if max_consecutive_failures <= 0:
+        raise ValueError("max_consecutive_failures must be greater than zero")
+
+    run_started = time.perf_counter()
     output_dir.mkdir(parents=True, exist_ok=True)
     all_results: list[dict[str, Any]] = []
 
@@ -658,6 +760,9 @@ async def run_evaluation(
             if resume and case_file.exists():
                 try:
                     loaded = json.loads(case_file.read_text(encoding="utf-8"))
+                    if loaded.get("status") == "error":
+                        pending_tasks.append((arm, case))
+                        continue
                     loaded["synthetic"] = is_synthetic_result(loaded)
                     case_file.write_text(json.dumps(loaded, indent=2), encoding="utf-8")
                     log.info("case_resumed_from_disk", arm=arm.key, case_id=case.id)
@@ -669,20 +774,27 @@ async def run_evaluation(
 
     if not pending_tasks:
         print("All case/arm pairs already completed on disk (--resume). Nothing to run.")
+        _print_run_summary(run_started, quota_tracker)
         return all_results
 
     # Quota verification for live runs
     if judge_backend == "api":
         expected_calls = sum(get_expected_calls(arm.key, 1) for arm, _ in pending_tasks)
+        reserved_attempts = expected_calls * 3
         today_usage = quota_tracker.get_today_usage()
 
         print("\n--- Live API Judge Run ---")
         print(f"Scheduled cases: {len(pending_tasks)}")
         print(f"Expected judge calls: {expected_calls}")
-        print(f"Today's judge calls used (UTC): {today_usage} / {MAX_DAILY_QUOTA}")
+        print(f"Reserved judge attempts (3 per expected call): {reserved_attempts}")
+        print(f"Today's judge attempts used (UTC): {today_usage} / {MAX_DAILY_QUOTA}")
 
         # Enforce quota check
-        quota_tracker.check_quota(expected_calls)
+        try:
+            quota_tracker.check_quota(reserved_attempts)
+        except QuotaExceededError:
+            _print_run_summary(run_started, quota_tracker)
+            raise
 
         if not auto_go:
             sys.stdout.write("Type 'go' to confirm and proceed: ")
@@ -690,9 +802,12 @@ async def run_evaluation(
             user_input = sys.stdin.readline().strip().lower()
             if user_input != "go":
                 print("Run aborted by user.")
+                _print_run_summary(run_started, quota_tracker)
                 sys.exit(0)
 
+    consecutive_judge_failures = 0
     for arm, case in pending_tasks:
+        case_started = time.perf_counter()
         print(f"Running arm [{arm.key}] on case [{case.id}] ({case.title[:45]}...)...")
         result = await run_case(
             arm,
@@ -700,7 +815,9 @@ async def run_evaluation(
             judge_backend=judge_backend,
             output_dir=output_dir,
             quota_tracker=quota_tracker,
+            case_timeout=case_timeout,
         )
+        result["duration_seconds"] = time.perf_counter() - case_started
 
         # Write result atomically to data/eval/<arm>/<case_id>.json
         arm_dir = output_dir / arm.key
@@ -709,14 +826,37 @@ async def run_evaluation(
         case_file.write_text(json.dumps(result, indent=2), encoding="utf-8")
 
         all_results.append(result)
-        correct_flag = "✓" if result.get("outcome_correct") else "✗"
-        print(
-            f"  -> {correct_flag} predicted: {result.get('predicted_outcome')} "
-            f"(ground truth: {result.get('ground_truth_outcome')}, "
-            f"confidence: {result.get('confidence')})"
-        )
+        if result.get("status") == "error":
+            print(f"  -> ERROR ({result.get('error_type')}): {result.get('error')}")
+        else:
+            correct_flag = "✓" if result.get("outcome_correct") else "✗"
+            print(
+                f"  -> {correct_flag} predicted: {result.get('predicted_outcome')} "
+                f"(ground truth: {result.get('ground_truth_outcome')}, "
+                f"confidence: {result.get('confidence')})"
+            )
+        print(f"  Case elapsed: {result['duration_seconds']:.2f}s")
 
+        if result.get("judge_failed"):
+            consecutive_judge_failures += 1
+        elif result.get("status") == "completed" and result.get("judge_attempts", 0) > 0:
+            consecutive_judge_failures = 0
+
+        if consecutive_judge_failures >= max_consecutive_failures:
+            print(
+                f"Stopping run after {consecutive_judge_failures} consecutive judge failures "
+                f"(limit: {max_consecutive_failures}); latest case: {case.id}."
+            )
+            break
+
+    _print_run_summary(run_started, quota_tracker)
     return all_results
+
+
+def _print_run_summary(run_started: float, quota_tracker: QuotaTracker) -> None:
+    """Print run duration and today's quota-charged judge request attempts."""
+    print(f"Run elapsed: {time.perf_counter() - run_started:.2f}s")
+    print(f"Judge attempts used today (UTC): {quota_tracker.get_today_usage()} / {MAX_DAILY_QUOTA}")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -741,6 +881,18 @@ def build_parser() -> argparse.ArgumentParser:
         type=int,
         default=None,
         help="Limit number of case fixtures to evaluate.",
+    )
+    parser.add_argument(
+        "--case-timeout",
+        type=_positive_float,
+        default=DEFAULT_CASE_TIMEOUT_SECONDS,
+        help="Wall-clock timeout for each case in seconds (default: 300).",
+    )
+    parser.add_argument(
+        "--max-consecutive-failures",
+        type=_positive_int,
+        default=DEFAULT_MAX_CONSECUTIVE_FAILURES,
+        help="Stop after this many consecutive judge failures (default: 2).",
     )
     parser.add_argument(
         "--dry-run",
@@ -781,6 +933,20 @@ def build_parser() -> argparse.ArgumentParser:
         help="Skip interactive confirmation for live runs (use with caution).",
     )
     return parser
+
+
+def _positive_float(value: str) -> float:
+    parsed = float(value)
+    if parsed <= 0:
+        raise argparse.ArgumentTypeError("must be greater than zero")
+    return parsed
+
+
+def _positive_int(value: str) -> int:
+    parsed = int(value)
+    if parsed <= 0:
+        raise argparse.ArgumentTypeError("must be greater than zero")
+    return parsed
 
 
 async def async_main(args: argparse.Namespace) -> None:
@@ -827,6 +993,8 @@ async def async_main(args: argparse.Namespace) -> None:
         resume=args.resume,
         auto_go=args.go,
         allow_mixed_results=args.allow_mixed_results,
+        case_timeout=args.case_timeout,
+        max_consecutive_failures=args.max_consecutive_failures,
     )
 
 

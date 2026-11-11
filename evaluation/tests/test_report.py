@@ -90,3 +90,32 @@ def test_report_keeps_explicitly_allowed_provenance_groups_separate() -> None:
 
     assert "## Real results" in report
     assert "## Synthetic (not scored)" in report
+
+
+def test_report_counts_errors_separately_and_excludes_them_from_metrics() -> None:
+    completed_correct = _result(arm="rag", correct=True, confidence=0.8)
+    completed_wrong = _result(arm="rag", correct=False, confidence=0.9)
+    errored = _result(arm="rag", correct=False, confidence=0.99)
+    errored.update(
+        status="error",
+        error_type="error",
+        outcome_correct=None,
+        confidence=None,
+    )
+    timed_out = _result(arm="rag", correct=False, confidence=0.99)
+    timed_out.update(
+        status="error",
+        error_type="timeout",
+        outcome_correct=None,
+        confidence=None,
+    )
+
+    report = render_report([completed_correct, completed_wrong, errored, timed_out])
+
+    summary = next(line for line in report.splitlines() if line.startswith("| rag |"))
+    assert "| rag | 4 | 2 | 1 | 1 | 1 |" in summary
+    assert "0.500 (n=2)" in summary
+    assert "0.425 (n=2)" in summary
+    assert "0.550 (n=2)" in summary
+    assert "n=2" in summary
+    assert "fewer than 5 completed cases" in report

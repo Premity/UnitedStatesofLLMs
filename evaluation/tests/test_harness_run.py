@@ -12,12 +12,14 @@ Tests:
 
 from __future__ import annotations
 
+import asyncio
 import json
 from pathlib import Path
 from unittest.mock import AsyncMock, patch
 
 import pytest
 
+from council_core.llm import client as llm_client
 from council_core.models.debate import Argument, Role, Turn, Verdict
 from harness.arms import ARMS
 from harness.cases import EvaluationCase, Outcome
@@ -117,6 +119,38 @@ class TestQuotaTracking:
         assert len(data["history"]) == 1
         assert data["history"][0]["backend"] == "mock"
         assert data["history"][0]["calls"] == 0
+        assert data["history"][0]["attempts"] == 0
+
+    def test_quota_log_records_each_request_attempt(self, temp_eval_dir: Path) -> None:
+        tracker = QuotaTracker(temp_eval_dir / "quota_log.json")
+
+        tracker.record_call(
+            case_id="case_retry",
+            arm_key="raw",
+            calls=3,
+            attempts=3,
+            failures=2,
+            backend="api",
+        )
+
+        assert tracker.get_today_usage() == 3
+        data = tracker.load()
+        assert data["daily_usage"][tracker._today_utc()]["attempts"] == 3
+        assert data["history"][-1]["attempts"] == 3
+        assert data["history"][-1]["failures"] == 2
+
+    def test_quota_tracker_reads_legacy_daily_call_counts(self, temp_eval_dir: Path) -> None:
+        log_path = temp_eval_dir / "quota_log.json"
+        tracker = QuotaTracker(log_path)
+        today = tracker._today_utc()
+        log_path.write_text(
+            json.dumps({"daily_usage": {today: {"calls": 5}}, "history": []}),
+            encoding="utf-8",
+        )
+
+        tracker.record_call("new_case", "raw", calls=2, attempts=2, backend="api")
+
+        assert tracker.get_today_usage() == 7
 
     @pytest.mark.asyncio
     async def test_refuses_api_run_when_quota_would_exceed_40(
@@ -146,14 +180,41 @@ class TestQuotaTracking:
         assert tracker.get_today_usage() == 39
 
     @pytest.mark.asyncio
+    async def test_reserves_three_attempts_per_expected_judge_call(
+        self, temp_eval_dir: Path, sample_case: EvaluationCase
+    ) -> None:
+        tracker = QuotaTracker(temp_eval_dir / "quota_log.json")
+        tracker.record_call(case_id="prior_case", arm_key="raw", calls=38)
+
+        with (
+            patch("harness.run.run_case", AsyncMock()) as run_case_mock,
+            pytest.raises(QuotaExceededError, match="Projected total 41"),
+        ):
+            await run_evaluation(
+                arms=[ARMS["raw"]],
+                cases=[sample_case],
+                judge_backend="api",
+                output_dir=temp_eval_dir,
+                quota_tracker=tracker,
+                auto_go=True,
+            )
+
+        run_case_mock.assert_not_awaited()
+        assert tracker.get_today_usage() == 38
+
+    @pytest.mark.asyncio
     async def test_failed_judge_call_is_counted_against_quota(
         self, temp_eval_dir: Path, sample_case: EvaluationCase
     ) -> None:
         tracker = QuotaTracker(temp_eval_dir / "quota_log.json")
 
+        async def fail_after_request(_: dict) -> None:
+            llm_client.log.info("llm_request", role="judge", model="test")
+            raise RuntimeError("judge provider request failed")
+
         with patch(
             "harness.run.compiled_graph.ainvoke",
-            AsyncMock(side_effect=RuntimeError("judge provider request failed")),
+            AsyncMock(side_effect=fail_after_request),
         ):
             result = await run_case(
                 arm=ARMS["raw"],
@@ -164,10 +225,59 @@ class TestQuotaTracking:
             )
 
         assert result["error"] == "judge provider request failed"
+        assert result["status"] == "error"
+        assert result["outcome_correct"] is None
+        assert result["judge_attempts"] == 1
+        assert result["judge_failures"] == 1
+        assert result["judge_failed"] is True
         assert tracker.get_today_usage() == 1
         history = tracker.load()["history"]
         assert history[-1]["backend"] == "api"
         assert history[-1]["calls"] == 1
+        assert history[-1]["attempts"] == 1
+
+    @pytest.mark.asyncio
+    async def test_retries_and_structured_repairs_are_counted_as_attempts(
+        self, temp_eval_dir: Path, sample_case: EvaluationCase
+    ) -> None:
+        tracker = QuotaTracker(temp_eval_dir / "quota_log.json")
+        final_state = {
+            "current_round": 1,
+            "turns": [_make_turn(Role.JUDGE)],
+            "arguments": [],
+            "objections": [],
+            "context": [],
+            "verdict": Verdict(conclusion="affirmed", reasoning="Reason", confidence=0.8),
+        }
+
+        async def return_after_attempts(_: dict) -> dict:
+            for attempt in range(3):
+                llm_client.log.info("llm_request", role="judge", model="test")
+                if attempt == 1:
+                    llm_client.log.warning("structured_output_repair", role="judge", attempt=1)
+                if attempt:
+                    llm_client.log.info("llm_response", role="judge", model="test")
+            llm_client.log.info("llm_request", role="presenter", model="test")
+            return final_state
+
+        with patch(
+            "harness.run.compiled_graph.ainvoke",
+            AsyncMock(side_effect=return_after_attempts),
+        ):
+            result = await run_case(
+                arm=ARMS["raw"],
+                case=sample_case,
+                judge_backend="api",
+                output_dir=temp_eval_dir,
+                quota_tracker=tracker,
+            )
+
+        assert result["status"] == "completed"
+        assert result["judge_attempts"] == 3
+        assert result["judge_failures"] == 1
+        assert result["judge_failed"] is False
+        assert tracker.get_today_usage() == 3
+        assert tracker.load()["history"][-1]["attempts"] == 3
 
 
 class TestCliAndArmResolution:
@@ -204,6 +314,8 @@ class TestCliAndArmResolution:
         assert args.resume is False
         assert args.limit is None
         assert args.judge_backend is None
+        assert args.case_timeout == 300
+        assert args.max_consecutive_failures == 2
 
     def test_cli_parser_dry_run_and_flags(self) -> None:
         parser = build_parser()
@@ -217,6 +329,21 @@ class TestCliAndArmResolution:
     def test_cli_parser_allows_explicit_mixed_results(self) -> None:
         args = build_parser().parse_args(["--arm", "rag", "--allow-mixed-results"])
         assert args.allow_mixed_results is True
+
+    def test_cli_parser_timeout_and_failure_limit(self) -> None:
+        args = build_parser().parse_args(
+            ["--arm", "rag", "--case-timeout", "12.5", "--max-consecutive-failures", "4"]
+        )
+        assert args.case_timeout == 12.5
+        assert args.max_consecutive_failures == 4
+
+    @pytest.mark.parametrize(
+        ("flag", "value"),
+        [("--case-timeout", "0"), ("--max-consecutive-failures", "0")],
+    )
+    def test_cli_parser_rejects_non_positive_limits(self, flag: str, value: str) -> None:
+        with pytest.raises(SystemExit):
+            build_parser().parse_args(["--arm", "rag", flag, value])
 
 
 class TestOutcomeNormalization:
@@ -362,6 +489,101 @@ class TestHarnessExecution:
             )
             assert len(resumed) == 2
             run_case_mock.assert_not_awaited()
+
+    @pytest.mark.asyncio
+    async def test_timeout_is_saved_and_retried_by_resume(
+        self, temp_eval_dir: Path, sample_case: EvaluationCase
+    ) -> None:
+        arm = ARMS["raw"]
+        tracker = QuotaTracker(temp_eval_dir / "quota_log.json")
+
+        async def slow_graph(_: dict) -> dict:
+            await asyncio.sleep(0.05)
+            return {}
+
+        with patch("harness.run.compiled_graph.ainvoke", AsyncMock(side_effect=slow_graph)):
+            failed = await run_evaluation(
+                arms=[arm],
+                cases=[sample_case],
+                judge_backend="api",
+                output_dir=temp_eval_dir,
+                quota_tracker=tracker,
+                case_timeout=0.005,
+                auto_go=True,
+            )
+
+        result_file = temp_eval_dir / "raw" / f"{sample_case.id}.json"
+        saved = json.loads(result_file.read_text(encoding="utf-8"))
+        assert failed[0]["status"] == "error"
+        assert saved["error_type"] == "timeout"
+        assert saved["outcome_correct"] is None
+
+        final_state = {
+            "current_round": 1,
+            "turns": [_make_turn(Role.JUDGE)],
+            "arguments": [],
+            "objections": [],
+            "context": [],
+            "verdict": Verdict(conclusion="affirmed", reasoning="Reason", confidence=0.8),
+        }
+        with patch(
+            "harness.run.compiled_graph.ainvoke",
+            AsyncMock(return_value=final_state),
+        ) as retry_mock:
+            retried = await run_evaluation(
+                arms=[arm],
+                cases=[sample_case],
+                judge_backend="api",
+                output_dir=temp_eval_dir,
+                quota_tracker=tracker,
+                resume=True,
+                auto_go=True,
+            )
+
+        retry_mock.assert_awaited_once()
+        assert retried[0]["status"] == "completed"
+        assert json.loads(result_file.read_text(encoding="utf-8"))["status"] == "completed"
+
+    @pytest.mark.asyncio
+    async def test_stops_after_consecutive_judge_failures(
+        self,
+        temp_eval_dir: Path,
+        sample_case: EvaluationCase,
+        capsys: pytest.CaptureFixture[str],
+    ) -> None:
+        cases = [
+            sample_case,
+            sample_case.model_copy(update={"id": "test_case_2"}),
+            sample_case.model_copy(update={"id": "test_case_3"}),
+        ]
+        tracker = QuotaTracker(temp_eval_dir / "quota_log.json")
+
+        async def fail_judge(_: dict) -> None:
+            llm_client.log.info("llm_request", role="judge", model="test")
+            raise RuntimeError("judge request failed")
+
+        with patch(
+            "harness.run.compiled_graph.ainvoke",
+            AsyncMock(side_effect=fail_judge),
+        ) as graph_mock:
+            results = await run_evaluation(
+                arms=[ARMS["raw"]],
+                cases=cases,
+                judge_backend="api",
+                output_dir=temp_eval_dir,
+                quota_tracker=tracker,
+                auto_go=True,
+            )
+
+        assert graph_mock.await_count == 2
+        assert len(results) == 2
+        assert all(result["status"] == "error" for result in results)
+        assert not (temp_eval_dir / "raw" / "test_case_3.json").exists()
+        output = capsys.readouterr().out
+        assert "Stopping run after 2 consecutive judge failures" in output
+        assert "Case elapsed:" in output
+        assert "Run elapsed:" in output
+        assert "Judge attempts used today (UTC): 2 / 40" in output
 
     @pytest.mark.asyncio
     async def test_harness_rejects_mixed_results_unless_explicitly_allowed(
