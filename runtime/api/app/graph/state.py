@@ -28,6 +28,7 @@ class GraphState(TypedDict, total=False):
 
     run_id: str
     config: DebateConfig
+    excluded_case_id: str | None
 
     context: list[ResolvedCitation]
 
