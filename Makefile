@@ -190,11 +190,11 @@ figures: ## Regenerate the design figures (SVG, stdlib only)
 
 .PHONY: eval
 eval: ## Run the full ablation harness (SLOW — consumes API quota)
-	uv run python -m harness.run --all-arms
+	uv run python -m harness.run --all-arms $(ARGS)
 
 .PHONY: eval-arm
 eval-arm: ## Run one arm, e.g. make eval-arm ARM=full_council
-	uv run python -m harness.run --arm $(ARM)
+	uv run python -m harness.run --arm $(ARM) $(ARGS)
 
 .PHONY: eval-report
 eval-report: ## Rebuild the evaluation report from existing results
