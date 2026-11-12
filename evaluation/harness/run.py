@@ -18,6 +18,7 @@ import asyncio
 import hashlib
 import json
 import os
+import re
 import sys
 import time
 from collections.abc import Iterator
@@ -155,6 +156,9 @@ def normalize_outcome(conclusion: str | None) -> str:
     if not conclusion:
         return Outcome.INDETERMINATE.value
     text = conclusion.lower().strip()
+    answer = re.match(r"^(yes|no)\b", text)
+    if answer:
+        return Outcome.AFFIRMED.value if answer.group(1) == "yes" else Outcome.REJECTED.value
     if text in ("affirmed", "affirm", "yes", "violation"):
         return Outcome.AFFIRMED.value
     if text in ("rejected", "reject", "no", "no violation", "dismissed"):
@@ -166,6 +170,13 @@ def normalize_outcome(conclusion: str | None) -> str:
     if any(
         kw in text
         for kw in (
+            "not criminally responsible",
+            "not criminally liable",
+            "cannot be held criminally responsible",
+            "cannot be held criminally liable",
+            "no criminal responsibility",
+            "does not bear criminal responsibility",
+            "has not been established",
             "does not constitute",
             "did not constitute",
             "is not a violation",
@@ -182,6 +193,9 @@ def normalize_outcome(conclusion: str | None) -> str:
             "constitutes a violation",
             "constitutes",
             "is a violation",
+            "bears criminal responsibility",
+            "criminally responsible",
+            "criminally liable",
             "prohibited",
             "affirmed",
             "convicted",

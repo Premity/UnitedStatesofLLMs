@@ -15,11 +15,14 @@ from __future__ import annotations
 import asyncio
 import json
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import AsyncMock, patch
 
 import pytest
+from pydantic import BaseModel
 
 from council_core.llm import client as llm_client
+from council_core.llm.config import ModelConfig
 from council_core.models.debate import Argument, Role, Turn, Verdict
 from harness.arms import ARMS
 from harness.cases import EvaluationCase, Outcome
@@ -356,8 +359,15 @@ class TestOutcomeNormalization:
             ("AFFIRMED", "affirmed"),
             ("The Trial Chamber holds that this constitutes a violation.", "affirmed"),
             ("Conduct is prohibited under international humanitarian law.", "affirmed"),
+            (
+                "Yes, it has been established beyond reasonable doubt that the commander was criminally responsible.",
+                "affirmed",
+            ),
+            ("The accused bears criminal responsibility for the conduct.", "affirmed"),
             ("rejected", "rejected"),
             ("The charges are dismissed; this does not constitute a war crime.", "rejected"),
+            ("No, it has not been established beyond reasonable doubt.", "rejected"),
+            ("The accused cannot be held criminally liable.", "rejected"),
             ("indeterminate", "indeterminate"),
             (None, "indeterminate"),
             ("Unknown holding", "indeterminate"),
@@ -365,6 +375,125 @@ class TestOutcomeNormalization:
     )
     def test_normalize_outcome(self, text: str | None, expected: str) -> None:
         assert normalize_outcome(text) == expected
+
+
+class _StructuredTestResponse(BaseModel):
+    conclusion: str
+
+
+class TestJudgeJsonMode:
+    @pytest.mark.asyncio
+    async def test_empty_judge_response_logs_safe_provider_metadata(self) -> None:
+        response = SimpleNamespace(
+            id="response-123",
+            provider="openrouter",
+            choices=[
+                SimpleNamespace(
+                    message=SimpleNamespace(content=" \n\t"),
+                    finish_reason="length",
+                )
+            ],
+            usage=SimpleNamespace(
+                prompt_tokens=321,
+                completion_tokens=16000,
+                completion_tokens_details=SimpleNamespace(reasoning_tokens=15990),
+            ),
+        )
+        completion = AsyncMock(return_value=response)
+        llm = llm_client.CouncilLLM(
+            ModelConfig(model_id="openrouter/nvidia/test"),
+            role="judge",
+        )
+
+        with (
+            patch("council_core.llm.client.acompletion", completion),
+            patch("council_core.llm.client.log") as logger,
+        ):
+            result = await llm.complete(system="private prompt", user="private question")
+
+        logger.warning.assert_called_once_with(
+            "empty_judge_response",
+            model="openrouter/nvidia/test",
+            finish_reason="length",
+            prompt_tokens=321,
+            completion_tokens=16000,
+            response_id="response-123",
+            reasoning_tokens=15990,
+            provider="openrouter",
+        )
+        assert result.content == " \n\t"
+
+    @pytest.mark.asyncio
+    async def test_judge_structured_completion_requests_json_mode(self) -> None:
+        response = SimpleNamespace(
+            choices=[SimpleNamespace(message=SimpleNamespace(content='{"conclusion":"Yes."}'))],
+            usage=None,
+        )
+        completion = AsyncMock(return_value=response)
+        llm = llm_client.CouncilLLM(
+            ModelConfig(model_id="openrouter/nvidia/test"),
+            role="judge",
+        )
+
+        with patch("council_core.llm.client.acompletion", completion):
+            parsed, _ = await llm.complete_structured(
+                system="system",
+                user="question",
+                schema=_StructuredTestResponse,
+            )
+
+        assert parsed.conclusion == "Yes."
+        assert completion.await_args.kwargs["response_format"] == {"type": "json_object"}
+
+    @pytest.mark.asyncio
+    async def test_judge_json_mode_is_kept_for_structured_repair(self) -> None:
+        responses = [
+            SimpleNamespace(
+                choices=[SimpleNamespace(message=SimpleNamespace(content="not JSON"))],
+                usage=None,
+            ),
+            SimpleNamespace(
+                choices=[SimpleNamespace(message=SimpleNamespace(content='{"conclusion":"No."}'))],
+                usage=None,
+            ),
+        ]
+        completion = AsyncMock(side_effect=responses)
+        llm = llm_client.CouncilLLM(
+            ModelConfig(model_id="openrouter/nvidia/test"),
+            role="judge",
+        )
+
+        with patch("council_core.llm.client.acompletion", completion):
+            parsed, _ = await llm.complete_structured(
+                system="system",
+                user="question",
+                schema=_StructuredTestResponse,
+            )
+
+        assert parsed.conclusion == "No."
+        assert completion.await_count == 2
+        assert all(
+            call.kwargs["response_format"] == {"type": "json_object"}
+            for call in completion.await_args_list
+        )
+
+    @pytest.mark.asyncio
+    async def test_non_judge_structured_completion_does_not_request_json_mode(self) -> None:
+        response = SimpleNamespace(
+            choices=[SimpleNamespace(message=SimpleNamespace(content='{"conclusion":"Yes."}'))],
+            usage=None,
+        )
+        completion = AsyncMock(return_value=response)
+        llm = llm_client.CouncilLLM(ModelConfig(model_id="groq/test"), role="presenter")
+
+        with patch("council_core.llm.client.acompletion", completion):
+            await llm.complete_structured(
+                system="system",
+                user="question",
+                schema=_StructuredTestResponse,
+            )
+
+        assert "response_format" not in completion.await_args.kwargs
 
 
 class TestHarnessExecution:
