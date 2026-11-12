@@ -34,11 +34,13 @@ class CitationMetrics:
 
     @property
     def fabrication_rate(self) -> float:
-        """Share that pointed at an indexed instrument but did not exist there.
+        """Share of eligible citations that are unresolved or misquoted.
 
-        The headline anti-hallucination number.
+        Misquoted citations count as fabrication. Out-of-corpus citations are
+        excluded from both the numerator and denominator.
         """
-        return (self.unresolved + self.misquoted) / self.total if self.total else float("nan")
+        eligible = self.total - self.out_of_corpus
+        return (self.unresolved + self.misquoted) / eligible if eligible else float("nan")
 
 
 def measure_citations(resolved: list[ResolvedCitation]) -> CitationMetrics:

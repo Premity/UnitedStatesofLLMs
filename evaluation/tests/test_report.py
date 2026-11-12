@@ -17,6 +17,7 @@ def _result(
     confidence: float,
     unresolved: int = 0,
     out_of_corpus: int = 0,
+    misquoted: int = 0,
     backend: str = "api",
     synthetic: bool = False,
 ) -> dict:
@@ -30,11 +31,11 @@ def _result(
         "confidence": confidence,
         "objections": [],
         "citation_statuses": {
-            "total": unresolved + out_of_corpus + 2,
+            "total": unresolved + out_of_corpus + misquoted + 2,
             "unresolved": unresolved,
             "out_of_corpus": out_of_corpus,
             "resolved": 2,
-            "misquoted": 0,
+            "misquoted": misquoted,
         },
         "prompt_hashes": {"judge/rule.md": "hash-123"},
     }
@@ -42,7 +43,14 @@ def _result(
 
 def test_report_calculates_metrics_and_discloses_provenance(tmp_path: Path) -> None:
     results = [
-        _result(arm="rag", correct=True, confidence=0.8, unresolved=1, out_of_corpus=8),
+        _result(
+            arm="rag",
+            correct=True,
+            confidence=0.8,
+            unresolved=1,
+            out_of_corpus=8,
+            misquoted=1,
+        ),
         _result(arm="rag", correct=False, confidence=0.9),
     ]
     result_dir = tmp_path / "eval"
@@ -62,10 +70,28 @@ def test_report_calculates_metrics_and_discloses_provenance(tmp_path: Path) -> N
     assert "api" in report
     assert "judge/rule.md" in report
     assert "hash-123" in report
-    assert "unresolved / (total citations - out_of_corpus)" in report
+    assert "(unresolved + misquoted) / (total citations - out_of_corpus)" in report
+    assert "misquoted counts" in report
     summary = next(line for line in report.splitlines() if line.startswith("| rag |"))
     assert "0.333" in summary
     assert "percentile 95% confidence intervals" in report
+
+
+def test_report_counts_misquotes_and_excludes_out_of_corpus() -> None:
+    report = render_report(
+        [
+            _result(
+                arm="rag",
+                correct=True,
+                confidence=0.8,
+                out_of_corpus=4,
+                misquoted=1,
+            )
+        ]
+    )
+
+    summary = next(line for line in report.splitlines() if line.startswith("| rag |"))
+    assert "0.333" in summary
 
 
 def test_report_refuses_synthetic_results_unless_explicitly_allowed() -> None:

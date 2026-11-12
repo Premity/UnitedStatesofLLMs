@@ -24,9 +24,10 @@ def _citation_counts(result: dict[str, Any]) -> tuple[int, int]:
         total = int(statuses.get("total", 0))
         out_of_corpus = int(statuses.get("out_of_corpus", 0))
         unresolved = int(statuses.get("unresolved", 0))
-        return unresolved, max(0, total - out_of_corpus)
+        misquoted = int(statuses.get("misquoted", 0))
+        return unresolved + misquoted, max(0, total - out_of_corpus)
 
-    unresolved = 0
+    fabricated = 0
     eligible = 0
     for collection in ("arguments", "objections"):
         for item in result.get(collection, []):
@@ -35,8 +36,8 @@ def _citation_counts(result: dict[str, Any]) -> tuple[int, int]:
                 if status == "out_of_corpus":
                     continue
                 eligible += 1
-                unresolved += status == "unresolved"
-    return unresolved, eligible
+                fabricated += status in {"unresolved", "misquoted"}
+    return fabricated, eligible
 
 
 def _independence(result: dict[str, Any]) -> float | None:
@@ -255,8 +256,8 @@ def render_report(results: list[dict[str, Any]], *, allow_mixed_results: bool = 
         "",
         f"Bootstrap: {BOOTSTRAP_RESAMPLES:,} resamples; fixed seed {BOOTSTRAP_SEED}.",
         "Intervals are percentile 95% confidence intervals.",
-        "Fabrication rate = unresolved / (total citations - out_of_corpus); "
-        "out_of_corpus is excluded.",
+        "Fabrication rate = (unresolved + misquoted) / "
+        "(total citations - out_of_corpus); misquoted counts, and out_of_corpus is excluded.",
         "Independence = 1 - token-level Jaccard overlap between attacker objection grounds.",
         "",
     ]

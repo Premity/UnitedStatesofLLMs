@@ -72,7 +72,7 @@ class TestCitationMetrics:
         assert metrics.unresolved + metrics.out_of_corpus == 5
 
     def test_fabrication_rate_ignores_out_of_corpus_entirely(self) -> None:
-        """Crucial invariant: out_of_corpus must not contribute to the fabrication rate.
+        """Out-of-corpus citations affect neither the fabrication numerator nor denominator.
 
         Fabrication rate measures hallucinated authority (unresolved + misquoted).
         Authority that is real but unindexed (out_of_corpus) cannot be verified,
@@ -91,11 +91,8 @@ class TestCitationMetrics:
         assert base_metrics.total == 5
         assert base_metrics.fabrication_rate == 0.40
 
-        # Now add 5 OUT_OF_CORPUS citations to the run.
-        # Total becomes 10.
-        # If out_of_corpus were treated as fabrication, the rate would be (1 + 1 + 5) / 10 = 0.70.
-        # Because out_of_corpus is ignored in the fabrication numerator:
-        # fabrication_rate = (1 + 1) / 10 = 2 / 10 = 0.20.
+        # Adding out-of-corpus citations does not change the rate because they
+        # are excluded from both the numerator and denominator.
         with_ooc = base_citations + [
             _make_resolved(CitationStatus.OUT_OF_CORPUS, instrument=f"external_{i}")
             for i in range(5)
@@ -106,12 +103,10 @@ class TestCitationMetrics:
         assert ooc_metrics.out_of_corpus == 5
         assert ooc_metrics.unresolved == 1
         assert ooc_metrics.misquoted == 1
-        assert ooc_metrics.fabrication_rate == 0.20
-        # Explicit assertion that fabrication rate is NOT penalising the 5 out_of_corpus citations
-        assert ooc_metrics.fabrication_rate != 0.70
+        assert ooc_metrics.fabrication_rate == base_metrics.fabrication_rate == 0.40
 
-    def test_all_out_of_corpus_yields_zero_fabrication_rate(self) -> None:
-        """A system citing only out-of-corpus instruments has 0% validity and 0% fabrication."""
+    def test_all_out_of_corpus_has_no_eligible_fabrication_rate(self) -> None:
+        """An all-out-of-corpus set has no eligible denominator."""
         citations = [
             _make_resolved(CitationStatus.OUT_OF_CORPUS, instrument=f"treaty_{i}") for i in range(4)
         ]
@@ -124,7 +119,15 @@ class TestCitationMetrics:
         assert metrics.misquoted == 0
 
         assert metrics.validity_rate == 0.0
-        assert metrics.fabrication_rate == 0.0
+        assert math.isnan(metrics.fabrication_rate)
+
+    def test_misquoted_citations_count_as_fabrication(self) -> None:
+        citations = [
+            _make_resolved(CitationStatus.RESOLVED),
+            _make_resolved(CitationStatus.MISQUOTED, quote="incorrect quotation"),
+        ]
+
+        assert measure_citations(citations).fabrication_rate == 0.5
 
     def test_all_resolved_clean(self) -> None:
         """100% validity, 0% fabrication."""
