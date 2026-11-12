@@ -10,8 +10,11 @@ Artifacts are written as JSON to `data/runs/<run_id>/artifact.json`.
 
 from __future__ import annotations
 
+import json
+from collections.abc import Iterator
 from datetime import UTC, datetime
 from enum import StrEnum
+from typing import Any
 
 from pydantic import BaseModel, Field
 
@@ -65,6 +68,20 @@ class RunMetadata(BaseModel):
     error: str | None = None
 
 
+def _objection_dicts(state: dict[str, Any]) -> Iterator[dict[str, Any]]:
+    """Every raw objection dict in a stored state, wherever it appears.
+
+    `DebateState.objections` is the canonical list, but the same objections
+    are also re-serialized inside each `Turn.objections` and, once overruled,
+    inside `Verdict.dissent`.
+    """
+    yield from state.get("objections", [])
+    for turn in state.get("turns", []):
+        yield from turn.get("objections", [])
+    if verdict := state.get("verdict"):
+        yield from verdict.get("dissent", [])
+
+
 class RunArtifact(BaseModel):
     """A complete, self-contained record of one debate.
 
@@ -81,5 +98,22 @@ class RunArtifact(BaseModel):
 
     @classmethod
     def from_json(cls, raw: str) -> RunArtifact:
-        """Load a persisted artifact."""
-        return cls.model_validate_json(raw)
+        """Load a persisted artifact.
+
+        `Objection.raised_by` carries a default so a *live* model response can
+        omit the field during parsing (`AttackerRole.run()` always overwrites
+        it with the true role afterward, before anything is saved). A
+        *stored* artifact should never need that default -- if one lacks an
+        explicit `raised_by`, loading it through the default would silently
+        mislabel the objection as `attacker_doctrinal`, which
+        `independence.measure_independence` counts on to be correct (GitHub
+        #11-5). Reject that case instead of defaulting it.
+        """
+        raw_dict = json.loads(raw)
+        for obj in _objection_dicts(raw_dict.get("state", {})):
+            if "raised_by" not in obj:
+                raise ValueError(
+                    f"Objection {obj.get('id', '<unknown>')} has no explicit 'raised_by' "
+                    "in the stored artifact -- refusing to silently default it."
+                )
+        return cls.model_validate(raw_dict)

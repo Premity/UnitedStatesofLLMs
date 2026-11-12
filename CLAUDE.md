@@ -20,7 +20,7 @@ make up            # dev stack (hot reload)
 make check         # lint + tests — what CI runs
 make test          # tests only (fast, no network)
 make fmt           # auto-fix and format
-make corpus        # fetch + index (not yet implemented)
+make corpus        # fetch + index — SLOW, network + embedding (see below)
 make eval          # ablation harness — SLOW, consumes API quota
 ```
 
@@ -32,8 +32,8 @@ Single test: `uv run pytest packages/council-core/tests/test_citations.py::test_
 packages/council-core/   Domain models, LLM gateway, citation validator, exports
 runtime/api/             LangGraph orchestrator, SSE, run persistence
 runtime/frontend/        React courtroom + dissent log
-pipeline/fetcher/        Corpus download (SCAFFOLD ONLY)
-pipeline/indexer/        Chunk, embed, index (SCAFFOLD ONLY)
+pipeline/fetcher/        Corpus download from the ICRC JSON:API
+pipeline/indexer/        Chunk, embed, index into Qdrant
 evaluation/              Ablation arms, metrics, case fixtures
 prompts/                 Versioned templates, hashed into every run
 corpus/manifests/        Defines corpus scope — the fetcher never crawls
@@ -89,6 +89,40 @@ These are load-bearing. Breaking one produces silent, hard-to-diagnose failure.
 8. **`make test` never touches the network.** Live tests are
    `@pytest.mark.live` and excluded from CI.
 
+## Asking before acting
+
+Hamd decides anything that leaves this machine or that another person sees.
+These are not guidelines to weigh — ask, every time, and wait.
+
+**Do without asking:** read code, run tests and lint, `git status`/`log`/`diff`/
+`show`/`fetch`, check out an existing branch, verify a claim empirically, write
+scratch files outside the repo.
+
+**Ask first, every time:**
+
+- `git push`, or creating a branch meant to be pushed
+- `git commit` — the decision to commit is his, and he wants logical chunks
+- Opening, closing, editing or commenting on a PR or an issue
+- Any other change visible on GitHub
+- Long-running jobs (16GB machine; the indexer OOM-killed his editor twice)
+
+**Never:** merge. He merges. Not even when a PR is clearly ready.
+
+**The scope of a request is exactly what it says.** "File the issue" is not
+"and open a PR". "Push the fix" is not "and comment on the PR". "Do a PR" means
+open one, in `.github/pull_request_template.md` format, into `develop` — it is
+not standing permission to open PRs later, or to do anything beyond opening it.
+Finish the thing asked for, then stop and report.
+
+**Size is not a reason.** A one-character diff needs the same permission as a
+large one. The gate is who can see the action, never how small it is.
+
+**Never write his name, or attribute a decision to him, anywhere public.** Not
+in a commit message, PR, issue or comment — not even to be transparent about
+why a change was made. If something public needs explaining, draft it and let
+him post it. Everything on GitHub goes out under his real name, and `gh` posts
+*as him*: there is no separate bot identity.
+
 ## Conventions
 
 **Commits:** Conventional Commits, enforced by hook and CI.
@@ -103,12 +137,49 @@ or `develop` (the pre-commit hook blocks it).
 
 **Decisions with trade-offs get an ADR** in `docs/adr/`.
 
+**Docs are updated in the PR that outdates them.** Not afterwards — there is no
+afterwards. `CLAUDE.md` called the corpus fetcher a stub for two weeks after it
+was built and running, and the next person to read it proposed building it
+again. The PR template's **Docs** section lists what to check, and
+`tests/test_docs_are_current.py` enforces the mechanical parts: a subsystem
+described as a stub while its code is importable, a documented path that
+resolves nowhere, a quoted test count that has drifted, an `ISSUES.md` index
+row whose section is resolved, and a `make` target documented but absent.
+
+Those tests are deliberately narrow — they check claims verifiable against the
+tree, not prose. Everything they cannot check is on you.
+
 ## Current state
 
-Scaffold. The domain model, orchestration, roles, prompts, API, frontend, and
-metrics are written. **The corpus fetcher and indexer are stubs** — until they
-are implemented, retrieval returns nothing and every citation resolves as
-`out_of_corpus`. See [ISSUES.md](ISSUES.md).
+Audited 2026-11-09 against the tree, not against this file's previous claims.
+
+**Built and tested** (311 tests: 159 Python, 152 frontend): the domain model,
+citation resolver, LLM gateway, prompts, LangGraph orchestrator, SSE, run
+persistence, the corpus fetcher, the indexer, the frontend courtroom,
+transcript, dissent log, replay and theming.
+
+**Not built:** the evaluation runner (`run.py`, `report.py`), arm E, the case
+picker, and the case fixture set (1 of a target 40–80).
+
+**The corpus is a per-machine artifact.** `data/cache/` and `data/index/` are
+gitignored (ADR 0007): the corpus travels as manifests, and each machine
+resolves against whatever it last fetched. A fresh clone gets the 24-article
+placeholder `setup.sh` copies from `corpus/stub/`. **Evaluation runs on
+Anudveg's machine, which has the full corpus** — treaties plus the 161
+customary rules.
+
+Hamd's machine deliberately does not run the indexer: 16GB, and the embedding
+stage has OOM-killed his editor. So on this machine most citations resolve
+`out_of_corpus`, and that is the local index being small, not a fabrication
+signal. Don't read citation statuses as signal here, and don't propose running
+`make corpus` as a fix. What the local index holds:
+
+```bash
+python3 -c "import json; d=json.load(open('data/index/citation_index.json')); \
+print(len(d['entries']), 'locators across', sorted(d['instruments']))"
+```
+
+See [ISSUES.md](ISSUES.md).
 
 ## Gotchas
 
@@ -121,4 +192,12 @@ are implemented, retrieval returns nothing and every citation resolves as
   imperfect JSON. `complete_structured` retries once with the validation error
   attached; persistent failures usually mean the model is too small.
 - **The TS types in `runtime/frontend/src/types/index.ts` mirror the Pydantic
-  models by hand.** Update both in the same PR.
+  models by hand.** Update both in the same PR. A field added to a model that
+  stored runs already lack must be optional on both sides, and absence must
+  not collapse into a default that means something (`Objection.severity` is
+  the worked example: `None` means "not stated", never `minor`).
+- **A manifest `status: "fetched"` describes the machine that fetched it.**
+  `mark_fetched()` writes it and it is committed, so it travels; the documents
+  do not. `status: "fetched"` on all 23 treaties alongside a 9-instrument local
+  index is the normal state here, not a broken fetch. Check `data/cache/` and
+  the index's `instruments` key for what this machine actually has.

@@ -20,6 +20,17 @@ class ModelConfig(BaseModel):
     temperature: float = Field(default=0.3, ge=0.0, le=2.0)
     max_tokens: int = Field(default=4096, gt=0)
     timeout_seconds: int = Field(default=180, gt=0)
+    total_timeout_seconds: int = Field(
+        default=300,
+        gt=0,
+        description=(
+            "Hard ceiling on one complete() call across every retry attempt and "
+            "backoff wait combined, independent of timeout_seconds x stop_after_attempt. "
+            "Without this a stuck model could hold a debate slot for ~timeout_seconds x "
+            "6 attempts x 2 (initial call + one structured-output repair) -- about two "
+            "hours for a hybrid-reasoning role (GitHub #11-2)."
+        ),
+    )
 
     api_base: str | None = Field(
         default=None,
@@ -46,13 +57,13 @@ class RoleModels(BaseSettings):
     presenter_model: str = "groq/openai/gpt-oss-120b"
     presenter_temperature: float = 0.4
 
-    attacker_doctrinal_model: str = "ollama/qwen3.5:9b"
+    attacker_doctrinal_model: str = "groq/qwen/qwen3.8-27b"
     attacker_doctrinal_temperature: float = 0.7
 
-    attacker_evidentiary_model: str = "ollama/gemma3:12b"
+    attacker_evidentiary_model: str = "groq/openai/gpt-oss-20b"
     attacker_evidentiary_temperature: float = 0.7
 
-    judge_model: str = "gemini/gemini-3.1-pro-preview"
+    judge_model: str = "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
     judge_temperature: float = 0.2
 
     ollama_base_url: str = Field(
@@ -73,12 +84,47 @@ class RoleModels(BaseSettings):
 
         Ollama-backed roles get `api_base` injected so one setting moves every
         local model between host and container.
+
+        Hybrid-reasoning models -- Qwen3.5 under Ollama, Gemma 4 under the
+        Gemini API, nemotron-3-ultra under OpenRouter, and Qwen3.8/gpt-oss
+        under Groq -- spend tokens on thinking before the answer, and the
+        default 4096-token budget can be entirely consumed by that thinking
+        with nothing left for the structured JSON response. Confirmed
+        empirically against qwen3.5:9b (~6,300 completion tokens for one
+        attacker turn), gemma-4-26b-a4b-it (hit the 4096 ceiling with *all
+        4093 tokens spent on reasoning*, returned empty content), and
+        nemotron-3-ultra as judge in round 3 of a real debate (the dissent
+        log grows every round, so the judge's response is the one place the
+        correlation isn't just model-driven -- round 3's ruling returned
+        empty content on the first attempt and a JSON response truncated
+        right near the end on the repair attempt, both the 4096-ceiling
+        signature). All affected families get the same much larger
+        `max_tokens` and `timeout_seconds` as a result.
+
+        Named individually rather than matched by a `groq/` prefix, because
+        Groq also hosts the non-reasoning presenter (`gpt-oss-120b`) under
+        that same prefix (GitHub #9) -- a prefix match would give it 16000
+        tokens it does not need and hide a real budget-exhaustion bug behind
+        a false negative instead.
         """
         model_id: str = getattr(self, f"{role}_model")
         temperature: float = getattr(self, f"{role}_temperature")
+        is_ollama = model_id.startswith("ollama/")
+        is_hybrid_reasoning = (
+            is_ollama
+            or model_id.startswith("gemini/gemma")
+            or model_id.startswith("openrouter/nvidia/nemotron")
+            or model_id.startswith("groq/qwen/qwen3")
+            or model_id.startswith("groq/openai/gpt-oss-20b")
+        )
 
         return ModelConfig(
             model_id=model_id,
             temperature=temperature,
-            api_base=self.ollama_base_url if model_id.startswith("ollama/") else None,
+            api_base=self.ollama_base_url if is_ollama else None,
+            max_tokens=16000 if is_hybrid_reasoning else 4096,
+            timeout_seconds=600 if is_hybrid_reasoning else 180,
+            # Bounds roughly two full-length attempts plus backoff, not six --
+            # see ModelConfig.total_timeout_seconds.
+            total_timeout_seconds=1200 if is_hybrid_reasoning else 300,
         )

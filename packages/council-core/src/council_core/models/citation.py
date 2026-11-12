@@ -12,9 +12,39 @@ for why this is a first-class module.
 
 from __future__ import annotations
 
+import re
 from enum import StrEnum
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
+
+# Requires a delimiter (`.` or whitespace) after 'art'/'article', so a value
+# that merely starts with those letters -- "artifact-3", "articles 51" -- is
+# left alone. An earlier version matched the bare letters with no delimiter
+# required and silently mangled both (GitHub #8).
+#
+# The group repeats (`+`) so the strip is idempotent. Matching a single prefix
+# left `art.art.51` as `art.51`, which still carries a prefix: the field then
+# normalized further on every later validation pass, so one stored artifact
+# produced a different locator before and after a load/save cycle -- and
+# locators are permanent (see `locator()`).
+_ARTICLE_PREFIX_RE = re.compile(r"^(?:\s*art(?:icle)?(?:\.|\s)\s*)+", re.IGNORECASE)
+
+
+def _strip_article_prefix(article: str | None) -> str | None:
+    """Drop a redundant 'art.'/'article' prefix a model put inside the field.
+
+    `locator()` always prepends 'art.' itself. A model echoing its own prose
+    ("Article 51(2) of Additional Protocol I") sometimes puts 'art.51(2)' in
+    the structured field instead of '51(2)', which then doubles up to
+    'ap_i/art.art.51(2)' -- a locator nothing in the index can match. A real
+    provision then resolves as fabricated. Confirmed live: round 1 of a real
+    debate produced the clean form, round 2 (rebuttal, with the model's own
+    prior natural-language reasoning in context) produced the doubled one for
+    every citation in that turn.
+    """
+    if article is None:
+        return None
+    return _ARTICLE_PREFIX_RE.sub("", article)
 
 
 class CitationType(StrEnum):
@@ -73,6 +103,19 @@ class Citation(BaseModel):
         default=None,
         description="Article locator for treaties, e.g. '8(2)(b)(iv)'.",
     )
+
+    @field_validator("article")
+    @classmethod
+    def _normalize_article(cls, value: str | None) -> str | None:
+        """Strip a redundant 'art.' prefix once, at construction.
+
+        Previously only `locator()` stripped it, so the stored field (and
+        every renderer that reads `article` directly instead of calling
+        `locator()`) kept the raw 'art.51(2)', which then doubled with the
+        label those renderers prepend themselves (GitHub #11-1).
+        """
+        return _strip_article_prefix(value)
+
     case_id: str | None = Field(
         default=None,
         description="Canonical case slug for jurisprudence, e.g. 'icty_galic_tj'.",

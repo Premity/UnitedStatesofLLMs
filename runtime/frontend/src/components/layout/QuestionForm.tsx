@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 import { isReplayEnabled } from "@/api/replay";
 import { useCourtStore } from "@/store/courtStore";
@@ -17,6 +17,11 @@ import type { DebateConfig, Role } from "@/types";
  * courtroom can be worked on without four reachable models. Both hooks are
  * instantiated unconditionally — hook order cannot depend on a flag — and only
  * the chosen one is driven.
+ *
+ * It folds away once the council convenes, so the courtroom has the screen for
+ * the length of the debate, and unfolds again when the court rises. The
+ * stepper is deliberately left out of the fold: it drives the replay, so
+ * hiding it during a debate would take away the control you steer with.
  */
 export function QuestionForm() {
   const { phase } = useCourtStore();
@@ -37,6 +42,57 @@ export function QuestionForm() {
   const [rounds, setRounds] = useState<"auto" | number>("auto");
 
   const running = phase !== "idle" && phase !== "adjourned" && phase !== "error";
+
+  /**
+   * Folded away while the court sits.
+   *
+   * Tracks `running` rather than being driven by it, so the fold can also be
+   * worked by hand: once a debate ends the form comes back, and before one
+   * starts you can put it away yourself.
+   */
+  const [folded, setFolded] = useState(false);
+
+  /**
+   * Hold the courtroom still across the fold.
+   *
+   * Folding removes height above the courtroom, and the browser keeps its
+   * scroll offset rather than what you were looking at -- so the page jumps
+   * and the scene slides up the screen. Measure where the courtroom sits in
+   * the viewport before the layout changes, then put the scroll back so it
+   * has not moved.
+   */
+  const anchorRef = useRef<number | null>(null);
+  useLayoutEffect(() => {
+    const top = anchorRef.current;
+    anchorRef.current = null;
+    if (top === null) return;
+
+    const scene = document.querySelector("[data-testid='chamber']");
+    if (!scene) return;
+
+    const delta = scene.getBoundingClientRect().top - top;
+    if (delta) window.scrollBy({ top: delta, behavior: "instant" });
+  }, [folded]);
+
+  /** Remember where the courtroom is, for the fold that is about to happen. */
+  const anchor = () => {
+    const scene = document.querySelector("[data-testid='chamber']");
+    anchorRef.current = scene ? scene.getBoundingClientRect().top : null;
+  };
+
+  /** Fold with the courtroom held still, whether by hand or on its own. */
+  const fold = (next: boolean) => {
+    anchor();
+    setFolded(next);
+  };
+
+  // Away when the council convenes, back when the court rises.
+  useEffect(() => {
+    anchor();
+    setFolded(running);
+    // `anchor` is stable in effect: it only reads the DOM.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [running]);
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -70,6 +126,31 @@ export function QuestionForm() {
       onSubmit={submit}
       className="rounded-xl border border-court-rail bg-court-panel/60 p-5"
     >
+      {/* The fold's handle. Always present, so the form can always be got
+          back, and carrying no question text -- the question is in the
+          transcript, and repeating it here would just be another thing
+          covering the courtroom. */}
+      <div className="flex items-center justify-between gap-3">
+        <span className="font-ui text-xs uppercase tracking-wider text-court-gold">
+          {folded ? (running ? "The council is sitting" : "Put a question") : "Put a question"}
+        </span>
+        <button
+          type="button"
+          data-testid="question-fold"
+          onClick={() => fold(!folded)}
+          aria-expanded={!folded}
+          className="rounded border border-court-rail px-3 py-1 font-ui text-xs text-court-fg/60 transition hover:border-court-gold/40 hover:text-court-fg/90"
+        >
+          {folded ? "Edit the question" : "Fold away"}
+        </button>
+      </div>
+
+      {/* Unmounted when folded, not merely hidden by a class: `hidden` is a
+          stylesheet's job, so the fold would depend on Tailwind being
+          applied. The field state lives in this component and outlives the
+          fold either way, so nothing typed is lost. */}
+      {!folded && (
+      <div className="mt-4">
       {replaying && (
         <p
           data-testid="replay-banner"
@@ -173,9 +254,15 @@ export function QuestionForm() {
         )}
       </div>
 
+      </div>
+      )}
+
       {/* Stepping. A debate plays in about nine seconds, which is too fast to
           read, and the states worth inspecting — the objection flourish, the
-          citation chips — are the transient ones. */}
+          citation chips — are the transient ones.
+
+          Outside the fold: this is what drives the replay, so folding the
+          form away must not take the controls with it. */}
       {offerReplay && (
         <div
           data-testid="replay-stepper"

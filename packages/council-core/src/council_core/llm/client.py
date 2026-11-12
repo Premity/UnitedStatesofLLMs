@@ -8,15 +8,17 @@ artifact, and logging that names the role rather than the raw model id.
 
 from __future__ import annotations
 
+import asyncio
 import json
 import re
 import time
 from typing import Any, TypeVar
 
+import litellm
 import structlog
 from litellm import acompletion
 from pydantic import BaseModel, ValidationError
-from tenacity import retry, retry_if_exception_type, stop_after_attempt, wait_exponential
+from tenacity import retry, retry_if_exception, stop_after_attempt, wait_exponential
 
 from council_core.llm.config import ModelConfig
 
@@ -25,6 +27,36 @@ log = structlog.get_logger(__name__)
 T = TypeVar("T", bound=BaseModel)
 
 _JSON_BLOCK = re.compile(r"```(?:json)?\s*(\{.*?\}|\[.*?\])\s*```", re.DOTALL)
+
+# 429 is rate limiting; the rest are transient server-side failures that go
+# away on their own. Deliberately excludes 400/401/403/404 and the like --
+# those are permanent, and retrying them just delays the failure by a minute.
+_RETRYABLE_STATUS_CODES = {429, 500, 502, 503, 504}
+
+
+def _is_retryable(exc: BaseException) -> bool:
+    """True for transport failures and transient server errors from any provider.
+
+    Started as a fixed tuple of LiteLLM exception types (RateLimitError,
+    APIConnectionError, Timeout, InternalServerError) after a live run hit
+    Groq's per-minute token limit and wasn't retried at all. That tuple then
+    missed `ServiceUnavailableError` (Gemini's 503 "high demand", the same
+    error that made `gemini-3.8-flash` unusable for over a week) and a whole
+    debate failed outright on the first hit -- no retry attempt at all.
+
+    Every LiteLLM exception sets `status_code` unconditionally in `__init__`
+    (confirmed against the installed version's source for RateLimitError,
+    APIConnectionError, Timeout, InternalServerError, and
+    ServiceUnavailableError), so matching on the code generalizes across
+    provider-specific subclasses instead of enumerating them one at a time --
+    this predicate has already needed extending twice.
+    """
+    # litellm.Timeout sets status_code=408, which isn't a server error and
+    # deliberately isn't in the retryable set above -- a request timeout is
+    # always worth retrying regardless of code, so it's checked by type.
+    if isinstance(exc, (TimeoutError, ConnectionError, litellm.exceptions.Timeout)):
+        return True
+    return getattr(exc, "status_code", None) in _RETRYABLE_STATUS_CODES
 
 
 class StructuredOutputError(RuntimeError):
@@ -53,12 +85,6 @@ class CouncilLLM:
         self._config = config
         self._role = role
 
-    @retry(
-        stop=stop_after_attempt(3),
-        wait=wait_exponential(multiplier=1, min=2, max=20),
-        retry=retry_if_exception_type((TimeoutError, ConnectionError)),
-        reraise=True,
-    )
     async def complete(
         self,
         *,
@@ -66,10 +92,56 @@ class CouncilLLM:
         user: str,
         seed: int | None = None,
     ) -> ModelResponse:
-        """Send one completion request.
+        """Send one completion request, bounded by a total wall-clock deadline.
 
-        Transport failures are retried with backoff; a model that answers badly
-        is not retried here — that is the caller's business.
+        `_complete_with_retry` retries individual transport failures with
+        backoff, but `stop_after_attempt(6)` alone caps *attempts*, not time --
+        six attempts at `timeout_seconds` each (plus backoff) is unbounded
+        with respect to the role's actual time budget: for a hybrid-reasoning
+        role at 600s/attempt that is ~62 minutes for one `complete()` call, and
+        `complete_structured` can call it twice (initial + one repair) -- close
+        to two hours holding a debate slot for a single stuck model (GitHub
+        #11-2). `total_timeout_seconds` is a second, independent ceiling on
+        the whole retry loop, so a stuck model fails the turn in minutes
+        instead of hours regardless of how the per-attempt numbers above
+        change.
+        """
+        try:
+            async with asyncio.timeout(self._config.total_timeout_seconds):
+                return await self._complete_with_retry(system=system, user=user, seed=seed)
+        except TimeoutError:
+            log.error(
+                "llm_total_timeout",
+                role=self._role,
+                model=self._config.model_id,
+                total_timeout_seconds=self._config.total_timeout_seconds,
+            )
+            raise
+
+    @retry(
+        stop=stop_after_attempt(6),
+        # 6 attempts at this backoff spans 62s cumulative before the last one
+        # (2+4+8+16+32, verified against the installed tenacity) -- needed
+        # to actually cross Groq's per-minute rate-limit window, confirmed
+        # against a live run that hit it. multiplier=1 only reaches 32s here
+        # (GitHub #10) and would exhaust the whole retry budget still inside
+        # the rate-limit window.
+        wait=wait_exponential(multiplier=2, min=2, max=60),
+        retry=retry_if_exception(_is_retryable),
+        reraise=True,
+    )
+    async def _complete_with_retry(
+        self,
+        *,
+        system: str,
+        user: str,
+        seed: int | None = None,
+    ) -> ModelResponse:
+        """One completion request, retried on transport failure.
+
+        A model that answers badly is not retried here — that is the caller's
+        business. Called only through `complete()`, which adds the total
+        wall-clock deadline this retry loop has no concept of on its own.
         """
         started = time.perf_counter()
 

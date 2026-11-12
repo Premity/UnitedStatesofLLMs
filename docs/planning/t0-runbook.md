@@ -314,14 +314,21 @@ whoever has the frontend track.
 
 ## Finishing
 
-- [ ] `make check` passes
+- [x] ~~`make check` passes~~ — ruff + 131 tests confirmed 2026-11-03 (frontend
+      `tsc` step blocked on a local node/PATH issue, unrelated to any code
+      change; re-run once that's sorted)
 - [x] ~~Driver scripts committed~~ — done, `scripts/`
 - [x] ~~ADR 0008 for the locator format~~ — done
+- [x] ~~First live debate completes~~ — `data/runs/run_404ea44ab227`,
+      2026-11-03. Parallel attacker join confirmed; see ISSUES.md for the two
+      bugs this surfaced (one fixed, one open) and the judge-model situation
 - [ ] Live tests pass; `make test` still excludes them
 - [ ] Fixture committed and the frontend owner told
-- [ ] **Anything surprising written up** — if a model could not hold the schema,
-      or the judge was uniformly overconfident, that is a result. Put it in
-      [ISSUES.md](../../ISSUES.md)
+- [x] **Anything surprising written up** — four findings added to
+      [ISSUES.md](../../ISSUES.md) on 2026-11-03: the `raised_by` crash
+      (fixed), the SSE framing bug (fixed), the thinking-model token-budget
+      problem (open), and the Gemini free-tier dead end (open, judge
+      currently on a non-independent fallback)
 
 Merge with `make merge-develop`.
 

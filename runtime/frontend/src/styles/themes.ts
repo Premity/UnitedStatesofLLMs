@@ -69,92 +69,6 @@ export interface Theme {
 }
 
 export const THEMES = {
-  /** The original. Deep violet dusk — reads more game than courtroom. */
-  dusk: {
-    bg: "#1a1229",
-    fg: "#ffffff",
-    scheme: "dark",
-    panel: "#241a3a",
-    rail: "#3b2a5c",
-    ink: "#0f0a1a",
-    gold: "#e8b84b",
-    onGold: "#0f0a1a",
-    crimson: "#e4647a",
-    crimsonDeep: "#a8203a",
-    benchPresenter: "#3d7ea6",
-    benchDoctrinal: "#c2384a",
-    benchEvidentiary: "#c56a30",
-    benchJudge: "#e8b84b",
-    paper: "#f7f3e9",
-    recordInk: "#1f1a14",
-    recordRule: "#d9d0bd",
-    recordMargin: "#8a7a5c",
-  },
-
-  /**
-   * Oxblood and leather. Warm, archival — a law library after hours.
-   * The record's parchment already sits in this family.
-   */
-  chambers: {
-    bg: "#1c1210",
-    fg: "#ffffff",
-    scheme: "dark",
-    panel: "#2a1c18",
-    rail: "#4a3028",
-    ink: "#0f0908",
-    gold: "#d9a441",
-    onGold: "#0f0908",
-    crimson: "#d96060",
-    crimsonDeep: "#8f2b2b",
-    benchPresenter: "#4a7c7e",
-    benchDoctrinal: "#b33a3a",
-    benchEvidentiary: "#b86d33",
-    benchJudge: "#d9a441",
-    paper: "#f5efe2",
-    recordInk: "#1f1813",
-    recordRule: "#ddd2bc",
-    recordMargin: "#8a7656",
-  },
-
-  /**
-   * Burned Fantasy, placed by contrast rather than by swatch order.
-   *
-   * The source palette is buccaneer #682c2f, copper #b56c30, tumbleweed
-   * #d7b77e, mine shaft #3d3d3d and mocha #7d2e1c. Only two of the five carry
-   * text on a dark ground: tumbleweed at 9.9:1 and copper at 4.6:1. So
-   * tumbleweed takes the accent that gold held, copper becomes the evidentiary
-   * bench, and the three dark tones — which read as decorative at 1.7–2.1:1 —
-   * become grounds and bench fills where nothing small sits on them.
-   *
-   * The ground is mocha taken down to #140c09; the source has no colour dark
-   * enough to sit a courtroom on, and mine shaft is a neutral grey that would
-   * have flattened the warmth. Mine shaft is kept as the rail instead, where
-   * its neutrality separates the warm tones rather than competing with them.
-   */
-  ember: {
-    bg: "#140c09",
-    fg: "#ffffff",
-    scheme: "dark",
-    panel: "#241310",
-    rail: "#3d3d3d",
-    ink: "#0b0605",
-    gold: "#d7b77e",
-    onGold: "#0b0605",
-    // Lifted off mocha, which at 2.1:1 on this ground cannot carry the small
-    // text the objection styles put on it. #cf6347 clears AA on both the
-    // ground and the panel while staying a burnt red rather than an orange.
-    crimson: "#cf6347",
-    crimsonDeep: "#8f3a26",
-    benchPresenter: "#5e7a74",
-    benchDoctrinal: "#7d2e1c",
-    benchEvidentiary: "#b56c30",
-    benchJudge: "#d7b77e",
-    paper: "#f3ebdd",
-    recordInk: "#241310",
-    recordRule: "#d9cab0",
-    recordMargin: "#8a6b4d",
-  },
-
   /**
    * Oak. A daylit courtroom: light tan ground, walnut accents, oxblood for
    * objections — panelled wood and morning light rather than a dark room.
@@ -194,30 +108,26 @@ export const THEMES = {
     recordRule: "#d8c7a8",
     recordMargin: "#7d6244",
   },
-
-  /**
-   * Slate and navy. Institutional and cool — closest to a real court's
-   * sobriety, and the least decorative of the three.
-   */
-  tribunal: {
-    bg: "#0f172a",
+  /** The original. Deep violet dusk — reads more game than courtroom. */
+  dusk: {
+    bg: "#1a1229",
     fg: "#ffffff",
     scheme: "dark",
-    panel: "#1a2436",
-    rail: "#2e3f58",
-    ink: "#070c16",
-    gold: "#d6b068",
-    onGold: "#070c16",
-    crimson: "#e4697f",
-    crimsonDeep: "#a8324a",
-    benchPresenter: "#4b86b4",
-    benchDoctrinal: "#c0455a",
-    benchEvidentiary: "#b67134",
-    benchJudge: "#d6b068",
-    paper: "#f4f2ec",
-    recordInk: "#161b22",
-    recordRule: "#d5d2c8",
-    recordMargin: "#7d7b70",
+    panel: "#241a3a",
+    rail: "#3b2a5c",
+    ink: "#0f0a1a",
+    gold: "#e8b84b",
+    onGold: "#0f0a1a",
+    crimson: "#e4647a",
+    crimsonDeep: "#a8203a",
+    benchPresenter: "#3d7ea6",
+    benchDoctrinal: "#c2384a",
+    benchEvidentiary: "#c56a30",
+    benchJudge: "#e8b84b",
+    paper: "#f7f3e9",
+    recordInk: "#1f1a14",
+    recordRule: "#d9d0bd",
+    recordMargin: "#8a7a5c",
   },
 } as const satisfies Record<string, Theme>;
 
@@ -226,11 +136,8 @@ export type ThemeName = keyof typeof THEMES;
 export const THEME_NAMES = Object.keys(THEMES) as ThemeName[];
 
 export const THEME_LABELS: Record<ThemeName, string> = {
-  dusk: "Dusk",
-  chambers: "Chambers",
-  ember: "Ember",
   oak: "Oak",
-  tribunal: "Tribunal",
+  dusk: "Dusk",
 };
 
 /** Maps a theme key to the CSS custom property Tailwind reads. */
@@ -256,7 +163,16 @@ const VARIABLE: Record<Exclude<keyof Theme, "scheme">, string> = {
 
 const STORAGE_KEY = "council:theme";
 
-export const DEFAULT_THEME: ThemeName = "chambers";
+/**
+ * Oak, the daylit courtroom. Dusk is the dark counterpart and the only other
+ * palette — three further experiments (Chambers, Ember, Tribunal) were cut
+ * once this one was settled, since every theme is a set of contrast ratios to
+ * keep honest and two is the pair worth maintaining.
+ */
+export const DEFAULT_THEME: ThemeName = "oak";
+
+/** The theme the toggle switches to from the default, and back. */
+export const ALTERNATE_THEME: ThemeName = "dusk";
 
 /**
  * "#d9a441" -> "217 164 65".
@@ -275,7 +191,10 @@ export function applyTheme(name: ThemeName): void {
   const root = document.documentElement;
 
   for (const [key, variable] of Object.entries(VARIABLE)) {
-    root.style.setProperty(variable, channels(theme[key as keyof typeof VARIABLE]));
+    root.style.setProperty(
+      variable,
+      channels(theme[key as keyof typeof VARIABLE]),
+    );
   }
 
   root.dataset.theme = name;

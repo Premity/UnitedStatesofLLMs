@@ -151,7 +151,7 @@ believed only if its locator resolves against the index (§6).
                                     ▲
                                     │ writes collection + citation index
 ┌───────────────────────────────────┴─────────────────────────────┐
-│ PIPELINE (offline, run-to-completion)        [SCAFFOLD ONLY]    │
+│ PIPELINE (offline, run-to-completion)   BUILT; run per machine  │
 │   fetcher ──► data/cache/ ──► indexer ──► Qdrant + index.json   │
 └─────────────────────────────────────────────────────────────────┘
 
@@ -270,9 +270,9 @@ the LLM client, prompt rendering, turn bookkeeping, and citation grounding.
 | Role | Mandate | Model (default) | Temp | Output schema |
 | --- | --- | --- | --- | --- |
 | `presenter` | Build the position; rebut in later rounds | `groq/openai/gpt-oss-120b` | 0.4 | `{arguments: Argument[]}` |
-| `attacker_doctrinal` | Legal characterisation: tests, elements, interpretation | `ollama/qwen3.5:9b` | 0.7 | `{objections: Objection[]}` |
-| `attacker_evidentiary` | Factual predicate: sufficiency, mens rea, attribution | `ollama/gemma3:12b` | 0.7 | `{objections: Objection[]}` |
-| `judge` | Rule on every objection; calibrate confidence | `gemini/gemini-3.1-pro-preview` | 0.2 | `{conclusion, reasoning, confidence, rulings[], …}` |
+| `attacker_doctrinal` | Legal characterisation: tests, elements, interpretation | `groq/qwen/qwen3.8-27b` | 0.7 | `{objections: Objection[]}` |
+| `attacker_evidentiary` | Factual predicate: sufficiency, mens rea, attribution | `groq/openai/gpt-oss-20b` | 0.7 | `{objections: Objection[]}` |
+| `judge` | Rule on every objection; calibrate confidence | `openrouter/nvidia/nemotron-3-ultra-550b-a55b:free` | 0.2 | `{conclusion, reasoning, confidence, rulings[], …}` |
 
 **Capability allocation is deliberate.** Constructing a defensible argument is
 harder than attacking one, and the presenter sets the quality ceiling for the
@@ -791,9 +791,9 @@ as `out_of_corpus`.** This is stated in the README, `ISSUES.md`, `CLAUDE.md`, an
 | Variable | Read by | Default | Notes |
 | --- | --- | --- | --- |
 | `COUNCIL_PRESENTER_MODEL` | api | `groq/openai/gpt-oss-120b` | |
-| `COUNCIL_ATTACKER_DOCTRINAL_MODEL` | api | `ollama/qwen3.5:9b` | |
-| `COUNCIL_ATTACKER_EVIDENTIARY_MODEL` | api | `ollama/gemma3:12b` | |
-| `COUNCIL_JUDGE_MODEL` | api | `gemini/gemini-3.1-pro-preview` | |
+| `COUNCIL_ATTACKER_DOCTRINAL_MODEL` | api | `groq/qwen/qwen3.8-27b` | |
+| `COUNCIL_ATTACKER_EVIDENTIARY_MODEL` | api | `groq/openai/gpt-oss-20b` | |
+| `COUNCIL_JUDGE_MODEL` | api | `openrouter/nvidia/nemotron-3-ultra-550b-a55b:free` | |
 | `COUNCIL_OLLAMA_BASE_URL` | api | `http://host.docker.internal:11434` | Injected only for `ollama/` ids |
 | `EMBEDDING_MODEL` | api, indexer | `BAAI/bge-large-en-v1.5` | **Must match** |
 | `QDRANT_URL` | api, indexer | `http://qdrant:6333` | `localhost` in pipeline |

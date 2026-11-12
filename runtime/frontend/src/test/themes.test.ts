@@ -66,6 +66,47 @@ describe("the palettes", () => {
     expect(contrast(theme.gold, theme.panel)).toBeGreaterThanOrEqual(4.5);
   });
 
+  /**
+   * A token composited over a ground at some opacity.
+   *
+   * The chamber paints its panelling and fittings translucently, so what a
+   * nameplate actually sits on is a blend, not the raw token.
+   */
+  const over = (fg: string, bg: string, alpha: number) => {
+    const mix = [1, 3, 5].map((i) => {
+      const f = parseInt(fg.slice(i, i + 2), 16);
+      const b = parseInt(bg.slice(i, i + 2), 16);
+      return Math.round(f * alpha + b * (1 - alpha));
+    });
+    return `#${mix.map((v) => v.toString(16).padStart(2, "0")).join("")}`;
+  };
+
+  // The drawn chamber puts panelling behind the sprites, so the nameplates no
+  // longer sit on the bare ground. 0.18 is the panel pattern's fill opacity in
+  // Chamber.tsx — the busiest thing text lands on.
+  it.each(THEME_NAMES)("%s keeps nameplates readable over the panelling", (name) => {
+    const theme = THEMES[name];
+    const panelling = over(theme.rail, theme.bg, 0.18);
+
+    expect(contrast(theme.gold, panelling)).toBeGreaterThanOrEqual(4.5);
+    expect(contrast(theme.fg, panelling)).toBeGreaterThanOrEqual(4.5);
+  });
+
+  /**
+   * The chamber has to read as furniture in both palettes.
+   *
+   * Its fills cannot carry that on their own: under Dusk `ink` and `bg` are
+   * both near-black, so any mix of them lands around 1.05:1 and the bench
+   * vanishes. The gold edge on each solid is what holds the shape, so that is
+   * what is pinned here — 3:1, the WCAG threshold for a graphical object.
+   * 0.8 is the stroke opacity in Chamber.tsx.
+   */
+  it.each(THEME_NAMES)("%s draws furniture that reads against the ground", (name) => {
+    const theme = THEMES[name];
+
+    expect(contrast(over(theme.gold, theme.bg, 0.8), theme.bg)).toBeGreaterThanOrEqual(3);
+  });
+
   it.each(THEME_NAMES)("%s keeps the record legible", (name) => {
     const theme = THEMES[name];
     expect(contrast(theme.recordInk, theme.paper)).toBeGreaterThanOrEqual(4.5);
@@ -133,7 +174,7 @@ describe("the palettes", () => {
     applyTheme("oak");
     expect(document.documentElement.style.colorScheme).toBe("light");
 
-    applyTheme("chambers");
+    applyTheme("dusk");
     expect(document.documentElement.style.colorScheme).toBe("dark");
   });
 });
@@ -145,18 +186,18 @@ describe("applying a theme", () => {
   });
 
   it("writes bare RGB channels, which is what Tailwind's alpha needs", () => {
-    applyTheme("chambers");
+    applyTheme("dusk");
 
     const root = document.documentElement;
-    // #d9a441 -> 217 164 65. A hex value here would silently break every
+    // #e8b84b -> 232 184 75. A hex value here would silently break every
     // opacity modifier in the app.
-    expect(root.style.getPropertyValue("--court-gold")).toBe("217 164 65");
-    expect(root.dataset.theme).toBe("chambers");
+    expect(root.style.getPropertyValue("--court-gold")).toBe("232 184 75");
+    expect(root.dataset.theme).toBe("dusk");
   });
 
   it("remembers the choice and reads it back", () => {
-    applyTheme("tribunal");
-    expect(storedTheme()).toBe("tribunal");
+    applyTheme("dusk");
+    expect(storedTheme()).toBe("dusk");
   });
 
   it("falls back to the default when nothing is stored", () => {

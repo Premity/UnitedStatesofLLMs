@@ -165,14 +165,21 @@ system has not yet been run end to end against live models.
 | Area | State |
 | --- | --- |
 | Domain model, citation resolver | Written, tested |
-| Debate graph, roles, SSE, persistence | Written, tested — not yet run live |
-| Frontend | Written — not yet run against a real stream |
-| Evaluation metrics | Written, untested |
-| Evaluation harness runner | Not started |
-| Corpus fetcher and indexer | **Scaffold only** |
+| Debate graph, roles, SSE, persistence | Written, tested, run live |
+| Frontend courtroom, record, replay, theming | Written, tested, run against a live stream |
+| Corpus fetcher and indexer | Written, tested, run |
+| Evaluation metrics | Written, tested |
+| Evaluation harness runner | **Not started** — no `run.py`, no report |
+| Arm E, the compute-matched control | **Not started** |
 
-Until the pipeline lands, `make corpus` does nothing, retrieval returns nothing,
-and every citation resolves as `out_of_corpus`.
+The corpus is a **per-machine build artifact**: `data/cache/` and `data/index/`
+are gitignored, so the corpus travels as manifests and each machine resolves
+against whatever it last fetched. A fresh clone gets the 24-article placeholder
+`make setup` copies from `corpus/stub/`, and `make corpus` fetches the real one.
+
+A machine that has not fetched resolves most citations as `out_of_corpus` — the
+index being small, not a model inventing authority. `make doctor` reports what
+the local index actually holds.
 
 Building on this? Start with
 **[docs/planning/onboarding.md](docs/planning/onboarding.md)**, then pick up a

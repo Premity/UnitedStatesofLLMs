@@ -49,5 +49,20 @@ should change your position, and a tribunal notices when it does not.
 You may also raise a new argument if the objections opened a line you had not
 taken.
 
-Return the same JSON shape as your opening: a complete list of the arguments you
-now stand on, each with claim, reasoning, and citations.
+Return JSON — the complete set of arguments you now stand on, in the same
+shape as your opening:
+
+```
+{
+  "arguments": [
+    {
+      "claim": "One sentence stating the proposition.",
+      "reasoning": "Why it follows from the authority cited, applied to these facts.",
+      "citations": [
+        {"type": "treaty", "instrument": "rome_statute", "article": "8(2)(b)(iv)",
+         "quoted_text": "the exact words you rely on"}
+      ]
+    }
+  ]
+}
+```

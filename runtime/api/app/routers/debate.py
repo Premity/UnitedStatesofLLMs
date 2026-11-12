@@ -21,12 +21,30 @@ from sse_starlette.sse import EventSourceResponse
 from app.core.config import get_role_models, get_settings
 from app.graph.workflow import compiled_graph
 from app.services.run_store import get_run_store
-from council_core.models.debate import DebateConfig, DebateState
+from council_core.models.debate import DebateConfig, DebateState, Role
 from council_core.models.run import RunArtifact, RunMetadata, RunStatus
 
 log = structlog.get_logger(__name__)
 
 router = APIRouter(prefix="/debate", tags=["debate"])
+
+# Which task names are reported as `role_started`.
+#
+# Derived from `Role`, not hand-listed: a node whose name is not a role (a
+# future router or aggregator) is internal to the graph and means nothing to
+# a courtroom, while every node that *is* a role should report without anyone
+# remembering to add it here.
+#
+# Two nodes are named for the work rather than the worker -- `retrieve` and
+# `present` -- so they are mapped onto the role the courtroom shows. The guard
+# test `test_every_graph_node_is_either_a_streamed_role_or_deliberately_not`
+# fails if a node is added that is neither a role name nor listed here, which
+# is the moment to decide whether the courtroom should announce it.
+_TASK_ROLE_ALIASES = {
+    "retrieve": Role.RETRIEVER.value,
+    "present": Role.PRESENTER.value,
+}
+STREAMED_ROLES = frozenset({r.value for r in Role} | set(_TASK_ROLE_ALIASES))
 
 _semaphore: asyncio.Semaphore | None = None
 
@@ -76,10 +94,11 @@ async def stream_debate(config: DebateConfig) -> EventSourceResponse:
     """Run a debate, streaming turn-level events as they complete.
 
     Event types:
-        `turn`       one role finished — carries the full Turn object
-        `verdict`    the judge ruled
-        `done`       the run finished — carries run_id and the final state
-        `error`      the run failed
+        `role_started`  a node began — carries {role, round}
+        `turn`          one role finished — carries the full Turn object
+        `verdict`       the judge ruled
+        `done`          the run finished — carries run_id and the final state
+        `error`         the run failed
     """
     state = DebateState(config=config)
     metadata = _initial_metadata(state.run_id)
@@ -94,10 +113,40 @@ async def stream_debate(config: DebateConfig) -> EventSourceResponse:
 
         async with _get_semaphore():
             try:
-                async for chunk in compiled_graph.astream(
+                # Two stream modes, not one.
+                #
+                # `values` carries completed state, which is what a turn is
+                # built from. It cannot say that a node *began* -- a snapshot
+                # only exists once a node has written to state. The frontend
+                # needs that signal: a turn runs 40 to 90 seconds, so most of
+                # a debate is spent waiting on a role that has produced
+                # nothing yet, and "who are we waiting on" is the one thing
+                # worth showing meanwhile.
+                #
+                # `tasks` supplies it. A task event with no `result` key is a
+                # start; one with `result` is a finish, which `values` already
+                # covers. Node names are `Role` values (see `build_graph`), so
+                # the graph itself reports who is working -- replacing a
+                # hand-maintained copy of the graph's shape in the frontend
+                # store that nothing kept in sync.
+                async for mode, chunk in compiled_graph.astream(
                     {"run_id": state.run_id, "config": config, "current_round": 0},
-                    stream_mode="values",
+                    stream_mode=["values", "tasks"],
                 ):
+                    if mode == "tasks":
+                        # Finishes are redundant with the `turn` event.
+                        if isinstance(chunk, dict) and "result" not in chunk:
+                            name = chunk.get("name")
+                            role = _TASK_ROLE_ALIASES.get(name, name)
+                            if role in STREAMED_ROLES:
+                                yield {
+                                    "event": "role_started",
+                                    "data": json.dumps(
+                                        {"role": role, "round": state.current_round}
+                                    ),
+                                }
+                        continue
+
                     turns = chunk.get("turns", [])
 
                     # Emit only turns the client has not seen yet.
@@ -150,7 +199,12 @@ async def stream_debate(config: DebateConfig) -> EventSourceResponse:
             "data": json.dumps({"run_id": state.run_id, "status": metadata.status.value}),
         }
 
-    return EventSourceResponse(events())
+    # sse-starlette's default frame separator is "\r\n\r\n". The frontend
+    # splits incoming frames on "\n\n" (useDebateStream.ts), which never
+    # matches that separator -- every event stays buffered until the stream
+    # ends and nothing renders live. Match the frontend's expectation instead
+    # of changing it, since "\n\n" is the separator the SSE spec itself uses.
+    return EventSourceResponse(events(), sep="\n")
 
 
 @router.get("/runs")

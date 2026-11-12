@@ -1,25 +1,62 @@
+import clsx from "clsx";
+
 import type { Objection } from "@/types";
 
 /**
- * The OBJECTION! slam.
+ * The OBJECTION! slam, over the sprite that raised it.
  *
  * Fires when an attacker's turn lands with at least one objection. Deliberately
  * loud and deliberately brief — it draws the eye to the fact that a challenge
  * was raised, then clears so the substance can be read in the transcript.
+ *
+ * Anchored to the objecting sprite rather than taking the whole courtroom.
+ * Covering the scene hid the thing the objection was about, and said nothing
+ * about *who* objected beyond a line of small text; a burst over one bench
+ * says it by position. The objection's words moved to the subtitle band, which
+ * is where everything else being said already appears — so the burst carries
+ * only the word, at a size that fits a bench.
+ *
+ * It sits at the sprite's outer top corner — top-left for counsel on the left
+ * of the room, top-right for counsel on the right. Outward from the centre, so
+ * the burst never lands on the presenter between them, and mirrored so the two
+ * attackers are told apart by position alone.
  */
+
+/**
+ * How long a flourish stays up before it clears, in milliseconds.
+ *
+ * Long enough to read the ground in the band underneath — the burst itself is
+ * only a word, so the dwell is set by the prose, not the animation (which
+ * finishes in 0.45s). Both the live stream and replay auto-play use this;
+ * stepping mode ignores it and holds until the next click.
+ */
+export const FLOURISH_MS = 5000;
 
 interface ObjectionFlourishProps {
   objection: Objection;
+  /**
+   * Which side of the courtroom this sprite sits on.
+   *
+   * Decides the corner the burst hangs from: the flourish cannot work it out
+   * for itself, because a sprite does not know where it was placed.
+   */
+  side?: "left" | "right";
 }
 
 /**
  * Whether an objection earns the full OBJECTION! slam.
  *
- * A flourish that fires on every attacker turn carries no information. There
- * is no severity field on an Objection (see ISSUES.md), so this uses the
- * strongest signal the data actually holds: an objection is loud when it is
- * *fully grounded* — it cites authority and every citation resolved against
- * the corpus. That is an attacker catching something with the text to back it.
+ * A flourish that fires on every attacker turn carries no information, so
+ * this has to discriminate. It reads the attacker's own `severity` when there
+ * is one: `fatal` and `material` are the objections that would change the
+ * argument if sustained, and a `minor` one is shown quietly however well it
+ * is cited.
+ *
+ * Without a severity -- a run recorded before the field existed, or a model
+ * that did not supply one -- it falls back to whether the objection is fully
+ * grounded, which is what this used to do for every objection: it cites
+ * authority and every citation resolved. That is the strongest signal the
+ * rest of the data holds.
  *
  * Deliberately not keyed to `unresolved` or `misquoted` citations. Those mark
  * the objection's own authority as bad, so slamming for them would celebrate
@@ -27,6 +64,9 @@ interface ObjectionFlourishProps {
  * the transcript is what flags them.
  */
 export function isLoud(objection: Objection): boolean {
+  if (objection.severity) {
+    return objection.severity !== "minor";
+  }
   return (
     objection.resolved_citations.length > 0 &&
     objection.resolved_citations.every((rc) => rc.status === "resolved")
@@ -41,13 +81,29 @@ export function isLoud(objection: Objection): boolean {
  * represented by whichever objection the model happened to emit first.
  */
 export function headlineObjection(objections: Objection[]): Objection | null {
-  return objections.find(isLoud) ?? objections[0] ?? null;
+  // Hardest first, so a turn that lands a fatal objection is represented by
+  // it rather than by whichever objection the model happened to emit first.
+  // Among equals the model's own order stands: `sort` is stable, and nothing
+  // better distinguishes two objections of the same severity.
+  const ranked = [...objections].sort(
+    (a, b) => severityRank(b) - severityRank(a),
+  );
+  return ranked.find(isLoud) ?? ranked[0] ?? objections[0] ?? null;
 }
 
-const RAISER_LABEL: Record<string, string> = {
-  attacker_doctrinal: "Doctrinal Counsel",
-  attacker_evidentiary: "Evidentiary Counsel",
-};
+/** Orders objections by how hard they hit. Unrated sits below every rating. */
+function severityRank(objection: Objection): number {
+  switch (objection.severity) {
+    case "fatal":
+      return 3;
+    case "material":
+      return 2;
+    case "minor":
+      return 1;
+    default:
+      return 0;
+  }
+}
 
 /**
  * The spiked burst behind the word. Drawn rather than approximated with a
@@ -82,51 +138,67 @@ function Burst() {
 /**
  * The quiet form, for an objection that is not fully grounded.
  *
- * Still visible, still says who objected, but it does not take the screen.
- * Sits at the foot of the courtroom rather than over it.
+ * A small crimson tag on the sprite's own corner. Still says an objection was
+ * raised, and position says by whom; the ground itself goes to the band like
+ * any other utterance.
  */
-function QuietObjection({ objection }: ObjectionFlourishProps) {
+function QuietObjection({ side }: { side: "left" | "right" }) {
   return (
-    <div className="pointer-events-none absolute inset-x-0 bottom-14 z-30 flex justify-center px-4">
-      <div className="animate-pop max-w-lg rounded border border-court-crimson/60 bg-court-ink/95 px-4 py-2 shadow-lg">
-        <div className="font-ui text-[10px] uppercase tracking-widest text-court-crimson">
-          Objection · {RAISER_LABEL[objection.raised_by] ?? objection.raised_by}
-        </div>
-        <p className="mt-0.5 font-record text-sm leading-snug text-court-fg/85">
-          {objection.ground}
-        </p>
-      </div>
+    <div
+      data-testid="objection-quiet"
+      data-side={side}
+      className={clsx(
+        "animate-pop pointer-events-none absolute -top-2 z-30 whitespace-nowrap rounded border border-court-crimson/70 bg-court-ink/95 px-2 py-0.5 font-ui text-[10px] uppercase tracking-widest text-court-crimson shadow",
+        // Same corner as the slam, so quiet and loud read as one thing at
+        // different volumes rather than two different signals.
+        side === "left" ? "-left-2" : "-right-2",
+      )}
+    >
+      Objection
     </div>
   );
 }
 
-export function ObjectionFlourish({ objection }: ObjectionFlourishProps) {
-  if (!isLoud(objection)) return <QuietObjection objection={objection} />;
+/**
+ * Sized to the sprite it covers, not to the viewport.
+ *
+ * `-inset-x-6`/`-inset-y-4` lets the burst spill a little past the figure so
+ * it reads as landing *on* the bench rather than being contained by it, while
+ * staying far from the neighbouring sprite — the counsel columns are a third
+ * of the courtroom wide, so there is room.
+ */
+export function ObjectionFlourish({
+  objection,
+  side = "left",
+}: ObjectionFlourishProps) {
+  if (!isLoud(objection)) return <QuietObjection side={side} />;
 
   return (
-    <div className="pointer-events-none absolute inset-0 z-30 grid place-items-center p-4">
-      {/* One stack: the burst is the backdrop, everything else sits inside its
-          padding. Previously the word and the attribution box were siblings,
-          so the 8xl text overlapped the prose behind it. */}
-      <div className="animate-slam relative w-full max-w-xl">
-        <Burst />
+    <div
+      data-testid="objection-slam"
+      data-side={side}
+      // Hung from the outer top corner and overhanging the figure, so the
+      // sprite stays readable underneath. Sized in its own right rather than
+      // by inset, because an inset burst is only ever as big as the bench.
+      className={clsx(
+        // Hung from the figure's shoulder rather than above its head: at
+        // -top-8 the burst cleared the sprite entirely and rode up into the
+        // judge's bench, which made it look like the bench was objecting.
+        "animate-slam pointer-events-none absolute -top-2 z-30 grid h-16 w-28 place-items-center sm:h-20 sm:w-36",
+        // Hung from the corner, clear of the frame edge. At w-40 over a w-20
+        // sprite the burst covered the whole figure and overhung the
+        // courtroom's left edge -- the objector disappeared behind their own
+        // objection, which is the one thing it must not do.
+        side === "left" ? "-left-6" : "-right-6",
+      )}
+    >
+      <Burst />
 
-        <div className="relative px-[12%] py-[9%] text-center">
-          <div
-            className="font-display text-4xl font-black uppercase leading-none tracking-tight text-record-paper sm:text-5xl md:text-6xl"
-            style={{ textShadow: "0 3px 0 rgba(0,0,0,0.35)" }}
-          >
-            Objection!
-          </div>
-
-          <div className="mt-3 font-ui text-[11px] uppercase tracking-widest text-court-gold">
-            {RAISER_LABEL[objection.raised_by] ?? objection.raised_by}
-          </div>
-
-          <p className="mx-auto mt-1 max-w-md font-record text-sm leading-snug text-record-paper">
-            {objection.ground}
-          </p>
-        </div>
+      <div
+        className="relative px-[10%] text-center font-display text-base font-black uppercase leading-none tracking-tight text-record-paper sm:text-xl"
+        style={{ textShadow: "0 2px 0 rgba(0,0,0,0.35)" }}
+      >
+        Objection!
       </div>
     </div>
   );
