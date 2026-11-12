@@ -99,6 +99,7 @@ class CouncilLLM:
         system: str,
         user: str,
         seed: int | None = None,
+        response_format: dict[str, str] | None = None,
     ) -> ModelResponse:
         """Send one completion request.
 
@@ -123,6 +124,8 @@ class CouncilLLM:
             kwargs["extra_headers"] = self._config.extra_headers
         if seed is not None:
             kwargs["seed"] = seed
+        if response_format is not None:
+            kwargs["response_format"] = response_format
 
         log.info("llm_request", role=self._role, model=self._config.model_id)
         response = await acompletion(**kwargs)
@@ -130,6 +133,30 @@ class CouncilLLM:
 
         content = response.choices[0].message.content or ""
         usage = getattr(response, "usage", None)
+        if self._role == "judge" and not content.strip():
+            warning_fields: dict[str, Any] = {
+                "model": self._config.model_id,
+                "finish_reason": getattr(response.choices[0], "finish_reason", None),
+                "prompt_tokens": getattr(usage, "prompt_tokens", None),
+                "completion_tokens": getattr(usage, "completion_tokens", None),
+                "response_id": getattr(response, "id", None),
+            }
+            reasoning_tokens = getattr(usage, "reasoning_tokens", None)
+            if reasoning_tokens is None:
+                token_details = getattr(usage, "completion_tokens_details", None)
+                reasoning_tokens = getattr(token_details, "reasoning_tokens", None)
+            if reasoning_tokens is not None:
+                warning_fields["reasoning_tokens"] = reasoning_tokens
+
+            provider = getattr(response, "provider", None)
+            if provider is None:
+                hidden_params = getattr(response, "_hidden_params", None)
+                if isinstance(hidden_params, dict):
+                    provider = hidden_params.get("custom_llm_provider")
+            if provider is not None:
+                warning_fields["provider"] = provider
+
+            log.warning("empty_judge_response", **warning_fields)
 
         log.info(
             "llm_response",
@@ -162,7 +189,13 @@ class CouncilLLM:
         failing the turn, one repair attempt re-prompts with the validation
         error attached — cheaper and more reliable than tightening the prompt.
         """
-        response = await self.complete(system=system, user=user, seed=seed)
+        response_format = {"type": "json_object"} if self._role == "judge" else None
+        response = await self.complete(
+            system=system,
+            user=user,
+            seed=seed,
+            response_format=response_format,
+        )
 
         for attempt in range(max_repairs + 1):
             try:
@@ -189,6 +222,7 @@ class CouncilLLM:
                         f"Return ONLY valid JSON matching the schema. No prose, no code fences."
                     ),
                     seed=seed,
+                    response_format=response_format,
                 )
 
         raise StructuredOutputError("unreachable")
