@@ -16,7 +16,7 @@ import asyncio
 import json
 from pathlib import Path
 from types import SimpleNamespace
-from unittest.mock import AsyncMock, patch
+from unittest.mock import ANY, AsyncMock, patch
 
 import pytest
 from pydantic import BaseModel
@@ -28,12 +28,15 @@ from harness.arms import ARMS
 from harness.cases import EvaluationCase, Outcome
 from harness.quota import (
     QuotaExceededError,
+    QuotaLogReadError,
     QuotaTracker,
     get_expected_calls,
 )
 from harness.run import (
     MockJudgeRole,
+    _run_arm_e,
     build_parser,
+    extract_sample_outcome,
     normalize_outcome,
     resolve_arm,
     run_case,
@@ -142,6 +145,13 @@ class TestQuotaTracking:
         assert data["history"][-1]["attempts"] == 3
         assert data["history"][-1]["failures"] == 2
 
+    def test_corrupt_quota_log_does_not_default_to_zero(self, temp_eval_dir: Path) -> None:
+        log_path = temp_eval_dir / "quota_log.json"
+        log_path.write_text("{invalid", encoding="utf-8")
+
+        with pytest.raises(QuotaLogReadError, match="refusing to assume zero usage"):
+            QuotaTracker(log_path).get_today_usage()
+
     def test_quota_tracker_reads_legacy_daily_call_counts(self, temp_eval_dir: Path) -> None:
         log_path = temp_eval_dir / "quota_log.json"
         tracker = QuotaTracker(log_path)
@@ -204,6 +214,29 @@ class TestQuotaTracking:
 
         run_case_mock.assert_not_awaited()
         assert tracker.get_today_usage() == 38
+
+    @pytest.mark.asyncio
+    async def test_api_run_refuses_corrupt_quota_log(
+        self, temp_eval_dir: Path, sample_case: EvaluationCase
+    ) -> None:
+        quota_path = temp_eval_dir / "quota_log.json"
+        quota_path.write_text("{invalid", encoding="utf-8")
+        tracker = QuotaTracker(quota_path)
+
+        with (
+            patch("harness.run.run_case", AsyncMock()) as run_case_mock,
+            pytest.raises(QuotaLogReadError, match="refusing to assume zero usage"),
+        ):
+            await run_evaluation(
+                arms=[ARMS["raw"]],
+                cases=[sample_case],
+                judge_backend="api",
+                output_dir=temp_eval_dir,
+                quota_tracker=tracker,
+                auto_go=True,
+            )
+
+        run_case_mock.assert_not_awaited()
 
     @pytest.mark.asyncio
     async def test_failed_judge_call_is_counted_against_quota(
@@ -364,8 +397,40 @@ class TestOutcomeNormalization:
                 "affirmed",
             ),
             ("The accused bears criminal responsibility for the conduct.", "affirmed"),
+            ("Yes, the accused is not criminally responsible.", "indeterminate"),
+            ("The accused is not criminally responsible.", "rejected"),
+            ("The accused is criminally responsible.", "affirmed"),
+            (
+                "It has not been established beyond reasonable doubt that the accused was criminally responsible.",
+                "rejected",
+            ),
+            (
+                "It has been established beyond reasonable doubt that the accused was criminally responsible.",
+                "affirmed",
+            ),
+            ("The accused was not shown to be criminally responsible.", "rejected"),
+            ("The conduct did not constitute a war crime.", "rejected"),
+            ("The conduct was not a war crime.", "rejected"),
+            (
+                "Yes. A sustained campaign against civilians constitutes violations of the law.",
+                "affirmed",
+            ),
+            (
+                "Yes. A superior commander is criminally responsible under the doctrine of command responsibility for unlawful attacks on civilians by forces under his effective control when he knew or had reason to know of the crimes and failed to take all necessary and reasonable measures to prevent them or punish the perpetrators, even if he did not personally order the specific attacks.",
+                "affirmed",
+            ),
+            (
+                "No. The accused is not criminally responsible, although he did order the operation.",
+                "rejected",
+            ),
+            ("Yes, the accused is not criminally responsible.", "indeterminate"),
+            ("Yes. The attack was unlawful.", "affirmed"),
+            ("No. The conduct was lawful.", "rejected"),
+            ("No. The elements were not established beyond reasonable doubt.", "rejected"),
+            ("The appeal was dismissed, leaving the conviction in force.", "indeterminate"),
+            ("The conviction was overturned and the accused acquitted.", "indeterminate"),
             ("rejected", "rejected"),
-            ("The charges are dismissed; this does not constitute a war crime.", "rejected"),
+            ("The charges were dismissed because no violation was proved.", "rejected"),
             ("No, it has not been established beyond reasonable doubt.", "rejected"),
             ("The accused cannot be held criminally liable.", "rejected"),
             ("indeterminate", "indeterminate"),
@@ -375,6 +440,20 @@ class TestOutcomeNormalization:
     )
     def test_normalize_outcome(self, text: str | None, expected: str) -> None:
         assert normalize_outcome(text) == expected
+
+    @pytest.mark.parametrize(
+        ("claim", "expected"),
+        [
+            ("The conduct is prohibited.", "affirmed"),
+            ("The attack was unlawful.", "affirmed"),
+            ("The conduct was lawful.", "rejected"),
+            ("The accused was not shown to be criminally responsible.", "rejected"),
+            ("The presenter discusses the evidence.", "indeterminate"),
+        ],
+    )
+    def test_extract_sample_outcome_is_conservative(self, claim: str, expected: str) -> None:
+        argument = Argument(claim=claim, reasoning="")
+        assert extract_sample_outcome([argument], "Was the conduct a violation?") == expected
 
 
 class _StructuredTestResponse(BaseModel):
@@ -620,6 +699,51 @@ class TestHarnessExecution:
             run_case_mock.assert_not_awaited()
 
     @pytest.mark.asyncio
+    async def test_resume_warns_and_retries_corrupt_result_file(
+        self,
+        temp_eval_dir: Path,
+        sample_case: EvaluationCase,
+    ) -> None:
+        result_file = temp_eval_dir / "rag" / f"{sample_case.id}.json"
+        result_file.parent.mkdir(parents=True)
+        result_file.write_text("{invalid", encoding="utf-8")
+        tracker = QuotaTracker(temp_eval_dir / "quota_log.json")
+        retry_result = {
+            "case_id": sample_case.id,
+            "arm": "rag",
+            "status": "completed",
+            "judge_backend": "mock",
+            "synthetic": True,
+            "ground_truth_outcome": sample_case.outcome.value,
+            "predicted_outcome": sample_case.outcome.value,
+            "outcome_correct": True,
+            "confidence": 0.8,
+        }
+
+        with (
+            patch("harness.run.log.warning") as warning,
+            patch("harness.run.run_case", AsyncMock(return_value=retry_result)) as run_case_mock,
+        ):
+            results = await run_evaluation(
+                arms=[ARMS["rag"]],
+                cases=[sample_case],
+                judge_backend="mock",
+                output_dir=temp_eval_dir,
+                quota_tracker=tracker,
+                resume=True,
+                auto_go=True,
+            )
+
+        run_case_mock.assert_awaited_once()
+        warning.assert_called_once_with(
+            "corrupt_resume_result_retrying",
+            path=str(result_file),
+            error=ANY,
+        )
+        assert results[0]["status"] == "completed"
+        assert json.loads(result_file.read_text(encoding="utf-8"))["status"] == "completed"
+
+    @pytest.mark.asyncio
     async def test_timeout_is_saved_and_retried_by_resume(
         self, temp_eval_dir: Path, sample_case: EvaluationCase
     ) -> None:
@@ -791,34 +915,85 @@ class TestArmEHarness:
     """Verifies Arm E self-consistency execution in run.py."""
 
     @pytest.mark.asyncio
-    async def test_arm_e_derives_samples_and_aggregates(
+    async def test_arm_e_requires_same_case_arm_d_result(
         self, temp_eval_dir: Path, sample_case: EvaluationCase
+    ) -> None:
+        with pytest.raises(FileNotFoundError, match="requires a completed Arm D result"):
+            await _run_arm_e(
+                ARMS["self_consistency"],
+                sample_case,
+                judge_backend="mock",
+                output_dir=temp_eval_dir,
+            )
+
+    @pytest.mark.asyncio
+    async def test_arm_e_rejects_unreadable_arm_d_result(
+        self, temp_eval_dir: Path, sample_case: EvaluationCase
+    ) -> None:
+        d_dir = temp_eval_dir / "full_council"
+        d_dir.mkdir(parents=True)
+        (d_dir / f"{sample_case.id}.json").write_text("{invalid", encoding="utf-8")
+
+        with pytest.raises(ValueError, match="is unreadable"):
+            await _run_arm_e(
+                ARMS["self_consistency"],
+                sample_case,
+                judge_backend="mock",
+                output_dir=temp_eval_dir,
+            )
+
+    @pytest.mark.asyncio
+    async def test_arm_e_rejects_failed_arm_d_result(
+        self, temp_eval_dir: Path, sample_case: EvaluationCase
+    ) -> None:
+        d_dir = temp_eval_dir / "full_council"
+        d_dir.mkdir(parents=True)
+        (d_dir / f"{sample_case.id}.json").write_text(
+            json.dumps({"status": "error", "error": "judge failed", "total_calls": 4}),
+            encoding="utf-8",
+        )
+
+        with pytest.raises(ValueError, match=r"status 'error'.*judge failed"):
+            await _run_arm_e(
+                ARMS["self_consistency"],
+                sample_case,
+                judge_backend="mock",
+                output_dir=temp_eval_dir,
+            )
+
+    @pytest.mark.asyncio
+    @pytest.mark.parametrize("d_calls", [4, 8, 12])
+    async def test_arm_e_derives_samples_and_aggregates(
+        self, temp_eval_dir: Path, sample_case: EvaluationCase, d_calls: int
     ) -> None:
         arm = ARMS["self_consistency"]
         tracker = QuotaTracker(temp_eval_dir / "quota_log.json")
 
-        # Create mock Arm D result with 8 total calls (2 rounds)
         d_dir = temp_eval_dir / "full_council"
         d_dir.mkdir(parents=True, exist_ok=True)
         (d_dir / f"{sample_case.id}.json").write_text(
-            json.dumps({"total_calls": 8, "turns": [{}] * 8}),
+            json.dumps({"total_calls": d_calls, "turns": [{}] * d_calls}),
             encoding="utf-8",
         )
 
+        mock_argument = Argument(claim="Deliberate shelling is prohibited", reasoning="Reason")
         mock_presenter_turn = _make_turn(
             Role.PRESENTER,
             round_number=1,
-            arguments=[Argument(claim="Deliberate shelling is prohibited", reasoning="Reason")],
+            arguments=[mock_argument],
         )
+        mock_judge_turn = _make_turn(Role.JUDGE)
+        mock_judge_verdict = Verdict(conclusion="rejected", reasoning="Reason", confidence=0.8)
 
         mock_retrieval = AsyncMock()
         mock_retrieval.search = AsyncMock(return_value=[])
+        presenter_run = AsyncMock(return_value=mock_presenter_turn)
+        judge_run = AsyncMock(return_value=(mock_judge_turn, mock_judge_verdict, False))
 
         with (
             patch("harness.run.get_retrieval_service", return_value=mock_retrieval),
-            patch(
-                "app.roles.presenter.PresenterRole.run", AsyncMock(return_value=mock_presenter_turn)
-            ),
+            patch("app.roles.presenter.PresenterRole.run", presenter_run),
+            patch("harness.run.MockJudgeRole.run", judge_run),
         ):
             result = await run_case(
                 arm=arm,
@@ -829,8 +1004,14 @@ class TestArmEHarness:
             )
 
         assert result["arm"] == "self_consistency"
-        # 8 Arm D calls -> n = 7 presenter samples
-        assert result["samples"] == 7
+        expected_samples = d_calls - 1
+        assert result["samples"] == expected_samples
+        assert abs(result["total_calls"] - d_calls) <= 1
+        assert result["total_calls"] == expected_samples + 1
+        assert presenter_run.await_count == expected_samples
+        assert judge_run.await_count == 1
+        assert judge_run.await_args.kwargs["arguments"] == [mock_argument]
         assert result["judge_calls"] == 0
-        assert result["outcome_correct"] is True
+        assert result["predicted_outcome"] == "rejected"
+        assert result["outcome_correct"] is False
         assert result["confidence"] == 1.0  # All samples agree on affirmed

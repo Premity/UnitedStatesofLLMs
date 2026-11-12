@@ -205,7 +205,7 @@ class TestAggregationLogic:
         assert result.aggregated_arguments[0].claim == "A1"
 
     def test_tie_breaking_by_confidence(self) -> None:
-        """2 affirmed vs 2 rejected: resolved by sum of sample confidences."""
+        """2 affirmed vs 2 rejected: resolved by mean sample confidence."""
         samples = [
             PresenterSample(sample_id="s1", outcome="affirmed", confidence=0.9, arguments=[]),
             PresenterSample(
@@ -223,6 +223,28 @@ class TestAggregationLogic:
         assert result.agreement_rate == 0.5  # 2 / 4
         assert result.selected_sample is not None
         assert result.selected_sample.sample_id == "s1"
+
+    def test_equal_confidence_tie_is_indeterminate(self) -> None:
+        samples = [
+            PresenterSample(
+                sample_id="affirmed",
+                outcome="affirmed",
+                confidence=0.7,
+                arguments=[Argument(claim="Affirmed claim", reasoning="Reason")],
+            ),
+            PresenterSample(
+                sample_id="rejected",
+                outcome="rejected",
+                confidence=0.7,
+                arguments=[Argument(claim="Rejected claim", reasoning="Reason")],
+            ),
+        ]
+
+        result = aggregate_samples(samples)
+
+        assert result.winning_outcome == "indeterminate"
+        assert result.agreement_rate == 0.0
+        assert result.selected_sample is not None
 
     def test_empty_samples_raises(self) -> None:
         with pytest.raises(ValueError, match="Cannot aggregate an empty list"):

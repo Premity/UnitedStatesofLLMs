@@ -158,34 +158,27 @@ def normalize_outcome(conclusion: str | None) -> str:
     text = conclusion.lower().strip()
     answer = re.match(r"^(yes|no)\b", text)
     if answer:
-        return Outcome.AFFIRMED.value if answer.group(1) == "yes" else Outcome.REJECTED.value
+        response = text[answer.end() :].lstrip(" \t,.;:!")
+        first_sentence = re.split(r"(?<=[.!?])\s+", response, maxsplit=1)[0]
+        if answer.group(1) == "yes":
+            return (
+                Outcome.INDETERMINATE.value
+                if _contains_negative_outcome(first_sentence, include_bare_did_not=False)
+                else Outcome.AFFIRMED.value
+            )
+        return (
+            Outcome.INDETERMINATE.value
+            if normalize_outcome(first_sentence) == Outcome.AFFIRMED.value
+            else Outcome.REJECTED.value
+        )
     if text in ("affirmed", "affirm", "yes", "violation"):
         return Outcome.AFFIRMED.value
-    if text in ("rejected", "reject", "no", "no violation", "dismissed"):
+    if text in ("rejected", "reject", "no"):
         return Outcome.REJECTED.value
     if text in ("indeterminate", "uncertain", "unresolved"):
         return Outcome.INDETERMINATE.value
 
-    # Search for explicit patterns in legal prose
-    if any(
-        kw in text
-        for kw in (
-            "not criminally responsible",
-            "not criminally liable",
-            "cannot be held criminally responsible",
-            "cannot be held criminally liable",
-            "no criminal responsibility",
-            "does not bear criminal responsibility",
-            "has not been established",
-            "does not constitute",
-            "did not constitute",
-            "is not a violation",
-            "no violation",
-            "rejected",
-            "dismissed",
-            "fails to establish",
-        )
-    ):
+    if _contains_negative_outcome(text):
         return Outcome.REJECTED.value
     if any(
         kw in text
@@ -197,6 +190,7 @@ def normalize_outcome(conclusion: str | None) -> str:
             "criminally responsible",
             "criminally liable",
             "prohibited",
+            "unlawful",
             "affirmed",
             "convicted",
             "war crime",
@@ -208,35 +202,45 @@ def normalize_outcome(conclusion: str | None) -> str:
     return Outcome.INDETERMINATE.value
 
 
+def _contains_negative_outcome(text: str, *, include_bare_did_not: bool = True) -> bool:
+    negative_phrases = (
+        "not criminally responsible",
+        "not criminally liable",
+        "cannot be held",
+        "no criminal responsibility",
+        "does not bear criminal responsibility",
+        "has not been established",
+        "not been established",
+        "not established",
+        "not shown to be",
+        "does not constitute",
+        "did not constitute",
+        "is not a violation",
+        "not a violation",
+        "not a war crime",
+        "not a crime",
+        "not unlawful",
+        "no violation",
+        "no war crime",
+        "no crime",
+        "rejected",
+        "fails to establish",
+    )
+    return (
+        any(phrase in text for phrase in negative_phrases)
+        or (include_bare_did_not and "did not" in text)
+        or re.search(
+            r"\b(?:was|were|is|are)\s+not\s+an?\s+(?:war\s+)?(?:crime|violation|breach)\b|\blawful\b",
+            text,
+        )
+        is not None
+    )
+
+
 def extract_sample_outcome(arguments: list[Argument], question: str) -> str:
     """Extract candidate outcome from presenter arguments for self-consistency voting."""
     combined = " ".join(f"{a.claim} {a.reasoning}" for a in arguments).lower()
-    if any(
-        kw in combined
-        for kw in (
-            "does not constitute",
-            "did not constitute",
-            "is not a violation",
-            "no violation",
-            "lawful",
-            "rejected",
-        )
-    ):
-        return Outcome.REJECTED.value
-    if any(
-        kw in combined
-        for kw in (
-            "constitutes",
-            "is a violation",
-            "prohibited",
-            "breach",
-            "unlawful",
-            "war crime",
-            "affirmed",
-        )
-    ):
-        return Outcome.AFFIRMED.value
-    return Outcome.AFFIRMED.value
+    return normalize_outcome(combined)
 
 
 def compute_prompt_hashes(prompts_dir: Path | None = None) -> dict[str, str]:
@@ -437,6 +441,41 @@ async def _run_standard_arm(
     }
 
 
+def _load_arm_d_call_count(output_dir: Path, case_id: str) -> int:
+    """Load Arm D's completed call count for the same evaluation case."""
+    arm_d_file = output_dir / "full_council" / f"{case_id}.json"
+    if not arm_d_file.is_file():
+        raise FileNotFoundError(
+            f"Arm E requires a completed Arm D result for case {case_id!r}: {arm_d_file}"
+        )
+
+    try:
+        d_data = json.loads(arm_d_file.read_text(encoding="utf-8"))
+    except (OSError, TypeError, ValueError) as exc:
+        raise ValueError(f"Arm D result for case {case_id!r} is unreadable: {arm_d_file}") from exc
+
+    if not isinstance(d_data, dict):
+        raise ValueError(f"Arm D result for case {case_id!r} must be a JSON object: {arm_d_file}")
+    if d_data.get("status") == "error":
+        detail = d_data.get("error") or "no error details recorded"
+        raise ValueError(f"Arm D result for case {case_id!r} has status 'error': {detail}")
+
+    try:
+        d_calls_value = d_data.get("total_calls")
+        if d_calls_value is None:
+            d_calls_value = len(d_data.get("turns", []))
+        d_calls = int(d_calls_value)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(
+            f"Arm D result for case {case_id!r} has an invalid total call count: {arm_d_file}"
+        ) from exc
+    if d_calls <= 0:
+        raise ValueError(
+            f"Arm D result for case {case_id!r} has no positive total call count: {arm_d_file}"
+        )
+    return d_calls
+
+
 async def _run_arm_e(
     arm: SelfConsistencyArm,
     case: EvaluationCase,
@@ -448,6 +487,9 @@ async def _run_arm_e(
     started = datetime.now(UTC)
     run_id = f"eval_{uuid4().hex[:10]}"
 
+    d_calls = _load_arm_d_call_count(output_dir, case.id)
+    n_samples = derive_sample_count(d_calls, has_judge=True)
+
     # Retrieve context once if retrieval is enabled (skip entirely in mock mode)
     context: list[ResolvedCitation] = []
     if arm.retrieval_enabled and judge_backend != "mock":
@@ -458,20 +500,6 @@ async def _run_arm_e(
             top_k=8,
             excluded_case_id=case.source_case_id,
         )
-
-    # Derive sample count n from Arm D's call count on the same case
-    arm_d_file = output_dir / "full_council" / f"{case.id}.json"
-    if arm_d_file.exists():
-        try:
-            d_data = json.loads(arm_d_file.read_text(encoding="utf-8"))
-            d_calls = int(d_data.get("total_calls", len(d_data.get("turns", []))))
-        except Exception:
-            d_calls = 4
-    else:
-        # Default to 1-round baseline (4 calls) if Arm D has not run yet
-        d_calls = 4
-
-    n_samples = derive_sample_count(d_calls, has_judge=True)
 
     config = DebateConfig(
         question=case.question,
@@ -506,7 +534,6 @@ async def _run_arm_e(
                 sample_id=f"sample_{i + 1}",
                 arguments=turn.arguments,
                 outcome=sample_outcome,
-                confidence=0.8,
             )
         )
 
@@ -526,7 +553,7 @@ async def _run_arm_e(
     duration = (datetime.now(UTC) - started).total_seconds()
     actual_judge_calls = 1 if judge_backend != "mock" else 0
 
-    predicted_outcome = normalize_outcome(agg.winning_outcome)
+    predicted_outcome = normalize_outcome(verdict.conclusion if verdict else None)
     outcome_correct = predicted_outcome == case.outcome.value
     confidence = agg.agreement_rate
     confidence_reasoning = (
@@ -758,7 +785,28 @@ async def run_evaluation(
     output_dir.mkdir(parents=True, exist_ok=True)
     all_results: list[dict[str, Any]] = []
 
-    existing_results = load_result_files(output_dir, allow_mixed_results=allow_mixed_results)
+    corrupt_resume_files: set[Path] = set()
+    if resume:
+        existing_results = []
+        for result_file in sorted(output_dir.glob("*/*.json")):
+            try:
+                loaded_result = json.loads(result_file.read_text(encoding="utf-8"))
+                if not isinstance(loaded_result, dict):
+                    raise ValueError("result must be a JSON object")
+            except (OSError, TypeError, ValueError) as exc:
+                log.warning(
+                    "corrupt_resume_result_retrying",
+                    path=str(result_file),
+                    error=str(exc),
+                )
+                corrupt_resume_files.add(result_file)
+                continue
+            existing_results.append(loaded_result)
+    else:
+        existing_results = load_result_files(
+            output_dir,
+            allow_mixed_results=allow_mixed_results,
+        )
     validate_result_provenance(
         [*existing_results, {"synthetic": judge_backend == "mock"}],
         allow_mixed_results=allow_mixed_results,
@@ -772,8 +820,13 @@ async def run_evaluation(
         for case in cases:
             case_file = arm_dir / f"{case.id}.json"
             if resume and case_file.exists():
+                if case_file in corrupt_resume_files:
+                    pending_tasks.append((arm, case))
+                    continue
                 try:
                     loaded = json.loads(case_file.read_text(encoding="utf-8"))
+                    if not isinstance(loaded, dict):
+                        raise ValueError("result must be a JSON object")
                     if loaded.get("status") == "error":
                         pending_tasks.append((arm, case))
                         continue
@@ -782,8 +835,12 @@ async def run_evaluation(
                     log.info("case_resumed_from_disk", arm=arm.key, case_id=case.id)
                     all_results.append(loaded)
                     continue
-                except Exception:
-                    pass
+                except (OSError, TypeError, ValueError) as exc:
+                    log.warning(
+                        "corrupt_resume_result_retrying",
+                        path=str(case_file),
+                        error=str(exc),
+                    )
             pending_tasks.append((arm, case))
 
     if not pending_tasks:

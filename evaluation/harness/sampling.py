@@ -108,24 +108,28 @@ def aggregate_samples(samples: list[PresenterSample]) -> AggregationResult:
     max_votes = max(counts.values())
     top_candidates = [outcome for outcome, count in counts.items() if count == max_votes]
 
-    # Tie-breaking by summed confidence
+    # Tie-breaking by confidence, then indeterminate when confidence is equal.
     if len(top_candidates) == 1:
         winning_outcome = top_candidates[0]
     else:
         candidate_scores: dict[str, float] = {}
         for cand in top_candidates:
             cand_samples = [s for s, o in zip(samples, outcomes, strict=True) if o == cand]
-            # Sum confidences (defaulting 0.5 if missing)
-            score = sum(s.confidence if s.confidence is not None else 0.5 for s in cand_samples)
-            candidate_scores[cand] = score
+            confidence = [s.confidence if s.confidence is not None else 0.5 for s in cand_samples]
+            candidate_scores[cand] = sum(confidence) / len(confidence)
 
-        # Sort by highest score, then alphabetically for deterministic resolution
-        winning_outcome = sorted(top_candidates, key=lambda c: (-candidate_scores[c], c))[0]
+        highest_score = max(candidate_scores.values())
+        highest_scoring = [
+            outcome for outcome in top_candidates if candidate_scores[outcome] == highest_score
+        ]
+        winning_outcome = highest_scoring[0] if len(highest_scoring) == 1 else "indeterminate"
 
     agreement_rate = counts[winning_outcome] / total_samples
 
     # Select the representative sample among those with the winning outcome
     winning_samples = [s for s, o in zip(samples, outcomes, strict=True) if o == winning_outcome]
+    if not winning_samples:
+        winning_samples = [s for s, o in zip(samples, outcomes, strict=True) if o in top_candidates]
     selected_sample = max(
         winning_samples,
         key=lambda s: s.confidence if s.confidence is not None else 0.5,

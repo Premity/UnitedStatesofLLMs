@@ -35,6 +35,10 @@ class QuotaExceededError(RuntimeError):
     """Raised when an operation would exceed the daily judge call quota (40 calls)."""
 
 
+class QuotaLogReadError(RuntimeError):
+    """Raised when the persisted quota log cannot be safely read."""
+
+
 def get_expected_calls(arm_key: str, case_count: int = 1) -> int:
     """Calculate expected judge calls for a given arm and number of cases."""
     calls_per_case = JUDGE_CALLS_PER_CASE.get(arm_key, 1)
@@ -56,16 +60,39 @@ class QuotaTracker:
         if not self.log_path.exists():
             return {"daily_usage": {}, "total_calls": 0, "total_attempts": 0, "history": []}
         try:
-            return json.loads(self.log_path.read_text(encoding="utf-8"))
-        except Exception:
-            return {"daily_usage": {}, "total_calls": 0, "total_attempts": 0, "history": []}
+            data = json.loads(self.log_path.read_text(encoding="utf-8"))
+        except (OSError, TypeError, ValueError) as exc:
+            raise QuotaLogReadError(
+                f"Cannot read quota log {self.log_path}; refusing to assume zero usage: {exc}"
+            ) from exc
+        if not isinstance(data, dict):
+            raise QuotaLogReadError(
+                f"Quota log {self.log_path} must contain a JSON object; refusing to assume zero usage."
+            )
+        return data
 
     def get_today_usage(self, date_str: str | None = None) -> int:
         """Get the number of API judge attempts consumed today (or on date_str) in UTC."""
         date_key = date_str or self._today_utc()
         data = self.load()
-        daily = data.get("daily_usage", {}).get(date_key, {})
-        return int(daily.get("attempts", daily.get("calls", 0)))
+        daily_usage = data.get("daily_usage", {})
+        if not isinstance(daily_usage, dict):
+            raise QuotaLogReadError(
+                f"Quota log {self.log_path} has invalid daily_usage; refusing to assume zero usage."
+            )
+        daily = daily_usage.get(date_key, {})
+        if not isinstance(daily, dict):
+            raise QuotaLogReadError(
+                f"Quota log {self.log_path} has an invalid entry for {date_key}; "
+                "refusing to assume zero usage."
+            )
+        try:
+            return int(daily.get("attempts", daily.get("calls", 0)))
+        except (TypeError, ValueError) as exc:
+            raise QuotaLogReadError(
+                f"Quota log {self.log_path} has an invalid attempt count for {date_key}; "
+                "refusing to assume zero usage."
+            ) from exc
 
     def check_quota(
         self,
