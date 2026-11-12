@@ -15,9 +15,13 @@ from __future__ import annotations
 import re
 from enum import StrEnum
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
-_ARTICLE_PREFIX_RE = re.compile(r"^\s*art(?:icle)?\.?\s*", re.IGNORECASE)
+# Requires a delimiter (`.` or whitespace) after 'art'/'article', so a value
+# that merely starts with those letters -- "artifact-3", "articles 51" -- is
+# left alone. An earlier version matched the bare letters with no delimiter
+# required and silently mangled both (GitHub #8).
+_ARTICLE_PREFIX_RE = re.compile(r"^\s*art(?:icle)?(?:\.|\s)\s*", re.IGNORECASE)
 
 
 def _strip_article_prefix(article: str | None) -> str | None:
@@ -93,6 +97,19 @@ class Citation(BaseModel):
         default=None,
         description="Article locator for treaties, e.g. '8(2)(b)(iv)'.",
     )
+
+    @field_validator("article")
+    @classmethod
+    def _normalize_article(cls, value: str | None) -> str | None:
+        """Strip a redundant 'art.' prefix once, at construction.
+
+        Previously only `locator()` stripped it, so the stored field (and
+        every renderer that reads `article` directly instead of calling
+        `locator()`) kept the raw 'art.51(2)', which then doubled with the
+        label those renderers prepend themselves (GitHub #11-1).
+        """
+        return _strip_article_prefix(value)
+
     case_id: str | None = Field(
         default=None,
         description="Canonical case slug for jurisprudence, e.g. 'icty_galic_tj'.",
@@ -117,7 +134,7 @@ class Citation(BaseModel):
         """
         match self.type:
             case CitationType.TREATY:
-                return f"{self.instrument}/art.{_strip_article_prefix(self.article)}"
+                return f"{self.instrument}/art.{self.article}"
             case CitationType.CASE:
                 return f"{self.case_id}/para.{self.paragraph}"
             case CitationType.CUSTOMARY:

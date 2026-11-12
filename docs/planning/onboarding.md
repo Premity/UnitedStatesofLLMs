@@ -55,13 +55,14 @@ grounded arguments, both attackers, a judge ruling, a dissent log.
 
 Consequences you will hit immediately:
 
-- **The judge is currently on `groq/openai/gpt-oss-120b` — the same model as
-  the presenter, not a real fourth model family.** Every free Gemini option
-  turned out to be a dead end; see ISSUES.md for the full saga and what to fix
-  before a scored run.
-- **The doctrinal attacker (`qwen3.5:9b`) is unreliable on real, grounded
-  prompts** — a hybrid-reasoning model that can burn its entire token budget
-  thinking and return nothing. See ISSUES.md; this is open, not fixed.
+- **The judge is on OpenRouter's free tier (`nemotron-3-ultra`), capped at 50
+  requests/day account-wide** — roughly 16 debates/day, fine for development
+  but not for a 40–80 case scored run. See ISSUES.md for the full roster
+  history (Gemini, then Groq, then OpenRouter) and what to fix before then.
+- **3 of 4 roles are now OpenAI-family models** (presenter and the
+  evidentiary attacker both run `gpt-oss`, via Groq) — the "four different
+  model families" claim in the table above no longer fully holds. See
+  ISSUES.md, "Attackers moved to Groq", before citing that claim anywhere.
 - `make eval` cannot run — there is no runner.
 
 **Two things worth reading before you start**, both of which will save you a
@@ -81,8 +82,6 @@ This is the work. See [implementation-plan.md](implementation-plan.md).
 
 - Docker Engine with Compose v2
 - Python 3.12 and [uv](https://docs.astral.sh/uv/)
-- ~16 GB RAM (a quantised 12–14B attacker model needs 8–10 GB resident)
-- [Ollama](https://ollama.com) on the host, for the two attacker models
 
 ### First time
 
@@ -94,15 +93,13 @@ Then edit `.env` and add two keys — both have free tiers:
 
 | Variable | Where from | Used by |
 | --- | --- | --- |
-| `GROQ_API_KEY` | console.groq.com | presenter |
-| `GEMINI_API_KEY` | aistudio.google.com | judge |
+| `GROQ_API_KEY` | console.groq.com | presenter, both attackers |
+| `OPENROUTER_API_KEY` | openrouter.ai | judge |
 
-Pull the attacker models:
-
-```bash
-ollama pull qwen3.5:9b      # doctrinal attacker
-ollama pull gemma3:12b      # evidentiary attacker
-```
+No local model to pull and no Ollama install needed for the default roster —
+all four roles are hosted. (`COUNCIL_OLLAMA_BASE_URL` and the `ollama/`-prefixed
+model ids still work if you point a role back at a local Ollama model; see
+`RoleModels` in `packages/council-core/src/council_core/llm/config.py`.)
 
 Then, in every shell you work in:
 
@@ -110,15 +107,17 @@ Then, in every shell you work in:
 source scripts/dev-env.sh
 ```
 
-That sets the data paths and points Ollama at localhost. Scripts run outside
-Docker also need `--env-file .env` to see your API keys:
-`uv run --env-file .env python scripts/...`.
+That sets the data paths and, if you do switch a role to an `ollama/` model,
+points Ollama at localhost. Scripts run outside Docker also need
+`--env-file .env` to see your API keys: `uv run --env-file .env python scripts/...`.
 
-> **Cannot run the attackers locally?** Two documented alternatives, both
-> config-only (ADR 0002, ADR 0006): `make up-ollama` for a containerised Ollama
-> with a shared model store, or point the attackers at Cloudflare Workers AI
-> (~10,000 neurons/day free, roughly 30 single-case runs). Either way, **record
-> which models you ran** — it changes what the results mean.
+> **Want a role running locally instead of hosted?** Config-only, no code
+> change (ADR 0002, ADR 0006): set that role's `COUNCIL_*_MODEL` to an
+> `ollama/`-prefixed id and either run `make up-ollama` (containerised Ollama,
+> shared model store) or point at a host install. Cloudflare Workers AI is
+> also documented as an option (~10,000 neurons/day free, roughly 30
+> single-case runs). Either way, **record which models you ran** — it changes
+> what the results mean.
 
 > **The canonical setup steps, in order, are the quickstart in
 > [README.md](../../README.md#quick-start).** This section explains what each
