@@ -5,7 +5,9 @@ from the result artifact or report. Keep held-out cases out of prompt tuning.
 
 | Date (UTC) | Prompt file changed | Prompt hash | Cases used | Judge calls used | Accuracy | Brier | ECE | Notes |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |
-| YYYY-MM-DD | `prompts/...` | `<sha256>` | 0 | 0 | - | - | - | |
+| 2026-11-12 | `prompts/judge/rule.md` | `69c27d4fbb` | 0 | 0 | - | - | - | Require explicit Yes/No/Indeterminate prefix; no evaluation metrics claimed. |
+| 2026-11-12 | — (outcome parser in `evaluation/harness/run.py`) | — | 0 | 0 | - | - | - | Handle negation conservatively and return indeterminate when unclear; no evaluation metrics claimed. |
+| 2026-11-12 | — (judge JSON mode in `packages/council-core/src/council_core/llm/client.py`) | — | 0 | 0 | - | - | - | Request JSON mode for structured judge calls; no evaluation metrics claimed. |
 
 ## How to run an experiment
 

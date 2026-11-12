@@ -1,6 +1,6 @@
 # 0011 — Self-consistency control arm (Arm E) aggregation rule and compute matching
 
-**Status:** Proposed
+**Status:** Accepted
 **Date:** 2026-11-06
 
 ## Context
