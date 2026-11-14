@@ -240,8 +240,9 @@ at `8(2)(e)(xii)`.
 | Article 124 deletion, 2015 | The article is not indexed |
 | Three weapons amendments | **Not indexed** — see below |
 
-Each span records which document its text came from, so a result can state
-which version of article 8 the system argued from.
+ADR 0010 specifies that each span record which document its text came from, so
+a result could state which version of article 8 the system argued from. That is
+**not built yet**: spans carry only `locator`, `text`, `article` and `heading`.
 
 **Known gap.** Three amendments insert a sentence into article 8 without the
 source saying which sub-paragraph it becomes. They are not indexed, because a

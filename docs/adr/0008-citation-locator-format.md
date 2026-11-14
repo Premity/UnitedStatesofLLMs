@@ -1,6 +1,6 @@
 # 0008 — One citation locator format, with sub-paragraphs inside the article
 
-**Status:** Proposed
+**Status:** Accepted
 **Date:** 2026-10-21
 
 ## Context
