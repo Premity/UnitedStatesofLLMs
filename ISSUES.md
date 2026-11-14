@@ -14,10 +14,6 @@ local citation status.
 > This file records *what* is missing; the plan records *who does it when* and
 > what "done" means.
 
-| Item below | Track |
-| --- | --- |
-| Case picker for the question form | T3 / TF — GitHub #17 |
-
 ---
 
 ## What is left, in order
@@ -28,12 +24,9 @@ The critical path is a one-case rehearsal, then the scored run.
 | # | Item | Why it is where it is |
 | --- | --- | --- |
 | 1 | **Rehearsal, then the scored run** | All five arms live on one case first, then the three. GitHub #25, #26 |
-| 2 | **Case picker for the question form** | Needs an ADR first: `runtime/api` does not depend on `evaluation`, so a case endpoint either inverts that or duplicates the loader. And the ground truth must never reach the browser. GitHub #17 |
-| 3 | **Severity-weighted metrics** | `Objection.severity` now exists and nothing weighs objections by it. GitHub #28 |
 
-Two open decisions that do not block the
-above: **reasoning-overlap scoring** (GitHub #27) and a **hosted demo** target,
-which has none chosen (GitHub #18).
+One open decision that does not block the above: **reasoning-overlap scoring**
+(GitHub #27).
 
 One known limit to state in the report rather than fix: three Rome Statute
 weapons amendments are not indexed, because the source gives the inserted
@@ -672,18 +665,28 @@ moves every piece of furniture relative to the figures standing at it. The
 courtroom is therefore outside the column the dissent log toggles, and the
 scene box must not take an aspect ratio. Both are pinned by tests.
 
-### [MEDIUM] Case picker for the question form
+### [RESOLVED] Case picker for the question form (GitHub #17)
 
-`evaluation/cases/dev/*.json` holds prepared cases — question, facts, and the
-tribunal's actual holding — but nothing exposes them to the UI, so a question
-has to be typed by hand. Two constraints:
+`evaluation/cases/dev/*.json` holds prepared cases, and the question form had no
+way to load one. Two constraints shaped the fix (ADR 0013): a case file holds
+the tribunal's holding, which must never reach the browser, and `runtime/api`
+does not depend on `evaluation`.
 
-- **The case file contains the ground truth.** `holding`, `outcome` and
-  `key_reasoning` must never reach the browser, or the demo shows the answer
-  next to the question.
-- `runtime/api` does not depend on `evaluation`; both depend only on
-  `council-core`. A case endpoint either inverts that or duplicates the
-  loader. Worth an ADR.
+The case schema moved into `council-core` (`council_core.models.case`), which
+both already depend on. `Case.public()` returns a separate `PublicCase` —
+question and facts, nothing else — and `GET /cases` and `GET /cases/{id}` serve
+only that. A field added to `Case` later is withheld by default. Tests pin that
+no ground-truth field or value reaches a response, against both a fixture with
+sentinel values and the shipped dev files.
+
+Things worth knowing:
+
+- The API reads `evaluation/cases/dev` by path, mounted read-only at
+  `/cases/dev`. A deployment without the mount serves an empty list and the
+  form shows no picker.
+- Only `dev/` is served. `held_out/` is scored once and not offered to anyone
+  tuning prompts.
+- The picker fills the boxes; they stay editable.
 
 ### [RESOLVED] `role_started` stream event
 
@@ -745,8 +748,11 @@ Pinned by `test_an_objection_recorded_before_severity_existed_still_loads`.
 changed. Runs scored before and after are not prompt-comparable — relevant
 when the evaluation ladder is run, per ADR 0009's roster freeze.
 
-Still open: the evaluation metrics do not yet weigh objections by severity.
-The data is now there to do it.
+The evaluation report now reads it (GitHub #28): per arm, sustained and
+overruled objections at each severity, with *not stated* counted apart from
+`minor` and overruled `fatal` objections called out. A count per step rather
+than a weighted score, since nobody can justify the weights.
+Pinned by `test_severity_breakdown_counts_not_stated_apart_from_minor`.
 
 ---
 
@@ -758,10 +764,19 @@ Rubric with manual scoring, or LLM-judge against `key_reasoning`? The latter is
 faster but introduces a model into the measurement of models. Leaning LLM-judge
 with a manually-scored subset to validate it.
 
-### Hosted demo — GitHub #18
+### [RESOLVED] Hosted demo — GitHub #18
 
-Cloudflare Workers AI free tier gives ~30 single-case runs/day. Enough for a
-demo, not for evaluation. No deployment target chosen yet.
+**Decision: there is no hosted demo.** The project is academic and scored on
+three cases (ADR 0012); every role runs on a free tier with a daily or
+per-minute ceiling (Groq's TPM limit, OpenRouter's 50 requests/day), so a
+public endpoint would exhaust its quota on the first few visitors and fail in
+front of them. Nothing needs deploying to show the system: `make up` runs it
+locally and `?replay=1` plays a recorded debate with no model reachable.
+
+Nothing in the code forecloses one. Backends are config strings (ADR 0002), so
+pointing the roles at Cloudflare Workers AI (~30 single-case runs/day) is an
+env-var change. If a demo is wanted later, that is the starting point, and the
+choice of host belongs in a new ADR.
 
 ---
 

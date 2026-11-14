@@ -1,10 +1,11 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
+import { api } from "@/api/client";
 import { isReplayEnabled } from "@/api/replay";
 import { useCourtStore } from "@/store/courtStore";
 import { useDebateStream } from "@/hooks/useDebateStream";
 import { useReplay } from "@/hooks/useReplay";
-import type { DebateConfig, Role } from "@/types";
+import type { DebateConfig, PublicCase, Role } from "@/types";
 
 /**
  * Puts a question to the council.
@@ -40,6 +41,34 @@ export function QuestionForm() {
   const [doctrinal, setDoctrinal] = useState(true);
   const [evidentiary, setEvidentiary] = useState(true);
   const [rounds, setRounds] = useState<"auto" | number>("auto");
+
+  // Prepared cases for the picker. Best effort: with none (API down, nothing
+  // mounted) the form is the plain two boxes it always was.
+  const [cases, setCases] = useState<PublicCase[]>([]);
+  const [caseId, setCaseId] = useState("");
+  useEffect(() => {
+    let cancelled = false;
+    api
+      .listCases()
+      .then((found) => {
+        if (!cancelled) setCases(found);
+      })
+      .catch(() => {
+        /* no picker, not an error */
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  /** Fill the boxes from a case. Editing them afterwards is still allowed. */
+  const pickCase = (id: string) => {
+    setCaseId(id);
+    const chosen = cases.find((c) => c.id === id);
+    if (!chosen) return;
+    setQuestion(chosen.question);
+    setFacts(chosen.facts);
+  };
 
   const running = phase !== "idle" && phase !== "adjourned" && phase !== "error";
 
@@ -161,6 +190,28 @@ export function QuestionForm() {
           Replay mode — playing a recorded fixture, not calling the models. The
           question below is ignored.
         </p>
+      )}
+
+      {cases.length > 0 && (
+        <label className="mb-3 block">
+          <span className="font-ui text-xs uppercase tracking-wider text-court-gold">
+            Prepared case
+          </span>
+          <select
+            data-testid="case-picker"
+            value={caseId}
+            onChange={(e) => pickCase(e.target.value)}
+            disabled={running}
+            className="mt-1 w-full rounded border border-court-rail bg-court-ink/60 px-2 py-2 font-ui text-xs text-court-fg/80 disabled:opacity-50"
+          >
+            <option value="">Write your own</option>
+            {cases.map((c) => (
+              <option key={c.id} value={c.id}>
+                {c.title} ({c.court}, {c.year})
+              </option>
+            ))}
+          </select>
+        </label>
       )}
 
       <label className="block">

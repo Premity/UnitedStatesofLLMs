@@ -1,6 +1,6 @@
 # 0010 — Corpus ids for annexed instruments, and how amendments are carried
 
-**Status:** Proposed
+**Status:** Accepted
 **Date:** 2026-10-22
 
 ## Context
@@ -143,6 +143,13 @@ deliberately.
 **What would make us revisit:** a fixture turning on a weapons amendment, or
 the ICC publishing a consolidated text in a machine-readable form — which would
 let us drop the merge entirely and cite an official consolidation.
+
+**Not yet implemented:** the per-span provenance in section 2 (`source_document`,
+`in_force_from`). The merge rules are implemented and the consolidated text is
+correct, but indexed spans carry only `locator`, `text`, `article` and
+`heading`, so a result cannot yet say which amendment an article 8 span came
+from. The ids and the merge rules are settled; the provenance fields are
+specified, not built. Adding them is additive and does not touch any locator.
 
 **Constraint this creates:** `hague_iv_regs` and the Rome merge rules are fixed
 once the first scored run writes artifacts. Changing either afterwards breaks

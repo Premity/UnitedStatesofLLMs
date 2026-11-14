@@ -8,10 +8,9 @@ what makes outcome agreement a real measurement rather than a leak.
 from __future__ import annotations
 
 import json
-from enum import StrEnum
 from pathlib import Path
 
-from pydantic import BaseModel, Field
+from council_core.models.case import Case
 
 CASES_DIR = Path(__file__).resolve().parent.parent / "cases"
 
@@ -40,53 +39,7 @@ TIERS: dict[str, tuple[str, ...]] = {
 }
 
 
-class Outcome(StrEnum):
-    """Ternary outcome, matching how the judge may conclude."""
-
-    AFFIRMED = "affirmed"
-    """The tribunal held that the conduct did constitute the violation."""
-
-    REJECTED = "rejected"
-    """The tribunal held that it did not."""
-
-    INDETERMINATE = "indeterminate"
-    """The tribunal did not resolve it, or resolved it on other grounds."""
-
-
-class EvaluationCase(BaseModel):
-    """One adjudicated question with a known outcome."""
-
-    id: str
-    title: str
-    court: str
-    year: int
-
-    question: str = Field(description="Shown to the system.")
-    facts: str = Field(description="Shown to the system. Facts as the tribunal found them.")
-
-    holding: str = Field(description="Ground truth. NEVER shown to the system.")
-    outcome: Outcome = Field(description="Ground truth, for outcome agreement scoring.")
-    key_reasoning: list[str] = Field(
-        default_factory=list,
-        description=(
-            "The grounds the tribunal actually relied on. Used to score whether the "
-            "system anticipated the tribunal's reasoning, not merely its result."
-        ),
-    )
-
-    difficulty: str = Field(
-        default="medium",
-        description="'settled', 'medium', or 'contested'. Contested cases are where "
-        "calibration matters most — a well-calibrated system should be less certain there.",
-    )
-    source_case_id: str | None = Field(
-        default=None,
-        description="Corpus case id, if the judgment is indexed. Excluded from retrieval "
-        "during evaluation so the system cannot simply read the answer.",
-    )
-
-
-def load_cases(*, held_out: bool = False) -> list[EvaluationCase]:
+def load_cases(*, held_out: bool = False) -> list[Case]:
     """Load the case fixtures.
 
     Args:
@@ -95,20 +48,20 @@ def load_cases(*, held_out: bool = False) -> list[EvaluationCase]:
             Mixing them invalidates the comparison.
     """
     directory = CASES_DIR / ("held_out" if held_out else "dev")
-    cases: list[EvaluationCase] = []
+    cases: list[Case] = []
 
     for path in sorted(directory.glob("*.json")):
-        cases.append(EvaluationCase.model_validate(json.loads(path.read_text(encoding="utf-8"))))
+        cases.append(Case.model_validate(json.loads(path.read_text(encoding="utf-8"))))
 
     return cases
 
 
 def select_cases(
-    cases: list[EvaluationCase],
+    cases: list[Case],
     *,
     tier: str = "core",
     case_ids: list[str] | None = None,
-) -> list[EvaluationCase]:
+) -> list[Case]:
     """Pick the cases a run should use, in the tier's order.
 
     Args:

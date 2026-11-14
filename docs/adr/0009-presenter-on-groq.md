@@ -1,6 +1,6 @@
 # 0009 — The presenter runs on Groq, not Mistral
 
-**Status:** Proposed
+**Status:** Accepted
 **Date:** 2026-10-22
 
 ## Context

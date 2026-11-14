@@ -754,7 +754,7 @@ build, docker build, gitleaks, commitlint.
 
 ### 13.4 Workflow
 
-`main` ← `develop` ← `feature/*`. Conventional Commits enforced by hook and CI.
+`main` ← `develop` ← `feat/*` `fix/*` `chore/*` `docs/*`. Conventional Commits enforced by hook and CI.
 Merges use `make merge-develop` / `make merge-main`, which pass `--no-verify` on
 the merge commit alone — two hooks necessarily fire on merges, and everything
 being merged has already passed both individually.
@@ -789,7 +789,6 @@ as `out_of_corpus`.** This is stated in the README, `ISSUES.md`, `CLAUDE.md`, an
 
 - **Reasoning-overlap scoring** — manual rubric vs. LLM-judge (introduces a model
   into the measurement of models). GitHub #27
-- **Hosted demo target** — Cloudflare free tier supports ~30 runs/day. GitHub #18
 
 ---
 

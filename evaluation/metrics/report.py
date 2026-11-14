@@ -63,6 +63,55 @@ def _citation_counts(result: dict[str, Any]) -> tuple[int, int, int]:
     return unresolved, misquoted, eligible
 
 
+#: Severity steps in reading order, then "not stated". `None` is its own column and
+#: never folds into `minor`: it means the attacker gave no rating, or the run
+#: predates the field.
+SEVERITY_ORDER = ("fatal", "material", "minor", "not_stated")
+SEVERITY_LABELS = {
+    "fatal": "Fatal",
+    "material": "Material",
+    "minor": "Minor",
+    "not_stated": "Not stated",
+}
+RULINGS_COUNTED = ("sustained", "overruled")
+
+
+def _severity_breakdown(results: list[dict[str, Any]]) -> dict[str, dict[str, int]]:
+    """Count sustained and overruled objections at each severity.
+
+    Reads the stored dicts rather than `Objection` models so a run recorded
+    before `severity` existed (key absent) counts as "not stated", the same as
+    an explicit `None`. Rulings other than sustained/overruled (partial,
+    unaddressed) are not counted here.
+    """
+    counts = {severity: dict.fromkeys(RULINGS_COUNTED, 0) for severity in SEVERITY_ORDER}
+    for result in results:
+        for objection in result.get("objections", []):
+            ruling = str(objection.get("disposition"))
+            if ruling not in RULINGS_COUNTED:
+                continue
+            severity = objection.get("severity")
+            key = str(severity) if severity is not None else "not_stated"
+            counts[key if key in counts else "not_stated"][ruling] += 1
+    return counts
+
+
+def _severity_rows(summaries: dict[str, dict[str, Any]]) -> list[str]:
+    header = " | ".join(SEVERITY_LABELS[severity] for severity in SEVERITY_ORDER)
+    lines = [
+        f"| Arm | {header} | Overruled fatal |",
+        "| --- | ---: | ---: | ---: | ---: | ---: |",
+    ]
+    for arm, summary in summaries.items():
+        counts = summary["severity"]
+        cells = " | ".join(
+            f"{counts[severity]['sustained']} / {counts[severity]['overruled']}"
+            for severity in SEVERITY_ORDER
+        )
+        lines.append(f"| {arm} | {cells} | {counts['fatal']['overruled']} |")
+    return lines
+
+
 def _independence(result: dict[str, Any]) -> float | None:
     """1 - Jaccard between the attackers' grounds, or None without two attackers.
 
@@ -274,6 +323,7 @@ def _summarize_arm(results: list[dict[str, Any]]) -> dict[str, Any]:
         "independence": float(np.mean(independence_values)) if independence_values else None,
         "independence_n": len(independence_values),
         "independence_ci": ci(_bootstrap_ci, independence_values, average, seed_offset=6),
+        "severity": _severity_breakdown(results),
         "judge_backends": sorted(
             {str(result.get("judge_backend", "unknown")) for result in results}
         ),
@@ -433,6 +483,19 @@ def render_report(
                 f"{MIN_CASES_FOR_INTERVALS} completed cases. These rows support no claim "
                 "of a difference between arms; read the per-case table."
             )
+        lines.extend(
+            (
+                "",
+                "### Objection severity",
+                "",
+                "Each cell is sustained / overruled. Severity is the attacker's own "
+                "rating, advisory only. *Not stated* means no rating was given or the "
+                "run predates the field; it is never counted as minor. An overruled "
+                "fatal objection is the most informative dissent-log entry.",
+                "",
+            )
+        )
+        lines.extend(_severity_rows(summaries))
         lines.extend(("", "### Per case", ""))
         lines.extend(_case_rows(group_results, show_corpus=len(corpora) > 1))
         lines.extend(("", "### Prompt hashes", ""))

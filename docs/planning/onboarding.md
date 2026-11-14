@@ -241,7 +241,7 @@ results, which is worse than a crash. The full register is in
 
 ## 6. How we work
 
-**Branches:** `main` ← `develop` ← `feature/*`. The pre-commit hook blocks
+**Branches:** `main` ← `develop` ← `feat/*` `fix/*` `chore/*` `docs/*`. The pre-commit hook blocks
 direct commits to `main` and `develop`. Merge with `make merge-develop`.
 
 **Commits:** Conventional Commits, enforced by hook and CI.

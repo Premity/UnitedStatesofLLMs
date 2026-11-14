@@ -5,20 +5,25 @@
 ```
 main        ← protected. Release-ready; PRs from develop only.
 develop     ← integration branch. Feature branches merge here.
-feature/*   ← your work.
+feat/*      ← new functionality.
 fix/*       ← bug fixes.
+chore/*     ← maintenance that changes no behaviour.
 docs/*      ← documentation-only changes.
 ```
+
+The prefixes match the Conventional Commit types, so a branch name tells you
+what its commits will say. `feature/*` is accepted on branches that already use
+it; use `feat/*` for new ones.
 
 Branch off `develop`, never off `main`:
 
 ```bash
 git checkout develop && git pull
-git checkout -b feature/citation-validator
+git checkout -b feat/citation-validator
 ```
 
-Name the branch after the change, not the ticket: `feature/parallel-attackers`
-beats `feature/issue-14`.
+Name the branch after the change, not the ticket: `feat/parallel-attackers`
+beats `feat/issue-14`.
 
 ## Commits
 
@@ -69,7 +74,13 @@ cannot show what you were thinking.
 3. Fill in the PR template honestly. The checklist is there to catch the things
    that have actually broken this project before, not as a formality.
 4. One reviewer approval before merge.
-5. Merge into `develop` with `--no-ff` so the branch topology survives.
+5. Merge into `develop` with `--no-ff` so the branch topology survives. On
+   GitHub that is **Create a merge commit** — never *Squash and merge* or
+   *Rebase and merge*. A squash rewrites commits teammates may already have
+   built on, and the cost arrives later as phantom conflicts: PR #7 was
+   squashed, and `feat/t4-eval` then carried stale copies of its files. If a
+   squash ever does happen, rebase every dependent branch onto the squash
+   commit before touching it.
 
 Keep PRs small enough to review properly. A 40-file PR gets rubber-stamped; a
 6-file PR gets read.

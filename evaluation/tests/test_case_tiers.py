@@ -9,10 +9,10 @@ from __future__ import annotations
 
 import pytest
 
+from council_core.models.case import Outcome
 from harness.cases import (
     CORE_CASE_IDS,
     STRETCH_CASE_IDS,
-    Outcome,
     load_cases,
     select_cases,
 )
