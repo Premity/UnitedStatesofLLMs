@@ -16,7 +16,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import get_settings
-from app.routers import debate, health
+from app.routers import cases, debate, health
 from council_core.telemetry import configure_logging
 
 log = structlog.get_logger(__name__)
@@ -57,4 +57,5 @@ app.add_middleware(
 )
 
 app.include_router(health.router)
+app.include_router(cases.router)
 app.include_router(debate.router)
