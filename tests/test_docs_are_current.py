@@ -25,6 +25,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 DOCS = [
     ROOT / "CLAUDE.md",
+    ROOT / "CONTRIBUTING.md",
     ROOT / "ISSUES.md",
     ROOT / "README.md",
     *sorted((ROOT / "docs").rglob("*.md")),
@@ -190,7 +191,7 @@ def test_issues_index_table_matches_its_entries() -> None:
 
     resolved = {
         heading.strip().lower()
-        for heading in re.findall(r"^###\s+\[(?:RESOLVED|DONE)\]\s+(.+)$", text, re.M)
+        for heading in re.findall(r"^###\s+\[(?:RESOLVED|DONE|WONTFIX)\]\s+(.+)$", text, re.M)
     }
 
     table = re.findall(r"^\|\s*([^|]+?)\s*\|\s*[^|]+?\s*\|$", text, re.M)

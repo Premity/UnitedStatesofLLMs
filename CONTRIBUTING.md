@@ -104,7 +104,7 @@ make check     # lint + tests
 | A new debate node | `runtime/api/app/graph/nodes/` + wire it in `workflow.py` |
 | A role's behaviour | `runtime/api/app/roles/` |
 | A prompt change | `prompts/` — never inline in Python |
-| A corpus source | `pipeline/fetcher/app/sources/` + the manifest |
+| A corpus source | `pipeline/fetcher/fetcher/sources/` + the manifest |
 | A metric | `evaluation/metrics/` |
 | A UI component | `runtime/frontend/src/components/<area>/` |
 
