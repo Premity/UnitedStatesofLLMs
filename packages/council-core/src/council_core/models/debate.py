@@ -77,8 +77,9 @@ class ObjectionSeverity(StrEnum):
     differently rather than counting objections as interchangeable.
 
     Not a confidence score. A model asked for a number invents precision it
-    does not have (ADR 0011 makes the same argument about the judge's
-    confidence), so this is three named steps with a stated meaning each. It is
+    does not have (`Verdict.confidence_band()` makes the same argument about
+    the judge's confidence), so this is three named steps with a stated
+    meaning each. It is
     advisory: the judge rules on the reasoning, never on the label.
 
     Optional on the model. Runs recorded before this field existed have no

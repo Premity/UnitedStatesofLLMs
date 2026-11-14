@@ -52,8 +52,7 @@ if command -v ollama >/dev/null 2>&1; then
     tags=$(ollama list 2>/dev/null | tail -n +2 | awk '{print $1}' | paste -sd' ' -)
     [[ -n "$tags" ]] && ok "ollama — $tags" || warn "ollama installed, no models pulled"
 else
-    warn "ollama not installed — the two attackers have no backend"
-    note "alternatives: make up-ollama, or Cloudflare Workers AI (ADR 0006)"
+    ok "ollama not installed — not needed; every role defaults to an API backend"
 fi
 
 # ── Configuration ─────────────────────────────────────────────────────────────

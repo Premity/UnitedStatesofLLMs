@@ -589,21 +589,21 @@ is not retried — that is the caller's judgement.
 
 | Role | Backend | Allowance |
 | --- | --- | --- |
-| Presenter | Mistral API | ~1B tokens/month |
-| Judge | Google AI Studio | **100 requests/day** |
-| Attackers ×2 | Local Ollama | Unmetered |
+| Presenter | Groq API (free tier) | Per-minute rate limits |
+| Judge | OpenRouter (free tier) | **50 requests/day**, shared across every `:free` model on the account |
+| Attackers ×2 | Groq API (free tier) | Per-minute rate limits |
 | Embeddings | Local fastembed | Unmetered |
 
 The judge's daily cap is the binding constraint. `MAX_CONCURRENT_DEBATES`
 (default 2) bounds concurrency via semaphore — unbounded concurrency exhausts
 the quota and every in-flight run fails together.
 
-**Capacity implication:** a full ablation over 60 cases exceeds 100 judge calls
-and must span days, or run the judge locally for iteration and use the API model
-only for the final scored run. Which was used **changes the result** and must be
-recorded. Arm E does not change this materially — it aggregates several
-presenter samples but judges once per case, so its judge cost is close to arm
-B's.
+**Capacity implication:** one case through all five arms is up to 8 judge calls
+(A 1, B 1, C 2, D 3, E 1) before any repair or retry. The scored run is three
+cases (GitHub #21), 24 judge calls, which fits in one day's quota. Arm E judges
+once per case, so its judge cost is the same as arm B's. A judge run locally for
+iteration **changes the result**, so the judge backend is recorded with every
+report.
 
 ### 10.3 Streaming
 
@@ -778,11 +778,9 @@ as `out_of_corpus`.** This is stated in the README, `ISSUES.md`, `CLAUDE.md`, an
 
 ### 14.3 Open decisions
 
-- **Judge model during development** — 100 req/day cannot absorb a full
-  evaluation; local judge for iteration vs. spread across days
 - **Reasoning-overlap scoring** — manual rubric vs. LLM-judge (introduces a model
-  into the measurement of models)
-- **Hosted demo target** — Cloudflare free tier supports ~30 runs/day
+  into the measurement of models). GitHub #27
+- **Hosted demo target** — Cloudflare free tier supports ~30 runs/day. GitHub #18
 
 ---
 

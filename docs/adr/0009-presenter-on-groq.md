@@ -29,7 +29,7 @@ Two further pressures made the choice urgent rather than deferrable:
   are different families. Results produced on the two are not comparable, and
   nothing in the repo said which was canonical.
 - **The scored run cannot absorb a mid-run change.** It occupies days 14–19
-  against a 100-request/day judge quota. A presenter swap partway through
+  against a judge quota of 50 requests/day, shared across the OpenRouter account. A presenter swap partway through
   produces a dataset with no single system under test.
 
 ## Decision

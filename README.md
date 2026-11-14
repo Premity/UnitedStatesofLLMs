@@ -37,15 +37,18 @@ model play-acting a dispute with itself:
 | Role | What it does | Model | Where it runs |
 | --- | --- | --- | --- |
 | **Presenter** | Argues the position | GPT-OSS 120B | Groq API (free tier) |
-| **Doctrinal attacker** | Challenges the *legal characterisation* | Qwen3.5 | Local, Ollama |
-| **Evidentiary attacker** | Challenges the *factual predicate* | Gemma 3 12B | Local, Ollama |
-| **Judge** | Rules on every objection, calibrates confidence | Gemini 3.1 Pro | Google AI Studio (free tier) |
+| **Doctrinal attacker** | Challenges the *legal characterisation* | Qwen3.8 27B | Groq API (free tier) |
+| **Evidentiary attacker** | Challenges the *factual predicate* | GPT-OSS 20B | Groq API (free tier) |
+| **Judge** | Rules on every objection, calibrates confidence | Nemotron 3 Ultra | OpenRouter (free tier) |
+
+The presenter and the evidentiary attacker share the GPT-OSS family, a known
+compromise recorded in [ADR 0009](docs/adr/0009-presenter-on-groq.md).
 
 Capability is allocated by difficulty. Building a defensible legal argument is
 harder than attacking one, and the presenter sets the quality ceiling for the
 whole debate — an attacker can only test the case it is given. The judge has to
-tell a sound objection from a merely plausible one. Those two roles get frontier
-models; the attackers run locally and unmetered.
+tell a sound objection from a merely plausible one. Those two roles get the
+largest models; the attackers get smaller ones.
 
 The two attackers are separated by **mandate**, not capability. One challenges
 whether the law was applied correctly; the other challenges whether the facts
@@ -125,17 +128,13 @@ bootstrap intervals and we do not oversell small gaps.
 
 ## Quick start
 
-**Prerequisites:** Docker + Compose v2, [uv](https://docs.astral.sh/uv/), and
-[Ollama](https://ollama.com/download) (or use the containerised profile).
+**Prerequisites:** Docker + Compose v2 and [uv](https://docs.astral.sh/uv/).
 
 ```bash
 git clone <repo-url> && cd UnitedStatesofLLMs
 
 make setup            # env file, Python deps, git hooks
-# fill in GROQ_API_KEY and GEMINI_API_KEY in .env
-
-ollama pull qwen3.5:9b        # the two attackers, ~15GB
-ollama pull gemma3:12b
+# fill in GROQ_API_KEY and OPENROUTER_API_KEY in .env
 
 make up               # start the stack (Qdrant, API, frontend)
 make fetch            # the corpus: 24 documents, ~30 seconds
@@ -159,8 +158,8 @@ Run `make help` for everything else.
 ### Project status
 
 **This is a scaffold under active construction.** The domain model, debate
-graph, roles, API and frontend are written; the corpus pipeline is not, and the
-system has not yet been run end to end against live models.
+graph, roles, API, frontend and corpus pipeline are written and have run end to
+end against live models. The evaluation has not run yet.
 
 | Area | State |
 | --- | --- |
