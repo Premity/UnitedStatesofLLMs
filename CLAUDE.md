@@ -130,7 +130,7 @@ him post it. Everything on GitHub goes out under his real name, and `gh` posts
 Scopes: `api` `core` `frontend` `fetcher` `indexer` `eval` `prompts` `corpus`
 `docker` `ci` `docs` `deps`
 
-**Branches:** `main` ← `develop` ← `feature/*`. Never commit directly to `main`
+**Branches:** `main` ← `develop` ← `feat/*` `fix/*` `chore/*` `docs/*`. Never commit directly to `main`
 or `develop` (the pre-commit hook blocks it).
 
 **Python:** 3.12, uv workspace, ruff for lint + format, line length 100.

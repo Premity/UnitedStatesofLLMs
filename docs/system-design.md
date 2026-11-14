@@ -754,7 +754,7 @@ build, docker build, gitleaks, commitlint.
 
 ### 13.4 Workflow
 
-`main` ← `develop` ← `feature/*`. Conventional Commits enforced by hook and CI.
+`main` ← `develop` ← `feat/*` `fix/*` `chore/*` `docs/*`. Conventional Commits enforced by hook and CI.
 Merges use `make merge-develop` / `make merge-main`, which pass `--no-verify` on
 the merge commit alone — two hooks necessarily fire on merges, and everything
 being merged has already passed both individually.
