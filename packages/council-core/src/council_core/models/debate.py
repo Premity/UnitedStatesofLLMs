@@ -67,6 +67,35 @@ class ObjectionDisposition(StrEnum):
     """The judge did not reach it. A gap worth surfacing, not hiding."""
 
 
+class ObjectionSeverity(StrEnum):
+    """How hard an objection hits, as the attacker that raised it rates it.
+
+    Self-reported, and that is the point: it is the attacker's claim about its
+    own objection, recorded so the judge's ruling can be read against it. An
+    objection rated `FATAL` and overruled is a different entry in a dissent log
+    than a `MINOR` one overruled, and the evaluation can weigh the two
+    differently rather than counting objections as interchangeable.
+
+    Not a confidence score. A model asked for a number invents precision it
+    does not have (`Verdict.confidence_band()` makes the same argument about
+    the judge's confidence), so this is three named steps with a stated
+    meaning each. It is
+    advisory: the judge rules on the reasoning, never on the label.
+
+    Optional on the model. Runs recorded before this field existed have no
+    severity, and a missing value means "not stated" -- never `MINOR`.
+    """
+
+    FATAL = "fatal"
+    """If sustained, the argument fails entirely."""
+
+    MATERIAL = "material"
+    """The argument survives but must be narrowed or qualified."""
+
+    MINOR = "minor"
+    """Worth recording, but the argument stands substantially as put."""
+
+
 class Argument(BaseModel):
     """A single load-bearing proposition advanced by the presenter."""
 
@@ -108,6 +137,15 @@ class Objection(BaseModel):
     reasoning: str
     citations: list[Citation] = Field(default_factory=list)
     resolved_citations: list[ResolvedCitation] = Field(default_factory=list)
+
+    severity: ObjectionSeverity | None = Field(
+        default=None,
+        description=(
+            "How hard the attacker says this objection hits. Self-reported and "
+            "advisory; the judge rules on the reasoning. None means the model did "
+            "not state one, or the run predates the field -- not that it is minor."
+        ),
+    )
 
     disposition: ObjectionDisposition = ObjectionDisposition.UNADDRESSED
     disposition_reasoning: str | None = Field(

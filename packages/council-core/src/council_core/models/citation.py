@@ -21,7 +21,13 @@ from pydantic import BaseModel, Field, field_validator
 # that merely starts with those letters -- "artifact-3", "articles 51" -- is
 # left alone. An earlier version matched the bare letters with no delimiter
 # required and silently mangled both (GitHub #8).
-_ARTICLE_PREFIX_RE = re.compile(r"^\s*art(?:icle)?(?:\.|\s)\s*", re.IGNORECASE)
+#
+# The group repeats (`+`) so the strip is idempotent. Matching a single prefix
+# left `art.art.51` as `art.51`, which still carries a prefix: the field then
+# normalized further on every later validation pass, so one stored artifact
+# produced a different locator before and after a load/save cycle -- and
+# locators are permanent (see `locator()`).
+_ARTICLE_PREFIX_RE = re.compile(r"^(?:\s*art(?:icle)?(?:\.|\s)\s*)+", re.IGNORECASE)
 
 
 def _strip_article_prefix(article: str | None) -> str | None:

@@ -170,3 +170,27 @@ def test_article_prefix_normalization_does_not_mangle_non_prefixed_values() -> N
         Citation(type=CitationType.TREATY, instrument="x", article="articles 51 and 52").article
         == "articles 51 and 52"
     )
+
+
+def test_a_doubled_article_prefix_normalizes_to_a_stable_locator() -> None:
+    """Stripping must be idempotent, or one artifact yields two locators.
+
+    Matching a single prefix left `art.art.51` as `art.51` -- still prefixed,
+    so the next validation pass stripped again. A stored run then resolved
+    `gc_iv/art.art.51` on the first read and `gc_iv/art.51` after a load/save
+    cycle, which silently changes a citation's status (and so the fabrication
+    metric) for an artifact nobody edited.
+    """
+    once = Citation(type=CitationType.TREATY, instrument="gc_iv", article="art.art.51")
+    twice = Citation.model_validate_json(once.model_dump_json())
+
+    assert once.article == twice.article == "51"
+    assert once.locator() == twice.locator() == "gc_iv/art.51"
+
+
+def test_spaced_and_mixed_doubled_prefixes_are_also_stripped_whole() -> None:
+    """The repeated form has to cover the spellings a model actually mixes."""
+    for raw in ("art. art. 51", "Article art.51", "art.art.art.8(2)(b)"):
+        article = Citation(type=CitationType.TREATY, instrument="x", article=raw).article
+        assert article is not None
+        assert not article.lower().startswith("art"), raw

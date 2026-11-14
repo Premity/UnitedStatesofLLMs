@@ -65,6 +65,7 @@ Runs a debate and streams turn-level events. Returns `text/event-stream`.
 | Event | Payload | When |
 | --- | --- | --- |
 | `start` | `{"run_id": "run_a1b2c3d4e5f6"}` | Immediately |
+| `role_started` | `{"role": "presenter", "round": 1}` | A role begins generating |
 | `turn` | Full `Turn` object | Each role completes |
 | `verdict` | `Verdict` object | The judge rules — once per round, and only when the ruling changed |
 | `error` | `{"error": "..."}` | The run fails |
@@ -72,6 +73,22 @@ Runs a debate and streams turn-level events. Returns `text/event-stream`.
 
 Turn-level, not token-level: a four-model debate runs for minutes, and turn
 boundaries are what the courtroom animates against.
+
+**`role_started` is how a client knows who is working.** A turn runs 40 to 90
+seconds and arrives whole, so most of a debate is spent waiting on a role that
+has produced nothing yet. The event comes from the graph's own task stream, so
+it reports the real execution order rather than a client's model of it:
+
+- **Both attackers are announced before either reports.** They fan out in
+  parallel, and the judge is a fan-in — so a client must not treat the first
+  attacker's turn as the judge starting.
+- **`retrieve` is announced as `retriever`** and `present` as `presenter`: the
+  graph names those two nodes for the work, and the event carries the role.
+- **It is advisory and may repeat.** Treat it as additive and idempotent; a
+  role stops being pending when its `turn` arrives, not on a second
+  announcement. A client that does not need it can ignore it entirely.
+- **An unknown role should be ignored, not displayed.** A node added to the
+  graph will announce itself before any UI has a place to put it.
 
 **A verdict does not mean the debate has ended.** The judge rules at the end of
 every round, so a multi-round run emits several, each superseding the last;

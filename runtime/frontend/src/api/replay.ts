@@ -1,5 +1,5 @@
 import fixture from "@/fixtures/sample-run.json";
-import type { Turn, Verdict } from "@/types";
+import type { Role, Turn, Verdict } from "@/types";
 
 /**
  * Replays a recorded debate from a fixture, with no backend.
@@ -20,7 +20,7 @@ import type { Turn, Verdict } from "@/types";
 
 /** One SSE event as the fixture stores it: payload parsed, not a JSON string. */
 export interface ReplayEvent {
-  event: "start" | "turn" | "verdict" | "error" | "done";
+  event: "start" | "role_started" | "turn" | "verdict" | "error" | "done";
   data: unknown;
   /**
    * Fixture metadata, not part of the wire format. A live client knows the
@@ -42,6 +42,7 @@ export function isReplayEnabled(search: string = window.location.search): boolea
 /** Store methods replay drives. Matches the subset `useDebateStream` uses. */
 export interface ReplaySink {
   startRun: (runId: string, config?: { question: string; facts: string }) => void;
+  roleStarted: (role: Role) => void;
   addTurn: (turn: Turn) => void;
   setVerdict: (verdict: Verdict) => void;
   setError: (error: string) => void;
@@ -79,6 +80,9 @@ export function applyEvent(
   switch (event) {
     case "start":
       sink.startRun((data as { run_id: string }).run_id, config);
+      return true;
+    case "role_started":
+      sink.roleStarted((data as { role: Role }).role);
       return true;
     case "turn":
       sink.addTurn(data as Turn);

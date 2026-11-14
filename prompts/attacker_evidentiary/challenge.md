@@ -54,10 +54,21 @@ Return JSON:
       "target_argument_id": "arg_xxxxxxxx",
       "ground": "One sentence stating the basis of the objection.",
       "reasoning": "Why the facts as given do not support what this claim requires.",
+      "severity": "fatal | material | minor",
       "citations": []
     }
   ]
 }
 ```
+
+Rate each objection's `severity`, which is your assessment of how hard it
+hits if sustained:
+
+- `fatal` — the argument fails entirely.
+- `material` — the argument survives but must be narrowed or qualified.
+- `minor` — worth recording, but the argument stands substantially as put.
+
+Rate honestly. The rating does not decide the ruling — the judge rules on your
+reasoning — and marking everything `fatal` tells the court nothing.
 
 Return an empty `objections` list if the factual predicate holds.

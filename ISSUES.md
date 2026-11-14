@@ -1,7 +1,13 @@
 # Known issues & pending work
 
-Current as of 2026-11-07, after the corpus (T1), the first frontend pass (T3),
+Current as of 2026-11-09, after the corpus (T1), the frontend passes (T3),
 and the PR #7 review fixes (GitHub #8–#11).
+
+**Audited 2026-11-09** against all 110 commits and the working tree. Two
+entries claimed the corpus fetcher and indexer were unimplemented scaffolds;
+both have been built and run since 2026-10-23. The corpus itself is a
+per-machine artifact — see the first entry below before reading anything into a
+local citation status.
 
 > **Planning this work?** These items are scheduled as tracks and tasks in
 > [docs/planning/implementation-plan.md](docs/planning/implementation-plan.md).
@@ -10,55 +16,119 @@ and the PR #7 review fixes (GitHub #8–#11).
 
 | Item below | Track |
 | --- | --- |
-| Corpus fetcher | T1-2, T1-3 |
-| Corpus indexer | T1-4, T1-5, T1-6 |
-| Evaluation harness runner | T4-1, T4-2, T4-3 |
-| Arm E — the compute-matched control | T2-4, T2-5 |
-| Evaluation case fixtures | TF |
-| Sprite artwork | T3 stretch |
-| Courtroom staging and background | T3 stretch |
-| Case picker for the question form | T3 / TF |
+| Run artifact does not record its corpus | T1 / T4 — GitHub #24 |
+| Evaluation harness runner | T4-1, T4-2, T4-3 — GitHub #19, #21 |
+| Arm E — the compute-matched control | T2-4, T2-5 — GitHub #21 |
+| Evaluation case fixtures | TF — GitHub #21 |
+| Case picker for the question form | T3 / TF — GitHub #17 |
 
 ---
 
-## Not yet implemented
+## What is left, in order
 
-### [HIGH] Corpus fetcher
+Audited 2026-11-09. The critical path is one item long: **nothing can be
+measured until the evaluation runner exists.** Everything below it is either
+blocked on that or cosmetic beside it.
 
-`pipeline/fetcher/` — structure, CLI, and manifest loading are in place; the
-source parsers are not.
+| # | Item | Why it is where it is |
+| --- | --- | --- |
+| 1 | **Evaluation harness runner** | `run.py` and `report.py` do not exist. The arms, the case schema and all three metrics are written and tested; nothing drives arms over cases. Also needs retrieval exclusion for a case's own `source_case_id`, or a case leaks its own judgment into its evidence |
+| 2 | **Arm E — the compute-matched control** | Without it, D-vs-B cannot separate adversarial structure from simply spending more compute, which is *the* standing criticism of the multi-agent debate literature. Objective 2 is stated against this baseline, so the headline claim is unfalsifiable until E runs |
+| 3 | **Case fixtures: 1 of a target 40–80** | Below ~40 the bootstrap intervals are too wide for any arm comparison to mean anything. Team task, and the long pole in wall-clock terms |
+| 4 | **Run artifacts do not record their corpus** | Citation statuses are only interpretable against a known corpus, and nothing in an artifact says which one scored it. Becomes a correctness problem the moment two machines' results are compared. GitHub #24 |
+| 5 | **Case picker for the question form** | Needs an ADR first: `runtime/api` does not depend on `evaluation`, so a case endpoint either inverts that or duplicates the loader. And the ground truth must never reach the browser. GitHub #17 |
+| 6 | **Severity-weighted metrics** | `Objection.severity` now exists and nothing weighs objections by it. GitHub #28 |
 
-Needed, one module each under `app/sources/`:
+Items 1–3 are GitHub #19 and #21. Two open decisions that do not block the
+above: **reasoning-overlap scoring** (GitHub #27) and a **hosted demo** target,
+which has none chosen (GitHub #18).
 
-- **ICRC IHL database** — treaties and customary IHL. Structured and stable;
-  start here.
-- **ICC** — judgments as PDFs; paragraph numbers are in the text
-- **ICTY / ICTR** — judgment PDFs, large
-- **ICJ** — cases and advisory opinions, largest documents
-- **UN Digital Library** — resolutions
-
-Each normalises to the document shape in [docs/corpus.md](docs/corpus.md), writes
-to `data/cache/<id>.json`, and flips the manifest entry's `status` to `fetched`.
-
-**Blocks:** everything retrieval-dependent.
+One known limit to state in the report rather than fix: three Rome Statute
+weapons amendments are not indexed, because the source gives the inserted
+sentence with no article number and a guessed locator is indistinguishable
+from a fabrication. A citation to one resolves `unresolved`, which the metrics
+read as fabrication.
 
 ---
 
-### [HIGH] Corpus indexer
+## Open work
 
-`pipeline/indexer/` — same state.
+Was "Not yet implemented", which stopped being true once the pipelines were
+built. The first entries are now about what a result *means* rather than about
+missing code.
 
-1. Read committed treaties from `corpus/` and fetched cases from `data/cache/`
-2. Chunk at **citation granularity** — article for treaties, numbered paragraph
-   for judgments. Not a tuning knob: token-window chunking would make
-   `icty_galic_tj/para.58` unresolvable and break citation validation entirely.
-3. Embed with fastembed BGE-M3
-4. Upsert to Qdrant with the payload shape in docs/corpus.md
-5. Write `data/index/citation_index.json` — **both** `entries` and `instruments`.
-   Without `instruments`, every miss looks like fabrication and the metric is
-   worthless.
+### [INFO] The corpus is a per-machine build artifact, not a shared one
 
-**Blocks:** citation validation, retrieval, the whole evaluation.
+Not a defect. Written down because it reads as one, and did: a `status:
+"fetched"` manifest next to a 9-instrument index looks like a broken fetch.
+
+`data/cache/` and `data/index/` are gitignored (ADR 0007, tier 2). The corpus
+travels as **manifests**, not as documents — so the index each machine resolves
+against is whatever that machine last fetched, and nothing in a run artifact
+records which corpus produced it.
+
+| Machine | Resolves |
+| --- | --- |
+| Fresh clone (`corpus/stub/citation_index.json`, copied by `setup.sh`) | 24 locators, 4 instruments |
+| A machine that has run `make corpus` | ~5,000+, 23 instruments + 161 customary rules |
+
+**The evaluation machine is the one that matters,** and it has the full corpus.
+Scored runs and fabrication metrics come from there.
+
+A dev machine that skips `make corpus` is a supported state: the embedding
+stage is the memory-hungry one (`bf4aab1` bounded it; `make index-local` caps
+it via `MEM_CAP`), and a 16GB machine can work on orchestration, roles and the
+frontend without it. What such a machine cannot do is read its own citation
+statuses as signal — most citations resolve `out_of_corpus` there, and that is
+the index being small, not a model inventing authority.
+
+To see what the local index actually holds:
+
+```bash
+python3 -c "import json; d=json.load(open('data/index/citation_index.json')); \
+print(len(d['entries']), 'locators across', sorted(d['instruments']))"
+```
+
+---
+
+### [MEDIUM] A run artifact does not record which corpus scored it
+
+The gap the entry above exposes.
+
+Citation statuses are only interpretable against a known corpus, and
+`citation_index.json` carries a `version` ("0.1.0") that is not written into
+run artifacts. So two machines can score the same case with the same models and
+report different fabrication rates, with nothing in either artifact explaining
+the difference — and a `0.1.0` that meant 9 instruments in October and 23 in
+November is the same string.
+
+This matters more than it looks: the fabrication rate is the project's headline
+measurement, and it is currently unreproducible across machines by inspection.
+
+Needed: the index's identity in every run artifact — instrument count, locator
+count, and a content hash rather than a hand-set version. Prompts are already
+hashed into runs for exactly this reason (non-negotiable #6); the corpus is the
+other input that decides what a result means.
+
+**Blocks:** nothing today, because scoring happens on one machine. Becomes a
+correctness problem the moment two machines' results are compared or a scored
+run is re-run after a corpus change.
+
+---
+
+### [LOW] Judgments and resolutions remain unfetched (by decision)
+
+Not a gap in the fetcher — a scope decision, recorded here so it is not
+rediscovered as a bug.
+
+`corpus/manifests/cases.json` lists 8 judgments and `resolutions.json` lists 2;
+`main.py` logs `sources_not_implemented` for both. Judgments are PDFs from four
+tribunals with different layouts, deferred past v1. UN resolutions are scanned
+images with no text layer, and OCR errors in corpus text corrupt the
+`misquoted` signal directly — so they are out of scope, not pending.
+
+A citation to a real judgment therefore resolves `out_of_corpus`, which is the
+designed behaviour and distinct from `unresolved` (ADR 0004).
 
 ---
 
@@ -116,7 +186,9 @@ without leaking the holding into the facts.
 
 ---
 
-### [LOW] Sprite artwork
+### [WONTFIX] Sprite artwork
+
+Not being done: the coloured plinths stay. Kept here for the spec's location.
 
 `runtime/frontend/public/sprites/README.md` has the spec. Currently coloured
 plinths with role initials; the animation and state machine are done, so real
@@ -193,10 +265,13 @@ introspection endpoint (`GET /api/v1/key`), not a third-party estimate:
 `free_model_daily_requests: { used: 13, limit: 50, remaining: 37 }` after
 today's testing. A 3-round debate uses at least 3 judge calls (more if any
 repair/retry fires), capping this at roughly **16 debates/day** before the
-key is throttled — and the evaluation harness (40–80 cases, ISSUES.md) would
-need 120–240+ judge calls, completely infeasible on this tier alone. Fine for
-continued dev/validation; not viable for a real scored run without either a
-paid OpenRouter tier or swapping the judge again before that eval.
+key is throttled.
+
+**Settled for the scored run:** the judge stays
+`openrouter/nvidia/nemotron-3-ultra-550b-a55b:free`, and the evaluation is cut
+to three cases (GitHub #21). One case through all five arms is up to 8 judge
+calls (A 1, B 1, C 2, D 3, E 1), so the run is 24 before any repair or retry —
+within one day's 50.
 
 ### [MEDIUM] Presenter moved from Mistral to Groq
 
@@ -558,61 +633,63 @@ The ones that are still open rather than fixed:
 
 ---
 
-## Frontend (T3) — open after the first pass
+## Frontend (T3) — open after the staging pass
 
-The courtroom, transcript, record, replay and theming are built and tested
-(117 frontend tests). What follows is what was raised while looking at the
-running UI and has not been done.
+The courtroom, transcript, record, replay, theming and staging are built and
+tested (152 frontend tests). What follows is what was raised while looking at
+the running UI and has not been done.
 
-### [MEDIUM] Courtroom staging
+### [DONE] Courtroom staging
 
-Three changes, which interact and are best done in this order:
+All three changes landed on `feature/courtroom-staging`.
 
-1. **A subtitle band under the courtroom**, replacing the floating speech
-   bubble. The bubble is capped at `max-w-md` and occludes the scene; a claim
-   of two or three lines gets cramped. A fixed-height band has the full width,
-   gives the role name a stable place, and can say what is being waited on
-   during a long generation. `SpeechBubble` already carries an unused `side`
-   prop from an earlier attempt at this.
+1. **Subtitle band** under the courtroom, replacing the floating speech
+   bubble. Full width, fixed height, headline only, clamped to two lines; it
+   keeps the last utterance while the next model generates rather than
+   blanking, since a turn runs 40 to 90 seconds and the status rail already
+   names who is being waited on.
+2. **Counsel seated around the bench** — doctrinal left, presenter centre,
+   evidentiary right, judge elevated. Three grid columns rather than a flex
+   row, so a long model id cannot push the presenter off the courtroom's
+   axis. The order is fixed, not turn-arrival order.
+3. **Objection localised to the objecting sprite**, hanging from its outer
+   top corner and mirrored per bench. The ground moved to the band, which
+   attributes it to `raised_by` rather than the active role. The quiet form is
+   a tag on the same corner. Dwell is 5s from one shared constant; stepping
+   mode still holds until the next click.
 
-2. **Judge at the back, counsel flanking, presenter centred.** The present
-   layout puts all three counsel in a row, which does not read as a courtroom.
-   The presenter at centre also expresses the geometry of the thing: it is the
-   role being attacked from both sides. Fix which attacker sits on which side
-   and keep it stable across runs.
+Two things settled along the way: role display names live in
+`src/lib/roles.ts` in three forms (title, sentence, short) instead of three
+diverging copies, and the palettes are down to **Oak** (default, light) and
+**Dusk** (dark) behind a single toggle with a wave out of the button. The wave
+has to be a View Transition — a plain element is either an opaque fill over
+the text or invisible behind the app's own opaque surfaces; `index.css` says
+so where someone would otherwise try it again.
 
-3. **Localise the objection flourish to the objecting sprite** rather than
-   taking the whole courtroom. Depends on (1): once the burst is sprite-sized
-   the objection's text has to live in the band. The loud/quiet distinction
-   already built still applies — quiet becomes "sprite flashes, band updates".
+### [DONE] Courtroom background art
 
-### [MEDIUM] Courtroom background art
+Settled by drawing the room in SVG, which was the first option listed here
+and turned out to be the right one for a reason beyond licensing: every fill
+is a theme token, so the room follows Oak and Dusk. A fixed image cannot —
+a warm-gold photograph that suits Dusk fights Oak's daylight, and Oak is the
+default.
 
-**No usable image yet.** Two candidates were proposed and both were the Ace
-Attorney courtroom, © Capcom — the second with the watermark cropped out,
-which removes copyright management information and makes it worse rather than
-better. This repository is public; shipping either is infringement.
+Both candidate images were the Ace Attorney courtroom, © Capcom (the second
+with the watermark cropped, which removes copyright management information
+and makes it worse rather than better). This repository is public, so
+shipping either would have been infringement. No image is needed now.
 
-Options, in the order worth trying:
+See `runtime/frontend/src/components/courtroom/Chamber.tsx`. The room is
+drawn in a 400x240 coordinate space with `preserveAspectRatio="none"`, so it
+stretches to whatever box it is given and does not constrain the layout —
+the other objection raised here. Furniture that must paint over the figures
+(the bench, the lectern, the gallery rail) renders as a separate layer in
+the same coordinates.
 
-- **Build the room in SVG.** Panelling, benches and columns are gradients and
-  rectangles. It themes with the palette, which a fixed image cannot — there
-  are four palettes and a warm-gold photograph fights Tribunal and Oak. Scales
-  to any aspect, costs a few KB, and sprite anchors become real coordinates
-  rather than percentages tuned to one picture.
-- **Genuinely free sources**, checking the licence on each file's own page:
-  [Openclipart](https://openclipart.org) (CC0 site-wide),
-  [Wikimedia Commons](https://commons.wikimedia.org) (per-file; some are
-  CC BY-SA and need attribution). Search "courtroom interior", not "courtroom",
-  or the results are gavels and scales.
-- Commission or draw one.
-
-Note that "free" and "royalty-free" on the stock sites are not "free to
-redistribute", which is what committing to a public repo does.
-
-A fixed-ratio background also constrains the layout: the panel can no longer
-grow with its content, and every sprite position becomes an offset tuned to
-one image.
+**One constraint this creates:** anything that changes the scene's *width*
+moves every piece of furniture relative to the figures standing at it. The
+courtroom is therefore outside the column the dissent log toggles, and the
+scene box must not take an aspect ratio. Both are pinned by tests.
 
 ### [MEDIUM] Case picker for the question form
 
@@ -627,43 +704,80 @@ has to be typed by hand. Two constraints:
   `council-core`. A case endpoint either inverts that or duplicates the
   loader. Worth an ADR.
 
-### [LOW] `role_started` stream event
+### [RESOLVED] `role_started` stream event
 
-`NEXT_ROLES` in `courtStore.ts` duplicates `build_graph()` to infer which
-model is generating, because the stream carries only completed turns. It works
-and is tested, but it is a second copy of the graph's shape that nothing keeps
-in sync. A `role_started` event would remove the duplication.
+`NEXT_ROLES` in `courtStore.ts` duplicated `build_graph()` to infer which model
+was generating, because the stream carried only completed turns -- a second
+copy of the graph's shape that nothing kept in sync.
 
-### [LOW] Objection severity
+The router now streams `stream_mode=["values", "tasks"]`. A `tasks` chunk with
+no `result` key is a node starting, which becomes a `role_started` event
+carrying the role and round. `NEXT_ROLES` is gone, and with it the hand-written
+fan-in rule that stopped the first attacker's turn from starting the judge.
 
-`isLoud()` decides which objections earn the full flourish from whether every
-citation resolved — the strongest signal available, but an inference. An
-`Objection` carries no severity, and adding one would also give the evaluation
-metrics something to weigh objections by.
+Three things worth knowing:
+
+- **The node names are not all role names.** `retrieve` and `present` are named
+  for the work, so `_TASK_ROLE_ALIASES` maps them onto `Role.RETRIEVER` and
+  `Role.PRESENTER`. `STREAMED_ROLES` is otherwise derived from the `Role` enum,
+  so a node added with a role's name reports without anyone editing a list --
+  and `test_every_graph_node_is_either_a_streamed_role_or_deliberately_not`
+  fails when a node is neither, which is the moment to decide whether the
+  courtroom should show it. That test caught the `present` alias being missed.
+- **`startRun` no longer seeds `retriever`.** The server announces it. Seeding
+  it as well made the courtroom claim the clerk was working before the graph
+  said so, and in replay showed a role the fixture never reported.
+- **The fixture carries the events too.** `generate_fixture.py` announces a
+  concurrent group together before any of it reports, so replay exercises the
+  fan-in ordering a live stream produces. A step passes over `role_started`
+  rather than stopping on it, since an announcement puts nothing new on screen.
+
+Documented in [docs/api-contract.md](docs/api-contract.md).
+
+### [RESOLVED] Objection severity
+
+`Objection.severity` is now a three-step enum — `fatal`, `material`, `minor` —
+self-reported by the attacker that raised the objection, and both attacker
+prompts ask for it with a stated meaning for each step.
+
+Three named steps rather than a score, for the reason `Verdict.confidence_band()`
+gives about the judge's confidence: a model asked for a number invents precision
+it does not have. It is advisory, and the judge rules on the reasoning, never on the label.
+
+`isLoud()` reads it, so the flourish follows weight rather than citation luck
+— a well-cited `minor` objection no longer slams, and a `fatal` one does even
+where its authority is not indexed. `headlineObjection()` now puts the hardest
+objection on screen rather than whichever the model emitted first, with a
+stable sort so the model's order stands among equals. The old grounding
+heuristic remains as the fallback.
+
+The dissent log shows the rating as **counsel's** claim ("Counsel: fatal"),
+and the Markdown export as "Counsel rated it:" — an objection its author
+called fatal and the bench overruled is the sharpest entry a dissent log can
+carry, but it is not a finding of the court.
+
+**The field is optional, and that is load-bearing.** Every run artifact
+written before this lacks it; `None` means "not stated", never `minor`.
+Pinned by `test_an_objection_recorded_before_severity_existed_still_loads`.
+
+**One consequence to know:** the attacker prompts changed, so their hashes
+changed. Runs scored before and after are not prompt-comparable — relevant
+when the evaluation ladder is run, per ADR 0009's roster freeze.
+
+Still open: the evaluation metrics do not yet weigh objections by severity.
+The data is now there to do it.
 
 ---
 
 ## Decisions still open
 
-### Judge model for the scored run
-
-The judge is now `openrouter/nvidia/nemotron-3-ultra-550b-a55b:free` (see the
-T0 section above) — Gemini AI Studio's free tier was a dead end, not a
-request-budget problem. OpenRouter's free tier caps at 50 requests/day
-account-wide, roughly 16 debates/day, which covers continued dev/validation
-but not a 40–80 case evaluation (120–240+ judge calls).
-
-Options for the scored run itself: a paid OpenRouter tier, spreading the run
-across multiple days, or swapping the judge to a model with more headroom
-before that run starts (the roster must then freeze — see ADR 0009).
-
-### Reasoning-overlap scoring
+### Reasoning-overlap scoring — GitHub #27
 
 Rubric with manual scoring, or LLM-judge against `key_reasoning`? The latter is
 faster but introduces a model into the measurement of models. Leaning LLM-judge
 with a manually-scored subset to validate it.
 
-### Hosted demo
+### Hosted demo — GitHub #18
 
 Cloudflare Workers AI free tier gives ~30 single-case runs/day. Enough for a
 demo, not for evaluation. No deployment target chosen yet.

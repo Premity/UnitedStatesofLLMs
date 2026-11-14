@@ -22,6 +22,7 @@ function sink() {
   const s = useCourtStore.getState();
   return {
     startRun: s.startRun,
+    roleStarted: s.roleStarted,
     addTurn: s.addTurn,
     setVerdict: s.setVerdict,
     setError: s.setError,
@@ -395,11 +396,38 @@ describe("the objection flourish", () => {
 
     await user.click(step); // presenter
     await user.click(step); // doctrinal — obj_proportionality, fully resolved
+    expect(screen.getByTestId("objection-slam")).toBeInTheDocument();
     expect(screen.getByText(/objection!/i)).toBeInTheDocument();
 
     await user.click(step); // evidentiary — obj_misquote, not grounded
+    expect(screen.queryByTestId("objection-slam")).not.toBeInTheDocument();
     expect(screen.queryByText(/objection!/i)).not.toBeInTheDocument();
-    expect(screen.getByText(/Objection · Evidentiary Counsel/i)).toBeInTheDocument();
+    expect(screen.getByTestId("objection-quiet")).toBeInTheDocument();
+
+    // The attribution and the ground moved to the band — the burst is
+    // bench-sized and carries only the word.
+    expect(screen.getByTestId("subtitle-band")).toHaveTextContent(
+      /Evidentiary Counsel · Objection/i,
+    );
+  });
+
+  it("puts the burst on the sprite that raised it, not over the courtroom", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    const step = screen.getByTestId("replay-step");
+
+    await user.click(step); // presenter
+    await user.click(step); // doctrinal objects
+
+    // Walk up from the burst to the figure it covers, and check the nameplate
+    // in that sprite. A burst over the wrong bench misattributes the
+    // objection, which is the thing this change exists to get right.
+    const slam = screen.getByTestId("objection-slam");
+    const sprite = slam.closest("div.flex.flex-col");
+    expect(sprite).not.toBeNull();
+    expect(within(sprite as HTMLElement).getByTestId("sprite-plate")).toHaveTextContent(
+      "Doctrinal",
+    );
   });
 });
 
@@ -426,12 +454,20 @@ describe("a debate that runs past one round", () => {
       expect(screen.getAllByText(/Round 2/).length).toBeGreaterThan(0);
     });
 
-    // The form must stay locked: a run is still in flight, and re-enabling
-    // "Convene the council" mid-debate invites a second concurrent run.
+    // No way to start a second run while this one is in flight. The form
+    // folds away for the length of a debate, so the control is gone rather
+    // than merely disabled -- and if it is ever unfolded by hand mid-debate,
+    // it must still be disabled.
+    expect(
+      screen.queryByRole("button", { name: /convene the council/i }),
+    ).toBeNull();
+
+    await userEvent.click(screen.getByTestId("question-fold"));
     expect(
       screen.getByRole("button", { name: /convene the council/i }),
     ).toBeDisabled();
-    expect(screen.getByText(/opposing counsel are reviewing/i)).toBeInTheDocument();
+    // Mid-debate: a round is under way and the court has not adjourned.
+    expect(screen.queryByText(/court has ruled/i)).toBeNull();
   });
 });
 
@@ -601,15 +637,21 @@ describe("waiting on a model", () => {
     // Idle: nothing is generating, so the rail shows the phase.
     expect(screen.getByText(/court is not in session/i)).toBeInTheDocument();
 
+    // A press stops on the next thing to look at, so this one ends with the
+    // presenter's turn on screen. Nobody has been announced since, so the
+    // rail names the phase rather than a bench -- the attackers are announced
+    // at the top of the next press, which is when the graph reports them.
     await user.click(step); // presenter reports
-    // The presenter has finished — both attackers are now generating, and
-    // that is what the rail should say rather than "Counsel is presenting".
-    expect(screen.getByText(/opposing counsel are reviewing/i)).toBeInTheDocument();
+    expect(screen.getByText(/counsel is presenting/i)).toBeInTheDocument();
 
-    await user.click(step); // doctrinal reports, evidentiary still out
+    // Both attackers announced; doctrinal has reported, evidentiary has not.
+    await user.click(step);
     expect(screen.getByText(/evidentiary counsel is reviewing/i)).toBeInTheDocument();
 
     await user.click(step); // evidentiary reports
+    expect(screen.getByText(/counsel objects/i)).toBeInTheDocument();
+
+    await user.click(step); // the judge is announced, then rules
     expect(screen.getByText(/court is deliberating/i)).toBeInTheDocument();
   });
 
@@ -618,7 +660,10 @@ describe("waiting on a model", () => {
     // Idle shows no clock; a started run does.
     expect(screen.queryByTestId("elapsed")).not.toBeInTheDocument();
 
+    // The clock measures a wait on a role, and a role is only pending once
+    // the graph announces it -- `startRun` no longer assumes the clerk.
     sink().startRun("run_x");
+    sink().roleStarted("retriever");
     await waitFor(() =>
       expect(screen.getByTestId("elapsed")).toBeInTheDocument(),
     );
@@ -630,22 +675,114 @@ describe("waiting on a model", () => {
   });
 });
 
-describe("the palette switcher", () => {
+describe("the palette toggle", () => {
   it("switches the courtroom palette without a reload", async () => {
     const user = userEvent.setup();
     render(<App />);
 
-    const group = within(screen.getByRole("group", { name: /palette/i }));
-    const tribunal = group.getByRole("button", { name: /tribunal/i });
+    // Labelled with where it is going, not where it is: the default is Oak,
+    // so the button offers Dusk.
+    const toggle = screen.getByTestId("theme-switcher");
+    expect(toggle).toHaveAccessibleName(/dusk/i);
 
-    await user.click(tribunal);
+    await user.click(toggle);
 
-    expect(tribunal).toHaveAttribute("aria-pressed", "true");
-    expect(document.documentElement.dataset.theme).toBe("tribunal");
-    // #0f172a -> 15 23 42, as channels so Tailwind's alpha still composes.
+    // The swap happens under the wave rather than on click, so wait for it.
+    await waitFor(() =>
+      expect(document.documentElement.dataset.theme).toBe("dusk"),
+    );
+    // #1a1229 -> 26 18 41, as channels so Tailwind's alpha still composes.
     expect(
       document.documentElement.style.getPropertyValue("--court-bg"),
-    ).toBe("15 23 42");
+    ).toBe("26 18 41");
+    // And now it offers the way back.
+    expect(toggle).toHaveAccessibleName(/oak/i);
+  });
+
+  it("toggles back to the default", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    const toggle = screen.getByTestId("theme-switcher");
+
+    await user.click(toggle);
+    await waitFor(() =>
+      expect(document.documentElement.dataset.theme).toBe("dusk"),
+    );
+    await user.click(toggle);
+    await waitFor(() =>
+      expect(document.documentElement.dataset.theme).toBe("oak"),
+    );
+  });
+
+  it("flips the coin to the face it is offering", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    // Oak is light, so the coin shows the dark face it would switch to.
+    expect(screen.getByTestId("theme-coin")).toHaveAttribute("data-face", "dark");
+
+    await user.click(screen.getByTestId("theme-switcher"));
+    await waitFor(() =>
+      expect(screen.getByTestId("theme-coin")).toHaveAttribute("data-face", "light"),
+    );
+  });
+
+  it("centres the wave on the button it was clicked from", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    // jsdom reports a zero-sized box, so assert the properties are set and
+    // in pixels rather than pinning coordinates a real layout would decide.
+    await user.click(screen.getByTestId("theme-switcher"));
+
+    const root = document.documentElement.style;
+    expect(root.getPropertyValue("--wave-x")).toMatch(/^-?[\d.]+px$/);
+    expect(root.getPropertyValue("--wave-y")).toMatch(/^-?[\d.]+px$/);
+    // The radius has to reach the furthest corner, so it is never zero.
+    expect(parseFloat(root.getPropertyValue("--wave-r"))).toBeGreaterThan(0);
+  });
+
+  it("interrupts a running wave so every click gets one", async () => {
+    // jsdom has no view transitions, so stand one in. A browser runs one at a
+    // time and drops any started while another is live; without the
+    // interrupt a fast second click changed the palette with no animation.
+    const skips: number[] = [];
+    let live = 0;
+    const started: (() => void)[] = [];
+
+    Object.defineProperty(document, "startViewTransition", {
+      configurable: true,
+      writable: true,
+      value: (cb: () => void) => {
+        const id = ++live;
+        started.push(cb);
+        cb();
+        return {
+          // Never settles: a real wave runs for 0.6s, so it is still live
+          // when the next click arrives. Resolving here would let the
+          // component forget it and the interrupt would not be exercised.
+          finished: new Promise<void>(() => {}),
+          skipTransition: () => skips.push(id),
+        };
+      },
+    });
+
+    try {
+      const user = userEvent.setup();
+      render(<App />);
+      const toggle = screen.getByTestId("theme-switcher");
+
+      await user.click(toggle);
+      await user.click(toggle);
+      await user.click(toggle);
+
+      // One transition per click, and each later click cut the previous short.
+      expect(started).toHaveLength(3);
+      expect(skips.length).toBeGreaterThanOrEqual(2);
+    } finally {
+      delete (document as Partial<Document> & { startViewTransition?: unknown })
+        .startViewTransition;
+    }
   });
 });
 

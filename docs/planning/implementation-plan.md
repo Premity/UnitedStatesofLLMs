@@ -381,7 +381,8 @@ finds the breakages before they cost quota.
 - **Done when** all five arms have run over the held-out set with the API judge,
   and the report records which judge backend was used
 
-> **This is quota-bound, not effort-bound.** 100 judge requests/day. See
+> **This is quota-bound, not effort-bound.** 50 judge requests/day, shared across
+> the OpenRouter account. See
 > [timeline.md](timeline.md) for the booking schedule.
 
 ---

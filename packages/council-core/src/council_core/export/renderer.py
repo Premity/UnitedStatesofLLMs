@@ -115,6 +115,11 @@ def render_markdown(artifact: RunArtifact) -> str:
             out.append(f"### {i}. {obj.ground}")
             out.append("")
             out.append(f"**Raised by:** {obj.raised_by.value.replace('_', ' ').title()}  ")
+            # Counsel's own rating, attributed as such: self-reported and
+            # advisory, never a finding of the court. Omitted when unrated,
+            # including on runs recorded before the field existed.
+            if obj.severity:
+                out.append(f"**Counsel rated it:** {obj.severity.value}  ")
             if target:
                 out.append(f"**Against:** {target.claim}")
             out.append("")

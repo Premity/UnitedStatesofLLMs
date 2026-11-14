@@ -70,7 +70,15 @@ docker-compose.local.yml
 # Figure generator bytecode
 docs/diagrams/__pycache__/
 
-# Scratch artwork while the courtroom background is undecided. Nothing here is
-# cleared for a public repository — see "Courtroom background art" in
-# ISSUES.md. Remove this rule along with the art that replaces it.
-runtime/frontend/src/img/
+# Scratch artwork. This repository is public, and src/img/ holds reference
+# images that are not cleared for it -- courtroom.png is the Ace Attorney
+# courtroom, (c) Capcom, kept locally while the room was being drawn (see
+# "Courtroom background art" in ISSUES.md). The rule stays for that reason.
+#
+# The favicon source is the exception: it is the project's own emblem, and
+# the icons under public/ are generated from it by
+# scripts/build_favicons.py, which cannot run without it.
+# Written as a contents glob, not `src/img/`: git does not descend into an
+# excluded directory, so a negation inside one never takes effect.
+runtime/frontend/src/img/*
+!runtime/frontend/src/img/favicon.png
