@@ -85,10 +85,14 @@ make reindex   # drop the collection and rebuild
 The runtime stack must be up before `make index` — the indexer writes into its
 Qdrant.
 
-> **Not yet implemented.** Both are scaffolded with the structure and TODOs in
-> place; see [corpus.md](corpus.md) and [ISSUES.md](../ISSUES.md). Until they
-> are done, retrieval returns nothing and every citation resolves as
-> `out_of_corpus`.
+Both are built and tested; see [corpus.md](corpus.md). The corpus is a
+per-machine artifact (ADR 0007): `data/cache/` and `data/index/` are gitignored,
+and a fresh clone gets the small placeholder index that `setup.sh` copies from
+`corpus/stub/`. Against that index most citations resolve `out_of_corpus`,
+which reflects the index's size, not fabrication.
+
+Embedding is memory-hungry. On a machine with 16GB or less, `make index-local`
+runs the indexer on the host under a memory cap.
 
 Run `make reindex` whenever chunking or the embedding model changes — a
 collection built with one embedding model is meaningless when queried with
