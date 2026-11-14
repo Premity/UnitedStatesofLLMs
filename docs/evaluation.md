@@ -84,6 +84,10 @@ from retrieval so the system cannot read the answer back.
 Tuning against the test set produces a system that looks good and generalises to
 nothing. Keep the split.
 
+**The current scored run has no held-out set.** It uses three dev cases, with
+three more as a stretch (ADR 0012), all seen during prompt tuning. The write-up
+says so; nothing in it measures generalisation.
+
 ---
 
 ## Metrics
@@ -117,11 +121,19 @@ Brier score, not instead of it.
 | Metric | Meaning |
 | --- | --- |
 | **Validity rate** | Share of citations that resolved cleanly |
-| **Fabrication rate** | Share that pointed at an indexed instrument but did not exist there |
+| **Fabrication rate** | Share that pointed at an indexed instrument but did not exist there (`unresolved`) |
+| **Misquote rate** | Share whose locator exists but whose quoted words did not match it (`misquoted`) |
 
-`out_of_corpus` is excluded from the fabrication rate. Citing real authority we
-have not indexed is not fabrication, and conflating them makes the number
+`out_of_corpus` is excluded from both rates' denominators. Citing real authority
+we have not indexed is not fabrication, and conflating them makes the number
 meaningless.
+
+`misquoted` is reported apart from fabrication, not inside it. A locator either
+exists or it does not; that is an exact lookup. The quote check is a loose
+token-overlap heuristic (ADR 0004): it flags a verbatim quote whose punctuation
+differs from the source, and it passes a quote that drops a "not". Folding it
+into the headline would put that noise into the number the project is judged on.
+A misquote still lowers the validity rate, since only `resolved` counts as valid.
 
 Expect arm A (no retrieval) to fabricate most. If it does not, that is a finding
 worth investigating rather than celebrating.
@@ -154,7 +166,9 @@ it is the soft metric.
 ## Statistical honesty
 
 With 40–80 cases, differences between arms C and D carry **wide confidence
-intervals**.
+intervals**. With the three cases actually scored (ADR 0012) there is no
+meaningful interval at all: the report compares arms case by case, and makes no
+claim of a difference between them.
 
 - Report bootstrap CIs (`bootstrap_ci` in `calibration.py`), not bare means
 - A three-point gap with overlapping intervals is not a result
@@ -168,17 +182,22 @@ project whose entire premise is that overconfidence is dangerous.
 ## Running it
 
 ```bash
-make eval                       # every implemented arm (A-D)
-make eval-arm ARM=full_council  # one arm
+make eval ARGS="--case icty_galic_terror"   # all five arms on one core case
+make eval ARGS="--tier stretch --case icty_martic_zagreb"   # a stretch case
+make eval-arm ARM=full_council  # one arm over the core tier
 make eval-report                # rebuild the report from existing results
 ```
 
 Slow and quota-consuming. Never part of CI.
 
-**Budget:** with 60 cases × 4 arms, arms C and D use several judge calls each.
-Gemini AI Studio's free tier is 100 requests/day, so a full run spans multiple
-days — or point the judge at a local model for iteration and use the API model
-only for the final scored run. Record which, because it changes the result.
+**Budget:** one case through all five arms is up to 8 judge calls (A 1, B 1,
+C 2, D 3, E 1). The judge's free tier is 50 requests/day across the OpenRouter
+account, and the harness caps itself at 40. Before a live run it reserves three
+attempts per expected call, 24 for one case, and refuses to start if that would
+pass the cap. So run **one case per invocation**: about two cases a day, the
+core three over two days, stretch cases with what is left. A local judge for
+iteration costs no quota but changes the result, so the report records which
+backend ran.
 
 Arm E will not add judge calls in proportion to its sample count: it aggregates
 *n* presenter samples and judges once, so its cost sits close to arm B's. Its

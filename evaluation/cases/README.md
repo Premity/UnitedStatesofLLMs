@@ -31,5 +31,10 @@ from retrieval so the system cannot simply read the answer back.
 
 ## Target size
 
-40–80 cases. Below roughly 40, bootstrap intervals are so wide that no
-comparison between arms will be meaningful.
+**The current scored run is three of the dev cases, with three more as a
+stretch** (ADR 0012, `CORE_CASE_IDS` and `STRETCH_CASE_IDS` in
+`harness/cases.py`). That is a demonstration, not a statistical comparison.
+
+For an evaluation meant to support a claim about the arms: 40–80 cases. Below
+roughly 40, bootstrap intervals are so wide that no comparison between arms will
+be meaningful.

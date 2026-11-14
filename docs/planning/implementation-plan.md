@@ -259,7 +259,7 @@ number the report will contain. Fully independent of other tracks — start day 
 ### T2-4 · Decide the Arm E aggregation rule (D3) — `S`
 
 - **Depends on** nothing
-- **Touches** `docs/adr/0009-self-consistency-arm.md` (new)
+- **Touches** `docs/adr/0011-self-consistency-arm.md` (new)
 - **Done when** the ADR states the sampling temperature, how *n* is derived from
   arm D's call count, and the aggregation rule (majority vote with agreement
   rate as confidence is the obvious start)
@@ -378,8 +378,9 @@ finds the breakages before they cost quota.
 
 - **Depends on** T4-4, TF complete
 - **Touches** `data/eval/`, `evaluation/reports/`
-- **Done when** all five arms have run over the held-out set with the API judge,
-  and the report records which judge backend was used
+- **Done when** all five arms have run over the three core cases with the API
+  judge (ADR 0012; there is no held-out set), and the report records which
+  judge backend was used
 
 > **This is quota-bound, not effort-bound.** 50 judge requests/day, shared across
 > the OpenRouter account. See

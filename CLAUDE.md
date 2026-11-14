@@ -151,15 +151,20 @@ tree, not prose. Everything they cannot check is on you.
 
 ## Current state
 
-Audited 2026-11-09 against the tree, not against this file's previous claims.
+Audited 2026-11-09 against the tree, not against this file's previous claims;
+evaluation lines updated 2026-11-14.
 
-**Built and tested** (311 tests: 159 Python, 152 frontend): the domain model,
+**Built and tested** (514 tests: 362 Python, 152 frontend): the domain model,
 citation resolver, LLM gateway, prompts, LangGraph orchestrator, SSE, run
 persistence, the corpus fetcher, the indexer, the frontend courtroom,
-transcript, dissent log, replay and theming.
+transcript, dissent log, replay and theming, and the evaluation harness (runner,
+report, quota tracking, arms A–E).
 
-**Not built:** the evaluation runner (`run.py`, `report.py`), arm E, the case
-picker, and the case fixture set (1 of a target 40–80).
+**Not built:** the case picker (GitHub #17).
+
+**Not yet run:** arms B–E live, and the scored evaluation. Its scope is three dev
+cases, with three more as a stretch if quota allows (ADR 0012); the work left is
+GitHub #22–#28. Don't plan around 40–80 cases or propose writing fixtures.
 
 **The corpus is a per-machine artifact.** `data/cache/` and `data/index/` are
 gitignored (ADR 0007): the corpus travels as manifests, and each machine

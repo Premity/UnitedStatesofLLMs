@@ -227,6 +227,7 @@ editing `build_graph()` and restarting the process.
 | --- | --- | --- | --- |
 | `run_id` | `str` | last-write | initial |
 | `config` | `DebateConfig` | last-write | initial |
+| `excluded_case_id` | `str \| None` | last-write | initial (evaluation harness) |
 | `context` | `list[ResolvedCitation]` | last-write | `retrieve` |
 | `current_round` | `int` | last-write | `present` |
 | `turns` | `list[Turn]` | **`operator.add`** | all nodes |
@@ -673,6 +674,9 @@ These do not raise. They corrupt results quietly and are therefore listed in
 | 6 | Prompt inlined in Python | Untracked provenance | §10.4 |
 | 7 | Unbounded rounds | Quota drained in minutes | §5.3; tests |
 | 8 | Network in `make test` | Non-hermetic CI | `@pytest.mark.live` |
+| 9 | Arm E runs without a valid same-case Arm D result | Compute matching silently guessed | Refuse missing, unreadable or errored D result; harness tests |
+| 10 | Unreadable quota log treated as zero usage | Daily guard can be bypassed | Raise `QuotaLogReadError`; API-run test |
+| 11 | Corrupt result silently skipped during resume | Completed results can be lost or repeated | Warn and retry the case; resume test |
 
 ---
 

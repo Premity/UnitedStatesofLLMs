@@ -5,12 +5,18 @@ work — genuine slack, but it is not evenly usable.
 
 Tasks are in [implementation-plan.md](implementation-plan.md).
 
+> **Superseded on scope, 2026-11-14.** The scored run is three cases, with three
+> more as a stretch ([ADR 0012](../adr/0012-three-case-evaluation.md)), and the
+> judge quota is 50/day, not 100. The quota arithmetic below is corrected; the
+> day-by-day schedule is kept as the record of the original plan.
+
 ---
 
 ## The one hard constraint
 
-**The judge's free tier is 100 requests per day.** No amount of people changes
-this. It is wall-clock time, not effort.
+**The judge's free tier is 50 requests per day**, shared across the OpenRouter
+account; the harness caps itself at 40. No amount of people changes this. It is
+wall-clock time, not effort.
 
 The judge runs once per round, so judge calls per case:
 
@@ -23,14 +29,17 @@ The judge runs once per round, so judge calls per case:
 | E `self_consistency` | 1 | 1 |
 | | | **8 per case** |
 
-| Cases | Judge calls | Days at 100/day |
-| --- | --- | --- |
-| 20 | 160 | 1.6 |
-| 40 | 320 | 3.2 |
-| **60** | **480** | **~5** |
+The harness reserves three attempts per expected call before it starts, 24 for
+one case, so about two cases fit in a day.
 
-A 60-case scored run needs **five clear days**, and that assumes nothing fails
-midway. Budget seven.
+| Cases | Judge calls | Days |
+| --- | --- | --- |
+| **3 (core)** | **24** | **2** |
+| 6 (core + stretch) | 48 | 3–4 |
+| 60 (the original plan) | 480 | ~30 |
+
+The original plan assumed 100 requests/day and 60 cases; at 50/day that is a
+month, which is why the scope was cut.
 
 ### What follows
 

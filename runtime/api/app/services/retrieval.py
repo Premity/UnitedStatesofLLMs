@@ -18,6 +18,7 @@ from functools import lru_cache
 import structlog
 from fastembed import TextEmbedding
 from qdrant_client import AsyncQdrantClient
+from qdrant_client.models import FieldCondition, Filter, MatchValue
 
 from app.core.config import get_settings
 from council_core.models.citation import (
@@ -55,20 +56,36 @@ class RetrievalService:
 
         return await asyncio.to_thread(_encode)
 
-    async def search(self, query: str, *, top_k: int = 8) -> list[ResolvedCitation]:
+    async def search(
+        self,
+        query: str,
+        *,
+        top_k: int = 8,
+        excluded_case_id: str | None = None,
+    ) -> list[ResolvedCitation]:
         """Retrieve the most relevant corpus spans for a query."""
         vector = await self.embed(query)
 
+        query_filter = (
+            Filter(
+                must_not=[FieldCondition(key="case_id", match=MatchValue(value=excluded_case_id))]
+            )
+            if excluded_case_id
+            else None
+        )
         results = await self._client.query_points(
             collection_name=self._collection,
             query=vector,
             limit=top_k,
             with_payload=True,
+            query_filter=query_filter,
         )
 
         spans: list[ResolvedCitation] = []
         for point in results.points:
             payload = point.payload or {}
+            if excluded_case_id and payload.get("case_id") == excluded_case_id:
+                continue
             spans.append(
                 ResolvedCitation(
                     citation=Citation(
@@ -114,7 +131,13 @@ class StubRetrievalService:
             raise FileNotFoundError(f"Stub retrieval needs a citation index at {self._path}.")
         return json.loads(self._path.read_text(encoding="utf-8")).get("entries", {})
 
-    async def search(self, query: str, *, top_k: int = 8) -> list[ResolvedCitation]:
+    async def search(
+        self,
+        query: str,
+        *,
+        top_k: int = 8,
+        excluded_case_id: str | None = None,
+    ) -> list[ResolvedCitation]:
         """Return the index entries sharing the most words with the query."""
         query_tokens = set(query.lower().split())
         ranked = sorted(
@@ -129,10 +152,11 @@ class StubRetrievalService:
                 corpus_text=entry["text"],
                 source_url=entry.get("source_url"),
             )
-            for locator, entry in ranked[:top_k]
+            for locator, entry in ranked
+            if not (excluded_case_id and locator.startswith(f"{excluded_case_id}/"))
         ]
         log.warning("retrieval_stub_used", returned=len(spans), index=str(self._path))
-        return spans
+        return spans[:top_k]
 
     async def health(self) -> bool:
         """Whether the stub index file exists."""

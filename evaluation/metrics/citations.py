@@ -34,11 +34,28 @@ class CitationMetrics:
 
     @property
     def fabrication_rate(self) -> float:
-        """Share that pointed at an indexed instrument but did not exist there.
+        """Share of eligible citations that are unresolved (ADR 0004).
 
-        The headline anti-hallucination number.
+        `misquoted` is deliberately not counted. Whether a locator exists is an
+        exact lookup; whether a quotation matches is a loose token-overlap
+        heuristic that flags verbatim quotes differing only in punctuation and
+        passes quotes that drop a "not". Counting it would put that heuristic's
+        noise into the headline number, so it is reported apart, as
+        `misquote_rate`. Out-of-corpus citations are excluded from both the
+        numerator and the denominator.
         """
-        return (self.unresolved + self.misquoted) / self.total if self.total else float("nan")
+        eligible = self.total - self.out_of_corpus
+        return self.unresolved / eligible if eligible else float("nan")
+
+    @property
+    def misquote_rate(self) -> float:
+        """Share of eligible citations whose quoted words did not match the source.
+
+        Same denominator as `fabrication_rate`, so the two read side by side.
+        A citation that quotes nothing can never be misquoted.
+        """
+        eligible = self.total - self.out_of_corpus
+        return self.misquoted / eligible if eligible else float("nan")
 
 
 def measure_citations(resolved: list[ResolvedCitation]) -> CitationMetrics:

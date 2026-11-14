@@ -121,8 +121,10 @@ Scored against adjudicated cases where a tribunal's holding is the ground truth:
 - **Citation validity** — what fraction of citations resolve? Fully automatic.
 - **Attacker independence** — do the two attackers actually raise different objections?
 
-With 40–80 cases the confidence intervals are wide, so the harness reports
-bootstrap intervals and we do not oversell small gaps.
+The scored evaluation is **three cases**, with three more if quota allows
+([ADR 0012](docs/adr/0012-three-case-evaluation.md)). That shows the method
+running end to end and what each arm did on each case. It cannot show a
+statistical difference between arms, and the write-up does not claim one.
 
 ---
 
@@ -159,7 +161,7 @@ Run `make help` for everything else.
 
 **This is a scaffold under active construction.** The domain model, debate
 graph, roles, API, frontend and corpus pipeline are written and have run end to
-end against live models. The evaluation has not run yet.
+end against live models. Only arm A has run through the evaluation harness; the scored run has not.
 
 | Area | State |
 | --- | --- |
@@ -168,8 +170,8 @@ end against live models. The evaluation has not run yet.
 | Frontend courtroom, record, replay, theming | Written, tested, run against a live stream |
 | Corpus fetcher and indexer | Written, tested, run |
 | Evaluation metrics | Written, tested |
-| Evaluation harness runner | **Not started** — no `run.py`, no report |
-| Arm E, the compute-matched control | **Not started** |
+| Evaluation harness runner and report | Written, tested; arm A run on 7 dev cases |
+| Arm E, the compute-matched control | Written, tested; not yet run live |
 
 The corpus is a **per-machine build artifact**: `data/cache/` and `data/index/`
 are gitignored, so the corpus travels as manifests and each machine resolves

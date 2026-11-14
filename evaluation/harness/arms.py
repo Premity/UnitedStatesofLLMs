@@ -31,6 +31,41 @@ class Arm:
         return len(self.attackers) == 0
 
 
+@dataclass(frozen=True)
+class SelfConsistencyArm(Arm):
+    """Arm E: Compute-matched self-consistency control (ADR 0011).
+
+    Samples the presenter alone with retrieval multiple times at temperature 0.7,
+    aggregates via majority voting with agreement rate as confidence, and passes
+    the aggregate to the judge once.
+
+    The sample count `samples` (n) is derived per case from Arm D's actual call
+    count on the same case, ensuring total model calls match Arm D within ±1.
+    """
+
+    samples: int | None = None
+    temperature: float = 0.7
+
+    def with_samples(self, n: int) -> SelfConsistencyArm:
+        """Return a copy of this arm configured with n samples."""
+        return SelfConsistencyArm(
+            key=self.key,
+            label=self.label,
+            description=self.description,
+            retrieval_enabled=self.retrieval_enabled,
+            attackers=self.attackers,
+            max_rounds=self.max_rounds,
+            samples=n,
+            temperature=self.temperature,
+        )
+
+    def for_case(self, d_calls: int, *, has_judge: bool = True) -> SelfConsistencyArm:
+        """Derive sample count from Arm D's call count on the same case."""
+        from harness.sampling import derive_sample_count
+
+        return self.with_samples(derive_sample_count(d_calls, has_judge=has_judge))
+
+
 ARMS: dict[str, Arm] = {
     "raw": Arm(
         key="raw",
@@ -76,5 +111,19 @@ ARMS: dict[str, Arm] = {
         retrieval_enabled=True,
         attackers=(Role.ATTACKER_DOCTRINAL, Role.ATTACKER_EVIDENTIARY),
         max_rounds=3,
+    ),
+    "self_consistency": SelfConsistencyArm(
+        key="self_consistency",
+        label="E — Self-consistency control (compute-matched)",
+        description=(
+            "Presenter sampled n times with retrieval (temperature 0.7), majority-vote "
+            "aggregated, then evaluated once by the judge. Matches Arm D's total model calls "
+            "on each case to isolate multi-agent debate from pure compute scaling."
+        ),
+        retrieval_enabled=True,
+        attackers=(),
+        max_rounds=1,
+        samples=None,
+        temperature=0.7,
     ),
 }

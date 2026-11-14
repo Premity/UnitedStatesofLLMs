@@ -54,6 +54,11 @@ Authority:
 
 Rule on every objection listed above, then state your conclusion.
 
+Begin the conclusion with **"Yes."**, **"No."**, or **"Indeterminate."** to
+answer the question directly. Use "Yes" when the proposition in the question is
+affirmed and "No" when it is rejected; use "Indeterminate" only when the
+question cannot be resolved on the arguments and facts provided.
+
 Note the citation status markers. A citation marked `unresolved` or `misquoted`
 did not check out against the corpus — the argument or objection resting on it
 is unsupported, and you should say so.

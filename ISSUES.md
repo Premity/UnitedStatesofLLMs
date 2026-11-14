@@ -17,29 +17,26 @@ local citation status.
 | Item below | Track |
 | --- | --- |
 | Run artifact does not record its corpus | T1 / T4 — GitHub #24 |
-| Evaluation harness runner | T4-1, T4-2, T4-3 — GitHub #19, #21 |
-| Arm E — the compute-matched control | T2-4, T2-5 — GitHub #21 |
-| Evaluation case fixtures | TF — GitHub #21 |
 | Case picker for the question form | T3 / TF — GitHub #17 |
 
 ---
 
 ## What is left, in order
 
-Audited 2026-11-09. The critical path is one item long: **nothing can be
-measured until the evaluation runner exists.** Everything below it is either
-blocked on that or cosmetic beside it.
+Updated 2026-11-14. The harness exists and the scope is three cases (ADR 0012).
+The critical path is the report changes, a one-case rehearsal, then the scored
+run.
 
 | # | Item | Why it is where it is |
 | --- | --- | --- |
-| 1 | **Evaluation harness runner** | `run.py` and `report.py` do not exist. The arms, the case schema and all three metrics are written and tested; nothing drives arms over cases. Also needs retrieval exclusion for a case's own `source_case_id`, or a case leaks its own judgment into its evidence |
-| 2 | **Arm E — the compute-matched control** | Without it, D-vs-B cannot separate adversarial structure from simply spending more compute, which is *the* standing criticism of the multi-agent debate literature. Objective 2 is stated against this baseline, so the headline claim is unfalsifiable until E runs |
-| 3 | **Case fixtures: 1 of a target 40–80** | Below ~40 the bootstrap intervals are too wide for any arm comparison to mean anything. Team task, and the long pole in wall-clock terms |
+| 1 | **Report fit for three cases** | Per-case arm comparison instead of bootstrap intervals, which are meaningless at n = 3. GitHub #22 |
+| 2 | **Arms C and D differ in rounds as well as attackers** | Match them or state it. GitHub #23 |
+| 3 | **Rehearsal, then the scored run** | All five arms live on one case first, then the three. GitHub #25, #26 |
 | 4 | **Run artifacts do not record their corpus** | Citation statuses are only interpretable against a known corpus, and nothing in an artifact says which one scored it. Becomes a correctness problem the moment two machines' results are compared. GitHub #24 |
 | 5 | **Case picker for the question form** | Needs an ADR first: `runtime/api` does not depend on `evaluation`, so a case endpoint either inverts that or duplicates the loader. And the ground truth must never reach the browser. GitHub #17 |
 | 6 | **Severity-weighted metrics** | `Objection.severity` now exists and nothing weighs objections by it. GitHub #28 |
 
-Items 1–3 are GitHub #19 and #21. Two open decisions that do not block the
+Two open decisions that do not block the
 above: **reasoning-overlap scoring** (GitHub #27) and a **hosted demo** target,
 which has none chosen (GitHub #18).
 
@@ -132,23 +129,20 @@ designed behaviour and distinct from `unresolved` (ADR 0004).
 
 ---
 
-### [MEDIUM] Evaluation harness runner
+### [RESOLVED] Evaluation harness runner
 
-`evaluation/harness/` has the arms and the case schema. Missing:
-
-- `run.py` — drives arms over cases, writes results to `data/eval/`
-- Retrieval exclusion for a case's own `source_case_id`
-- `metrics/report.py` — the HTML/Markdown report
-- Reasoning-overlap scoring (rubric or LLM judge)
-
-Metrics themselves (calibration, independence, citations) are implemented.
+`evaluation/harness/run.py` drives arms over cases and writes results to
+`data/eval/`, with retrieval exclusion for a case's own `source_case_id` and a
+judge-quota tracker (`quota.py`). `evaluation/metrics/report.py` writes the
+Markdown report. Reasoning-overlap scoring is still open: GitHub #27.
 
 ---
 
-### [MEDIUM] Arm E — the compute-matched control
+### [RESOLVED] Arm E — the compute-matched control
 
-`evaluation/harness/arms.py` defines arms A–D. Arm E, the self-consistency
-control, is specified but not written.
+Written: `evaluation/harness/sampling.py`, decided in ADR 0011. Not yet run
+live; the rehearsal (GitHub #25) is its first run. The original specification
+follows.
 
 It runs the presenter alone with retrieval, samples it *n* times at a
 temperature that produces genuine variation, and aggregates the samples into one
@@ -175,11 +169,12 @@ See [docs/evaluation.md](docs/evaluation.md) for the full ladder.
 
 ---
 
-### [MEDIUM] Evaluation case fixtures
+### [RESOLVED] Evaluation case fixtures
 
-One sample case in `evaluation/cases/dev/`. Target is 40–80, split dev /
-held-out. Below ~40 the bootstrap intervals are too wide for any arm comparison
-to mean anything.
+Seven dev cases, no held-out set. The target of 40–80 was cut: the scored run is
+three of the seven, with three more as a stretch (ADR 0012). Below ~40 the
+bootstrap intervals are too wide for any arm comparison to mean anything, so the
+results are a demonstration, not a statistical comparison.
 
 Team task — see [docs/evaluation.md](docs/evaluation.md) for how to write one
 without leaking the holding into the facts.

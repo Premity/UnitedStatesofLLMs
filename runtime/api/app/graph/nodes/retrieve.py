@@ -28,7 +28,11 @@ async def retrieve(state: GraphState) -> GraphState:
 
     service = get_retrieval_service()
     query = f"{config.question}\n\n{config.facts}".strip()
-    context = await service.search(query, top_k=config.top_k)
+    context = await service.search(
+        query,
+        top_k=config.top_k,
+        excluded_case_id=state.get("excluded_case_id"),
+    )
 
     log.info("retrieval_complete", run_id=state["run_id"], spans=len(context))
     return {"context": context}
