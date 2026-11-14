@@ -29,7 +29,6 @@ The critical path is a one-case rehearsal, then the scored run.
 | --- | --- | --- |
 | 1 | **Rehearsal, then the scored run** | All five arms live on one case first, then the three. GitHub #25, #26 |
 | 2 | **Case picker for the question form** | Needs an ADR first: `runtime/api` does not depend on `evaluation`, so a case endpoint either inverts that or duplicates the loader. And the ground truth must never reach the browser. GitHub #17 |
-| 3 | **Severity-weighted metrics** | `Objection.severity` now exists and nothing weighs objections by it. GitHub #28 |
 
 One open decision that does not block the above: **reasoning-overlap scoring**
 (GitHub #27).
@@ -744,8 +743,11 @@ Pinned by `test_an_objection_recorded_before_severity_existed_still_loads`.
 changed. Runs scored before and after are not prompt-comparable — relevant
 when the evaluation ladder is run, per ADR 0009's roster freeze.
 
-Still open: the evaluation metrics do not yet weigh objections by severity.
-The data is now there to do it.
+The evaluation report now reads it (GitHub #28): per arm, sustained and
+overruled objections at each severity, with *not stated* counted apart from
+`minor` and overruled `fatal` objections called out. A count per step rather
+than a weighted score, since nobody can justify the weights.
+Pinned by `test_severity_breakdown_counts_not_stated_apart_from_minor`.
 
 ---
 
