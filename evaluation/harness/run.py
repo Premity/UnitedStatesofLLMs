@@ -53,6 +53,7 @@ from app.roles.judge import JudgeRole
 from app.roles.presenter import PresenterRole
 from app.services.retrieval import get_retrieval_service
 from council_core.llm import CouncilLLM
+from council_core.models.case import Case, Outcome
 from council_core.models.citation import CitationStatus, ResolvedCitation
 from council_core.models.debate import (
     Argument,
@@ -64,7 +65,7 @@ from council_core.models.debate import (
     Verdict,
 )
 from harness.arms import ARMS, Arm, SelfConsistencyArm
-from harness.cases import TIERS, EvaluationCase, Outcome, load_cases, select_cases
+from harness.cases import TIERS, load_cases, select_cases
 from harness.quota import (
     MAX_DAILY_QUOTA,
     QuotaExceededError,
@@ -307,7 +308,7 @@ class MockJudgeRole:
 
 async def _run_standard_arm(
     arm: Arm,
-    case: EvaluationCase,
+    case: Case,
     *,
     judge_backend: str,
     output_dir: Path,
@@ -479,7 +480,7 @@ def _load_arm_d_call_count(output_dir: Path, case_id: str) -> int:
 
 async def _run_arm_e(
     arm: SelfConsistencyArm,
-    case: EvaluationCase,
+    case: Case,
     *,
     judge_backend: str,
     output_dir: Path,
@@ -612,7 +613,7 @@ async def _run_arm_e(
 
 async def run_case(
     arm: Arm,
-    case: EvaluationCase,
+    case: Case,
     *,
     judge_backend: str,
     output_dir: Path,
@@ -770,7 +771,7 @@ def resolve_arm(arm_identifier: str) -> Arm:
 async def run_evaluation(
     *,
     arms: list[Arm],
-    cases: list[EvaluationCase],
+    cases: list[Case],
     judge_backend: str,
     output_dir: Path,
     quota_tracker: QuotaTracker,
@@ -818,7 +819,7 @@ async def run_evaluation(
     )
 
     # Calculate pending cases taking resume into account
-    pending_tasks: list[tuple[Arm, EvaluationCase]] = []
+    pending_tasks: list[tuple[Arm, Case]] = []
     for arm in arms:
         arm_dir = output_dir / arm.key
         arm_dir.mkdir(parents=True, exist_ok=True)
@@ -1067,7 +1068,7 @@ async def async_main(args: argparse.Namespace) -> None:
     if args.cases_dir:
         cases = []
         for p in sorted(args.cases_dir.glob("*.json")):
-            cases.append(EvaluationCase.model_validate(json.loads(p.read_text(encoding="utf-8"))))
+            cases.append(Case.model_validate(json.loads(p.read_text(encoding="utf-8"))))
     else:
         try:
             cases = select_cases(load_cases(held_out=False), tier=args.tier, case_ids=args.case_ids)
