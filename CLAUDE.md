@@ -154,7 +154,7 @@ tree, not prose. Everything they cannot check is on you.
 Audited 2026-11-09 against the tree, not against this file's previous claims;
 evaluation lines updated 2026-11-14.
 
-**Built and tested** (561 tests: 403 Python, 158 frontend): the domain model,
+**Built and tested** (563 tests: 405 Python, 158 frontend): the domain model,
 citation resolver, LLM gateway, prompts, LangGraph orchestrator, SSE, run
 persistence, the corpus fetcher, the indexer, the frontend courtroom,
 transcript, dissent log, replay and theming, the case picker, and the
