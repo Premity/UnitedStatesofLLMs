@@ -109,7 +109,9 @@ class CouncilLLM:
         """
         try:
             async with asyncio.timeout(self._config.total_timeout_seconds):
-                return await self._complete_with_retry(system=system, user=user, seed=seed)
+                return await self._complete_with_retry(
+                    system=system, user=user, seed=seed, response_format=response_format
+                )
         except TimeoutError:
             log.error(
                 "llm_total_timeout",
@@ -137,6 +139,7 @@ class CouncilLLM:
         system: str,
         user: str,
         seed: int | None = None,
+        response_format: dict[str, str] | None = None,
     ) -> ModelResponse:
         """One completion request, retried on transport failure.
 
