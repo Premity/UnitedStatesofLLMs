@@ -54,6 +54,8 @@ services:
       CLOUDFLARE_ACCOUNT_ID: "${CLOUDFLARE_ACCOUNT_ID:-}"
     volumes:
       - ./data:/data
+      # The picker's cases. Dev only: held_out/ is scored once and not served.
+      - ./evaluation/cases/dev:/cases/dev:ro
     networks:
       - council-net
     # Lets the container reach an Ollama running on the host. On Linux this
