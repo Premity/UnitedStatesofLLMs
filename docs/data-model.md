@@ -184,7 +184,12 @@ it.
 
 ## Evaluation types
 
-### `EvaluationCase`
+### `Case`
+
+Defined in `council_core.models.case`, not in `evaluation/`, so the API can
+parse a case file without importing the harness (ADR 0013). The tiers
+(`CORE_CASE_IDS`, `STRETCH_CASE_IDS`) and the loaders stay in
+`evaluation/harness/cases.py`.
 
 | Field | Shown to the system? |
 | --- | --- |
@@ -192,6 +197,14 @@ it.
 | `holding`, `outcome`, `key_reasoning` | **Never** — ground truth |
 | `difficulty` | No — used for breakdowns |
 | `source_case_id` | No — excluded from retrieval so the answer cannot be read back |
+
+### `PublicCase`
+
+What `Case.public()` returns, and what `GET /cases` serves: `id`, `title`,
+`court`, `year`, `question`, `facts`, `difficulty`. A separate model rather than
+a filtered dump of `Case`, so a field added to `Case` stays out of it until
+added here on purpose. A test fails if any field in the table above marked
+ground truth appears in it.
 
 ### Evaluation result
 

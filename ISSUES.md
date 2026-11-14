@@ -14,10 +14,6 @@ local citation status.
 > This file records *what* is missing; the plan records *who does it when* and
 > what "done" means.
 
-| Item below | Track |
-| --- | --- |
-| Case picker for the question form | T3 / TF — GitHub #17 |
-
 ---
 
 ## What is left, in order
@@ -28,7 +24,6 @@ The critical path is a one-case rehearsal, then the scored run.
 | # | Item | Why it is where it is |
 | --- | --- | --- |
 | 1 | **Rehearsal, then the scored run** | All five arms live on one case first, then the three. GitHub #25, #26 |
-| 2 | **Case picker for the question form** | Needs an ADR first: `runtime/api` does not depend on `evaluation`, so a case endpoint either inverts that or duplicates the loader. And the ground truth must never reach the browser. GitHub #17 |
 
 One open decision that does not block the above: **reasoning-overlap scoring**
 (GitHub #27).
@@ -670,18 +665,28 @@ moves every piece of furniture relative to the figures standing at it. The
 courtroom is therefore outside the column the dissent log toggles, and the
 scene box must not take an aspect ratio. Both are pinned by tests.
 
-### [MEDIUM] Case picker for the question form
+### [RESOLVED] Case picker for the question form (GitHub #17)
 
-`evaluation/cases/dev/*.json` holds prepared cases — question, facts, and the
-tribunal's actual holding — but nothing exposes them to the UI, so a question
-has to be typed by hand. Two constraints:
+`evaluation/cases/dev/*.json` holds prepared cases, and the question form had no
+way to load one. Two constraints shaped the fix (ADR 0013): a case file holds
+the tribunal's holding, which must never reach the browser, and `runtime/api`
+does not depend on `evaluation`.
 
-- **The case file contains the ground truth.** `holding`, `outcome` and
-  `key_reasoning` must never reach the browser, or the demo shows the answer
-  next to the question.
-- `runtime/api` does not depend on `evaluation`; both depend only on
-  `council-core`. A case endpoint either inverts that or duplicates the
-  loader. Worth an ADR.
+The case schema moved into `council-core` (`council_core.models.case`), which
+both already depend on. `Case.public()` returns a separate `PublicCase` —
+question and facts, nothing else — and `GET /cases` and `GET /cases/{id}` serve
+only that. A field added to `Case` later is withheld by default. Tests pin that
+no ground-truth field or value reaches a response, against both a fixture with
+sentinel values and the shipped dev files.
+
+Things worth knowing:
+
+- The API reads `evaluation/cases/dev` by path, mounted read-only at
+  `/cases/dev`. A deployment without the mount serves an empty list and the
+  form shows no picker.
+- Only `dev/` is served. `held_out/` is scored once and not offered to anyone
+  tuning prompts.
+- The picker fills the boxes; they stay editable.
 
 ### [RESOLVED] `role_started` stream event
 
