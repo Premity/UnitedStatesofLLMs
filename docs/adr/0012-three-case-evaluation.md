@@ -52,8 +52,9 @@ and what each arm did on each case. Read per case, the dissent logs are the
 deliverable either way.
 
 **What they cannot claim:** any statistical difference between arms. Three cases
-give 10 distinct bootstrap resamples, so an interval over them is meaningless
-(GitHub #22 drops it).
+give 10 distinct bootstrap resamples, so an interval over them is meaningless.
+The report prints none below 10 completed cases and compares the arms case by
+case instead.
 
 **Stated in the write-up, not fixed:**
 
