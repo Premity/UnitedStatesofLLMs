@@ -37,11 +37,11 @@ The presenter is sampled at **`temperature = 0.7`**.
 
 At $T = 0.0$, repeated sampling collapses into greedy decoding, generating *n*
 identical outputs and reducing Arm E to Arm B. At high temperatures ($T \ge 1.0$),
-models frequently produce invalid JSON, hallucinated legal provisions, or
-incoherent doctrinal arguments. $T = 0.7$ strikes the empirical sweet spot
-established in self-consistency literature: sufficient exploration of alternative
-legal characterisations while maintaining rigorous structured output and prompt
-adherence.
+models are more likely to produce invalid JSON or incoherent arguments. $T = 0.7$
+is the project's choice between those two failures, not a value tuned on this
+task or taken from a source: enough variation for the samples to disagree, low
+enough that structured output survives. If samples on a case are near-identical,
+or fail to parse, that is the first thing to revisit.
 
 ### 2. Derivation of *n* from Arm D's call count
 
@@ -54,8 +54,14 @@ In Arm D, each round executes 4 model calls:
 - 1 Evidentiary Attacker
 - 1 Judge
 
-Over $R$ rounds ($R \in \{1, 2, 3\}$), Arm D makes $C_D = 4 \times R$ model calls
-(recorded as `len(state.turns)`).
+Over $R$ rounds ($R \in \{1, 2, 3\}$), Arm D records $C_D = 4 \times R$ turns
+(`len(state.turns)`), and $C_D$ is taken from that count.
+
+A turn is not quite a model call. A structured-output repair re-prompts the
+model once without producing a turn, so D's real call count can exceed $C_D$.
+Matching on turns therefore gives Arm E at most D's compute, never more: the
+comparison can only be tilted against E, which is the safe direction for a
+control.
 
 In Arm E, the presenter is sampled $n$ times with retrieval grounding. The judge
 then evaluates the aggregated position once ($1$ model call). To equate total
@@ -66,9 +72,9 @@ $$\text{total\_calls}(D) = C_D$$
 $$n = \max(1, C_D - 1)$$
 
 If Arm D terminates in round 1 ($C_D = 4$), Arm E draws $n = 3$ presenter samples
-plus 1 judge call ($3 + 1 = 4$, exactly matching D). If Arm D goes 3 rounds
+plus 1 judge call ($3 + 1 = 4$, matching D's turns). If Arm D goes 3 rounds
 ($C_D = 12$), Arm E draws $n = 11$ presenter samples plus 1 judge call ($11 + 1 = 12$).
-In all cases, total model calls match Arm D within $\pm 1$.
+E's calls equal D's turns; against D's real calls, E is equal or slightly under.
 
 If Arm E is evaluated in a judge-free ablation configuration (`has_judge = False`),
 $n = \max(1, C_D)$, maintaining exact call parity.
@@ -97,8 +103,10 @@ $n = \max(1, C_D)$, maintaining exact call parity.
 ## Consequences
 
 **Gained:**
-- **Eliminates the compute confound:** The evaluation can definitively prove
-  whether multi-agent adversarial tension adds value beyond equal-compute sampling.
+- **Addresses the compute confound:** a D-vs-E comparison separates the effect
+  of adversarial structure from the effect of spending more calls. At the
+  three-case scope (ADR 0012) it shows what each did per case; it cannot
+  establish a difference statistically.
 - **Quota efficiency:** The expensive judge model runs only once per case in
   Arm E, preserving the strict 50 request/day OpenRouter free-tier quota.
 - **Natural calibration:** The agreement rate provides an empirical confidence
@@ -106,6 +114,8 @@ $n = \max(1, C_D)$, maintaining exact call parity.
   Brier and ECE scores.
 
 **Given up:**
+- **Turns, not calls:** repair calls are uncounted on both sides, so the match
+  is on turns (see above).
 - **Execution dependency:** Arm E cannot be run for a case until Arm D has completed
   that case, because *n* depends on D's observed round termination.
 - **Single-model family limitation:** Arm E uses only the presenter model family,
