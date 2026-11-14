@@ -789,7 +789,6 @@ as `out_of_corpus`.** This is stated in the README, `ISSUES.md`, `CLAUDE.md`, an
 
 - **Reasoning-overlap scoring** — manual rubric vs. LLM-judge (introduces a model
   into the measurement of models). GitHub #27
-- **Hosted demo target** — Cloudflare free tier supports ~30 runs/day. GitHub #18
 
 ---
 
