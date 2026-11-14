@@ -113,7 +113,9 @@ still be inspected.
 ### `GET /debate/runs?limit=50`
 
 Recent runs, newest first. Returns `RunMetadata[]` — metadata only, not full
-artifacts.
+artifacts. Each carries `corpus`, the citation index the run was scored
+against (`instruments`, `locators`, `content_hash`), or `null` for a run stored
+before it was recorded.
 
 ### `GET /debate/runs/{run_id}`
 

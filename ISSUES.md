@@ -16,7 +16,6 @@ local citation status.
 
 | Item below | Track |
 | --- | --- |
-| Run artifact does not record its corpus | T1 / T4 — GitHub #24 |
 | Case picker for the question form | T3 / TF — GitHub #17 |
 
 ---
@@ -29,9 +28,8 @@ The critical path is a one-case rehearsal, then the scored run.
 | # | Item | Why it is where it is |
 | --- | --- | --- |
 | 1 | **Rehearsal, then the scored run** | All five arms live on one case first, then the three. GitHub #25, #26 |
-| 2 | **Run artifacts do not record their corpus** | Citation statuses are only interpretable against a known corpus, and nothing in an artifact says which one scored it. Becomes a correctness problem the moment two machines' results are compared. GitHub #24 |
-| 3 | **Case picker for the question form** | Needs an ADR first: `runtime/api` does not depend on `evaluation`, so a case endpoint either inverts that or duplicates the loader. And the ground truth must never reach the browser. GitHub #17 |
-| 4 | **Severity-weighted metrics** | `Objection.severity` now exists and nothing weighs objections by it. GitHub #28 |
+| 2 | **Case picker for the question form** | Needs an ADR first: `runtime/api` does not depend on `evaluation`, so a case endpoint either inverts that or duplicates the loader. And the ground truth must never reach the browser. GitHub #17 |
+| 3 | **Severity-weighted metrics** | `Objection.severity` now exists and nothing weighs objections by it. GitHub #28 |
 
 Two open decisions that do not block the
 above: **reasoning-overlap scoring** (GitHub #27) and a **hosted demo** target,
@@ -58,8 +56,8 @@ Not a defect. Written down because it reads as one, and did: a `status:
 
 `data/cache/` and `data/index/` are gitignored (ADR 0007, tier 2). The corpus
 travels as **manifests**, not as documents — so the index each machine resolves
-against is whatever that machine last fetched, and nothing in a run artifact
-records which corpus produced it.
+against is whatever that machine last fetched. A run artifact's
+`metadata.corpus`, and an evaluation result's `corpus`, record which one.
 
 | Machine | Resolves |
 | --- | --- |
@@ -85,28 +83,19 @@ print(len(d['entries']), 'locators across', sorted(d['instruments']))"
 
 ---
 
-### [MEDIUM] A run artifact does not record which corpus scored it
+### [RESOLVED] A run artifact does not record which corpus scored it
 
-The gap the entry above exposes.
+Every run artifact (`metadata.corpus`) and evaluation result (`corpus`) now
+records the citation index it was scored against: instrument count, locator
+count, and a SHA-256 of the entries, computed when the index loads. The
+index's hand-set `version` is ignored: it said `0.1.0` for 9 instruments and
+for 23. The report refuses to pool results from different indexes, or a
+result with no record, unless given `--allow-mixed-corpora`, and then labels
+each row. Artifacts stored before this load with `corpus: null`, meaning not
+recorded.
 
-Citation statuses are only interpretable against a known corpus, and
-`citation_index.json` carries a `version` ("0.1.0") that is not written into
-run artifacts. So two machines can score the same case with the same models and
-report different fabrication rates, with nothing in either artifact explaining
-the difference — and a `0.1.0` that meant 9 instruments in October and 23 in
-November is the same string.
-
-This matters more than it looks: the fabrication rate is the project's headline
-measurement, and it is currently unreproducible across machines by inspection.
-
-Needed: the index's identity in every run artifact — instrument count, locator
-count, and a content hash rather than a hand-set version. Prompts are already
-hashed into runs for exactly this reason (non-negotiable #6); the corpus is the
-other input that decides what a result means.
-
-**Blocks:** nothing today, because scoring happens on one machine. Becomes a
-correctness problem the moment two machines' results are compared or a scored
-run is re-run after a corpus change.
+Covers the citation index only. The Qdrant collection retrieval reads from is
+built from the same documents but is not hashed.
 
 ---
 
