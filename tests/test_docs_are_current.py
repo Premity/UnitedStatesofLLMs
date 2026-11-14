@@ -161,6 +161,7 @@ def test_quoted_python_test_counts_are_not_wildly_stale() -> None:
         "packages/council-core/tests",
         "pipeline/indexer/tests",
         "pipeline/fetcher/tests",
+        "evaluation/tests",
     )
     actual = sum(
         len(re.findall(r"^\s*(?:async )?def test_", read(path), re.M))
@@ -171,13 +172,21 @@ def test_quoted_python_test_counts_are_not_wildly_stale() -> None:
     # Both phrasings the docs actually use: "159 Python tests" and the
     # "(311 tests: 159 Python, 152 frontend)" summary form.
     claimed = re.compile(r"(\d+)\s+Python(?:\s+tests?)?\b", re.I)
+    # `actual` is a floor: parametrised cases (heavy in evaluation/tests) expand
+    # at collection, so pytest's own total legitimately runs well above it. A
+    # claim may sit above the floor, up to twice it; below the floor by more
+    # than the tolerance is the usual staleness, a count left behind as tests
+    # were added.
+    lowest = actual - max(15, actual // 4)
+    highest = 2 * actual
     for doc in DOCS:
         for number, line in enumerate(read(doc).splitlines(), 1):
             for match in claimed.finditer(line):
                 stated = int(match.group(1))
-                assert abs(stated - actual) <= max(15, actual // 4), (
-                    f"{doc.relative_to(ROOT)}:{number} says {match.group(0)!r}, "
-                    f"but about {actual} Python tests exist.\n  {line.strip()}"
+                assert lowest <= stated <= highest, (
+                    f"{doc.relative_to(ROOT)}:{number} says {match.group(0)!r}, but "
+                    f"{actual} test functions exist (pytest collects more once "
+                    f"parametrised); expected {lowest}-{highest}.\n  {line.strip()}"
                 )
 
 

@@ -42,4 +42,5 @@ Keep them short. A page is plenty.
 | [0008](0008-citation-locator-format.md) | One citation locator format, sub-paragraphs inside the article | Proposed |
 | [0009](0009-presenter-on-groq.md) | The presenter runs on Groq, not Mistral | Proposed |
 | [0010](0010-corpus-identity-and-amendments.md) | Corpus ids for annexed instruments, and how amendments are carried | Proposed |
-| [0011](0011-self-consistency-arm.md) | Self-consistency control arm (Arm E) aggregation rule and compute matching | Proposed |
+| [0011](0011-self-consistency-arm.md) | Self-consistency control arm (Arm E) aggregation rule and compute matching | Accepted |
+| [0012](0012-three-case-evaluation.md) | The scored evaluation is three cases, with three more as a stretch | Accepted |

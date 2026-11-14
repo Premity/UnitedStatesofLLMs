@@ -378,8 +378,9 @@ finds the breakages before they cost quota.
 
 - **Depends on** T4-4, TF complete
 - **Touches** `data/eval/`, `evaluation/reports/`
-- **Done when** all five arms have run over the held-out set with the API judge,
-  and the report records which judge backend was used
+- **Done when** all five arms have run over the three core cases with the API
+  judge (ADR 0012; there is no held-out set), and the report records which
+  judge backend was used
 
 > **This is quota-bound, not effort-bound.** 50 judge requests/day, shared across
 > the OpenRouter account. See
