@@ -17,6 +17,17 @@ from metrics.provenance import is_synthetic_result, load_result_files
 BOOTSTRAP_RESAMPLES = 10_000
 BOOTSTRAP_SEED = 0
 
+#: Below this many completed cases an arm's intervals are not printed. A
+#: bootstrap over n cases has C(2n-1, n) distinct resamples: 10 at n = 3, 126
+#: at n = 5, 92,378 at n = 10. With a handful, the percentile interval is an
+#: artefact of resampling rather than an estimate of uncertainty. The cut-off
+#: is a choice, stated in the report header.
+MIN_CASES_FOR_INTERVALS = 10
+
+#: The ablation ladder's order (docs/evaluation.md), so the per-case table
+#: reads A to E. Mirrors `harness.arms.ARMS`; a test keeps the two in step.
+ARM_ORDER = ("raw", "rag", "single_attacker", "full_council", "self_consistency")
+
 
 def _citation_counts(result: dict[str, Any]) -> tuple[int, int, int]:
     """Return (unresolved, misquoted, eligible) for one result.
@@ -48,9 +59,16 @@ def _citation_counts(result: dict[str, Any]) -> tuple[int, int, int]:
 
 
 def _independence(result: dict[str, Any]) -> float | None:
+    """1 - Jaccard between the attackers' grounds, or None without two attackers.
+
+    Overlap needs two sides. With objections from only one attacker -- every
+    arm C run, or a D run where one attacker raised nothing -- Jaccard is 0
+    and this would report perfect independence from an attacker that never
+    spoke.
+    """
     objections = [Objection.model_validate(item) for item in result.get("objections", [])]
     measured = measure_independence(objections)
-    if measured.doctrinal_count + measured.evidentiary_count == 0:
+    if measured.doctrinal_count == 0 or measured.evidentiary_count == 0:
         return None
     return 1.0 - measured.jaccard
 
@@ -122,10 +140,13 @@ def _format_metric(
     ci: tuple[float, float] | None,
     *,
     sample_size: int | None = None,
+    intervals: bool = True,
 ) -> str:
     sample_note = f" (n={sample_size})" if sample_size is not None else ""
     if value is None or not np.isfinite(value):
         return f"N/A{sample_note}"
+    if not intervals:
+        return f"{value:.3f}{sample_note}"
     if ci is None or not all(np.isfinite(bound) for bound in ci):
         return f"{value:.3f}{sample_note} (95% CI N/A)"
     return f"{value:.3f}{sample_note} ({ci[0]:.3f}-{ci[1]:.3f})"
@@ -133,6 +154,13 @@ def _format_metric(
 
 def _summarize_arm(results: list[dict[str, Any]]) -> dict[str, Any]:
     completed = [result for result in results if result.get("status") != "error"]
+    intervals = len(completed) >= MIN_CASES_FOR_INTERVALS
+
+    def ci(compute: Any, *args: Any, **kwargs: Any) -> tuple[float, float] | None:
+        # Not computed at all below the threshold, so nothing downstream can
+        # print an interval the header says is not there.
+        return compute(*args, **kwargs) if intervals else None
+
     accuracy = [
         float(
             result.get(
@@ -204,15 +232,17 @@ def _summarize_arm(results: list[dict[str, Any]]) -> dict[str, Any]:
         "accuracy_n": len(completed),
         "calibration_n": len(scored),
         "accuracy": float(np.mean(accuracy)) if accuracy else None,
-        "accuracy_ci": _bootstrap_ci(accuracy, average, seed_offset=1),
+        "intervals": intervals,
+        "accuracy_ci": ci(_bootstrap_ci, accuracy, average, seed_offset=1),
         "brier": float(np.mean(brier_values)) if brier_values else None,
-        "brier_ci": _bootstrap_ci(brier_values, average, seed_offset=2),
+        "brier_ci": ci(_bootstrap_ci, brier_values, average, seed_offset=2),
         "ece": expected_calibration_error(confidences, correctness) if scored else None,
-        "ece_ci": _bootstrap_paired_ci(confidences, correctness, ece, seed_offset=3)
+        "ece_ci": ci(_bootstrap_paired_ci, confidences, correctness, ece, seed_offset=3)
         if scored
         else None,
         "overconfidence": overconfidence,
-        "overconfidence_ci": _bootstrap_paired_ci(
+        "overconfidence_ci": ci(
+            _bootstrap_paired_ci,
             confidences,
             correctness,
             lambda confidence_data, correctness_data: float(
@@ -223,19 +253,22 @@ def _summarize_arm(results: list[dict[str, Any]]) -> dict[str, Any]:
         if scored
         else None,
         "fabrication_rate": fabrication_rate,
-        "fabrication_ci": _bootstrap_ratio_ci(
+        "fabrication_ci": ci(
+            _bootstrap_ratio_ci,
             [count for count, _, _ in citation_data],
             [total for _, _, total in citation_data],
             seed_offset=5,
         ),
         "misquote_rate": misquote_rate,
-        "misquote_ci": _bootstrap_ratio_ci(
+        "misquote_ci": ci(
+            _bootstrap_ratio_ci,
             [count for _, count, _ in citation_data],
             [total for _, _, total in citation_data],
             seed_offset=7,
         ),
         "independence": float(np.mean(independence_values)) if independence_values else None,
-        "independence_ci": _bootstrap_ci(independence_values, average, seed_offset=6),
+        "independence_n": len(independence_values),
+        "independence_ci": ci(_bootstrap_ci, independence_values, average, seed_offset=6),
         "judge_backends": sorted(
             {str(result.get("judge_backend", "unknown")) for result in results}
         ),
@@ -244,6 +277,48 @@ def _summarize_arm(results: list[dict[str, Any]]) -> dict[str, Any]:
             for prompt, prompt_hashes in sorted(hashes_by_prompt.items())
         },
     }
+
+
+def _arm_sort_key(arm: str) -> tuple[int, str]:
+    return (ARM_ORDER.index(arm), arm) if arm in ARM_ORDER else (len(ARM_ORDER), arm)
+
+
+def _case_rows(results: list[dict[str, Any]]) -> list[str]:
+    """One row per case and arm: every data point, so arms compare case by case.
+
+    At three cases this table is the result. The summary above it is a
+    convenience; it hides which case an arm got wrong.
+    """
+    by_case: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for result in results:
+        by_case[str(result.get("case_id", "unknown"))].append(result)
+
+    lines = [
+        "| Case | Truth | Arm | Predicted | Correct | Confidence | "
+        "Unresolved | Misquoted | Eligible citations | Attacker independence |",
+        "| --- | --- | --- | --- | :---: | ---: | ---: | ---: | ---: | ---: |",
+    ]
+    for case_id in sorted(by_case):
+        rows = sorted(by_case[case_id], key=lambda row: _arm_sort_key(str(row.get("arm"))))
+        for result in rows:
+            truth = result.get("ground_truth_outcome") or "?"
+            arm = result.get("arm", "unknown")
+            if result.get("status") == "error":
+                kind = "timed out" if result.get("error_type") == "timeout" else "error"
+                lines.append(f"| {case_id} | {truth} | {arm} | {kind} | — | — | — | — | — | — |")
+                continue
+            unresolved, misquoted, eligible = _citation_counts(result)
+            correct = result.get("outcome_correct")
+            confidence = result.get("confidence")
+            independence = _independence(result)
+            lines.append(
+                f"| {case_id} | {truth} | {arm} | {result.get('predicted_outcome') or '?'} | "
+                f"{'✓' if correct is True else '✗' if correct is False else '—'} | "
+                f"{f'{confidence:.2f}' if isinstance(confidence, (int, float)) else '—'} | "
+                f"{unresolved} | {misquoted} | {eligible} | "
+                f"{'—' if independence is None else f'{independence:.3f}'} |"
+            )
+    return lines
 
 
 def render_report(results: list[dict[str, Any]], *, allow_mixed_results: bool = False) -> str:
@@ -270,12 +345,16 @@ def render_report(results: list[dict[str, Any]], *, allow_mixed_results: bool = 
         "# Evaluation report",
         "",
         f"Bootstrap: {BOOTSTRAP_RESAMPLES:,} resamples; fixed seed {BOOTSTRAP_SEED}.",
-        "Intervals are percentile 95% confidence intervals.",
+        "Intervals are percentile 95% confidence intervals, printed only for an arm with "
+        f"at least {MIN_CASES_FOR_INTERVALS} completed cases. Below that the arm shows "
+        "point values and n alone: a few cases give too few distinct resamples for an "
+        "interval to estimate anything.",
         "Fabrication rate = unresolved / (total citations - out_of_corpus); "
         "out_of_corpus is excluded (ADR 0004).",
         "Misquote rate = misquoted / (total citations - out_of_corpus), reported apart: "
         "the quote check is a loose token-overlap heuristic, not an exact lookup.",
-        "Independence = 1 - token-level Jaccard overlap between attacker objection grounds.",
+        "Independence = 1 - token-level Jaccard overlap between attacker objection grounds; "
+        "measured only on runs where both attackers objected.",
         "",
     ]
     for group_name, group_results in groups.items():
@@ -293,25 +372,40 @@ def render_report(results: list[dict[str, Any]], *, allow_mixed_results: bool = 
                 "---: | ---: | ---: | ---: | --- |",
             )
         )
-        summaries = {arm: _summarize_arm(rows) for arm, rows in sorted(by_arm.items())}
+        summaries = {
+            arm: _summarize_arm(rows)
+            for arm, rows in sorted(by_arm.items(), key=lambda item: _arm_sort_key(item[0]))
+        }
         for arm, summary in summaries.items():
+            shown = summary["intervals"]
             lines.append(
                 f"| {arm} | {summary['n']} | {summary['completed_n']} | "
                 f"{summary['wrong_n']} | {summary['error_n']} | {summary['timeout_n']} | "
-                f"{_format_metric(summary['accuracy'], summary['accuracy_ci'], sample_size=summary['accuracy_n'])} | "
-                f"{_format_metric(summary['brier'], summary['brier_ci'], sample_size=summary['calibration_n'])} | "
-                f"{_format_metric(summary['ece'], summary['ece_ci'], sample_size=summary['calibration_n'])} | "
-                f"{_format_metric(summary['overconfidence'], summary['overconfidence_ci'])} | "
-                f"{_format_metric(summary['fabrication_rate'], summary['fabrication_ci'])} | "
-                f"{_format_metric(summary['misquote_rate'], summary['misquote_ci'])} | "
-                f"{_format_metric(summary['independence'], summary['independence_ci'])} | "
+                f"{_format_metric(summary['accuracy'], summary['accuracy_ci'], sample_size=summary['accuracy_n'], intervals=shown)} | "
+                f"{_format_metric(summary['brier'], summary['brier_ci'], sample_size=summary['calibration_n'], intervals=shown)} | "
+                f"{_format_metric(summary['ece'], summary['ece_ci'], sample_size=summary['calibration_n'], intervals=shown)} | "
+                f"{_format_metric(summary['overconfidence'], summary['overconfidence_ci'], intervals=shown)} | "
+                f"{_format_metric(summary['fabrication_rate'], summary['fabrication_ci'], intervals=shown)} | "
+                f"{_format_metric(summary['misquote_rate'], summary['misquote_ci'], intervals=shown)} | "
+                f"{_format_metric(summary['independence'], summary['independence_ci'], sample_size=summary['independence_n'] or None, intervals=shown)} | "
                 f"{', '.join(summary['judge_backends'])} |"
             )
-            if summary["completed_n"] < 5:
-                lines.append(
-                    f"> **Warning:** arm `{arm}` has only {summary['completed_n']} completed "
-                    "cases; fewer than 5 completed cases."
-                )
+        # After the table, not between its rows: a line inside a Markdown
+        # table ends it, and the rows after the note render as plain text.
+        lines.append("")
+        small = [
+            f"`{arm}` (n={summary['completed_n']})"
+            for arm, summary in summaries.items()
+            if not summary["intervals"]
+        ]
+        if small:
+            lines.append(
+                f"> **No intervals:** {', '.join(small)} have fewer than "
+                f"{MIN_CASES_FOR_INTERVALS} completed cases. These rows support no claim "
+                "of a difference between arms; read the per-case table."
+            )
+        lines.extend(("", "### Per case", ""))
+        lines.extend(_case_rows(group_results))
         lines.extend(("", "### Prompt hashes", ""))
         for arm, summary in summaries.items():
             lines.append(f"**{arm}**")
