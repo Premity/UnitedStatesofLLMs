@@ -26,8 +26,8 @@ useful *even at the same accuracy*.
 ## The ablation ladder
 
 Five arms. A–D form a ladder, each differing from the one above in exactly one
-respect; E sits beside D as a control rather than on the ladder. A–D are defined
-in `evaluation/harness/arms.py`.
+respect; E sits beside D as a control rather than on the ladder. All five are
+defined in `evaluation/harness/arms.py`.
 
 | Arm | Configuration | Isolates |
 | --- | --- | --- |
@@ -52,9 +52,7 @@ alone inherits that weakness; comparing D against a compute-matched baseline doe
 not. **E is the arm that makes the central claim falsifiable**, so a result where
 D fails to beat E is a real finding and should be reported as one.
 
-> **Not yet implemented.** `arms.py` currently defines A–D. E needs
-> compute-matched sampling and an aggregation rule before it can run. See
-> [ISSUES.md](../ISSUES.md).
+E's sample count and aggregation rule are set in ADR 0011.
 
 ---
 
@@ -171,10 +169,16 @@ it is the soft metric.
 
 With 40–80 cases, differences between arms C and D carry **wide confidence
 intervals**. With the three cases actually scored (ADR 0012) there is no
-meaningful interval at all: the report compares arms case by case, and makes no
-claim of a difference between them.
+meaningful interval at all: three cases have 10 distinct bootstrap resamples, so
+a percentile interval over them describes the resampling, not the uncertainty.
 
-- Report bootstrap CIs (`bootstrap_ci` in `calibration.py`), not bare means
+So the report prints intervals only for an arm with at least 10 completed cases
+(`MIN_CASES_FOR_INTERVALS` in `metrics/report.py`). The cut-off is a choice,
+stated in the report's header: at 10 cases there are 92,378 distinct resamples.
+Below it, each metric is a point value with its `n`, and a note says the rows
+support no claim of a difference between arms.
+
+- With enough cases, report bootstrap CIs, not bare means
 - A three-point gap with overlapping intervals is not a result
 - Say the sample size in every table
 
@@ -213,12 +217,28 @@ Results land in `data/eval/`, reports in `evaluation/reports/`.
 
 ## Reporting
 
-For each arm: outcome agreement, Brier, ECE, overconfidence, citation validity,
-fabrication rate, mean rounds, mean tokens — each with a bootstrap CI and an
-explicit `n`.
+`make eval-report` writes `evaluation/reports/evaluation-report.md` from the
+stored results in `data/eval/`. Nothing is re-run. It has two tables.
 
-Then break results down by `difficulty`. The interesting question is not whether
-the council wins on average; it is whether it wins **on contested questions**,
+**Per arm:** accuracy, Brier, ECE, overconfidence, fabrication rate, misquote
+rate and attacker independence, each with its `n`. Bootstrap intervals are
+shown only from 10 completed cases (see *Statistical honesty*). Arms are listed
+in ladder order, A to E.
+
+**Per case:** one row for each case and arm, giving the tribunal's outcome, the
+arm's prediction, whether it matched, the judge's confidence, and the citation
+counts (unresolved, misquoted, and the eligible total they are out of). At three
+cases this table is the result: it shows which arm got which case wrong, which
+the averages hide. A run that errored or timed out is marked as such, not
+scored.
+
+Attacker independence is measured only where both attackers objected. Arm C has
+one attacker, so it shows none; in a D run where one attacker raised nothing it
+is blank too.
+
+Not yet in the report: mean rounds, mean tokens, and a breakdown by
+`difficulty`. That breakdown is the one that matters. The interesting question
+is not whether the council wins on average; it is whether it wins **on contested questions**,
 which is what it was designed for and where a single pass is most dangerous.
 
 Report negative results. If two attackers do not beat one, that is a finding

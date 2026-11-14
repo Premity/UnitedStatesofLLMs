@@ -3,11 +3,37 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 import pytest
 
-from metrics.report import generate_report, render_report
+from council_core.models.debate import Role
+from metrics.report import ARM_ORDER, MIN_CASES_FOR_INTERVALS, generate_report, render_report
+
+
+def _objection(role: Role, ground: str) -> dict:
+    return {
+        "id": f"{role.value}-1",
+        "raised_by": role.value,
+        "target_argument_id": "arg-1",
+        "ground": ground,
+        "reasoning": "-",
+    }
+
+
+def _summary_cells(report: str, arm: str) -> list[str]:
+    row = next(line for line in report.splitlines() if line.startswith(f"| {arm} | "))
+    return [cell.strip() for cell in row.strip("|").split("|")]
+
+
+def _case_cells(report: str, case_id: str, arm: str) -> list[str]:
+    row = next(
+        line
+        for line in report.splitlines()
+        if line.startswith(f"| {case_id} |") and f"| {arm} |" in line
+    )
+    return [cell.strip() for cell in row.strip("|").split("|")]
 
 
 def _result(
@@ -15,6 +41,7 @@ def _result(
     arm: str,
     correct: bool,
     confidence: float,
+    case_id: str = "case-1",
     unresolved: int = 0,
     out_of_corpus: int = 0,
     misquoted: int = 0,
@@ -22,6 +49,7 @@ def _result(
     synthetic: bool = False,
 ) -> dict:
     return {
+        "case_id": case_id,
         "arm": arm,
         "judge_backend": "mock" if synthetic else backend,
         "synthetic": synthetic,
@@ -156,4 +184,120 @@ def test_report_counts_errors_separately_and_excludes_them_from_metrics() -> Non
     assert "0.425 (n=2)" in summary
     assert "0.550 (n=2)" in summary
     assert "n=2" in summary
-    assert "fewer than 5 completed cases" in report
+    assert f"fewer than {MIN_CASES_FOR_INTERVALS} completed cases" in report
+
+
+def test_below_the_threshold_an_arm_prints_point_values_and_no_intervals() -> None:
+    """Three cases have 10 distinct bootstrap resamples; an interval over them is noise."""
+    results = [
+        _result(arm="full_council", correct=index != 1, confidence=0.7, case_id=f"case-{index}")
+        for index in range(3)
+    ]
+
+    report = render_report(results)
+
+    cells = _summary_cells(report, "full_council")
+    accuracy, brier = cells[6], cells[7]
+    assert accuracy == "0.667 (n=3)"
+    assert brier.startswith("0.") and brier.endswith("(n=3)")
+    point_only = re.compile(r"^(?:N/A|-?\d\.\d{3})(?: \(n=\d+\))?$")
+    assert all(point_only.match(cell) for cell in cells[6:13]), cells[6:13]
+    assert f"at least {MIN_CASES_FOR_INTERVALS} completed cases" in report
+    assert "> **No intervals:** `full_council` (n=3)" in report
+
+
+def test_at_the_threshold_intervals_come_back() -> None:
+    """The bootstrap path is kept for a run large enough to use it."""
+    results = [
+        _result(arm="rag", correct=index % 3 != 0, confidence=0.8, case_id=f"case-{index}")
+        for index in range(MIN_CASES_FOR_INTERVALS)
+    ]
+
+    report = render_report(results)
+
+    accuracy = _summary_cells(report, "rag")[6]
+    assert accuracy.startswith("0.600 (n=10) (")
+    low, high = accuracy.rsplit("(", 1)[1].rstrip(")").split("-")
+    assert float(low) <= 0.6 <= float(high)
+    assert "No intervals" not in report
+
+
+def test_the_per_case_table_puts_each_case_through_every_arm_in_ladder_order() -> None:
+    results = [
+        _result(arm=arm, correct=arm != "rag", confidence=0.6, case_id=case_id)
+        for case_id in ("icty_galic_terror", "icc_bemba_command")
+        for arm in reversed(ARM_ORDER)
+    ]
+
+    report = render_report(results)
+    table = report.split("### Per case", 1)[1]
+    rows = [line for line in table.splitlines() if line.startswith("| icc_bemba_command |")]
+
+    assert [row.split("|")[3].strip() for row in rows] == list(ARM_ORDER)
+    rag = _case_cells(report, "icc_bemba_command", "rag")
+    assert rag[1:6] == ["affirmed", "rag", "rejected", "✗", "0.60"]
+    galic = _case_cells(report, "icty_galic_terror", "full_council")
+    assert galic[3:5] == ["affirmed", "✓"]
+
+
+def test_the_per_case_table_shows_citation_counts_not_rates() -> None:
+    report = render_report(
+        [
+            _result(
+                arm="rag", correct=True, confidence=0.9, unresolved=1, misquoted=2, out_of_corpus=5
+            )
+        ]
+    )
+
+    unresolved, misquoted, eligible = _case_cells(report, "case-1", "rag")[6:9]
+    # 10 total - 5 out_of_corpus = 5 eligible.
+    assert (unresolved, misquoted, eligible) == ("1", "2", "5")
+
+
+def test_the_per_case_table_marks_a_failed_run_instead_of_scoring_it() -> None:
+    errored = _result(arm="full_council", correct=False, confidence=0.9)
+    errored.update(status="error", error_type="timeout", outcome_correct=None, confidence=None)
+
+    cells = _case_cells(render_report([errored]), "case-1", "full_council")
+
+    assert cells[3] == "timed out"
+    assert set(cells[4:]) == {"—"}
+
+
+def test_independence_needs_objections_from_both_attackers() -> None:
+    """Arm C has one attacker. Jaccard against nothing is 0, which read as
+    'perfectly independent' from an attacker that never ran."""
+    single = _result(arm="single_attacker", correct=True, confidence=0.8)
+    single["objections"] = [_objection(Role.ATTACKER_DOCTRINAL, "distinction proportionality")]
+    both = _result(arm="full_council", correct=True, confidence=0.8)
+    both["objections"] = [
+        _objection(Role.ATTACKER_DOCTRINAL, "distinction proportionality"),
+        _objection(Role.ATTACKER_EVIDENTIARY, "proportionality witness"),
+    ]
+
+    report = render_report([single, both])
+
+    assert _summary_cells(report, "single_attacker")[12] == "N/A"
+    assert _case_cells(report, "case-1", "single_attacker")[9] == "—"
+    # {distinction, proportionality} vs {proportionality, witness}: Jaccard 1/3.
+    assert _summary_cells(report, "full_council")[12] == "0.667 (n=1)"
+    assert _case_cells(report, "case-1", "full_council")[9] == "0.667"
+
+
+def test_warnings_sit_after_the_summary_table_not_inside_it() -> None:
+    """A line between Markdown table rows ends the table there."""
+    report = render_report(
+        [_result(arm=arm, correct=True, confidence=0.8) for arm in ("raw", "rag")]
+    )
+    lines = report.splitlines()
+    first = next(i for i, line in enumerate(lines) if line.startswith("| Arm |"))
+    table = lines[first : lines.index("", first)]
+
+    assert all(line.startswith("|") for line in table)
+    assert [row.split("|")[1].strip() for row in table[2:]] == ["raw", "rag"]
+
+
+def test_arm_order_matches_the_harness_registry() -> None:
+    from harness.arms import ARMS
+
+    assert set(ARM_ORDER) == set(ARMS)

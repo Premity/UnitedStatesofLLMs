@@ -24,16 +24,14 @@ local citation status.
 ## What is left, in order
 
 Updated 2026-11-14. The harness exists and the scope is three cases (ADR 0012).
-The critical path is the report changes, a one-case rehearsal, then the scored
-run.
+The critical path is a one-case rehearsal, then the scored run.
 
 | # | Item | Why it is where it is |
 | --- | --- | --- |
-| 1 | **Report fit for three cases** | Per-case arm comparison instead of bootstrap intervals, which are meaningless at n = 3. GitHub #22 |
-| 2 | **Rehearsal, then the scored run** | All five arms live on one case first, then the three. GitHub #25, #26 |
-| 3 | **Run artifacts do not record their corpus** | Citation statuses are only interpretable against a known corpus, and nothing in an artifact says which one scored it. Becomes a correctness problem the moment two machines' results are compared. GitHub #24 |
-| 4 | **Case picker for the question form** | Needs an ADR first: `runtime/api` does not depend on `evaluation`, so a case endpoint either inverts that or duplicates the loader. And the ground truth must never reach the browser. GitHub #17 |
-| 5 | **Severity-weighted metrics** | `Objection.severity` now exists and nothing weighs objections by it. GitHub #28 |
+| 1 | **Rehearsal, then the scored run** | All five arms live on one case first, then the three. GitHub #25, #26 |
+| 2 | **Run artifacts do not record their corpus** | Citation statuses are only interpretable against a known corpus, and nothing in an artifact says which one scored it. Becomes a correctness problem the moment two machines' results are compared. GitHub #24 |
+| 3 | **Case picker for the question form** | Needs an ADR first: `runtime/api` does not depend on `evaluation`, so a case endpoint either inverts that or duplicates the loader. And the ground truth must never reach the browser. GitHub #17 |
+| 4 | **Severity-weighted metrics** | `Objection.severity` now exists and nothing weighs objections by it. GitHub #28 |
 
 Two open decisions that do not block the
 above: **reasoning-overlap scoring** (GitHub #27) and a **hosted demo** target,

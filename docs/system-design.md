@@ -565,7 +565,8 @@ both angles. High Jaccard *combined with* high target overlap is the bad signal.
 
 With 40–80 cases, differences between arms C and D carry **wide confidence
 intervals**. `bootstrap_ci` is provided; a small gap with overlapping intervals
-is not a result. Overselling one would be a poor look on a project whose premise
+is not a result. Below 10 completed cases the report prints no intervals at all,
+and compares the arms case by case (ADR 0012). Overselling one would be a poor look on a project whose premise
 is that overconfidence is dangerous.
 
 ---
