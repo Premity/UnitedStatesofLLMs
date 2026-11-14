@@ -8,6 +8,7 @@ from council_core.models.citation import (
 )
 from council_core.models.corpus import (
     CorpusDocument,
+    CorpusIdentity,
     DocumentType,
     Span,
 )
@@ -30,6 +31,7 @@ __all__ = [
     "CitationStatus",
     "CitationType",
     "CorpusDocument",
+    "CorpusIdentity",
     "DebateConfig",
     "DebateState",
     "DocumentType",

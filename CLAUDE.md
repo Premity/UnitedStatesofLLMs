@@ -154,7 +154,7 @@ tree, not prose. Everything they cannot check is on you.
 Audited 2026-11-09 against the tree, not against this file's previous claims;
 evaluation lines updated 2026-11-14.
 
-**Built and tested** (528 tests: 376 Python, 152 frontend): the domain model,
+**Built and tested** (544 tests: 392 Python, 152 frontend): the domain model,
 citation resolver, LLM gateway, prompts, LangGraph orchestrator, SSE, run
 persistence, the corpus fetcher, the indexer, the frontend courtroom,
 transcript, dissent log, replay and theming, and the evaluation harness (runner,
@@ -177,7 +177,8 @@ Hamd's machine deliberately does not run the indexer: 16GB, and the embedding
 stage has OOM-killed his editor. So on this machine most citations resolve
 `out_of_corpus`, and that is the local index being small, not a fabrication
 signal. Don't read citation statuses as signal here, and don't propose running
-`make corpus` as a fix. What the local index holds:
+`make corpus` as a fix. A run artifact's `metadata.corpus` and an evaluation
+result's `corpus` say which index scored it. What the local index holds:
 
 ```bash
 python3 -c "import json; d=json.load(open('data/index/citation_index.json')); \

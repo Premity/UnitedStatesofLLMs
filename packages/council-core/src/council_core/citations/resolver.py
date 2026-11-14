@@ -18,6 +18,7 @@ they stay separate all the way through to the evaluation report.
 
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
 from typing import Protocol
@@ -30,8 +31,31 @@ from council_core.models.citation import (
     CitationType,
     ResolvedCitation,
 )
+from council_core.models.corpus import CorpusIdentity
 
 log = structlog.get_logger(__name__)
+
+
+def corpus_identity(
+    entries: dict[str, object], instruments: list[str] | set[str]
+) -> CorpusIdentity:
+    """Identify an index by what it holds, not by its hand-set `version`.
+
+    Canonical JSON (sorted keys, fixed separators) so the same content hashes
+    the same however the file was written. An empty index has an identity
+    too: a run scored against nothing is still a fact worth recording.
+    """
+    canonical = json.dumps(
+        {"entries": entries, "instruments": sorted(instruments)},
+        sort_keys=True,
+        separators=(",", ":"),
+        ensure_ascii=False,
+    )
+    return CorpusIdentity(
+        instruments=len(set(instruments)),
+        locators=len(entries),
+        content_hash=hashlib.sha256(canonical.encode("utf-8")).hexdigest(),
+    )
 
 
 class CorpusIndex(Protocol):
@@ -67,6 +91,7 @@ class JsonCorpusIndex:
         self._path = index_path
         self._entries: dict[str, dict[str, str]] = {}
         self._instruments: set[str] = set()
+        self._identity: CorpusIdentity | None = None
         self._loaded = False
 
     def load(self) -> None:
@@ -75,18 +100,27 @@ class JsonCorpusIndex:
             return
         if not self._path.exists():
             log.warning("citation_index_missing", path=str(self._path))
+            self._identity = corpus_identity({}, set())
             self._loaded = True
             return
 
         raw = json.loads(self._path.read_text(encoding="utf-8"))
         self._entries = raw.get("entries", {})
         self._instruments = set(raw.get("instruments", []))
+        self._identity = corpus_identity(self._entries, self._instruments)
         self._loaded = True
         log.info(
             "citation_index_loaded",
             entries=len(self._entries),
             instruments=len(self._instruments),
+            content_hash=self._identity.short_hash,
         )
+
+    def identity(self) -> CorpusIdentity:
+        """The identity of the index citations are resolved against."""
+        self.load()
+        assert self._identity is not None  # set by load() on every path
+        return self._identity
 
     def lookup(self, locator: str) -> tuple[str, str | None] | None:
         self.load()
@@ -109,6 +143,15 @@ class CitationResolver:
     def __init__(self, index: CorpusIndex, *, quote_match_threshold: float = 0.6) -> None:
         self._index = index
         self._quote_threshold = quote_match_threshold
+
+    def corpus_identity(self) -> CorpusIdentity | None:
+        """The identity of the backing index, or None if it cannot say.
+
+        Optional on `CorpusIndex` so a test double need not implement it; a
+        run scored by one records no identity rather than a made-up one.
+        """
+        identity = getattr(self._index, "identity", None)
+        return identity() if callable(identity) else None
 
     def resolve(self, citation: Citation) -> ResolvedCitation:
         """Resolve one citation to a verdict."""

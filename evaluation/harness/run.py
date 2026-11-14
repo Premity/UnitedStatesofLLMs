@@ -48,6 +48,7 @@ if "DATA_DIR" not in os.environ and not Path("/data").exists():
 
 from app.core.config import get_role_models, get_settings
 from app.graph.workflow import compiled_graph
+from app.roles.base import get_resolver
 from app.roles.judge import JudgeRole
 from app.roles.presenter import PresenterRole
 from app.services.retrieval import get_retrieval_service
@@ -743,6 +744,10 @@ async def run_case(
 
     result["prompt_hashes"] = prompt_hashes
     result["composite_prompt_hash"] = composite_prompt_hash(prompt_hashes)
+    # Which index scored the citations: the report refuses to pool results
+    # from different ones (GitHub #24).
+    identity = get_resolver().corpus_identity()
+    result["corpus"] = identity.model_dump(mode="json") if identity else None
     result["model_roster"] = model_roster
     result["synthetic"] = judge_backend == "mock"
     result["judge_attempts"] = request_counter.attempts

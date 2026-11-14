@@ -20,6 +20,7 @@ from sse_starlette.sse import EventSourceResponse
 
 from app.core.config import get_role_models, get_settings
 from app.graph.workflow import compiled_graph
+from app.roles.base import get_resolver
 from app.services.run_store import get_run_store
 from council_core.models.debate import DebateConfig, DebateState, Role
 from council_core.models.run import RunArtifact, RunMetadata, RunStatus
@@ -86,6 +87,9 @@ def _initial_metadata(run_id: str) -> RunMetadata:
             )
         },
         seed=models.seed,
+        # The index this run's citations resolve against. Recorded at the start
+        # so a run that fails partway still says which corpus it was scored on.
+        corpus=get_resolver().corpus_identity(),
     )
 
 

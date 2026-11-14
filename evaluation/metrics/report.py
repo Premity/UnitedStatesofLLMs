@@ -12,7 +12,12 @@ import numpy as np
 from council_core.models.debate import Objection
 from metrics.calibration import expected_calibration_error
 from metrics.independence import measure_independence
-from metrics.provenance import is_synthetic_result, load_result_files
+from metrics.provenance import (
+    corpus_label,
+    is_synthetic_result,
+    load_result_files,
+    validate_corpus_consistency,
+)
 
 BOOTSTRAP_RESAMPLES = 10_000
 BOOTSTRAP_SEED = 0
@@ -283,7 +288,7 @@ def _arm_sort_key(arm: str) -> tuple[int, str]:
     return (ARM_ORDER.index(arm), arm) if arm in ARM_ORDER else (len(ARM_ORDER), arm)
 
 
-def _case_rows(results: list[dict[str, Any]]) -> list[str]:
+def _case_rows(results: list[dict[str, Any]], *, show_corpus: bool = False) -> list[str]:
     """One row per case and arm: every data point, so arms compare case by case.
 
     At three cases this table is the result. The summary above it is a
@@ -293,19 +298,24 @@ def _case_rows(results: list[dict[str, Any]]) -> list[str]:
     for result in results:
         by_case[str(result.get("case_id", "unknown"))].append(result)
 
+    corpus_head = " Citation index |" if show_corpus else ""
     lines = [
         "| Case | Truth | Arm | Predicted | Correct | Confidence | "
-        "Unresolved | Misquoted | Eligible citations | Attacker independence |",
-        "| --- | --- | --- | --- | :---: | ---: | ---: | ---: | ---: | ---: |",
+        "Unresolved | Misquoted | Eligible citations | Attacker independence |" + corpus_head,
+        "| --- | --- | --- | --- | :---: | ---: | ---: | ---: | ---: | ---: |"
+        + (" --- |" if show_corpus else ""),
     ]
     for case_id in sorted(by_case):
         rows = sorted(by_case[case_id], key=lambda row: _arm_sort_key(str(row.get("arm"))))
         for result in rows:
             truth = result.get("ground_truth_outcome") or "?"
             arm = result.get("arm", "unknown")
+            corpus_cell = f" {corpus_label(result)} |" if show_corpus else ""
             if result.get("status") == "error":
                 kind = "timed out" if result.get("error_type") == "timeout" else "error"
-                lines.append(f"| {case_id} | {truth} | {arm} | {kind} | — | — | — | — | — | — |")
+                lines.append(
+                    f"| {case_id} | {truth} | {arm} | {kind} | — | — | — | — | — | — |{corpus_cell}"
+                )
                 continue
             unresolved, misquoted, eligible = _citation_counts(result)
             correct = result.get("outcome_correct")
@@ -316,13 +326,19 @@ def _case_rows(results: list[dict[str, Any]]) -> list[str]:
                 f"{'✓' if correct is True else '✗' if correct is False else '—'} | "
                 f"{f'{confidence:.2f}' if isinstance(confidence, (int, float)) else '—'} | "
                 f"{unresolved} | {misquoted} | {eligible} | "
-                f"{'—' if independence is None else f'{independence:.3f}'} |"
+                f"{'—' if independence is None else f'{independence:.3f}'} |{corpus_cell}"
             )
     return lines
 
 
-def render_report(results: list[dict[str, Any]], *, allow_mixed_results: bool = False) -> str:
+def render_report(
+    results: list[dict[str, Any]],
+    *,
+    allow_mixed_results: bool = False,
+    allow_mixed_corpora: bool = False,
+) -> str:
     """Render arm metrics while keeping synthetic and real results separate."""
+    validate_corpus_consistency(results, allow_mixed_corpora=allow_mixed_corpora)
     provenance = {is_synthetic_result(result) for result in results}
     if len(provenance) > 1 and not allow_mixed_results:
         raise ValueError(
@@ -357,6 +373,19 @@ def render_report(results: list[dict[str, Any]], *, allow_mixed_results: bool = 
         "measured only on runs where both attackers objected.",
         "",
     ]
+    corpora = sorted({corpus_label(result) for result in results})
+    if len(corpora) == 1:
+        lines.extend((f"Citation index: `{corpora[0]}`.", ""))
+    else:
+        lines.extend(
+            (
+                "> **Mixed citation indexes:** "
+                + ", ".join(f"`{label}`" for label in corpora)
+                + ". Citation statuses are not comparable across them; "
+                "the per-case table says which index scored each row.",
+                "",
+            )
+        )
     for group_name, group_results in groups.items():
         lines.extend((f"## {group_name}", ""))
         by_arm: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -405,7 +434,7 @@ def render_report(results: list[dict[str, Any]], *, allow_mixed_results: bool = 
                 "of a difference between arms; read the per-case table."
             )
         lines.extend(("", "### Per case", ""))
-        lines.extend(_case_rows(group_results))
+        lines.extend(_case_rows(group_results, show_corpus=len(corpora) > 1))
         lines.extend(("", "### Prompt hashes", ""))
         for arm, summary in summaries.items():
             lines.append(f"**{arm}**")
@@ -423,13 +452,18 @@ def generate_report(
     results_dir: Path = Path("data/eval"),
     output_path: Path = Path("evaluation/reports/evaluation-report.md"),
     allow_mixed_results: bool = False,
+    allow_mixed_corpora: bool = False,
 ) -> Path:
     """Load result artifacts from the evaluation directory and write Markdown."""
     results = load_result_files(
         results_dir,
         allow_mixed_results=allow_mixed_results,
     )
-    report = render_report(results, allow_mixed_results=allow_mixed_results)
+    report = render_report(
+        results,
+        allow_mixed_results=allow_mixed_results,
+        allow_mixed_corpora=allow_mixed_corpora,
+    )
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(report, encoding="utf-8")
     return output_path
@@ -448,6 +482,11 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Report synthetic and real results in separate, clearly labelled sections.",
     )
+    parser.add_argument(
+        "--allow-mixed-corpora",
+        action="store_true",
+        help="Report results scored against different citation indexes, labelled per case.",
+    )
     return parser
 
 
@@ -457,6 +496,7 @@ def main() -> None:
         results_dir=args.results_dir,
         output_path=args.output,
         allow_mixed_results=args.allow_mixed_results,
+        allow_mixed_corpora=args.allow_mixed_corpora,
     )
     print(f"Evaluation report written to {output_path}")
 

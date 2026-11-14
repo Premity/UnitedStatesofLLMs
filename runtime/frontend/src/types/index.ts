@@ -100,6 +100,13 @@ export interface DebateConfig {
   top_k: number;
 }
 
+/** Which citation index scored a run (`council_core.models.corpus.CorpusIdentity`). */
+export interface CorpusIdentity {
+  instruments: number;
+  locators: number;
+  content_hash: string;
+}
+
 export interface RunMetadata {
   run_id: string;
   status: "pending" | "running" | "completed" | "failed";
@@ -110,6 +117,8 @@ export interface RunMetadata {
   total_completion_tokens: number;
   duration_seconds?: number | null;
   error?: string | null;
+  /** Absent or null on artifacts from before it was recorded: "not recorded", never a default. */
+  corpus?: CorpusIdentity | null;
 }
 
 /** Phase of the courtroom animation state machine. */

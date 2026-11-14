@@ -232,6 +232,13 @@ cases this table is the result: it shows which arm got which case wrong, which
 the averages hide. A run that errored or timed out is marked as such, not
 scored.
 
+The header names the citation index that scored the results (its hash prefix,
+instrument and locator counts). Results scored against different indexes, or
+written before results recorded one, are refused unless the report is run with
+`--allow-mixed-corpora`, which labels each per-case row with its index.
+Citation statuses from two indexes are not comparable: the same citation can be
+`resolved` on one machine and `out_of_corpus` on another.
+
 Attacker independence is measured only where both attackers objected. Arm C has
 one attacker, so it shows none; in a D run where one attacker raised nothing it
 is blank too.

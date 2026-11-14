@@ -170,7 +170,8 @@ Everything needed to reproduce a run.
 | `role_models` | Model ids **as resolved** — if config said `ollama/qwen3.5` and Ollama served `qwen3.5:9b-q4`, that is what is recorded |
 | `temperatures`, `seed` | Sampling settings |
 | `prompt_hashes` | Detects silent prompt drift — a result cannot be attributed to a prompt that has since changed |
-| `corpus_version` | Which index the retrieval came from |
+| `corpus` | Which citation index resolved the run's citations: instrument count, locator count, and a SHA-256 of the entries (`CorpusIdentity`). `null` on artifacts from before it was recorded, meaning not recorded, never a default |
+| `corpus_version` | Never populated; kept so stored artifacts validate. Superseded by `corpus` |
 | `total_*_tokens` | Cost audit; three roles run on quota-limited tiers |
 
 ### `RunArtifact`
@@ -191,6 +192,14 @@ it.
 | `holding`, `outcome`, `key_reasoning` | **Never** — ground truth |
 | `difficulty` | No — used for breakdowns |
 | `source_case_id` | No — excluded from retrieval so the answer cannot be read back |
+
+### Evaluation result
+
+One JSON file per arm and case in `data/eval/<arm>/<case_id>.json`, written by
+`evaluation/harness/run.py`. Besides the outcome, confidence and citation
+counts, it records `prompt_hashes`, `model_roster`, `judge_backend` and
+`corpus`, the same `CorpusIdentity` a run artifact carries. The report refuses
+to combine results whose `corpus` differs, including one that has none.
 
 ### `Arm`
 
