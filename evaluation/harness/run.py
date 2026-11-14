@@ -63,7 +63,7 @@ from council_core.models.debate import (
     Verdict,
 )
 from harness.arms import ARMS, Arm, SelfConsistencyArm
-from harness.cases import EvaluationCase, Outcome, load_cases
+from harness.cases import TIERS, EvaluationCase, Outcome, load_cases, select_cases
 from harness.quota import (
     MAX_DAILY_QUOTA,
     QuotaExceededError,
@@ -948,6 +948,22 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     parser.add_argument(
+        "--tier",
+        choices=list(TIERS),
+        default="core",
+        help="Which cases to run (ADR 0012): core (the scored three, default), "
+        "stretch (only with quota left over), or all.",
+    )
+    parser.add_argument(
+        "--case",
+        dest="case_ids",
+        action="append",
+        default=None,
+        metavar="CASE_ID",
+        help="Run only this case from the tier. Repeatable. A live run reserves 24 judge "
+        "attempts per case across all arms, so run one case per invocation.",
+    )
+    parser.add_argument(
         "--limit",
         type=int,
         default=None,
@@ -1048,7 +1064,10 @@ async def async_main(args: argparse.Namespace) -> None:
         for p in sorted(args.cases_dir.glob("*.json")):
             cases.append(EvaluationCase.model_validate(json.loads(p.read_text(encoding="utf-8"))))
     else:
-        cases = load_cases(held_out=False)
+        try:
+            cases = select_cases(load_cases(held_out=False), tier=args.tier, case_ids=args.case_ids)
+        except ValueError as exc:
+            sys.exit(f"error: {exc}")
 
     if args.limit is not None and args.limit > 0:
         cases = cases[: args.limit]
