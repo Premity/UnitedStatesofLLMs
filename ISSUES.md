@@ -31,9 +31,8 @@ The critical path is a one-case rehearsal, then the scored run.
 | 2 | **Case picker for the question form** | Needs an ADR first: `runtime/api` does not depend on `evaluation`, so a case endpoint either inverts that or duplicates the loader. And the ground truth must never reach the browser. GitHub #17 |
 | 3 | **Severity-weighted metrics** | `Objection.severity` now exists and nothing weighs objections by it. GitHub #28 |
 
-Two open decisions that do not block the
-above: **reasoning-overlap scoring** (GitHub #27) and a **hosted demo** target,
-which has none chosen (GitHub #18).
+One open decision that does not block the above: **reasoning-overlap scoring**
+(GitHub #27).
 
 One known limit to state in the report rather than fix: three Rome Statute
 weapons amendments are not indexed, because the source gives the inserted
@@ -758,10 +757,19 @@ Rubric with manual scoring, or LLM-judge against `key_reasoning`? The latter is
 faster but introduces a model into the measurement of models. Leaning LLM-judge
 with a manually-scored subset to validate it.
 
-### Hosted demo — GitHub #18
+### [RESOLVED] Hosted demo — GitHub #18
 
-Cloudflare Workers AI free tier gives ~30 single-case runs/day. Enough for a
-demo, not for evaluation. No deployment target chosen yet.
+**Decision: there is no hosted demo.** The project is academic and scored on
+three cases (ADR 0012); every role runs on a free tier with a daily or
+per-minute ceiling (Groq's TPM limit, OpenRouter's 50 requests/day), so a
+public endpoint would exhaust its quota on the first few visitors and fail in
+front of them. Nothing needs deploying to show the system: `make up` runs it
+locally and `?replay=1` plays a recorded debate with no model reachable.
+
+Nothing in the code forecloses one. Backends are config strings (ADR 0002), so
+pointing the roles at Cloudflare Workers AI (~30 single-case runs/day) is an
+env-var change. If a demo is wanted later, that is the starting point, and the
+choice of host belongs in a new ADR.
 
 ---
 
