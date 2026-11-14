@@ -154,13 +154,11 @@ tree, not prose. Everything they cannot check is on you.
 Audited 2026-11-09 against the tree, not against this file's previous claims;
 evaluation lines updated 2026-11-14.
 
-**Built and tested** (544 tests: 392 Python, 152 frontend): the domain model,
+**Built and tested** (561 tests: 403 Python, 158 frontend): the domain model,
 citation resolver, LLM gateway, prompts, LangGraph orchestrator, SSE, run
 persistence, the corpus fetcher, the indexer, the frontend courtroom,
-transcript, dissent log, replay and theming, and the evaluation harness (runner,
-report, quota tracking, arms A–E).
-
-**Not built:** the case picker (GitHub #17).
+transcript, dissent log, replay and theming, the case picker, and the
+evaluation harness (runner, report, quota tracking, arms A–E).
 
 **Not yet run:** arms B–E live, and the scored evaluation. Its scope is three dev
 cases, with three more as a stretch if quota allows (ADR 0012); the work left is

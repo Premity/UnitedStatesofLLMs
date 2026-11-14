@@ -14,7 +14,7 @@ truth. The system sees the **question** and the **facts**; it never sees the
 **holding**. That gap is what makes outcome agreement a measurement rather than
 a lookup.
 
-Schema: `EvaluationCase` in `evaluation/harness/cases.py`.
+Schema: `Case` in `packages/council-core/src/council_core/models/case.py`.
 Worked example: `evaluation/cases/dev/icty_galic_terror.json`.
 
 ---

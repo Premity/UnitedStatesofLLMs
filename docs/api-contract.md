@@ -30,6 +30,41 @@ instead of merely down.
 
 ---
 
+## Cases
+
+Prepared questions for the question form's picker. These return **question and
+facts only**: the tribunal's `holding`, `outcome` and `key_reasoning`, and the
+`source_case_id`, are never in a response (ADR 0013). Only the dev set is
+served; `held_out/` is scored once and not offered to a picker.
+
+### `GET /cases`
+
+```json
+[
+  {
+    "id": "icty_galic_terror",
+    "title": "Prosecutor v. Galić",
+    "court": "ICTY",
+    "year": 2003,
+    "question": "…",
+    "facts": "…",
+    "difficulty": "medium"
+  }
+]
+```
+
+An empty list when no case files are mounted, so the form shows no picker
+rather than failing. A file that does not parse is skipped and logged.
+
+### `GET /cases/{case_id}`
+
+One entry of the same shape. `404` if no such case.
+
+The directory read is `CASES_DIR` in `Settings` (`cases_dir`, default
+`/cases/dev`), which compose mounts read-only from `evaluation/cases/dev`.
+
+---
+
 ## Debate
 
 ### `POST /debate/stream`
@@ -139,6 +174,12 @@ Print-ready HTML — self-contained, open and print to PDF.
 Authoritative definitions in `packages/council-core/src/council_core/models/`.
 The TypeScript mirror is `runtime/frontend/src/types/index.ts` and **must be
 kept in sync by hand**.
+
+### PublicCase
+
+`id`, `title`, `court`, `year`, `question`, `facts`, `difficulty` — the `GET /cases`
+shape (`council_core.models.case.PublicCase`). Deliberately has no ground-truth
+field.
 
 ### Role
 
