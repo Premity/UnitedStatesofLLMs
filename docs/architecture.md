@@ -124,7 +124,7 @@ is why only one node may write to it per step.
 - **Fixed mode** (`rounds: 2`) — continue until the count is reached
 - **Auto mode** (`rounds: "auto"`) — the judge sets `novel_objections_raised`;
   when false, the debate terminates as `no_novel_objections`
-- **Always** bounded by `config.max_rounds` (default 3, hard max 5)
+- **Always** bounded by `config.max_rounds` (default 2, hard max 3)
 
 The ceiling is absolute. A debate that cannot terminate would drain a free-tier
 quota in minutes, so `test_workflow.py` covers termination directly.

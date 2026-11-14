@@ -258,7 +258,7 @@ editing `build_graph()` and restarting the process.
 | Auto (`rounds: "auto"`) | judge sets `novel_objections_raised` | flag is `false` → `no_novel_objections` |
 | **Any mode** | — | `current_round >= max_rounds` |
 
-`max_rounds` defaults to 3, hard-capped at 5. **The ceiling is absolute in every
+`max_rounds` defaults to 2, the evaluated configuration, and is capped at 3. **The ceiling is absolute in every
 mode.** NFR-2 is covered directly by `test_workflow.py`, including a
 parametrised test asserting termination within 10 iterations for every valid
 configuration.
@@ -499,8 +499,12 @@ respect. Arm E sits beside D as a control, not on the ladder.
 | **A** `raw` | ✗ | 0 | 1 | Raw baseline |
 | **B** `rag` | ✓ | 0 | 1 | Contribution of grounding alone |
 | **C** `single_attacker` | ✓ | 1 (doctrinal) | 2 | Contribution of adversarial challenge |
-| **D** `full_council` | ✓ | 2 | 3 | Whether the second attacker earns its place |
+| **D** `full_council` | ✓ | 2 | 2 | Whether the second attacker earns its place |
 | **E** `self_consistency` | ✓ | 0, sampled *n*× | 1 | Whether D's gain is structural or merely more compute |
+
+C and D share a 2-round ceiling, so they differ only in the second attacker.
+It is also the app's default (`DebateConfig.max_rounds`), so the evaluation
+scores the debate the app runs. A third round can be chosen but is untested.
 
 Arm B exists so the council is not credited for gains produced by retrieval
 alone — without it, "beats a raw LLM" is an uninteresting claim.
@@ -600,9 +604,9 @@ The judge's daily cap is the binding constraint. `MAX_CONCURRENT_DEBATES`
 (default 2) bounds concurrency via semaphore — unbounded concurrency exhausts
 the quota and every in-flight run fails together.
 
-**Capacity implication:** one case through all five arms is up to 8 judge calls
-(A 1, B 1, C 2, D 3, E 1) before any repair or retry. The scored run is three
-cases (GitHub #21), 24 judge calls, which fits in one day's quota. Arm E judges
+**Capacity implication:** one case through all five arms is up to 7 judge calls
+(A 1, B 1, C 2, D 2, E 1) before any repair or retry. The scored run is three
+cases (GitHub #21), 21 judge calls, which fits in one day's quota. Arm E judges
 once per case, so its judge cost is the same as arm B's. A judge run locally for
 iteration **changes the result**, so the judge backend is recorded with every
 report.

@@ -140,7 +140,7 @@ streams and the artifact records.
 | `question` | required | |
 | `facts` | `""` | |
 | `rounds` | `"auto"` | Fixed int, or judge-terminated |
-| `max_rounds` | `3` | Hard ceiling, 1–5 |
+| `max_rounds` | `2` | Hard ceiling, 1–3. 2 is the evaluated configuration |
 | `enabled_attackers` | both | Ablation arms vary this |
 | `retrieval_enabled` | `true` | False for arm A |
 | `top_k` | `8` | |

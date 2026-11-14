@@ -12,9 +12,10 @@ affordable in the time left.
 
 The judge quota sets the pace. The judge is on OpenRouter's free tier, 50
 requests a day shared across the account; the harness caps itself at 40
-(`MAX_DAILY_QUOTA`). One case through all five arms is up to 8 judge calls
-(A 1, B 1, C 2, D 3, E 1), and before a live invocation starts the harness
-reserves three attempts per expected call for repairs and retries: 24 for one
+(`MAX_DAILY_QUOTA`). One case through all five arms is up to 7 judge calls
+(A 1, B 1, C 2, D 2, E 1; C and D share a 2-round ceiling, GitHub #23), and
+before a live invocation starts the harness reserves three attempts per
+expected call for repairs and retries: 21 for one
 case. An invocation that cannot reserve that much does not start.
 
 ## Decision
@@ -42,7 +43,7 @@ compared on different cases.
 
 The tiers live in `evaluation/harness/cases.py` (`CORE_CASE_IDS`,
 `STRETCH_CASE_IDS`) and are selected with `--tier` and `--case`. Run one case
-per invocation: at 24 reserved attempts per case, about two cases fit in a day,
+per invocation: at 21 reserved attempts per case, about two cases fit in a day,
 so the core takes two days.
 
 ## Consequences

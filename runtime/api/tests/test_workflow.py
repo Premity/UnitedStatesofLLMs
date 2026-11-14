@@ -67,3 +67,16 @@ def test_a_debate_always_terminates_within_max_rounds(rounds: int) -> None:
             assert round_number <= cfg.max_rounds
             return
     pytest.fail("Debate did not terminate within 10 rounds.")
+
+
+def test_the_default_ceiling_is_two_rounds() -> None:
+    """The evaluated configuration (arms C and D), so the default is what was tested."""
+    cfg = DebateConfig(question="Is this a war crime?")
+    assert cfg.max_rounds == 2
+    assert should_continue({"config": cfg, "current_round": 2}) == "end"
+
+
+def test_the_ceiling_is_capped_at_three_rounds() -> None:
+    config(max_rounds=3)
+    with pytest.raises(ValueError, match="max_rounds"):
+        config(max_rounds=4)

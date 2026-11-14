@@ -37,6 +37,10 @@ defined in `evaluation/harness/arms.py`.
 | **D** `full_council` | Both attackers | Whether the second attacker earns its place |
 | **E** `self_consistency` | One model sampled *n* times and aggregated, *n* matched to D's call count | Whether D's gain comes from adversarial structure or merely from more compute |
 
+C and D both run at most 2 rounds, so they differ only in the second
+attacker. That is the app's default too, so the evaluation scores what the app
+runs. A third round can be chosen in the app; it is not evaluated.
+
 B exists so the council is not credited for gains that retrieval alone produces.
 Without it, "our system beats a raw LLM" is an uninteresting claim.
 
@@ -194,10 +198,10 @@ make eval-report                # rebuild the report from existing results
 
 Slow and quota-consuming. Never part of CI.
 
-**Budget:** one case through all five arms is up to 8 judge calls (A 1, B 1,
-C 2, D 3, E 1). The judge's free tier is 50 requests/day across the OpenRouter
+**Budget:** one case through all five arms is up to 7 judge calls (A 1, B 1,
+C 2, D 2, E 1). The judge's free tier is 50 requests/day across the OpenRouter
 account, and the harness caps itself at 40. Before a live run it reserves three
-attempts per expected call, 24 for one case, and refuses to start if that would
+attempts per expected call, 21 for one case, and refuses to start if that would
 pass the cap. So run **one case per invocation**: about two cases a day, the
 core three over two days, stretch cases with what is left. A local judge for
 iteration costs no quota but changes the result, so the report records which
