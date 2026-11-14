@@ -16,7 +16,7 @@ import asyncio
 import json
 from pathlib import Path
 from types import SimpleNamespace
-from unittest.mock import ANY, AsyncMock, patch
+from unittest.mock import ANY, AsyncMock, MagicMock, patch
 
 import pytest
 from pydantic import BaseModel
@@ -635,6 +635,39 @@ class TestHarnessExecution:
         assert "prompt_hashes" in result
         assert result["synthetic"] is True
         assert tracker.get_today_usage() == 0  # Zero quota logged
+
+    @pytest.mark.asyncio
+    async def test_result_records_the_index_that_scored_it(
+        self, temp_eval_dir: Path, sample_case: EvaluationCase
+    ) -> None:
+        """GitHub #24: a fabrication rate is a statement about one index."""
+        from council_core.citations.resolver import corpus_identity
+
+        identity = corpus_identity({"ap_i/art.51": {"text": "..."}}, ["ap_i"])
+        resolver = MagicMock()
+        resolver.corpus_identity.return_value = identity
+        final_state = {
+            "current_round": 1,
+            "turns": [_make_turn(Role.PRESENTER, round_number=1)],
+            "arguments": [],
+            "objections": [],
+            "context": [],
+            "verdict": None,
+        }
+
+        with (
+            patch("harness.run.compiled_graph.ainvoke", AsyncMock(return_value=final_state)),
+            patch("harness.run.get_resolver", return_value=resolver),
+        ):
+            result = await run_case(
+                arm=ARMS["rag"],
+                case=sample_case,
+                judge_backend="mock",
+                output_dir=temp_eval_dir,
+                quota_tracker=QuotaTracker(temp_eval_dir / "quota_log.json"),
+            )
+
+        assert result["corpus"] == identity.model_dump(mode="json")
 
     @pytest.mark.asyncio
     async def test_run_evaluation_resume_and_limit(

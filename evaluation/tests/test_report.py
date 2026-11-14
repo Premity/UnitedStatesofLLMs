@@ -301,3 +301,27 @@ def test_arm_order_matches_the_harness_registry() -> None:
     from harness.arms import ARMS
 
     assert set(ARM_ORDER) == set(ARMS)
+
+
+def test_the_report_names_the_index_that_scored_it() -> None:
+    result = _result(arm="rag", correct=True, confidence=0.8)
+    result["corpus"] = {"instruments": 23, "locators": 4000, "content_hash": "c" * 64}
+
+    report = render_report([result])
+
+    assert "Citation index: `cccccccccccc (23 instruments, 4000 locators)`." in report
+
+
+def test_the_report_refuses_mixed_indexes_unless_told_and_then_labels_each_row() -> None:
+    on_a = _result(arm="rag", correct=True, confidence=0.8, case_id="case-a")
+    on_a["corpus"] = {"instruments": 9, "locators": 2218, "content_hash": "a" * 64}
+    unrecorded = _result(arm="rag", correct=True, confidence=0.8, case_id="case-b")
+
+    with pytest.raises(ValueError, match="different citation indexes"):
+        render_report([on_a, unrecorded])
+
+    report = render_report([on_a, unrecorded], allow_mixed_corpora=True)
+
+    assert "> **Mixed citation indexes:**" in report
+    assert _case_cells(report, "case-a", "rag")[-1] == "aaaaaaaaaaaa (9 instruments, 2218 locators)"
+    assert _case_cells(report, "case-b", "rag")[-1] == "not recorded"
