@@ -39,8 +39,8 @@ Keep them short. A page is plenty.
 | [0005](0005-json-run-artifacts.md) | Run artifacts as JSON files, not a database | Accepted |
 | [0006](0006-ollama-host-by-default.md) | Ollama on the host by default, compose profile optional | Accepted |
 | [0007](0007-curated-corpus.md) | Curated corpus scoped by manifest, not a crawl | Accepted |
-| [0008](0008-citation-locator-format.md) | One citation locator format, sub-paragraphs inside the article | Proposed |
-| [0009](0009-presenter-on-groq.md) | The presenter runs on Groq, not Mistral | Proposed |
-| [0010](0010-corpus-identity-and-amendments.md) | Corpus ids for annexed instruments, and how amendments are carried | Proposed |
+| [0008](0008-citation-locator-format.md) | One citation locator format, sub-paragraphs inside the article | Accepted |
+| [0009](0009-presenter-on-groq.md) | The presenter runs on Groq, not Mistral | Accepted |
+| [0010](0010-corpus-identity-and-amendments.md) | Corpus ids for annexed instruments, and how amendments are carried | Accepted |
 | [0011](0011-self-consistency-arm.md) | Self-consistency control arm (Arm E) aggregation rule and compute matching | Accepted |
 | [0012](0012-three-case-evaluation.md) | The scored evaluation is three cases, with three more as a stretch | Accepted |
