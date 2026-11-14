@@ -1,5 +1,6 @@
 """Domain models for the debate, its citations, and its persisted artifacts."""
 
+from council_core.models.case import Case, Outcome, PublicCase
 from council_core.models.citation import (
     Citation,
     CitationStatus,
@@ -27,6 +28,7 @@ from council_core.models.run import RunArtifact, RunMetadata, RunStatus
 
 __all__ = [
     "Argument",
+    "Case",
     "Citation",
     "CitationStatus",
     "CitationType",
@@ -38,6 +40,8 @@ __all__ = [
     "Objection",
     "ObjectionDisposition",
     "ObjectionSeverity",
+    "Outcome",
+    "PublicCase",
     "ResolvedCitation",
     "Role",
     "RunArtifact",
