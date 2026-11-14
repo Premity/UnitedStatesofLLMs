@@ -110,7 +110,10 @@ ARMS: dict[str, Arm] = {
         ),
         retrieval_enabled=True,
         attackers=(Role.ATTACKER_DOCTRINAL, Role.ATTACKER_EVIDENTIARY),
-        max_rounds=3,
+        # Same ceiling as C, so C and D differ only in the second attacker. The
+        # app's default is 3 (`DebateConfig.max_rounds`); the evaluation tests 2,
+        # which also keeps a case to 7 judge calls. The third round is untested.
+        max_rounds=2,
     ),
     "self_consistency": SelfConsistencyArm(
         key="self_consistency",

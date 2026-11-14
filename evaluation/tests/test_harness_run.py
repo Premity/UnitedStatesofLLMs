@@ -87,11 +87,11 @@ class TestQuotaTracking:
         assert get_expected_calls("raw", 1) == 1
         assert get_expected_calls("rag", 1) == 1
         assert get_expected_calls("single_attacker", 1) == 2
-        assert get_expected_calls("full_council", 1) == 3
+        assert get_expected_calls("full_council", 1) == 2
         assert get_expected_calls("self_consistency", 1) == 1
 
         # Multiple cases
-        assert get_expected_calls("full_council", 4) == 12
+        assert get_expected_calls("full_council", 4) == 8
 
     def test_quota_tracker_records_calls_and_enforces_limit(self, temp_eval_dir: Path) -> None:
         log_path = temp_eval_dir / "quota_log.json"

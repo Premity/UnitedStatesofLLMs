@@ -7,7 +7,7 @@ Enforces strict OpenRouter free-tier quota limits:
     - Arm A (raw): 1
     - Arm B (rag): 1
     - Arm C (single_attacker): 2
-    - Arm D (full_council): 3
+    - Arm D (full_council): 2 (its max_rounds, the same as C's)
     - Arm E (self_consistency): 1
 - Running count maintained in `data/eval/quota_log.json`.
 """
@@ -26,7 +26,7 @@ JUDGE_CALLS_PER_CASE: dict[str, int] = {
     "raw": 1,
     "rag": 1,
     "single_attacker": 2,
-    "full_council": 3,
+    "full_council": 2,
     "self_consistency": 1,
 }
 

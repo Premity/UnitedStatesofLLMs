@@ -9,7 +9,8 @@ The headline claim of this project is that an adversarial multi-agent council
 (Arm D) achieves superior calibration and lower citation fabrication than a
 single-pass system. However, reviewer scepticism will immediately identify a
 fatal compute confound: Arm D executes multiple model calls per case (presenter,
-two attackers, and judge across 1–3 rounds, totaling 4–12 calls), whereas a
+two attackers, and judge across 1–3 rounds, totaling 4–12 calls; the
+evaluation caps D at 2 rounds, so 4–8), whereas a
 naive baseline (Arm B, RAG) runs only one or two calls.
 
 If Arm D outperforms Arm B, a critic can reasonably argue: "The council did not
@@ -72,8 +73,9 @@ $$\text{total\_calls}(D) = C_D$$
 $$n = \max(1, C_D - 1)$$
 
 If Arm D terminates in round 1 ($C_D = 4$), Arm E draws $n = 3$ presenter samples
-plus 1 judge call ($3 + 1 = 4$, matching D's turns). If Arm D goes 3 rounds
-($C_D = 12$), Arm E draws $n = 11$ presenter samples plus 1 judge call ($11 + 1 = 12$).
+plus 1 judge call ($3 + 1 = 4$, matching D's turns). If Arm D goes 2 rounds, the
+evaluation's ceiling ($C_D = 8$), Arm E draws $n = 7$ presenter samples plus 1
+judge call ($7 + 1 = 8$).
 E's calls equal D's turns; against D's real calls, E is equal or slightly under.
 
 If Arm E is evaluated in a judge-free ablation configuration (`has_judge = False`),
