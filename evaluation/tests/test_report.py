@@ -9,7 +9,13 @@ from pathlib import Path
 import pytest
 
 from council_core.models.debate import Role
-from metrics.report import ARM_ORDER, MIN_CASES_FOR_INTERVALS, generate_report, render_report
+from metrics.report import (
+    ARM_ORDER,
+    MIN_CASES_FOR_INTERVALS,
+    _severity_breakdown,
+    generate_report,
+    render_report,
+)
 
 
 def _objection(role: Role, ground: str) -> dict:
@@ -325,3 +331,44 @@ def test_the_report_refuses_mixed_indexes_unless_told_and_then_labels_each_row()
     assert "> **Mixed citation indexes:**" in report
     assert _case_cells(report, "case-a", "rag")[-1] == "aaaaaaaaaaaa (9 instruments, 2218 locators)"
     assert _case_cells(report, "case-b", "rag")[-1] == "not recorded"
+
+
+def _ruled(disposition: str, severity: str | None, *, omit_severity: bool = False) -> dict:
+    objection = {
+        **_objection(Role.ATTACKER_DOCTRINAL, "g"),
+        "disposition": disposition,
+    }
+    if not omit_severity:
+        objection["severity"] = severity
+    return objection
+
+
+def test_severity_breakdown_counts_not_stated_apart_from_minor() -> None:
+    result = _result(arm="full_council", correct=True, confidence=0.7)
+    result["objections"] = [
+        _ruled("overruled", "fatal"),
+        _ruled("overruled", "fatal"),
+        _ruled("sustained", "fatal"),
+        _ruled("overruled", "minor"),
+        _ruled("sustained", "material"),
+        _ruled("overruled", None),
+        _ruled("sustained", None, omit_severity=True),
+        _ruled("partial", "fatal"),
+        _ruled("unaddressed", "minor"),
+    ]
+    counts = _severity_breakdown([result])
+    assert counts["fatal"] == {"sustained": 1, "overruled": 2}
+    assert counts["material"] == {"sustained": 1, "overruled": 0}
+    assert counts["minor"] == {"sustained": 0, "overruled": 1}
+    assert counts["not_stated"] == {"sustained": 1, "overruled": 1}
+
+
+def test_the_report_shows_severity_per_arm_with_overruled_fatal_called_out() -> None:
+    full = _result(arm="full_council", correct=True, confidence=0.7)
+    full["objections"] = [_ruled("overruled", "fatal"), _ruled("overruled", None)]
+    single = _result(arm="single_attacker", correct=True, confidence=0.7)
+    report = render_report([full, single])
+    assert "### Objection severity" in report
+    rows = [line for line in report.splitlines() if line.startswith("| full_council | 0 / 1")]
+    assert rows and rows[0].rstrip().endswith("| 1 |")
+    assert "| single_attacker | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 |" in report
