@@ -100,6 +100,21 @@ export interface DebateConfig {
   top_k: number;
 }
 
+/**
+ * A prepared case, as the picker gets it (`council_core.models.case.PublicCase`).
+ * Question and facts only: the tribunal's holding and outcome never reach the
+ * browser, so there is no field here to read them from.
+ */
+export interface PublicCase {
+  id: string;
+  title: string;
+  court: string;
+  year: number;
+  question: string;
+  facts: string;
+  difficulty: string;
+}
+
 /** Which citation index scored a run (`council_core.models.corpus.CorpusIdentity`). */
 export interface CorpusIdentity {
   instruments: number;

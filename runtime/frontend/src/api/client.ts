@@ -1,4 +1,4 @@
-import type { DebateConfig, RunMetadata } from "@/types";
+import type { DebateConfig, PublicCase, RunMetadata } from "@/types";
 
 const BASE = "/api";
 
@@ -22,6 +22,9 @@ async function get<T>(path: string): Promise<T> {
 }
 
 export const api = {
+  /** Prepared cases for the question form's picker. Question and facts only. */
+  listCases: () => get<PublicCase[]>("/cases"),
+
   listRuns: () => get<RunMetadata[]>("/debate/runs"),
 
   getRun: (runId: string) => get<unknown>(`/debate/runs/${runId}`),
