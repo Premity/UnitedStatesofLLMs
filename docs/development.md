@@ -21,19 +21,12 @@ Then fill in `.env`:
 
 | Key | Where to get it |
 | --- | --- |
-| `GROQ_API_KEY` | https://console.groq.com/keys/ — free tier, ~1B tokens/month |
-| `GEMINI_API_KEY` | https://aistudio.google.com/apikey — free tier, 100 req/day |
+| `GROQ_API_KEY` | https://console.groq.com/keys/ — free tier; presenter and both attackers |
+| `OPENROUTER_API_KEY` | https://openrouter.ai/keys — free account; the judge |
 
-And pull the attacker models:
-
-```bash
-ollama pull qwen3.5:9b
-ollama pull gemma3:12b
-```
-
-> No GPU? Run the containerised Ollama profile (`make up-ollama`, then set
-> `COUNCIL_OLLAMA_BASE_URL=http://ollama:11434`), or point the attackers at
-> Cloudflare Workers AI. See [ADR 0006](adr/0006-ollama-host-by-default.md).
+Ollama is optional: every role defaults to an API backend. To run a role
+locally instead, set its `COUNCIL_*_MODEL` to an `ollama/` id. See
+[ADR 0006](adr/0006-ollama-host-by-default.md).
 
 ---
 
@@ -209,8 +202,8 @@ The embedding model changed between indexing and querying. Both read
 `EMBEDDING_MODEL`; make sure they got the same value, then `make reindex`.
 
 **Free-tier quota exhausted**
-Gemini AI Studio allows 100 requests/day and each debate round uses one judge
-call. Lower `MAX_CONCURRENT_DEBATES`, or point the judge at a local model while
+OpenRouter's free tier allows 50 requests/day, shared across every `:free`
+model on the account, and each debate round uses one judge call. Lower `MAX_CONCURRENT_DEBATES`, or point the judge at a local model while
 developing.
 
 ---

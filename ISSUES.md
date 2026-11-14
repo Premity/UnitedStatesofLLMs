@@ -16,12 +16,11 @@ local citation status.
 
 | Item below | Track |
 | --- | --- |
-| Run artifact does not record its corpus | T1 / T4 |
-| Evaluation harness runner | T4-1, T4-2, T4-3 |
-| Arm E — the compute-matched control | T2-4, T2-5 |
-| Evaluation case fixtures | TF |
-| Sprite artwork | T3 stretch |
-| Case picker for the question form | T3 / TF |
+| Run artifact does not record its corpus | T1 / T4 — GitHub #24 |
+| Evaluation harness runner | T4-1, T4-2, T4-3 — GitHub #19, #21 |
+| Arm E — the compute-matched control | T2-4, T2-5 — GitHub #21 |
+| Evaluation case fixtures | TF — GitHub #21 |
+| Case picker for the question form | T3 / TF — GitHub #17 |
 
 ---
 
@@ -36,15 +35,13 @@ blocked on that or cosmetic beside it.
 | 1 | **Evaluation harness runner** | `run.py` and `report.py` do not exist. The arms, the case schema and all three metrics are written and tested; nothing drives arms over cases. Also needs retrieval exclusion for a case's own `source_case_id`, or a case leaks its own judgment into its evidence |
 | 2 | **Arm E — the compute-matched control** | Without it, D-vs-B cannot separate adversarial structure from simply spending more compute, which is *the* standing criticism of the multi-agent debate literature. Objective 2 is stated against this baseline, so the headline claim is unfalsifiable until E runs |
 | 3 | **Case fixtures: 1 of a target 40–80** | Below ~40 the bootstrap intervals are too wide for any arm comparison to mean anything. Team task, and the long pole in wall-clock terms |
-| 4 | **Judge model for the scored run** | OpenRouter's free tier is ~16 debates/day; 40–80 cases need 120–240+ judge calls. Decide before the roster freezes (ADR 0009) |
-| 5 | **Run artifacts do not record their corpus** | Citation statuses are only interpretable against a known corpus, and nothing in an artifact says which one scored it. Becomes a correctness problem the moment two machines' results are compared |
-| 6 | **Case picker for the question form** | Needs an ADR first: `runtime/api` does not depend on `evaluation`, so a case endpoint either inverts that or duplicates the loader. And the ground truth must never reach the browser |
-| 7 | **Severity-weighted metrics** | `Objection.severity` now exists and nothing weighs objections by it |
-| 8 | **Sprite artwork** | Spec written, state machine done; drops into `Sprite.tsx` |
+| 4 | **Run artifacts do not record their corpus** | Citation statuses are only interpretable against a known corpus, and nothing in an artifact says which one scored it. Becomes a correctness problem the moment two machines' results are compared. GitHub #24 |
+| 5 | **Case picker for the question form** | Needs an ADR first: `runtime/api` does not depend on `evaluation`, so a case endpoint either inverts that or duplicates the loader. And the ground truth must never reach the browser. GitHub #17 |
+| 6 | **Severity-weighted metrics** | `Objection.severity` now exists and nothing weighs objections by it. GitHub #28 |
 
-Two open decisions that do not block the above: **reasoning-overlap scoring**
-(rubric vs LLM-judge — leaning LLM-judge with a manually-scored subset to
-validate it) and a **hosted demo** target, which has none chosen.
+Items 1–3 are GitHub #19 and #21. Two open decisions that do not block the
+above: **reasoning-overlap scoring** (GitHub #27) and a **hosted demo** target,
+which has none chosen (GitHub #18).
 
 One known limit to state in the report rather than fix: three Rome Statute
 weapons amendments are not indexed, because the source gives the inserted
@@ -189,7 +186,9 @@ without leaking the holding into the facts.
 
 ---
 
-### [LOW] Sprite artwork
+### [WONTFIX] Sprite artwork
+
+Not being done: the coloured plinths stay. Kept here for the spec's location.
 
 `runtime/frontend/public/sprites/README.md` has the spec. Currently coloured
 plinths with role initials; the animation and state machine are done, so real
@@ -266,10 +265,13 @@ introspection endpoint (`GET /api/v1/key`), not a third-party estimate:
 `free_model_daily_requests: { used: 13, limit: 50, remaining: 37 }` after
 today's testing. A 3-round debate uses at least 3 judge calls (more if any
 repair/retry fires), capping this at roughly **16 debates/day** before the
-key is throttled — and the evaluation harness (40–80 cases, ISSUES.md) would
-need 120–240+ judge calls, completely infeasible on this tier alone. Fine for
-continued dev/validation; not viable for a real scored run without either a
-paid OpenRouter tier or swapping the judge again before that eval.
+key is throttled.
+
+**Settled for the scored run:** the judge stays
+`openrouter/nvidia/nemotron-3-ultra-550b-a55b:free`, and the evaluation is cut
+to three cases (GitHub #21). One case through all five arms is up to 8 judge
+calls (A 1, B 1, C 2, D 3, E 1), so the run is 24 before any repair or retry —
+within one day's 50.
 
 ### [MEDIUM] Presenter moved from Mistral to Groq
 
@@ -738,9 +740,9 @@ Documented in [docs/api-contract.md](docs/api-contract.md).
 self-reported by the attacker that raised the objection, and both attacker
 prompts ask for it with a stated meaning for each step.
 
-Three named steps rather than a score, for the reason ADR 0011 gives about the
-judge's confidence: a model asked for a number invents precision it does not
-have. It is advisory, and the judge rules on the reasoning, never on the label.
+Three named steps rather than a score, for the reason `Verdict.confidence_band()`
+gives about the judge's confidence: a model asked for a number invents precision
+it does not have. It is advisory, and the judge rules on the reasoning, never on the label.
 
 `isLoud()` reads it, so the flourish follows weight rather than citation luck
 — a well-cited `minor` objection no longer slams, and a `fatal` one does even
@@ -769,25 +771,13 @@ The data is now there to do it.
 
 ## Decisions still open
 
-### Judge model for the scored run
-
-The judge is now `openrouter/nvidia/nemotron-3-ultra-550b-a55b:free` (see the
-T0 section above) — Gemini AI Studio's free tier was a dead end, not a
-request-budget problem. OpenRouter's free tier caps at 50 requests/day
-account-wide, roughly 16 debates/day, which covers continued dev/validation
-but not a 40–80 case evaluation (120–240+ judge calls).
-
-Options for the scored run itself: a paid OpenRouter tier, spreading the run
-across multiple days, or swapping the judge to a model with more headroom
-before that run starts (the roster must then freeze — see ADR 0009).
-
-### Reasoning-overlap scoring
+### Reasoning-overlap scoring — GitHub #27
 
 Rubric with manual scoring, or LLM-judge against `key_reasoning`? The latter is
 faster but introduces a model into the measurement of models. Leaning LLM-judge
 with a manually-scored subset to validate it.
 
-### Hosted demo
+### Hosted demo — GitHub #18
 
 Cloudflare Workers AI free tier gives ~30 single-case runs/day. Enough for a
 demo, not for evaluation. No deployment target chosen yet.
