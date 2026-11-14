@@ -105,8 +105,9 @@ the last in exactly one respect. Arm E sits beside D as a control:
 | **D** | Full council (2 attackers) | Whether the second attacker earns its place |
 | **E** | One model sampled *n* times, *n* matched to D's call count | Whether D's gain is structural, or just more compute |
 
-C and D are evaluated at 2 rounds, so they differ only in the second attacker;
-the app runs up to 3.
+C and D are evaluated at 2 rounds, so they differ only in the second attacker.
+That is also the app's default; a third round can be chosen in the app but was
+not evaluated.
 
 Arm E is the one that makes the central claim falsifiable. A debate spends
 several model calls per question, and the multi-agent debate literature has been

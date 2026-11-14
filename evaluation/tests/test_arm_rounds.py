@@ -28,8 +28,9 @@ def test_the_quota_budget_matches_each_arms_round_ceiling() -> None:
         assert JUDGE_CALLS_PER_CASE[key] == arm.max_rounds, key
 
 
-def test_the_evaluated_ceiling_is_within_the_apps() -> None:
-    """The evaluation tests fewer rounds than the app allows, never more."""
+def test_the_council_is_evaluated_at_the_apps_default() -> None:
+    """The evaluation scores the debate the app runs by default."""
     default = DebateConfig.model_fields["max_rounds"].default
+    assert ARMS["full_council"].max_rounds == default
     for arm in ARMS.values():
         assert arm.max_rounds <= default

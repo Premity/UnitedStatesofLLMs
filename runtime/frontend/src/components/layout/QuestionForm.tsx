@@ -112,7 +112,9 @@ export function QuestionForm() {
       question: question.trim(),
       facts: facts.trim(),
       rounds,
-      max_rounds: 3,
+      // Auto stops at the default 2 rounds, the configuration that was
+      // evaluated; picking a number runs up to that many.
+      max_rounds: rounds === "auto" ? 2 : rounds,
       enabled_attackers: attackers,
       retrieval_enabled: true,
       top_k: 8,

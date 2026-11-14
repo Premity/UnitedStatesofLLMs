@@ -258,7 +258,7 @@ editing `build_graph()` and restarting the process.
 | Auto (`rounds: "auto"`) | judge sets `novel_objections_raised` | flag is `false` → `no_novel_objections` |
 | **Any mode** | — | `current_round >= max_rounds` |
 
-`max_rounds` defaults to 3, hard-capped at 5. **The ceiling is absolute in every
+`max_rounds` defaults to 2, the evaluated configuration, and is capped at 3. **The ceiling is absolute in every
 mode.** NFR-2 is covered directly by `test_workflow.py`, including a
 parametrised test asserting termination within 10 iterations for every valid
 configuration.
@@ -502,9 +502,9 @@ respect. Arm E sits beside D as a control, not on the ladder.
 | **D** `full_council` | ✓ | 2 | 2 | Whether the second attacker earns its place |
 | **E** `self_consistency` | ✓ | 0, sampled *n*× | 1 | Whether D's gain is structural or merely more compute |
 
-C and D share a 2-round ceiling, so they differ only in the second attacker. The
-app's default is 3 rounds (`DebateConfig.max_rounds`); the evaluation tests 2,
-and says so. The third round is untested.
+C and D share a 2-round ceiling, so they differ only in the second attacker.
+It is also the app's default (`DebateConfig.max_rounds`), so the evaluation
+scores the debate the app runs. A third round can be chosen but is untested.
 
 Arm B exists so the council is not credited for gains produced by retrieval
 alone — without it, "beats a raw LLM" is an uninteresting claim.

@@ -43,7 +43,7 @@ Runs a debate and streams turn-level events. Returns `text/event-stream`.
   "question": "Does the strike constitute a war crime under Article 8(2)(b)(iv)?",
   "facts": "On 12 March, aircraft struck a facility…",
   "rounds": "auto",
-  "max_rounds": 3,
+  "max_rounds": 2,
   "enabled_attackers": ["attacker_doctrinal", "attacker_evidentiary"],
   "retrieval_enabled": true,
   "top_k": 8
@@ -55,7 +55,7 @@ Runs a debate and streams turn-level events. Returns `text/event-stream`.
 | `question` | string | required | The legal question |
 | `facts` | string | `""` | Factual predicate |
 | `rounds` | int \| `"auto"` | `"auto"` | `auto` lets the judge terminate early |
-| `max_rounds` | int 1–5 | `3` | Hard ceiling in every mode |
+| `max_rounds` | int 1–3 | `2` | Hard ceiling in every mode. 2 is the evaluated configuration |
 | `enabled_attackers` | Role[] | both | Empty = single-pass (ablation arms A/B) |
 | `retrieval_enabled` | bool | `true` | False = ungrounded (arm A) |
 | `top_k` | int 1–50 | `8` | Corpus spans retrieved |

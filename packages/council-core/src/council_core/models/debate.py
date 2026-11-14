@@ -246,7 +246,10 @@ class DebateConfig(BaseModel):
             "attackers raise no novel objections. Always bounded by max_rounds."
         ),
     )
-    max_rounds: int = Field(default=3, ge=1, le=5, description="Hard upper bound.")
+    # Default 2: the configuration the evaluation scores (arms C and D), so the
+    # app's default is the system that was tested. A third round is allowed
+    # but was not evaluated. Lowering the cap rejects a stored run above it.
+    max_rounds: int = Field(default=2, ge=1, le=3, description="Hard upper bound.")
 
     enabled_attackers: list[Role] = Field(
         default_factory=lambda: [Role.ATTACKER_DOCTRINAL, Role.ATTACKER_EVIDENTIARY],

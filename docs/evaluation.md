@@ -38,8 +38,8 @@ in `evaluation/harness/arms.py`.
 | **E** `self_consistency` | One model sampled *n* times and aggregated, *n* matched to D's call count | Whether D's gain comes from adversarial structure or merely from more compute |
 
 C and D both run at most 2 rounds, so they differ only in the second
-attacker. The app's default is 3; the evaluation tests 2, and the write-up says
-so, since the third round goes untested.
+attacker. That is the app's default too, so the evaluation scores what the app
+runs. A third round can be chosen in the app; it is not evaluated.
 
 B exists so the council is not credited for gains that retrieval alone produces.
 Without it, "our system beats a raw LLM" is an uninteresting claim.
