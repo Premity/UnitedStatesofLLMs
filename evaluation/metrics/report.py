@@ -18,16 +18,22 @@ BOOTSTRAP_RESAMPLES = 10_000
 BOOTSTRAP_SEED = 0
 
 
-def _citation_counts(result: dict[str, Any]) -> tuple[int, int]:
+def _citation_counts(result: dict[str, Any]) -> tuple[int, int, int]:
+    """Return (unresolved, misquoted, eligible) for one result.
+
+    Kept apart: `unresolved` is the fabrication signal (ADR 0004); `misquoted`
+    comes from a loose quote matcher and is reported as its own rate.
+    """
     statuses = result.get("citation_statuses")
     if isinstance(statuses, dict):
         total = int(statuses.get("total", 0))
         out_of_corpus = int(statuses.get("out_of_corpus", 0))
         unresolved = int(statuses.get("unresolved", 0))
         misquoted = int(statuses.get("misquoted", 0))
-        return unresolved + misquoted, max(0, total - out_of_corpus)
+        return unresolved, misquoted, max(0, total - out_of_corpus)
 
-    fabricated = 0
+    unresolved = 0
+    misquoted = 0
     eligible = 0
     for collection in ("arguments", "objections"):
         for item in result.get(collection, []):
@@ -36,8 +42,9 @@ def _citation_counts(result: dict[str, Any]) -> tuple[int, int]:
                 if status == "out_of_corpus":
                     continue
                 eligible += 1
-                fabricated += status in {"unresolved", "misquoted"}
-    return fabricated, eligible
+                unresolved += status == "unresolved"
+                misquoted += status == "misquoted"
+    return unresolved, misquoted, eligible
 
 
 def _independence(result: dict[str, Any]) -> float | None:
@@ -149,9 +156,11 @@ def _summarize_arm(results: list[dict[str, Any]]) -> dict[str, Any]:
     ]
 
     citation_data = [_citation_counts(result) for result in results]
-    unresolved = sum(count for count, _ in citation_data)
-    eligible = sum(count for _, count in citation_data)
+    unresolved = sum(count for count, _, _ in citation_data)
+    misquoted = sum(count for _, count, _ in citation_data)
+    eligible = sum(count for _, _, count in citation_data)
     fabrication_rate = unresolved / eligible if eligible else None
+    misquote_rate = misquoted / eligible if eligible else None
     independence_values = [
         value for result in results if (value := _independence(result)) is not None
     ]
@@ -215,9 +224,15 @@ def _summarize_arm(results: list[dict[str, Any]]) -> dict[str, Any]:
         else None,
         "fabrication_rate": fabrication_rate,
         "fabrication_ci": _bootstrap_ratio_ci(
-            [count for count, _ in citation_data],
-            [total for _, total in citation_data],
+            [count for count, _, _ in citation_data],
+            [total for _, _, total in citation_data],
             seed_offset=5,
+        ),
+        "misquote_rate": misquote_rate,
+        "misquote_ci": _bootstrap_ratio_ci(
+            [count for _, count, _ in citation_data],
+            [total for _, _, total in citation_data],
+            seed_offset=7,
         ),
         "independence": float(np.mean(independence_values)) if independence_values else None,
         "independence_ci": _bootstrap_ci(independence_values, average, seed_offset=6),
@@ -256,8 +271,10 @@ def render_report(results: list[dict[str, Any]], *, allow_mixed_results: bool = 
         "",
         f"Bootstrap: {BOOTSTRAP_RESAMPLES:,} resamples; fixed seed {BOOTSTRAP_SEED}.",
         "Intervals are percentile 95% confidence intervals.",
-        "Fabrication rate = (unresolved + misquoted) / "
-        "(total citations - out_of_corpus); misquoted counts, and out_of_corpus is excluded.",
+        "Fabrication rate = unresolved / (total citations - out_of_corpus); "
+        "out_of_corpus is excluded (ADR 0004).",
+        "Misquote rate = misquoted / (total citations - out_of_corpus), reported apart: "
+        "the quote check is a loose token-overlap heuristic, not an exact lookup.",
         "Independence = 1 - token-level Jaccard overlap between attacker objection grounds.",
         "",
     ]
@@ -270,9 +287,10 @@ def render_report(results: list[dict[str, Any]], *, allow_mixed_results: bool = 
             (
                 "| Arm | Cases | Completed | Wrong | Errors | Timed out | "
                 "Accuracy | Brier score | ECE | Overconfidence | "
-                "Citation fabrication rate | Attacker independence | Judge backend |",
+                "Citation fabrication rate | Citation misquote rate | "
+                "Attacker independence | Judge backend |",
                 "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | "
-                "---: | ---: | ---: | --- |",
+                "---: | ---: | ---: | ---: | --- |",
             )
         )
         summaries = {arm: _summarize_arm(rows) for arm, rows in sorted(by_arm.items())}
@@ -285,6 +303,7 @@ def render_report(results: list[dict[str, Any]], *, allow_mixed_results: bool = 
                 f"{_format_metric(summary['ece'], summary['ece_ci'], sample_size=summary['calibration_n'])} | "
                 f"{_format_metric(summary['overconfidence'], summary['overconfidence_ci'])} | "
                 f"{_format_metric(summary['fabrication_rate'], summary['fabrication_ci'])} | "
+                f"{_format_metric(summary['misquote_rate'], summary['misquote_ci'])} | "
                 f"{_format_metric(summary['independence'], summary['independence_ci'])} | "
                 f"{', '.join(summary['judge_backends'])} |"
             )

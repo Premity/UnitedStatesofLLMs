@@ -117,11 +117,19 @@ Brier score, not instead of it.
 | Metric | Meaning |
 | --- | --- |
 | **Validity rate** | Share of citations that resolved cleanly |
-| **Fabrication rate** | Share that pointed at an indexed instrument but did not exist there |
+| **Fabrication rate** | Share that pointed at an indexed instrument but did not exist there (`unresolved`) |
+| **Misquote rate** | Share whose locator exists but whose quoted words did not match it (`misquoted`) |
 
-`out_of_corpus` is excluded from the fabrication rate. Citing real authority we
-have not indexed is not fabrication, and conflating them makes the number
+`out_of_corpus` is excluded from both rates' denominators. Citing real authority
+we have not indexed is not fabrication, and conflating them makes the number
 meaningless.
+
+`misquoted` is reported apart from fabrication, not inside it. A locator either
+exists or it does not; that is an exact lookup. The quote check is a loose
+token-overlap heuristic (ADR 0004): it flags a verbatim quote whose punctuation
+differs from the source, and it passes a quote that drops a "not". Folding it
+into the headline would put that noise into the number the project is judged on.
+A misquote still lowers the validity rate, since only `resolved` counts as valid.
 
 Expect arm A (no retrieval) to fabricate most. If it does not, that is a finding
 worth investigating rather than celebrating.

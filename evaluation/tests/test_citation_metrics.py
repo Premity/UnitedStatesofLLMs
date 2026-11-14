@@ -2,8 +2,8 @@
 
 Verifies that:
 1. `unresolved` and `out_of_corpus` are tracked as separate, distinct counts.
-2. `fabrication_rate` ignores `out_of_corpus` entirely, penalising only
-   `unresolved` and `misquoted`.
+2. `fabrication_rate` ignores `out_of_corpus` entirely and counts only
+   `unresolved`; `misquoted` is reported apart as `misquote_rate`.
 3. Edge cases: all-resolved, all-out-of-corpus, empty lists.
 """
 
@@ -74,12 +74,12 @@ class TestCitationMetrics:
     def test_fabrication_rate_ignores_out_of_corpus_entirely(self) -> None:
         """Out-of-corpus citations affect neither the fabrication numerator nor denominator.
 
-        Fabrication rate measures hallucinated authority (unresolved + misquoted).
+        Fabrication rate measures hallucinated authority (unresolved only).
         Authority that is real but unindexed (out_of_corpus) cannot be verified,
         but is explicitly not fabrication (ADR 0004 & Non-negotiable #2).
         """
         # Baseline: 5 citations: 3 resolved, 1 unresolved, 1 misquoted
-        # fabrication_rate = (1 + 1) / 5 = 2 / 5 = 0.40
+        # fabrication_rate = 1 / 5 = 0.20; misquote_rate = 1 / 5 = 0.20
         base_citations = [
             _make_resolved(CitationStatus.RESOLVED),
             _make_resolved(CitationStatus.RESOLVED),
@@ -89,7 +89,8 @@ class TestCitationMetrics:
         ]
         base_metrics = measure_citations(base_citations)
         assert base_metrics.total == 5
-        assert base_metrics.fabrication_rate == 0.40
+        assert base_metrics.fabrication_rate == 0.20
+        assert base_metrics.misquote_rate == 0.20
 
         # Adding out-of-corpus citations does not change the rate because they
         # are excluded from both the numerator and denominator.
@@ -103,7 +104,8 @@ class TestCitationMetrics:
         assert ooc_metrics.out_of_corpus == 5
         assert ooc_metrics.unresolved == 1
         assert ooc_metrics.misquoted == 1
-        assert ooc_metrics.fabrication_rate == base_metrics.fabrication_rate == 0.40
+        assert ooc_metrics.fabrication_rate == base_metrics.fabrication_rate == 0.20
+        assert ooc_metrics.misquote_rate == base_metrics.misquote_rate == 0.20
 
     def test_all_out_of_corpus_has_no_eligible_fabrication_rate(self) -> None:
         """An all-out-of-corpus set has no eligible denominator."""
@@ -121,13 +123,21 @@ class TestCitationMetrics:
         assert metrics.validity_rate == 0.0
         assert math.isnan(metrics.fabrication_rate)
 
-    def test_misquoted_citations_count_as_fabrication(self) -> None:
+    def test_misquoted_citations_are_not_fabrication(self) -> None:
+        """Pins the definition: fabrication is `unresolved` only (ADR 0004).
+
+        A misquote still lowers the validity rate and has its own rate, so it is
+        reported, just not mixed into the headline number.
+        """
         citations = [
             _make_resolved(CitationStatus.RESOLVED),
             _make_resolved(CitationStatus.MISQUOTED, quote="incorrect quotation"),
         ]
+        metrics = measure_citations(citations)
 
-        assert measure_citations(citations).fabrication_rate == 0.5
+        assert metrics.fabrication_rate == 0.0
+        assert metrics.misquote_rate == 0.5
+        assert metrics.validity_rate == 0.5
 
     def test_all_resolved_clean(self) -> None:
         """100% validity, 0% fabrication."""
@@ -139,17 +149,18 @@ class TestCitationMetrics:
         assert metrics.fabrication_rate == 0.0
 
     def test_all_fabricated(self) -> None:
-        """100% fabrication rate (mixture of unresolved and misquoted)."""
+        """100% fabrication rate."""
         citations = [
             _make_resolved(CitationStatus.UNRESOLVED),
             _make_resolved(CitationStatus.UNRESOLVED),
-            _make_resolved(CitationStatus.MISQUOTED),
+            _make_resolved(CitationStatus.UNRESOLVED),
         ]
         metrics = measure_citations(citations)
 
         assert metrics.total == 3
         assert metrics.validity_rate == 0.0
         assert metrics.fabrication_rate == 1.0
+        assert metrics.misquote_rate == 0.0
 
     def test_empty_citations_return_nan_rates(self) -> None:
         """Empty list handles zero-division with NaN."""
@@ -162,3 +173,4 @@ class TestCitationMetrics:
         assert metrics.misquoted == 0
         assert math.isnan(metrics.validity_rate)
         assert math.isnan(metrics.fabrication_rate)
+        assert math.isnan(metrics.misquote_rate)

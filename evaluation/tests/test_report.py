@@ -70,14 +70,18 @@ def test_report_calculates_metrics_and_discloses_provenance(tmp_path: Path) -> N
     assert "api" in report
     assert "judge/rule.md" in report
     assert "hash-123" in report
-    assert "(unresolved + misquoted) / (total citations - out_of_corpus)" in report
-    assert "misquoted counts" in report
+    assert "Fabrication rate = unresolved / (total citations - out_of_corpus)" in report
+    assert "Misquote rate = misquoted / (total citations - out_of_corpus)" in report
+    assert "Citation misquote rate" in report
     summary = next(line for line in report.splitlines() if line.startswith("| rag |"))
-    assert "0.333" in summary
+    # 1 unresolved and 1 misquoted over 6 eligible: each rate is 0.167, and
+    # the old combined figure (0.333) must not appear.
+    assert summary.count("0.167") >= 2
+    assert "0.333" not in summary
     assert "percentile 95% confidence intervals" in report
 
 
-def test_report_counts_misquotes_and_excludes_out_of_corpus() -> None:
+def test_report_keeps_misquotes_out_of_fabrication_and_excludes_out_of_corpus() -> None:
     report = render_report(
         [
             _result(
@@ -90,8 +94,16 @@ def test_report_counts_misquotes_and_excludes_out_of_corpus() -> None:
         ]
     )
 
-    summary = next(line for line in report.splitlines() if line.startswith("| rag |"))
-    assert "0.333" in summary
+    cells = [
+        cell.strip()
+        for cell in next(line for line in report.splitlines() if line.startswith("| rag |"))
+        .strip("|")
+        .split("|")
+    ]
+    fabrication, misquote = cells[10], cells[11]
+    # 1 misquoted over 3 eligible (7 total - 4 out_of_corpus).
+    assert fabrication.startswith("0.000")
+    assert misquote.startswith("0.333")
 
 
 def test_report_refuses_synthetic_results_unless_explicitly_allowed() -> None:
