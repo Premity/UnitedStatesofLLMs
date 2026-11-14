@@ -152,7 +152,7 @@ def render_markdown(artifact: RunArtifact) -> str:
     out.append(
         f"Tokens: {meta.total_prompt_tokens:,} prompt / "
         f"{meta.total_completion_tokens:,} completion. "
-        f"Corpus `{meta.corpus_version or 'unknown'}`. "
+        f"Corpus `{meta.corpus.describe() if meta.corpus else 'not recorded'}`. "
         f"Council v{meta.council_version}."
     )
     out.append("")

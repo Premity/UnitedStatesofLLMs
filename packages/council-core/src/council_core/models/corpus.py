@@ -149,3 +149,31 @@ class CorpusDocument(BaseModel):
     def locators(self) -> list[str]:
         """Every locator this document provides, in order."""
         return [s.locator for s in self.spans]
+
+
+class CorpusIdentity(BaseModel):
+    """Which citation index scored a run, computed from its contents.
+
+    A citation's status means something only against a known index, and the
+    index is a per-machine artifact (ADR 0007): a fresh clone resolves against
+    a 24-locator placeholder, a fully fetched machine against thousands. The
+    index's own `version` field is set by hand and did not change while its
+    instruments went from 9 to 23, so the identity is a hash of the content.
+
+    A run without one predates this record; absence means "not recorded",
+    never "the default corpus".
+    """
+
+    instruments: int = Field(ge=0, description="Instruments the index covers.")
+    locators: int = Field(ge=0, description="Citable spans the index maps.")
+    content_hash: str = Field(
+        description="SHA-256 of the entries and instrument list, canonically serialised."
+    )
+
+    @property
+    def short_hash(self) -> str:
+        """The first 12 hex digits: enough to tell two indexes apart in a table."""
+        return self.content_hash[:12]
+
+    def describe(self) -> str:
+        return f"{self.short_hash} ({self.instruments} instruments, {self.locators} locators)"

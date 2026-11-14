@@ -18,6 +18,7 @@ from typing import Any
 
 from pydantic import BaseModel, Field
 
+from council_core.models.corpus import CorpusIdentity
 from council_core.models.debate import DebateState
 
 
@@ -57,7 +58,17 @@ class RunMetadata(BaseModel):
     )
     corpus_version: str | None = Field(
         default=None,
-        description="Corpus manifest version the retrieval index was built from.",
+        description=(
+            "Never populated. Kept so stored artifacts still validate; "
+            "`corpus` is the record of which index scored the run."
+        ),
+    )
+    corpus: CorpusIdentity | None = Field(
+        default=None,
+        description=(
+            "The citation index this run's citations were resolved against. "
+            "None means not recorded (an artifact from before it was), never a default."
+        ),
     )
     council_version: str = Field(default="0.1.0")
 
