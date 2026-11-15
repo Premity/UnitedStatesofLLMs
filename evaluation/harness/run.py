@@ -31,6 +31,7 @@ from uuid import uuid4
 import structlog
 
 import council_core.llm.client as llm_client
+from harness.host import host_qdrant_url
 
 # Ensure local LiteLLM model cost map is used to prevent network timeouts in sandbox
 os.environ.setdefault("LITELLM_LOCAL_MODEL_COST_MAP", "True")
@@ -45,6 +46,10 @@ if "DATA_DIR" not in os.environ and not Path("/data").exists():
     host_data = (Path.cwd() / "data").resolve()
     if host_data.exists():
         os.environ["DATA_DIR"] = str(host_data)
+
+# Qdrant on the host: see harness/host.py.
+if not Path("/data").exists() and (_url := host_qdrant_url(os.environ.get("QDRANT_URL"))):
+    os.environ["QDRANT_URL"] = _url
 
 from app.core.config import get_role_models, get_settings
 from app.graph.workflow import compiled_graph
