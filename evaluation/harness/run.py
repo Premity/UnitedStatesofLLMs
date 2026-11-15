@@ -777,6 +777,31 @@ def resolve_arm(arm_identifier: str) -> Arm:
     return ARMS[canonical]
 
 
+class EmptyCorpusIndexError(RuntimeError):
+    """A live run would score every citation against an empty index."""
+
+
+def require_populated_index() -> None:
+    """Refuse a live run whose citation index holds nothing.
+
+    The index path comes from `DATA_DIR`, which on the host falls back to
+    `./data` relative to the working directory. Run from anywhere but the repo
+    root and the index is silently missing: every citation resolves
+    `out_of_corpus`, and the quota is spent before the report header shows
+    `0 instruments`. Failing here costs nothing.
+    """
+    identity = get_resolver().corpus_identity()
+    if identity is None or identity.locators > 0:
+        # None: a resolver that cannot describe its index (a test double).
+        return
+    path = get_settings().citation_index_path
+    raise EmptyCorpusIndexError(
+        f"The citation index at {path} is missing or empty, so every citation "
+        "would resolve out_of_corpus. Run the harness from the repo root "
+        f"(the working directory is {Path.cwd()}), or set DATA_DIR."
+    )
+
+
 async def run_evaluation(
     *,
     arms: list[Arm],
@@ -795,6 +820,9 @@ async def run_evaluation(
         raise ValueError("case_timeout must be greater than zero")
     if max_consecutive_failures <= 0:
         raise ValueError("max_consecutive_failures must be greater than zero")
+
+    if judge_backend != "mock":
+        require_populated_index()
 
     run_started = time.perf_counter()
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -1109,7 +1137,7 @@ def main() -> None:
     args = parser.parse_args()
     try:
         asyncio.run(async_main(args))
-    except (QuotaExceededError, KeyboardInterrupt) as exc:
+    except (QuotaExceededError, EmptyCorpusIndexError, KeyboardInterrupt) as exc:
         print(f"\n{exc}", file=sys.stderr)
         sys.exit(1)
 

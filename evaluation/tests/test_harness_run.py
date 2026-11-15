@@ -33,6 +33,7 @@ from harness.quota import (
     get_expected_calls,
 )
 from harness.run import (
+    EmptyCorpusIndexError,
     MockJudgeRole,
     _run_arm_e,
     build_parser,
@@ -43,6 +44,23 @@ from harness.run import (
     run_evaluation,
 )
 from metrics.provenance import MixedResultProvenanceError, load_result_files
+
+
+@pytest.fixture(autouse=True)
+def populated_index():
+    """Stand in for a non-empty citation index.
+
+    Live-backend runs refuse an empty index, and CI has none (`data/index/` is
+    gitignored). Tests about the index patch `get_resolver` themselves.
+    """
+    from council_core.citations.resolver import corpus_identity
+
+    resolver = MagicMock()
+    resolver.corpus_identity.return_value = corpus_identity(
+        {"ap_i/art.51": {"text": "..."}}, ["ap_i"]
+    )
+    with patch("harness.run.get_resolver", return_value=resolver):
+        yield resolver
 
 
 @pytest.fixture
@@ -1083,3 +1101,81 @@ class TestDryRunIsOffline:
         ]
         assert completion.await_count == 0
         assert results[-1]["samples"] >= 1
+
+
+class TestEmptyIndexGuard:
+    """A live run against an empty index spends quota on meaningless citations."""
+
+    @staticmethod
+    def _empty_resolver() -> MagicMock:
+        from council_core.citations.resolver import corpus_identity
+
+        resolver = MagicMock()
+        resolver.corpus_identity.return_value = corpus_identity({}, [])
+        return resolver
+
+    @pytest.mark.asyncio
+    @pytest.mark.parametrize("backend", ["api", "local"])
+    async def test_live_run_refuses_an_empty_index(
+        self, temp_eval_dir: Path, sample_case: Case, backend: str
+    ) -> None:
+        output_dir = temp_eval_dir / "out"
+        tracker = QuotaTracker(temp_eval_dir / "quota_log.json")
+        graph = AsyncMock(side_effect=AssertionError("ran despite an empty index"))
+
+        with (
+            patch("harness.run.get_resolver", return_value=self._empty_resolver()),
+            patch("harness.run.compiled_graph.ainvoke", graph),
+            pytest.raises(EmptyCorpusIndexError, match="repo root"),
+        ):
+            await run_evaluation(
+                arms=[ARMS["raw"]],
+                cases=[sample_case],
+                judge_backend=backend,
+                output_dir=output_dir,
+                quota_tracker=tracker,
+                auto_go=True,
+            )
+
+        assert not output_dir.exists()  # refused before writing anything
+        assert tracker.get_today_usage() == 0
+
+    @pytest.mark.asyncio
+    async def test_dry_run_is_allowed_against_an_empty_index(
+        self, temp_eval_dir: Path, sample_case: Case
+    ) -> None:
+        with patch("harness.run.get_resolver", return_value=self._empty_resolver()):
+            results = await run_evaluation(
+                arms=[ARMS["raw"]],
+                cases=[sample_case],
+                judge_backend="mock",
+                output_dir=temp_eval_dir,
+                quota_tracker=QuotaTracker(temp_eval_dir / "quota_log.json"),
+            )
+
+        assert results[0]["status"] == "completed"
+
+    @pytest.mark.asyncio
+    async def test_live_run_proceeds_against_a_populated_index(
+        self, temp_eval_dir: Path, sample_case: Case
+    ) -> None:
+        """The autouse `populated_index` resolver: the guard lets the run through."""
+        final_state = {
+            "current_round": 1,
+            "turns": [_make_turn(Role.PRESENTER)],
+            "arguments": [],
+            "objections": [],
+            "context": [],
+            "verdict": None,
+        }
+        with patch("harness.run.compiled_graph.ainvoke", AsyncMock(return_value=final_state)):
+            results = await run_evaluation(
+                arms=[ARMS["raw"]],
+                cases=[sample_case],
+                judge_backend="local",
+                output_dir=temp_eval_dir,
+                quota_tracker=QuotaTracker(temp_eval_dir / "quota_log.json"),
+                auto_go=True,
+            )
+
+        assert results[0]["status"] == "completed"
