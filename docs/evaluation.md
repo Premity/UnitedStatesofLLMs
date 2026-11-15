@@ -159,9 +159,81 @@ both angles. High Jaccard *and* high target overlap together is the bad signal.
 
 ### 5. Reasoning overlap (soft)
 
-Did the system anticipate the grounds the tribunal actually relied on
-(`key_reasoning`)? Needs a rubric or an LLM judge. Report it, and be honest that
-it is the soft metric.
+`evaluation/metrics/reasoning_overlap.py`. Scored by hand, read by the report.
+
+Did the run rest on the grounds the tribunal actually relied on
+(`key_reasoning`)? Outcome agreement alone rewards the right answer for the
+wrong reasons. This is the soft metric and the report says so.
+
+**Scored by hand, not by a model.** A model scoring the reasoning of models
+puts the thing under test inside its own measurement. The usual remedy is to
+validate the model judge against a hand-scored subset, but at three cases
+(15 runs) that subset would be the whole set (GitHub #27).
+
+**What to read.** The run's final position in its result file
+(`data/eval/<arm>/<case>.json`): the verdict's `reasoning`, and the arguments
+it kept (`verdict.surviving_argument_ids`, matched against `arguments`). For
+arm E, the aggregated `arguments` and the verdict. Not objections, not
+arguments the judge dropped: the question is what the conclusion rested on, not
+what was said along the way.
+
+**The scale, per `key_reasoning` point:**
+
+| Points | Meaning |
+| ---: | --- |
+| **2** | The run relies on this ground, on the same legal basis the tribunal used (the provision or doctrine), or one plainly equivalent |
+| **1** | The ground is there, but only partly: mentioned without being relied on, reached on a different legal basis, or missing an element the tribunal needed |
+| **0** | Absent, or the run contradicts it |
+
+A run's score is its points over the maximum, `sum / (2 × points)`, so 0.0 to
+1.0 whatever the case's number of points. The arm's figure is the mean over
+its scored runs, shown with how many of its completed runs that is. An unscored
+run is left out, never counted as zero.
+
+Not scored here: whether citations resolve (that is the fabrication rate),
+wording, and the outcome. A run that reaches the wrong outcome can still score
+points, and that is part of what the metric is for.
+
+**Process.**
+
+- Score from the stored results, after the scored run (#26). Nothing is re-run.
+- Where practical, score without knowing the arm. Arm names are in the file
+  path and the `arm` field, so have someone else hand over the runs relabelled.
+- Two scorers, independently, neither seeing the other's scores. The report
+  averages them per run and prints their exact agreement (points given the same
+  value / points compared). It does not reconcile disagreements, and an
+  agreement figure from one scorer does not exist.
+- Write a note for every 1. It is the judgement call, and the note is how
+  someone else checks it.
+
+**Recording.** `evaluation/scores/reasoning_overlap.json`, committed, since
+it is hand-made and cannot be regenerated:
+
+```json
+{
+  "rubric_version": 1,
+  "scores": [
+    {
+      "case_id": "icty_galic_terror",
+      "arm": "full_council",
+      "run_id": "eval_…",
+      "scorer": "s1",
+      "points": [2, 1, 0, 2],
+      "notes": "point 2: …"
+    }
+  ]
+}
+```
+
+- `points` has one entry per `key_reasoning` item, in the case file's order.
+  The report refuses a wrong count, an unknown case, or a run scored twice by
+  one scorer.
+- A score is keyed by `run_id`. Re-running a case makes a new run, which shows
+  as unscored; the old score is listed as matching nothing rather than applied
+  to a run nobody read.
+- `scorer` is a short label, and it is public.
+- `rubric_version` is checked. Changing what a point means is a new version,
+  and scores under the old one are refused rather than mixed in.
 
 ### 6. Objection severity
 
@@ -241,13 +313,14 @@ Results land in `data/eval/`, reports in `evaluation/reports/`.
 stored results in `data/eval/`. Nothing is re-run. It has two tables.
 
 **Per arm:** accuracy, Brier, ECE, overconfidence, fabrication rate, misquote
-rate and attacker independence, each with its `n`. Bootstrap intervals are
+rate, attacker independence and reasoning overlap, each with its `n`. Bootstrap intervals are
 shown only from 10 completed cases (see *Statistical honesty*). Arms are listed
 in ladder order, A to E.
 
 **Per case:** one row for each case and arm, giving the tribunal's outcome, the
 arm's prediction, whether it matched, the judge's confidence, and the citation
-counts (unresolved, misquoted, and the eligible total they are out of). At three
+counts (unresolved, misquoted, and the eligible total they are out of), and the
+run's reasoning overlap where it has been scored. At three
 cases this table is the result: it shows which arm got which case wrong, which
 the averages hide. A run that errored or timed out is marked as such, not
 scored.
