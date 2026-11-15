@@ -61,6 +61,11 @@ against is whatever that machine last fetched. A run artifact's
 **The evaluation machine is the one that matters,** and it has the full corpus.
 Scored runs and fabrication metrics come from there.
 
+**A machine that cannot embed can import the evaluation machine's index**
+(ADR 0014): `make export-index` there, `make import-index FILE=…` here, and
+`make index-status` on both must print the same fingerprint. After that the two
+score citations identically and their results pool.
+
 A dev machine that skips `make corpus` is a supported state: the embedding
 stage is the memory-hungry one (`bf4aab1` bounded it; `make index-local` caps
 it via `MEM_CAP`), and a 16GB machine can work on orchestration, roles and the

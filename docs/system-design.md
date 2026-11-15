@@ -385,7 +385,7 @@ model emits Citation {type, instrument, article|case_id+paragraph|rule_number}
 | Property | Value |
 | --- | --- |
 | Vector store | Qdrant 1.12.4, collection `ihl_corpus` |
-| Embedding | BGE-M3 via **fastembed** (ONNX runtime, 66 MB) |
+| Embedding | `BAAI/bge-large-en-v1.5` via **fastembed** (ONNX runtime, 1024 dimensions) |
 | Default `top_k` | 8 (range 1–50) |
 | Return type | `ResolvedCitation` (status `resolved`) |
 

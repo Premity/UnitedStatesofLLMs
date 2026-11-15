@@ -123,7 +123,9 @@ Two consequences worth planning for:
 
 ### 1. The Qdrant collection
 
-Collection `ihl_corpus`, embedded with BGE-M3 via fastembed. Payload per point:
+Collection `ihl_corpus`, embedded via fastembed with `EMBEDDING_MODEL` (default
+`BAAI/bge-large-en-v1.5`, 1024 dimensions; ADR 0001 says why not BGE-M3).
+One point per locator. Payload per point:
 
 ```json
 {
@@ -159,6 +161,49 @@ Both fields matter. `entries` resolves locators; `instruments` is what
 distinguishes `unresolved` (indexed instrument, missing locator — the
 fabrication signal) from `out_of_corpus` (never indexed). Without the
 `instruments` list every miss looks like fabrication and the metric is worthless.
+
+### Sharing a built index
+
+Embedding is the expensive stage, and a 16GB machine may not manage it. One
+machine builds the index and the others import it (ADR 0014):
+
+```bash
+# On the machine that ran the indexer, with the stack up:
+make export-index          # writes data/bundles/ihl-index-<hash>.tar
+
+# On the machine receiving it, with the stack up:
+make import-index FILE=ihl-index-<hash>.tar
+docker compose restart api # the API loads the citation index once, at startup
+
+# On both:
+make index-status          # the Fingerprint lines must match
+```
+
+A bundle holds both halves above plus the settings they were built with, and
+the tools refuse anything that would be silently wrong:
+
+- **Export** refuses a collection whose point count differs from the citation
+  index's locator count (an embedding run killed partway), or whose vector
+  width is not the configured model's.
+- **Import** refuses a bundle embedded with a different `EMBEDDING_MODEL`, from
+  a different Qdrant version, or whose citation index does not match its
+  manifest. It restores Qdrant first and writes the citation index only if
+  the restore checks out, keeping the previous one as `citation_index.json.bak`.
+  A restore that does not check out has still replaced the collection, so the
+  two halves no longer match until a good bundle is imported; the error and
+  `index-status` both say so.
+- **Status** prints the fingerprint and flags the same mismatches, plus a
+  citation index changed since the last import.
+
+The tools read settings the way the API container does: environment first,
+then `.env`. They run on the host and reach Qdrant at `localhost:6333`. The one
+exception is `QDRANT_URL`: `.env` holds the in-network address
+(`http://qdrant:6333`), which the host cannot resolve, so only the environment
+variable overrides the default.
+
+**Send bundles privately.** They contain the corpus text; the repo is public
+and ships manifests, not documents. `data/bundles/` is gitignored. A bundle goes
+stale when its builder re-fetches or changes chunking: re-export and re-send.
 
 ---
 
@@ -255,6 +300,7 @@ report.
 
 ## Current status
 
-Both pipeline stages are **scaffolded but not implemented**. Structure, CLI, and
-output contracts are settled; the parsers are not written. See
-[ISSUES.md](../ISSUES.md) for what remains.
+Both pipeline stages are built and tested: the fetcher downloads what the
+manifests list, and the indexer writes the citation index and the Qdrant
+collection. The index itself is a per-machine artifact (ADR 0007), shared
+between machines as a bundle (ADR 0014). See [ISSUES.md](../ISSUES.md).

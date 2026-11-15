@@ -21,6 +21,7 @@ make check         # lint + tests — what CI runs
 make test          # tests only (fast, no network)
 make fmt           # auto-fix and format
 make corpus        # fetch + index — SLOW, network + embedding (see below)
+make index-status  # this machine's index fingerprint; must match across machines
 make eval          # ablation harness — SLOW, consumes API quota
 ```
 
@@ -154,7 +155,7 @@ tree, not prose. Everything they cannot check is on you.
 Audited 2026-11-09 against the tree, not against this file's previous claims;
 evaluation lines updated 2026-11-14.
 
-**Built and tested** (582 tests: 424 Python, 158 frontend): the domain model,
+**Built and tested** (600 tests: 442 Python, 158 frontend): the domain model,
 citation resolver, LLM gateway, prompts, LangGraph orchestrator, SSE, run
 persistence, the corpus fetcher, the indexer, the frontend courtroom,
 transcript, dissent log, replay and theming, the case picker, and the
@@ -172,10 +173,12 @@ Anudveg's machine, which has the full corpus** — treaties plus the 161
 customary rules.
 
 Hamd's machine deliberately does not run the indexer: 16GB, and the embedding
-stage has OOM-killed his editor. So on this machine most citations resolve
-`out_of_corpus`, and that is the local index being small, not a fabrication
-signal. Don't read citation statuses as signal here, and don't propose running
-`make corpus` as a fix. A run artifact's `metadata.corpus` and an evaluation
+stage has OOM-killed his editor. It gets the full index by importing a bundle
+from Anudveg's machine instead (ADR 0014: `make export-index` there,
+`make import-index FILE=…` here). Until it has, most citations resolve
+`out_of_corpus` here, and that is the local index being small, not a
+fabrication signal. Don't read citation statuses as signal without checking
+`make index-status`, and don't propose running `make corpus` as a fix. A run artifact's `metadata.corpus` and an evaluation
 result's `corpus` say which index scored it. What the local index holds:
 
 ```bash
@@ -205,3 +208,9 @@ See [ISSUES.md](ISSUES.md).
   do not. `status: "fetched"` on all 23 treaties alongside a 9-instrument local
   index is the normal state here, not a broken fetch. Check `data/cache/` and
   the index's `instruments` key for what this machine actually has.
+- **The same corpus hash does not mean the same retrieval.** A result's
+  `corpus` hashes the citation index only; two machines can share it while
+  their Qdrant collections were embedded by different models, or one stopped
+  partway. `make index-status` checks both halves; compare its `Fingerprint`
+  line, not the hash alone. After `make import-index`, restart the API: it
+  loads the citation index once, at startup.
