@@ -5,20 +5,25 @@
 ```
 main        ← protected. Release-ready; PRs from develop only.
 develop     ← integration branch. Feature branches merge here.
-feature/*   ← your work.
+feat/*      ← new functionality.
 fix/*       ← bug fixes.
+chore/*     ← maintenance that changes no behaviour.
 docs/*      ← documentation-only changes.
 ```
+
+The prefixes match the Conventional Commit types, so a branch name tells you
+what its commits will say. `feature/*` is accepted on branches that already use
+it; use `feat/*` for new ones.
 
 Branch off `develop`, never off `main`:
 
 ```bash
 git checkout develop && git pull
-git checkout -b feature/citation-validator
+git checkout -b feat/citation-validator
 ```
 
-Name the branch after the change, not the ticket: `feature/parallel-attackers`
-beats `feature/issue-14`.
+Name the branch after the change, not the ticket: `feat/parallel-attackers`
+beats `feat/issue-14`.
 
 ## Commits
 
@@ -63,25 +68,42 @@ cannot show what you were thinking.
 
 ## Pull requests
 
-1. Rebase onto `develop` before opening.
+1. Bring the branch up to date with `develop` before opening: merge `develop`
+   into it, or rebase if nobody else has built on the branch. A merge commit
+   still needs a Conventional Commit message, such as
+   `chore: merge develop into feat/case-picker`; the hook rejects git's default
+   `Merge branch …`.
 2. Run `make check` — lint, format, and tests. CI runs the same thing, and
    finding out locally is faster.
 3. Fill in the PR template honestly. The checklist is there to catch the things
    that have actually broken this project before, not as a formality.
 4. One reviewer approval before merge.
-5. Merge into `develop` with `--no-ff` so the branch topology survives.
+5. PRs into `develop` are **squash-merged** on GitHub (*Squash and merge*). The
+   PR title becomes the commit message on `develop`, so it must be a valid
+   Conventional Commit, and `develop` reads as one commit per PR.
+6. **After a squash, a branch built on the squashed one must be updated before
+   anyone touches it again.** The squash commit is new, so git does not know
+   the branch's copies of those commits are already in `develop`, and the
+   cost arrives later as phantom conflicts: PR #7 was squashed, and
+   `feat/t4-eval` then carried stale copies of its files. Rebase the dependent
+   branch onto the squash commit, dropping the squashed commits, or merge
+   `develop` into it and resolve once.
 
 Keep PRs small enough to review properly. A 40-file PR gets rubber-stamped; a
 6-file PR gets read.
 
-### Merging locally
+### Releases, and merging locally
+
+Releases from `develop` to `main` keep a merge commit, so `main` records each
+release as one:
 
 ```bash
-make merge-develop   # runs `make check`, then merges the current branch
 make merge-main      # release: develop -> main
+make merge-develop   # local fallback: check, then merge the current branch
 ```
 
-Both pass `--no-verify` on the merge commit, and only on the merge commit. Two
+Feature work goes through a squash-merged PR, not `make merge-develop`. Both
+targets pass `--no-verify` on the merge commit, and only on the merge commit. Two
 hooks necessarily fire on a merge — `no-commit-to-branch`, because merging into
 `develop` means being on `develop`, and `conventional-pre-commit`, because git's
 `Merge branch 'x' into y` is deliberately not a Conventional Commit. pre-commit

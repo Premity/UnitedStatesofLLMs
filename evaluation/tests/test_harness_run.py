@@ -23,9 +23,9 @@ from pydantic import BaseModel
 
 from council_core.llm import client as llm_client
 from council_core.llm.config import ModelConfig
+from council_core.models.case import Case, Outcome
 from council_core.models.debate import Argument, Role, Turn, Verdict
 from harness.arms import ARMS
-from harness.cases import EvaluationCase, Outcome
 from harness.quota import (
     QuotaExceededError,
     QuotaLogReadError,
@@ -53,8 +53,8 @@ def temp_eval_dir(tmp_path: Path) -> Path:
 
 
 @pytest.fixture
-def sample_case() -> EvaluationCase:
-    return EvaluationCase(
+def sample_case() -> Case:
+    return Case(
         id="test_case_1",
         title="Test Case 1",
         court="ICTY",
@@ -167,7 +167,7 @@ class TestQuotaTracking:
 
     @pytest.mark.asyncio
     async def test_refuses_api_run_when_quota_would_exceed_40(
-        self, temp_eval_dir: Path, sample_case: EvaluationCase
+        self, temp_eval_dir: Path, sample_case: Case
     ) -> None:
         log_path = temp_eval_dir / "quota_log.json"
         tracker = QuotaTracker(log_path)
@@ -194,7 +194,7 @@ class TestQuotaTracking:
 
     @pytest.mark.asyncio
     async def test_reserves_three_attempts_per_expected_judge_call(
-        self, temp_eval_dir: Path, sample_case: EvaluationCase
+        self, temp_eval_dir: Path, sample_case: Case
     ) -> None:
         tracker = QuotaTracker(temp_eval_dir / "quota_log.json")
         tracker.record_call(case_id="prior_case", arm_key="raw", calls=38)
@@ -217,7 +217,7 @@ class TestQuotaTracking:
 
     @pytest.mark.asyncio
     async def test_api_run_refuses_corrupt_quota_log(
-        self, temp_eval_dir: Path, sample_case: EvaluationCase
+        self, temp_eval_dir: Path, sample_case: Case
     ) -> None:
         quota_path = temp_eval_dir / "quota_log.json"
         quota_path.write_text("{invalid", encoding="utf-8")
@@ -240,7 +240,7 @@ class TestQuotaTracking:
 
     @pytest.mark.asyncio
     async def test_failed_judge_call_is_counted_against_quota(
-        self, temp_eval_dir: Path, sample_case: EvaluationCase
+        self, temp_eval_dir: Path, sample_case: Case
     ) -> None:
         tracker = QuotaTracker(temp_eval_dir / "quota_log.json")
 
@@ -274,7 +274,7 @@ class TestQuotaTracking:
 
     @pytest.mark.asyncio
     async def test_retries_and_structured_repairs_are_counted_as_attempts(
-        self, temp_eval_dir: Path, sample_case: EvaluationCase
+        self, temp_eval_dir: Path, sample_case: Case
     ) -> None:
         tracker = QuotaTracker(temp_eval_dir / "quota_log.json")
         final_state = {
@@ -595,7 +595,7 @@ class TestHarnessExecution:
 
     @pytest.mark.asyncio
     async def test_run_case_dry_run_writes_result(
-        self, temp_eval_dir: Path, sample_case: EvaluationCase
+        self, temp_eval_dir: Path, sample_case: Case
     ) -> None:
         arm = ARMS["rag"]
         tracker = QuotaTracker(temp_eval_dir / "quota_log.json")
@@ -638,7 +638,7 @@ class TestHarnessExecution:
 
     @pytest.mark.asyncio
     async def test_result_records_the_index_that_scored_it(
-        self, temp_eval_dir: Path, sample_case: EvaluationCase
+        self, temp_eval_dir: Path, sample_case: Case
     ) -> None:
         """GitHub #24: a fabrication rate is a statement about one index."""
         from council_core.citations.resolver import corpus_identity
@@ -671,12 +671,12 @@ class TestHarnessExecution:
 
     @pytest.mark.asyncio
     async def test_run_evaluation_resume_and_limit(
-        self, temp_eval_dir: Path, sample_case: EvaluationCase
+        self, temp_eval_dir: Path, sample_case: Case
     ) -> None:
         arm = ARMS["rag"]
         tracker = QuotaTracker(temp_eval_dir / "quota_log.json")
 
-        case_2 = EvaluationCase(
+        case_2 = Case(
             id="test_case_2",
             title="Test Case 2",
             court="ICTY",
@@ -735,7 +735,7 @@ class TestHarnessExecution:
     async def test_resume_warns_and_retries_corrupt_result_file(
         self,
         temp_eval_dir: Path,
-        sample_case: EvaluationCase,
+        sample_case: Case,
     ) -> None:
         result_file = temp_eval_dir / "rag" / f"{sample_case.id}.json"
         result_file.parent.mkdir(parents=True)
@@ -778,7 +778,7 @@ class TestHarnessExecution:
 
     @pytest.mark.asyncio
     async def test_timeout_is_saved_and_retried_by_resume(
-        self, temp_eval_dir: Path, sample_case: EvaluationCase
+        self, temp_eval_dir: Path, sample_case: Case
     ) -> None:
         arm = ARMS["raw"]
         tracker = QuotaTracker(temp_eval_dir / "quota_log.json")
@@ -834,7 +834,7 @@ class TestHarnessExecution:
     async def test_stops_after_consecutive_judge_failures(
         self,
         temp_eval_dir: Path,
-        sample_case: EvaluationCase,
+        sample_case: Case,
         capsys: pytest.CaptureFixture[str],
     ) -> None:
         cases = [
@@ -873,7 +873,7 @@ class TestHarnessExecution:
 
     @pytest.mark.asyncio
     async def test_harness_rejects_mixed_results_unless_explicitly_allowed(
-        self, temp_eval_dir: Path, sample_case: EvaluationCase
+        self, temp_eval_dir: Path, sample_case: Case
     ) -> None:
         raw_dir = temp_eval_dir / "raw"
         raw_dir.mkdir(parents=True)
@@ -908,7 +908,7 @@ class TestHarnessExecution:
 
     @pytest.mark.asyncio
     async def test_judge_backend_recorded_in_result_and_quota_log(
-        self, temp_eval_dir: Path, sample_case: EvaluationCase
+        self, temp_eval_dir: Path, sample_case: Case
     ) -> None:
         arm = ARMS["raw"]
         tracker = QuotaTracker(temp_eval_dir / "quota_log.json")
@@ -949,7 +949,7 @@ class TestArmEHarness:
 
     @pytest.mark.asyncio
     async def test_arm_e_requires_same_case_arm_d_result(
-        self, temp_eval_dir: Path, sample_case: EvaluationCase
+        self, temp_eval_dir: Path, sample_case: Case
     ) -> None:
         with pytest.raises(FileNotFoundError, match="requires a completed Arm D result"):
             await _run_arm_e(
@@ -961,7 +961,7 @@ class TestArmEHarness:
 
     @pytest.mark.asyncio
     async def test_arm_e_rejects_unreadable_arm_d_result(
-        self, temp_eval_dir: Path, sample_case: EvaluationCase
+        self, temp_eval_dir: Path, sample_case: Case
     ) -> None:
         d_dir = temp_eval_dir / "full_council"
         d_dir.mkdir(parents=True)
@@ -977,7 +977,7 @@ class TestArmEHarness:
 
     @pytest.mark.asyncio
     async def test_arm_e_rejects_failed_arm_d_result(
-        self, temp_eval_dir: Path, sample_case: EvaluationCase
+        self, temp_eval_dir: Path, sample_case: Case
     ) -> None:
         d_dir = temp_eval_dir / "full_council"
         d_dir.mkdir(parents=True)
@@ -997,7 +997,7 @@ class TestArmEHarness:
     @pytest.mark.asyncio
     @pytest.mark.parametrize("d_calls", [4, 8, 12])
     async def test_arm_e_derives_samples_and_aggregates(
-        self, temp_eval_dir: Path, sample_case: EvaluationCase, d_calls: int
+        self, temp_eval_dir: Path, sample_case: Case, d_calls: int
     ) -> None:
         arm = ARMS["self_consistency"]
         tracker = QuotaTracker(temp_eval_dir / "quota_log.json")

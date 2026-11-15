@@ -41,6 +41,10 @@ class Settings(BaseSettings):
 
     prompts_dir: Path = Path("/app/prompts")
     corpus_dir: Path = Path("/corpus")
+    cases_dir: Path = Field(
+        default=Path("/cases/dev"),
+        description="Prepared cases the question form's picker offers. Dev set only (ADR 0013).",
+    )
     data_dir: Path = Path("/data")
 
     cors_origins: list[str] = Field(default_factory=lambda: ["http://localhost:3000"])

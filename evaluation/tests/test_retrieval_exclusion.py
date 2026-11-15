@@ -7,15 +7,15 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
+from council_core.models.case import Case, Outcome
 from harness.arms import ARMS
-from harness.cases import EvaluationCase, Outcome
 from harness.quota import QuotaTracker
 from harness.run import run_case
 
 
 @pytest.mark.asyncio
 async def test_source_case_id_is_passed_to_graph_retrieval(tmp_path: Path) -> None:
-    case = EvaluationCase(
+    case = Case(
         id="case_under_test",
         title="Case under test",
         court="ICTY",

@@ -163,6 +163,26 @@ Did the system anticipate the grounds the tribunal actually relied on
 (`key_reasoning`)? Needs a rubric or an LLM judge. Report it, and be honest that
 it is the soft metric.
 
+### 6. Objection severity
+
+`evaluation/metrics/report.py` — automatic, read from stored results.
+
+`Objection.severity` (`fatal`, `material`, `minor`) is the attacker's own rating
+of its objection. The report counts, per arm, the objections the judge
+**sustained** and **overruled** at each step.
+
+| Column | Meaning |
+| --- | --- |
+| **Fatal / Material / Minor** | `sustained / overruled` counts at that severity |
+| **Not stated** | Severity was `None` or absent. Counted apart, never as `minor`: every run recorded before the field existed lands here |
+| **Overruled fatal** | The most informative dissent-log entry: the attacker said the argument fails, and the judge ruled otherwise |
+
+Counts, not a weighted score. Weights would be invented, and three named steps
+were chosen precisely to avoid inventing precision. Partial and unaddressed
+rulings are not counted. The rating is self-reported, so compare arms on it
+cautiously: a more severe attacker prompt raises the counts without changing
+the argument.
+
 ---
 
 ## Statistical honesty
