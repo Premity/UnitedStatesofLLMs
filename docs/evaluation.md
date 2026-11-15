@@ -290,6 +290,16 @@ make eval-report                # rebuild the report from existing results
 
 Slow and quota-consuming. Never part of CI.
 
+**Run from the repo root**, as the `make` targets do. On the host the harness
+finds `data/` and `prompts/` relative to the working directory. From anywhere
+else it finds no citation index, so a live run refuses to start rather than
+score every citation `out_of_corpus`.
+
+**`--dry-run` makes no model calls in any arm.** Presenter, attackers and judge
+are all mocked, and so is arm E's sampling. It checks that the harness, the
+result files and the report work end to end, and costs no quota. Its results
+are marked synthetic and the report keeps them apart from real ones.
+
 **Budget:** one case through all five arms is up to 7 judge calls (A 1, B 1,
 C 2, D 2, E 1). The judge's free tier is 50 requests/day across the OpenRouter
 account, and the harness caps itself at 40. Before a live run it reserves three
