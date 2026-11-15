@@ -31,6 +31,7 @@ from uuid import uuid4
 import structlog
 
 import council_core.llm.client as llm_client
+from harness.host import host_qdrant_url
 
 # Ensure local LiteLLM model cost map is used to prevent network timeouts in sandbox
 os.environ.setdefault("LITELLM_LOCAL_MODEL_COST_MAP", "True")
@@ -45,6 +46,10 @@ if "DATA_DIR" not in os.environ and not Path("/data").exists():
     host_data = (Path.cwd() / "data").resolve()
     if host_data.exists():
         os.environ["DATA_DIR"] = str(host_data)
+
+# Qdrant on the host: see harness/host.py.
+if not Path("/data").exists() and (_url := host_qdrant_url(os.environ.get("QDRANT_URL"))):
+    os.environ["QDRANT_URL"] = _url
 
 from app.core.config import get_role_models, get_settings
 from app.graph.workflow import compiled_graph
@@ -85,7 +90,11 @@ from metrics.provenance import (
 
 log = structlog.get_logger(__name__)
 
-DEFAULT_CASE_TIMEOUT_SECONDS = 300.0
+#: Wall-clock limit per case. The #25 rehearsal measured the free judge at
+#: 120-138 s per call: arms C and D took about 270 s and arm E, whose samples
+#: run one after another with retry backoff, passed 300 s. A case that times out
+#: has still spent its judge calls, so a tight limit wastes quota.
+DEFAULT_CASE_TIMEOUT_SECONDS = 900.0
 DEFAULT_MAX_CONSECUTIVE_FAILURES = 2
 
 
@@ -1016,7 +1025,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--case-timeout",
         type=_positive_float,
         default=DEFAULT_CASE_TIMEOUT_SECONDS,
-        help="Wall-clock timeout for each case in seconds (default: 300).",
+        help="Wall-clock timeout for each case in seconds (default: 900).",
     )
     parser.add_argument(
         "--max-consecutive-failures",

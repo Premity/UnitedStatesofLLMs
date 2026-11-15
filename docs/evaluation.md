@@ -295,6 +295,20 @@ finds `data/` and `prompts/` relative to the working directory. From anywhere
 else it finds no citation index, so a live run refuses to start rather than
 score every citation `out_of_corpus`.
 
+**Qdrant on the host.** `.env` gives Qdrant's address inside the compose
+network (`http://qdrant:6333`), which the host cannot resolve. The harness
+replaces that address, and the app's identical default, with
+`http://localhost:6333`, where the dev stack publishes Qdrant; any other
+`QDRANT_URL` is left alone. Without this, arms B–E fail at retrieval while arm
+A, which retrieves nothing, succeeds.
+
+**Each case has 900 seconds** (`--case-timeout` overrides it). The rehearsal
+(#25) measured the free judge at 120–138 s per call: arms C and D took about
+270 s, and arm E, whose samples run one after another with retry backoff,
+passed the old 300 s limit. A case that times out has still spent its judge
+calls, so a tight limit wastes quota; `--resume` re-runs only timed-out and
+failed cases.
+
 **`--dry-run` makes no model calls in any arm.** Presenter, attackers and judge
 are all mocked, and so is arm E's sampling. It checks that the harness, the
 result files and the report work end to end, and costs no quota. Its results

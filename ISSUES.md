@@ -122,6 +122,25 @@ outcomes are not evidence about the fixed system.
 
 ---
 
+### [RESOLVED] The rehearsal needed two manual interventions (#25)
+
+The first live run of all five arms (`tuning/LOG.md`) completed, but not
+unattended, which #25's definition of done requires:
+
+1. **Arms B–E failed at retrieval.** On the host, `.env`'s
+   `QDRANT_URL=http://qdrant:6333` does not resolve, and arm A, which retrieves
+   nothing, succeeded, so the run looked partial. The harness now replaces the
+   in-network address with `localhost` (`evaluation/harness/host.py`). It
+   decides by hostname, because `.env` is already in `os.environ` by the time
+   the harness can look: LiteLLM loads it on import.
+2. **Arm E timed out at 300 s.** The free judge took 120–138 s per call, and
+   E's samples run sequentially with retry backoff. The default is now 900 s,
+   the value the successful re-run used.
+
+A re-run of the rehearsal without either workaround completes #25.
+
+---
+
 ### [LOW] Judgments and resolutions remain unfetched (by decision)
 
 Not a gap in the fetcher — a scope decision, recorded here so it is not
