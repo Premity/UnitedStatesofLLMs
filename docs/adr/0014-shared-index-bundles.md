@@ -40,10 +40,14 @@ two different builds is wrong with no error, so they are one file.
 | `EMBEDDING_MODEL` matches the bundle's | import, status | Queries embedded by a different model than the corpus was (non-negotiable #3) |
 | Qdrant version matches | import | A snapshot from a server off the compose pin |
 | Citation index hash = manifest's | import | A file altered or truncated in transit |
-| Point count and width after restore | import | A restore that came out wrong; the old citation index is kept |
+| Point count and width after restore | import | A restore that came out wrong; the citation index is not written |
 
-Qdrant is restored before the citation index is written, so a failed import
-leaves this machine's citation index unchanged.
+Qdrant is restored before the citation index is written. If the upload
+itself fails, nothing on this machine has changed. If it succeeds but the
+post-restore check fails, the collection has already been replaced while the
+citation index has not, so the two no longer match: the import says so, and
+`index-status` flags it (points ≠ locators) until a good bundle is imported or
+the indexer is re-run.
 
 **Bundles travel privately, never in the repo.** They hold the corpus text.
 The repo is public, ships manifests rather than data (ADR 0007), and nobody has

@@ -189,6 +189,9 @@ the tools refuse anything that would be silently wrong:
   a different Qdrant version, or whose citation index does not match its
   manifest. It restores Qdrant first and writes the citation index only if
   the restore checks out, keeping the previous one as `citation_index.json.bak`.
+  A restore that does not check out has still replaced the collection, so the
+  two halves no longer match until a good bundle is imported; the error and
+  `index-status` both say so.
 - **Status** prints the fingerprint and flags the same mismatches, plus a
   citation index changed since the last import.
 
