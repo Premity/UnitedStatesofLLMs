@@ -368,7 +368,7 @@ class TestCliAndArmResolution:
         assert args.resume is False
         assert args.limit is None
         assert args.judge_backend is None
-        assert args.case_timeout == 300
+        assert args.case_timeout == 900
         assert args.max_consecutive_failures == 2
 
     def test_cli_parser_dry_run_and_flags(self) -> None:

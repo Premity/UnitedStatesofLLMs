@@ -90,7 +90,11 @@ from metrics.provenance import (
 
 log = structlog.get_logger(__name__)
 
-DEFAULT_CASE_TIMEOUT_SECONDS = 300.0
+#: Wall-clock limit per case. The #25 rehearsal measured the free judge at
+#: 120-138 s per call: arms C and D took about 270 s and arm E, whose samples
+#: run one after another with retry backoff, passed 300 s. A case that times out
+#: has still spent its judge calls, so a tight limit wastes quota.
+DEFAULT_CASE_TIMEOUT_SECONDS = 900.0
 DEFAULT_MAX_CONSECUTIVE_FAILURES = 2
 
 
@@ -1021,7 +1025,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--case-timeout",
         type=_positive_float,
         default=DEFAULT_CASE_TIMEOUT_SECONDS,
-        help="Wall-clock timeout for each case in seconds (default: 300).",
+        help="Wall-clock timeout for each case in seconds (default: 900).",
     )
     parser.add_argument(
         "--max-consecutive-failures",
