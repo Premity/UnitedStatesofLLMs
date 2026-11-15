@@ -1012,7 +1012,7 @@ def build_parser() -> argparse.ArgumentParser:
         action="append",
         default=None,
         metavar="CASE_ID",
-        help="Run only this case from the tier. Repeatable. A live run reserves 24 judge "
+        help="Run only this case from the tier. Repeatable. A live run reserves 21 judge "
         "attempts per case across all arms, so run one case per invocation.",
     )
     parser.add_argument(
