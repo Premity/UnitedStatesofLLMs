@@ -38,7 +38,7 @@ def span_payload(document: CorpusDocument, span: Span) -> dict:
         "article": span.article,
         "case_id": document.id if is_case else None,
         "paragraph": span.paragraph,
-        "rule_number": None,
+        "rule_number": span.rule_number,
         "text": span.text,
         "source_url": document.source_url,
     }

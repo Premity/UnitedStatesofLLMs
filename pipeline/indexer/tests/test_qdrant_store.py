@@ -107,3 +107,24 @@ def test_point_ids_are_derived_from_the_locator() -> None:
 def test_every_field_the_api_reads_is_present(field: str) -> None:
     doc = treaty_doc()
     assert field in span_payload(doc, doc.spans[0])
+
+
+def test_a_customary_payload_rebuilds_a_rule_locator() -> None:
+    """The payload once hard-coded `rule_number: None`, so all 161 rules came
+    back from retrieval as `customary_ihl/rule.None`."""
+    doc = CorpusDocument(
+        id="customary_ihl",
+        type=DocumentType.CUSTOMARY,
+        title="Customary IHL",
+        source_url="https://example.org/customary",
+        spans=[Span(locator="customary_ihl/rule.2", text="Acts or threats…", rule_number=2)],
+    )
+    payload = span_payload(doc, doc.spans[0])
+
+    citation = Citation(
+        type=CitationType(payload["citation_type"]),
+        instrument=payload["instrument"],
+        rule_number=payload["rule_number"],
+    )
+    assert payload["rule_number"] == 2
+    assert citation.locator() == payload["locator"] == "customary_ihl/rule.2"

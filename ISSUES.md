@@ -98,6 +98,30 @@ built from the same documents but is not hashed.
 
 ---
 
+### [RESOLVED] Every retrieved customary rule was labelled `customary_ihl/rule.None`
+
+Found 2026-11-15, the first time a machine searched an index with the
+customary rules in it. The fetcher sets `Span.rule_number`, but the indexer's
+Qdrant payload hard-coded `rule_number: None`, and retrieval rebuilt each
+citation from the payload's fields. All 161 rules therefore reached the
+context every role reads as `[customary_ihl/rule.None]`, under the instruction
+that these are the only sources to cite. A rule cited from there could only be
+cited wrongly, and a wrong rule locator against an indexed instrument resolves
+`unresolved`, the fabrication signal.
+
+Fixed at both ends. The indexer writes the rule number. Retrieval takes a
+missing one from the payload's `locator`, which was always correct, so
+existing collections and index bundles work without re-embedding, and it logs
+`retrieval_locator_mismatch` if a rebuilt locator ever differs from the
+stored one. Checked over all 3,482 points of the full index: 161 wrong before,
+0 after.
+
+**The #25 rehearsal ran with this bug.** Arms B–E retrieved from the full
+index, so any customary rule in their context carried the wrong label. Its
+outcomes are not evidence about the fixed system.
+
+---
+
 ### [RESOLVED] The rehearsal needed two manual interventions (#25)
 
 The first live run of all five arms (`tuning/LOG.md`) completed, but not
