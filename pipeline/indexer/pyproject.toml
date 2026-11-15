@@ -1,5 +1,5 @@
 # Offline indexer. Chunks the corpus at citation granularity (treaty article,
-# judgment paragraph), embeds with BGE-M3 via fastembed, and upserts to Qdrant.
+# judgment paragraph), embeds with fastembed (EMBEDDING_MODEL), and upserts to Qdrant.
 # Also emits the citation resolution index the validator reads at runtime.
 
 [project]
@@ -12,6 +12,7 @@ dependencies = [
     "fastembed>=0.4.2",
     # Must track the server image in docker-compose.yml: the client warns
     # and may misbehave when major versions differ or minor drifts by >1.
+    # Also supplies httpx, which indexer/bundle.py uses for Qdrant's REST API.
     "qdrant-client>=1.12,<1.14",
 ]
 
