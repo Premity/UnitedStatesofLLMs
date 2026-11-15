@@ -306,6 +306,18 @@ class MockJudgeRole:
         return turn, verdict, False  # novel_objections_raised=False closes auto debate
 
 
+def _mock_presenter_turn() -> Turn:
+    """A presenter turn for dry-runs: no model, no network, no quota."""
+    return Turn(
+        role=Role.PRESENTER,
+        round_number=1,
+        model_id="mock_presenter",
+        arguments=[Argument(claim="Mock claim (dry-run).", reasoning="Mock reasoning.")],
+        prompt_id="presenter/argue",
+        prompt_hash="mock_presenter_hash",
+    )
+
+
 async def _run_standard_arm(
     arm: Arm,
     case: Case,
@@ -335,7 +347,8 @@ async def _run_standard_arm(
 
     if judge_backend == "mock":
         # Fully synthetic path: zero LLM/network calls.
-        mock_arg = Argument(claim="Mock claim (dry-run).", reasoning="Mock reasoning.")
+        presenter_turn = _mock_presenter_turn()
+        mock_arg = presenter_turn.arguments[0]
         mock_verdict = Verdict(
             conclusion="affirmed",
             reasoning="Mock judge conclusion (dry-run).",
@@ -343,14 +356,6 @@ async def _run_standard_arm(
             confidence_reasoning="Mock confidence (dry-run).",
             surviving_argument_ids=[mock_arg.id],
             dissent=[],
-        )
-        presenter_turn = Turn(
-            role=Role.PRESENTER,
-            round_number=1,
-            model_id="mock_presenter",
-            arguments=[mock_arg],
-            prompt_id="presenter/argue",
-            prompt_hash="mock_presenter_hash",
         )
         judge_turn = Turn(
             role=Role.JUDGE,
@@ -520,15 +525,19 @@ async def _run_arm_e(
     presenter_turns: list[Turn] = []
 
     for i in range(n_samples):
-        presenter = PresenterRole()
-        presenter._llm = CouncilLLM(presenter_model_cfg, role=Role.PRESENTER.value)
-        turn = await presenter.run(
-            config=config,
-            context=context,
-            prior_arguments=[],
-            prior_objections=[],
-            round_number=1,
-        )
+        if judge_backend == "mock":
+            # A dry-run makes no model calls at all, presenter included.
+            turn = _mock_presenter_turn()
+        else:
+            presenter = PresenterRole()
+            presenter._llm = CouncilLLM(presenter_model_cfg, role=Role.PRESENTER.value)
+            turn = await presenter.run(
+                config=config,
+                context=context,
+                prior_arguments=[],
+                prior_objections=[],
+                round_number=1,
+            )
         presenter_turns.append(turn)
         sample_outcome = extract_sample_outcome(turn.arguments, case.question)
         samples.append(

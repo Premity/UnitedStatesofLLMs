@@ -1022,16 +1022,17 @@ class TestArmEHarness:
         mock_retrieval.search = AsyncMock(return_value=[])
         presenter_run = AsyncMock(return_value=mock_presenter_turn)
         judge_run = AsyncMock(return_value=(mock_judge_turn, mock_judge_verdict, False))
+        judge_class = MagicMock(return_value=SimpleNamespace(run=judge_run))
 
         with (
             patch("harness.run.get_retrieval_service", return_value=mock_retrieval),
             patch("app.roles.presenter.PresenterRole.run", presenter_run),
-            patch("harness.run.MockJudgeRole.run", judge_run),
+            patch("harness.run.JudgeRole", judge_class),
         ):
             result = await run_case(
                 arm=arm,
                 case=sample_case,
-                judge_backend="mock",
+                judge_backend="api",
                 output_dir=temp_eval_dir,
                 quota_tracker=tracker,
             )
@@ -1044,7 +1045,41 @@ class TestArmEHarness:
         assert presenter_run.await_count == expected_samples
         assert judge_run.await_count == 1
         assert judge_run.await_args.kwargs["arguments"] == [mock_argument]
-        assert result["judge_calls"] == 0
+        assert result["judge_calls"] == 1
         assert result["predicted_outcome"] == "rejected"
         assert result["outcome_correct"] is False
         assert result["confidence"] == 1.0  # All samples agree on affirmed
+
+
+class TestDryRunIsOffline:
+    """`--dry-run` promises zero API quota: no arm may reach a model."""
+
+    @pytest.mark.asyncio
+    async def test_dry_run_of_every_arm_makes_no_model_calls(
+        self, temp_eval_dir: Path, sample_case: Case
+    ) -> None:
+        completion = AsyncMock(side_effect=AssertionError("dry-run called a model"))
+        retrieval = MagicMock(side_effect=AssertionError("dry-run used retrieval"))
+        graph = AsyncMock(side_effect=AssertionError("dry-run invoked the graph"))
+        # Arm D first: arm E sizes its sample count from D's result.
+        arms = [ARMS[k] for k in ("raw", "rag", "single_attacker", "full_council")]
+        arms.append(ARMS["self_consistency"])
+
+        with (
+            patch("council_core.llm.client.acompletion", completion),
+            patch("harness.run.get_retrieval_service", retrieval),
+            patch("harness.run.compiled_graph.ainvoke", graph),
+        ):
+            results = await run_evaluation(
+                arms=arms,
+                cases=[sample_case],
+                judge_backend="mock",
+                output_dir=temp_eval_dir,
+                quota_tracker=QuotaTracker(temp_eval_dir / "quota_log.json"),
+            )
+
+        assert [r["status"] for r in results] == ["completed"] * 5, [
+            r.get("error") for r in results
+        ]
+        assert completion.await_count == 0
+        assert results[-1]["samples"] >= 1
