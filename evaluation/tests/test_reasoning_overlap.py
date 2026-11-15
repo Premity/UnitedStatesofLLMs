@@ -19,6 +19,7 @@ from metrics.reasoning_overlap import (
     run_overlap,
     validate_scores,
 )
+from metrics.report import render_report
 
 COUNTS = {"case-1": 4}
 
@@ -45,6 +46,13 @@ def _result(arm: str, run_id: str, *, status: str = "completed") -> dict:
         "citation_statuses": {"total": 0},
         "prompt_hashes": {},
     }
+
+
+def _row(report: str, prefix: str, arm: str) -> list[str]:
+    line = next(
+        line for line in report.splitlines() if line.startswith(prefix) and f"| {arm} |" in line
+    )
+    return [cell.strip() for cell in line.strip("|").split("|")]
 
 
 def test_a_run_scores_its_share_of_the_available_points() -> None:
@@ -110,3 +118,45 @@ def test_the_committed_scores_file_is_valid_against_the_real_cases() -> None:
 def test_a_score_naming_the_wrong_arm_for_its_run_is_an_error() -> None:
     with pytest.raises(ValueError, match="that run is case-1/raw"):
         match_to_results([_score([2, 2, 2, 2], run_id="run-a")], [_result("raw", "run-a")])
+
+
+def test_report_shows_overlap_per_arm_and_per_run() -> None:
+    results = [
+        _result("full_council", "run-d1"),
+        _result("full_council", "run-d2"),
+        _result("raw", "run-a1"),
+    ]
+    scores = [
+        _score([2, 2, 1, 1], run_id="run-d1", scorer="s1"),
+        _score([2, 2, 2, 2], run_id="run-d1", scorer="s2"),
+    ]
+
+    report = render_report(results, overlap_scores=scores)
+
+    # (0.75 + 1.0) / 2 for the one scored run; the other is not counted as zero.
+    assert _row(report, "| full_council |", "full_council")[13] == "0.88 (scored 1/2)"
+    assert _row(report, "| raw |", "raw")[13] == "not scored"
+    per_run = [
+        _row(line, "| case-1 |", "full_council")[10]
+        for line in report.splitlines()
+        if line.startswith("| case-1 |") and "| full_council |" in line
+    ]
+    assert sorted(per_run) == ["0.88", "—"]
+    assert "Scorer agreement on reasoning overlap: 2/4 points (50%)" in report
+
+
+def test_a_score_for_a_run_not_in_the_results_is_flagged_not_applied() -> None:
+    """A re-run is a new run: it must show unscored, not inherit the old score."""
+    report = render_report(
+        [_result("raw", "run-new")],
+        overlap_scores=[_score([2, 2, 2, 2], run_id="run-old", arm="raw")],
+    )
+
+    assert _row(report, "| raw |", "raw")[13] == "not scored"
+    assert "match no result here" in report
+    assert "`run-old`" in report
+
+
+def test_a_failed_run_shows_no_overlap() -> None:
+    report = render_report([_result("raw", "run-x", status="error")], overlap_scores=[])
+    assert _row(report, "| case-1 |", "raw")[10] == "—"

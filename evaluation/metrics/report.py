@@ -18,6 +18,14 @@ from metrics.provenance import (
     load_result_files,
     validate_corpus_consistency,
 )
+from metrics.reasoning_overlap import (
+    DEFAULT_SCORES_PATH,
+    OverlapScore,
+    agreement,
+    load_scores,
+    match_to_results,
+    run_overlap,
+)
 
 BOOTSTRAP_RESAMPLES = 10_000
 BOOTSTRAP_SEED = 0
@@ -338,7 +346,30 @@ def _arm_sort_key(arm: str) -> tuple[int, str]:
     return (ARM_ORDER.index(arm), arm) if arm in ARM_ORDER else (len(ARM_ORDER), arm)
 
 
-def _case_rows(results: list[dict[str, Any]], *, show_corpus: bool = False) -> list[str]:
+def _overlap_cell(result: dict[str, Any], overlap: dict[str, list[OverlapScore]]) -> str:
+    value = run_overlap(overlap.get(str(result.get("run_id")), []))
+    return "—" if value is None else f"{value:.2f}"
+
+
+def _arm_overlap(rows: list[dict[str, Any]], overlap: dict[str, list[OverlapScore]]) -> str:
+    """Mean over the arm's scored runs, with how many of its completed runs that is."""
+    completed = [r for r in rows if r.get("status") != "error"]
+    values = [
+        value
+        for r in completed
+        if (value := run_overlap(overlap.get(str(r.get("run_id")), []))) is not None
+    ]
+    if not values:
+        return "not scored"
+    return f"{sum(values) / len(values):.2f} (scored {len(values)}/{len(completed)})"
+
+
+def _case_rows(
+    results: list[dict[str, Any]],
+    *,
+    show_corpus: bool = False,
+    overlap: dict[str, list[OverlapScore]] | None = None,
+) -> list[str]:
     """One row per case and arm: every data point, so arms compare case by case.
 
     At three cases this table is the result. The summary above it is a
@@ -351,8 +382,9 @@ def _case_rows(results: list[dict[str, Any]], *, show_corpus: bool = False) -> l
     corpus_head = " Citation index |" if show_corpus else ""
     lines = [
         "| Case | Truth | Arm | Predicted | Correct | Confidence | "
-        "Unresolved | Misquoted | Eligible citations | Attacker independence |" + corpus_head,
-        "| --- | --- | --- | --- | :---: | ---: | ---: | ---: | ---: | ---: |"
+        "Unresolved | Misquoted | Eligible citations | Attacker independence | "
+        "Reasoning overlap |" + corpus_head,
+        "| --- | --- | --- | --- | :---: | ---: | ---: | ---: | ---: | ---: | ---: |"
         + (" --- |" if show_corpus else ""),
     ]
     for case_id in sorted(by_case):
@@ -364,7 +396,8 @@ def _case_rows(results: list[dict[str, Any]], *, show_corpus: bool = False) -> l
             if result.get("status") == "error":
                 kind = "timed out" if result.get("error_type") == "timeout" else "error"
                 lines.append(
-                    f"| {case_id} | {truth} | {arm} | {kind} | — | — | — | — | — | — |{corpus_cell}"
+                    f"| {case_id} | {truth} | {arm} | {kind} | — | — | — | — | — | — | — |"
+                    f"{corpus_cell}"
                 )
                 continue
             unresolved, misquoted, eligible = _citation_counts(result)
@@ -376,7 +409,8 @@ def _case_rows(results: list[dict[str, Any]], *, show_corpus: bool = False) -> l
                 f"{'✓' if correct is True else '✗' if correct is False else '—'} | "
                 f"{f'{confidence:.2f}' if isinstance(confidence, (int, float)) else '—'} | "
                 f"{unresolved} | {misquoted} | {eligible} | "
-                f"{'—' if independence is None else f'{independence:.3f}'} |{corpus_cell}"
+                f"{'—' if independence is None else f'{independence:.3f}'} | "
+                f"{_overlap_cell(result, overlap or {})} |{corpus_cell}"
             )
     return lines
 
@@ -386,9 +420,11 @@ def render_report(
     *,
     allow_mixed_results: bool = False,
     allow_mixed_corpora: bool = False,
+    overlap_scores: list[OverlapScore] | None = None,
 ) -> str:
     """Render arm metrics while keeping synthetic and real results separate."""
     validate_corpus_consistency(results, allow_mixed_corpora=allow_mixed_corpora)
+    overlap, unmatched = match_to_results(overlap_scores or [], results)
     provenance = {is_synthetic_result(result) for result in results}
     if len(provenance) > 1 and not allow_mixed_results:
         raise ValueError(
@@ -421,8 +457,31 @@ def render_report(
         "the quote check is a loose token-overlap heuristic, not an exact lookup.",
         "Independence = 1 - token-level Jaccard overlap between attacker objection grounds; "
         "measured only on runs where both attackers objected.",
+        "Reasoning overlap = share of the tribunal's key_reasoning points a run relied on, "
+        "scored by hand on a 0-2 scale per point (docs/evaluation.md, section 5); the soft "
+        "metric. Averaged across scorers; an unscored run shows —.",
         "",
     ]
+    matched_scores = [score for run in overlap.values() for score in run]
+    agreeing, compared = agreement(matched_scores)
+    if compared:
+        lines.extend(
+            (
+                f"Scorer agreement on reasoning overlap: {agreeing}/{compared} points "
+                f"({agreeing / compared:.0%}) where two scorers read the same run.",
+                "",
+            )
+        )
+    if unmatched:
+        lines.extend(
+            (
+                f"> **{len(unmatched)} reasoning-overlap score(s) match no result here**, "
+                "by run_id: "
+                + ", ".join(sorted({f"`{score.run_id}`" for score in unmatched}))
+                + ". A re-run makes a new run, which needs scoring again.",
+                "",
+            )
+        )
     corpora = sorted({corpus_label(result) for result in results})
     if len(corpora) == 1:
         lines.extend((f"Citation index: `{corpora[0]}`.", ""))
@@ -446,9 +505,9 @@ def render_report(
                 "| Arm | Cases | Completed | Wrong | Errors | Timed out | "
                 "Accuracy | Brier score | ECE | Overconfidence | "
                 "Citation fabrication rate | Citation misquote rate | "
-                "Attacker independence | Judge backend |",
+                "Attacker independence | Reasoning overlap | Judge backend |",
                 "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | "
-                "---: | ---: | ---: | ---: | --- |",
+                "---: | ---: | ---: | ---: | ---: | --- |",
             )
         )
         summaries = {
@@ -467,6 +526,7 @@ def render_report(
                 f"{_format_metric(summary['fabrication_rate'], summary['fabrication_ci'], intervals=shown)} | "
                 f"{_format_metric(summary['misquote_rate'], summary['misquote_ci'], intervals=shown)} | "
                 f"{_format_metric(summary['independence'], summary['independence_ci'], sample_size=summary['independence_n'] or None, intervals=shown)} | "
+                f"{_arm_overlap(by_arm[arm], overlap)} | "
                 f"{', '.join(summary['judge_backends'])} |"
             )
         # After the table, not between its rows: a line inside a Markdown
@@ -497,7 +557,7 @@ def render_report(
         )
         lines.extend(_severity_rows(summaries))
         lines.extend(("", "### Per case", ""))
-        lines.extend(_case_rows(group_results, show_corpus=len(corpora) > 1))
+        lines.extend(_case_rows(group_results, show_corpus=len(corpora) > 1, overlap=overlap))
         lines.extend(("", "### Prompt hashes", ""))
         for arm, summary in summaries.items():
             lines.append(f"**{arm}**")
@@ -516,6 +576,7 @@ def generate_report(
     output_path: Path = Path("evaluation/reports/evaluation-report.md"),
     allow_mixed_results: bool = False,
     allow_mixed_corpora: bool = False,
+    scores_path: Path = DEFAULT_SCORES_PATH,
 ) -> Path:
     """Load result artifacts from the evaluation directory and write Markdown."""
     results = load_result_files(
@@ -526,6 +587,7 @@ def generate_report(
         results,
         allow_mixed_results=allow_mixed_results,
         allow_mixed_corpora=allow_mixed_corpora,
+        overlap_scores=load_scores(scores_path),
     )
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(report, encoding="utf-8")
@@ -550,6 +612,12 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Report results scored against different citation indexes, labelled per case.",
     )
+    parser.add_argument(
+        "--scores",
+        type=Path,
+        default=DEFAULT_SCORES_PATH,
+        help="Hand-scored reasoning overlap (default: evaluation/scores/reasoning_overlap.json).",
+    )
     return parser
 
 
@@ -560,6 +628,7 @@ def main() -> None:
         output_path=args.output,
         allow_mixed_results=args.allow_mixed_results,
         allow_mixed_corpora=args.allow_mixed_corpora,
+        scores_path=args.scores,
     )
     print(f"Evaluation report written to {output_path}")
 
