@@ -136,6 +136,21 @@ index-local: ## Index on the host under a memory cap (no Docker; see MEM_CAP)
 .PHONY: corpus
 corpus: fetch index ## Fetch and index in one go
 
+# Sharing a built index (ADR 0014): one machine embeds, the others import.
+# These run on the host against the dev stack's Qdrant on localhost:6333.
+.PHONY: export-index
+export-index: ## Package this machine's index into data/bundles/ (stack must be up)
+	uv run python -I -m indexer.bundle export
+
+.PHONY: import-index
+import-index: data-dirs ## Load an index bundle, e.g. make import-index FILE=ihl-index-<hash>.tar
+	@test -n "$(FILE)" || { echo "usage: make import-index FILE=path/to/ihl-index-<hash>.tar" >&2; exit 1; }
+	uv run python -I -m indexer.bundle import "$(FILE)"
+
+.PHONY: index-status
+index-status: ## Show this machine's index fingerprint and check it adds up
+	@uv run python -I -m indexer.bundle status
+
 .PHONY: reindex
 reindex: ## Wipe the Qdrant collection and rebuild the index
 	@bash scripts/reset-index.sh
