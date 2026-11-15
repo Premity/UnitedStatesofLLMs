@@ -25,8 +25,9 @@ The critical path is a one-case rehearsal, then the scored run.
 | --- | --- | --- |
 | 1 | **Rehearsal, then the scored run** | All five arms live on one case first, then the three. GitHub #25, #26 |
 
-One open decision that does not block the above: **reasoning-overlap scoring**
-(GitHub #27).
+Reasoning overlap (GitHub #27) is scored by hand after the scored run: the
+rubric, the scores file and the report column are in place, and the 15
+judgements wait for #26.
 
 One known limit to state in the report rather than fix: three Rome Statute
 weapons amendments are not indexed, because the source gives the inserted
@@ -113,7 +114,8 @@ designed behaviour and distinct from `unresolved` (ADR 0004).
 `evaluation/harness/run.py` drives arms over cases and writes results to
 `data/eval/`, with retrieval exclusion for a case's own `source_case_id` and a
 judge-quota tracker (`quota.py`). `evaluation/metrics/report.py` writes the
-Markdown report. Reasoning-overlap scoring is still open: GitHub #27.
+Markdown report. Reasoning overlap is scored by hand into
+`evaluation/scores/reasoning_overlap.json` (GitHub #27).
 
 ---
 
@@ -758,11 +760,16 @@ Pinned by `test_severity_breakdown_counts_not_stated_apart_from_minor`.
 
 ## Decisions still open
 
-### Reasoning-overlap scoring — GitHub #27
+### [RESOLVED] Reasoning-overlap scoring — GitHub #27
 
-Rubric with manual scoring, or LLM-judge against `key_reasoning`? The latter is
-faster but introduces a model into the measurement of models. Leaning LLM-judge
-with a manually-scored subset to validate it.
+**Decision: a manual rubric.** An LLM judge would put a model into the
+measurement of models, and validating it needs a hand-scored subset, which at
+three cases (15 runs) is the whole set. The rubric (0–2 per `key_reasoning`
+point, two independent scorers, agreement reported) is in
+`docs/evaluation.md`, section 5. Scores live in
+`evaluation/scores/reasoning_overlap.json`, keyed by `run_id`, and the report
+shows them per arm and per run. The scoring itself waits for the scored run
+(#26).
 
 ### [RESOLVED] Hosted demo — GitHub #18
 

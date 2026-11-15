@@ -541,7 +541,7 @@ which the harness excludes from retrieval so the answer cannot be read back.
 | Citation validity | `citations.py` | Share resolving cleanly | ✓ |
 | **Fabrication rate** | `citations.py` | `(unresolved + misquoted) / total` | ✓ |
 | Attacker independence | `independence.py` | Jaccard + target overlap | ✓ |
-| Reasoning overlap | — | Did it anticipate the tribunal's grounds? | ✗ rubric/LLM-judge |
+| Reasoning overlap | `reasoning_overlap.py` | Did it rest on the tribunal's grounds? Hand-scored rubric | ✓ (scoring after #26) |
 
 **Calibration is the sharpest claim.** The argument is not principally that the
 council is right more often — it is that the council is *appropriately uncertain*
@@ -789,8 +789,8 @@ as `out_of_corpus`.** This is stated in the README, `ISSUES.md`, `CLAUDE.md`, an
 
 ### 14.3 Open decisions
 
-- **Reasoning-overlap scoring** — manual rubric vs. LLM-judge (introduces a model
-  into the measurement of models). GitHub #27
+- None open. Reasoning-overlap scoring was settled as a manual rubric
+  (GitHub #27; `docs/evaluation.md`, section 5).
 
 ---
 
