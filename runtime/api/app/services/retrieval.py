@@ -88,14 +88,7 @@ class RetrievalService:
                 continue
             spans.append(
                 ResolvedCitation(
-                    citation=Citation(
-                        type=CitationType(payload.get("citation_type", "treaty")),
-                        instrument=payload.get("instrument", "unknown"),
-                        article=payload.get("article"),
-                        case_id=payload.get("case_id"),
-                        paragraph=payload.get("paragraph"),
-                        rule_number=payload.get("rule_number"),
-                    ),
+                    citation=_citation_from_payload(payload),
                     status=CitationStatus.RESOLVED,
                     corpus_text=payload.get("text", ""),
                     source_url=payload.get("source_url"),
@@ -161,6 +154,36 @@ class StubRetrievalService:
     async def health(self) -> bool:
         """Whether the stub index file exists."""
         return self._path.exists()
+
+
+def _citation_from_payload(payload: dict) -> Citation:
+    """Rebuild the citation a Qdrant point stands for.
+
+    Every collection indexed before the fix in `qdrant_store.span_payload`
+    stores `rule_number: null` for customary rules, so a retrieved rule rendered
+    as `customary_ihl/rule.None`, in the context every role is told to cite
+    from. The payload's `locator` is canonical (it is the join to the citation
+    index), so a missing rule number is taken from it. Existing collections and
+    index bundles stay usable without re-embedding.
+    """
+    citation_type = CitationType(payload.get("citation_type", "treaty"))
+    rule_number = payload.get("rule_number")
+    if citation_type is CitationType.CUSTOMARY and rule_number is None:
+        _, _, number = str(payload.get("locator", "")).partition("/rule.")
+        rule_number = int(number) if number.isdigit() else None
+    citation = Citation(
+        type=citation_type,
+        instrument=payload.get("instrument", "unknown"),
+        article=payload.get("article"),
+        case_id=payload.get("case_id"),
+        paragraph=payload.get("paragraph"),
+        rule_number=rule_number,
+    )
+    stored = payload.get("locator")
+    if stored and citation.locator() != stored:
+        # Whatever the model is shown must be the locator the resolver knows.
+        log.warning("retrieval_locator_mismatch", stored=stored, rebuilt=citation.locator())
+    return citation
 
 
 def _citation_from_locator(locator: str) -> Citation:
