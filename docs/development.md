@@ -188,8 +188,10 @@ A parallel node returned the full state instead of just its own keys. Both
 attackers must return only `{"turns": [...], "objections": [...]}`.
 
 **Every citation resolves as `out_of_corpus`**
-`data/index/citation_index.json` is missing — the indexer has not run
-successfully. Expected until the indexer is implemented.
+Either `data/index/citation_index.json` is missing, or it holds only part of the
+corpus. On a fresh clone it is the 24-locator placeholder from `corpus/stub/`,
+and most real citations miss it. A live evaluation run refuses an empty index;
+the usual cause there is running the harness from outside the repo root.
 
 **API cannot reach Ollama**
 On Linux, the container needs `extra_hosts: host.docker.internal:host-gateway`

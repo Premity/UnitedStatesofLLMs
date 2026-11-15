@@ -306,6 +306,18 @@ class MockJudgeRole:
         return turn, verdict, False  # novel_objections_raised=False closes auto debate
 
 
+def _mock_presenter_turn() -> Turn:
+    """A presenter turn for dry-runs: no model, no network, no quota."""
+    return Turn(
+        role=Role.PRESENTER,
+        round_number=1,
+        model_id="mock_presenter",
+        arguments=[Argument(claim="Mock claim (dry-run).", reasoning="Mock reasoning.")],
+        prompt_id="presenter/argue",
+        prompt_hash="mock_presenter_hash",
+    )
+
+
 async def _run_standard_arm(
     arm: Arm,
     case: Case,
@@ -335,7 +347,8 @@ async def _run_standard_arm(
 
     if judge_backend == "mock":
         # Fully synthetic path: zero LLM/network calls.
-        mock_arg = Argument(claim="Mock claim (dry-run).", reasoning="Mock reasoning.")
+        presenter_turn = _mock_presenter_turn()
+        mock_arg = presenter_turn.arguments[0]
         mock_verdict = Verdict(
             conclusion="affirmed",
             reasoning="Mock judge conclusion (dry-run).",
@@ -343,14 +356,6 @@ async def _run_standard_arm(
             confidence_reasoning="Mock confidence (dry-run).",
             surviving_argument_ids=[mock_arg.id],
             dissent=[],
-        )
-        presenter_turn = Turn(
-            role=Role.PRESENTER,
-            round_number=1,
-            model_id="mock_presenter",
-            arguments=[mock_arg],
-            prompt_id="presenter/argue",
-            prompt_hash="mock_presenter_hash",
         )
         judge_turn = Turn(
             role=Role.JUDGE,
@@ -520,15 +525,19 @@ async def _run_arm_e(
     presenter_turns: list[Turn] = []
 
     for i in range(n_samples):
-        presenter = PresenterRole()
-        presenter._llm = CouncilLLM(presenter_model_cfg, role=Role.PRESENTER.value)
-        turn = await presenter.run(
-            config=config,
-            context=context,
-            prior_arguments=[],
-            prior_objections=[],
-            round_number=1,
-        )
+        if judge_backend == "mock":
+            # A dry-run makes no model calls at all, presenter included.
+            turn = _mock_presenter_turn()
+        else:
+            presenter = PresenterRole()
+            presenter._llm = CouncilLLM(presenter_model_cfg, role=Role.PRESENTER.value)
+            turn = await presenter.run(
+                config=config,
+                context=context,
+                prior_arguments=[],
+                prior_objections=[],
+                round_number=1,
+            )
         presenter_turns.append(turn)
         sample_outcome = extract_sample_outcome(turn.arguments, case.question)
         samples.append(
@@ -768,6 +777,31 @@ def resolve_arm(arm_identifier: str) -> Arm:
     return ARMS[canonical]
 
 
+class EmptyCorpusIndexError(RuntimeError):
+    """A live run would score every citation against an empty index."""
+
+
+def require_populated_index() -> None:
+    """Refuse a live run whose citation index holds nothing.
+
+    The index path comes from `DATA_DIR`, which on the host falls back to
+    `./data` relative to the working directory. Run from anywhere but the repo
+    root and the index is silently missing: every citation resolves
+    `out_of_corpus`, and the quota is spent before the report header shows
+    `0 instruments`. Failing here costs nothing.
+    """
+    identity = get_resolver().corpus_identity()
+    if identity is None or identity.locators > 0:
+        # None: a resolver that cannot describe its index (a test double).
+        return
+    path = get_settings().citation_index_path
+    raise EmptyCorpusIndexError(
+        f"The citation index at {path} is missing or empty, so every citation "
+        "would resolve out_of_corpus. Run the harness from the repo root "
+        f"(the working directory is {Path.cwd()}), or set DATA_DIR."
+    )
+
+
 async def run_evaluation(
     *,
     arms: list[Arm],
@@ -786,6 +820,9 @@ async def run_evaluation(
         raise ValueError("case_timeout must be greater than zero")
     if max_consecutive_failures <= 0:
         raise ValueError("max_consecutive_failures must be greater than zero")
+
+    if judge_backend != "mock":
+        require_populated_index()
 
     run_started = time.perf_counter()
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -1100,7 +1137,7 @@ def main() -> None:
     args = parser.parse_args()
     try:
         asyncio.run(async_main(args))
-    except (QuotaExceededError, KeyboardInterrupt) as exc:
+    except (QuotaExceededError, EmptyCorpusIndexError, KeyboardInterrupt) as exc:
         print(f"\n{exc}", file=sys.stderr)
         sys.exit(1)
 
