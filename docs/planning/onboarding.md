@@ -242,7 +242,8 @@ results, which is worse than a crash. The full register is in
 ## 6. How we work
 
 **Branches:** `main` ← `develop` ← `feat/*` `fix/*` `chore/*` `docs/*`. The pre-commit hook blocks
-direct commits to `main` and `develop`. Merge with `make merge-develop`.
+direct commits to `main` and `develop`. PRs into `develop` are squash-merged on
+GitHub; releases to `main` use `make merge-main`. See `CONTRIBUTING.md`.
 
 **Commits:** Conventional Commits, enforced by hook and CI.
 

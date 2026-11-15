@@ -50,7 +50,7 @@ later.
 - A model rename. `EvaluationCase` became `Case`, which touched the harness and
   its tests.
 - The API now needs the case files at runtime, so compose mounts
-  `evaluation/cases` into the api container. A deployment that omits the mount
+  `evaluation/cases/dev` read-only into the api container. A deployment that omits the mount
   serves an empty list rather than failing.
 
 **What would make us revisit this:** a held-out or hosted-demo case set that is

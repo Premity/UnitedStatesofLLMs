@@ -755,9 +755,11 @@ build, docker build, gitleaks, commitlint.
 ### 13.4 Workflow
 
 `main` ← `develop` ← `feat/*` `fix/*` `chore/*` `docs/*`. Conventional Commits enforced by hook and CI.
-Merges use `make merge-develop` / `make merge-main`, which pass `--no-verify` on
-the merge commit alone — two hooks necessarily fire on merges, and everything
-being merged has already passed both individually.
+PRs into `develop` are squash-merged on GitHub, so the PR title is the commit
+on `develop` and must be a Conventional Commit. Releases to `main` use
+`make merge-main`, which keeps a merge commit and passes `--no-verify` on it
+alone — two hooks necessarily fire on merges, and everything being merged has
+already passed both individually.
 
 ---
 
