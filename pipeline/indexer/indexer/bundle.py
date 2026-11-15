@@ -126,6 +126,10 @@ class Settings:
 
         The API gets `EMBEDDING_MODEL` from compose, which reads `.env`, so a
         value set only there still counts.
+
+        `QDRANT_URL` is the exception. `.env` holds the address *inside* the
+        compose network (`http://qdrant:6333`), which the host cannot resolve,
+        and these tools run on the host. Only the environment can change it.
         """
         dotenv = repo_root / ".env"
 
@@ -134,7 +138,7 @@ class Settings:
 
         return cls(
             data_dir=Path(os.environ.get("DATA_DIR") or repo_root / "data"),
-            qdrant_url=setting("QDRANT_URL", DEFAULT_QDRANT_URL),
+            qdrant_url=os.environ.get("QDRANT_URL") or DEFAULT_QDRANT_URL,
             collection=setting("QDRANT_COLLECTION", DEFAULT_COLLECTION),
             embedding_model=setting("EMBEDDING_MODEL", DEFAULT_EMBEDDING_MODEL),
         )
@@ -160,15 +164,18 @@ class Qdrant:
         self._http = client or httpx.Client(base_url=url, timeout=300.0)
         self.url = url
 
-    def _get(self, path: str) -> dict[str, Any]:
+    def _send(self, method: str, path: str, **kwargs: Any) -> httpx.Response:
         try:
-            response = self._http.get(path)
+            response = self._http.request(method, path, **kwargs)
         except httpx.TransportError as exc:
             raise BundleError(
                 f"Qdrant is not reachable at {self.url}. Start the stack with `make up`."
             ) from exc
         response.raise_for_status()
-        return response.json()
+        return response
+
+    def _get(self, path: str) -> dict[str, Any]:
+        return self._send("GET", path).json()
 
     def version(self) -> str:
         return str(self._get("/")["version"])
@@ -189,32 +196,33 @@ class Qdrant:
 
     def count(self, name: str) -> int:
         """Exact count. `points_count` in the collection info is approximate."""
-        response = self._http.post(f"/collections/{name}/points/count", json={"exact": True})
-        response.raise_for_status()
+        response = self._send("POST", f"/collections/{name}/points/count", json={"exact": True})
         return int(response.json()["result"]["count"])
 
     def create_snapshot(self, name: str) -> str:
-        response = self._http.post(f"/collections/{name}/snapshots", params={"wait": "true"})
-        response.raise_for_status()
+        response = self._send("POST", f"/collections/{name}/snapshots", params={"wait": "true"})
         return str(response.json()["result"]["name"])
 
     def download_snapshot(self, name: str, snapshot: str, dest: IO[bytes]) -> None:
-        with self._http.stream("GET", f"/collections/{name}/snapshots/{snapshot}") as response:
-            response.raise_for_status()
-            for chunk in response.iter_bytes():
-                dest.write(chunk)
+        try:
+            with self._http.stream("GET", f"/collections/{name}/snapshots/{snapshot}") as response:
+                response.raise_for_status()
+                for chunk in response.iter_bytes():
+                    dest.write(chunk)
+        except httpx.TransportError as exc:
+            raise BundleError(f"Lost the connection to Qdrant at {self.url} mid-download.") from exc
 
     def delete_snapshot(self, name: str, snapshot: str) -> None:
-        self._http.delete(f"/collections/{name}/snapshots/{snapshot}").raise_for_status()
+        self._send("DELETE", f"/collections/{name}/snapshots/{snapshot}")
 
     def upload_snapshot(self, name: str, snapshot: IO[bytes]) -> None:
         """Replace the collection with the snapshot's contents."""
-        response = self._http.post(
+        self._send(
+            "POST",
             f"/collections/{name}/snapshots/upload",
             params={"priority": "snapshot", "wait": "true"},
             files={"snapshot": ("collection.snapshot", snapshot)},
         )
-        response.raise_for_status()
 
 
 # ── Export ────────────────────────────────────────────────────────────────────
@@ -364,7 +372,8 @@ def import_bundle(
                 "The file was altered or truncated in transit."
             )
 
-        # Qdrant first: if it fails, nothing on this machine has changed.
+        # Qdrant first. If the upload itself fails, nothing here has changed; if it
+        # succeeds but the checks below fail, Qdrant has changed and the index has not.
         with tempfile.TemporaryFile() as snapshot:
             shutil.copyfileobj(_member(tar, SNAPSHOT_MEMBER), snapshot)
             snapshot.seek(0)
@@ -376,7 +385,9 @@ def import_bundle(
         raise BundleError(
             f"After restoring, Qdrant holds {points} points of width {vector_size}; the "
             f"bundle says {manifest.points} of width {manifest.vector_size}. The citation "
-            "index was left unchanged."
+            "index on disk was left unchanged, but the Qdrant collection has already been "
+            "replaced, so the two no longer match. Import a good bundle, or re-run the "
+            "indexer, before relying on retrieval."
         )
 
     index_dir = settings.index_path.parent

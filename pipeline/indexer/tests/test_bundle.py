@@ -235,8 +235,10 @@ def test_import_keeps_the_old_index_if_the_restore_comes_out_wrong(tmp_path: Pat
 
     with respx.mock(assert_all_called=False) as router:
         _mock_qdrant(router, after_upload=(1, 1024))
-        with pytest.raises(BundleError, match="left unchanged"):
+        with pytest.raises(BundleError, match="left unchanged") as raised:
             import_bundle(settings, bundle, qdrant=_qdrant())
+    # The collection was replaced before the check ran; the message must say so.
+    assert "already been replaced" in str(raised.value)
 
     assert json.loads(settings.index_path.read_text()) == old
     assert not settings.imported_record.exists()
@@ -320,3 +322,21 @@ def test_environment_beats_dotenv(tmp_path: Path, monkeypatch: pytest.MonkeyPatc
     assert Settings.from_environment(tmp_path).embedding_model == "from-dotenv"
     monkeypatch.setenv("EMBEDDING_MODEL", "from-env")
     assert Settings.from_environment(tmp_path).embedding_model == "from-env"
+
+
+def test_qdrant_url_in_dotenv_is_ignored(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    """`.env` holds the in-network address; the host cannot resolve `qdrant`."""
+    (tmp_path / ".env").write_text("QDRANT_URL=http://qdrant:6333\n")
+    monkeypatch.delenv("QDRANT_URL", raising=False)
+    assert Settings.from_environment(tmp_path).qdrant_url == "http://localhost:6333"
+    monkeypatch.setenv("QDRANT_URL", "http://example:6333")
+    assert Settings.from_environment(tmp_path).qdrant_url == "http://example:6333"
+
+
+def test_a_dropped_connection_is_a_bundle_error(tmp_path: Path) -> None:
+    with respx.mock(assert_all_called=False) as router:
+        router.post(f"{URL}/collections/ihl_corpus/points/count").mock(
+            side_effect=httpx.ConnectError("refused")
+        )
+        with pytest.raises(BundleError, match="not reachable"):
+            _qdrant().count("ihl_corpus")

@@ -193,7 +193,10 @@ the tools refuse anything that would be silently wrong:
   citation index changed since the last import.
 
 The tools read settings the way the API container does: environment first,
-then `.env`. They run on the host and reach Qdrant at `localhost:6333`.
+then `.env`. They run on the host and reach Qdrant at `localhost:6333`. The one
+exception is `QDRANT_URL`: `.env` holds the in-network address
+(`http://qdrant:6333`), which the host cannot resolve, so only the environment
+variable overrides the default.
 
 **Send bundles privately.** They contain the corpus text; the repo is public
 and ships manifests, not documents. `data/bundles/` is gitignored. A bundle goes
