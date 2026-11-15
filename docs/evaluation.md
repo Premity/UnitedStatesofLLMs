@@ -327,6 +327,39 @@ Arm E will not add judge calls in proportion to its sample count: it aggregates
 *n* presenter samples and judges once, so its cost sits close to arm B's. Its
 *n* is set by D's call count, not the other way round.
 
+**Time:** about 15 minutes per case through all five arms. Measured on the
+rehearsal (GitHub #25): `icty_galic_terror`, full corpus, the free-tier roster in
+`.env`, wall-clock seconds per arm.
+
+| Arm | Model calls | Run 1 | Run 2 |
+| --- | ---: | ---: | ---: |
+| A raw | 2 | 36 | 29 |
+| B rag | 2 | 40 | 46 |
+| C single_attacker | 6 | 274 | 149 |
+| D full_council | 8 | 268 | 332 |
+| E self_consistency | 8 | 290 | 350 |
+| **All five** | 26 | **908** (15.1 min) | **907** (15.1 min) |
+
+Run 1's arm E is its re-run at 900 s; the first attempt timed out at the old 300 s
+default. Run 2's arm E is also a re-run, after the judge returned JSON missing
+`reasoning` and `confidence` twice; the time shown is the run that completed.
+
+Where the time goes:
+
+- **The judge dominates.** Each call took 27-188 s
+  (`openrouter/nvidia/nemotron-3-ultra-550b-a55b:free`), against 2-9 s for a
+  presenter or attacker call on Groq. C and D make two judge calls each, so they
+  vary most: arm C took 274 s in one run and 149 s in the other.
+- **Arm E is sequential.** Its 7 presenter samples run one after another, and
+  Groq's rate limit makes the client back off between them: 33 requests for 7
+  replies in run 2, about 40 s per sample.
+- **Three arm runs passed 300 s** across the two rehearsals: D at 332 s, and E at
+  308 s (the attempt that failed) and 350 s. A day that is slower again can still
+  exceed 900 s, and a timed-out case is recorded, not scored.
+
+So the three core cases take about 45 minutes of wall-clock time, in addition to
+the quota limit of about two cases a day.
+
 Results land in `data/eval/`, reports in `evaluation/reports/`.
 
 ---

@@ -11,6 +11,11 @@ from the result artifact or report. Keep held-out cases out of prompt tuning.
 
 ## Rehearsal: arms A-E live on one case (#25), 2026-11-15
 
+> **Both rehearsal runs predate #39.** Every customary rule in arms B-E's
+> retrieved context was labelled `customary_ihl/rule.None`, so their outcomes
+> and citation counts are not evidence about the fixed system. They still
+> show what broke in the harness.
+
 Case `icty_galic_terror`, full corpus (index `8ffefb5a30ab`, 24 instruments, 3482
 locators), judge `openrouter/nvidia/nemotron-3-ultra-550b-a55b:free`. No prompt
 was changed. 7 judge calls, 7 of 40 attempts, no judge failures.
@@ -49,6 +54,39 @@ What broke:
    or sample in parallel.
 3. The `--case` help text said 24 reserved attempts per case; it is 21
    (7 calls x 3). Fixed.
+
+## Rehearsal, run 2: after the fixes, 2026-11-15
+
+The same case, index and roster, run with no `QDRANT_URL` override and no
+`--case-timeout`, on the fixes since merged as #40: a host run reaches Qdrant at
+`localhost`, and the per-case timeout is 900 s. Run 1's results are kept in
+`data/eval-rehearsal-1/`. 9 judge attempts, one of them a failed repair.
+
+| Arm | Predicted (truth: affirmed) | Confidence | Judge calls | Time |
+| --- | --- | ---: | ---: | ---: |
+| A raw | affirmed | 0.75 | 1 | 29 s |
+| B rag | affirmed | 0.92 | 1 | 46 s |
+| C single_attacker | affirmed | 0.78 | 2 | 149 s |
+| D full_council | rejected | 0.78 | 2 | 332 s |
+| E self_consistency | affirmed | 1.00 | 1 | 350 s |
+
+- **Both fixes held.** Arm B retrieved with no override. D (332 s) and E (350 s)
+  would both have timed out at 300 s.
+- **E's count still matches D's.** D made 8 calls, E ran 7 samples and 1 judge
+  call.
+- **A new failure in arm E.** In the first pass the judge returned a
+  `conclusion` but no `reasoning` and no `confidence`. The repair attempt came
+  back the same way, so E errored after 308 s. The raw reply was not stored, so
+  how the model got it wrong is unknown. The client now logs the raw reply on a
+  failed parse or a repair. E passed on a re-run of that arm alone
+  (`--arm E --resume`). If it recurs, the log decides the fix: a clearer schema
+  example in `prompts/judge/`, or a second repair, which the 3-attempt
+  reservation already budgets for.
+- **Arms C and D differ between runs.** C went from `rejected` to `affirmed`, D
+  from `indeterminate` to `rejected`. Run-to-run variance at temperature on one
+  case; no conclusion.
+- **Timings** for both runs are in `docs/evaluation.md`, *Running it*: about
+  15 minutes per case through all five arms.
 
 ## How to run an experiment
 

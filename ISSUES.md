@@ -169,9 +169,9 @@ Markdown report. Reasoning overlap is scored by hand into
 
 ### [RESOLVED] Arm E — the compute-matched control
 
-Written: `evaluation/harness/sampling.py`, decided in ADR 0011. Not yet run
-live; the rehearsal (GitHub #25) is its first run. The original specification
-follows.
+Written: `evaluation/harness/sampling.py`, decided in ADR 0011. Run live in
+the rehearsal (GitHub #25): on `icty_galic_terror` it made 7 presenter samples
+and 1 judge call, matching arm D's 8 calls. The original specification follows.
 
 It runs the presenter alone with retrieval, samples it *n* times at a
 temperature that produces genuine variation, and aggregates the samples into one
