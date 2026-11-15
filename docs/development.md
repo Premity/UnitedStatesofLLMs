@@ -80,6 +80,10 @@ make fetch     # download what the manifests list
 make index     # chunk, embed, upsert to Qdrant + write the citation index
 make corpus    # both
 make reindex   # drop the collection and rebuild
+
+make export-index                      # package this machine's index
+make import-index FILE=ihl-index-….tar # load one built elsewhere
+make index-status                      # fingerprint + consistency checks
 ```
 
 The runtime stack must be up before `make index` — the indexer writes into its
@@ -92,7 +96,10 @@ and a fresh clone gets the small placeholder index that `setup.sh` copies from
 which reflects the index's size, not fabrication.
 
 Embedding is memory-hungry. On a machine with 16GB or less, `make index-local`
-runs the indexer on the host under a memory cap.
+runs the indexer on the host under a memory cap, or skip embedding entirely and
+import a bundle from a machine that has built the index (ADR 0014; see
+[corpus.md](corpus.md#sharing-a-built-index)). Two machines hold the same index
+when `make index-status` prints the same fingerprint.
 
 Run `make reindex` whenever chunking or the embedding model changes — a
 collection built with one embedding model is meaningless when queried with

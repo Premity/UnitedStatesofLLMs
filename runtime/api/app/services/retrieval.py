@@ -1,6 +1,6 @@
 """Corpus retrieval over Qdrant.
 
-Embeds the query with BGE-M3 via fastembed (ONNX — no torch anywhere in this
+Embeds the query with `EMBEDDING_MODEL` via fastembed (ONNX — no torch anywhere in this
 repo, see `docs/adr/0001-no-torch-fastembed.md`) and returns corpus spans as
 `ResolvedCitation`s, so retrieved context and model-emitted citations share one
 type all the way through to the frontend.
