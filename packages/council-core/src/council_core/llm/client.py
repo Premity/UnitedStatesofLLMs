@@ -243,18 +243,27 @@ class CouncilLLM:
                 return schema.model_validate(_extract_json(response.content)), response
             except (ValidationError, ValueError, json.JSONDecodeError) as exc:
                 if attempt == max_repairs:
+                    # The raw reply is the only evidence of *how* the model got the
+                    # schema wrong (renamed keys, nesting, a dropped field), and it is
+                    # not stored anywhere else when the turn fails.
                     log.error(
                         "structured_output_failed",
                         role=self._role,
                         model=self._config.model_id,
                         error=str(exc)[:500],
+                        raw_response=response.content[:4000],
                     )
                     raise StructuredOutputError(
                         f"{self._role} ({self._config.model_id}) did not return valid "
                         f"{schema.__name__}: {exc}"
                     ) from exc
 
-                log.warning("structured_output_repair", role=self._role, attempt=attempt + 1)
+                log.warning(
+                    "structured_output_repair",
+                    role=self._role,
+                    attempt=attempt + 1,
+                    raw_response=response.content[:4000],
+                )
                 response = await self.complete(
                     system=system,
                     user=(
