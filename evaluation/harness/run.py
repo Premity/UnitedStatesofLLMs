@@ -167,20 +167,24 @@ def normalize_outcome(conclusion: str | None) -> str:
     if not conclusion:
         return Outcome.INDETERMINATE.value
     text = conclusion.lower().strip()
-    answer = re.match(r"^(yes|no)\b", text)
+    # The judge is told to open with "Yes.", "No." or "Indeterminate." as the direct
+    # answer, so an opener is the answer. Only a "Yes" is second-guessed, and only
+    # when its own first sentence denies the outcome outright ("Yes, the accused is
+    # not criminally responsible"). A "No" routinely goes on to say what *is* true
+    # ("No. The campaign constituted war crimes, but not the crime of terror"), so
+    # reading its first sentence for affirmative words misscored real verdicts.
+    answer = re.match(r"^(yes|no|indeterminate)\b", text)
     if answer:
+        if answer.group(1) == "indeterminate":
+            return Outcome.INDETERMINATE.value
+        if answer.group(1) == "no":
+            return Outcome.REJECTED.value
         response = text[answer.end() :].lstrip(" \t,.;:!")
         first_sentence = re.split(r"(?<=[.!?])\s+", response, maxsplit=1)[0]
-        if answer.group(1) == "yes":
-            return (
-                Outcome.INDETERMINATE.value
-                if _contains_negative_outcome(first_sentence, include_bare_did_not=False)
-                else Outcome.AFFIRMED.value
-            )
         return (
             Outcome.INDETERMINATE.value
-            if normalize_outcome(first_sentence) == Outcome.AFFIRMED.value
-            else Outcome.REJECTED.value
+            if _contains_negative_outcome(first_sentence, include_bare_did_not=False)
+            else Outcome.AFFIRMED.value
         )
     if text in ("affirmed", "affirm", "yes", "violation"):
         return Outcome.AFFIRMED.value
@@ -241,7 +245,10 @@ def _contains_negative_outcome(text: str, *, include_bare_did_not: bool = True) 
         any(phrase in text for phrase in negative_phrases)
         or (include_bare_did_not and "did not" in text)
         or re.search(
-            r"\b(?:was|were|is|are)\s+not\s+an?\s+(?:war\s+)?(?:crime|violation|breach)\b|\blawful\b",
+            # "lawful" alone also matched "a lawful military objective" and "not
+            # lawful", turning affirmative answers indeterminate.
+            r"\b(?:was|were|is|are)\s+not\s+an?\s+(?:war\s+)?(?:crime|violation|breach)\b"
+            r"|\b(?:was|were|is|are)\s+lawful\b",
             text,
         )
         is not None
