@@ -11,7 +11,88 @@ from the result artifact or report. Keep held-out cases out of prompt tuning.
 | 2026-11-16 | `prompts/judge/rule.md` (+ scorer fix, case facts; see below) | `6854889d75` (set `0455e4cb3248`) | 3 | 16 | B 0.33 · C 0.67 · D 0.67 | B 0.46 · C 0.22 · D 0.19 | B 0.57 · C 0.20 · D 0.18 | One run per arm and case; not separable, see below. |
 | 2026-11-16 | `prompts/shared/_citation_rules.md`, both attacker `challenge.md` (+ citation format check) | set `e687486954b3` | 2 of 3 | 10 | C 0.50 · D 0.50 (Gotovina errored) | - | - | Citation format fixed; exposed the judge prompt silencing the evidentiary attacker. See below. |
 | 2026-11-16 | `prompts/judge/rule.md` ("Weighing the facts" removed) | `aa219aad89` (set `f8a652539767`) | 3 | 7 | D 1.00 (3 of 3) | - | - | D only; C on Bemba hit a Groq limit. One run each. See below. |
+| 2026-11-16 | — (no change: arm C on the final prompts) | set `f8a652539767` | 3 | 5 | C 0.33 (1 of 3) | C 0.45 | C 0.49 | Exposed Rome Statute art. 8 citations with the paragraph dropped. See below. |
+| 2026-11-16 | — (art. 8 paragraph check in `council_core/models/citation.py`) | set `f8a652539767` | 1 | 2 | C 0.00 (Gotovina) | - | - | Unresolved 3 → 0; the repair did not fire, the presenter cited correctly first time. See below. |
 
+
+## Rehearsal (#25) on the frozen settings: two attempts, both stopped at arm D, 2026-11-16
+
+Both on settings fingerprint `deb1d80c7856`, `icty_galic_terror`, no flags but
+`--go`. Neither completes #25.
+
+| Attempt | A | B | C | D | E | Judge attempts |
+| --- | --- | --- | --- | --- | --- | ---: |
+| 4 (`data/eval-rehearsal-4`) | affirmed, 87 s | affirmed, 33 s | affirmed, 179 s | error, 137 s | error (needs D) | 5 |
+| 5 (`data/eval-rehearsal-5`) | affirmed, 29 s | affirmed, 52 s | affirmed, 136 s | error, 72 s | error (needs D) | 5 |
+
+A-C were correct both times, with 0 unresolved citations.
+
+**Attempt 4: the presenter's round 2 was bigger than Groq's whole
+per-minute allowance.** `413 Request too large` for `gpt-oss-120b`, tokens per
+minute: limit 8,000, requested 8,278. One request that size never fits on the
+free tier, so waiting doesn't help. `max_tokens` isn't what's counted: probes
+asking for 7,900, 9,000 and 30,000 output tokens were all accepted. The
+request's input is.
+- Round 2 repeats the whole retrieved context, and about 2,000 tokens of it
+  is one span, the whole of Rome Statute art. 8, retrieved next to the
+  sub-provisions actually argued.
+- **Fix:** from round 2, a span over 4,000 characters is replaced by the
+  provisions inside it that earlier rounds cited (`rebuttal_context` in
+  `app/roles/presenter.py`). Round 1, the attackers, the judge and the prompts
+  are unchanged, so the frozen fingerprint is too.
+- Replayed on five stored round-2 prompts, the cut is 1,841-2,043 tokens, and
+  the replay matched the recorded prompt size to within 74 tokens. Live, C's
+  round-2 prompt went from 5,875 tokens to 4,252.
+- **D's 3 of 3 above predates the trim.** The scored run is the first
+  measure of D with it.
+
+**Attempt 5: the doctrinal attacker hit its output limit.** `Request too
+large` for `qwen3.8-27b`, output tokens per minute: limit 1,000, requested
+1,349.
+- D's round-1 doctrinal reply was 1,349 tokens in the wrong JSON shape, with
+  objections nested inside an objection. Groq refused the repair request on
+  every retry for about a minute.
+- What Groq counts here isn't `max_tokens` either: probes at 4,000 and 16,000
+  were accepted, and one at 1,349 was refused. Its estimate seems to follow
+  recent reply length.
+- 3 of this attacker's 20 recorded replies exceeded 1,000 tokens, so the risk
+  recurs on this account, worst when a long reply also needs a repair.
+- **Next:** shorten the attacker's replies. That is a prompt change, so the
+  settings will be re-frozen.
+
+## Arm C on the final prompts, and the art. 8 paragraph check, 2026-11-16
+
+**Run** (C on the three core cases, `data/eval-armc-final`, 5 judge attempts;
+the PR's last step before the freeze):
+
+| Case (truth) | C | Final-round rulings (sustained / overruled) | Unresolved | Time |
+| --- | --- | --- | --- | --- |
+| Galić (affirmed) | affirmed 0.85 | 2 / 2 | 0 / 9 | 244 s |
+| Gotovina (rejected) | **affirmed** 0.75 | 3 / 1 | **3 / 13** | 292 s |
+| Bemba (rejected) | **affirmed** 0.88 | none raised | 0 / 7 | 46 s |
+
+- **C misses the two cases that turn on the evidence.** C has no evidentiary
+  attacker, and D's run credits that attacker with Gotovina. On Bemba the
+  doctrinal attacker returned `{"objections": []}`, so the judge had nothing
+  to rule on and the debate ended after one round. This is what the ablation
+  is for, not something to tune away: C is recorded as it is.
+- **Gotovina's three unresolved citations were real provisions in the wrong
+  shape**: the presenter cited `rome_statute` art. `8(b)(iv)` (twice) and
+  `8(b)(v)`, dropping paragraph 2. The format check only caught missing
+  fields, so they reached the resolver and counted as fabrications.
+
+**Fix.** `Citation.format_problem` now sends a Rome Statute art. 8 locator
+whose first level is a letter back for repair, naming the full form
+(`8(2)(b)(iv)`). It is limited to art. 8, the only article whose lettered
+subparagraphs sit under a paragraph number (28(a) is correct as written), and
+it checks shape alone, never the index: a well-formed invented provision still
+resolves `unresolved`. Tests use the live citation.
+
+**Check** (C on Gotovina, `data/eval-armc-gotovina-fix`, 2 judge attempts):
+unresolved 0 of 12, one misquoted. The repair did not fire: this time the
+presenter wrote `8(2)(b)(iv)` first time. So the run confirms nothing broke,
+and the unit tests carry the evidence that the check catches the real shape.
+C again answered affirmed, with 4 objections sustained.
 
 ## Judge prompt corrected: the full council on its own facts fix, 2026-11-16
 
