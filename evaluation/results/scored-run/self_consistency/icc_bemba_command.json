@@ -1,0 +1,1754 @@
+{
+  "case_id": "icc_bemba_command",
+  "case_title": "Prosecutor v. Jean-Pierre Bemba Gombo — command responsibility",
+  "court": "ICC",
+  "year": 2018,
+  "difficulty": "contested",
+  "arm": "self_consistency",
+  "arm_label": "E — Self-consistency control (compute-matched)",
+  "run_id": "eval_9680357227",
+  "question": "Has it been established beyond reasonable doubt that the commander of a force deployed in a foreign country was criminally responsible under Article 28(a) of the Rome Statute for crimes committed by that force's troops?",
+  "facts": "Troops of the Mouvement de libération du Congo (MLC) operated in the Central African Republic from on or about 26 October 2002 to 15 March 2003. The Trial Chamber found the commander to have acted as a military commander with effective control over the troops. The crimes at issue included murder, rape, and pillaging. On appeal he argued that the Trial Chamber had misappreciated the limitations of the MLC's jurisdiction and competence to investigate, and that it had ignored that he had asked the Central African Republic Prime Minister to investigate the allegations and had sent a letter to the Central African Republic authorities concerning allegations of crimes. Evidence before the Trial Chamber included testimony about the limits of his power to investigate crimes committed in the Central African Republic and about logistical difficulties in doing so, and the MLC relied on cooperation with the Central African Republic authorities during the operation. The Trial Chamber acknowledged that he had taken some measures during the operation. The Trial Chamber found that MLC troops continued committing crimes throughout the operation and that consistent information about these crimes was brought to his attention. He initiated inquiries. Other MLC commanders exercised some disciplinary authority in the field.",
+  "ground_truth_outcome": "rejected",
+  "holding": "In its Appeals Judgment of 8 June 2018, the ICC Appeals Chamber majority found that errors materially affected the Trial Chamber's conclusion that the commander had failed to take all necessary and reasonable measures under Article 28 of the Rome Statute. The majority held that he could not be held criminally liable under Article 28 for the crimes committed by MLC troops during the operation, reversed his conviction, discontinued proceedings for acts outside the scope of the charges, and acquitted him of the remaining criminal acts. Judges Monageng and Hofmański dissented and would have confirmed the Trial Chamber's conviction.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": false,
+  "confidence": 0.85,
+  "confidence_reasoning": "The conclusion rests on the Trial Chamber's factual findings, which are presented as established facts for this proceeding, and on a straightforward application of the statutory text of Article 28(a) and its customary counterpart in AP I Article 86(2). The confidence is not higher because the 'beyond reasonable doubt' standard is demanding and appellate review could in principle reassess the sufficiency of the evidence, but on the record as given the elements are clearly met.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 8,
+  "samples": 7,
+  "vote_counts": {
+    "rejected": 5,
+    "affirmed": 1,
+    "indeterminate": 1
+  },
+  "citation_statuses": {
+    "total": 7,
+    "resolved": 7,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. The commander's criminal responsibility under Article 28(a) of the Rome Statute has been established beyond reasonable doubt based on the Trial Chamber's factual findings and the applicable legal standard.",
+    "reasoning": "All three elements of Article 28(a) are satisfied on the facts as found by the Trial Chamber. First, the Trial Chamber found the commander exercised effective command and control over MLC forces in the Central African Republic, meeting the threshold requirement of Article 28(a). Second, consistent information about the commission of murder, rape, and pillaging was repeatedly brought to his attention and he initiated inquiries, establishing that he either knew or, owing to the circumstances, should have known that the forces were committing or about to commit such crimes, satisfying Article 28(a)(i). Third, although he took some measures — sending a letter and requesting an investigation by Central African Republic authorities — the crimes continued unabated throughout the operation, other MLC commanders exercised disciplinary authority in the field demonstrating that additional measures were within his power, and the limited steps he took fell short of the 'all necessary and reasonable measures within his power' required by Article 28(a)(ii). The same standard is reflected in Article 86(2) of Additional Protocol I. No objections were raised to challenge these arguments.",
+    "confidence": 0.85,
+    "confidence_reasoning": "The conclusion rests on the Trial Chamber's factual findings, which are presented as established facts for this proceeding, and on a straightforward application of the statutory text of Article 28(a) and its customary counterpart in AP I Article 86(2). The confidence is not higher because the 'beyond reasonable doubt' standard is demanding and appellate review could in principle reassess the sufficiency of the evidence, but on the record as given the elements are clearly met.",
+    "surviving_argument_ids": [
+      "arg_84534feb",
+      "arg_9b818bf8",
+      "arg_ef9c5806",
+      "arg_f47eaeff"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_84534feb",
+      "claim": "The commander exercised effective command and control over MLC forces in the Central African Republic, satisfying the first prerequisite of Article 28(a).",
+      "reasoning": "Article 28(a) requires that a military commander or a person effectively acting as such have effective command and control over the forces whose crimes are at issue. The Trial Chamber’s factual finding that the commander had \"effective control\" over the MLC troops meets this statutory element, and the treaty language expressly links criminal responsibility to that level of control.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_9b818bf8",
+      "claim": "The commander either knew or, given the circumstances, should have known about the commission of murder, rape and pillaging by his troops.",
+      "reasoning": "Article 28(a)(i) imposes liability when the commander knew, or ought to have known, that the forces were committing or about to commit crimes. The record shows that consistent information about the crimes was repeatedly brought to his attention and that he initiated inquiries, establishing that the circumstances were such that a commander in his position should have been aware. Customary international law, reflected in Article 86(2) of Additional Protocol I, reinforces that a superior who has information which should have enabled him to conclude that a breach is occurring must be treated as having constructive knowledge.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)(i)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "86(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "if they knew, or had information which should have enabled them to conclude that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)(i)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "86(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "if they knew, or had information which should have enabled them to conclude that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_ef9c5806",
+      "claim": "The commander failed to take all necessary and reasonable measures within his power to prevent or repress the crimes or to refer them to the competent authorities for investigation and prosecution.",
+      "reasoning": "Article 28(a)(ii) requires that a commander take \"all necessary and reasonable measures\" to prevent or repress the commission of crimes or to submit the matter to competent authorities. Although the commander sent a letter and requested an investigation, the evidence demonstrates that crimes continued unabated, that logistical and jurisdictional limitations were cited, and that other MLC commanders exercised disciplinary authority, indicating that the commander did not employ all measures within his power. The same standard is echoed in Article 86(2) of Additional Protocol I, which obliges superiors to take all feasible measures within their power.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)(ii)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "86(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "if they did not take all feasible measures within their power to prevent or repress the breach."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)(ii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "86(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "if they did not take all feasible measures within their power to prevent or repress the breach."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_f47eaeff",
+      "claim": "The partial steps taken by the commander do not satisfy the \"all necessary and reasonable measures\" standard and therefore do not defeat liability under Article 28(a).",
+      "reasoning": "Article 28(a)(ii) does not excuse a commander merely because he took some measures; it obliges him to take *all* measures that are necessary and reasonable given his authority. The commander’s limited actions—sending a letter and requesting a local inquiry—fall short of the comprehensive response required, especially where he possessed the authority to discipline troops directly or to coordinate with other MLC commanders. This interpretation aligns with the purpose of Article 86(2) of Additional Protocol I, which stresses that any failure to employ all feasible measures, even when some steps are taken, sustains responsibility.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)(ii)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "86(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "if they did not take all feasible measures within their power to prevent or repress the breach."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)(ii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "86(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "if they did not take all feasible measures within their power to prevent or repress the breach."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "28(a)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "28",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "33(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "28(a)(i)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "28(a)(ii)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "33(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "86(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "25",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_2261423b",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "e33d23c796fda7742890bc1915e83b894861069f11fa815a4350260e8c8e942d",
+      "arguments": [
+        {
+          "id": "arg_84534feb",
+          "claim": "The commander exercised effective command and control over MLC forces in the Central African Republic, satisfying the first prerequisite of Article 28(a).",
+          "reasoning": "Article 28(a) requires that a military commander or a person effectively acting as such have effective command and control over the forces whose crimes are at issue. The Trial Chamber’s factual finding that the commander had \"effective control\" over the MLC troops meets this statutory element, and the treaty language expressly links criminal responsibility to that level of control.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_9b818bf8",
+          "claim": "The commander either knew or, given the circumstances, should have known about the commission of murder, rape and pillaging by his troops.",
+          "reasoning": "Article 28(a)(i) imposes liability when the commander knew, or ought to have known, that the forces were committing or about to commit crimes. The record shows that consistent information about the crimes was repeatedly brought to his attention and that he initiated inquiries, establishing that the circumstances were such that a commander in his position should have been aware. Customary international law, reflected in Article 86(2) of Additional Protocol I, reinforces that a superior who has information which should have enabled him to conclude that a breach is occurring must be treated as having constructive knowledge.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "if they knew, or had information which should have enabled them to conclude that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(i)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "if they knew, or had information which should have enabled them to conclude that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_ef9c5806",
+          "claim": "The commander failed to take all necessary and reasonable measures within his power to prevent or repress the crimes or to refer them to the competent authorities for investigation and prosecution.",
+          "reasoning": "Article 28(a)(ii) requires that a commander take \"all necessary and reasonable measures\" to prevent or repress the commission of crimes or to submit the matter to competent authorities. Although the commander sent a letter and requested an investigation, the evidence demonstrates that crimes continued unabated, that logistical and jurisdictional limitations were cited, and that other MLC commanders exercised disciplinary authority, indicating that the commander did not employ all measures within his power. The same standard is echoed in Article 86(2) of Additional Protocol I, which obliges superiors to take all feasible measures within their power.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(ii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "if they did not take all feasible measures within their power to prevent or repress the breach."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(ii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "if they did not take all feasible measures within their power to prevent or repress the breach."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_f47eaeff",
+          "claim": "The partial steps taken by the commander do not satisfy the \"all necessary and reasonable measures\" standard and therefore do not defeat liability under Article 28(a).",
+          "reasoning": "Article 28(a)(ii) does not excuse a commander merely because he took some measures; it obliges him to take *all* measures that are necessary and reasonable given his authority. The commander’s limited actions—sending a letter and requesting a local inquiry—fall short of the comprehensive response required, especially where he possessed the authority to discipline troops directly or to coordinate with other MLC commanders. This interpretation aligns with the purpose of Article 86(2) of Additional Protocol I, which stresses that any failure to employ all feasible measures, even when some steps are taken, sustains responsibility.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(ii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "if they did not take all feasible measures within their power to prevent or repress the breach."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(ii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "if they did not take all feasible measures within their power to prevent or repress the breach."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The commander exercised effective command and control over MLC forces in the Central African Republic, satisfying the first prerequisite of Article 28(a).\",\n      \"reasoning\": \"Article 28(a) requires that a military commander or a person effectively acting as such have effective command and control over the forces whose crimes are at issue. The Trial Chamber’s factual finding that the commander had \\\"effective control\\\" over the MLC troops meets this statutory element, and the treaty language expressly links criminal responsibility to that level of control.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\",\n          \"quoted_text\": \"A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander either knew or, given the circumstances, should have known about the commission of murder, rape and pillaging by his troops.\",\n      \"reasoning\": \"Article 28(a)(i) imposes liability when the commander knew, or ought to have known, that the forces were committing or about to commit crimes. The record shows that consistent information about the crimes was repeatedly brought to his attention and that he initiated inquiries, establishing that the circumstances were such that a commander in his position should have been aware. Customary international law, reflected in Article 86(2) of Additional Protocol I, reinforces that a superior who has information which should have enabled him to conclude that a breach is occurring must be treated as having constructive knowledge.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(i)\",\n          \"quoted_text\": \"That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"86(2)\",\n          \"quoted_text\": \"if they knew, or had information which should have enabled them to conclude that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander failed to take all necessary and reasonable measures within his power to prevent or repress the crimes or to refer them to the competent authorities for investigation and prosecution.\",\n      \"reasoning\": \"Article 28(a)(ii) requires that a commander take \\\"all necessary and reasonable measures\\\" to prevent or repress the commission of crimes or to submit the matter to competent authorities. Although the commander sent a letter and requested an investigation, the evidence demonstrates that crimes continued unabated, that logistical and jurisdictional limitations were cited, and that other MLC commanders exercised disciplinary authority, indicating that the commander did not employ all measures within his power. The same standard is echoed in Article 86(2) of Additional Protocol I, which obliges superiors to take all feasible measures within their power.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(ii)\",\n          \"quoted_text\": \"That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"86(2)\",\n          \"quoted_text\": \"if they did not take all feasible measures within their power to prevent or repress the breach.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The partial steps taken by the commander do not satisfy the \\\"all necessary and reasonable measures\\\" standard and therefore do not defeat liability under Article 28(a).\",\n      \"reasoning\": \"Article 28(a)(ii) does not excuse a commander merely because he took some measures; it obliges him to take *all* measures that are necessary and reasonable given his authority. The commander’s limited actions—sending a letter and requesting a local inquiry—fall short of the comprehensive response required, especially where he possessed the authority to discipline troops directly or to coordinate with other MLC commanders. This interpretation aligns with the purpose of Article 86(2) of Additional Protocol I, which stresses that any failure to employ all feasible measures, even when some steps are taken, sustains responsibility.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(ii)\",\n          \"quoted_text\": \"That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"86(2)\",\n          \"quoted_text\": \"if they did not take all feasible measures within their power to prevent or repress the breach.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T16:06:58.497092Z",
+      "completed_at": "2026-11-16T16:07:06.240496Z",
+      "prompt_tokens": 2502,
+      "completion_tokens": 2736,
+      "error": null
+    },
+    {
+      "id": "turn_86e43d11",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "e33d23c796fda7742890bc1915e83b894861069f11fa815a4350260e8c8e942d",
+      "arguments": [
+        {
+          "id": "arg_1645c8e4",
+          "claim": "The commander exercised effective command and control over MLC troops in the Central African Republic, satisfying the prerequisite of Article 28(a).",
+          "reasoning": "Article 28(a) imposes criminal responsibility only on a military commander or person effectively acting as such who has effective command and control over the forces committing the crimes. The Trial Chamber expressly found that the commander acted as a military commander with effective control over the MLC troops, thereby meeting this prerequisite.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_873f2b09",
+          "claim": "The commander knew, or, owing to the circumstances, should have known that MLC troops were committing murder, rape, and pillaging.",
+          "reasoning": "Article 28(a)(i) requires that the commander either actually knew or should have known of the crimes. The record shows that consistent information about the crimes was brought to his attention and that he initiated inquiries, indicating that a reasonable commander in his position would have been aware of the ongoing violations. This mirrors the standard in Additional Protocol I, which likewise imputes knowledge when the superior had information that should have led to that conclusion.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(i)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_3cfd7d50",
+          "claim": "The commander failed to take all necessary and reasonable measures within his power to prevent or repress the crimes or to refer them to competent authorities.",
+          "reasoning": "Article 28(a)(ii) obliges a commander to take all necessary and reasonable measures to prevent or repress the commission of crimes or to submit the matter to competent authorities. Although the commander took some steps, the crimes continued unabated, and the Tribunal found that logistical difficulties did not excuse the failure to act. This aligns with the duty articulated in Additional Protocol I, which requires “all feasible measures” to prevent or repress a breach.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(ii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(ii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_8f9c30a4",
+          "claim": "The cumulative factual findings satisfy the evidentiary standard of proof beyond reasonable doubt, establishing the commander’s criminal responsibility under Article 28(a).",
+          "reasoning": "Each element of command responsibility—effective control, knowledge (or constructive knowledge), and failure to take all necessary and reasonable measures—has been individually proven by the Trial Chamber’s factual findings. Under the principle that criminal liability must be proved beyond reasonable doubt for each element, the convergence of these proven facts removes any reasonable doubt as to the commander’s liability under Article 28(a).",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The commander exercised effective command and control over MLC troops in the Central African Republic, satisfying the prerequisite of Article 28(a).\",\n      \"reasoning\": \"Article 28(a) imposes criminal responsibility only on a military commander or person effectively acting as such who has effective command and control over the forces committing the crimes. The Trial Chamber expressly found that the commander acted as a military commander with effective control over the MLC troops, thereby meeting this prerequisite.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\",\n          \"quoted_text\": \"A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander knew, or, owing to the circumstances, should have known that MLC troops were committing murder, rape, and pillaging.\",\n      \"reasoning\": \"Article 28(a)(i) requires that the commander either actually knew or should have known of the crimes. The record shows that consistent information about the crimes was brought to his attention and that he initiated inquiries, indicating that a reasonable commander in his position would have been aware of the ongoing violations. This mirrors the standard in Additional Protocol I, which likewise imputes knowledge when the superior had information that should have led to that conclusion.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(i)\",\n          \"quoted_text\": \"That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"86(2)\",\n          \"quoted_text\": \"The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander failed to take all necessary and reasonable measures within his power to prevent or repress the crimes or to refer them to competent authorities.\",\n      \"reasoning\": \"Article 28(a)(ii) obliges a commander to take all necessary and reasonable measures to prevent or repress the commission of crimes or to submit the matter to competent authorities. Although the commander took some steps, the crimes continued unabated, and the Tribunal found that logistical difficulties did not excuse the failure to act. This aligns with the duty articulated in Additional Protocol I, which requires “all feasible measures” to prevent or repress a breach.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(ii)\",\n          \"quoted_text\": \"That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"86(2)\",\n          \"quoted_text\": \"The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The cumulative factual findings satisfy the evidentiary standard of proof beyond reasonable doubt, establishing the commander’s criminal responsibility under Article 28(a).\",\n      \"reasoning\": \"Each element of command responsibility—effective control, knowledge (or constructive knowledge), and failure to take all necessary and reasonable measures—has been individually proven by the Trial Chamber’s factual findings. Under the principle that criminal liability must be proved beyond reasonable doubt for each element, the convergence of these proven facts removes any reasonable doubt as to the commander’s liability under Article 28(a).\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\",\n          \"quoted_text\": \"A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T16:07:06.240939Z",
+      "completed_at": "2026-11-16T16:07:17.627791Z",
+      "prompt_tokens": 2502,
+      "completion_tokens": 2276,
+      "error": null
+    },
+    {
+      "id": "turn_02953f56",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "e33d23c796fda7742890bc1915e83b894861069f11fa815a4350260e8c8e942d",
+      "arguments": [
+        {
+          "id": "arg_1385ebea",
+          "claim": "The commander exercised effective command and control over MLC troops in the Central African Republic, satisfying the prerequisite of Article 28(a) for command responsibility.",
+          "reasoning": "Article 28(a) expressly places criminal responsibility on a military commander or a person effectively acting as such who has effective command and control over forces. The Trial Chamber’s finding that the commander acted as a military commander with effective control meets this definition, establishing jurisdiction over him under the Rome Statute.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_7e7f27c1",
+          "claim": "The commander either knew or, given the circumstances, should have known that MLC troops were committing murder, rape and pillaging.",
+          "reasoning": "Article 28(a)(i) requires that a commander either actually knew or, owing to the circumstances, should have known of the crimes. Consistent information about the crimes was repeatedly brought to his attention during a six‑month deployment, creating constructive knowledge. Customary international humanitarian law codified in Article 86(2) of Additional Protocol I reinforces that a superior is deemed to have knowledge when the facts should have led him to conclude the breach was occurring.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(i)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_f4b0666c",
+          "claim": "The commander failed to take all necessary and reasonable measures within his power to prevent or repress the crimes or to refer them to competent authorities.",
+          "reasoning": "Article 28(a)(ii) obliges a commander to take all necessary and reasonable measures to prevent or repress the commission of crimes, or to submit the matter to competent authorities. The commander’s only actions were a letter to the CAR Prime Minister and a request for an investigation—measures that, in light of the continued and systematic nature of the crimes, fall short of the “all necessary and reasonable” standard. Article 86(2) of Additional Protocol I similarly requires “all feasible measures” to be taken, underscoring that the commander’s limited steps were insufficient.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(ii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(ii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_4083eddf",
+          "claim": "The existence of other MLC commanders with limited disciplinary authority does not relieve the commander of responsibility because he retained overall effective control and the duty to ensure discipline.",
+          "reasoning": "Article 28(a) attaches responsibility to the commander who has effective command and control, regardless of any delegation of day‑to‑day disciplinary functions. The commander’s overall authority over the deployment, his knowledge of the crimes, and his failure to implement comprehensive preventive measures demonstrate that he remained the ultimate authority responsible for the conduct of his forces.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The commander exercised effective command and control over MLC troops in the Central African Republic, satisfying the prerequisite of Article 28(a) for command responsibility.\",\n      \"reasoning\": \"Article 28(a) expressly places criminal responsibility on a military commander or a person effectively acting as such who has effective command and control over forces. The Trial Chamber’s finding that the commander acted as a military commander with effective control meets this definition, establishing jurisdiction over him under the Rome Statute.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\",\n          \"quoted_text\": \"A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander either knew or, given the circumstances, should have known that MLC troops were committing murder, rape and pillaging.\",\n      \"reasoning\": \"Article 28(a)(i) requires that a commander either actually knew or, owing to the circumstances, should have known of the crimes. Consistent information about the crimes was repeatedly brought to his attention during a six‑month deployment, creating constructive knowledge. Customary international humanitarian law codified in Article 86(2) of Additional Protocol I reinforces that a superior is deemed to have knowledge when the facts should have led him to conclude the breach was occurring.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(i)\",\n          \"quoted_text\": \"That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"86(2)\",\n          \"quoted_text\": \"The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander failed to take all necessary and reasonable measures within his power to prevent or repress the crimes or to refer them to competent authorities.\",\n      \"reasoning\": \"Article 28(a)(ii) obliges a commander to take all necessary and reasonable measures to prevent or repress the commission of crimes, or to submit the matter to competent authorities. The commander’s only actions were a letter to the CAR Prime Minister and a request for an investigation—measures that, in light of the continued and systematic nature of the crimes, fall short of the “all necessary and reasonable” standard. Article 86(2) of Additional Protocol I similarly requires “all feasible measures” to be taken, underscoring that the commander’s limited steps were insufficient.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(ii)\",\n          \"quoted_text\": \"That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"86(2)\",\n          \"quoted_text\": \"The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The existence of other MLC commanders with limited disciplinary authority does not relieve the commander of responsibility because he retained overall effective control and the duty to ensure discipline.\",\n      \"reasoning\": \"Article 28(a) attaches responsibility to the commander who has effective command and control, regardless of any delegation of day‑to‑day disciplinary functions. The commander’s overall authority over the deployment, his knowledge of the crimes, and his failure to implement comprehensive preventive measures demonstrate that he remained the ultimate authority responsible for the conduct of his forces.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\",\n          \"quoted_text\": \"A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T16:07:17.628384Z",
+      "completed_at": "2026-11-16T16:07:54.007769Z",
+      "prompt_tokens": 2502,
+      "completion_tokens": 2666,
+      "error": null
+    },
+    {
+      "id": "turn_bebc38e4",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "e33d23c796fda7742890bc1915e83b894861069f11fa815a4350260e8c8e942d",
+      "arguments": [
+        {
+          "id": "arg_8ab0c1f0",
+          "claim": "The commander exercised effective command and control over MLC troops in the Central African Republic, satisfying the first prerequisite of Article 28(a).",
+          "reasoning": "Article 28(a) imposes criminal responsibility on a military commander or a person effectively acting as such when forces are under his or her effective command and control. The Trial Chamber’s finding that the commander had effective control meets this statutory condition, establishing the factual basis for liability.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_83b7e2f2",
+          "claim": "The commander either knew or, owing to the circumstances, should have known about the murders, rapes and pillaging committed by MLC troops.",
+          "reasoning": "Article 28(a)(i) requires that the commander have actual knowledge or constructive knowledge of the crimes. Consistent information about the crimes was brought to his attention throughout the operation, and the duration and nature of the offenses make it unreasonable for him to claim ignorance. This satisfies the knowledge element of the statute.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 14,
+              "quoted_text": ""
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(i)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 14,
+                "quoted_text": ""
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_2111282c",
+          "claim": "The commander failed to take all necessary and reasonable measures within his power to prevent or repress the crimes or to refer them to competent authorities.",
+          "reasoning": "Article 28(a)(ii) obliges a commander to adopt all necessary and reasonable measures to stop or punish the crimes. The record shows that the commander only sent a letter to CAR authorities and asked the Prime Minister to investigate, without initiating effective disciplinary or investigative actions of his own. The continued commission of crimes demonstrates that the measures taken were insufficient and that the statutory requirement was not met.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(ii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(ii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_d9fd3a4a",
+          "claim": "The commander’s limited inquiries and reliance on CAR authorities do not excuse liability because Article 28(a)(ii) demands “all necessary and reasonable measures,” and the continued crimes show that such measures were not taken.",
+          "reasoning": "The statute sets a high threshold: the commander must take *all* necessary and reasonable steps. Merely requesting an external investigation, without exercising his own disciplinary authority, falls short of the requisite effort. Moreover, Article 33(1) confirms that following orders or delegating investigations does not relieve a superior of responsibility unless the superior can demonstrate that he took all measures required by Article 28(a)(ii). The factual record—ongoing murders, rapes, and pillaging—demonstrates the failure to meet this standard.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(ii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "33(1)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(ii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "33(1)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The commander exercised effective command and control over MLC troops in the Central African Republic, satisfying the first prerequisite of Article 28(a).\",\n      \"reasoning\": \"Article 28(a) imposes criminal responsibility on a military commander or a person effectively acting as such when forces are under his or her effective command and control. The Trial Chamber’s finding that the commander had effective control meets this statutory condition, establishing the factual basis for liability.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\",\n          \"quoted_text\": \"A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander either knew or, owing to the circumstances, should have known about the murders, rapes and pillaging committed by MLC troops.\",\n      \"reasoning\": \"Article 28(a)(i) requires that the commander have actual knowledge or constructive knowledge of the crimes. Consistent information about the crimes was brought to his attention throughout the operation, and the duration and nature of the offenses make it unreasonable for him to claim ignorance. This satisfies the knowledge element of the statute.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(i)\",\n          \"quoted_text\": \"That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;\"\n        },\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 14,\n          \"quoted_text\": \"\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander failed to take all necessary and reasonable measures within his power to prevent or repress the crimes or to refer them to competent authorities.\",\n      \"reasoning\": \"Article 28(a)(ii) obliges a commander to adopt all necessary and reasonable measures to stop or punish the crimes. The record shows that the commander only sent a letter to CAR authorities and asked the Prime Minister to investigate, without initiating effective disciplinary or investigative actions of his own. The continued commission of crimes demonstrates that the measures taken were insufficient and that the statutory requirement was not met.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(ii)\",\n          \"quoted_text\": \"That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander’s limited inquiries and reliance on CAR authorities do not excuse liability because Article 28(a)(ii) demands “all necessary and reasonable measures,” and the continued crimes show that such measures were not taken.\",\n      \"reasoning\": \"The statute sets a high threshold: the commander must take *all* necessary and reasonable steps. Merely requesting an external investigation, without exercising his own disciplinary authority, falls short of the requisite effort. Moreover, Article 33(1) confirms that following orders or delegating investigations does not relieve a superior of responsibility unless the superior can demonstrate that he took all measures required by Article 28(a)(ii). The factual record—ongoing murders, rapes, and pillaging—demonstrates the failure to meet this standard.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(ii)\",\n          \"quoted_text\": \"That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"33(1)\",\n          \"quoted_text\": \"The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T16:07:54.008323Z",
+      "completed_at": "2026-11-16T16:09:01.291935Z",
+      "prompt_tokens": 2502,
+      "completion_tokens": 2134,
+      "error": null
+    },
+    {
+      "id": "turn_234d5d58",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "e33d23c796fda7742890bc1915e83b894861069f11fa815a4350260e8c8e942d",
+      "arguments": [
+        {
+          "id": "arg_a2293969",
+          "claim": "The commander exercised effective command and control over MLC troops, satisfying the prerequisite for liability under Article 28(a).",
+          "reasoning": "Article 28(a) predicates criminal responsibility on a military commander or a person effectively acting as such who has \"effective command and control, or effective authority and control\" over forces. The Trial Chamber’s finding that the commander acted as a military commander with effective control over the MLC troops establishes that this factual element is met.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_78b743da",
+          "claim": "The commander knew, or ought to have known, that MLC troops were committing murder, rape and pillaging.",
+          "reasoning": "Article 28(a)(i) requires that the commander either knew or, given the circumstances, should have known of the crimes. The record shows that consistent information about the crimes was brought to his attention, that he initiated inquiries, and that other MLC commanders exercised disciplinary authority, demonstrating that the commander had actual knowledge or constructive knowledge of the ongoing violations.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(i)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_d44f9f23",
+          "claim": "The commander failed to take all necessary and reasonable measures within his power to prevent or repress the crimes, breaching Article 28(a)(ii).",
+          "reasoning": "Article 28(a)(ii) obliges a commander to take \"all necessary and reasonable measures\" to prevent or repress the commission of crimes or to refer them to competent authorities. Although the commander sent a letter to CAR authorities and asked the Prime Minister to investigate, the evidence shows that logistical difficulties and limited investigative power prevented effective action, and the crimes continued unabated. Under the standard set by Article 28(a)(ii) and reinforced by customary law in AP I art.86(2), such partial steps are insufficient; the commander did not employ all measures reasonably available to him.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(ii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution"
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(ii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_cc155b68",
+          "claim": "The limited investigative steps taken by the commander do not satisfy the \"all necessary and reasonable measures\" requirement of Article 28(a)(ii).",
+          "reasoning": "Article 28(a)(ii) demands that a commander employ every measure that is both necessary and reasonable given his authority. The commander’s reliance on CAR authorities, a request for investigation, and a single letter, while indicative of some effort, fall short of the comprehensive actions required—such as direct disciplinary action, immediate suspension of offending units, or robust coordination with the host state to ensure effective prosecution. Customary law under AP I art.86(2) similarly requires \"all feasible measures\"; the mere delegation of responsibility to a foreign government does not meet this threshold.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(ii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution"
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(ii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The commander exercised effective command and control over MLC troops, satisfying the prerequisite for liability under Article 28(a).\",\n      \"reasoning\": \"Article 28(a) predicates criminal responsibility on a military commander or a person effectively acting as such who has \\\"effective command and control, or effective authority and control\\\" over forces. The Trial Chamber’s finding that the commander acted as a military commander with effective control over the MLC troops establishes that this factual element is met.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\",\n          \"quoted_text\": \"A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander knew, or ought to have known, that MLC troops were committing murder, rape and pillaging.\",\n      \"reasoning\": \"Article 28(a)(i) requires that the commander either knew or, given the circumstances, should have known of the crimes. The record shows that consistent information about the crimes was brought to his attention, that he initiated inquiries, and that other MLC commanders exercised disciplinary authority, demonstrating that the commander had actual knowledge or constructive knowledge of the ongoing violations.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(i)\",\n          \"quoted_text\": \"That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander failed to take all necessary and reasonable measures within his power to prevent or repress the crimes, breaching Article 28(a)(ii).\",\n      \"reasoning\": \"Article 28(a)(ii) obliges a commander to take \\\"all necessary and reasonable measures\\\" to prevent or repress the commission of crimes or to refer them to competent authorities. Although the commander sent a letter to CAR authorities and asked the Prime Minister to investigate, the evidence shows that logistical difficulties and limited investigative power prevented effective action, and the crimes continued unabated. Under the standard set by Article 28(a)(ii) and reinforced by customary law in AP I art.86(2), such partial steps are insufficient; the commander did not employ all measures reasonably available to him.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(ii)\",\n          \"quoted_text\": \"That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"86(2)\",\n          \"quoted_text\": \"The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The limited investigative steps taken by the commander do not satisfy the \\\"all necessary and reasonable measures\\\" requirement of Article 28(a)(ii).\",\n      \"reasoning\": \"Article 28(a)(ii) demands that a commander employ every measure that is both necessary and reasonable given his authority. The commander’s reliance on CAR authorities, a request for investigation, and a single letter, while indicative of some effort, fall short of the comprehensive actions required—such as direct disciplinary action, immediate suspension of offending units, or robust coordination with the host state to ensure effective prosecution. Customary law under AP I art.86(2) similarly requires \\\"all feasible measures\\\"; the mere delegation of responsibility to a foreign government does not meet this threshold.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(ii)\",\n          \"quoted_text\": \"That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"86(2)\",\n          \"quoted_text\": \"The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T16:09:01.292711Z",
+      "completed_at": "2026-11-16T16:09:20.279590Z",
+      "prompt_tokens": 2502,
+      "completion_tokens": 2102,
+      "error": null
+    },
+    {
+      "id": "turn_6a968aef",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "e33d23c796fda7742890bc1915e83b894861069f11fa815a4350260e8c8e942d",
+      "arguments": [
+        {
+          "id": "arg_12a7f2e4",
+          "claim": "The commander exercised effective command and control over MLC troops in the Central African Republic, satisfying the prerequisite of Article 28(a).",
+          "reasoning": "Article 28(a) applies to a \"military commander or person effectively acting as a military commander\" who has \"effective command and control\" over forces. The Trial Chamber found the commander to be a military commander with effective control, establishing the factual basis required by the statute.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_3ce7c0ad",
+          "claim": "The commander knew, or should have known, that MLC troops were committing murder, rape, and pillaging.",
+          "reasoning": "Paragraph (i) of Article 28(a) requires that the commander either knew or, given the circumstances, should have known of the crimes. The record shows that consistent information about the crimes was brought to his attention, he initiated inquiries, and other commanders exercised disciplinary authority, evidencing that the commander had actual or constructive knowledge.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(i)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_de41c2a1",
+          "claim": "The commander failed to take all necessary and reasonable measures within his power to prevent or repress the crimes or to refer them to competent authorities.",
+          "reasoning": "Paragraph (ii) of Article 28(a) obliges the commander to take \"all necessary and reasonable measures\" to prevent or repress the commission of crimes or to submit the matter for investigation. While the commander sent a letter to the Central African Republic authorities and asked the Prime Minister to investigate, the Tribunal found that logistical difficulties and limited investigative power did not constitute the full suite of measures required; the crimes continued unabated, indicating a failure to meet the statutory standard.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(ii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(ii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_b0ef7698",
+          "claim": "Taken together, the established facts satisfy all elements of Article 28(a), establishing the commander’s individual criminal responsibility beyond reasonable doubt.",
+          "reasoning": "Article 28(a) creates liability when (1) the person has effective command, (2) knows or should know of the crimes, and (3) fails to take all necessary and reasonable measures. The preceding arguments demonstrate that each element is met; therefore, the burden of proof is satisfied. This aligns with the broader principle of individual criminal responsibility under Article 25, which confirms that a person can be held liable for crimes committed by forces under his or her effective control.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "25",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A person shall be criminally responsible and liable for punishment for a crime within the jurisdiction of the Court if that person: (a) Commits such a crime, whether as an individual, jointly with another or through another person, regardless of whether that other person is criminally responsible; …"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "25",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A person shall be criminally responsible and liable for punishment for a crime within the jurisdiction of the Court if that person: (a) Commits such a crime, whether as an individual, jointly with another or through another person, regardless of whether that other person is criminally responsible; …"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The commander exercised effective command and control over MLC troops in the Central African Republic, satisfying the prerequisite of Article 28(a).\",\n      \"reasoning\": \"Article 28(a) applies to a \\\"military commander or person effectively acting as a military commander\\\" who has \\\"effective command and control\\\" over forces. The Trial Chamber found the commander to be a military commander with effective control, establishing the factual basis required by the statute.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\",\n          \"quoted_text\": \"A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander knew, or should have known, that MLC troops were committing murder, rape, and pillaging.\",\n      \"reasoning\": \"Paragraph (i) of Article 28(a) requires that the commander either knew or, given the circumstances, should have known of the crimes. The record shows that consistent information about the crimes was brought to his attention, he initiated inquiries, and other commanders exercised disciplinary authority, evidencing that the commander had actual or constructive knowledge.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(i)\",\n          \"quoted_text\": \"That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander failed to take all necessary and reasonable measures within his power to prevent or repress the crimes or to refer them to competent authorities.\",\n      \"reasoning\": \"Paragraph (ii) of Article 28(a) obliges the commander to take \\\"all necessary and reasonable measures\\\" to prevent or repress the commission of crimes or to submit the matter for investigation. While the commander sent a letter to the Central African Republic authorities and asked the Prime Minister to investigate, the Tribunal found that logistical difficulties and limited investigative power did not constitute the full suite of measures required; the crimes continued unabated, indicating a failure to meet the statutory standard.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(ii)\",\n          \"quoted_text\": \"That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"86(2)\",\n          \"quoted_text\": \"The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Taken together, the established facts satisfy all elements of Article 28(a), establishing the commander’s individual criminal responsibility beyond reasonable doubt.\",\n      \"reasoning\": \"Article 28(a) creates liability when (1) the person has effective command, (2) knows or should know of the crimes, and (3) fails to take all necessary and reasonable measures. The preceding arguments demonstrate that each element is met; therefore, the burden of proof is satisfied. This aligns with the broader principle of individual criminal responsibility under Article 25, which confirms that a person can be held liable for crimes committed by forces under his or her effective control.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\",\n          \"quoted_text\": \"A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"25\",\n          \"quoted_text\": \"A person shall be criminally responsible and liable for punishment for a crime within the jurisdiction of the Court if that person: (a) Commits such a crime, whether as an individual, jointly with another or through another person, regardless of whether that other person is criminally responsible; …\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T16:09:20.280155Z",
+      "completed_at": "2026-11-16T16:09:55.104915Z",
+      "prompt_tokens": 2502,
+      "completion_tokens": 1790,
+      "error": null
+    },
+    {
+      "id": "turn_3343236e",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "e33d23c796fda7742890bc1915e83b894861069f11fa815a4350260e8c8e942d",
+      "arguments": [
+        {
+          "id": "arg_c5532c00",
+          "claim": "The commander exercised effective command and control over MLC troops operating in the Central African Republic.",
+          "reasoning": "The Trial Chamber found that the commander acted as a military commander with effective control over the forces. Under Article 28(a) of the Rome Statute, criminal responsibility attaches to a commander for crimes committed by forces under his or her effective command and control, establishing the jurisdictional link.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_d8ab1f99",
+          "claim": "The commander either knew or, given the circumstances, should have known that MLC troops were committing murder, rape and pillaging.",
+          "reasoning": "Consistent information about the crimes was brought to his attention, he initiated inquiries, and other commanders exercised disciplinary authority, indicating that the commander was aware or constructive knowledge was imputed. Article 28(a)(i) requires such knowledge for liability.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(i)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_6a3e8107",
+          "claim": "The commander failed to take all necessary and reasonable measures within his power to prevent or repress the commission of the crimes or to refer them to competent authorities.",
+          "reasoning": "Although he sent a letter to the Central African Republic authorities and asked the Prime Minister to investigate, the Tribunal found that logistical difficulties and reliance on host‑state cooperation did not constitute the “all necessary and reasonable measures” required. Both Article 28(a)(ii) of the Rome Statute and Article 86(2) of Additional Protocol I affirm that failure to act, despite having the capacity to do so, satisfies the element of omission.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(ii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(ii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_68283c31",
+          "claim": "Taken together, the established facts satisfy all elements of Article 28(a) beyond reasonable doubt, rendering the commander criminally responsible under the Rome Statute.",
+          "reasoning": "The combination of (1) effective command and control, (2) actual or constructive knowledge of the crimes, and (3) the failure to take all necessary and reasonable preventive or investigative measures meets the statutory test set out in Article 28(a). The Tribunal’s factual findings on each element, coupled with the clear legal standards, fulfill the high evidentiary threshold of beyond‑reasonable‑doubt required for conviction.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "In addition to other grounds of criminal responsibility under this Statute for crimes within the jurisdiction of the Court: (a) A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "In addition to other grounds of criminal responsibility under this Statute for crimes within the jurisdiction of the Court: (a) A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The commander exercised effective command and control over MLC troops operating in the Central African Republic.\",\n      \"reasoning\": \"The Trial Chamber found that the commander acted as a military commander with effective control over the forces. Under Article 28(a) of the Rome Statute, criminal responsibility attaches to a commander for crimes committed by forces under his or her effective command and control, establishing the jurisdictional link.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\",\n          \"quoted_text\": \"A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander either knew or, given the circumstances, should have known that MLC troops were committing murder, rape and pillaging.\",\n      \"reasoning\": \"Consistent information about the crimes was brought to his attention, he initiated inquiries, and other commanders exercised disciplinary authority, indicating that the commander was aware or constructive knowledge was imputed. Article 28(a)(i) requires such knowledge for liability.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(i)\",\n          \"quoted_text\": \"That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander failed to take all necessary and reasonable measures within his power to prevent or repress the commission of the crimes or to refer them to competent authorities.\",\n      \"reasoning\": \"Although he sent a letter to the Central African Republic authorities and asked the Prime Minister to investigate, the Tribunal found that logistical difficulties and reliance on host‑state cooperation did not constitute the “all necessary and reasonable measures” required. Both Article 28(a)(ii) of the Rome Statute and Article 86(2) of Additional Protocol I affirm that failure to act, despite having the capacity to do so, satisfies the element of omission.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(ii)\",\n          \"quoted_text\": \"That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"86(2)\",\n          \"quoted_text\": \"The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Taken together, the established facts satisfy all elements of Article 28(a) beyond reasonable doubt, rendering the commander criminally responsible under the Rome Statute.\",\n      \"reasoning\": \"The combination of (1) effective command and control, (2) actual or constructive knowledge of the crimes, and (3) the failure to take all necessary and reasonable preventive or investigative measures meets the statutory test set out in Article 28(a). The Tribunal’s factual findings on each element, coupled with the clear legal standards, fulfill the high evidentiary threshold of beyond‑reasonable‑doubt required for conviction.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28\",\n          \"quoted_text\": \"In addition to other grounds of criminal responsibility under this Statute for crimes within the jurisdiction of the Court: (a) A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T16:09:55.105486Z",
+      "completed_at": "2026-11-16T16:10:31.667342Z",
+      "prompt_tokens": 2502,
+      "completion_tokens": 2342,
+      "error": null
+    },
+    {
+      "id": "turn_1a3be5d4",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "3adc427db5f8c41034ccb8f2886cf0e069e7fbfca330ed8b14b015da714d6ffd",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The commander's criminal responsibility under Article 28(a) of the Rome Statute has been established beyond reasonable doubt based on the Trial Chamber's factual findings and the applicable legal standard.\", \"reasoning\": \"All three elements of Article 28(a) are satisfied on the facts as found by the Trial Chamber. First, the Trial Chamber found the commander exercised effective command and control over MLC forces in the Central African Republic, meeting the threshold requirement of Article 28(a). Second, consistent information about the commission of murder, rape, and pillaging was repeatedly brought to his attention and he initiated inquiries, establishing that he either knew or, owing to the circumstances, should have known that the forces were committing or about to commit such crimes, satisfying Article 28(a)(i). Third, although he took some measures — sending a letter and requesting an investigation by Central African Republic authorities — the crimes continued unabated throughout the operation, other MLC commanders exercised disciplinary authority in the field demonstrating that additional measures were within his power, and the limited steps he took fell short of the 'all necessary and reasonable measures within his power' required by Article 28(a)(ii). The same standard is reflected in Article 86(2) of Additional Protocol I. No objections were raised to challenge these arguments.\", \"confidence\": 0.85, \"confidence_reasoning\": \"The conclusion rests on the Trial Chamber's factual findings, which are presented as established facts for this proceeding, and on a straightforward application of the statutory text of Article 28(a) and its customary counterpart in AP I Article 86(2). The confidence is not higher because the 'beyond reasonable doubt' standard is demanding and appellate review could in principle reassess the sufficiency of the evidence, but on the record as given the elements are clearly met.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_84534feb\", \"arg_9b818bf8\", \"arg_ef9c5806\", \"arg_f47eaeff\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-16T16:10:31.668504Z",
+      "completed_at": "2026-11-16T16:11:28.870721Z",
+      "prompt_tokens": 3736,
+      "completion_tokens": 1256,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-16T16:11:28.871646+00:00",
+  "duration_seconds": 270.75846995797474,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 2,
+  "judge_failures": 0,
+  "judge_failed": false,
+  "agreement_rate": 0.7142857142857143,
+  "rescored": "Confidence moved from the samples' agreement rate to the judge's stated confidence after the run (ADR 0011, amended). No model was called."
+}

@@ -168,9 +168,14 @@ can see it before anyone starts. Each case is run **once**, by one person.
 
 | Case | Run by | Date | Done |
 | --- | --- | --- | --- |
-| `icty_galic_terror` | | | |
-| `icty_gotovina_knin` | | | |
-| `icc_bemba_command` | | | |
+| `icty_galic_terror` | machine 2 | 2026-11-16 | ✓ |
+| `icty_gotovina_knin` | machine 1 | 2026-11-16 | ✓ |
+| `icc_bemba_command` | machine 1 | 2026-11-16 | ✓ |
+| `icty_mrksic_vukovar` (stretch) | machine 2 | 2026-11-16 | ✓ |
+
+The scored run is done; its results are in `evaluation/results/scored-run/`
+and its write-up in `evaluation/reports/write-up.md`. Use this table again for
+any later run.
 
 The three stretch cases (`--tier stretch`) come only after all three core cases
 are done, if quota allows (ADR 0012).
@@ -242,6 +247,17 @@ Send nothing from `.env` or `data/logs/`.
 
    Check that `data/eval-combined/` holds 15 files, three cases by five arms:
    `find data/eval-combined -name '*.json' | wc -l`.
+
+   A zip made on Windows warns that it "appears to use backslashes as path
+   separators"; `unzip` converts them, so the warning is harmless.
+
+   Results written before 2026-11-16's harness fix carry arm E's old
+   confidence (ADR 0011, amended). Rescore them; it changes only those, and
+   only once:
+
+   ```bash
+   cd evaluation && python -m harness.artifacts rescore --results-dir ../data/eval-combined && cd ..
+   ```
 2. Generate the report:
 
    ```bash
@@ -255,7 +271,14 @@ Send nothing from `.env` or `data/logs/`.
    case has to be re-run on a matching machine.
 3. The report's header names the settings every result ran under. Commit the
    report, and the result files a reader needs to check the dissent logs
-   (#26).
+   (#26), without their corpus text: the repo is public (ADR 0014).
+
+   ```bash
+   cd evaluation && python -m harness.artifacts export \
+     --results-dir ../data/eval-combined --output-dir results/scored-run && cd ..
+   ```
+
+   The exported files rebuild the same report: `--results-dir results/scored-run`.
 
 Then score reasoning overlap by hand (#27, `docs/evaluation.md` section 5)
 and write up, stating the limits #26 lists.

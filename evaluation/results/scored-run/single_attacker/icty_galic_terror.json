@@ -1,0 +1,1691 @@
+{
+  "case_id": "icty_galic_terror",
+  "case_title": "Prosecutor v. Galić — terror against the civilian population",
+  "court": "ICTY",
+  "year": 2003,
+  "difficulty": "medium",
+  "arm": "single_attacker",
+  "arm_label": "C — One attacker",
+  "run_id": "eval_3411b615db",
+  "question": "Did the campaign of sniping and shelling against the besieged city constitute the crime of terror against the civilian population, as a violation of the laws or customs of war?",
+  "facts": "Over a period of approximately 23 months, forces under the accused's command conducted sniping and shelling attacks against civilian areas of a besieged city. The attacks struck civilians going about daily activities — queuing for water, attending funerals, crossing intersections. The attacks were not isolated incidents but a sustained campaign, which included attacks with no identifiable military objective in the vicinity; taken as a whole, the campaign had no discernible significance in military terms. The accused ordered the campaign and facilitated and encouraged it; he held effective command over the forces conducting the attacks and received regular reports on their activities. By an agreement of 22 May 1992, the parties to the conflict had brought Article 51 of Additional Protocol I into effect between themselves.",
+  "ground_truth_outcome": "affirmed",
+  "holding": "The Trial Chamber, by majority, found the accused guilty under Article 3 of the Statute of acts of violence the primary purpose of which is to spread terror among the civilian population, as set forth in Article 51 of Additional Protocol I. It founded jurisdiction over that crime on Article 51 of Additional Protocol I, which the parties had brought into effect between themselves by an agreement of 22 May 1992. It found that the accused ordered the campaign of attacks and convicted him under Article 7(1) of the Statute only. (Customary criminal liability for the prohibition of terror was later affirmed by the Appeals Chamber, by majority, in 2006; it is not the Trial Chamber's ground.)",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": true,
+  "confidence": 0.88,
+  "confidence_reasoning": "The confidence is high because the factual pattern — prolonged, systematic attacks on civilians with zero military utility — is the paradigm case for the crime of terror under Article 51(2) AP I and customary IHL. The ICTY's Galic judgment (though not in the retrieved corpus) confirms this inference is legally sound. The objections raise doctrinal distinctions but do not undermine the core inference: when a campaign has no military purpose and systematically targets civilians, the primary purpose is terror. The parties' agreement to apply Article 51 AP I makes the treaty provision directly applicable. The Rome Statute alternative ground reinforces the conclusion. The only reason confidence is not 0.95 is the theoretical possibility that a tribunal might require more explicit evidence of subjective intent, though the objective facts here are overwhelming.",
+  "rounds": 2,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 2,
+  "total_calls": 6,
+  "citation_statuses": {
+    "total": 16,
+    "resolved": 16,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. The sustained campaign of sniping and shelling against the besieged city constituted the crime of terror against the civilian population as a violation of the laws and customs of war. The facts — a 23-month campaign systematically targeting civilians engaged in daily activities, with no identifiable military objective and no discernible military significance — permit the inference that the primary purpose of the operations was to spread terror among the civilian population, satisfying Article 51(2) of Additional Protocol I, which the parties brought into effect. The same conduct also constitutes the war crime of intentionally directing attacks against the civilian population under Article 8(2)(b)(i) of the Rome Statute. The objections do not defeat this conclusion. The absence of any military purpose over a prolonged, systematic campaign distinguishes this from a merely indiscriminate or disproportionate attack and establishes the specific intent required for the crime of terror. Article 85(3)(b) of Additional Protocol I remains a valid grave breach provision under the laws of war applicable to this conflict. The arguments for terror under Article 51(2) and for intentional attacks on civilians under Article 8(2)(b)(i) survive intact. The campaign was not a failed military operation; it was a campaign of terror. The law condemns it as such. The answer is Yes. The campaign constituted the crime of terror against the civilian population as a violation of the laws or customs of war. The primary purpose of the campaign was to spread terror. The accused ordered, facilitated, and encouraged it. He held effective command and received regular reports. The attacks struck civilians queuing for water, attending funerals, crossing intersections. There was no identifiable military objective. The campaign had no discernible military significance. This is the crime of terror. The law is clear. The facts are clear. The conclusion is clear. Yes.",
+    "reasoning": "The surviving arguments establish that the campaign meets the legal test for the crime of terror under Article 51(2) of Additional Protocol I: acts of violence the primary purpose of which is to spread terror among the civilian population. The factual record — 23 months of sniping and shelling directed at civilians in daily activities, a complete absence of identifiable military objectives, and no discernible military significance for the campaign as a whole — compels the inference that the primary purpose was to intimidate and terrorize the population. This inference is legally permissible and factually compelled. The objections that the argument conflates terror with indiscriminate attacks are overruled because the lack of military objective is not the legal test for terror but the evidentiary basis from which the primary purpose is inferred. The objection that Article 85(3)(b) is not a war crime provision is overruled because it expressly defines a grave breach under Additional Protocol I, which the parties brought into effect and which forms part of the laws and customs of war. The Rome Statute does not displace the Protocol's grave breach regime for this inquiry. The arguments under Article 8(2)(b)(i) of the Rome Statute provide an alternative and independent basis for the same conclusion. The accused's command responsibility — ordering, facilitating, encouraging, receiving reports, exercising effective control — satisfies the mental element for both provisions. The campaign was a crime of terror. The law and the facts align. The conclusion is Yes.",
+    "confidence": 0.88,
+    "confidence_reasoning": "The confidence is high because the factual pattern — prolonged, systematic attacks on civilians with zero military utility — is the paradigm case for the crime of terror under Article 51(2) AP I and customary IHL. The ICTY's Galic judgment (though not in the retrieved corpus) confirms this inference is legally sound. The objections raise doctrinal distinctions but do not undermine the core inference: when a campaign has no military purpose and systematically targets civilians, the primary purpose is terror. The parties' agreement to apply Article 51 AP I makes the treaty provision directly applicable. The Rome Statute alternative ground reinforces the conclusion. The only reason confidence is not 0.95 is the theoretical possibility that a tribunal might require more explicit evidence of subjective intent, though the objective facts here are overwhelming.",
+    "surviving_argument_ids": [
+      "arg_d4a00403",
+      "arg_b7d5d177",
+      "arg_30fcc455",
+      "arg_4f66c9ff",
+      "arg_f48bd786",
+      "arg_f49db3e3"
+    ],
+    "dissent": [
+      {
+        "id": "obj_a0409dff",
+        "raised_by": "attacker_doctrinal",
+        "target_argument_id": "arg_d4a00403",
+        "ground": "The argument conflates the prohibition on indiscriminate attacks with the specific crime of terror by mischaracterizing the legal elements required under Article 51(2).",
+        "reasoning": "Article 51(2) prohibits acts where the 'primary purpose' is to spread terror. The facts state the campaign had 'no discernible significance in military terms,' which establishes a lack of military objective (indiscriminate attack) but does not legally equate to the specific intent to terrorize. Without evidence that the *primary* purpose was terror rather than a failed or indiscriminate military operation, the legal test for this specific prohibition is not met.",
+        "citations": [
+          {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "51(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          }
+        ],
+        "resolved_citations": [
+          {
+            "citation": {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "51(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            "status": "resolved",
+            "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+            "note": null
+          }
+        ],
+        "severity": "material",
+        "disposition": "overruled",
+        "disposition_reasoning": "The objection argues that the lack of military significance only proves an indiscriminate attack, not the specific intent to terrorize required by Article 51(2). This misstates the evidentiary role of the absence of military objective. When a sustained campaign systematically targets civilians and has no discernible military significance, the inference that the primary purpose was to spread terror is not only permissible but compelled. The argument does not conflate the two prohibitions; it uses the factual absence of military purpose as evidence of the primary purpose required by Article 51(2). The legal test for terror is satisfied by this inference."
+      },
+      {
+        "id": "obj_d0b7409c",
+        "raised_by": "attacker_doctrinal",
+        "target_argument_id": "arg_f49db3e3",
+        "ground": "Article 85(3)(b) of Additional Protocol I is not a standalone war crime provision but rather a definition of individual criminal responsibility that lacks the requisite 'grave breach' or 'serious violation' status under the Rome Statute framework.",
+        "reasoning": "Citing Article 85(3)(b) as a basis for a 'war crime' is legally unsound because it is a general provision on individual responsibility within AP I, not an enumerated war crime in the Rome Statute. The correct legal basis for the conduct described is Article 8(2)(b)(i) (directing attacks against civilians) or (iv) (disproportionate attacks). Relying on Art 85(3)(b) as a primary charge misidentifies the applicable legal instrument and creates a jurisdictional gap.",
+        "citations": [
+          {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(i)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "85(3)(b)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          }
+        ],
+        "resolved_citations": [
+          {
+            "citation": {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            "status": "resolved",
+            "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+            "note": null
+          },
+          {
+            "citation": {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "85(3)(b)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            "status": "resolved",
+            "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+            "note": null
+          }
+        ],
+        "severity": "material",
+        "disposition": "overruled",
+        "disposition_reasoning": "The objection claims Article 85(3)(b) of Additional Protocol I is not a standalone war crime provision but merely a definition of individual responsibility lacking grave breach status. This is incorrect. Article 85(3)(b) expressly lists 'launching an indiscriminate attack affecting the civilian population... in the knowledge that such attack will cause excessive loss of life' as a grave breach of the Protocol. The parties brought Article 51 (and by extension the Protocol's grave breach regime) into effect. The Rome Statute does not exhaust the sources of war crimes for the question of 'violation of the laws or customs of war.' The argument's reliance on Article 85(3)(b) is legally sound."
+      },
+      {
+        "id": "obj_e288e823",
+        "raised_by": "attacker_doctrinal",
+        "target_argument_id": "arg_d4a00403",
+        "ground": "The argument conflates a war crime of terror with a war crime of indiscriminate attack and misstates the legal test for Article 51(2).",
+        "reasoning": "Article 51(2) prohibits acts or threats of violence whose 'primary purpose' is to spread terror. The facts state the campaign had 'no discernible significance in military terms.' While the absence of a military objective supports a finding that the primary purpose was terror, the argument fails to distinguish this from the separate legal test for indiscriminate attacks under Article 51(4). The legal characterization must specify that the 'primary purpose' element is distinct from the 'distinction' principle. The argument relies on the same facts to prove both terror and indiscriminate attacks, blurring the distinct legal elements.",
+        "citations": [
+          {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "51(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "51(4)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          }
+        ],
+        "resolved_citations": [
+          {
+            "citation": {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "51(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            "status": "resolved",
+            "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+            "note": null
+          },
+          {
+            "citation": {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "51(4)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            "status": "resolved",
+            "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+            "note": null
+          }
+        ],
+        "severity": "material",
+        "disposition": "overruled",
+        "disposition_reasoning": "The objection repeats the conflation argument, asserting that the argument blurs the distinct legal elements of terror (primary purpose) and indiscriminate attacks (distinction principle). The argument, however, directly addresses the 'primary purpose' element by pointing to the sustained, systematic nature of the attacks on civilians and the complete absence of military significance. It does not merely rely on the indiscriminate-attack test; it draws the specific inference that the primary purpose was terror. The same facts can support multiple legal characterizations without conflating them."
+      },
+      {
+        "id": "obj_dd70dcc3",
+        "raised_by": "attacker_doctrinal",
+        "target_argument_id": "arg_f49db3e3",
+        "ground": "The argument mischaracterizes the legal basis for the crime by citing Article 85(3)(b) instead of the relevant war crime provision.",
+        "reasoning": "Article 85(3)(b) of AP I defines an individual's liability for 'launching an indiscriminate attack' as a breach of the Protocol. However, the question before the tribunal is whether the conduct constitutes a 'crime of terror' or a general war crime under Article 8(2)(b)(i) of the Rome Statute. Citing Article 85(3)(b) as the primary authority for the war crime is a legal mischaracterization. It is a provision on individual criminal responsibility within AP I, not the defining provision of the crime of terror or the specific war crime of directing attacks against civilians under the Rome Statute framework being applied.",
+        "citations": [
+          {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "85(3)(b)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(i)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          }
+        ],
+        "resolved_citations": [
+          {
+            "citation": {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "85(3)(b)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            "status": "resolved",
+            "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+            "note": null
+          },
+          {
+            "citation": {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            "status": "resolved",
+            "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+            "note": null
+          }
+        ],
+        "severity": "material",
+        "disposition": "overruled",
+        "disposition_reasoning": "The objection mischaracterizes Article 85(3)(b) as merely a liability provision rather than a grave breach definition, and asserts the question is limited to the Rome Statute's Article 8(2)(b)(i). The question asks whether the campaign constituted the crime of terror 'as a violation of the laws or customs of war.' Additional Protocol I, which the parties brought into effect, is part of the laws and customs of war. Article 85(3)(b) defines a grave breach of that Protocol. The argument's citation is proper and the objection's premise is flawed."
+      }
+    ]
+  },
+  "dissent": [
+    {
+      "id": "obj_a0409dff",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_d4a00403",
+      "ground": "The argument conflates the prohibition on indiscriminate attacks with the specific crime of terror by mischaracterizing the legal elements required under Article 51(2).",
+      "reasoning": "Article 51(2) prohibits acts where the 'primary purpose' is to spread terror. The facts state the campaign had 'no discernible significance in military terms,' which establishes a lack of military objective (indiscriminate attack) but does not legally equate to the specific intent to terrorize. Without evidence that the *primary* purpose was terror rather than a failed or indiscriminate military operation, the legal test for this specific prohibition is not met.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "51(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "51(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "overruled",
+      "disposition_reasoning": "The objection argues that the lack of military significance only proves an indiscriminate attack, not the specific intent to terrorize required by Article 51(2). This misstates the evidentiary role of the absence of military objective. When a sustained campaign systematically targets civilians and has no discernible military significance, the inference that the primary purpose was to spread terror is not only permissible but compelled. The argument does not conflate the two prohibitions; it uses the factual absence of military purpose as evidence of the primary purpose required by Article 51(2). The legal test for terror is satisfied by this inference."
+    },
+    {
+      "id": "obj_d0b7409c",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_f49db3e3",
+      "ground": "Article 85(3)(b) of Additional Protocol I is not a standalone war crime provision but rather a definition of individual criminal responsibility that lacks the requisite 'grave breach' or 'serious violation' status under the Rome Statute framework.",
+      "reasoning": "Citing Article 85(3)(b) as a basis for a 'war crime' is legally unsound because it is a general provision on individual responsibility within AP I, not an enumerated war crime in the Rome Statute. The correct legal basis for the conduct described is Article 8(2)(b)(i) (directing attacks against civilians) or (iv) (disproportionate attacks). Relying on Art 85(3)(b) as a primary charge misidentifies the applicable legal instrument and creates a jurisdictional gap.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(i)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "85(3)(b)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(i)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "85(3)(b)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "overruled",
+      "disposition_reasoning": "The objection claims Article 85(3)(b) of Additional Protocol I is not a standalone war crime provision but merely a definition of individual responsibility lacking grave breach status. This is incorrect. Article 85(3)(b) expressly lists 'launching an indiscriminate attack affecting the civilian population... in the knowledge that such attack will cause excessive loss of life' as a grave breach of the Protocol. The parties brought Article 51 (and by extension the Protocol's grave breach regime) into effect. The Rome Statute does not exhaust the sources of war crimes for the question of 'violation of the laws or customs of war.' The argument's reliance on Article 85(3)(b) is legally sound."
+    },
+    {
+      "id": "obj_e288e823",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_d4a00403",
+      "ground": "The argument conflates a war crime of terror with a war crime of indiscriminate attack and misstates the legal test for Article 51(2).",
+      "reasoning": "Article 51(2) prohibits acts or threats of violence whose 'primary purpose' is to spread terror. The facts state the campaign had 'no discernible significance in military terms.' While the absence of a military objective supports a finding that the primary purpose was terror, the argument fails to distinguish this from the separate legal test for indiscriminate attacks under Article 51(4). The legal characterization must specify that the 'primary purpose' element is distinct from the 'distinction' principle. The argument relies on the same facts to prove both terror and indiscriminate attacks, blurring the distinct legal elements.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "51(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "51(4)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "51(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "51(4)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "overruled",
+      "disposition_reasoning": "The objection repeats the conflation argument, asserting that the argument blurs the distinct legal elements of terror (primary purpose) and indiscriminate attacks (distinction principle). The argument, however, directly addresses the 'primary purpose' element by pointing to the sustained, systematic nature of the attacks on civilians and the complete absence of military significance. It does not merely rely on the indiscriminate-attack test; it draws the specific inference that the primary purpose was terror. The same facts can support multiple legal characterizations without conflating them."
+    },
+    {
+      "id": "obj_dd70dcc3",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_f49db3e3",
+      "ground": "The argument mischaracterizes the legal basis for the crime by citing Article 85(3)(b) instead of the relevant war crime provision.",
+      "reasoning": "Article 85(3)(b) of AP I defines an individual's liability for 'launching an indiscriminate attack' as a breach of the Protocol. However, the question before the tribunal is whether the conduct constitutes a 'crime of terror' or a general war crime under Article 8(2)(b)(i) of the Rome Statute. Citing Article 85(3)(b) as the primary authority for the war crime is a legal mischaracterization. It is a provision on individual criminal responsibility within AP I, not the defining provision of the crime of terror or the specific war crime of directing attacks against civilians under the Rome Statute framework being applied.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "85(3)(b)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(i)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "85(3)(b)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(i)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "overruled",
+      "disposition_reasoning": "The objection mischaracterizes Article 85(3)(b) as merely a liability provision rather than a grave breach definition, and asserts the question is limited to the Rome Statute's Article 8(2)(b)(i). The question asks whether the campaign constituted the crime of terror 'as a violation of the laws or customs of war.' Additional Protocol I, which the parties brought into effect, is part of the laws and customs of war. Article 85(3)(b) defines a grave breach of that Protocol. The argument's citation is proper and the objection's premise is flawed."
+    }
+  ],
+  "arguments": [
+    {
+      "id": "arg_d4a00403",
+      "claim": "The sustained campaign of sniping and shelling was an act of terror prohibited by Article 51(2) of Additional Protocol I.",
+      "reasoning": "Article 51(2) of AP I expressly forbids \"Acts or threats of violence the primary purpose of which is to spread terror among the civilian population\". The factual record shows that the attacks were directed at civilians engaged in everyday activities, lacked any identifiable military objective, and were carried out as a continuous campaign intended to intimidate and demoralise the population. This demonstrates that the primary purpose of the operations was to spread terror, satisfying the prohibited conduct under Article 51(2).",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "51",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Acts or threats of violence the primary purpose of which is to spread terror among the civilian population are prohibited."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "51",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Acts or threats of violence the primary purpose of which is to spread terror among the civilian population are prohibited."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_30fcc455",
+      "claim": "The campaign constitutes a war crime under Article 8(2)(b)(i) of the Rome Statute because it involved intentional directing of attacks against the civilian population as such.",
+      "reasoning": "Article 8(2)(b)(i) criminalises \"Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities\". The accused ordered, facilitated and encouraged the attacks, received regular reports, and exercised effective command over the forces that carried out the shelling and sniping. The attacks were deliberately aimed at civilians, not at any military objective, satisfying the element of intentional direction required by the Statute.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(i)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(i)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_f49db3e3",
+      "claim": "The attacks were indiscriminate and disproportionate, violating the precautionary and proportionality obligations of Article 57 of Additional Protocol I and the prohibition on indiscriminate attacks in Article 85(3)(b) of the same Protocol.",
+      "reasoning": "Article 57 requires constant care to spare civilians and forbids any provision that could be interpreted as authorising attacks against them. The campaign involved repeated shelling of civilian areas without verification of any military objective, and the forces proceeded despite knowing that such attacks would cause excessive civilian casualties. Article 85(3)(b) specifically criminalises \"launching an indiscriminate attack affecting the civilian population or civilian objects in the knowledge that such attack will cause excessive loss of life, injury to civilians or damage to civilian objects\". The factual pattern—attacks on queues for water, funerals, and intersections—demonstrates both the lack of distinction and the excessiveness of the anticipated civilian harm relative to any alleged military advantage, thereby breaching these provisions.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "57",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "In the conduct of military operations, constant care shall be taken to spare the civilian population, civilians and civilian objects."
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "57",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "No provision of this Article may be construed as authorizing any attacks against the civilian population, civilians or civilian objects."
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "85(3)(b)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "launching an indiscriminate attack affecting the civilian population or civilian objects in the knowledge that such attack will cause excessive loss of life, injury to civilians or damage to civilian objects, as defined in Article 57, paragraph 2 (a) (iii);"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "57",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "In the conduct of military operations, constant care shall be taken to spare the civilian population, civilians and civilian objects."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "57",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "No provision of this Article may be construed as authorizing any attacks against the civilian population, civilians or civilian objects."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "85(3)(b)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "launching an indiscriminate attack affecting the civilian population or civilian objects in the knowledge that such attack will cause excessive loss of life, injury to civilians or damage to civilian objects, as defined in Article 57, paragraph 2 (a) (iii);"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_b7d5d177",
+      "claim": "The sustained campaign of sniping and shelling was a prohibited act of terror against the civilian population under Article 51(2) of Additional Protocol I.",
+      "reasoning": "Article 51(2) expressly forbids \"Acts or threats of violence the primary purpose of which is to spread terror among the civilian population\" and also bars making the civilian population the object of attack. The factual record shows a systematic, months‑long pattern of attacks aimed at civilians in daily activities, with no identifiable military objective and no discernible military advantage, indicating that the primary purpose was to intimidate and terrorise the population. Such intent can be inferred from the nature, scale and timing of the attacks, satisfying the statutory requirement.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "51(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The civilian population as such, as well as individual civilians, shall not be the object of attack. Acts or threats of violence the primary purpose of which is to spread terror among the civilian population are prohibited."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "51(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The civilian population as such, as well as individual civilians, shall not be the object of attack. Acts or threats of violence the primary purpose of which is to spread terror among the civilian population are prohibited."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_4f66c9ff",
+      "claim": "The campaign constitutes a war crime of intentionally directing attacks against the civilian population under Article 8(2)(b)(i) of the Rome Statute.",
+      "reasoning": "Article 8(2)(b)(i) criminalises \"Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities\". The accused ordered, facilitated and encouraged the sniping and shelling, exercised effective command, and received regular reports, demonstrating the requisite intent to direct attacks at civilians. The attacks were deliberately aimed at civilians, not at any military objective, fulfilling the element of intentional direction.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(i)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(i)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_f48bd786",
+      "claim": "The campaign violated the distinction, precaution and proportionality obligations of Article 57 and the prohibition of indiscriminate attacks in Article 51(4) of Additional Protocol I, constituting a grave breach.",
+      "reasoning": "Article 57 requires constant care to spare civilians and states that no provision may be interpreted as authorising attacks against the civilian population. Article 51(4) prohibits indiscriminate attacks, defined as those not directed at a specific military objective. The repeated shelling of civilian queues, funerals and intersections, without any verified military target and with knowledge that excessive civilian casualties would result, demonstrates a failure to verify targets, to take feasible precautions, and to refrain from attacks that would cause excessive civilian harm. This breaches both the precautionary duty of Article 57 and the indiscriminate‑attack prohibition of Article 51(4).",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "57",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "No provision of this Article may be construed as authorizing any attacks against the civilian population, civilians or civilian objects."
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "51",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Indiscriminate attacks are prohibited. Indiscriminate attacks are: (a) those which are not directed at a specific military objective;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "57",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "No provision of this Article may be construed as authorizing any attacks against the civilian population, civilians or civilian objects."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "51",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Indiscriminate attacks are prohibited. Indiscriminate attacks are: (a) those which are not directed at a specific military objective;"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [
+    {
+      "id": "obj_a0409dff",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_d4a00403",
+      "ground": "The argument conflates the prohibition on indiscriminate attacks with the specific crime of terror by mischaracterizing the legal elements required under Article 51(2).",
+      "reasoning": "Article 51(2) prohibits acts where the 'primary purpose' is to spread terror. The facts state the campaign had 'no discernible significance in military terms,' which establishes a lack of military objective (indiscriminate attack) but does not legally equate to the specific intent to terrorize. Without evidence that the *primary* purpose was terror rather than a failed or indiscriminate military operation, the legal test for this specific prohibition is not met.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "51(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "51(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "overruled",
+      "disposition_reasoning": "The objection argues that the lack of military significance only proves an indiscriminate attack, not the specific intent to terrorize required by Article 51(2). This misstates the evidentiary role of the absence of military objective. When a sustained campaign systematically targets civilians and has no discernible military significance, the inference that the primary purpose was to spread terror is not only permissible but compelled. The argument does not conflate the two prohibitions; it uses the factual absence of military purpose as evidence of the primary purpose required by Article 51(2). The legal test for terror is satisfied by this inference."
+    },
+    {
+      "id": "obj_d0b7409c",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_f49db3e3",
+      "ground": "Article 85(3)(b) of Additional Protocol I is not a standalone war crime provision but rather a definition of individual criminal responsibility that lacks the requisite 'grave breach' or 'serious violation' status under the Rome Statute framework.",
+      "reasoning": "Citing Article 85(3)(b) as a basis for a 'war crime' is legally unsound because it is a general provision on individual responsibility within AP I, not an enumerated war crime in the Rome Statute. The correct legal basis for the conduct described is Article 8(2)(b)(i) (directing attacks against civilians) or (iv) (disproportionate attacks). Relying on Art 85(3)(b) as a primary charge misidentifies the applicable legal instrument and creates a jurisdictional gap.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(i)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "85(3)(b)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(i)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "85(3)(b)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "overruled",
+      "disposition_reasoning": "The objection claims Article 85(3)(b) of Additional Protocol I is not a standalone war crime provision but merely a definition of individual responsibility lacking grave breach status. This is incorrect. Article 85(3)(b) expressly lists 'launching an indiscriminate attack affecting the civilian population... in the knowledge that such attack will cause excessive loss of life' as a grave breach of the Protocol. The parties brought Article 51 (and by extension the Protocol's grave breach regime) into effect. The Rome Statute does not exhaust the sources of war crimes for the question of 'violation of the laws or customs of war.' The argument's reliance on Article 85(3)(b) is legally sound."
+    },
+    {
+      "id": "obj_e288e823",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_d4a00403",
+      "ground": "The argument conflates a war crime of terror with a war crime of indiscriminate attack and misstates the legal test for Article 51(2).",
+      "reasoning": "Article 51(2) prohibits acts or threats of violence whose 'primary purpose' is to spread terror. The facts state the campaign had 'no discernible significance in military terms.' While the absence of a military objective supports a finding that the primary purpose was terror, the argument fails to distinguish this from the separate legal test for indiscriminate attacks under Article 51(4). The legal characterization must specify that the 'primary purpose' element is distinct from the 'distinction' principle. The argument relies on the same facts to prove both terror and indiscriminate attacks, blurring the distinct legal elements.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "51(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "51(4)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "51(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "51(4)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "overruled",
+      "disposition_reasoning": "The objection repeats the conflation argument, asserting that the argument blurs the distinct legal elements of terror (primary purpose) and indiscriminate attacks (distinction principle). The argument, however, directly addresses the 'primary purpose' element by pointing to the sustained, systematic nature of the attacks on civilians and the complete absence of military significance. It does not merely rely on the indiscriminate-attack test; it draws the specific inference that the primary purpose was terror. The same facts can support multiple legal characterizations without conflating them."
+    },
+    {
+      "id": "obj_dd70dcc3",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_f49db3e3",
+      "ground": "The argument mischaracterizes the legal basis for the crime by citing Article 85(3)(b) instead of the relevant war crime provision.",
+      "reasoning": "Article 85(3)(b) of AP I defines an individual's liability for 'launching an indiscriminate attack' as a breach of the Protocol. However, the question before the tribunal is whether the conduct constitutes a 'crime of terror' or a general war crime under Article 8(2)(b)(i) of the Rome Statute. Citing Article 85(3)(b) as the primary authority for the war crime is a legal mischaracterization. It is a provision on individual criminal responsibility within AP I, not the defining provision of the crime of terror or the specific war crime of directing attacks against civilians under the Rome Statute framework being applied.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "85(3)(b)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(i)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "85(3)(b)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(i)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "overruled",
+      "disposition_reasoning": "The objection mischaracterizes Article 85(3)(b) as merely a liability provision rather than a grave breach definition, and asserts the question is limited to the Rome Statute's Article 8(2)(b)(i). The question asks whether the campaign constituted the crime of terror 'as a violation of the laws or customs of war.' Additional Protocol I, which the parties brought into effect, is part of the laws and customs of war. Article 85(3)(b) defines a grave breach of that Protocol. The argument's citation is proper and the objection's premise is flawed."
+    }
+  ],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "51",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "57",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "51(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(b)(i)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(e)(i)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_ii",
+        "article": "13(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "85(3)(b)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_bc22f0c4",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "bad6e21d08093d5f32b4f2321e3de2b2ca6344d62e77a1423242ad0cf3a80b96",
+      "arguments": [
+        {
+          "id": "arg_d4a00403",
+          "claim": "The sustained campaign of sniping and shelling was an act of terror prohibited by Article 51(2) of Additional Protocol I.",
+          "reasoning": "Article 51(2) of AP I expressly forbids \"Acts or threats of violence the primary purpose of which is to spread terror among the civilian population\". The factual record shows that the attacks were directed at civilians engaged in everyday activities, lacked any identifiable military objective, and were carried out as a continuous campaign intended to intimidate and demoralise the population. This demonstrates that the primary purpose of the operations was to spread terror, satisfying the prohibited conduct under Article 51(2).",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "51",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Acts or threats of violence the primary purpose of which is to spread terror among the civilian population are prohibited."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "51",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Acts or threats of violence the primary purpose of which is to spread terror among the civilian population are prohibited."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_30fcc455",
+          "claim": "The campaign constitutes a war crime under Article 8(2)(b)(i) of the Rome Statute because it involved intentional directing of attacks against the civilian population as such.",
+          "reasoning": "Article 8(2)(b)(i) criminalises \"Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities\". The accused ordered, facilitated and encouraged the attacks, received regular reports, and exercised effective command over the forces that carried out the shelling and sniping. The attacks were deliberately aimed at civilians, not at any military objective, satisfying the element of intentional direction required by the Statute.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(i)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_f49db3e3",
+          "claim": "The attacks were indiscriminate and disproportionate, violating the precautionary and proportionality obligations of Article 57 of Additional Protocol I and the prohibition on indiscriminate attacks in Article 85(3)(b) of the same Protocol.",
+          "reasoning": "Article 57 requires constant care to spare civilians and forbids any provision that could be interpreted as authorising attacks against them. The campaign involved repeated shelling of civilian areas without verification of any military objective, and the forces proceeded despite knowing that such attacks would cause excessive civilian casualties. Article 85(3)(b) specifically criminalises \"launching an indiscriminate attack affecting the civilian population or civilian objects in the knowledge that such attack will cause excessive loss of life, injury to civilians or damage to civilian objects\". The factual pattern—attacks on queues for water, funerals, and intersections—demonstrates both the lack of distinction and the excessiveness of the anticipated civilian harm relative to any alleged military advantage, thereby breaching these provisions.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "57",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "In the conduct of military operations, constant care shall be taken to spare the civilian population, civilians and civilian objects."
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "57",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "No provision of this Article may be construed as authorizing any attacks against the civilian population, civilians or civilian objects."
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "85(3)(b)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "launching an indiscriminate attack affecting the civilian population or civilian objects in the knowledge that such attack will cause excessive loss of life, injury to civilians or damage to civilian objects, as defined in Article 57, paragraph 2 (a) (iii);"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "57",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "In the conduct of military operations, constant care shall be taken to spare the civilian population, civilians and civilian objects."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "57",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "No provision of this Article may be construed as authorizing any attacks against the civilian population, civilians or civilian objects."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "85(3)(b)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "launching an indiscriminate attack affecting the civilian population or civilian objects in the knowledge that such attack will cause excessive loss of life, injury to civilians or damage to civilian objects, as defined in Article 57, paragraph 2 (a) (iii);"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The sustained campaign of sniping and shelling was an act of terror prohibited by Article 51(2) of Additional Protocol I.\",\n      \"reasoning\": \"Article 51(2) of AP I expressly forbids \\\"Acts or threats of violence the primary purpose of which is to spread terror among the civilian population\\\". The factual record shows that the attacks were directed at civilians engaged in everyday activities, lacked any identifiable military objective, and were carried out as a continuous campaign intended to intimidate and demoralise the population. This demonstrates that the primary purpose of the operations was to spread terror, satisfying the prohibited conduct under Article 51(2).\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"51\",\n          \"quoted_text\": \"Acts or threats of violence the primary purpose of which is to spread terror among the civilian population are prohibited.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The campaign constitutes a war crime under Article 8(2)(b)(i) of the Rome Statute because it involved intentional directing of attacks against the civilian population as such.\",\n      \"reasoning\": \"Article 8(2)(b)(i) criminalises \\\"Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities\\\". The accused ordered, facilitated and encouraged the attacks, received regular reports, and exercised effective command over the forces that carried out the shelling and sniping. The attacks were deliberately aimed at civilians, not at any military objective, satisfying the element of intentional direction required by the Statute.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(i)\",\n          \"quoted_text\": \"Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The attacks were indiscriminate and disproportionate, violating the precautionary and proportionality obligations of Article 57 of Additional Protocol I and the prohibition on indiscriminate attacks in Article 85(3)(b) of the same Protocol.\",\n      \"reasoning\": \"Article 57 requires constant care to spare civilians and forbids any provision that could be interpreted as authorising attacks against them. The campaign involved repeated shelling of civilian areas without verification of any military objective, and the forces proceeded despite knowing that such attacks would cause excessive civilian casualties. Article 85(3)(b) specifically criminalises \\\"launching an indiscriminate attack affecting the civilian population or civilian objects in the knowledge that such attack will cause excessive loss of life, injury to civilians or damage to civilian objects\\\". The factual pattern—attacks on queues for water, funerals, and intersections—demonstrates both the lack of distinction and the excessiveness of the anticipated civilian harm relative to any alleged military advantage, thereby breaching these provisions.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"57\",\n          \"quoted_text\": \"In the conduct of military operations, constant care shall be taken to spare the civilian population, civilians and civilian objects.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"57\",\n          \"quoted_text\": \"No provision of this Article may be construed as authorizing any attacks against the civilian population, civilians or civilian objects.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"85(3)(b)\",\n          \"quoted_text\": \"launching an indiscriminate attack affecting the civilian population or civilian objects in the knowledge that such attack will cause excessive loss of life, injury to civilians or damage to civilian objects, as defined in Article 57, paragraph 2 (a) (iii);\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T14:09:27.303111Z",
+      "completed_at": "2026-11-16T14:09:32.496157Z",
+      "prompt_tokens": 4510,
+      "completion_tokens": 2050,
+      "error": null
+    },
+    {
+      "id": "turn_9dc207d0",
+      "round_number": 1,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "4f25d7a2832a0f4f8395c19a6546125094c5bf2108af7e9d222ead717d023526",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_a0409dff",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_d4a00403",
+          "ground": "The argument conflates the prohibition on indiscriminate attacks with the specific crime of terror by mischaracterizing the legal elements required under Article 51(2).",
+          "reasoning": "Article 51(2) prohibits acts where the 'primary purpose' is to spread terror. The facts state the campaign had 'no discernible significance in military terms,' which establishes a lack of military objective (indiscriminate attack) but does not legally equate to the specific intent to terrorize. Without evidence that the *primary* purpose was terror rather than a failed or indiscriminate military operation, the legal test for this specific prohibition is not met.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "51(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "51(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "overruled",
+          "disposition_reasoning": "The objection argues that the lack of military significance only proves an indiscriminate attack, not the specific intent to terrorize required by Article 51(2). This misstates the evidentiary role of the absence of military objective. When a sustained campaign systematically targets civilians and has no discernible military significance, the inference that the primary purpose was to spread terror is not only permissible but compelled. The argument does not conflate the two prohibitions; it uses the factual absence of military purpose as evidence of the primary purpose required by Article 51(2). The legal test for terror is satisfied by this inference."
+        },
+        {
+          "id": "obj_d0b7409c",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_f49db3e3",
+          "ground": "Article 85(3)(b) of Additional Protocol I is not a standalone war crime provision but rather a definition of individual criminal responsibility that lacks the requisite 'grave breach' or 'serious violation' status under the Rome Statute framework.",
+          "reasoning": "Citing Article 85(3)(b) as a basis for a 'war crime' is legally unsound because it is a general provision on individual responsibility within AP I, not an enumerated war crime in the Rome Statute. The correct legal basis for the conduct described is Article 8(2)(b)(i) (directing attacks against civilians) or (iv) (disproportionate attacks). Relying on Art 85(3)(b) as a primary charge misidentifies the applicable legal instrument and creates a jurisdictional gap.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "85(3)(b)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(i)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "85(3)(b)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "overruled",
+          "disposition_reasoning": "The objection claims Article 85(3)(b) of Additional Protocol I is not a standalone war crime provision but merely a definition of individual responsibility lacking grave breach status. This is incorrect. Article 85(3)(b) expressly lists 'launching an indiscriminate attack affecting the civilian population... in the knowledge that such attack will cause excessive loss of life' as a grave breach of the Protocol. The parties brought Article 51 (and by extension the Protocol's grave breach regime) into effect. The Rome Statute does not exhaust the sources of war crimes for the question of 'violation of the laws or customs of war.' The argument's reliance on Article 85(3)(b) is legally sound."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_d4a00403\",\n      \"ground\": \"The argument conflates the prohibition on indiscriminate attacks with the specific crime of terror by mischaracterizing the legal elements required under Article 51(2).\",\n      \"reasoning\": \"Article 51(2) prohibits acts where the 'primary purpose' is to spread terror. The facts state the campaign had 'no discernible significance in military terms,' which establishes a lack of military objective (indiscriminate attack) but does not legally equate to the specific intent to terrorize. Without evidence that the *primary* purpose was terror rather than a failed or indiscriminate military operation, the legal test for this specific prohibition is not met.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"51(2)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_f49db3e3\",\n      \"ground\": \"Article 85(3)(b) of Additional Protocol I is not a standalone war crime provision but rather a definition of individual criminal responsibility that lacks the requisite 'grave breach' or 'serious violation' status under the Rome Statute framework.\",\n      \"reasoning\": \"Citing Article 85(3)(b) as a basis for a 'war crime' is legally unsound because it is a general provision on individual responsibility within AP I, not an enumerated war crime in the Rome Statute. The correct legal basis for the conduct described is Article 8(2)(b)(i) (directing attacks against civilians) or (iv) (disproportionate attacks). Relying on Art 85(3)(b) as a primary charge misidentifies the applicable legal instrument and creates a jurisdictional gap.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(i)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"85(3)(b)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T14:09:32.510672Z",
+      "completed_at": "2026-11-16T14:09:34.500836Z",
+      "prompt_tokens": 5450,
+      "completion_tokens": 528,
+      "error": null
+    },
+    {
+      "id": "turn_4cd71d90",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "d4dc906edffbe760f0fe894975495b0f3f32ba2e1149503c9d911f1cb31ec37b",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"No. The campaign of sniping and shelling, while constituting war crimes of intentionally directing attacks against the civilian population and indiscriminate attacks, does not establish the specific crime of terror under Article 51(2) of Additional Protocol I on the arguments and facts presented.\", \"reasoning\": \"The sole argument addressing the crime of terror (arg_d4a00403) relied on the absence of military objectives to infer that the primary purpose was to spread terror. Objection obj_a0409dff correctly identifies that Article 51(2) requires proof of specific intent — that the primary purpose of the acts or threats of violence was to spread terror among the civilian population. The fact that the campaign had 'no discernible significance in military terms' establishes an indiscriminate attack, but does not, without more, legally equate to the specific intent to terrorize. The argument conflated the prohibition on indiscriminate attacks with the distinct crime of terror. Objection obj_d0b7409c is also sustained: Article 85(3)(b) of Additional Protocol I is a grave breach provision within the Protocol's own repression regime, not an enumerated war crime under the Rome Statute; the proper statutory bases for the conduct described are Article 8(2)(b)(i) (intentional attacks against civilians) or Article 8(2)(b)(iv) (disproportionate attacks). Argument arg_30fcc455 survives untouched and establishes that the campaign constitutes the war crime of intentionally directing attacks against the civilian population under Article 8(2)(b)(i) of the Rome Statute, but that is a different offense from the crime of terror.\", \"confidence\": 0.78, \"confidence_reasoning\": \"The objection to the terror argument is doctrinally sound: the specific intent element of Article 51(2) is distinct from the mens rea for indiscriminate attacks or intentional attacks on civilians. The facts as given support a strong inference of terror purpose (sustained campaign against civilians queuing for water, attending funerals, with no military objective), but the argument presented did not bridge the inferential gap — it merely asserted the conclusion. A properly developed argument could potentially meet the standard, but on this record the objection prevails. Confidence is not higher because the factual pattern is precisely the type (Galić-style siege) that tribunals have found constitutes terror, and a more developed argument might succeed.\", \"rulings\": [{\"objection_id\": \"obj_a0409dff\", \"disposition\": \"sustained\", \"reasoning\": \"Article 51(2) of Additional Protocol I requires that the primary purpose of the acts or threats of violence be to spread terror among the civilian population. The argument relied solely on the absence of military objectives ('no discernible significance in military terms') to infer terror purpose. This conflates the distinct legal concepts of indiscriminate attacks (lack of military objective) and the crime of terror (specific intent to terrorize). Without evidence or argument linking the pattern of attacks to the specific intent to spread terror as the primary purpose, the legal test is not met.\"}, {\"objection_id\": \"obj_d0b7409c\", \"disposition\": \"sustained\", \"reasoning\": \"Article 85(3)(b) of Additional Protocol I defines a grave breach within the Protocol's own repression framework (Article 85), not a standalone war crime under the Rome Statute. The Rome Statute's enumerated war crimes for international armed conflict are in Article 8(2)(b). The conduct described — launching indiscriminate attacks causing excessive civilian harm — falls under Article 8(2)(b)(iv) (disproportionate attacks) or Article 8(2)(b)(i) (intentional attacks against civilians), not Article 85(3)(b) of AP I. Citing the latter as the primary legal basis misidentifies the applicable instrument for a Rome Statute prosecution.\"}], \"surviving_argument_ids\": [\"arg_30fcc455\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-16T14:09:34.501959Z",
+      "completed_at": "2026-11-16T14:10:47.350935Z",
+      "prompt_tokens": 5933,
+      "completion_tokens": 3026,
+      "error": null
+    },
+    {
+      "id": "turn_754ed7ba",
+      "round_number": 2,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/rebuttal",
+      "prompt_hash": "421984923bada59234c7888c85b4cd0a25c547663076116b060523e3680ca107",
+      "arguments": [
+        {
+          "id": "arg_b7d5d177",
+          "claim": "The sustained campaign of sniping and shelling was a prohibited act of terror against the civilian population under Article 51(2) of Additional Protocol I.",
+          "reasoning": "Article 51(2) expressly forbids \"Acts or threats of violence the primary purpose of which is to spread terror among the civilian population\" and also bars making the civilian population the object of attack. The factual record shows a systematic, months‑long pattern of attacks aimed at civilians in daily activities, with no identifiable military objective and no discernible military advantage, indicating that the primary purpose was to intimidate and terrorise the population. Such intent can be inferred from the nature, scale and timing of the attacks, satisfying the statutory requirement.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "51(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The civilian population as such, as well as individual civilians, shall not be the object of attack. Acts or threats of violence the primary purpose of which is to spread terror among the civilian population are prohibited."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "51(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The civilian population as such, as well as individual civilians, shall not be the object of attack. Acts or threats of violence the primary purpose of which is to spread terror among the civilian population are prohibited."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_4f66c9ff",
+          "claim": "The campaign constitutes a war crime of intentionally directing attacks against the civilian population under Article 8(2)(b)(i) of the Rome Statute.",
+          "reasoning": "Article 8(2)(b)(i) criminalises \"Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities\". The accused ordered, facilitated and encouraged the sniping and shelling, exercised effective command, and received regular reports, demonstrating the requisite intent to direct attacks at civilians. The attacks were deliberately aimed at civilians, not at any military objective, fulfilling the element of intentional direction.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(i)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_f48bd786",
+          "claim": "The campaign violated the distinction, precaution and proportionality obligations of Article 57 and the prohibition of indiscriminate attacks in Article 51(4) of Additional Protocol I, constituting a grave breach.",
+          "reasoning": "Article 57 requires constant care to spare civilians and states that no provision may be interpreted as authorising attacks against the civilian population. Article 51(4) prohibits indiscriminate attacks, defined as those not directed at a specific military objective. The repeated shelling of civilian queues, funerals and intersections, without any verified military target and with knowledge that excessive civilian casualties would result, demonstrates a failure to verify targets, to take feasible precautions, and to refrain from attacks that would cause excessive civilian harm. This breaches both the precautionary duty of Article 57 and the indiscriminate‑attack prohibition of Article 51(4).",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "57",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "No provision of this Article may be construed as authorizing any attacks against the civilian population, civilians or civilian objects."
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "51",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Indiscriminate attacks are prohibited. Indiscriminate attacks are: (a) those which are not directed at a specific military objective;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "57",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "No provision of this Article may be construed as authorizing any attacks against the civilian population, civilians or civilian objects."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "51",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Indiscriminate attacks are prohibited. Indiscriminate attacks are: (a) those which are not directed at a specific military objective;"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The sustained campaign of sniping and shelling was a prohibited act of terror against the civilian population under Article 51(2) of Additional Protocol I.\",\n      \"reasoning\": \"Article 51(2) expressly forbids \\\"Acts or threats of violence the primary purpose of which is to spread terror among the civilian population\\\" and also bars making the civilian population the object of attack. The factual record shows a systematic, months‑long pattern of attacks aimed at civilians in daily activities, with no identifiable military objective and no discernible military advantage, indicating that the primary purpose was to intimidate and terrorise the population. Such intent can be inferred from the nature, scale and timing of the attacks, satisfying the statutory requirement.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"51(2)\",\n          \"quoted_text\": \"The civilian population as such, as well as individual civilians, shall not be the object of attack. Acts or threats of violence the primary purpose of which is to spread terror among the civilian population are prohibited.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The campaign constitutes a war crime of intentionally directing attacks against the civilian population under Article 8(2)(b)(i) of the Rome Statute.\",\n      \"reasoning\": \"Article 8(2)(b)(i) criminalises \\\"Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities\\\". The accused ordered, facilitated and encouraged the sniping and shelling, exercised effective command, and received regular reports, demonstrating the requisite intent to direct attacks at civilians. The attacks were deliberately aimed at civilians, not at any military objective, fulfilling the element of intentional direction.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(i)\",\n          \"quoted_text\": \"Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The campaign violated the distinction, precaution and proportionality obligations of Article 57 and the prohibition of indiscriminate attacks in Article 51(4) of Additional Protocol I, constituting a grave breach.\",\n      \"reasoning\": \"Article 57 requires constant care to spare civilians and states that no provision may be interpreted as authorising attacks against the civilian population. Article 51(4) prohibits indiscriminate attacks, defined as those not directed at a specific military objective. The repeated shelling of civilian queues, funerals and intersections, without any verified military target and with knowledge that excessive civilian casualties would result, demonstrates a failure to verify targets, to take feasible precautions, and to refrain from attacks that would cause excessive civilian harm. This breaches both the precautionary duty of Article 57 and the indiscriminate‑attack prohibition of Article 51(4).\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"57\",\n          \"quoted_text\": \"No provision of this Article may be construed as authorizing any attacks against the civilian population, civilians or civilian objects.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"51\",\n          \"quoted_text\": \"Indiscriminate attacks are prohibited. Indiscriminate attacks are: (a) those which are not directed at a specific military objective;\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T14:10:47.360508Z",
+      "completed_at": "2026-11-16T14:10:52.383022Z",
+      "prompt_tokens": 3410,
+      "completion_tokens": 2124,
+      "error": null
+    },
+    {
+      "id": "turn_14346131",
+      "round_number": 2,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "1c8041277b36c6f74f4513c3ffb860e385818e24c0b3f34af32db15130da7b11",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_e288e823",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_d4a00403",
+          "ground": "The argument conflates a war crime of terror with a war crime of indiscriminate attack and misstates the legal test for Article 51(2).",
+          "reasoning": "Article 51(2) prohibits acts or threats of violence whose 'primary purpose' is to spread terror. The facts state the campaign had 'no discernible significance in military terms.' While the absence of a military objective supports a finding that the primary purpose was terror, the argument fails to distinguish this from the separate legal test for indiscriminate attacks under Article 51(4). The legal characterization must specify that the 'primary purpose' element is distinct from the 'distinction' principle. The argument relies on the same facts to prove both terror and indiscriminate attacks, blurring the distinct legal elements.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "51(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "51(4)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "51(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "51(4)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "overruled",
+          "disposition_reasoning": "The objection repeats the conflation argument, asserting that the argument blurs the distinct legal elements of terror (primary purpose) and indiscriminate attacks (distinction principle). The argument, however, directly addresses the 'primary purpose' element by pointing to the sustained, systematic nature of the attacks on civilians and the complete absence of military significance. It does not merely rely on the indiscriminate-attack test; it draws the specific inference that the primary purpose was terror. The same facts can support multiple legal characterizations without conflating them."
+        },
+        {
+          "id": "obj_dd70dcc3",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_f49db3e3",
+          "ground": "The argument mischaracterizes the legal basis for the crime by citing Article 85(3)(b) instead of the relevant war crime provision.",
+          "reasoning": "Article 85(3)(b) of AP I defines an individual's liability for 'launching an indiscriminate attack' as a breach of the Protocol. However, the question before the tribunal is whether the conduct constitutes a 'crime of terror' or a general war crime under Article 8(2)(b)(i) of the Rome Statute. Citing Article 85(3)(b) as the primary authority for the war crime is a legal mischaracterization. It is a provision on individual criminal responsibility within AP I, not the defining provision of the crime of terror or the specific war crime of directing attacks against civilians under the Rome Statute framework being applied.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "85(3)(b)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "85(3)(b)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(i)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "overruled",
+          "disposition_reasoning": "The objection mischaracterizes Article 85(3)(b) as merely a liability provision rather than a grave breach definition, and asserts the question is limited to the Rome Statute's Article 8(2)(b)(i). The question asks whether the campaign constituted the crime of terror 'as a violation of the laws or customs of war.' Additional Protocol I, which the parties brought into effect, is part of the laws and customs of war. Article 85(3)(b) defines a grave breach of that Protocol. The argument's citation is proper and the objection's premise is flawed."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_d4a00403\",\n      \"ground\": \"The argument conflates a war crime of terror with a war crime of indiscriminate attack and misstates the legal test for Article 51(2).\",\n      \"reasoning\": \"Article 51(2) prohibits acts or threats of violence whose 'primary purpose' is to spread terror. The facts state the campaign had 'no discernible significance in military terms.' While the absence of a military objective supports a finding that the primary purpose was terror, the argument fails to distinguish this from the separate legal test for indiscriminate attacks under Article 51(4). The legal characterization must specify that the 'primary purpose' element is distinct from the 'distinction' principle. The argument relies on the same facts to prove both terror and indiscriminate attacks, blurring the distinct legal elements.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"51(2)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"51(4)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_f49db3e3\",\n      \"ground\": \"The argument mischaracterizes the legal basis for the crime by citing Article 85(3)(b) instead of the relevant war crime provision.\",\n      \"reasoning\": \"Article 85(3)(b) of AP I defines an individual's liability for 'launching an indiscriminate attack' as a breach of the Protocol. However, the question before the tribunal is whether the conduct constitutes a 'crime of terror' or a general war crime under Article 8(2)(b)(i) of the Rome Statute. Citing Article 85(3)(b) as the primary authority for the war crime is a legal mischaracterization. It is a provision on individual criminal responsibility within AP I, not the defining provision of the crime of terror or the specific war crime of directing attacks against civilians under the Rome Statute framework being applied.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"85(3)(b)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(i)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T14:10:52.389058Z",
+      "completed_at": "2026-11-16T14:10:54.157590Z",
+      "prompt_tokens": 5982,
+      "completion_tokens": 597,
+      "error": null
+    },
+    {
+      "id": "turn_5b8dddb1",
+      "round_number": 2,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "a1addf792c8eff23b820cb26a0a7faaa49a57f666850b13f6d47c0c74f3e719f",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The sustained campaign of sniping and shelling against the besieged city constituted the crime of terror against the civilian population as a violation of the laws and customs of war. The facts — a 23-month campaign systematically targeting civilians engaged in daily activities, with no identifiable military objective and no discernible military significance — permit the inference that the primary purpose of the operations was to spread terror among the civilian population, satisfying Article 51(2) of Additional Protocol I, which the parties brought into effect. The same conduct also constitutes the war crime of intentionally directing attacks against the civilian population under Article 8(2)(b)(i) of the Rome Statute. The objections do not defeat this conclusion. The absence of any military purpose over a prolonged, systematic campaign distinguishes this from a merely indiscriminate or disproportionate attack and establishes the specific intent required for the crime of terror. Article 85(3)(b) of Additional Protocol I remains a valid grave breach provision under the laws of war applicable to this conflict. The arguments for terror under Article 51(2) and for intentional attacks on civilians under Article 8(2)(b)(i) survive intact. The campaign was not a failed military operation; it was a campaign of terror. The law condemns it as such. The answer is Yes. The campaign constituted the crime of terror against the civilian population as a violation of the laws or customs of war. The primary purpose of the campaign was to spread terror. The accused ordered, facilitated, and encouraged it. He held effective command and received regular reports. The attacks struck civilians queuing for water, attending funerals, crossing intersections. There was no identifiable military objective. The campaign had no discernible military significance. This is the crime of terror. The law is clear. The facts are clear. The conclusion is clear. Yes.\", \"reasoning\": \"The surviving arguments establish that the campaign meets the legal test for the crime of terror under Article 51(2) of Additional Protocol I: acts of violence the primary purpose of which is to spread terror among the civilian population. The factual record — 23 months of sniping and shelling directed at civilians in daily activities, a complete absence of identifiable military objectives, and no discernible military significance for the campaign as a whole — compels the inference that the primary purpose was to intimidate and terrorize the population. This inference is legally permissible and factually compelled. The objections that the argument conflates terror with indiscriminate attacks are overruled because the lack of military objective is not the legal test for terror but the evidentiary basis from which the primary purpose is inferred. The objection that Article 85(3)(b) is not a war crime provision is overruled because it expressly defines a grave breach under Additional Protocol I, which the parties brought into effect and which forms part of the laws and customs of war. The Rome Statute does not displace the Protocol's grave breach regime for this inquiry. The arguments under Article 8(2)(b)(i) of the Rome Statute provide an alternative and independent basis for the same conclusion. The accused's command responsibility — ordering, facilitating, encouraging, receiving reports, exercising effective control — satisfies the mental element for both provisions. The campaign was a crime of terror. The law and the facts align. The conclusion is Yes.\", \"confidence\": 0.88, \"confidence_reasoning\": \"The confidence is high because the factual pattern — prolonged, systematic attacks on civilians with zero military utility — is the paradigm case for the crime of terror under Article 51(2) AP I and customary IHL. The ICTY's Galic judgment (though not in the retrieved corpus) confirms this inference is legally sound. The objections raise doctrinal distinctions but do not undermine the core inference: when a campaign has no military purpose and systematically targets civilians, the primary purpose is terror. The parties' agreement to apply Article 51 AP I makes the treaty provision directly applicable. The Rome Statute alternative ground reinforces the conclusion. The only reason confidence is not 0.95 is the theoretical possibility that a tribunal might require more explicit evidence of subjective intent, though the objective facts here are overwhelming.\", \"rulings\": [{\"objection_id\": \"obj_a0409dff\", \"disposition\": \"overruled\", \"reasoning\": \"The objection argues that the lack of military significance only proves an indiscriminate attack, not the specific intent to terrorize required by Article 51(2). This misstates the evidentiary role of the absence of military objective. When a sustained campaign systematically targets civilians and has no discernible military significance, the inference that the primary purpose was to spread terror is not only permissible but compelled. The argument does not conflate the two prohibitions; it uses the factual absence of military purpose as evidence of the primary purpose required by Article 51(2). The legal test for terror is satisfied by this inference.\"}, {\"objection_id\": \"obj_d0b7409c\", \"disposition\": \"overruled\", \"reasoning\": \"The objection claims Article 85(3)(b) of Additional Protocol I is not a standalone war crime provision but merely a definition of individual responsibility lacking grave breach status. This is incorrect. Article 85(3)(b) expressly lists 'launching an indiscriminate attack affecting the civilian population... in the knowledge that such attack will cause excessive loss of life' as a grave breach of the Protocol. The parties brought Article 51 (and by extension the Protocol's grave breach regime) into effect. The Rome Statute does not exhaust the sources of war crimes for the question of 'violation of the laws or customs of war.' The argument's reliance on Article 85(3)(b) is legally sound.\"}, {\"objection_id\": \"obj_e288e823\", \"disposition\": \"overruled\", \"reasoning\": \"The objection repeats the conflation argument, asserting that the argument blurs the distinct legal elements of terror (primary purpose) and indiscriminate attacks (distinction principle). The argument, however, directly addresses the 'primary purpose' element by pointing to the sustained, systematic nature of the attacks on civilians and the complete absence of military significance. It does not merely rely on the indiscriminate-attack test; it draws the specific inference that the primary purpose was terror. The same facts can support multiple legal characterizations without conflating them.\"}, {\"objection_id\": \"obj_dd70dcc3\", \"disposition\": \"overruled\", \"reasoning\": \"The objection mischaracterizes Article 85(3)(b) as merely a liability provision rather than a grave breach definition, and asserts the question is limited to the Rome Statute's Article 8(2)(b)(i). The question asks whether the campaign constituted the crime of terror 'as a violation of the laws or customs of war.' Additional Protocol I, which the parties brought into effect, is part of the laws and customs of war. Article 85(3)(b) defines a grave breach of that Protocol. The argument's citation is proper and the objection's premise is flawed.\"}], \"surviving_argument_ids\": [\"arg_d4a00403\", \"arg_b7d5d177\", \"arg_30fcc455\", \"arg_4f66c9ff\", \"arg_f48bd786\", \"arg_f49db3e3\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-16T14:10:54.160715Z",
+      "completed_at": "2026-11-16T14:12:39.441810Z",
+      "prompt_tokens": 6938,
+      "completion_tokens": 5506,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-16T14:12:39.458551+00:00",
+  "duration_seconds": 193.57650549995014,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 2,
+  "judge_failures": 0,
+  "judge_failed": false
+}

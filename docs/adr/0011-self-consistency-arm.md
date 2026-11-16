@@ -2,6 +2,9 @@
 
 **Status:** Accepted
 **Date:** 2026-11-06
+**Amended:** 2026-11-16 — Arm E's confidence is its judge's stated confidence,
+not the samples' agreement rate; see "Amendment: the agreement rate measured
+nothing" below. Sampling, *n* and the compute match are unchanged.
 
 ## Context
 
@@ -122,3 +125,36 @@ $n = \max(1, C_D)$, maintaining exact call parity.
   that case, because *n* depends on D's observed round termination.
 - **Single-model family limitation:** Arm E uses only the presenter model family,
   so it does not benefit from cross-family disagreement.
+
+## Amendment: the agreement rate measured nothing (2026-11-16)
+
+The scored run (#26) showed decision 3's confidence cannot work with this
+presenter, for two reasons.
+
+- **The samples cannot disagree.** Decision 3 assumes each sample "advances an
+  outcome". The presenter is an advocate: it argues for the proposition every
+  time. All 28 samples in the scored run, 7 on each of four cases, argue
+  *affirmed*, so a correct count is 7 of 7 on every case and the agreement rate
+  is 1.0 by construction.
+- **The count was read from wording.** A sample states no outcome, so the
+  harness inferred one from its arguments' text with the outcome normaliser,
+  which reads prosecution arguments as denials: "the commander failed to take
+  all necessary and reasonable measures" counts as *rejected*. On Bemba it
+  counted 5 of 7 samples as *rejected*, and the result recorded *affirmed*, the
+  judge's ruling, at 0.714, the agreement on the answer it did not give.
+
+**Decision.** Arm E's confidence is its judge's stated confidence, exactly as
+for Arm B. The vote is still taken and stored, `vote_counts` and
+`agreement_rate`, as a diagnostic; it drives nothing. Decision 3's choice of
+which sample's arguments go to the judge is unchanged, and the sample still
+comes from the vote's winning class.
+
+The four arm E results of the scored run were rescored from their stored
+verdicts with `python -m harness.artifacts rescore`; no model was called again.
+
+**What it costs.** "Natural calibration" above is gone: E's confidence is a
+single judge's, not an ensemble's. E stays a compute-matched control for D on
+outcome: seven presenter samples and one judge, against D's adversaries, at the
+same number of turns. A real self-consistency confidence would need samples
+that can take either side, such as a presenter asked to answer the question
+rather than argue it, which is a different arm.

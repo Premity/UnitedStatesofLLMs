@@ -1,0 +1,435 @@
+{
+  "case_id": "icty_mrksic_vukovar",
+  "case_title": "Prosecutor v. Mile Mrkšić — killing of prisoners of war from Vukovar hospital",
+  "court": "ICTY",
+  "year": 2007,
+  "difficulty": "medium",
+  "arm": "rag",
+  "arm_label": "B — Single pass with retrieval",
+  "run_id": "eval_7970486478",
+  "question": "Was the commander of the forces in control of the area criminally responsible for the killing of prisoners of war taken from a hospital after the surrender of Croatian forces?",
+  "facts": "Croatian forces in the Vukovar area capitulated on 18 November 1991. An agreement provided for wounded or sick patients fit to travel to be evacuated to Croatia, with the hospital under ICRC protection and the evacuation monitored by the European Community Monitoring Mission. On 19 November, the JNA entered Vukovar hospital; military police of the Guards Motorised Brigade took over security. More than 200 men, and two women, who were or were believed to have been involved in Croatian forces were taken from the hospital on 20 November. The initial plan was to transport the men under JNA guard to the prisoner-of-war facility at Sremska Mitrovica, where they could later be exchanged for Serb prisoners held by Croatian authorities. At the JNA barracks, local Territorial Defence and paramilitary forces threatened and verbally abused the men; JNA military police removed those forces from the compound. The prisoners were subsequently taken to a hangar at Ovčara. JNA military police guarded them there, but Territorial Defence and paramilitary forces had access to them at times, and the guards' efforts were inconsistent. Members of those forces severely beat prisoners at the hangar. Some senior JNA officers visited and tried to improve the military police response, with effects that were ineffective or temporary. Between 2000 and 2100 hours, an order from the command of Operational Group South directed the JNA military police guarding the prisoners to withdraw. The prisoners were then in the custody of the Vukovar Territorial Defence. Territorial Defence and paramilitary forces took prisoners in small groups to an isolated location and shot them. At least 200 persons died at Ovčara on 20 and 21 November 1991, in almost all cases from gunshot wounds; 194 of the persons named in the indictment were among those killed. The commander of Operational Group South had earlier ordered that the prisoners be taken to Sremska Mitrovica. Local Territorial Defence and paramilitary forces were hostile to members of the Croatian forces. A number of JNA officers reported to the commander the conduct of those forces at the JNA barracks and at Ovčara, and he was informed of killings at Velepromet the preceding day. The local Serb government opposed the transfer of prisoners to Sremska Mitrovica, and its wishes appear to have been a significant factor in the commander's decision concerning their custody.",
+  "ground_truth_outcome": "affirmed",
+  "holding": "In its Trial Judgment of 27 September 2007, the ICTY Trial Chamber found Mile Mrkšić guilty under Article 7(1) for aiding and abetting murder, torture, and cruel treatment, as violations of the laws or customs of war under Article 3. The crimes-against-humanity counts were dismissed for all three accused because the victims were not civilians for the purposes of Article 5. The three accused were treated differently: Miroslav Radić was acquitted on all counts; Mrkšić was convicted of murder, torture, and cruel treatment; and Veselin Šljivančanin was convicted of torture only and acquitted on the other counts. The Chamber imposed a single sentence of 20 years' imprisonment on Mrkšić.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": true,
+  "confidence": 0.92,
+  "confidence_reasoning": "The conclusion rests on settled law — command responsibility is a well‑established doctrine in customary international law and treaty law (Rome Statute Art. 28, though not in the retrieved context, reflects the same standard) — applied to facts that clearly satisfy each element: effective control, knowledge (actual or constructive), and failure to prevent or punish. The underlying crime (wilful killing of POWs) is unequivocally prohibited by the Rome Statute and the Geneva Conventions, both cited and resolved. The only limitation is that the customary Rule 14 citation in arg_43bf57d1 does not appear in the retrieved context, but the doctrine itself is not contested and the factual predicates are fully supported by the given facts. A confidence of 0.92 reflects the strength of the unopposed arguments and the clarity of the law, while acknowledging the absence of the customary rule text from the corpus.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 2,
+  "citation_statuses": {
+    "total": 3,
+    "resolved": 3,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. The commander of Operational Group South was criminally responsible for the killing of prisoners of war taken from Vukovar hospital. The mass killing constituted wilful killing of prisoners of war, a grave breach of the Geneva Conventions and a war crime under the Rome Statute. The commander exercised effective control over the JNA military police guarding the prisoners, knew or had reason to know that Territorial Defence and paramilitary forces were abusing and would kill the prisoners, and ordered the withdrawal of the military police, thereby abandoning the prisoners to certain death. This satisfies the elements of command responsibility under customary international law. The removal of prisoners from the ICRC‑protected hospital also violated the protection afforded to civilian hospitals under the Fourth Geneva Convention, and the commander’s failure to order an official enquiry into the deaths breached the Third Geneva Convention.",
+    "reasoning": "All four arguments survive unopposed because no objections were filed. Argument arg_e4f8639a establishes the underlying crime: the deliberate killing of over 200 persons who had surrendered and were hors de combat constitutes wilful killing of prisoners of war under Article 8(2)(a)(i) of the Rome Statute. Argument arg_c40277db establishes that the forced removal of these prisoners from the ICRC‑protected Vukovar hospital violated Article 19 of the Fourth Geneva Convention, which protects civilian hospitals even when they shelter wounded combatants. Argument arg_43bf57d1 establishes command responsibility: the commander of Operational Group South had effective control over the JNA military police, was informed of the hostile conduct of Territorial Defence and paramilitary forces at the barracks and at Ovčara, knew of killings at Velepromet the previous day, and nevertheless ordered the military police to withdraw, leaving the prisoners in the custody of forces he knew would kill them. This meets the customary standard (Rule 14) that a superior who knows or has reason to know of crimes and fails to take necessary and reasonable measures to prevent them is criminally liable. Argument arg_09021529 reinforces individual responsibility by noting the commander’s failure to comply with Article 121 of the Third Geneva Convention, which requires an immediate official enquiry into any death of a prisoner of war and prosecution of those responsible. No objections were raised to challenge any of these points, and all treaty citations resolve against the provided corpus.",
+    "confidence": 0.92,
+    "confidence_reasoning": "The conclusion rests on settled law — command responsibility is a well‑established doctrine in customary international law and treaty law (Rome Statute Art. 28, though not in the retrieved context, reflects the same standard) — applied to facts that clearly satisfy each element: effective control, knowledge (actual or constructive), and failure to prevent or punish. The underlying crime (wilful killing of POWs) is unequivocally prohibited by the Rome Statute and the Geneva Conventions, both cited and resolved. The only limitation is that the customary Rule 14 citation in arg_43bf57d1 does not appear in the retrieved context, but the doctrine itself is not contested and the factual predicates are fully supported by the given facts. A confidence of 0.92 reflects the strength of the unopposed arguments and the clarity of the law, while acknowledging the absence of the customary rule text from the corpus.",
+    "surviving_argument_ids": [
+      "arg_e4f8639a",
+      "arg_c40277db",
+      "arg_43bf57d1",
+      "arg_09021529"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_e4f8639a",
+      "claim": "The mass killing of the captured persons constitutes wilful killing of prisoners of war, a grave breach of the Geneva Conventions and a war crime under the Rome Statute.",
+      "reasoning": "Article 8 of the Rome Statute lists \"Wilful killing\" as a war crime. The victims were members of the armed forces who had laid down their arms and were hors de combat, qualifying them as prisoners of war. Their deliberate killing therefore satisfies the element of wilful killing under article 8(a)(i).",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Wilful killing"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Wilful killing"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_c40277db",
+      "claim": "The removal of the prisoners from the protected hospital and their subsequent killing violated the protection afforded to civilian hospitals under the Fourth Geneva Convention.",
+      "reasoning": "Article 19 of the Fourth Geneva Convention provides that civilian hospitals are protected unless used to commit acts harmful to the enemy, and that protection does not cease merely because sick or wounded combatants are present. The JNA’s forced removal of POWs from the ICRC‑protected Vukovar hospital and the failure to safeguard them breached this protection, constituting a grave breach.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iv",
+          "article": "19",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iv",
+            "article": "19",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_43bf57d1",
+      "claim": "The commander of Operational Group South is criminally liable under the doctrine of command responsibility for the killings committed by forces under his effective control.",
+      "reasoning": "Customary international law (Rule 14) establishes that a superior is responsible for crimes committed by subordinates when he knew or had reason to know of the crimes and failed to take necessary and reasonable measures to prevent them or to punish the perpetrators. The commander exercised effective control over the JNA military police, was informed of the abusive conduct of Territorial Defence and paramilitary forces, and ordered the withdrawal of the police, thereby abandoning the prisoners to certain death. This satisfies the elements of command responsibility.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_09021529",
+      "claim": "The commander violated the Third Geneva Convention’s duty to investigate deaths of prisoners of war by failing to launch an official enquiry and to prosecute those responsible.",
+      "reasoning": "Article 121 of the Third Geneva Convention obliges the Detaining Power to conduct an immediate official enquiry into any death or serious injury of a prisoner of war and to forward the findings to the Protecting Power. The commander neither ordered such an enquiry nor ensured prosecution of the perpetrators, breaching this statutory duty and reinforcing his individual criminal responsibility.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iii",
+          "article": "121",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Every death or serious injury of a prisoner of war ... shall be immediately followed by an official enquiry by the Detaining Power."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iii",
+            "article": "121",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Every death or serious injury of a prisoner of war ... shall be immediately followed by an official enquiry by the Detaining Power."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iv",
+        "article": "19",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_ii",
+        "article": "19(g)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gcii-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iii",
+        "article": "75(b)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iii",
+        "article": "121",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_ii",
+        "article": "4(2)(c)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iii",
+        "article": "33",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "31(4)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_2147c128",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "4346704eae29f13aa0d51f474d32c6e5b26f261ee12d120348155bbfa29d3e75",
+      "arguments": [
+        {
+          "id": "arg_e4f8639a",
+          "claim": "The mass killing of the captured persons constitutes wilful killing of prisoners of war, a grave breach of the Geneva Conventions and a war crime under the Rome Statute.",
+          "reasoning": "Article 8 of the Rome Statute lists \"Wilful killing\" as a war crime. The victims were members of the armed forces who had laid down their arms and were hors de combat, qualifying them as prisoners of war. Their deliberate killing therefore satisfies the element of wilful killing under article 8(a)(i).",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Wilful killing"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Wilful killing"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_c40277db",
+          "claim": "The removal of the prisoners from the protected hospital and their subsequent killing violated the protection afforded to civilian hospitals under the Fourth Geneva Convention.",
+          "reasoning": "Article 19 of the Fourth Geneva Convention provides that civilian hospitals are protected unless used to commit acts harmful to the enemy, and that protection does not cease merely because sick or wounded combatants are present. The JNA’s forced removal of POWs from the ICRC‑protected Vukovar hospital and the failure to safeguard them breached this protection, constituting a grave breach.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iv",
+              "article": "19",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iv",
+                "article": "19",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_43bf57d1",
+          "claim": "The commander of Operational Group South is criminally liable under the doctrine of command responsibility for the killings committed by forces under his effective control.",
+          "reasoning": "Customary international law (Rule 14) establishes that a superior is responsible for crimes committed by subordinates when he knew or had reason to know of the crimes and failed to take necessary and reasonable measures to prevent them or to punish the perpetrators. The commander exercised effective control over the JNA military police, was informed of the abusive conduct of Territorial Defence and paramilitary forces, and ordered the withdrawal of the police, thereby abandoning the prisoners to certain death. This satisfies the elements of command responsibility.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_09021529",
+          "claim": "The commander violated the Third Geneva Convention’s duty to investigate deaths of prisoners of war by failing to launch an official enquiry and to prosecute those responsible.",
+          "reasoning": "Article 121 of the Third Geneva Convention obliges the Detaining Power to conduct an immediate official enquiry into any death or serious injury of a prisoner of war and to forward the findings to the Protecting Power. The commander neither ordered such an enquiry nor ensured prosecution of the perpetrators, breaching this statutory duty and reinforcing his individual criminal responsibility.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "121",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Every death or serious injury of a prisoner of war ... shall be immediately followed by an official enquiry by the Detaining Power."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "121",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Every death or serious injury of a prisoner of war ... shall be immediately followed by an official enquiry by the Detaining Power."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The mass killing of the captured persons constitutes wilful killing of prisoners of war, a grave breach of the Geneva Conventions and a war crime under the Rome Statute.\",\n      \"reasoning\": \"Article 8 of the Rome Statute lists \\\"Wilful killing\\\" as a war crime. The victims were members of the armed forces who had laid down their arms and were hors de combat, qualifying them as prisoners of war. Their deliberate killing therefore satisfies the element of wilful killing under article 8(a)(i).\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Wilful killing\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The removal of the prisoners from the protected hospital and their subsequent killing violated the protection afforded to civilian hospitals under the Fourth Geneva Convention.\",\n      \"reasoning\": \"Article 19 of the Fourth Geneva Convention provides that civilian hospitals are protected unless used to commit acts harmful to the enemy, and that protection does not cease merely because sick or wounded combatants are present. The JNA’s forced removal of POWs from the ICRC‑protected Vukovar hospital and the failure to safeguard them breached this protection, constituting a grave breach.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iv\",\n          \"article\": \"19\",\n          \"quoted_text\": \"The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander of Operational Group South is criminally liable under the doctrine of command responsibility for the killings committed by forces under his effective control.\",\n      \"reasoning\": \"Customary international law (Rule 14) establishes that a superior is responsible for crimes committed by subordinates when he knew or had reason to know of the crimes and failed to take necessary and reasonable measures to prevent them or to punish the perpetrators. The commander exercised effective control over the JNA military police, was informed of the abusive conduct of Territorial Defence and paramilitary forces, and ordered the withdrawal of the police, thereby abandoning the prisoners to certain death. This satisfies the elements of command responsibility.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The commander violated the Third Geneva Convention’s duty to investigate deaths of prisoners of war by failing to launch an official enquiry and to prosecute those responsible.\",\n      \"reasoning\": \"Article 121 of the Third Geneva Convention obliges the Detaining Power to conduct an immediate official enquiry into any death or serious injury of a prisoner of war and to forward the findings to the Protecting Power. The commander neither ordered such an enquiry nor ensured prosecution of the perpetrators, breaching this statutory duty and reinforcing his individual criminal responsibility.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"121\",\n          \"quoted_text\": \"Every death or serious injury of a prisoner of war ... shall be immediately followed by an official enquiry by the Detaining Power.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T13:41:48.480723Z",
+      "completed_at": "2026-11-16T13:42:28.675141Z",
+      "prompt_tokens": 4972,
+      "completion_tokens": 1826,
+      "error": null
+    },
+    {
+      "id": "turn_f5e99bd2",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "0eacb362386abc64a8015418d12571278cb6bbf3a282fcba05905c1bc70552bf",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The commander of Operational Group South was criminally responsible for the killing of prisoners of war taken from Vukovar hospital. The mass killing constituted wilful killing of prisoners of war, a grave breach of the Geneva Conventions and a war crime under the Rome Statute. The commander exercised effective control over the JNA military police guarding the prisoners, knew or had reason to know that Territorial Defence and paramilitary forces were abusing and would kill the prisoners, and ordered the withdrawal of the military police, thereby abandoning the prisoners to certain death. This satisfies the elements of command responsibility under customary international law. The removal of prisoners from the ICRC‑protected hospital also violated the protection afforded to civilian hospitals under the Fourth Geneva Convention, and the commander’s failure to order an official enquiry into the deaths breached the Third Geneva Convention.\", \"reasoning\": \"All four arguments survive unopposed because no objections were filed. Argument arg_e4f8639a establishes the underlying crime: the deliberate killing of over 200 persons who had surrendered and were hors de combat constitutes wilful killing of prisoners of war under Article 8(2)(a)(i) of the Rome Statute. Argument arg_c40277db establishes that the forced removal of these prisoners from the ICRC‑protected Vukovar hospital violated Article 19 of the Fourth Geneva Convention, which protects civilian hospitals even when they shelter wounded combatants. Argument arg_43bf57d1 establishes command responsibility: the commander of Operational Group South had effective control over the JNA military police, was informed of the hostile conduct of Territorial Defence and paramilitary forces at the barracks and at Ovčara, knew of killings at Velepromet the previous day, and nevertheless ordered the military police to withdraw, leaving the prisoners in the custody of forces he knew would kill them. This meets the customary standard (Rule 14) that a superior who knows or has reason to know of crimes and fails to take necessary and reasonable measures to prevent them is criminally liable. Argument arg_09021529 reinforces individual responsibility by noting the commander’s failure to comply with Article 121 of the Third Geneva Convention, which requires an immediate official enquiry into any death of a prisoner of war and prosecution of those responsible. No objections were raised to challenge any of these points, and all treaty citations resolve against the provided corpus.\", \"confidence\": 0.92, \"confidence_reasoning\": \"The conclusion rests on settled law — command responsibility is a well‑established doctrine in customary international law and treaty law (Rome Statute Art. 28, though not in the retrieved context, reflects the same standard) — applied to facts that clearly satisfy each element: effective control, knowledge (actual or constructive), and failure to prevent or punish. The underlying crime (wilful killing of POWs) is unequivocally prohibited by the Rome Statute and the Geneva Conventions, both cited and resolved. The only limitation is that the customary Rule 14 citation in arg_43bf57d1 does not appear in the retrieved context, but the doctrine itself is not contested and the factual predicates are fully supported by the given facts. A confidence of 0.92 reflects the strength of the unopposed arguments and the clarity of the law, while acknowledging the absence of the customary rule text from the corpus.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_e4f8639a\", \"arg_c40277db\", \"arg_43bf57d1\", \"arg_09021529\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-16T13:42:28.693214Z",
+      "completed_at": "2026-11-16T13:43:21.170569Z",
+      "prompt_tokens": 5710,
+      "completion_tokens": 1434,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-16T13:43:21.179224+00:00",
+  "duration_seconds": 194.75949019996915,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}

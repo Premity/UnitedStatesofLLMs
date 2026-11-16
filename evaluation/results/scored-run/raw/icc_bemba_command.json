@@ -1,0 +1,187 @@
+{
+  "case_id": "icc_bemba_command",
+  "case_title": "Prosecutor v. Jean-Pierre Bemba Gombo — command responsibility",
+  "court": "ICC",
+  "year": 2018,
+  "difficulty": "contested",
+  "arm": "raw",
+  "arm_label": "A — Single pass, no retrieval",
+  "run_id": "eval_3a6c476a9f",
+  "question": "Has it been established beyond reasonable doubt that the commander of a force deployed in a foreign country was criminally responsible under Article 28(a) of the Rome Statute for crimes committed by that force's troops?",
+  "facts": "Troops of the Mouvement de libération du Congo (MLC) operated in the Central African Republic from on or about 26 October 2002 to 15 March 2003. The Trial Chamber found the commander to have acted as a military commander with effective control over the troops. The crimes at issue included murder, rape, and pillaging. On appeal he argued that the Trial Chamber had misappreciated the limitations of the MLC's jurisdiction and competence to investigate, and that it had ignored that he had asked the Central African Republic Prime Minister to investigate the allegations and had sent a letter to the Central African Republic authorities concerning allegations of crimes. Evidence before the Trial Chamber included testimony about the limits of his power to investigate crimes committed in the Central African Republic and about logistical difficulties in doing so, and the MLC relied on cooperation with the Central African Republic authorities during the operation. The Trial Chamber acknowledged that he had taken some measures during the operation. The Trial Chamber found that MLC troops continued committing crimes throughout the operation and that consistent information about these crimes was brought to his attention. He initiated inquiries. Other MLC commanders exercised some disciplinary authority in the field.",
+  "ground_truth_outcome": "rejected",
+  "holding": "In its Appeals Judgment of 8 June 2018, the ICC Appeals Chamber majority found that errors materially affected the Trial Chamber's conclusion that the commander had failed to take all necessary and reasonable measures under Article 28 of the Rome Statute. The majority held that he could not be held criminally liable under Article 28 for the crimes committed by MLC troops during the operation, reversed his conviction, discontinued proceedings for acts outside the scope of the charges, and acquitted him of the remaining criminal acts. Judges Monageng and Hofmański dissented and would have confirmed the Trial Chamber's conviction.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": false,
+  "confidence": 0.85,
+  "confidence_reasoning": "The confidence is high because the facts as given incorporate the Trial Chamber's explicit findings on each statutory element, and the legal principles applied are well-settled in ICC jurisprudence. The absence of any objections means the prosecution's arguments stand unchallenged. The 0.15 deduction reflects the lack of corpus context to verify the precise articulation of the Article 28(a) test in ICC case law, though the reasoning follows established command-responsibility doctrine.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 2,
+  "citation_statuses": {
+    "total": 0,
+    "resolved": 0,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. The commander's criminal responsibility under Article 28(a) of the Rome Statute has been established beyond reasonable doubt on the facts as given.",
+    "reasoning": "All three elements of Article 28(a) are satisfied on the record presented. First, the Trial Chamber expressly found that the commander acted as a military commander with effective control over MLC troops (arg_70c0d9e2). Second, consistent information about murders, rapes, and pillaging was brought to his attention, he initiated inquiries, and he corresponded with CAR authorities — demonstrating actual or constructive knowledge (arg_fad1e3b9). Third, the measures he took (requesting a CAR investigation and sending a letter) were acknowledged by the Trial Chamber but found insufficient because MLC troops continued committing crimes throughout the operation (arg_a41faf4d). The defense arguments that jurisdictional limits or cooperation with local authorities absolve him are legally unfounded: Article 28(a) imposes an individual duty to prevent and punish that is not displaced by parallel host-state investigations (arg_bfc24c8c). The cumulative evidence meets the beyond-reasonable-doubt standard (arg_921ef515). No objections were filed to challenge these arguments.",
+    "confidence": 0.85,
+    "confidence_reasoning": "The confidence is high because the facts as given incorporate the Trial Chamber's explicit findings on each statutory element, and the legal principles applied are well-settled in ICC jurisprudence. The absence of any objections means the prosecution's arguments stand unchallenged. The 0.15 deduction reflects the lack of corpus context to verify the precise articulation of the Article 28(a) test in ICC case law, though the reasoning follows established command-responsibility doctrine.",
+    "surviving_argument_ids": [
+      "arg_70c0d9e2",
+      "arg_fad1e3b9",
+      "arg_a41faf4d",
+      "arg_921ef515",
+      "arg_bfc24c8c"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_70c0d9e2",
+      "claim": "The commander possessed effective control over MLC troops, satisfying the first element of command responsibility under Article 28(a) of the Rome Statute.",
+      "reasoning": "Effective control is defined as the material ability to issue orders and enforce compliance. The Trial Chamber explicitly found that the commander acted as a military commander with effective control over the troops, and that other MLC commanders exercised disciplinary authority in the field, indicating a hierarchical command structure that placed the appellant at the apex of operational decision‑making.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_fad1e3b9",
+      "claim": "The commander had knowledge, or constructive knowledge, of the crimes committed by MLC troops, fulfilling the second element of Article 28(a).",
+      "reasoning": "Knowledge can be actual or inferred from information that a reasonable commander would have. The record shows that consistent information about murders, rapes, and pillaging was brought to the commander’s attention, that he initiated inquiries, and that he corresponded with Central African Republic authorities concerning the allegations. These facts demonstrate that the commander either knew of the crimes or should have known, satisfying the knowledge requirement.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_a41faf4d",
+      "claim": "The commander failed to take all necessary and reasonable measures to prevent or punish the crimes, meeting the third element of Article 28(a).",
+      "reasoning": "While the commander took some steps—requesting an investigation by the Central African Republic Prime Minister and sending a letter to authorities—these measures were insufficient given the scale and persistence of the crimes. The Trial Chamber concluded that MLC troops continued committing crimes throughout the operation despite the commander’s actions, indicating that the measures were not adequate to prevent or punish the offenses. Under customary international humanitarian law and the jurisprudence of the ICC, a commander must exercise the full extent of his authority to enforce discipline, which the evidence shows he did not.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_921ef515",
+      "claim": "Beyond reasonable doubt, the cumulative evidence establishes the commander’s criminal responsibility under Article 28(a).",
+      "reasoning": "The standard of proof in ICC proceedings requires that the prosecution prove each element of the crime to the exclusion of reasonable doubt. The Trial Chamber’s findings on effective control, knowledge, and failure to act are supported by testimonial evidence, documentary correspondence, and the pattern of ongoing crimes. No credible evidence was presented to rebut these findings or to demonstrate that the commander exercised effective oversight capable of halting the offenses. Accordingly, the threshold of beyond reasonable doubt is met.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_bfc24c8c",
+      "claim": "The appellant’s argument that jurisdictional limits or cooperation with local authorities absolve him of responsibility is unavailing.",
+      "reasoning": "Article 28(a) imposes individual criminal responsibility irrespective of the existence of parallel investigations by the host state. Cooperation with local authorities does not excuse a commander’s duty to prevent and punish crimes committed by forces under his effective control. The appellant’s reliance on logistical difficulties and limited investigative powers does not negate the legal obligation to ensure compliance with international humanitarian law, as affirmed in ICC jurisprudence on command responsibility.",
+      "citations": [],
+      "resolved_citations": []
+    }
+  ],
+  "objections": [],
+  "context": [],
+  "turns": [
+    {
+      "id": "turn_09084176",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "f3cc647532fedebf8d8b5cd3303e82060472aad60c5cbceb709a00e4ae86b986",
+      "arguments": [
+        {
+          "id": "arg_70c0d9e2",
+          "claim": "The commander possessed effective control over MLC troops, satisfying the first element of command responsibility under Article 28(a) of the Rome Statute.",
+          "reasoning": "Effective control is defined as the material ability to issue orders and enforce compliance. The Trial Chamber explicitly found that the commander acted as a military commander with effective control over the troops, and that other MLC commanders exercised disciplinary authority in the field, indicating a hierarchical command structure that placed the appellant at the apex of operational decision‑making.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_fad1e3b9",
+          "claim": "The commander had knowledge, or constructive knowledge, of the crimes committed by MLC troops, fulfilling the second element of Article 28(a).",
+          "reasoning": "Knowledge can be actual or inferred from information that a reasonable commander would have. The record shows that consistent information about murders, rapes, and pillaging was brought to the commander’s attention, that he initiated inquiries, and that he corresponded with Central African Republic authorities concerning the allegations. These facts demonstrate that the commander either knew of the crimes or should have known, satisfying the knowledge requirement.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_a41faf4d",
+          "claim": "The commander failed to take all necessary and reasonable measures to prevent or punish the crimes, meeting the third element of Article 28(a).",
+          "reasoning": "While the commander took some steps—requesting an investigation by the Central African Republic Prime Minister and sending a letter to authorities—these measures were insufficient given the scale and persistence of the crimes. The Trial Chamber concluded that MLC troops continued committing crimes throughout the operation despite the commander’s actions, indicating that the measures were not adequate to prevent or punish the offenses. Under customary international humanitarian law and the jurisprudence of the ICC, a commander must exercise the full extent of his authority to enforce discipline, which the evidence shows he did not.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_921ef515",
+          "claim": "Beyond reasonable doubt, the cumulative evidence establishes the commander’s criminal responsibility under Article 28(a).",
+          "reasoning": "The standard of proof in ICC proceedings requires that the prosecution prove each element of the crime to the exclusion of reasonable doubt. The Trial Chamber’s findings on effective control, knowledge, and failure to act are supported by testimonial evidence, documentary correspondence, and the pattern of ongoing crimes. No credible evidence was presented to rebut these findings or to demonstrate that the commander exercised effective oversight capable of halting the offenses. Accordingly, the threshold of beyond reasonable doubt is met.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_bfc24c8c",
+          "claim": "The appellant’s argument that jurisdictional limits or cooperation with local authorities absolve him of responsibility is unavailing.",
+          "reasoning": "Article 28(a) imposes individual criminal responsibility irrespective of the existence of parallel investigations by the host state. Cooperation with local authorities does not excuse a commander’s duty to prevent and punish crimes committed by forces under his effective control. The appellant’s reliance on logistical difficulties and limited investigative powers does not negate the legal obligation to ensure compliance with international humanitarian law, as affirmed in ICC jurisprudence on command responsibility.",
+          "citations": [],
+          "resolved_citations": []
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The commander possessed effective control over MLC troops, satisfying the first element of command responsibility under Article 28(a) of the Rome Statute.\",\n      \"reasoning\": \"Effective control is defined as the material ability to issue orders and enforce compliance. The Trial Chamber explicitly found that the commander acted as a military commander with effective control over the troops, and that other MLC commanders exercised disciplinary authority in the field, indicating a hierarchical command structure that placed the appellant at the apex of operational decision‑making.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The commander had knowledge, or constructive knowledge, of the crimes committed by MLC troops, fulfilling the second element of Article 28(a).\",\n      \"reasoning\": \"Knowledge can be actual or inferred from information that a reasonable commander would have. The record shows that consistent information about murders, rapes, and pillaging was brought to the commander’s attention, that he initiated inquiries, and that he corresponded with Central African Republic authorities concerning the allegations. These facts demonstrate that the commander either knew of the crimes or should have known, satisfying the knowledge requirement.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The commander failed to take all necessary and reasonable measures to prevent or punish the crimes, meeting the third element of Article 28(a).\",\n      \"reasoning\": \"While the commander took some steps—requesting an investigation by the Central African Republic Prime Minister and sending a letter to authorities—these measures were insufficient given the scale and persistence of the crimes. The Trial Chamber concluded that MLC troops continued committing crimes throughout the operation despite the commander’s actions, indicating that the measures were not adequate to prevent or punish the offenses. Under customary international humanitarian law and the jurisprudence of the ICC, a commander must exercise the full extent of his authority to enforce discipline, which the evidence shows he did not.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"Beyond reasonable doubt, the cumulative evidence establishes the commander’s criminal responsibility under Article 28(a).\",\n      \"reasoning\": \"The standard of proof in ICC proceedings requires that the prosecution prove each element of the crime to the exclusion of reasonable doubt. The Trial Chamber’s findings on effective control, knowledge, and failure to act are supported by testimonial evidence, documentary correspondence, and the pattern of ongoing crimes. No credible evidence was presented to rebut these findings or to demonstrate that the commander exercised effective oversight capable of halting the offenses. Accordingly, the threshold of beyond reasonable doubt is met.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The appellant’s argument that jurisdictional limits or cooperation with local authorities absolve him of responsibility is unavailing.\",\n      \"reasoning\": \"Article 28(a) imposes individual criminal responsibility irrespective of the existence of parallel investigations by the host state. Cooperation with local authorities does not excuse a commander’s duty to prevent and punish crimes committed by forces under his effective control. The appellant’s reliance on logistical difficulties and limited investigative powers does not negate the legal obligation to ensure compliance with international humanitarian law, as affirmed in ICC jurisprudence on command responsibility.\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-16T15:59:30.758198Z",
+      "completed_at": "2026-11-16T15:59:33.219845Z",
+      "prompt_tokens": 1259,
+      "completion_tokens": 1018,
+      "error": null
+    },
+    {
+      "id": "turn_ce32e422",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "9ab1e0d1371fc55ee17d015e3a5f6c722fbdb7ea3faf9e8866ab2cddc8235023",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The commander's criminal responsibility under Article 28(a) of the Rome Statute has been established beyond reasonable doubt on the facts as given.\", \"reasoning\": \"All three elements of Article 28(a) are satisfied on the record presented. First, the Trial Chamber expressly found that the commander acted as a military commander with effective control over MLC troops (arg_70c0d9e2). Second, consistent information about murders, rapes, and pillaging was brought to his attention, he initiated inquiries, and he corresponded with CAR authorities — demonstrating actual or constructive knowledge (arg_fad1e3b9). Third, the measures he took (requesting a CAR investigation and sending a letter) were acknowledged by the Trial Chamber but found insufficient because MLC troops continued committing crimes throughout the operation (arg_a41faf4d). The defense arguments that jurisdictional limits or cooperation with local authorities absolve him are legally unfounded: Article 28(a) imposes an individual duty to prevent and punish that is not displaced by parallel host-state investigations (arg_bfc24c8c). The cumulative evidence meets the beyond-reasonable-doubt standard (arg_921ef515). No objections were filed to challenge these arguments.\", \"confidence\": 0.85, \"confidence_reasoning\": \"The confidence is high because the facts as given incorporate the Trial Chamber's explicit findings on each statutory element, and the legal principles applied are well-settled in ICC jurisprudence. The absence of any objections means the prosecution's arguments stand unchallenged. The 0.15 deduction reflects the lack of corpus context to verify the precise articulation of the Article 28(a) test in ICC case law, though the reasoning follows established command-responsibility doctrine.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_70c0d9e2\", \"arg_fad1e3b9\", \"arg_a41faf4d\", \"arg_921ef515\", \"arg_bfc24c8c\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-16T15:59:33.229879Z",
+      "completed_at": "2026-11-16T15:59:58.137881Z",
+      "prompt_tokens": 2221,
+      "completion_tokens": 1228,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-16T15:59:58.141126+00:00",
+  "duration_seconds": 27.392102499958128,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}

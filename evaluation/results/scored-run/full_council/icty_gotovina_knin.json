@@ -1,0 +1,1536 @@
+{
+  "case_id": "icty_gotovina_knin",
+  "case_title": "Prosecutor v. Gotovina and Markač — artillery attacks on Krajina towns",
+  "court": "ICTY",
+  "year": 2012,
+  "difficulty": "contested",
+  "arm": "full_council",
+  "arm_label": "D — Full council",
+  "run_id": "eval_884666b963",
+  "question": "Has it been established beyond reasonable doubt that the artillery attacks on Knin, Benkovac, Obrovac and Gračac were unlawful?",
+  "facts": "From at least July 1995 to about 30 September 1995, Croatian leaders and officials initiated Operation Storm, a military action aimed at taking control of territory in the Krajina region of Croatia. The first accused was a colonel-general in the Croatian army, commander of its Split Military District, and overall operational commander of Operation Storm in the southern part of the Krajina. The second accused was assistant minister of the interior and operational commander of the special police in Croatia. Artillery was used against Knin, Benkovac, Obrovac, and Gračac. The Trial Chamber analysed individual artillery impact sites in the four towns. It applied a 200-metre margin of error to all impact sites in each of the four towns and treated sites more than 200 metres from a target it considered legitimate as evidence of an unlawful attack. It found that the HV could not identify targets of opportunity, such as moving police or military vehicles, in the four towns. The trial record also included evidence of targets of opportunity in Knin. Expert witnesses testified about factors including wind speed and air temperature that could affect the accuracy of the weapons used. The Trial Chamber found that large numbers of civilians departed the Krajina region. The Trial Chamber found the artillery attacks on all four towns unlawful and convicted both accused.",
+  "ground_truth_outcome": "rejected",
+  "holding": "In its Appeals Judgment of 16 November 2012, the ICTY Appeals Chamber reversed the Trial Chamber's finding that the artillery attacks on Knin, Benkovac, Obrovac, and Gračac were unlawful. Judges Agius and Pocar dissented from this conclusion. The Chamber also reversed the convictions of Ante Gotovina and Mladen Markač and entered acquittals under Counts 1, 2, 4, 5, 6, 7, 8, and 9.",
+  "predicted_outcome": "rejected",
+  "outcome_correct": true,
+  "confidence": 0.72,
+  "confidence_reasoning": "The evidentiary objections are well-founded on the given facts: the record contains no direct evidence of the towns' defensive status, no comparison of anticipated military advantage versus civilian harm, and no proof of available but unused verification measures. The doctrinal objections correctly expose mis-citations (Art. 8(2)(b)(v) for distinction/precautions) and element conflation. However, confidence is not higher because the Trial Chamber's actual judgment — which presumably contained fuller reasoning — is not in the retrieved context, and the question asks whether it has been established on *these* arguments and facts.",
+  "rounds": 2,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 2,
+  "total_calls": 8,
+  "citation_statuses": {
+    "total": 17,
+    "resolved": 17,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "No.",
+    "reasoning": "The sustained objections demonstrate that the arguments presented fail to establish beyond reasonable doubt that the artillery attacks were unlawful. The doctrinal objections correctly identify that arg_a24e0087 and arg_c3848e02 misstate the legal tests: Article 8(2)(b)(v) requires proof that towns were both 'undefended' (open for occupation, lacking armed forces) and 'not military objectives' — a standard not met by showing impact dispersion alone. The evidentiary objections are equally fatal: the record shows only that HV could not identify targets of opportunity and that a 200-metre margin was applied; it does not prove the towns were undefended, that destruction lacked military necessity, that feasible precautions existed and were omitted, or that commanders knew incidental harm would be excessive. Arg_add966e5 and arg_54daffed invoke Article 8(2)(b)(iv) but the sustained evidentiary objection obj_f6a20869 defeats the knowledge element, and no argument bridges the gap between 'inability to identify targets' and 'knowledge of excessive incidental harm.' The Trial Chamber's conclusion is noted in the facts, but the arguments advanced to support it do not withstand the objections.",
+    "confidence": 0.72,
+    "confidence_reasoning": "The evidentiary objections are well-founded on the given facts: the record contains no direct evidence of the towns' defensive status, no comparison of anticipated military advantage versus civilian harm, and no proof of available but unused verification measures. The doctrinal objections correctly expose mis-citations (Art. 8(2)(b)(v) for distinction/precautions) and element conflation. However, confidence is not higher because the Trial Chamber's actual judgment — which presumably contained fuller reasoning — is not in the retrieved context, and the question asks whether it has been established on *these* arguments and facts.",
+    "surviving_argument_ids": [
+      "arg_54daffed"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_a24e0087",
+      "claim": "The artillery attacks on Knin, Benkovac, Obrovac and Gračac constitute attacks on towns that were undefended and not military objectives, and are therefore unlawful under the Rome Statute.",
+      "reasoning": "Article 8 of the Rome Statute expressly criminalises \"Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives\". The Trial Chamber’s forensic analysis showed that impact sites lay more than 200 metres from any verified military target, indicating that shells struck civilian areas. Moreover, the evidence demonstrates that the towns were not defended by armed forces at the time of the attacks. Consequently, the attacks fit the description of unlawful bombardment of undefended towns.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_ab78973f",
+      "claim": "The artillery attacks caused extensive destruction that was not justified by military necessity, violating the prohibition on unnecessary destruction in the Rome Statute.",
+      "reasoning": "Article 8 of the Rome Statute also prohibits \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly\". The large‑scale displacement of civilians from the Krajina region and the indiscriminate pattern of impacts demonstrate that the destruction far exceeded any concrete and direct military advantage. Expert testimony on wind and temperature effects further shows that the HV could not reliably limit the effects of its fire, indicating a lack of military necessity and a wanton approach to destruction.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_c3848e02",
+      "claim": "The commanders failed to take feasible precautions to verify targets, rendering the artillery attacks indiscriminate and unlawful under the principle of distinction embodied in the Rome Statute.",
+      "reasoning": "The principle of distinction, reflected in Article 8(b)(v) of the Rome Statute, requires parties to direct operations only against military objectives and to take all feasible precautions to avoid civilian harm. The Trial Chamber found that the HV could not identify targets of opportunity in the four towns and that a 200‑metre margin of error was applied uniformly, indicating a systemic inability to verify targets. This failure to adopt feasible verification measures makes the attacks indiscriminate, satisfying the statutory element of unlawful conduct.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_add966e5",
+      "claim": "The artillery attacks on Knin, Benkovac, Obrovac and Gračac were indiscriminate attacks prohibited by article 8(2)(b)(iv) of the Rome Statute.",
+      "reasoning": "The Trial Chamber found that the HV could not identify any legitimate military targets within the four towns and that impact sites were more than 200 metres from any verified target. Expert testimony established that wind speed and air temperature further degraded accuracy, making it foreseeable that shells would strike civilian areas. Consequently, the commanders launched attacks in the knowledge that the incidental loss of civilian life and damage to civilian objects would be clearly excessive in relation to the negligible concrete and direct military advantage anticipated, satisfying both the factual and mental elements of article 8(2)(b)(iv).",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_54daffed",
+      "claim": "The commanders failed to take feasible precautions to verify targets, constituting a war crime under article 8(2)(b)(iv) of the Rome Statute.",
+      "reasoning": "International humanitarian law obliges parties to take all feasible precautions to avoid civilian harm. The evidence shows that the HV applied a uniform 200‑metre margin of error and admitted an inability to identify targets of opportunity, despite awareness of environmental factors that reduced artillery accuracy. This demonstrates a failure to adopt feasible verification measures and to mitigate foreseeable civilian casualties. Launching the attacks under these circumstances indicates the commanders acted with knowledge that the attacks would cause excessive incidental civilian harm, fulfilling the mens rea requirement of article 8(2)(b)(iv).",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [
+    {
+      "id": "obj_b8663986",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_a24e0087",
+      "ground": "The argument mischaracterizes the legal test by conflating the specific crime of attacking undefended towns with the broader legal framework of distinction and proportionality.",
+      "reasoning": "Article 8(2)(b)(v) requires the town to be both 'undefended' and 'not a military objective'. The argument asserts the towns were undefended but does not legally establish they were not military objectives, which is a distinct legal element. Furthermore, the 200-meter margin is an evidentiary tool, not a legal definition of 'undefended'. The mere presence of impact sites away from verified targets does not legally negate the status of the town as a military objective without analyzing the 'effective contribution' and 'definite military advantage' criteria.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(v)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(v)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument conflates the 200-metre evidentiary margin with the legal definition of 'undefended town' under Art. 8(2)(b)(v), which requires both that the town be open for occupation and that it not be a military objective. Impact dispersion alone does not establish either element."
+    },
+    {
+      "id": "obj_4848a443",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_c3848e02",
+      "ground": "The argument incorrectly frames the failure to verify targets as satisfying the element of an 'indiscriminate attack' under the principle of distinction, rather than as a failure to take feasible precautions.",
+      "reasoning": "The Rome Statute distinguishes between intentional attacks directed at civilians/objects (Art 8(2)(b)(i)-(ii)) and attacks launched with knowledge of excessive incidental harm (Art 8(2)(b)(iv)). The inability to identify targets of opportunity or the use of a uniform margin of error suggests a failure in the command's duty to take feasible precautions or a lack of effective control, which are distinct legal concepts from the specific intent or knowledge required for the prohibited acts listed in Article 8. The argument fails to address the specific mental element (mens rea) required for the specific war crime charged.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Arg_c3848e02 cites Art. 8(2)(b)(v) (undefended towns) for the principle of distinction and feasible precautions. That provision does not codify those obligations; the argument misidentifies the legal basis."
+    },
+    {
+      "id": "obj_c6b9c74d",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_a24e0087",
+      "ground": "The facts do not establish that the towns were undefended or not military objectives.",
+      "reasoning": "The record only shows that HV could not identify targets of opportunity in the four towns and that a 200‑metre margin was applied; this does not prove that the towns were undefended or that they were not military objectives, which are required under Article 8(b)(viii) to qualify the attacks as unlawful.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The facts state only that HV could not identify targets of opportunity and that a 200-metre margin was applied. This does not prove the towns were undefended or lacked military objectives."
+    },
+    {
+      "id": "obj_6a49c752",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_ab78973f",
+      "ground": "The record does not prove that the destruction was not justified by military necessity.",
+      "reasoning": "The facts indicate that HV could not identify targets of opportunity and that experts noted wind and temperature effects, but they do not show that the destruction lacked a concrete and direct military advantage or that it was carried out unlawfully and wantonly, which is required for the crime under Article 8(b)(iv).",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The facts note displacement and impact dispersion but do not establish that the destruction lacked a concrete and direct military advantage or was wanton."
+    },
+    {
+      "id": "obj_87c4fb62",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_c3848e02",
+      "ground": "The facts do not demonstrate that the commanders failed to take feasible precautions to verify targets.",
+      "reasoning": "The Chamber’s finding that HV could not identify targets and that a 200‑metre margin was used does not constitute evidence that the commanders failed to adopt feasible verification measures; it may reflect lack of feasible means, which is not the same as a failure to take them.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Inability to identify targets may reflect lack of feasible means, not a failure to adopt them. The facts do not show that feasible verification measures existed and were consciously omitted."
+    },
+    {
+      "id": "obj_257347a5",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_a24e0087",
+      "ground": "The argument mischaracterises the legal test by substituting a '200-metre margin of error' for the definition of an 'undefended town' and fails to establish the absence of military objectives.",
+      "reasoning": "Article 8(2)(b)(v) requires that the town be 'undefended' and not a 'military objective'. The argument conflates dispersion of impacts with the absence of military objectives. A town is not 'undefended' merely because impacts fell outside a 200m radius; it is 'undefended' if it is open to occupation and lacks armed forces. The argument does not establish that the towns contained no military objectives, only that specific impacts missed them. This is a misapplication of the legal test.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(v)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(v)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Same defect: the argument substitutes a forensic margin of error for the legal test of 'undefended' status and fails to address whether the towns contained military objectives."
+    },
+    {
+      "id": "obj_f914620f",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_c3848e02",
+      "ground": "The argument misidentifies the legal provision, citing Article 8(2)(b)(v) for the principle of distinction and precautions, which is actually the prohibition on attacking undefended towns.",
+      "reasoning": "The principle of distinction and the duty to take feasible precautions are not codified in Article 8(2)(b)(v). That provision specifically addresses 'undefended' towns. The argument's reliance on a 'uniform 200-metre margin' as evidence of a systemic legal failure is a factual inference, not a legal element. Legal characterisation of 'indiscriminate' attacks typically relies on Article 8(2)(b)(iv) or the general prohibition on attacks not directed at military objectives, not the specific undefended town clause cited.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(v)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(v)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Confirmed: Art. 8(2)(b)(v) is the specific crime of attacking undefended towns, not the general distinction/precautions framework. The argument's reliance on it is legally erroneous."
+    },
+    {
+      "id": "obj_37c16e47",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_add966e5",
+      "ground": "The argument fails to distinguish between the 'knowledge' element of Article 8(2)(b)(iv) and the 'intent' to direct an attack, mischaracterising the mental element.",
+      "reasoning": "Article 8(2)(b)(iv) requires 'intentionally launching an attack in the knowledge that...'. The argument argues the commanders 'launched attacks in the knowledge', but it conflates the intent to launch (based on military necessity) with the knowledge of excessiveness. The legal test requires that the attack was directed at a military objective but the incidental harm was excessive. The argument's focus on 'negligible advantage' is a proportionality assessment, but it does not address the 'intent to launch' element which is distinct from the 'knowledge of excess'.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "minor",
+      "disposition": "partial",
+      "disposition_reasoning": "Arg_add966e5 correctly invokes Art. 8(2)(b)(iv) for indiscriminate attacks, but the objection validly notes that the argument blurs the dual mental element: 'intentionally launching an attack' (directed at a military objective) *and* 'in the knowledge that' incidental harm would be excessive. The argument's focus on 'negligible advantage' addresses proportionality but not the intent-to-launch element."
+    },
+    {
+      "id": "obj_f60ac0a3",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_a24e0087",
+      "ground": "The record does not establish that the towns were undefended and not military objectives.",
+      "reasoning": "The Trial Chamber’s finding that HV could not identify targets of opportunity in the four towns does not prove that those towns were undefended; evidence of targets of opportunity in Knin suggests some military presence, and the facts provide no explicit indication that the towns were undefended or lacked any military objective.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Evidence of targets of opportunity in Knin affirmatively suggests military presence; the record contains no finding that any of the four towns were undefended."
+    },
+    {
+      "id": "obj_812c3cc2",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_ab78973f",
+      "ground": "The record does not establish that the destruction was not justified by military necessity.",
+      "reasoning": "While the facts note large civilian displacement and an indiscriminate pattern of impacts, they do not provide evidence that the destruction lacked a concrete and direct military advantage or was not justified by military necessity; the Chamber’s conclusion of unlawfulness is not itself a factual finding of lack of necessity.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The Trial Chamber's legal conclusion of unlawfulness is not a substitute for a factual finding that no military necessity existed."
+    },
+    {
+      "id": "obj_8226c917",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_c3848e02",
+      "ground": "The record does not show that feasible precautions existed and were not taken.",
+      "reasoning": "HV’s inability to identify targets of opportunity may reflect a lack of capability rather than a failure to adopt feasible precautions; the facts do not demonstrate that HV had any feasible means to verify targets or that it consciously chose not to take them.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Same evidentiary gap: no evidence that HV had feasible means to verify targets and chose not to use them."
+    },
+    {
+      "id": "obj_f6a20869",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_add966e5",
+      "ground": "The record does not establish that HV had knowledge that incidental civilian harm would be excessive.",
+      "reasoning": "Expert testimony on wind speed and air temperature indicates potential inaccuracy, but there is no evidence that HV actually knew that such inaccuracy would cause excessive incidental civilian harm; the Chamber’s inference of knowledge is not a fact established by the record.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Expert testimony on environmental factors shows potential inaccuracy, not that HV *knew* such inaccuracy would cause *excessive* incidental harm. Knowledge of excessiveness is not established."
+    }
+  ],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw_p_iii",
+        "article": "2(3)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw_p_v",
+        "article": "4(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-v-2003",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "hague_cp",
+        "article": "8a(b)(5)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/hague-conv-1954",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw_p_iii",
+        "article": "2(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "56(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "56(5)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "59(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_cc98d360",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "44df795a8d600a30e5ac2586eee8f64129f4c035442a4e78574e0e5929c976b0",
+      "arguments": [
+        {
+          "id": "arg_a24e0087",
+          "claim": "The artillery attacks on Knin, Benkovac, Obrovac and Gračac constitute attacks on towns that were undefended and not military objectives, and are therefore unlawful under the Rome Statute.",
+          "reasoning": "Article 8 of the Rome Statute expressly criminalises \"Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives\". The Trial Chamber’s forensic analysis showed that impact sites lay more than 200 metres from any verified military target, indicating that shells struck civilian areas. Moreover, the evidence demonstrates that the towns were not defended by armed forces at the time of the attacks. Consequently, the attacks fit the description of unlawful bombardment of undefended towns.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_ab78973f",
+          "claim": "The artillery attacks caused extensive destruction that was not justified by military necessity, violating the prohibition on unnecessary destruction in the Rome Statute.",
+          "reasoning": "Article 8 of the Rome Statute also prohibits \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly\". The large‑scale displacement of civilians from the Krajina region and the indiscriminate pattern of impacts demonstrate that the destruction far exceeded any concrete and direct military advantage. Expert testimony on wind and temperature effects further shows that the HV could not reliably limit the effects of its fire, indicating a lack of military necessity and a wanton approach to destruction.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_c3848e02",
+          "claim": "The commanders failed to take feasible precautions to verify targets, rendering the artillery attacks indiscriminate and unlawful under the principle of distinction embodied in the Rome Statute.",
+          "reasoning": "The principle of distinction, reflected in Article 8(b)(v) of the Rome Statute, requires parties to direct operations only against military objectives and to take all feasible precautions to avoid civilian harm. The Trial Chamber found that the HV could not identify targets of opportunity in the four towns and that a 200‑metre margin of error was applied uniformly, indicating a systemic inability to verify targets. This failure to adopt feasible verification measures makes the attacks indiscriminate, satisfying the statutory element of unlawful conduct.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The artillery attacks on Knin, Benkovac, Obrovac and Gračac constitute attacks on towns that were undefended and not military objectives, and are therefore unlawful under the Rome Statute.\",\n      \"reasoning\": \"Article 8 of the Rome Statute expressly criminalises \\\"Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives\\\". The Trial Chamber’s forensic analysis showed that impact sites lay more than 200 metres from any verified military target, indicating that shells struck civilian areas. Moreover, the evidence demonstrates that the towns were not defended by armed forces at the time of the attacks. Consequently, the attacks fit the description of unlawful bombardment of undefended towns.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The artillery attacks caused extensive destruction that was not justified by military necessity, violating the prohibition on unnecessary destruction in the Rome Statute.\",\n      \"reasoning\": \"Article 8 of the Rome Statute also prohibits \\\"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly\\\". The large‑scale displacement of civilians from the Krajina region and the indiscriminate pattern of impacts demonstrate that the destruction far exceeded any concrete and direct military advantage. Expert testimony on wind and temperature effects further shows that the HV could not reliably limit the effects of its fire, indicating a lack of military necessity and a wanton approach to destruction.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commanders failed to take feasible precautions to verify targets, rendering the artillery attacks indiscriminate and unlawful under the principle of distinction embodied in the Rome Statute.\",\n      \"reasoning\": \"The principle of distinction, reflected in Article 8(b)(v) of the Rome Statute, requires parties to direct operations only against military objectives and to take all feasible precautions to avoid civilian harm. The Trial Chamber found that the HV could not identify targets of opportunity in the four towns and that a 200‑metre margin of error was applied uniformly, indicating a systemic inability to verify targets. This failure to adopt feasible verification measures makes the attacks indiscriminate, satisfying the statutory element of unlawful conduct.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T11:41:39.332898Z",
+      "completed_at": "2026-11-16T11:42:18.737647Z",
+      "prompt_tokens": 4484,
+      "completion_tokens": 1961,
+      "error": null
+    },
+    {
+      "id": "turn_95125cb9",
+      "round_number": 1,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "2e5d961b1d149b4770cd729b6db8b0216864aec2172b0449e2ba498543d52b41",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_b8663986",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_a24e0087",
+          "ground": "The argument mischaracterizes the legal test by conflating the specific crime of attacking undefended towns with the broader legal framework of distinction and proportionality.",
+          "reasoning": "Article 8(2)(b)(v) requires the town to be both 'undefended' and 'not a military objective'. The argument asserts the towns were undefended but does not legally establish they were not military objectives, which is a distinct legal element. Furthermore, the 200-meter margin is an evidentiary tool, not a legal definition of 'undefended'. The mere presence of impact sites away from verified targets does not legally negate the status of the town as a military objective without analyzing the 'effective contribution' and 'definite military advantage' criteria.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(v)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(v)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument conflates the 200-metre evidentiary margin with the legal definition of 'undefended town' under Art. 8(2)(b)(v), which requires both that the town be open for occupation and that it not be a military objective. Impact dispersion alone does not establish either element."
+        },
+        {
+          "id": "obj_4848a443",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_c3848e02",
+          "ground": "The argument incorrectly frames the failure to verify targets as satisfying the element of an 'indiscriminate attack' under the principle of distinction, rather than as a failure to take feasible precautions.",
+          "reasoning": "The Rome Statute distinguishes between intentional attacks directed at civilians/objects (Art 8(2)(b)(i)-(ii)) and attacks launched with knowledge of excessive incidental harm (Art 8(2)(b)(iv)). The inability to identify targets of opportunity or the use of a uniform margin of error suggests a failure in the command's duty to take feasible precautions or a lack of effective control, which are distinct legal concepts from the specific intent or knowledge required for the prohibited acts listed in Article 8. The argument fails to address the specific mental element (mens rea) required for the specific war crime charged.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Arg_c3848e02 cites Art. 8(2)(b)(v) (undefended towns) for the principle of distinction and feasible precautions. That provision does not codify those obligations; the argument misidentifies the legal basis."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_a24e0087\",\n      \"ground\": \"The argument mischaracterizes the legal test by conflating the specific crime of attacking undefended towns with the broader legal framework of distinction and proportionality.\",\n      \"reasoning\": \"Article 8(2)(b)(v) requires the town to be both 'undefended' and 'not a military objective'. The argument asserts the towns were undefended but does not legally establish they were not military objectives, which is a distinct legal element. Furthermore, the 200-meter margin is an evidentiary tool, not a legal definition of 'undefended'. The mere presence of impact sites away from verified targets does not legally negate the status of the town as a military objective without analyzing the 'effective contribution' and 'definite military advantage' criteria.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(v)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_c3848e02\",\n      \"ground\": \"The argument incorrectly frames the failure to verify targets as satisfying the element of an 'indiscriminate attack' under the principle of distinction, rather than as a failure to take feasible precautions.\",\n      \"reasoning\": \"The Rome Statute distinguishes between intentional attacks directed at civilians/objects (Art 8(2)(b)(i)-(ii)) and attacks launched with knowledge of excessive incidental harm (Art 8(2)(b)(iv)). The inability to identify targets of opportunity or the use of a uniform margin of error suggests a failure in the command's duty to take feasible precautions or a lack of effective control, which are distinct legal concepts from the specific intent or knowledge required for the prohibited acts listed in Article 8. The argument fails to address the specific mental element (mens rea) required for the specific war crime charged.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(iv)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T11:42:18.738892Z",
+      "completed_at": "2026-11-16T11:42:20.288496Z",
+      "prompt_tokens": 5021,
+      "completion_tokens": 513,
+      "error": null
+    },
+    {
+      "id": "turn_dd5b3531",
+      "round_number": 1,
+      "role": "attacker_evidentiary",
+      "model_id": "groq/openai/gpt-oss-20b",
+      "prompt_id": "attacker_evidentiary/challenge",
+      "prompt_hash": "603e54058f77cd276db7b9b1bebdb0ad997e17b690f26cbd1e6b171515d148cb",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_c6b9c74d",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_a24e0087",
+          "ground": "The facts do not establish that the towns were undefended or not military objectives.",
+          "reasoning": "The record only shows that HV could not identify targets of opportunity in the four towns and that a 200‑metre margin was applied; this does not prove that the towns were undefended or that they were not military objectives, which are required under Article 8(b)(viii) to qualify the attacks as unlawful.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The facts state only that HV could not identify targets of opportunity and that a 200-metre margin was applied. This does not prove the towns were undefended or lacked military objectives."
+        },
+        {
+          "id": "obj_6a49c752",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_ab78973f",
+          "ground": "The record does not prove that the destruction was not justified by military necessity.",
+          "reasoning": "The facts indicate that HV could not identify targets of opportunity and that experts noted wind and temperature effects, but they do not show that the destruction lacked a concrete and direct military advantage or that it was carried out unlawfully and wantonly, which is required for the crime under Article 8(b)(iv).",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The facts note displacement and impact dispersion but do not establish that the destruction lacked a concrete and direct military advantage or was wanton."
+        },
+        {
+          "id": "obj_87c4fb62",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_c3848e02",
+          "ground": "The facts do not demonstrate that the commanders failed to take feasible precautions to verify targets.",
+          "reasoning": "The Chamber’s finding that HV could not identify targets and that a 200‑metre margin was used does not constitute evidence that the commanders failed to adopt feasible verification measures; it may reflect lack of feasible means, which is not the same as a failure to take them.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Inability to identify targets may reflect lack of feasible means, not a failure to adopt them. The facts do not show that feasible verification measures existed and were consciously omitted."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_a24e0087\",\n      \"ground\": \"The facts do not establish that the towns were undefended or not military objectives.\",\n      \"reasoning\": \"The record only shows that HV could not identify targets of opportunity in the four towns and that a 200‑metre margin was applied; this does not prove that the towns were undefended or that they were not military objectives, which are required under Article 8(b)(viii) to qualify the attacks as unlawful.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_ab78973f\",\n      \"ground\": \"The record does not prove that the destruction was not justified by military necessity.\",\n      \"reasoning\": \"The facts indicate that HV could not identify targets of opportunity and that experts noted wind and temperature effects, but they do not show that the destruction lacked a concrete and direct military advantage or that it was carried out unlawfully and wantonly, which is required for the crime under Article 8(b)(iv).\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_c3848e02\",\n      \"ground\": \"The facts do not demonstrate that the commanders failed to take feasible precautions to verify targets.\",\n      \"reasoning\": \"The Chamber’s finding that HV could not identify targets and that a 200‑metre margin was used does not constitute evidence that the commanders failed to adopt feasible verification measures; it may reflect lack of feasible means, which is not the same as a failure to take them.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T11:42:18.742199Z",
+      "completed_at": "2026-11-16T11:42:20.932962Z",
+      "prompt_tokens": 4818,
+      "completion_tokens": 1459,
+      "error": null
+    },
+    {
+      "id": "turn_927edbcf",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "ce871d32356712bb0d1f41cfe6bcad350ac59ba6ee8b20c25cf0bf2cf5cff13c",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"No.\", \"reasoning\": \"All three prosecution arguments fail to establish the unlawfulness of the artillery attacks beyond reasonable doubt. The doctrinal objections correctly identify that arg_a24e0087 conflates the specific crime of attacking undefended towns (Rome Statute Art. 8(2)(b)(v)) with the broader principles of distinction and proportionality, and fails to prove the towns were both 'undefended' and 'not military objectives' — a conjunctive requirement. The evidentiary objections (obj_c6b9c74d, obj_6a49c752, obj_87c4fb62) demonstrate that the trial record, as summarized, shows only that the HV could not identify targets of opportunity and that a 200-metre margin of error was applied; this does not prove the towns were undefended, that they were not military objectives, that destruction lacked military necessity, or that commanders failed to take feasible precautions (as opposed to lacking feasible means). The doctrinal objection to arg_c3848e02 (obj_4848a443) correctly distinguishes a failure to take feasible precautions from the specific intent or knowledge required for the war crimes enumerated in Article 8(2)(b)(i)–(iv). With all arguments defeated, the record before this Chamber does not meet the criminal standard of proof.\", \"confidence\": 0.75, \"confidence_reasoning\": \"The objections are well-founded on both doctrinal and evidentiary grounds. Each argument either misstates the legal test or relies on factual inferences that the record does not support. The confidence is not higher because the actual Trial Chamber convicted, implying a fuller evidentiary record than the summary provided; however, on the arguments and facts actually presented here, the prosecution case fails.\", \"rulings\": [{\"objection_id\": \"obj_b8663986\", \"disposition\": \"sustained\", \"reasoning\": \"The argument mischaracterizes Art. 8(2)(b)(v) by treating 'undefended' as sufficient without proving the town was also 'not a military objective.' The 200-metre margin is an evidentiary tool, not a legal substitute for the 'effective contribution to military action' and 'definite military advantage' analysis required to negate military-objective status.\"}, {\"objection_id\": \"obj_c6b9c74d\", \"disposition\": \"sustained\", \"reasoning\": \"The facts state only that the HV could not identify targets of opportunity and that a 200-metre margin was applied. This does not establish that the towns were undefended or that they were not military objectives, which are necessary elements of the crime under Art. 8(2)(b)(v).\"}, {\"objection_id\": \"obj_4848a443\", \"disposition\": \"sustained\", \"reasoning\": \"Failure to verify targets or identify targets of opportunity pertains to the duty to take feasible precautions (Art. 57 AP I), not per se to the war crimes of intentionally directing attacks against civilians/objects (Art. 8(2)(b)(i)–(ii)) or launching disproportionate attacks (Art. 8(2)(b)(iv)). The argument conflates distinct legal concepts and omits the required mens rea analysis.\"}, {\"objection_id\": \"obj_6a49c752\", \"disposition\": \"sustained\", \"reasoning\": \"The record shows inability to identify targets and environmental effects on accuracy, but does not demonstrate that the destruction lacked a concrete and direct military advantage or was carried out 'unlawfully and wantonly' as required for Art. 8(2)(a)(iv) or Art. 8(2)(b)(iv).\"}, {\"objection_id\": \"obj_87c4fb62\", \"disposition\": \"sustained\", \"reasoning\": \"The Chamber's finding that the HV could not identify targets and used a uniform margin of error does not prove a failure to take feasible precautions; it may reflect the absence of feasible means. The argument equates inability with negligence without evidentiary support.\"}], \"surviving_argument_ids\": [], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-16T11:42:20.935570Z",
+      "completed_at": "2026-11-16T11:43:39.017419Z",
+      "prompt_tokens": 5895,
+      "completion_tokens": 3159,
+      "error": null
+    },
+    {
+      "id": "turn_b538ca9d",
+      "round_number": 2,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/rebuttal",
+      "prompt_hash": "a2c8463c08a9b777257c633046b20c282e650aa1c037d3a56f1b19d7b510aff3",
+      "arguments": [
+        {
+          "id": "arg_add966e5",
+          "claim": "The artillery attacks on Knin, Benkovac, Obrovac and Gračac were indiscriminate attacks prohibited by article 8(2)(b)(iv) of the Rome Statute.",
+          "reasoning": "The Trial Chamber found that the HV could not identify any legitimate military targets within the four towns and that impact sites were more than 200 metres from any verified target. Expert testimony established that wind speed and air temperature further degraded accuracy, making it foreseeable that shells would strike civilian areas. Consequently, the commanders launched attacks in the knowledge that the incidental loss of civilian life and damage to civilian objects would be clearly excessive in relation to the negligible concrete and direct military advantage anticipated, satisfying both the factual and mental elements of article 8(2)(b)(iv).",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_54daffed",
+          "claim": "The commanders failed to take feasible precautions to verify targets, constituting a war crime under article 8(2)(b)(iv) of the Rome Statute.",
+          "reasoning": "International humanitarian law obliges parties to take all feasible precautions to avoid civilian harm. The evidence shows that the HV applied a uniform 200‑metre margin of error and admitted an inability to identify targets of opportunity, despite awareness of environmental factors that reduced artillery accuracy. This demonstrates a failure to adopt feasible verification measures and to mitigate foreseeable civilian casualties. Launching the attacks under these circumstances indicates the commanders acted with knowledge that the attacks would cause excessive incidental civilian harm, fulfilling the mens rea requirement of article 8(2)(b)(iv).",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The artillery attacks on Knin, Benkovac, Obrovac and Gračac were indiscriminate attacks prohibited by article 8(2)(b)(iv) of the Rome Statute.\",\n      \"reasoning\": \"The Trial Chamber found that the HV could not identify any legitimate military targets within the four towns and that impact sites were more than 200 metres from any verified target. Expert testimony established that wind speed and air temperature further degraded accuracy, making it foreseeable that shells would strike civilian areas. Consequently, the commanders launched attacks in the knowledge that the incidental loss of civilian life and damage to civilian objects would be clearly excessive in relation to the negligible concrete and direct military advantage anticipated, satisfying both the factual and mental elements of article 8(2)(b)(iv).\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(iv)\",\n          \"quoted_text\": \"Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commanders failed to take feasible precautions to verify targets, constituting a war crime under article 8(2)(b)(iv) of the Rome Statute.\",\n      \"reasoning\": \"International humanitarian law obliges parties to take all feasible precautions to avoid civilian harm. The evidence shows that the HV applied a uniform 200‑metre margin of error and admitted an inability to identify targets of opportunity, despite awareness of environmental factors that reduced artillery accuracy. This demonstrates a failure to adopt feasible verification measures and to mitigate foreseeable civilian casualties. Launching the attacks under these circumstances indicates the commanders acted with knowledge that the attacks would cause excessive incidental civilian harm, fulfilling the mens rea requirement of article 8(2)(b)(iv).\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(iv)\",\n          \"quoted_text\": \"Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T11:43:39.021175Z",
+      "completed_at": "2026-11-16T11:43:43.806751Z",
+      "prompt_tokens": 5392,
+      "completion_tokens": 1980,
+      "error": null
+    },
+    {
+      "id": "turn_08ec37d0",
+      "round_number": 2,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "221fba498801fc2f45c435001a0b1607fce6bef1261503bec94da48a0f7af402",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_257347a5",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_a24e0087",
+          "ground": "The argument mischaracterises the legal test by substituting a '200-metre margin of error' for the definition of an 'undefended town' and fails to establish the absence of military objectives.",
+          "reasoning": "Article 8(2)(b)(v) requires that the town be 'undefended' and not a 'military objective'. The argument conflates dispersion of impacts with the absence of military objectives. A town is not 'undefended' merely because impacts fell outside a 200m radius; it is 'undefended' if it is open to occupation and lacks armed forces. The argument does not establish that the towns contained no military objectives, only that specific impacts missed them. This is a misapplication of the legal test.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(v)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(v)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Same defect: the argument substitutes a forensic margin of error for the legal test of 'undefended' status and fails to address whether the towns contained military objectives."
+        },
+        {
+          "id": "obj_f914620f",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_c3848e02",
+          "ground": "The argument misidentifies the legal provision, citing Article 8(2)(b)(v) for the principle of distinction and precautions, which is actually the prohibition on attacking undefended towns.",
+          "reasoning": "The principle of distinction and the duty to take feasible precautions are not codified in Article 8(2)(b)(v). That provision specifically addresses 'undefended' towns. The argument's reliance on a 'uniform 200-metre margin' as evidence of a systemic legal failure is a factual inference, not a legal element. Legal characterisation of 'indiscriminate' attacks typically relies on Article 8(2)(b)(iv) or the general prohibition on attacks not directed at military objectives, not the specific undefended town clause cited.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(v)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(v)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Confirmed: Art. 8(2)(b)(v) is the specific crime of attacking undefended towns, not the general distinction/precautions framework. The argument's reliance on it is legally erroneous."
+        },
+        {
+          "id": "obj_37c16e47",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_add966e5",
+          "ground": "The argument fails to distinguish between the 'knowledge' element of Article 8(2)(b)(iv) and the 'intent' to direct an attack, mischaracterising the mental element.",
+          "reasoning": "Article 8(2)(b)(iv) requires 'intentionally launching an attack in the knowledge that...'. The argument argues the commanders 'launched attacks in the knowledge', but it conflates the intent to launch (based on military necessity) with the knowledge of excessiveness. The legal test requires that the attack was directed at a military objective but the incidental harm was excessive. The argument's focus on 'negligible advantage' is a proportionality assessment, but it does not address the 'intent to launch' element which is distinct from the 'knowledge of excess'.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "minor",
+          "disposition": "partial",
+          "disposition_reasoning": "Arg_add966e5 correctly invokes Art. 8(2)(b)(iv) for indiscriminate attacks, but the objection validly notes that the argument blurs the dual mental element: 'intentionally launching an attack' (directed at a military objective) *and* 'in the knowledge that' incidental harm would be excessive. The argument's focus on 'negligible advantage' addresses proportionality but not the intent-to-launch element."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_a24e0087\",\n      \"ground\": \"The argument mischaracterises the legal test by substituting a '200-metre margin of error' for the definition of an 'undefended town' and fails to establish the absence of military objectives.\",\n      \"reasoning\": \"Article 8(2)(b)(v) requires that the town be 'undefended' and not a 'military objective'. The argument conflates dispersion of impacts with the absence of military objectives. A town is not 'undefended' merely because impacts fell outside a 200m radius; it is 'undefended' if it is open to occupation and lacks armed forces. The argument does not establish that the towns contained no military objectives, only that specific impacts missed them. This is a misapplication of the legal test.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(v)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_c3848e02\",\n      \"ground\": \"The argument misidentifies the legal provision, citing Article 8(2)(b)(v) for the principle of distinction and precautions, which is actually the prohibition on attacking undefended towns.\",\n      \"reasoning\": \"The principle of distinction and the duty to take feasible precautions are not codified in Article 8(2)(b)(v). That provision specifically addresses 'undefended' towns. The argument's reliance on a 'uniform 200-metre margin' as evidence of a systemic legal failure is a factual inference, not a legal element. Legal characterisation of 'indiscriminate' attacks typically relies on Article 8(2)(b)(iv) or the general prohibition on attacks not directed at military objectives, not the specific undefended town clause cited.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(v)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_add966e5\",\n      \"ground\": \"The argument fails to distinguish between the 'knowledge' element of Article 8(2)(b)(iv) and the 'intent' to direct an attack, mischaracterising the mental element.\",\n      \"reasoning\": \"Article 8(2)(b)(iv) requires 'intentionally launching an attack in the knowledge that...'. The argument argues the commanders 'launched attacks in the knowledge', but it conflates the intent to launch (based on military necessity) with the knowledge of excessiveness. The legal test requires that the attack was directed at a military objective but the incidental harm was excessive. The argument's focus on 'negligible advantage' is a proportionality assessment, but it does not address the 'intent to launch' element which is distinct from the 'knowledge of excess'.\",\n      \"severity\": \"minor\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(iv)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T11:43:43.810382Z",
+      "completed_at": "2026-11-16T11:43:45.824956Z",
+      "prompt_tokens": 5383,
+      "completion_tokens": 757,
+      "error": null
+    },
+    {
+      "id": "turn_6e3bcd7a",
+      "round_number": 2,
+      "role": "attacker_evidentiary",
+      "model_id": "groq/openai/gpt-oss-20b",
+      "prompt_id": "attacker_evidentiary/challenge",
+      "prompt_hash": "754fc10fa2c3a968454045cac6a2995587e0d8e4181332de73fe5ae01456293f",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_f60ac0a3",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_a24e0087",
+          "ground": "The record does not establish that the towns were undefended and not military objectives.",
+          "reasoning": "The Trial Chamber’s finding that HV could not identify targets of opportunity in the four towns does not prove that those towns were undefended; evidence of targets of opportunity in Knin suggests some military presence, and the facts provide no explicit indication that the towns were undefended or lacked any military objective.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Evidence of targets of opportunity in Knin affirmatively suggests military presence; the record contains no finding that any of the four towns were undefended."
+        },
+        {
+          "id": "obj_812c3cc2",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_ab78973f",
+          "ground": "The record does not establish that the destruction was not justified by military necessity.",
+          "reasoning": "While the facts note large civilian displacement and an indiscriminate pattern of impacts, they do not provide evidence that the destruction lacked a concrete and direct military advantage or was not justified by military necessity; the Chamber’s conclusion of unlawfulness is not itself a factual finding of lack of necessity.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The Trial Chamber's legal conclusion of unlawfulness is not a substitute for a factual finding that no military necessity existed."
+        },
+        {
+          "id": "obj_8226c917",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_c3848e02",
+          "ground": "The record does not show that feasible precautions existed and were not taken.",
+          "reasoning": "HV’s inability to identify targets of opportunity may reflect a lack of capability rather than a failure to adopt feasible precautions; the facts do not demonstrate that HV had any feasible means to verify targets or that it consciously chose not to take them.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Same evidentiary gap: no evidence that HV had feasible means to verify targets and chose not to use them."
+        },
+        {
+          "id": "obj_f6a20869",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_add966e5",
+          "ground": "The record does not establish that HV had knowledge that incidental civilian harm would be excessive.",
+          "reasoning": "Expert testimony on wind speed and air temperature indicates potential inaccuracy, but there is no evidence that HV actually knew that such inaccuracy would cause excessive incidental civilian harm; the Chamber’s inference of knowledge is not a fact established by the record.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Expert testimony on environmental factors shows potential inaccuracy, not that HV *knew* such inaccuracy would cause *excessive* incidental harm. Knowledge of excessiveness is not established."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_a24e0087\",\n      \"ground\": \"The record does not establish that the towns were undefended and not military objectives.\",\n      \"reasoning\": \"The Trial Chamber’s finding that HV could not identify targets of opportunity in the four towns does not prove that those towns were undefended; evidence of targets of opportunity in Knin suggests some military presence, and the facts provide no explicit indication that the towns were undefended or lacked any military objective.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_ab78973f\",\n      \"ground\": \"The record does not establish that the destruction was not justified by military necessity.\",\n      \"reasoning\": \"While the facts note large civilian displacement and an indiscriminate pattern of impacts, they do not provide evidence that the destruction lacked a concrete and direct military advantage or was not justified by military necessity; the Chamber’s conclusion of unlawfulness is not itself a factual finding of lack of necessity.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_c3848e02\",\n      \"ground\": \"The record does not show that feasible precautions existed and were not taken.\",\n      \"reasoning\": \"HV’s inability to identify targets of opportunity may reflect a lack of capability rather than a failure to adopt feasible precautions; the facts do not demonstrate that HV had any feasible means to verify targets or that it consciously chose not to take them.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_add966e5\",\n      \"ground\": \"The record does not establish that HV had knowledge that incidental civilian harm would be excessive.\",\n      \"reasoning\": \"Expert testimony on wind speed and air temperature indicates potential inaccuracy, but there is no evidence that HV actually knew that such inaccuracy would cause excessive incidental civilian harm; the Chamber’s inference of knowledge is not a fact established by the record.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T11:43:43.813366Z",
+      "completed_at": "2026-11-16T11:43:46.804394Z",
+      "prompt_tokens": 5168,
+      "completion_tokens": 2247,
+      "error": null
+    },
+    {
+      "id": "turn_373d23f9",
+      "round_number": 2,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "4877e5b0acf4b8e0f32669ff74597d20ef8c291f30f49a2e273d77baa921f08f",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"No.\", \"reasoning\": \"The sustained objections demonstrate that the arguments presented fail to establish beyond reasonable doubt that the artillery attacks were unlawful. The doctrinal objections correctly identify that arg_a24e0087 and arg_c3848e02 misstate the legal tests: Article 8(2)(b)(v) requires proof that towns were both 'undefended' (open for occupation, lacking armed forces) and 'not military objectives' — a standard not met by showing impact dispersion alone. The evidentiary objections are equally fatal: the record shows only that HV could not identify targets of opportunity and that a 200-metre margin was applied; it does not prove the towns were undefended, that destruction lacked military necessity, that feasible precautions existed and were omitted, or that commanders knew incidental harm would be excessive. Arg_add966e5 and arg_54daffed invoke Article 8(2)(b)(iv) but the sustained evidentiary objection obj_f6a20869 defeats the knowledge element, and no argument bridges the gap between 'inability to identify targets' and 'knowledge of excessive incidental harm.' The Trial Chamber's conclusion is noted in the facts, but the arguments advanced to support it do not withstand the objections.\", \"confidence\": 0.72, \"confidence_reasoning\": \"The evidentiary objections are well-founded on the given facts: the record contains no direct evidence of the towns' defensive status, no comparison of anticipated military advantage versus civilian harm, and no proof of available but unused verification measures. The doctrinal objections correctly expose mis-citations (Art. 8(2)(b)(v) for distinction/precautions) and element conflation. However, confidence is not higher because the Trial Chamber's actual judgment — which presumably contained fuller reasoning — is not in the retrieved context, and the question asks whether it has been established on *these* arguments and facts.\", \"rulings\": [{\"objection_id\": \"obj_b8663986\", \"disposition\": \"sustained\", \"reasoning\": \"The argument conflates the 200-metre evidentiary margin with the legal definition of 'undefended town' under Art. 8(2)(b)(v), which requires both that the town be open for occupation and that it not be a military objective. Impact dispersion alone does not establish either element.\"}, {\"objection_id\": \"obj_257347a5\", \"disposition\": \"sustained\", \"reasoning\": \"Same defect: the argument substitutes a forensic margin of error for the legal test of 'undefended' status and fails to address whether the towns contained military objectives.\"}, {\"objection_id\": \"obj_c6b9c74d\", \"disposition\": \"sustained\", \"reasoning\": \"The facts state only that HV could not identify targets of opportunity and that a 200-metre margin was applied. This does not prove the towns were undefended or lacked military objectives.\"}, {\"objection_id\": \"obj_f60ac0a3\", \"disposition\": \"sustained\", \"reasoning\": \"Evidence of targets of opportunity in Knin affirmatively suggests military presence; the record contains no finding that any of the four towns were undefended.\"}, {\"objection_id\": \"obj_4848a443\", \"disposition\": \"sustained\", \"reasoning\": \"Arg_c3848e02 cites Art. 8(2)(b)(v) (undefended towns) for the principle of distinction and feasible precautions. That provision does not codify those obligations; the argument misidentifies the legal basis.\"}, {\"objection_id\": \"obj_f914620f\", \"disposition\": \"sustained\", \"reasoning\": \"Confirmed: Art. 8(2)(b)(v) is the specific crime of attacking undefended towns, not the general distinction/precautions framework. The argument's reliance on it is legally erroneous.\"}, {\"objection_id\": \"obj_87c4fb62\", \"disposition\": \"sustained\", \"reasoning\": \"Inability to identify targets may reflect lack of feasible means, not a failure to adopt them. The facts do not show that feasible verification measures existed and were consciously omitted.\"}, {\"objection_id\": \"obj_8226c917\", \"disposition\": \"sustained\", \"reasoning\": \"Same evidentiary gap: no evidence that HV had feasible means to verify targets and chose not to use them.\"}, {\"objection_id\": \"obj_6a49c752\", \"disposition\": \"sustained\", \"reasoning\": \"The facts note displacement and impact dispersion but do not establish that the destruction lacked a concrete and direct military advantage or was wanton.\"}, {\"objection_id\": \"obj_812c3cc2\", \"disposition\": \"sustained\", \"reasoning\": \"The Trial Chamber's legal conclusion of unlawfulness is not a substitute for a factual finding that no military necessity existed.\"}, {\"objection_id\": \"obj_37c16e47\", \"disposition\": \"partial\", \"reasoning\": \"Arg_add966e5 correctly invokes Art. 8(2)(b)(iv) for indiscriminate attacks, but the objection validly notes that the argument blurs the dual mental element: 'intentionally launching an attack' (directed at a military objective) *and* 'in the knowledge that' incidental harm would be excessive. The argument's focus on 'negligible advantage' addresses proportionality but not the intent-to-launch element.\"}, {\"objection_id\": \"obj_f6a20869\", \"disposition\": \"sustained\", \"reasoning\": \"Expert testimony on environmental factors shows potential inaccuracy, not that HV *knew* such inaccuracy would cause *excessive* incidental harm. Knowledge of excessiveness is not established.\"}], \"surviving_argument_ids\": [\"arg_54daffed\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-16T11:43:46.806331Z",
+      "completed_at": "2026-11-16T11:45:48.012636Z",
+      "prompt_tokens": 7334,
+      "completion_tokens": 3776,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-16T11:45:48.018834+00:00",
+  "duration_seconds": 249.03958658396732,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 2,
+  "judge_failures": 0,
+  "judge_failed": false
+}

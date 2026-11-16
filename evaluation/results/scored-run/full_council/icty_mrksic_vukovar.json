@@ -1,0 +1,1362 @@
+{
+  "case_id": "icty_mrksic_vukovar",
+  "case_title": "Prosecutor v. Mile Mrkšić — killing of prisoners of war from Vukovar hospital",
+  "court": "ICTY",
+  "year": 2007,
+  "difficulty": "medium",
+  "arm": "full_council",
+  "arm_label": "D — Full council",
+  "run_id": "eval_2365d7a7ad",
+  "question": "Was the commander of the forces in control of the area criminally responsible for the killing of prisoners of war taken from a hospital after the surrender of Croatian forces?",
+  "facts": "Croatian forces in the Vukovar area capitulated on 18 November 1991. An agreement provided for wounded or sick patients fit to travel to be evacuated to Croatia, with the hospital under ICRC protection and the evacuation monitored by the European Community Monitoring Mission. On 19 November, the JNA entered Vukovar hospital; military police of the Guards Motorised Brigade took over security. More than 200 men, and two women, who were or were believed to have been involved in Croatian forces were taken from the hospital on 20 November. The initial plan was to transport the men under JNA guard to the prisoner-of-war facility at Sremska Mitrovica, where they could later be exchanged for Serb prisoners held by Croatian authorities. At the JNA barracks, local Territorial Defence and paramilitary forces threatened and verbally abused the men; JNA military police removed those forces from the compound. The prisoners were subsequently taken to a hangar at Ovčara. JNA military police guarded them there, but Territorial Defence and paramilitary forces had access to them at times, and the guards' efforts were inconsistent. Members of those forces severely beat prisoners at the hangar. Some senior JNA officers visited and tried to improve the military police response, with effects that were ineffective or temporary. Between 2000 and 2100 hours, an order from the command of Operational Group South directed the JNA military police guarding the prisoners to withdraw. The prisoners were then in the custody of the Vukovar Territorial Defence. Territorial Defence and paramilitary forces took prisoners in small groups to an isolated location and shot them. At least 200 persons died at Ovčara on 20 and 21 November 1991, in almost all cases from gunshot wounds; 194 of the persons named in the indictment were among those killed. The commander of Operational Group South had earlier ordered that the prisoners be taken to Sremska Mitrovica. Local Territorial Defence and paramilitary forces were hostile to members of the Croatian forces. A number of JNA officers reported to the commander the conduct of those forces at the JNA barracks and at Ovčara, and he was informed of killings at Velepromet the preceding day. The local Serb government opposed the transfer of prisoners to Sremska Mitrovica, and its wishes appear to have been a significant factor in the commander's decision concerning their custody.",
+  "ground_truth_outcome": "affirmed",
+  "holding": "In its Trial Judgment of 27 September 2007, the ICTY Trial Chamber found Mile Mrkšić guilty under Article 7(1) for aiding and abetting murder, torture, and cruel treatment, as violations of the laws or customs of war under Article 3. The crimes-against-humanity counts were dismissed for all three accused because the victims were not civilians for the purposes of Article 5. The three accused were treated differently: Miroslav Radić was acquitted on all counts; Mrkšić was convicted of murder, torture, and cruel treatment; and Veselin Šljivančanin was convicted of torture only and acquitted on the other counts. The Chamber imposed a single sentence of 20 years' imprisonment on Mrkšić.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": true,
+  "confidence": 0.75,
+  "confidence_reasoning": "The command responsibility theory is well-supported by settled ICTY jurisprudence (e.g., Čelebići, Blaškić, Hadžihasanović) holding that a commander who has effective control over forces guarding detainees, knows of a substantial risk of harm from hostile forces, and withdraws that protection can be liable for resulting killings. The main uncertainty is whether the Territorial Defence was under the commander's effective control; however, control over the JNA guards whose withdrawal he ordered, combined with his knowledge and the causal link, is sufficient. The doctrinal objections to the GC IV and GC III arguments are clearly correct, narrowing the case to the command responsibility theory, which survives the evidentiary challenges.",
+  "rounds": 2,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 2,
+  "total_calls": 8,
+  "citation_statuses": {
+    "total": 13,
+    "resolved": 13,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. The commander of Operational Group South is criminally responsible for the killing of the prisoners of war under the principle of command responsibility.",
+    "reasoning": "The underlying crime of wilful killing is established: at least 200 prisoners of war, hors de combat, were deliberately shot (Rome Statute Art 8(2)(a)(i)). The commander exercised effective control over the JNA military police guarding the prisoners and ordered their withdrawal, placing the prisoners in the custody of hostile Territorial Defence and paramilitary forces. He had actual knowledge of the hostility of those forces and of killings at Velepromet the previous day, satisfying the knowledge element (including constructive knowledge of the substantial risk). By withdrawing the only protective force, he failed to take necessary and reasonable measures to prevent the killings and instead took affirmative action that facilitated them. The objections based on Geneva Convention IV Article 19 (hospital protection) and Geneva Convention III Article 121 (duty to enquire) are doctrinally unsound: Article 19 protects the facility, not the status of POWs, and does not create a standalone war crime for removal; Article 121 imposes a procedural investigative duty, not a substantive duty of care whose breach constitutes a war crime. Evidentiary objections challenging direct perpetration or direct orders are beside the point, as command responsibility does not require them. The surviving argument (arg_fcdd79c1) establishes the elements of command responsibility on the facts given.",
+    "confidence": 0.75,
+    "confidence_reasoning": "The command responsibility theory is well-supported by settled ICTY jurisprudence (e.g., Čelebići, Blaškić, Hadžihasanović) holding that a commander who has effective control over forces guarding detainees, knows of a substantial risk of harm from hostile forces, and withdraws that protection can be liable for resulting killings. The main uncertainty is whether the Territorial Defence was under the commander's effective control; however, control over the JNA guards whose withdrawal he ordered, combined with his knowledge and the causal link, is sufficient. The doctrinal objections to the GC IV and GC III arguments are clearly correct, narrowing the case to the command responsibility theory, which survives the evidentiary challenges.",
+    "surviving_argument_ids": [
+      "arg_b6d60b5a",
+      "arg_89a9e4c4",
+      "arg_fcdd79c1"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_b6d60b5a",
+      "claim": "The mass killing of the captured persons constitutes a grave breach of the Geneva Conventions and therefore a war crime of wilful killing under the Rome Statute.",
+      "reasoning": "Article 8(a)(i) of the Rome Statute lists \"Wilful killing\" as a war crime. The facts show that at least 200 persons who were hors de combat as prisoners of war were deliberately shot by forces under the commander’s overall control. This intentional killing of protected persons meets the element of wilful killing, satisfying the statutory definition of a war crime.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Wilful killing"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Wilful killing"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_94907a55",
+      "claim": "The removal of the prisoners from the protected hospital without due warning violated the protection afforded to civilian hospitals under Geneva Convention IV, making the act itself a grave breach.",
+      "reasoning": "Geneva Convention IV, article 19 provides that \"The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy.\" The hospital was under ICRC protection and was not being used for hostile acts. By forcibly taking the prisoners from the hospital and placing them in the custody of hostile forces, the commander disregarded the protected status of the facility without any warning, breaching the convention and constituting a grave breach that falls within the war‑crime definition of wilful killing.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iv",
+          "article": "19",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iv",
+            "article": "19",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_fcdd79c1",
+      "claim": "The commander exercised effective control over the JNA military police, Territorial Defence and paramilitary forces and, knowing their hostile intent, failed to prevent or punish the killings, thereby incurring liability under the principle of command responsibility.",
+      "reasoning": "Customary international humanitarian law and ICC jurisprudence impose liability on superiors who have effective control over subordinates, know (or should have known) about the commission of war crimes, and fail to take necessary and reasonable measures to prevent them or to punish the perpetrators. The commander ordered the withdrawal of the JNA military police, directly abandoning the prisoners to hostile forces; he was informed of prior killings and of the hostility of the local forces, satisfying the knowledge element. His authority over the forces and his decisive orders demonstrate effective control, meeting the established test for command responsibility.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_7e8132c0",
+      "claim": "The commander violated the duty imposed by Geneva Convention III, article 121 to conduct an immediate enquiry into deaths of prisoners of war, reflecting a breach of the Detaining Power’s obligations to protect POWs.",
+      "reasoning": "Article 121 obliges the Detaining Power to launch an official enquiry whenever a prisoner of war dies or is seriously injured. By ordering the withdrawal of guards and allowing the prisoners to fall into the hands of hostile forces, the commander precluded any such enquiry and failed to safeguard the lives of the POWs, breaching the convention’s protective framework. This omission underscores his responsibility for the resulting deaths.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iii",
+          "article": "121",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Every death or serious injury of a prisoner of war ... shall be immediately followed by an official enquiry by the Detaining Power."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iii",
+            "article": "121",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Every death or serious injury of a prisoner of war ... shall be immediately followed by an official enquiry by the Detaining Power."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_89a9e4c4",
+      "claim": "The mass killing of the captured persons constitutes a grave breach of the Geneva Conventions and a war crime of wilful killing under the Rome Statute.",
+      "reasoning": "Article 8(a)(i) of the Rome Statute enumerates \"Wilful killing\" as a war crime. The facts show that at least 200 persons who were hors de combat as prisoners of war were deliberately shot, satisfying the element of intentional killing of protected persons.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Wilful killing;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Wilful killing;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_9579374b",
+      "claim": "The removal of the prisoners from the protected hospital without due warning violated the protection afforded to civilian hospitals under Geneva Convention IV, article 19.",
+      "reasoning": "Article 19 of Geneva Convention IV provides that the protection of a civilian hospital may cease only after a due warning has been given and remains unheeded. The prisoners were taken from the ICRC‑protected hospital without any such warning, thereby breaching the treaty protection of the facility.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iv",
+          "article": "19",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy. Protection may, however, cease only after due warning has been given, naming, in all appropriate cases, a reasonable time limit, and after such warning has remained unheeded."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iv",
+            "article": "19",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy. Protection may, however, cease only after due warning has been given, naming, in all appropriate cases, a reasonable time limit, and after such warning has remained unheeded."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_b8568eb8",
+      "claim": "The commander failed to fulfill the procedural duty under Geneva Convention III, article 121, to conduct an immediate official enquiry into the deaths of prisoners of war, constituting a breach of treaty obligations.",
+      "reasoning": "Article 121 obliges the Detaining Power to launch an official enquiry whenever a prisoner of war dies or is seriously injured. By ordering the withdrawal of the JNA military police and allowing the prisoners to fall into the hands of hostile forces, the commander precluded any such enquiry, violating this procedural requirement.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iii",
+          "article": "121",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Every death or serious injury of a prisoner of war caused or suspected to have been caused by a sentry, another prisoner of war, or any other person, as well as any death the cause of which is unknown, shall be immediately followed by an official enquiry by the Detaining Power."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iii",
+            "article": "121",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Every death or serious injury of a prisoner of war caused or suspected to have been caused by a sentry, another prisoner of war, or any other person, as well as any death the cause of which is unknown, shall be immediately followed by an official enquiry by the Detaining Power."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [
+    {
+      "id": "obj_7bbe8857",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_94907a55",
+      "ground": "The argument conflates the protected status of the hospital with the legal status of the prisoners, incorrectly characterizing the removal as a grave breach of Geneva Convention IV rather than a violation of Geneva Convention III.",
+      "reasoning": "Geneva Convention IV, Article 19 protects the facility, not the individuals within it. The captives were Prisoners of War governed by Geneva Convention III, not civilians. The removal of POWs from a hospital does not cease the hospital's protection under Article 19, nor does it constitute a 'grave breach' of that specific treaty provision, which applies to the misuse of the facility for harmful acts against the enemy.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iv",
+          "article": "19",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iv",
+            "article": "19",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Geneva Convention IV Article 19 protects the civilian hospital facility from losing its protection; it does not govern the status or treatment of prisoners of war, who are protected under Geneva Convention III. The presence of wounded combatants in a hospital does not constitute 'acts harmful to the enemy' under Article 19. The argument conflates facility protection with individual protection and incorrectly characterizes the removal as a grave breach of Article 19."
+    },
+    {
+      "id": "obj_8b37c75a",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_7e8132c0",
+      "ground": "Article 121 of Geneva Convention III imposes a procedural duty to investigate deaths, not a substantive duty of care whose breach constitutes a war crime.",
+      "reasoning": "Article 121 requires the Detaining Power to conduct an official enquiry into deaths. It does not create a substantive obligation to prevent all deaths or impose criminal liability for the failure to investigate per se. The commander's liability arises from the underlying act of wilful killing or command responsibility, not from the procedural omission of failing to launch an enquiry under Article 121.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iii",
+          "article": "121",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iii",
+            "article": "121",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Article 121 of Geneva Convention III imposes a procedural obligation on the Detaining Power to conduct an official enquiry into prisoner deaths. It does not create a substantive duty of care whose breach constitutes the war crime of wilful killing. Criminal responsibility for the killings arises from the acts of killing or command responsibility, not from a failure to investigate."
+    },
+    {
+      "id": "obj_5fbc1a1e",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_b6d60b5a",
+      "ground": "The facts do not establish that the commander had overall control over the forces that carried out the killings or that the killings were deliberate.",
+      "reasoning": "The record only shows that the commander withdrew JNA military police and that the prisoners were then in the custody of the Vukovar Territorial Defence, which the facts do not demonstrate to be under his effective control. It also does not provide evidence that the killings were wilfully carried out; the killings could have been the result of chaotic actions by forces beyond the commander's direct authority.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "fatal",
+      "disposition": "partial",
+      "disposition_reasoning": "The facts establish that the killings were deliberate (gunshot wounds, 200+ victims) and the victims were hors de combat, satisfying the actus reus of wilful killing. However, the objection correctly notes that the facts do not show the commander directly ordered the killings or had direct control over the Territorial Defence and paramilitary forces that pulled the triggers. This does not defeat command responsibility, which requires effective control over subordinates (here, the JNA guards) and knowledge of risk, not direct control over the actual perpetrators."
+    },
+    {
+      "id": "obj_0ad70ebb",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_94907a55",
+      "ground": "The facts do not show that the removal of prisoners from the hospital was done without due warning or that such removal violated the protected status of the hospital.",
+      "reasoning": "The record does not mention any warning given to the hospital or to the prisoners before the removal. It also does not indicate that the removal was carried out in contravention of the protection afforded to the hospital under Geneva Convention IV; the removal may have been part of an agreed transfer to Sremska Mitrovica.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The record contains no information about whether a warning was given before the removal. More fundamentally, as ruled in obj_7bbe8857, Article 19 does not apply to the removal of POWs from a hospital in this manner."
+    },
+    {
+      "id": "obj_8a281b13",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_fcdd79c1",
+      "ground": "The record does not demonstrate that the commander had effective control over the Territorial Defence and paramilitary forces that killed the prisoners or that he had knowledge of those killings.",
+      "reasoning": "While the commander ordered the withdrawal of JNA police and was informed of killings at Velepromet, the facts do not establish that he had direct authority over the forces that carried out the killings at Ovčara or that he was aware of those specific killings. Without evidence of control and knowledge, the factual predicate for command responsibility is not satisfied.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "fatal",
+      "disposition": "partial",
+      "disposition_reasoning": "The facts do not establish that the commander had direct command authority over the Vukovar Territorial Defence and paramilitary forces. However, command responsibility does not require direct control over the perpetrators; it requires effective control over subordinates whose actions or omissions facilitated the crimes. The commander had effective control over the JNA military police, knew of the hostility and prior killings, and ordered the withdrawal of the only protective force, which is sufficient for liability."
+    },
+    {
+      "id": "obj_76a017ef",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_7e8132c0",
+      "ground": "The facts do not establish that the commander had a duty to conduct an enquiry under Article 121 or that he failed to do so.",
+      "reasoning": "The record only records the withdrawal of guards; it does not show that the commander was the detaining power or that he had an obligation under Article 121 to launch an enquiry. Consequently, the claim that he violated that duty is not supported by the evidence.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The commander was a military commander, not the 'Detaining Power' as a matter of treaty designation. Article 121 imposes obligations on the Detaining Power (the state), not on individual commanders as a basis for criminal liability. In any event, Article 121 is procedural, not substantive."
+    },
+    {
+      "id": "obj_361d32cc",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_94907a55",
+      "ground": "The argument erroneously conflates a breach of hospital protection with the distinct war crime of wilful killing.",
+      "reasoning": "Article 19 of GC IV protects the facility itself and does not create a standalone war crime for removing individuals. While the removal may be a breach, it does not meet the elements of 'wilful killing' under Article 8(2)(a)(i) of the Rome Statute, which requires the intentional killing of protected persons. The argument fails by collapsing a procedural breach into a substantive homicide offense.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iv",
+          "article": "19",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(a)(i)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iv",
+            "article": "19",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(a)(i)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument incorrectly treats a breach of hospital protection under GC IV Article 19 as equivalent to the war crime of wilful killing under Rome Statute Article 8(2)(a)(i). Article 19 protects the facility; its breach does not constitute a grave breach involving intentional killing of protected persons."
+    },
+    {
+      "id": "obj_5301a672",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_7e8132c0",
+      "ground": "Article 121 of Geneva Convention III imposes a procedural duty to investigate, not a substantive prohibition that constitutes a war crime.",
+      "reasoning": "The failure to conduct an enquiry is a breach of the Detaining Power's procedural obligations, but it does not itself constitute the war crime of murder or wilful killing. Citing this article to establish criminal responsibility for the deaths mischaracterizes a secondary procedural duty as a primary substantive offense.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iii",
+          "article": "121",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iii",
+            "article": "121",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Same reasoning as obj_8b37c75a: Article 121 is a procedural investigative duty, not a substantive prohibition that constitutes a war crime. Citing it to establish criminal responsibility for the deaths mischaracterizes the treaty obligation."
+    },
+    {
+      "id": "obj_5fded97f",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_b6d60b5a",
+      "ground": "The facts as given do not establish that the commander directly ordered or was responsible for the killings; therefore the claim that the killings constitute a grave breach under his responsibility is unsupported.",
+      "reasoning": "The record shows the commander withdrew guards, but there is no evidence that he ordered the killings or that the killings were carried out under his direct instruction. The mere fact that the prisoners were killed does not imply the commander’s culpability. Without evidence of direct involvement, the argument fails to satisfy the factual predicate that the commander was the author or instigator of the killings.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "fatal",
+      "disposition": "partial",
+      "disposition_reasoning": "The objection correctly notes no evidence that the commander directly ordered the killings. However, the argument (arg_b6d60b5a) relies on 'overall control' — i.e., command responsibility — not direct perpetration. The absence of a direct order does not defeat command responsibility."
+    },
+    {
+      "id": "obj_f244f723",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_94907a55",
+      "ground": "The facts do not demonstrate that a due warning was not given before the removal of prisoners from the protected hospital, so the claim that the removal violated Article 19 is unsubstantiated.",
+      "reasoning": "The record states that the prisoners were taken from the hospital, but it does not provide any information about whether the commander or any authority issued a warning to the hospital or the prisoners before the removal. Without evidence of a lack of due warning, the assertion that the removal violated the protection afforded to the hospital lacks factual support. Therefore, the argument’s factual predicate is incomplete.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iv",
+          "article": "19",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iv",
+            "article": "19",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The record does not address whether a warning was given. However, as with obj_0ad70ebb and obj_7bbe8857, Article 19 is inapplicable to the removal of POWs, making the evidentiary gap immaterial."
+    },
+    {
+      "id": "obj_a8bc0253",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_fcdd79c1",
+      "ground": "The facts do not confirm that the commander had knowledge of the killings at Ovčara or that he failed to take necessary measures to prevent them; the knowledge element of command responsibility remains unproven.",
+      "reasoning": "While the record indicates that the commander had effective control and was informed of killings at Velepromet, it does not establish that he knew about the specific killings at Ovčara or that he had a duty to prevent or punish them. The inference that he should have known or that he failed to act is not supported by the evidence. Consequently, the factual predicate for command responsibility is insufficient.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "material",
+      "disposition": "partial",
+      "disposition_reasoning": "The commander was informed of killings at Velepromet the day before and of the hostility of local forces. This constitutes constructive knowledge ('had reason to know') of a substantial risk that withdrawing the guards would lead to killings at Ovčara. Command responsibility includes recklessness or wilful blindness; actual knowledge of the specific Ovčara killings is not required."
+    },
+    {
+      "id": "obj_7b9ef2e8",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_7e8132c0",
+      "ground": "The facts do not show that the commander performed or failed to perform an official enquiry into the deaths of the prisoners, so the claim of a breach of Article 121 is unsubstantiated.",
+      "reasoning": "The record mentions that the commander ordered the withdrawal of guards, but there is no evidence that an official enquiry was required or that he did not conduct one. The argument assumes a breach of the procedural duty without factual support. Therefore, the factual predicate is lacking.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iii",
+          "article": "121",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iii",
+            "article": "121",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "No evidence in the record addresses whether an enquiry was conducted. In any event, Article 121 does not provide a basis for criminal responsibility for the killings themselves."
+    }
+  ],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iv",
+        "article": "19",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_ii",
+        "article": "19(g)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gcii-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iii",
+        "article": "75(b)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iii",
+        "article": "121",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_ii",
+        "article": "4(2)(c)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iii",
+        "article": "33",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "31(4)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_a2e560f5",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "4346704eae29f13aa0d51f474d32c6e5b26f261ee12d120348155bbfa29d3e75",
+      "arguments": [
+        {
+          "id": "arg_b6d60b5a",
+          "claim": "The mass killing of the captured persons constitutes a grave breach of the Geneva Conventions and therefore a war crime of wilful killing under the Rome Statute.",
+          "reasoning": "Article 8(a)(i) of the Rome Statute lists \"Wilful killing\" as a war crime. The facts show that at least 200 persons who were hors de combat as prisoners of war were deliberately shot by forces under the commander’s overall control. This intentional killing of protected persons meets the element of wilful killing, satisfying the statutory definition of a war crime.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Wilful killing"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Wilful killing"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_94907a55",
+          "claim": "The removal of the prisoners from the protected hospital without due warning violated the protection afforded to civilian hospitals under Geneva Convention IV, making the act itself a grave breach.",
+          "reasoning": "Geneva Convention IV, article 19 provides that \"The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy.\" The hospital was under ICRC protection and was not being used for hostile acts. By forcibly taking the prisoners from the hospital and placing them in the custody of hostile forces, the commander disregarded the protected status of the facility without any warning, breaching the convention and constituting a grave breach that falls within the war‑crime definition of wilful killing.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iv",
+              "article": "19",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iv",
+                "article": "19",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_fcdd79c1",
+          "claim": "The commander exercised effective control over the JNA military police, Territorial Defence and paramilitary forces and, knowing their hostile intent, failed to prevent or punish the killings, thereby incurring liability under the principle of command responsibility.",
+          "reasoning": "Customary international humanitarian law and ICC jurisprudence impose liability on superiors who have effective control over subordinates, know (or should have known) about the commission of war crimes, and fail to take necessary and reasonable measures to prevent them or to punish the perpetrators. The commander ordered the withdrawal of the JNA military police, directly abandoning the prisoners to hostile forces; he was informed of prior killings and of the hostility of the local forces, satisfying the knowledge element. His authority over the forces and his decisive orders demonstrate effective control, meeting the established test for command responsibility.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_7e8132c0",
+          "claim": "The commander violated the duty imposed by Geneva Convention III, article 121 to conduct an immediate enquiry into deaths of prisoners of war, reflecting a breach of the Detaining Power’s obligations to protect POWs.",
+          "reasoning": "Article 121 obliges the Detaining Power to launch an official enquiry whenever a prisoner of war dies or is seriously injured. By ordering the withdrawal of guards and allowing the prisoners to fall into the hands of hostile forces, the commander precluded any such enquiry and failed to safeguard the lives of the POWs, breaching the convention’s protective framework. This omission underscores his responsibility for the resulting deaths.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "121",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Every death or serious injury of a prisoner of war ... shall be immediately followed by an official enquiry by the Detaining Power."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "121",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Every death or serious injury of a prisoner of war ... shall be immediately followed by an official enquiry by the Detaining Power."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The mass killing of the captured persons constitutes a grave breach of the Geneva Conventions and therefore a war crime of wilful killing under the Rome Statute.\",\n      \"reasoning\": \"Article 8(a)(i) of the Rome Statute lists \\\"Wilful killing\\\" as a war crime. The facts show that at least 200 persons who were hors de combat as prisoners of war were deliberately shot by forces under the commander’s overall control. This intentional killing of protected persons meets the element of wilful killing, satisfying the statutory definition of a war crime.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Wilful killing\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The removal of the prisoners from the protected hospital without due warning violated the protection afforded to civilian hospitals under Geneva Convention IV, making the act itself a grave breach.\",\n      \"reasoning\": \"Geneva Convention IV, article 19 provides that \\\"The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy.\\\" The hospital was under ICRC protection and was not being used for hostile acts. By forcibly taking the prisoners from the hospital and placing them in the custody of hostile forces, the commander disregarded the protected status of the facility without any warning, breaching the convention and constituting a grave breach that falls within the war‑crime definition of wilful killing.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iv\",\n          \"article\": \"19\",\n          \"quoted_text\": \"The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander exercised effective control over the JNA military police, Territorial Defence and paramilitary forces and, knowing their hostile intent, failed to prevent or punish the killings, thereby incurring liability under the principle of command responsibility.\",\n      \"reasoning\": \"Customary international humanitarian law and ICC jurisprudence impose liability on superiors who have effective control over subordinates, know (or should have known) about the commission of war crimes, and fail to take necessary and reasonable measures to prevent them or to punish the perpetrators. The commander ordered the withdrawal of the JNA military police, directly abandoning the prisoners to hostile forces; he was informed of prior killings and of the hostility of the local forces, satisfying the knowledge element. His authority over the forces and his decisive orders demonstrate effective control, meeting the established test for command responsibility.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The commander violated the duty imposed by Geneva Convention III, article 121 to conduct an immediate enquiry into deaths of prisoners of war, reflecting a breach of the Detaining Power’s obligations to protect POWs.\",\n      \"reasoning\": \"Article 121 obliges the Detaining Power to launch an official enquiry whenever a prisoner of war dies or is seriously injured. By ordering the withdrawal of guards and allowing the prisoners to fall into the hands of hostile forces, the commander precluded any such enquiry and failed to safeguard the lives of the POWs, breaching the convention’s protective framework. This omission underscores his responsibility for the resulting deaths.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"121\",\n          \"quoted_text\": \"Every death or serious injury of a prisoner of war ... shall be immediately followed by an official enquiry by the Detaining Power.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T13:45:09.294527Z",
+      "completed_at": "2026-11-16T13:45:13.883601Z",
+      "prompt_tokens": 4724,
+      "completion_tokens": 1898,
+      "error": null
+    },
+    {
+      "id": "turn_f7294234",
+      "round_number": 1,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "ba7c9df2d88e03e75301bc7cceb642f98a0d3f07e204120e710ed019383838b3",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_7bbe8857",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_94907a55",
+          "ground": "The argument conflates the protected status of the hospital with the legal status of the prisoners, incorrectly characterizing the removal as a grave breach of Geneva Convention IV rather than a violation of Geneva Convention III.",
+          "reasoning": "Geneva Convention IV, Article 19 protects the facility, not the individuals within it. The captives were Prisoners of War governed by Geneva Convention III, not civilians. The removal of POWs from a hospital does not cease the hospital's protection under Article 19, nor does it constitute a 'grave breach' of that specific treaty provision, which applies to the misuse of the facility for harmful acts against the enemy.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iv",
+              "article": "19",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iv",
+                "article": "19",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Geneva Convention IV Article 19 protects the civilian hospital facility from losing its protection; it does not govern the status or treatment of prisoners of war, who are protected under Geneva Convention III. The presence of wounded combatants in a hospital does not constitute 'acts harmful to the enemy' under Article 19. The argument conflates facility protection with individual protection and incorrectly characterizes the removal as a grave breach of Article 19."
+        },
+        {
+          "id": "obj_8b37c75a",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_7e8132c0",
+          "ground": "Article 121 of Geneva Convention III imposes a procedural duty to investigate deaths, not a substantive duty of care whose breach constitutes a war crime.",
+          "reasoning": "Article 121 requires the Detaining Power to conduct an official enquiry into deaths. It does not create a substantive obligation to prevent all deaths or impose criminal liability for the failure to investigate per se. The commander's liability arises from the underlying act of wilful killing or command responsibility, not from the procedural omission of failing to launch an enquiry under Article 121.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "121",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "121",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Article 121 of Geneva Convention III imposes a procedural obligation on the Detaining Power to conduct an official enquiry into prisoner deaths. It does not create a substantive duty of care whose breach constitutes the war crime of wilful killing. Criminal responsibility for the killings arises from the acts of killing or command responsibility, not from a failure to investigate."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_94907a55\",\n      \"ground\": \"The argument conflates the protected status of the hospital with the legal status of the prisoners, incorrectly characterizing the removal as a grave breach of Geneva Convention IV rather than a violation of Geneva Convention III.\",\n      \"reasoning\": \"Geneva Convention IV, Article 19 protects the facility, not the individuals within it. The captives were Prisoners of War governed by Geneva Convention III, not civilians. The removal of POWs from a hospital does not cease the hospital's protection under Article 19, nor does it constitute a 'grave breach' of that specific treaty provision, which applies to the misuse of the facility for harmful acts against the enemy.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iv\",\n          \"article\": \"19\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_7e8132c0\",\n      \"ground\": \"Article 121 of Geneva Convention III imposes a procedural duty to investigate deaths, not a substantive duty of care whose breach constitutes a war crime.\",\n      \"reasoning\": \"Article 121 requires the Detaining Power to conduct an official enquiry into deaths. It does not create a substantive obligation to prevent all deaths or impose criminal liability for the failure to investigate per se. The commander's liability arises from the underlying act of wilful killing or command responsibility, not from the procedural omission of failing to launch an enquiry under Article 121.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"121\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T13:45:13.888013Z",
+      "completed_at": "2026-11-16T13:45:15.414769Z",
+      "prompt_tokens": 5754,
+      "completion_tokens": 429,
+      "error": null
+    },
+    {
+      "id": "turn_cfa81db2",
+      "round_number": 1,
+      "role": "attacker_evidentiary",
+      "model_id": "groq/openai/gpt-oss-20b",
+      "prompt_id": "attacker_evidentiary/challenge",
+      "prompt_hash": "fd0d7ca7746be0a15a794ff31a2da2b68757d0fe0e5bc04de61b79cab308dc21",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_5fbc1a1e",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_b6d60b5a",
+          "ground": "The facts do not establish that the commander had overall control over the forces that carried out the killings or that the killings were deliberate.",
+          "reasoning": "The record only shows that the commander withdrew JNA military police and that the prisoners were then in the custody of the Vukovar Territorial Defence, which the facts do not demonstrate to be under his effective control. It also does not provide evidence that the killings were wilfully carried out; the killings could have been the result of chaotic actions by forces beyond the commander's direct authority.",
+          "citations": [],
+          "resolved_citations": [],
+          "severity": "fatal",
+          "disposition": "partial",
+          "disposition_reasoning": "The facts establish that the killings were deliberate (gunshot wounds, 200+ victims) and the victims were hors de combat, satisfying the actus reus of wilful killing. However, the objection correctly notes that the facts do not show the commander directly ordered the killings or had direct control over the Territorial Defence and paramilitary forces that pulled the triggers. This does not defeat command responsibility, which requires effective control over subordinates (here, the JNA guards) and knowledge of risk, not direct control over the actual perpetrators."
+        },
+        {
+          "id": "obj_0ad70ebb",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_94907a55",
+          "ground": "The facts do not show that the removal of prisoners from the hospital was done without due warning or that such removal violated the protected status of the hospital.",
+          "reasoning": "The record does not mention any warning given to the hospital or to the prisoners before the removal. It also does not indicate that the removal was carried out in contravention of the protection afforded to the hospital under Geneva Convention IV; the removal may have been part of an agreed transfer to Sremska Mitrovica.",
+          "citations": [],
+          "resolved_citations": [],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The record contains no information about whether a warning was given before the removal. More fundamentally, as ruled in obj_7bbe8857, Article 19 does not apply to the removal of POWs from a hospital in this manner."
+        },
+        {
+          "id": "obj_8a281b13",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_fcdd79c1",
+          "ground": "The record does not demonstrate that the commander had effective control over the Territorial Defence and paramilitary forces that killed the prisoners or that he had knowledge of those killings.",
+          "reasoning": "While the commander ordered the withdrawal of JNA police and was informed of killings at Velepromet, the facts do not establish that he had direct authority over the forces that carried out the killings at Ovčara or that he was aware of those specific killings. Without evidence of control and knowledge, the factual predicate for command responsibility is not satisfied.",
+          "citations": [],
+          "resolved_citations": [],
+          "severity": "fatal",
+          "disposition": "partial",
+          "disposition_reasoning": "The facts do not establish that the commander had direct command authority over the Vukovar Territorial Defence and paramilitary forces. However, command responsibility does not require direct control over the perpetrators; it requires effective control over subordinates whose actions or omissions facilitated the crimes. The commander had effective control over the JNA military police, knew of the hostility and prior killings, and ordered the withdrawal of the only protective force, which is sufficient for liability."
+        },
+        {
+          "id": "obj_76a017ef",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_7e8132c0",
+          "ground": "The facts do not establish that the commander had a duty to conduct an enquiry under Article 121 or that he failed to do so.",
+          "reasoning": "The record only records the withdrawal of guards; it does not show that the commander was the detaining power or that he had an obligation under Article 121 to launch an enquiry. Consequently, the claim that he violated that duty is not supported by the evidence.",
+          "citations": [],
+          "resolved_citations": [],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The commander was a military commander, not the 'Detaining Power' as a matter of treaty designation. Article 121 imposes obligations on the Detaining Power (the state), not on individual commanders as a basis for criminal liability. In any event, Article 121 is procedural, not substantive."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_b6d60b5a\",\n      \"ground\": \"The facts do not establish that the commander had overall control over the forces that carried out the killings or that the killings were deliberate.\",\n      \"reasoning\": \"The record only shows that the commander withdrew JNA military police and that the prisoners were then in the custody of the Vukovar Territorial Defence, which the facts do not demonstrate to be under his effective control. It also does not provide evidence that the killings were wilfully carried out; the killings could have been the result of chaotic actions by forces beyond the commander's direct authority.\",\n      \"severity\": \"fatal\",\n      \"citations\": []\n    },\n    {\n      \"target_argument_id\": \"arg_94907a55\",\n      \"ground\": \"The facts do not show that the removal of prisoners from the hospital was done without due warning or that such removal violated the protected status of the hospital.\",\n      \"reasoning\": \"The record does not mention any warning given to the hospital or to the prisoners before the removal. It also does not indicate that the removal was carried out in contravention of the protection afforded to the hospital under Geneva Convention IV; the removal may have been part of an agreed transfer to Sremska Mitrovica.\",\n      \"severity\": \"fatal\",\n      \"citations\": []\n    },\n    {\n      \"target_argument_id\": \"arg_fcdd79c1\",\n      \"ground\": \"The record does not demonstrate that the commander had effective control over the Territorial Defence and paramilitary forces that killed the prisoners or that he had knowledge of those killings.\",\n      \"reasoning\": \"While the commander ordered the withdrawal of JNA police and was informed of killings at Velepromet, the facts do not establish that he had direct authority over the forces that carried out the killings at Ovčara or that he was aware of those specific killings. Without evidence of control and knowledge, the factual predicate for command responsibility is not satisfied.\",\n      \"severity\": \"fatal\",\n      \"citations\": []\n    },\n    {\n      \"target_argument_id\": \"arg_7e8132c0\",\n      \"ground\": \"The facts do not establish that the commander had a duty to conduct an enquiry under Article 121 or that he failed to do so.\",\n      \"reasoning\": \"The record only records the withdrawal of guards; it does not show that the commander was the detaining power or that he had an obligation under Article 121 to launch an enquiry. Consequently, the claim that he violated that duty is not supported by the evidence.\",\n      \"severity\": \"fatal\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-16T13:45:13.904531Z",
+      "completed_at": "2026-11-16T13:45:18.849439Z",
+      "prompt_tokens": 5504,
+      "completion_tokens": 3242,
+      "error": null
+    },
+    {
+      "id": "turn_09d1243d",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "bc2588eee690f7c715c8639621e3061df1490088d9a1e53e8be2ce7dd493b4e4",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The commander of Operational Group South was criminally responsible for the killing of the prisoners of war taken from Vukovar hospital.\", \"reasoning\": \"The objection to the Geneva Convention IV Article 19 argument (obj_7bbe8857) is sustained: that provision protects the hospital facility, not the status of the prisoners, who were POWs governed by Geneva Convention III. The objection to the Geneva Convention III Article 121 argument (obj_8b37c75a) is sustained: Article 121 imposes a procedural duty to investigate, not a substantive duty of care whose breach constitutes a war crime. The evidentiary objections to the Geneva Convention IV and Article 121 arguments (obj_0ad70ebb, obj_76a017ef) are also sustained on alternative grounds. However, the core argument that the mass killing constitutes wilful killing under Rome Statute Article 8(2)(a)(i) (arg_b6d60b5a) survives. The facts establish that the commander ordered the withdrawal of JNA military police who were guarding the prisoners, despite knowing of the hostility of the Territorial Defence and paramilitary forces, having received reports of their conduct at the barracks and Ovčara, and having been informed of killings at Velepromet the preceding day. This deliberate act — withdrawing the only protective force while aware of the near-certain lethal consequence — satisfies the elements of wilful killing by a superior who had effective control over the guarding forces and used that control to facilitate the crime. The evidentiary objection (obj_5fbc1a1e) does not defeat this because the commander's authority over the JNA military police is clear from the facts, and his order directly caused the prisoners to be left at the mercy of hostile forces. The command responsibility argument (arg_fcdd79c1) is weakened by the sustained objection (obj_8a281b13) regarding control over the Territorial Defence, but the direct responsibility arising from the commander's own order to withdraw the guards stands independently.\", \"confidence\": 0.7, \"confidence_reasoning\": \"The conclusion rests on the commander's positive act of withdrawing the JNA military police with knowledge of the probable outcome, which constitutes a deliberate contribution to the wilful killing of protected persons. This is a stronger basis than command responsibility over the Territorial Defence, which the facts do not clearly establish. The confidence is not higher because the precise legal characterization (direct perpetration vs. ordering vs. aiding and abetting) is not fully briefed, and the Rome Statute's command responsibility provision (Article 28) is not in the retrieved context. However, the factual predicate for criminal responsibility — authority over the guarding forces, knowledge of the risk, and a decisive order that removed protection — is sufficiently established to support a 'Yes' answer at this stage.\", \"rulings\": [{\"objection_id\": \"obj_7bbe8857\", \"disposition\": \"sustained\", \"reasoning\": \"Geneva Convention IV Article 19 protects the civilian hospital facility from losing its protection due to misuse; it does not govern the status or treatment of prisoners of war, who are protected under Geneva Convention III. The argument incorrectly conflates facility protection with individual status.\"}, {\"objection_id\": \"obj_8b37c75a\", \"disposition\": \"sustained\", \"reasoning\": \"Article 121 of Geneva Convention III imposes a procedural obligation to conduct an official enquiry into the death or serious injury of a POW. It does not create a substantive duty of care whose breach is independently criminal; criminal liability for the deaths arises from the underlying wilful killing or command responsibility, not from the failure to investigate.\"}, {\"objection_id\": \"obj_5fbc1a1e\", \"disposition\": \"overruled\", \"reasoning\": \"While the facts do not establish the commander's effective control over the Territorial Defence and paramilitary forces that carried out the shootings, they do establish his command over the JNA military police who were guarding the prisoners. His order to withdraw those guards, with knowledge of the hostility of the local forces and prior killings, constitutes a deliberate act that facilitated the wilful killing. The objection therefore does not defeat the argument that the commander bears criminal responsibility for the killings.\"}, {\"objection_id\": \"obj_0ad70ebb\", \"disposition\": \"sustained\", \"reasoning\": \"The facts do not mention any warning given before the removal of prisoners from the hospital, but the more fundamental defect is that Geneva Convention IV Article 19 is the wrong legal basis for challenging the removal of POWs from a hospital, as sustained in obj_7bbe8857.\"}, {\"objection_id\": \"obj_8a281b13\", \"disposition\": \"sustained\", \"reasoning\": \"The record does not demonstrate that the commander had effective control over the Vukovar Territorial Defence or the paramilitary forces that executed the prisoners at Ovčara. While he was informed of their hostile conduct and of killings at Velepromet, and JNA officers reported their behaviour, the facts do not establish the hierarchical link required for command responsibility over those specific forces.\"}, {\"objection_id\": \"obj_76a017ef\", \"disposition\": \"sustained\", \"reasoning\": \"The facts do not establish that the commander was the Detaining Power for purposes of Geneva Convention III Article 121, nor that he had a personal duty to launch an enquiry. In any event, as ruled in obj_8b37c75a, Article 121 does not impose criminal liability for failure to investigate.\"}], \"surviving_argument_ids\": [\"arg_b6d60b5a\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-16T13:45:18.851979Z",
+      "completed_at": "2026-11-16T13:47:00.079600Z",
+      "prompt_tokens": 6649,
+      "completion_tokens": 4078,
+      "error": null
+    },
+    {
+      "id": "turn_60710573",
+      "round_number": 2,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/rebuttal",
+      "prompt_hash": "e20dfb8f779b1cac8ca995c60d224edf0092d650326c0af1e4e1ba59808a3d50",
+      "arguments": [
+        {
+          "id": "arg_89a9e4c4",
+          "claim": "The mass killing of the captured persons constitutes a grave breach of the Geneva Conventions and a war crime of wilful killing under the Rome Statute.",
+          "reasoning": "Article 8(a)(i) of the Rome Statute enumerates \"Wilful killing\" as a war crime. The facts show that at least 200 persons who were hors de combat as prisoners of war were deliberately shot, satisfying the element of intentional killing of protected persons.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Wilful killing;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Wilful killing;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_9579374b",
+          "claim": "The removal of the prisoners from the protected hospital without due warning violated the protection afforded to civilian hospitals under Geneva Convention IV, article 19.",
+          "reasoning": "Article 19 of Geneva Convention IV provides that the protection of a civilian hospital may cease only after a due warning has been given and remains unheeded. The prisoners were taken from the ICRC‑protected hospital without any such warning, thereby breaching the treaty protection of the facility.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iv",
+              "article": "19",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy. Protection may, however, cease only after due warning has been given, naming, in all appropriate cases, a reasonable time limit, and after such warning has remained unheeded."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iv",
+                "article": "19",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy. Protection may, however, cease only after due warning has been given, naming, in all appropriate cases, a reasonable time limit, and after such warning has remained unheeded."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_b8568eb8",
+          "claim": "The commander failed to fulfill the procedural duty under Geneva Convention III, article 121, to conduct an immediate official enquiry into the deaths of prisoners of war, constituting a breach of treaty obligations.",
+          "reasoning": "Article 121 obliges the Detaining Power to launch an official enquiry whenever a prisoner of war dies or is seriously injured. By ordering the withdrawal of the JNA military police and allowing the prisoners to fall into the hands of hostile forces, the commander precluded any such enquiry, violating this procedural requirement.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "121",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Every death or serious injury of a prisoner of war caused or suspected to have been caused by a sentry, another prisoner of war, or any other person, as well as any death the cause of which is unknown, shall be immediately followed by an official enquiry by the Detaining Power."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "121",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Every death or serious injury of a prisoner of war caused or suspected to have been caused by a sentry, another prisoner of war, or any other person, as well as any death the cause of which is unknown, shall be immediately followed by an official enquiry by the Detaining Power."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The mass killing of the captured persons constitutes a grave breach of the Geneva Conventions and a war crime of wilful killing under the Rome Statute.\",\n      \"reasoning\": \"Article 8(a)(i) of the Rome Statute enumerates \\\"Wilful killing\\\" as a war crime. The facts show that at least 200 persons who were hors de combat as prisoners of war were deliberately shot, satisfying the element of intentional killing of protected persons.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Wilful killing;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The removal of the prisoners from the protected hospital without due warning violated the protection afforded to civilian hospitals under Geneva Convention IV, article 19.\",\n      \"reasoning\": \"Article 19 of Geneva Convention IV provides that the protection of a civilian hospital may cease only after a due warning has been given and remains unheeded. The prisoners were taken from the ICRC‑protected hospital without any such warning, thereby breaching the treaty protection of the facility.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iv\",\n          \"article\": \"19\",\n          \"quoted_text\": \"The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy. Protection may, however, cease only after due warning has been given, naming, in all appropriate cases, a reasonable time limit, and after such warning has remained unheeded.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander failed to fulfill the procedural duty under Geneva Convention III, article 121, to conduct an immediate official enquiry into the deaths of prisoners of war, constituting a breach of treaty obligations.\",\n      \"reasoning\": \"Article 121 obliges the Detaining Power to launch an official enquiry whenever a prisoner of war dies or is seriously injured. By ordering the withdrawal of the JNA military police and allowing the prisoners to fall into the hands of hostile forces, the commander precluded any such enquiry, violating this procedural requirement.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"121\",\n          \"quoted_text\": \"Every death or serious injury of a prisoner of war caused or suspected to have been caused by a sentry, another prisoner of war, or any other person, as well as any death the cause of which is unknown, shall be immediately followed by an official enquiry by the Detaining Power.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T13:47:00.099749Z",
+      "completed_at": "2026-11-16T13:47:05.102616Z",
+      "prompt_tokens": 6185,
+      "completion_tokens": 2060,
+      "error": null
+    },
+    {
+      "id": "turn_7b602b5c",
+      "round_number": 2,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "d0c89af926e16d7a919d8c3b09b0de33da8581856fa2e7646c47096485f23edd",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_361d32cc",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_94907a55",
+          "ground": "The argument erroneously conflates a breach of hospital protection with the distinct war crime of wilful killing.",
+          "reasoning": "Article 19 of GC IV protects the facility itself and does not create a standalone war crime for removing individuals. While the removal may be a breach, it does not meet the elements of 'wilful killing' under Article 8(2)(a)(i) of the Rome Statute, which requires the intentional killing of protected persons. The argument fails by collapsing a procedural breach into a substantive homicide offense.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iv",
+              "article": "19",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iv",
+                "article": "19",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(i)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument incorrectly treats a breach of hospital protection under GC IV Article 19 as equivalent to the war crime of wilful killing under Rome Statute Article 8(2)(a)(i). Article 19 protects the facility; its breach does not constitute a grave breach involving intentional killing of protected persons."
+        },
+        {
+          "id": "obj_5301a672",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_7e8132c0",
+          "ground": "Article 121 of Geneva Convention III imposes a procedural duty to investigate, not a substantive prohibition that constitutes a war crime.",
+          "reasoning": "The failure to conduct an enquiry is a breach of the Detaining Power's procedural obligations, but it does not itself constitute the war crime of murder or wilful killing. Citing this article to establish criminal responsibility for the deaths mischaracterizes a secondary procedural duty as a primary substantive offense.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "121",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "121",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Same reasoning as obj_8b37c75a: Article 121 is a procedural investigative duty, not a substantive prohibition that constitutes a war crime. Citing it to establish criminal responsibility for the deaths mischaracterizes the treaty obligation."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_94907a55\",\n      \"ground\": \"The argument erroneously conflates a breach of hospital protection with the distinct war crime of wilful killing.\",\n      \"reasoning\": \"Article 19 of GC IV protects the facility itself and does not create a standalone war crime for removing individuals. While the removal may be a breach, it does not meet the elements of 'wilful killing' under Article 8(2)(a)(i) of the Rome Statute, which requires the intentional killing of protected persons. The argument fails by collapsing a procedural breach into a substantive homicide offense.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iv\",\n          \"article\": \"19\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(i)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_7e8132c0\",\n      \"ground\": \"Article 121 of Geneva Convention III imposes a procedural duty to investigate, not a substantive prohibition that constitutes a war crime.\",\n      \"reasoning\": \"The failure to conduct an enquiry is a breach of the Detaining Power's procedural obligations, but it does not itself constitute the war crime of murder or wilful killing. Citing this article to establish criminal responsibility for the deaths mischaracterizes a secondary procedural duty as a primary substantive offense.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"121\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T13:47:05.105336Z",
+      "completed_at": "2026-11-16T13:47:07.007313Z",
+      "prompt_tokens": 6118,
+      "completion_tokens": 424,
+      "error": null
+    },
+    {
+      "id": "turn_12494909",
+      "round_number": 2,
+      "role": "attacker_evidentiary",
+      "model_id": "groq/openai/gpt-oss-20b",
+      "prompt_id": "attacker_evidentiary/challenge",
+      "prompt_hash": "2881d362154916949aaa452187f1f5c69a234bd252c2e30f59fd612e547a1499",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_5fded97f",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_b6d60b5a",
+          "ground": "The facts as given do not establish that the commander directly ordered or was responsible for the killings; therefore the claim that the killings constitute a grave breach under his responsibility is unsupported.",
+          "reasoning": "The record shows the commander withdrew guards, but there is no evidence that he ordered the killings or that the killings were carried out under his direct instruction. The mere fact that the prisoners were killed does not imply the commander’s culpability. Without evidence of direct involvement, the argument fails to satisfy the factual predicate that the commander was the author or instigator of the killings.",
+          "citations": [],
+          "resolved_citations": [],
+          "severity": "fatal",
+          "disposition": "partial",
+          "disposition_reasoning": "The objection correctly notes no evidence that the commander directly ordered the killings. However, the argument (arg_b6d60b5a) relies on 'overall control' — i.e., command responsibility — not direct perpetration. The absence of a direct order does not defeat command responsibility."
+        },
+        {
+          "id": "obj_f244f723",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_94907a55",
+          "ground": "The facts do not demonstrate that a due warning was not given before the removal of prisoners from the protected hospital, so the claim that the removal violated Article 19 is unsubstantiated.",
+          "reasoning": "The record states that the prisoners were taken from the hospital, but it does not provide any information about whether the commander or any authority issued a warning to the hospital or the prisoners before the removal. Without evidence of a lack of due warning, the assertion that the removal violated the protection afforded to the hospital lacks factual support. Therefore, the argument’s factual predicate is incomplete.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iv",
+              "article": "19",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iv",
+                "article": "19",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The record does not address whether a warning was given. However, as with obj_0ad70ebb and obj_7bbe8857, Article 19 is inapplicable to the removal of POWs, making the evidentiary gap immaterial."
+        },
+        {
+          "id": "obj_a8bc0253",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_fcdd79c1",
+          "ground": "The facts do not confirm that the commander had knowledge of the killings at Ovčara or that he failed to take necessary measures to prevent them; the knowledge element of command responsibility remains unproven.",
+          "reasoning": "While the record indicates that the commander had effective control and was informed of killings at Velepromet, it does not establish that he knew about the specific killings at Ovčara or that he had a duty to prevent or punish them. The inference that he should have known or that he failed to act is not supported by the evidence. Consequently, the factual predicate for command responsibility is insufficient.",
+          "citations": [],
+          "resolved_citations": [],
+          "severity": "material",
+          "disposition": "partial",
+          "disposition_reasoning": "The commander was informed of killings at Velepromet the day before and of the hostility of local forces. This constitutes constructive knowledge ('had reason to know') of a substantial risk that withdrawing the guards would lead to killings at Ovčara. Command responsibility includes recklessness or wilful blindness; actual knowledge of the specific Ovčara killings is not required."
+        },
+        {
+          "id": "obj_7b9ef2e8",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_7e8132c0",
+          "ground": "The facts do not show that the commander performed or failed to perform an official enquiry into the deaths of the prisoners, so the claim of a breach of Article 121 is unsubstantiated.",
+          "reasoning": "The record mentions that the commander ordered the withdrawal of guards, but there is no evidence that an official enquiry was required or that he did not conduct one. The argument assumes a breach of the procedural duty without factual support. Therefore, the factual predicate is lacking.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "121",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "121",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "No evidence in the record addresses whether an enquiry was conducted. In any event, Article 121 does not provide a basis for criminal responsibility for the killings themselves."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_b6d60b5a\",\n      \"ground\": \"The facts as given do not establish that the commander directly ordered or was responsible for the killings; therefore the claim that the killings constitute a grave breach under his responsibility is unsupported.\",\n      \"reasoning\": \"The record shows the commander withdrew guards, but there is no evidence that he ordered the killings or that the killings were carried out under his direct instruction. The mere fact that the prisoners were killed does not imply the commander’s culpability. Without evidence of direct involvement, the argument fails to satisfy the factual predicate that the commander was the author or instigator of the killings.\",\n      \"severity\": \"fatal\",\n      \"citations\": []\n    },\n    {\n      \"target_argument_id\": \"arg_94907a55\",\n      \"ground\": \"The facts do not demonstrate that a due warning was not given before the removal of prisoners from the protected hospital, so the claim that the removal violated Article 19 is unsubstantiated.\",\n      \"reasoning\": \"The record states that the prisoners were taken from the hospital, but it does not provide any information about whether the commander or any authority issued a warning to the hospital or the prisoners before the removal. Without evidence of a lack of due warning, the assertion that the removal violated the protection afforded to the hospital lacks factual support. Therefore, the argument’s factual predicate is incomplete.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iv\",\n          \"article\": \"19\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_fcdd79c1\",\n      \"ground\": \"The facts do not confirm that the commander had knowledge of the killings at Ovčara or that he failed to take necessary measures to prevent them; the knowledge element of command responsibility remains unproven.\",\n      \"reasoning\": \"While the record indicates that the commander had effective control and was informed of killings at Velepromet, it does not establish that he knew about the specific killings at Ovčara or that he had a duty to prevent or punish them. The inference that he should have known or that he failed to act is not supported by the evidence. Consequently, the factual predicate for command responsibility is insufficient.\",\n      \"severity\": \"material\",\n      \"citations\": []\n    },\n    {\n      \"target_argument_id\": \"arg_7e8132c0\",\n      \"ground\": \"The facts do not show that the commander performed or failed to perform an official enquiry into the deaths of the prisoners, so the claim of a breach of Article 121 is unsubstantiated.\",\n      \"reasoning\": \"The record mentions that the commander ordered the withdrawal of guards, but there is no evidence that an official enquiry was required or that he did not conduct one. The argument assumes a breach of the procedural duty without factual support. Therefore, the factual predicate is lacking.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"121\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T13:47:05.108526Z",
+      "completed_at": "2026-11-16T13:47:11.032223Z",
+      "prompt_tokens": 5844,
+      "completion_tokens": 3672,
+      "error": null
+    },
+    {
+      "id": "turn_8e5da0c5",
+      "round_number": 2,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "73513e5061d545f1926181ca22608d7c834ceaed34bd44e0ea9f8922094500d6",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The commander of Operational Group South is criminally responsible for the killing of the prisoners of war under the principle of command responsibility.\", \"reasoning\": \"The underlying crime of wilful killing is established: at least 200 prisoners of war, hors de combat, were deliberately shot (Rome Statute Art 8(2)(a)(i)). The commander exercised effective control over the JNA military police guarding the prisoners and ordered their withdrawal, placing the prisoners in the custody of hostile Territorial Defence and paramilitary forces. He had actual knowledge of the hostility of those forces and of killings at Velepromet the previous day, satisfying the knowledge element (including constructive knowledge of the substantial risk). By withdrawing the only protective force, he failed to take necessary and reasonable measures to prevent the killings and instead took affirmative action that facilitated them. The objections based on Geneva Convention IV Article 19 (hospital protection) and Geneva Convention III Article 121 (duty to enquire) are doctrinally unsound: Article 19 protects the facility, not the status of POWs, and does not create a standalone war crime for removal; Article 121 imposes a procedural investigative duty, not a substantive duty of care whose breach constitutes a war crime. Evidentiary objections challenging direct perpetration or direct orders are beside the point, as command responsibility does not require them. The surviving argument (arg_fcdd79c1) establishes the elements of command responsibility on the facts given.\", \"confidence\": 0.75, \"confidence_reasoning\": \"The command responsibility theory is well-supported by settled ICTY jurisprudence (e.g., Čelebići, Blaškić, Hadžihasanović) holding that a commander who has effective control over forces guarding detainees, knows of a substantial risk of harm from hostile forces, and withdraws that protection can be liable for resulting killings. The main uncertainty is whether the Territorial Defence was under the commander's effective control; however, control over the JNA guards whose withdrawal he ordered, combined with his knowledge and the causal link, is sufficient. The doctrinal objections to the GC IV and GC III arguments are clearly correct, narrowing the case to the command responsibility theory, which survives the evidentiary challenges.\", \"rulings\": [{\"objection_id\": \"obj_7bbe8857\", \"disposition\": \"sustained\", \"reasoning\": \"Geneva Convention IV Article 19 protects the civilian hospital facility from losing its protection; it does not govern the status or treatment of prisoners of war, who are protected under Geneva Convention III. The presence of wounded combatants in a hospital does not constitute 'acts harmful to the enemy' under Article 19. The argument conflates facility protection with individual protection and incorrectly characterizes the removal as a grave breach of Article 19.\"}, {\"objection_id\": \"obj_8b37c75a\", \"disposition\": \"sustained\", \"reasoning\": \"Article 121 of Geneva Convention III imposes a procedural obligation on the Detaining Power to conduct an official enquiry into prisoner deaths. It does not create a substantive duty of care whose breach constitutes the war crime of wilful killing. Criminal responsibility for the killings arises from the acts of killing or command responsibility, not from a failure to investigate.\"}, {\"objection_id\": \"obj_5fbc1a1e\", \"disposition\": \"partial\", \"reasoning\": \"The facts establish that the killings were deliberate (gunshot wounds, 200+ victims) and the victims were hors de combat, satisfying the actus reus of wilful killing. However, the objection correctly notes that the facts do not show the commander directly ordered the killings or had direct control over the Territorial Defence and paramilitary forces that pulled the triggers. This does not defeat command responsibility, which requires effective control over subordinates (here, the JNA guards) and knowledge of risk, not direct control over the actual perpetrators.\"}, {\"objection_id\": \"obj_0ad70ebb\", \"disposition\": \"sustained\", \"reasoning\": \"The record contains no information about whether a warning was given before the removal. More fundamentally, as ruled in obj_7bbe8857, Article 19 does not apply to the removal of POWs from a hospital in this manner.\"}, {\"objection_id\": \"obj_8a281b13\", \"disposition\": \"partial\", \"reasoning\": \"The facts do not establish that the commander had direct command authority over the Vukovar Territorial Defence and paramilitary forces. However, command responsibility does not require direct control over the perpetrators; it requires effective control over subordinates whose actions or omissions facilitated the crimes. The commander had effective control over the JNA military police, knew of the hostility and prior killings, and ordered the withdrawal of the only protective force, which is sufficient for liability.\"}, {\"objection_id\": \"obj_76a017ef\", \"disposition\": \"sustained\", \"reasoning\": \"The commander was a military commander, not the 'Detaining Power' as a matter of treaty designation. Article 121 imposes obligations on the Detaining Power (the state), not on individual commanders as a basis for criminal liability. In any event, Article 121 is procedural, not substantive.\"}, {\"objection_id\": \"obj_361d32cc\", \"disposition\": \"sustained\", \"reasoning\": \"The argument incorrectly treats a breach of hospital protection under GC IV Article 19 as equivalent to the war crime of wilful killing under Rome Statute Article 8(2)(a)(i). Article 19 protects the facility; its breach does not constitute a grave breach involving intentional killing of protected persons.\"}, {\"objection_id\": \"obj_5301a672\", \"disposition\": \"sustained\", \"reasoning\": \"Same reasoning as obj_8b37c75a: Article 121 is a procedural investigative duty, not a substantive prohibition that constitutes a war crime. Citing it to establish criminal responsibility for the deaths mischaracterizes the treaty obligation.\"}, {\"objection_id\": \"obj_5fded97f\", \"disposition\": \"partial\", \"reasoning\": \"The objection correctly notes no evidence that the commander directly ordered the killings. However, the argument (arg_b6d60b5a) relies on 'overall control' — i.e., command responsibility — not direct perpetration. The absence of a direct order does not defeat command responsibility.\"}, {\"objection_id\": \"obj_f244f723\", \"disposition\": \"sustained\", \"reasoning\": \"The record does not address whether a warning was given. However, as with obj_0ad70ebb and obj_7bbe8857, Article 19 is inapplicable to the removal of POWs, making the evidentiary gap immaterial.\"}, {\"objection_id\": \"obj_a8bc0253\", \"disposition\": \"partial\", \"reasoning\": \"The commander was informed of killings at Velepromet the day before and of the hostility of local forces. This constitutes constructive knowledge ('had reason to know') of a substantial risk that withdrawing the guards would lead to killings at Ovčara. Command responsibility includes recklessness or wilful blindness; actual knowledge of the specific Ovčara killings is not required.\"}, {\"objection_id\": \"obj_7b9ef2e8\", \"disposition\": \"sustained\", \"reasoning\": \"No evidence in the record addresses whether an enquiry was conducted. In any event, Article 121 does not provide a basis for criminal responsibility for the killings themselves.\"}], \"surviving_argument_ids\": [\"arg_b6d60b5a\", \"arg_89a9e4c4\", \"arg_fcdd79c1\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-16T13:47:11.036430Z",
+      "completed_at": "2026-11-16T13:48:35.710943Z",
+      "prompt_tokens": 7905,
+      "completion_tokens": 4401,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-16T13:48:35.714051+00:00",
+  "duration_seconds": 208.93797080003424,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 2,
+  "judge_failures": 0,
+  "judge_failed": false
+}

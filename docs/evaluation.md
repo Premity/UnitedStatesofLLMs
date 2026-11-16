@@ -52,7 +52,10 @@ alone inherits that weakness; comparing D against a compute-matched baseline doe
 not. **E is the arm that makes the central claim falsifiable**, so a result where
 D fails to beat E is a real finding and should be reported as one.
 
-E's sample count and aggregation rule are set in ADR 0011.
+E's sample count and aggregation rule are set in ADR 0011. Its confidence is
+its judge's, as for B, not the samples' agreement: the presenter argues for the
+proposition in every sample, so the samples have nothing to disagree about
+(ADR 0011, amended after the scored run). The vote is stored as a diagnostic.
 
 ---
 
@@ -95,9 +98,10 @@ from retrieval so the system cannot read the answer back.
 Tuning against the test set produces a system that looks good and generalises to
 nothing. Keep the split.
 
-**The current scored run has no held-out set.** It uses three dev cases, with
-three more as a stretch (ADR 0012), all seen during prompt tuning. The write-up
-says so; nothing in it measures generalisation.
+**The scored run has no held-out set.** It used the three core dev cases and
+one stretch case, Mrkšić (ADR 0012), all seen during prompt tuning. The
+write-up, `evaluation/reports/write-up.md`, says so; nothing in it measures
+generalisation.
 
 ---
 
@@ -389,6 +393,14 @@ Results land in `data/eval/`, reports in `evaluation/reports/`.
 
 `make eval-report` writes `evaluation/reports/evaluation-report.md` from the
 stored results in `data/eval/`. Nothing is re-run. It has two tables.
+
+**The scored run's report is committed; don't overwrite it from `data/eval/`.**
+`evaluation/reports/evaluation-report.md` is the three core cases, and
+`evaluation-report-with-stretch.md` adds Mrkšić. Both are built from the 20
+results in `evaluation/results/scored-run/`, which are the run's result files
+with the corpus text removed (`python -m harness.artifacts export`; the repo is
+public, ADR 0014). `evaluation/reports/write-up.md` reads them, states the
+limits, and shows how to rebuild either report.
 
 **Per arm:** accuracy, Brier, ECE, overconfidence, fabrication rate, misquote
 rate, attacker independence and reasoning overlap, each with its `n`. Bootstrap intervals are

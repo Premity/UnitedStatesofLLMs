@@ -1,0 +1,172 @@
+{
+  "case_id": "icty_mrksic_vukovar",
+  "case_title": "Prosecutor v. Mile Mrkšić — killing of prisoners of war from Vukovar hospital",
+  "court": "ICTY",
+  "year": 2007,
+  "difficulty": "medium",
+  "arm": "raw",
+  "arm_label": "A — Single pass, no retrieval",
+  "run_id": "eval_dd8a86dd82",
+  "question": "Was the commander of the forces in control of the area criminally responsible for the killing of prisoners of war taken from a hospital after the surrender of Croatian forces?",
+  "facts": "Croatian forces in the Vukovar area capitulated on 18 November 1991. An agreement provided for wounded or sick patients fit to travel to be evacuated to Croatia, with the hospital under ICRC protection and the evacuation monitored by the European Community Monitoring Mission. On 19 November, the JNA entered Vukovar hospital; military police of the Guards Motorised Brigade took over security. More than 200 men, and two women, who were or were believed to have been involved in Croatian forces were taken from the hospital on 20 November. The initial plan was to transport the men under JNA guard to the prisoner-of-war facility at Sremska Mitrovica, where they could later be exchanged for Serb prisoners held by Croatian authorities. At the JNA barracks, local Territorial Defence and paramilitary forces threatened and verbally abused the men; JNA military police removed those forces from the compound. The prisoners were subsequently taken to a hangar at Ovčara. JNA military police guarded them there, but Territorial Defence and paramilitary forces had access to them at times, and the guards' efforts were inconsistent. Members of those forces severely beat prisoners at the hangar. Some senior JNA officers visited and tried to improve the military police response, with effects that were ineffective or temporary. Between 2000 and 2100 hours, an order from the command of Operational Group South directed the JNA military police guarding the prisoners to withdraw. The prisoners were then in the custody of the Vukovar Territorial Defence. Territorial Defence and paramilitary forces took prisoners in small groups to an isolated location and shot them. At least 200 persons died at Ovčara on 20 and 21 November 1991, in almost all cases from gunshot wounds; 194 of the persons named in the indictment were among those killed. The commander of Operational Group South had earlier ordered that the prisoners be taken to Sremska Mitrovica. Local Territorial Defence and paramilitary forces were hostile to members of the Croatian forces. A number of JNA officers reported to the commander the conduct of those forces at the JNA barracks and at Ovčara, and he was informed of killings at Velepromet the preceding day. The local Serb government opposed the transfer of prisoners to Sremska Mitrovica, and its wishes appear to have been a significant factor in the commander's decision concerning their custody.",
+  "ground_truth_outcome": "affirmed",
+  "holding": "In its Trial Judgment of 27 September 2007, the ICTY Trial Chamber found Mile Mrkšić guilty under Article 7(1) for aiding and abetting murder, torture, and cruel treatment, as violations of the laws or customs of war under Article 3. The crimes-against-humanity counts were dismissed for all three accused because the victims were not civilians for the purposes of Article 5. The three accused were treated differently: Miroslav Radić was acquitted on all counts; Mrkšić was convicted of murder, torture, and cruel treatment; and Veselin Šljivančanin was convicted of torture only and acquitted on the other counts. The Chamber imposed a single sentence of 20 years' imprisonment on Mrkšić.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": true,
+  "confidence": 0.85,
+  "confidence_reasoning": "The legal principles of command responsibility are settled in customary IHL and ICTY/ ICC jurisprudence, and the facts as given clearly satisfy each element. The confidence is not 0.9+ because the calibration guide requires corpus verification for that range, and no corpus context was retrieved to confirm the cited authorities. The 0.85 reflects high doctrinal certainty tempered by the absence of machine-checked citation support.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 2,
+  "citation_statuses": {
+    "total": 0,
+    "resolved": 0,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. The commander of Operational Group South was criminally responsible for the killings at Ovčara under the doctrine of command responsibility.",
+    "reasoning": "All four arguments survive unchallenged because no objections were filed. Together they establish the three elements of command responsibility on the given facts: (1) Effective control — the commander ordered the withdrawal of the JNA military police, thereby placing the prisoners in the custody of Territorial Defence and paramilitary forces over whom he retained authority and the material ability to influence, as shown by his earlier interventions and the reporting chain from JNA officers. (2) Knowledge — he was informed of prior killings at Velepromet, received reports of threats and abuse at the barracks, and knew of the local Serb government's opposition to the planned transfer to Sremska Mitrovica, creating a clear expectation of violence upon withdrawal of the military police. (3) Failure to prevent or punish — he ordered the withdrawal without arranging alternative protection, did not intervene despite ongoing reports of beatings, and initiated no investigations or disciplinary measures after the killings. The underlying crime — the willful killing of over 200 prisoners of war hors de combat — constitutes a grave breach of the Third Geneva Convention and a war crime under customary international law and the Rome Statute. I reason from principle because no corpus context was retrieved; the cited authorities (Čelebići, Hadžihasanović, Rome Statute Art. 8(2)(b)(iv), customary IHL rules) are noted as unresolved against the corpus.",
+    "confidence": 0.85,
+    "confidence_reasoning": "The legal principles of command responsibility are settled in customary IHL and ICTY/ ICC jurisprudence, and the facts as given clearly satisfy each element. The confidence is not 0.9+ because the calibration guide requires corpus verification for that range, and no corpus context was retrieved to confirm the cited authorities. The 0.85 reflects high doctrinal certainty tempered by the absence of machine-checked citation support.",
+    "surviving_argument_ids": [
+      "arg_f02a5b11",
+      "arg_c01e5c7e",
+      "arg_f2c026de",
+      "arg_2e90c44d"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_f02a5b11",
+      "claim": "The commander of Operational Group South exercised effective control over the JNA military police and, by extension, over the Territorial Defence and paramilitary forces that carried out the killings, thereby satisfying the control element of command responsibility.",
+      "reasoning": "Effective control exists where a superior has the material ability to prevent or punish the commission of crimes by subordinates. The commander issued the order directing the military police to withdraw, which placed the prisoners under the custody of forces he could command. He also received regular reports from JNA officers about the conduct of those forces and had the authority to intervene, as demonstrated by his earlier attempts to improve the military police response. These factual circumstances establish that he retained the capacity to influence the actions of the perpetrators, meeting the control requirement recognized in customary international humanitarian law and the jurisprudence of the ICTY (e.g., the Čelebići case).",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_c01e5c7e",
+      "claim": "The commander knew, or was willfully blind to, the fact that the Territorial Defence and paramilitary forces were hostile to the prisoners and likely to commit violence against them.",
+      "reasoning": "The knowledge element of command responsibility is satisfied by actual knowledge or constructive knowledge when the superior should have been aware of the risk of crimes. The commander was informed of prior killings at Velepromet, received reports of verbal abuse and threats against the prisoners at the JNA barracks, and was aware of the local Serb government's opposition to transferring the prisoners. This information created a clear expectation that the hostile forces would act violently once the military police withdrew. His failure to act on this knowledge demonstrates the requisite mens rea for command responsibility, as articulated in the customary rule on superior responsibility and affirmed by the ICTY in the case of Prosecutor v. Hadžihasanović.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_f2c026de",
+      "claim": "The commander failed to take all necessary and reasonable measures to prevent the killings or to punish the perpetrators, thereby breaching the omission requirement of command responsibility.",
+      "reasoning": "A superior must adopt and enforce effective measures to prevent or repress the commission of crimes by subordinates. The commander ordered the withdrawal of the military police without arranging alternative protection, ignored the hostile intent of the Territorial Defence, and did not intervene when reports of beatings and threats were communicated. Moreover, after the killings, he did not initiate investigations or disciplinary actions against the Territorial Defence or paramilitary participants. These omissions constitute a failure to fulfill the preventive and punitive duties imposed on commanders under customary IHL and the Rome Statute’s provisions on superior responsibility.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_2e90c44d",
+      "claim": "The mass killing of the captured Croatian combatants constitutes a grave breach of the Third Geneva Convention and therefore a war crime under the Rome Statute.",
+      "reasoning": "Article 13 of the Third Geneva Convention obliges parties to treat prisoners of war humanely and prohibits willful killing. The intentional execution of over 200 prisoners who were hors de combat, after they had been surrendered and were under the protection of the ICRC, meets the definition of a grave breach. Under Article 8(2)(b)(iv) of the Rome Statute, willful killing of persons protected under the Geneva Conventions is a war crime. Although no specific treaty citation is available in the retrieved corpus, this principle is well‑established in customary international law and has been applied by the ICC in cases such as the situation in Darfur and the Prosecutor v. Al‑Bashir.",
+      "citations": [],
+      "resolved_citations": []
+    }
+  ],
+  "objections": [],
+  "context": [],
+  "turns": [
+    {
+      "id": "turn_e976a03b",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "71c6f322de5ac2d988d6bb1ace07c2064286b1be19cf0585a2f4a80eb75e36cd",
+      "arguments": [
+        {
+          "id": "arg_f02a5b11",
+          "claim": "The commander of Operational Group South exercised effective control over the JNA military police and, by extension, over the Territorial Defence and paramilitary forces that carried out the killings, thereby satisfying the control element of command responsibility.",
+          "reasoning": "Effective control exists where a superior has the material ability to prevent or punish the commission of crimes by subordinates. The commander issued the order directing the military police to withdraw, which placed the prisoners under the custody of forces he could command. He also received regular reports from JNA officers about the conduct of those forces and had the authority to intervene, as demonstrated by his earlier attempts to improve the military police response. These factual circumstances establish that he retained the capacity to influence the actions of the perpetrators, meeting the control requirement recognized in customary international humanitarian law and the jurisprudence of the ICTY (e.g., the Čelebići case).",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_c01e5c7e",
+          "claim": "The commander knew, or was willfully blind to, the fact that the Territorial Defence and paramilitary forces were hostile to the prisoners and likely to commit violence against them.",
+          "reasoning": "The knowledge element of command responsibility is satisfied by actual knowledge or constructive knowledge when the superior should have been aware of the risk of crimes. The commander was informed of prior killings at Velepromet, received reports of verbal abuse and threats against the prisoners at the JNA barracks, and was aware of the local Serb government's opposition to transferring the prisoners. This information created a clear expectation that the hostile forces would act violently once the military police withdrew. His failure to act on this knowledge demonstrates the requisite mens rea for command responsibility, as articulated in the customary rule on superior responsibility and affirmed by the ICTY in the case of Prosecutor v. Hadžihasanović.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_f2c026de",
+          "claim": "The commander failed to take all necessary and reasonable measures to prevent the killings or to punish the perpetrators, thereby breaching the omission requirement of command responsibility.",
+          "reasoning": "A superior must adopt and enforce effective measures to prevent or repress the commission of crimes by subordinates. The commander ordered the withdrawal of the military police without arranging alternative protection, ignored the hostile intent of the Territorial Defence, and did not intervene when reports of beatings and threats were communicated. Moreover, after the killings, he did not initiate investigations or disciplinary actions against the Territorial Defence or paramilitary participants. These omissions constitute a failure to fulfill the preventive and punitive duties imposed on commanders under customary IHL and the Rome Statute’s provisions on superior responsibility.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_2e90c44d",
+          "claim": "The mass killing of the captured Croatian combatants constitutes a grave breach of the Third Geneva Convention and therefore a war crime under the Rome Statute.",
+          "reasoning": "Article 13 of the Third Geneva Convention obliges parties to treat prisoners of war humanely and prohibits willful killing. The intentional execution of over 200 prisoners who were hors de combat, after they had been surrendered and were under the protection of the ICRC, meets the definition of a grave breach. Under Article 8(2)(b)(iv) of the Rome Statute, willful killing of persons protected under the Geneva Conventions is a war crime. Although no specific treaty citation is available in the retrieved corpus, this principle is well‑established in customary international law and has been applied by the ICC in cases such as the situation in Darfur and the Prosecutor v. Al‑Bashir.",
+          "citations": [],
+          "resolved_citations": []
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The commander of Operational Group South exercised effective control over the JNA military police and, by extension, over the Territorial Defence and paramilitary forces that carried out the killings, thereby satisfying the control element of command responsibility.\",\n      \"reasoning\": \"Effective control exists where a superior has the material ability to prevent or punish the commission of crimes by subordinates. The commander issued the order directing the military police to withdraw, which placed the prisoners under the custody of forces he could command. He also received regular reports from JNA officers about the conduct of those forces and had the authority to intervene, as demonstrated by his earlier attempts to improve the military police response. These factual circumstances establish that he retained the capacity to influence the actions of the perpetrators, meeting the control requirement recognized in customary international humanitarian law and the jurisprudence of the ICTY (e.g., the Čelebići case).\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The commander knew, or was willfully blind to, the fact that the Territorial Defence and paramilitary forces were hostile to the prisoners and likely to commit violence against them.\",\n      \"reasoning\": \"The knowledge element of command responsibility is satisfied by actual knowledge or constructive knowledge when the superior should have been aware of the risk of crimes. The commander was informed of prior killings at Velepromet, received reports of verbal abuse and threats against the prisoners at the JNA barracks, and was aware of the local Serb government's opposition to transferring the prisoners. This information created a clear expectation that the hostile forces would act violently once the military police withdrew. His failure to act on this knowledge demonstrates the requisite mens rea for command responsibility, as articulated in the customary rule on superior responsibility and affirmed by the ICTY in the case of Prosecutor v. Hadžihasanović.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The commander failed to take all necessary and reasonable measures to prevent the killings or to punish the perpetrators, thereby breaching the omission requirement of command responsibility.\",\n      \"reasoning\": \"A superior must adopt and enforce effective measures to prevent or repress the commission of crimes by subordinates. The commander ordered the withdrawal of the military police without arranging alternative protection, ignored the hostile intent of the Territorial Defence, and did not intervene when reports of beatings and threats were communicated. Moreover, after the killings, he did not initiate investigations or disciplinary actions against the Territorial Defence or paramilitary participants. These omissions constitute a failure to fulfill the preventive and punitive duties imposed on commanders under customary IHL and the Rome Statute’s provisions on superior responsibility.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The mass killing of the captured Croatian combatants constitutes a grave breach of the Third Geneva Convention and therefore a war crime under the Rome Statute.\",\n      \"reasoning\": \"Article 13 of the Third Geneva Convention obliges parties to treat prisoners of war humanely and prohibits willful killing. The intentional execution of over 200 prisoners who were hors de combat, after they had been surrendered and were under the protection of the ICRC, meets the definition of a grave breach. Under Article 8(2)(b)(iv) of the Rome Statute, willful killing of persons protected under the Geneva Conventions is a war crime. Although no specific treaty citation is available in the retrieved corpus, this principle is well‑established in customary international law and has been applied by the ICC in cases such as the situation in Darfur and the Prosecutor v. Al‑Bashir.\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-16T13:39:34.807305Z",
+      "completed_at": "2026-11-16T13:39:37.665221Z",
+      "prompt_tokens": 1505,
+      "completion_tokens": 1086,
+      "error": null
+    },
+    {
+      "id": "turn_c614e29f",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "6ada0f938621d1717e753439b4dbb3e7c9077f18ca8426e12569abb501c104c0",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The commander of Operational Group South was criminally responsible for the killings at Ovčara under the doctrine of command responsibility.\", \"reasoning\": \"All four arguments survive unchallenged because no objections were filed. Together they establish the three elements of command responsibility on the given facts: (1) Effective control — the commander ordered the withdrawal of the JNA military police, thereby placing the prisoners in the custody of Territorial Defence and paramilitary forces over whom he retained authority and the material ability to influence, as shown by his earlier interventions and the reporting chain from JNA officers. (2) Knowledge — he was informed of prior killings at Velepromet, received reports of threats and abuse at the barracks, and knew of the local Serb government's opposition to the planned transfer to Sremska Mitrovica, creating a clear expectation of violence upon withdrawal of the military police. (3) Failure to prevent or punish — he ordered the withdrawal without arranging alternative protection, did not intervene despite ongoing reports of beatings, and initiated no investigations or disciplinary measures after the killings. The underlying crime — the willful killing of over 200 prisoners of war hors de combat — constitutes a grave breach of the Third Geneva Convention and a war crime under customary international law and the Rome Statute. I reason from principle because no corpus context was retrieved; the cited authorities (Čelebići, Hadžihasanović, Rome Statute Art. 8(2)(b)(iv), customary IHL rules) are noted as unresolved against the corpus.\", \"confidence\": 0.85, \"confidence_reasoning\": \"The legal principles of command responsibility are settled in customary IHL and ICTY/ ICC jurisprudence, and the facts as given clearly satisfy each element. The confidence is not 0.9+ because the calibration guide requires corpus verification for that range, and no corpus context was retrieved to confirm the cited authorities. The 0.85 reflects high doctrinal certainty tempered by the absence of machine-checked citation support.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_f02a5b11\", \"arg_c01e5c7e\", \"arg_f2c026de\", \"arg_2e90c44d\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-16T13:39:37.675740Z",
+      "completed_at": "2026-11-16T13:40:06.416818Z",
+      "prompt_tokens": 2565,
+      "completion_tokens": 1432,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-16T13:40:06.421428+00:00",
+  "duration_seconds": 31.633279000001494,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}
