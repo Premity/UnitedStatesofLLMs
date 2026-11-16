@@ -55,7 +55,9 @@ Return JSON:
       "ground": "One sentence stating the basis of the objection.",
       "reasoning": "Why the facts as given do not support what this claim requires.",
       "severity": "fatal | material | minor",
-      "citations": []
+      "citations": [
+        {"type": "treaty", "instrument": "ap_i", "article": "51(2)"}
+      ]
     }
   ]
 }

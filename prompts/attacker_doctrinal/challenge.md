@@ -53,6 +53,7 @@ Return JSON:
       "reasoning": "The full argument for why this claim fails as a matter of law.",
       "severity": "fatal | material | minor",
       "citations": [
+        {"type": "treaty", "instrument": "ap_i", "article": "51(2)"},
         {"type": "case", "instrument": "icty", "case_id": "icty_galic_tj",
          "paragraph": "58"}
       ]
