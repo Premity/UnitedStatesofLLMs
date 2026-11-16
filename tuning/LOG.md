@@ -9,7 +9,57 @@ from the result artifact or report. Keep held-out cases out of prompt tuning.
 | 2026-11-12 | — (outcome parser in `evaluation/harness/run.py`) | — | 0 | 0 | - | - | - | Handle negation conservatively and return indeterminate when unclear; no evaluation metrics claimed. |
 | 2026-11-12 | — (judge JSON mode in `packages/council-core/src/council_core/llm/client.py`) | — | 0 | 0 | - | - | - | Request JSON mode for structured judge calls; no evaluation metrics claimed. |
 | 2026-11-16 | `prompts/judge/rule.md` (+ scorer fix, case facts; see below) | `6854889d75` (set `0455e4cb3248`) | 3 | 16 | B 0.33 · C 0.67 · D 0.67 | B 0.46 · C 0.22 · D 0.19 | B 0.57 · C 0.20 · D 0.18 | One run per arm and case; not separable, see below. |
+| 2026-11-16 | `prompts/shared/_citation_rules.md`, both attacker `challenge.md` (+ citation format check) | set `e687486954b3` | 2 of 3 | 10 | C 0.50 · D 0.50 (Gotovina errored) | - | - | Citation format fixed; exposed the judge prompt silencing the evidentiary attacker. See below. |
 
+
+## Citation format fix, and a judge prompt that overcorrected, 2026-11-16
+
+**Change.** Attacker and presenter replies reject a malformed citation (wrong
+type for its fields, or a locator in `instrument`) and the repair prompt sends
+it back; both attacker reply examples now show a treaty citation; the shared
+citation rules say to copy the locator exactly as the context heading gives
+it. What the fabrication metric counts is unchanged.
+
+**Result** (C and D on the three core cases, `data/scratch/tune-02`, judge
+prompt `6854889d75` unchanged from the first fix):
+
+| Case (truth) | C | D | Unresolved, D (before → after) |
+| --- | --- | --- | --- |
+| Galić (affirmed) | affirmed 0.85 | affirmed 0.85 | 8 / 20 → 0 / 23 |
+| Gotovina (rejected) | error | error | — |
+| Bemba (rejected) | **affirmed** 0.75 | **affirmed** 0.75 | 2 / 21 → 0 / 21 |
+
+- **The citation fix worked**: no unresolved citation in any completed run,
+  and the repair prompt never had to fire; the examples were enough. The
+  presenter's `8(b)(ii)` near-miss went untested: it was Gotovina-specific.
+- **Gotovina errored twice on Groq**, not the change: the doctrinal attacker's
+  model (`qwen/qwen3.8-27b`) is limited to 1,000 output tokens per minute on
+  this account's tier, and Groq judged the request at 3,745. The same call
+  passed earlier the same day. The two machines share a roster, not Groq
+  limits.
+- **Bemba flipped to Yes in both debate arms**, and the rulings show why. How
+  the judge ruled on the evidentiary attacker's objections:
+
+  | Judge prompt | Run | Sustained | Partial | Overruled |
+  | --- | --- | ---: | ---: | ---: |
+  | before the first fix | Galić D, rehearsal 1 | 3 | 2 | 3 |
+  | before the first fix | Galić D, rehearsal 2 | 4 | 2 | 0 |
+  | `6854889d75` | Galić D, first fix | 0 | 0 | 10 |
+  | `6854889d75` | Bemba D, first fix | 0 | 2 | 3 |
+  | `6854889d75` | Galić D, this run | 0 | 0 | 7 |
+  | `6854889d75` | Bemba D, this run | 0 | 0 | 7 |
+
+  Under the first fix's judge prompt not one evidentiary objection was
+  sustained. Its "Weighing the facts" paragraph said an objection that
+  something is not established "succeeds only if the facts do not support the
+  inference", a bar the attacker cannot clear. That silences one of the two
+  attackers and tilts the judge toward Yes, the wrong answer in two of the
+  three cases. Bemba turns on whether the evidence established a failure to
+  take measures: the evidentiary attacker's mandate.
+
+**Next.** The paragraph is removed (judge prompt `aa219aad89`); "Answering the
+question" stays. That leaves the case facts as the remaining fix for Galić,
+which the next run tests on its own.
 
 ## Council diagnosis and first fix, 2026-11-16
 
