@@ -8,6 +8,59 @@ from the result artifact or report. Keep held-out cases out of prompt tuning.
 | 2026-11-12 | `prompts/judge/rule.md` | `69c27d4fbb` | 0 | 0 | - | - | - | Require explicit Yes/No/Indeterminate prefix; no evaluation metrics claimed. |
 | 2026-11-12 | — (outcome parser in `evaluation/harness/run.py`) | — | 0 | 0 | - | - | - | Handle negation conservatively and return indeterminate when unclear; no evaluation metrics claimed. |
 | 2026-11-12 | — (judge JSON mode in `packages/council-core/src/council_core/llm/client.py`) | — | 0 | 0 | - | - | - | Request JSON mode for structured judge calls; no evaluation metrics claimed. |
+| 2026-11-16 | `prompts/judge/rule.md` (+ scorer fix, case facts; see below) | `6854889d75` (set `0455e4cb3248`) | 3 | 16 | B 0.33 · C 0.67 · D 0.67 | B 0.46 · C 0.22 · D 0.19 | B 0.57 · C 0.20 · D 0.18 | One run per arm and case; not separable, see below. |
+
+
+## Council diagnosis and first fix, 2026-11-16
+
+**Problem.** In the #25 rehearsals the debate arms answered Galić wrongly while
+`rag` answered it right: C once and D twice concluded "war crimes, but the
+crime of terror is not established on this record". Diagnosed from the
+rehearsal artifacts:
+
+- Every wrong debate verdict made the same move: the attackers objected that
+  the facts did not establish the *primary purpose* of spreading terror, and
+  the judge sustained it. The case's `facts` were thinner than the tribunal's
+  findings: they omitted that the campaign had no discernible military
+  significance, the finding the tribunal inferred purpose from.
+- The outcome parser misread two explicit answers ("Indeterminate." as
+  rejected, "No." as indeterminate). Fixing it changed no accuracy: the "No"
+  answers were real.
+- Ruled out: the judge never treated `out_of_corpus` as unsupported.
+- Retrieval did not leak the answer (no judgments are indexed), but models
+  recognise these famous cases from pretraining; that applies to every arm.
+
+**Changes, all at once:** the parser trusts the judge's opening answer; Galić
+and Gotovina `facts` gained the factual findings their `key_reasoning` relies
+on (taken from the case file, never the question's own finding; Bemba had none
+to add); and the judge prompt now says to infer intent from the facts as a
+whole, to the question's standard, and that sustaining an objection is not by
+itself an answer of No. The rehearsals also predate the #39 customary-rule fix.
+These are not separable from one run.
+
+**Result** (`rag`, `single_attacker`, `full_council` on the three core cases,
+one run each, `data/scratch/tune-01` on the second machine, same roster and
+index as the first):
+
+| Case (truth) | B rag | C one attacker | D full council |
+| --- | --- | --- | --- |
+| Galić (affirmed) | affirmed 0.95 | affirmed 0.88 | affirmed 0.78 |
+| Gotovina (rejected) | affirmed 0.88 | affirmed 0.75 | affirmed 0.65 |
+| Bemba (rejected) | affirmed 0.78 | rejected 0.72 | rejected 0.68 |
+
+Galić D raised the same primary-purpose objections and the judge now answered
+Yes. Every arm misses Gotovina, an appeal that reversed the trial findings the
+`facts` report; the council is the least confident of the three about it.
+
+**New problem this exposed.** C and D's fabrication rate rose (0.13, 0.23).
+Every unresolved citation checked is a real authority, malformed: the
+evidentiary attacker cites treaty articles as `"type": "case"` with the
+locator in `instrument` (all 8 of Galić D's), and the presenter drops the
+paragraph from Rome Statute locators (`8(b)(ii)` for `8(2)(b)(ii)`). Neither
+is invention, and both count as fabrication. To fix before the scored run.
+
+Three cases, one run each, and all of them the scored cases: this shows the
+direction changed, not by how much.
 
 ## Rehearsal: arms A-E live on one case (#25), 2026-11-15
 
