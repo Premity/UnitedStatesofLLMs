@@ -63,6 +63,13 @@ def populated_index():
         yield resolver
 
 
+@pytest.fixture(autouse=True)
+def nothing_frozen(tmp_path: Path):
+    """Tests run as if no settings were frozen; tests of the freeze set their own file."""
+    with patch("harness.settings.FROZEN_PATH", tmp_path / "no-frozen-settings.json"):
+        yield
+
+
 @pytest.fixture
 def temp_eval_dir(tmp_path: Path) -> Path:
     eval_dir = tmp_path / "eval"

@@ -211,6 +211,14 @@ eval: ## Run the full ablation harness (SLOW — consumes API quota)
 eval-arm: ## Run one arm, e.g. make eval-arm ARM=full_council
 	uv run python -m harness.run --arm $(ARM) $(ARGS)
 
+.PHONY: eval-settings
+eval-settings: ## Show this machine's evaluation settings and check them against the frozen ones
+	uv run python -m harness.settings
+
+.PHONY: eval-freeze
+eval-freeze: ## Record this machine's settings as the frozen ones (then commit the file)
+	uv run python -m harness.settings --freeze
+
 .PHONY: eval-report
 eval-report: ## Rebuild the evaluation report from existing results
 	uv run python -m metrics.report

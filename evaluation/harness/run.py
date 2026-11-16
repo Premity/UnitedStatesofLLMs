@@ -32,6 +32,7 @@ import structlog
 
 import council_core.llm.client as llm_client
 from harness.host import host_qdrant_url
+from harness.settings import SettingsMismatchError
 
 # Ensure local LiteLLM model cost map is used to prevent network timeouts in sandbox
 os.environ.setdefault("LITELLM_LOCAL_MODEL_COST_MAP", "True")
@@ -775,6 +776,9 @@ async def run_case(
     identity = get_resolver().corpus_identity()
     result["corpus"] = identity.model_dump(mode="json") if identity else None
     result["model_roster"] = model_roster
+    # Retrieval's half of the index: the corpus hash above covers only the
+    # citation index, so two machines can share it and still search differently.
+    result["embedding_model"] = get_settings().embedding_model
     result["synthetic"] = judge_backend == "mock"
     result["judge_attempts"] = request_counter.attempts
     result["judge_failures"] = request_counter.failures
@@ -830,6 +834,7 @@ async def run_evaluation(
     allow_mixed_results: bool = False,
     case_timeout: float = DEFAULT_CASE_TIMEOUT_SECONDS,
     max_consecutive_failures: int = DEFAULT_MAX_CONSECUTIVE_FAILURES,
+    allow_unfrozen_settings: bool = False,
 ) -> list[dict[str, Any]]:
     """Drive one or more arms across case fixtures, handling quota and persistence."""
     if case_timeout <= 0:
@@ -839,6 +844,10 @@ async def run_evaluation(
 
     if judge_backend != "mock":
         require_populated_index()
+        if not allow_unfrozen_settings:
+            from harness.settings import require_frozen_settings
+
+            require_frozen_settings()
 
     run_started = time.perf_counter()
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -913,7 +922,10 @@ async def run_evaluation(
         reserved_attempts = expected_calls * 3
         today_usage = quota_tracker.get_today_usage()
 
+        from harness.settings import current_settings
+
         print("\n--- Live API Judge Run ---")
+        print(f"Settings fingerprint: {current_settings()['fingerprint']}")
         print(f"Scheduled cases: {len(pending_tasks)}")
         print(f"Expected judge calls: {expected_calls}")
         print(f"Reserved judge attempts (3 per expected call): {reserved_attempts}")
@@ -1074,6 +1086,12 @@ def build_parser() -> argparse.ArgumentParser:
         help="Custom directory to load cases from (default: evaluation/cases/dev).",
     )
     parser.add_argument(
+        "--allow-unfrozen-settings",
+        action="store_true",
+        help="Run although this machine's settings differ from evaluation/frozen-settings.json "
+        "(a deliberate experiment; its results will not pool with the scored run).",
+    )
+    parser.add_argument(
         "--go",
         action="store_true",
         help="Skip interactive confirmation for live runs (use with caution).",
@@ -1144,6 +1162,7 @@ async def async_main(args: argparse.Namespace) -> None:
         allow_mixed_results=args.allow_mixed_results,
         case_timeout=args.case_timeout,
         max_consecutive_failures=args.max_consecutive_failures,
+        allow_unfrozen_settings=args.allow_unfrozen_settings,
     )
 
 
@@ -1153,7 +1172,12 @@ def main() -> None:
     args = parser.parse_args()
     try:
         asyncio.run(async_main(args))
-    except (QuotaExceededError, EmptyCorpusIndexError, KeyboardInterrupt) as exc:
+    except (
+        QuotaExceededError,
+        EmptyCorpusIndexError,
+        SettingsMismatchError,
+        KeyboardInterrupt,
+    ) as exc:
         print(f"\n{exc}", file=sys.stderr)
         sys.exit(1)
 
