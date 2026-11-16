@@ -32,6 +32,7 @@ import structlog
 
 import council_core.llm.client as llm_client
 from harness.host import host_qdrant_url
+from harness.settings import SettingsMismatchError
 
 # Ensure local LiteLLM model cost map is used to prevent network timeouts in sandbox
 os.environ.setdefault("LITELLM_LOCAL_MODEL_COST_MAP", "True")
@@ -167,20 +168,24 @@ def normalize_outcome(conclusion: str | None) -> str:
     if not conclusion:
         return Outcome.INDETERMINATE.value
     text = conclusion.lower().strip()
-    answer = re.match(r"^(yes|no)\b", text)
+    # The judge is told to open with "Yes.", "No." or "Indeterminate." as the direct
+    # answer, so an opener is the answer. Only a "Yes" is second-guessed, and only
+    # when its own first sentence denies the outcome outright ("Yes, the accused is
+    # not criminally responsible"). A "No" routinely goes on to say what *is* true
+    # ("No. The campaign constituted war crimes, but not the crime of terror"), so
+    # reading its first sentence for affirmative words misscored real verdicts.
+    answer = re.match(r"^(yes|no|indeterminate)\b", text)
     if answer:
+        if answer.group(1) == "indeterminate":
+            return Outcome.INDETERMINATE.value
+        if answer.group(1) == "no":
+            return Outcome.REJECTED.value
         response = text[answer.end() :].lstrip(" \t,.;:!")
         first_sentence = re.split(r"(?<=[.!?])\s+", response, maxsplit=1)[0]
-        if answer.group(1) == "yes":
-            return (
-                Outcome.INDETERMINATE.value
-                if _contains_negative_outcome(first_sentence, include_bare_did_not=False)
-                else Outcome.AFFIRMED.value
-            )
         return (
             Outcome.INDETERMINATE.value
-            if normalize_outcome(first_sentence) == Outcome.AFFIRMED.value
-            else Outcome.REJECTED.value
+            if _contains_negative_outcome(first_sentence, include_bare_did_not=False)
+            else Outcome.AFFIRMED.value
         )
     if text in ("affirmed", "affirm", "yes", "violation"):
         return Outcome.AFFIRMED.value
@@ -241,7 +246,10 @@ def _contains_negative_outcome(text: str, *, include_bare_did_not: bool = True) 
         any(phrase in text for phrase in negative_phrases)
         or (include_bare_did_not and "did not" in text)
         or re.search(
-            r"\b(?:was|were|is|are)\s+not\s+an?\s+(?:war\s+)?(?:crime|violation|breach)\b|\blawful\b",
+            # "lawful" alone also matched "a lawful military objective" and "not
+            # lawful", turning affirmative answers indeterminate.
+            r"\b(?:was|were|is|are)\s+not\s+an?\s+(?:war\s+)?(?:crime|violation|breach)\b"
+            r"|\b(?:was|were|is|are)\s+lawful\b",
             text,
         )
         is not None
@@ -768,6 +776,9 @@ async def run_case(
     identity = get_resolver().corpus_identity()
     result["corpus"] = identity.model_dump(mode="json") if identity else None
     result["model_roster"] = model_roster
+    # Retrieval's half of the index: the corpus hash above covers only the
+    # citation index, so two machines can share it and still search differently.
+    result["embedding_model"] = get_settings().embedding_model
     result["synthetic"] = judge_backend == "mock"
     result["judge_attempts"] = request_counter.attempts
     result["judge_failures"] = request_counter.failures
@@ -823,6 +834,7 @@ async def run_evaluation(
     allow_mixed_results: bool = False,
     case_timeout: float = DEFAULT_CASE_TIMEOUT_SECONDS,
     max_consecutive_failures: int = DEFAULT_MAX_CONSECUTIVE_FAILURES,
+    allow_unfrozen_settings: bool = False,
 ) -> list[dict[str, Any]]:
     """Drive one or more arms across case fixtures, handling quota and persistence."""
     if case_timeout <= 0:
@@ -832,6 +844,10 @@ async def run_evaluation(
 
     if judge_backend != "mock":
         require_populated_index()
+        if not allow_unfrozen_settings:
+            from harness.settings import require_frozen_settings
+
+            require_frozen_settings()
 
     run_started = time.perf_counter()
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -906,7 +922,10 @@ async def run_evaluation(
         reserved_attempts = expected_calls * 3
         today_usage = quota_tracker.get_today_usage()
 
+        from harness.settings import current_settings
+
         print("\n--- Live API Judge Run ---")
+        print(f"Settings fingerprint: {current_settings()['fingerprint']}")
         print(f"Scheduled cases: {len(pending_tasks)}")
         print(f"Expected judge calls: {expected_calls}")
         print(f"Reserved judge attempts (3 per expected call): {reserved_attempts}")
@@ -1012,7 +1031,7 @@ def build_parser() -> argparse.ArgumentParser:
         action="append",
         default=None,
         metavar="CASE_ID",
-        help="Run only this case from the tier. Repeatable. A live run reserves 24 judge "
+        help="Run only this case from the tier. Repeatable. A live run reserves 21 judge "
         "attempts per case across all arms, so run one case per invocation.",
     )
     parser.add_argument(
@@ -1065,6 +1084,12 @@ def build_parser() -> argparse.ArgumentParser:
         type=Path,
         default=None,
         help="Custom directory to load cases from (default: evaluation/cases/dev).",
+    )
+    parser.add_argument(
+        "--allow-unfrozen-settings",
+        action="store_true",
+        help="Run although this machine's settings differ from evaluation/frozen-settings.json "
+        "(a deliberate experiment; its results will not pool with the scored run).",
     )
     parser.add_argument(
         "--go",
@@ -1137,6 +1162,7 @@ async def async_main(args: argparse.Namespace) -> None:
         allow_mixed_results=args.allow_mixed_results,
         case_timeout=args.case_timeout,
         max_consecutive_failures=args.max_consecutive_failures,
+        allow_unfrozen_settings=args.allow_unfrozen_settings,
     )
 
 
@@ -1146,7 +1172,12 @@ def main() -> None:
     args = parser.parse_args()
     try:
         asyncio.run(async_main(args))
-    except (QuotaExceededError, EmptyCorpusIndexError, KeyboardInterrupt) as exc:
+    except (
+        QuotaExceededError,
+        EmptyCorpusIndexError,
+        SettingsMismatchError,
+        KeyboardInterrupt,
+    ) as exc:
         print(f"\n{exc}", file=sys.stderr)
         sys.exit(1)
 

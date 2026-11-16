@@ -54,6 +54,10 @@ Authority:
 
 Rule on every objection listed above, then state your conclusion.
 
+**Answering the question.** Sustaining an objection removes or narrows the
+argument it targets; it is not by itself an answer of No. Your conclusion
+answers the question asked, on the law and the facts, using what survived.
+
 Begin the conclusion with **"Yes."**, **"No."**, or **"Indeterminate."** to
 answer the question directly. Use "Yes" when the proposition in the question is
 affirmed and "No" when it is rejected; use "Indeterminate" only when the

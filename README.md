@@ -279,6 +279,7 @@ not a code change. ([ADR 0002](docs/adr/0002-litellm-model-gateway.md))
 | [docs/development.md](docs/development.md) | Every command, the dev loop, troubleshooting |
 | [docs/corpus.md](docs/corpus.md) | Corpus tiering, document shapes, chunking rules |
 | [docs/evaluation.md](docs/evaluation.md) | Ablation design, metrics, how to write a case |
+| [docs/runbook-evaluation.md](docs/runbook-evaluation.md) | Step by step: set up a machine, run cases, send results, build the report |
 | [docs/data-model.md](docs/data-model.md) | Every domain type and how they relate |
 | [docs/api-contract.md](docs/api-contract.md) | Endpoints, SSE event shapes |
 | [docs/adr/](docs/adr/) | Why the significant decisions went the way they did |

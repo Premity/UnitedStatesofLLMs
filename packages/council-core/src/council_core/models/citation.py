@@ -30,6 +30,15 @@ from pydantic import BaseModel, Field, field_validator
 _ARTICLE_PREFIX_RE = re.compile(r"^(?:\s*art(?:icle)?(?:\.|\s)\s*)+", re.IGNORECASE)
 
 
+# Rome Statute art. 8 lists its war crimes under paragraph 2, so every lettered
+# subparagraph sits below a paragraph number: 8(2)(b)(iv). Models drop the
+# paragraph and write 8(b)(iv), a real provision that no locator matches; live,
+# a presenter cited Gotovina's three charges that way and all three scored as
+# fabrications. Only art. 8 is listed: other articles really do start with a
+# letter (28(a)), and the index holds no art.8(<letter>) locator.
+_LETTERED_UNDER_PARAGRAPH_RE = {"rome_statute": re.compile(r"^(8)(\([a-z]+\).*)$")}
+
+
 def _strip_article_prefix(article: str | None) -> str | None:
     """Drop a redundant 'art.'/'article' prefix a model put inside the field.
 
@@ -133,6 +142,47 @@ class Citation(BaseModel):
         description="The span the model claims this locator contains. Checked when present.",
     )
 
+    def locator_gap(self) -> str | None:
+        """Why this citation lacks a field its type requires, or None if it does not."""
+        match self.type:
+            case CitationType.TREATY if not self.article:
+                return "Treaty citation is missing an article locator."
+            case CitationType.CASE if not (self.case_id and self.paragraph):
+                return "Case citation requires both a case id and a paragraph."
+            case CitationType.CUSTOMARY if self.rule_number is None:
+                return "Customary IHL citation is missing a rule number."
+            case _:
+                return None
+
+    def format_problem(self) -> str | None:
+        """Why this citation is malformed as emitted, or None if it is well formed.
+
+        Checked when a model's reply is parsed, so a malformed citation goes
+        back to the model to correct rather than reaching the resolver, which
+        scores an incomplete citation `unresolved`, the fabrication signal. A
+        real provision in the wrong shape is not a fabrication; an invented one
+        still fails to resolve once it is well formed.
+        """
+        if gap := self.locator_gap():
+            return gap
+        if "/" in self.instrument:
+            return (
+                f"'instrument' must be the instrument's id alone, e.g. 'ap_i', not a locator "
+                f"('{self.instrument}'); put the article in 'article'."
+            )
+        pattern = _LETTERED_UNDER_PARAGRAPH_RE.get(self.instrument)
+        if (
+            self.type is CitationType.TREATY
+            and pattern
+            and (m := pattern.match(self.article or ""))
+        ):
+            return (
+                f"'{self.instrument}' article '{self.article}' leaves out the paragraph: its "
+                f"lettered subparagraphs sit under paragraph 2, so write '{m[1]}(2){m[2]}'. "
+                "Copy every level from the retrieved context heading."
+            )
+        return None
+
     def locator(self) -> str:
         """Render a stable, human-readable locator string.
 
@@ -176,3 +226,26 @@ class ResolvedCitation(BaseModel):
     def is_supported(self) -> bool:
         """Whether an argument resting on this citation may be treated as grounded."""
         return self.status == CitationStatus.RESOLVED
+
+
+def malformed_citations(items: list[tuple[str, list[Citation]]]) -> str | None:
+    """Every malformed citation in a model's reply, as one message for the repair prompt.
+
+    `items` pairs a label ("arguments[0]") with that item's citations. Returns
+    None when all are well formed.
+    """
+    problems = [
+        f"{label}.citations[{i}]: {problem}"
+        for label, citations in items
+        for i, citation in enumerate(citations)
+        if (problem := citation.format_problem())
+    ]
+    if not problems:
+        return None
+    return (
+        "Malformed citations:\n- "
+        + "\n- ".join(problems)
+        + '\nA treaty article is {"type": "treaty", "instrument": "ap_i", "article": "51(2)"};'
+        " copy the instrument and article from the retrieved context heading"
+        " [<instrument>/art.<article>]."
+    )

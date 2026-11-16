@@ -18,12 +18,13 @@ local citation status.
 
 ## What is left, in order
 
-Updated 2026-11-14. The harness exists and the scope is three cases (ADR 0012).
-The critical path is a one-case rehearsal, then the scored run.
+Updated 2026-11-16. The harness exists and the scope is three cases (ADR 0012).
+The one-case rehearsal passed unattended on the frozen settings (GitHub #25);
+the critical path is the scored run.
 
 | # | Item | Why it is where it is |
 | --- | --- | --- |
-| 1 | **Rehearsal, then the scored run** | All five arms live on one case first, then the three. GitHub #25, #26 |
+| 1 | **The scored run** | All five arms on the three core cases, on the frozen settings. GitHub #26 |
 
 Reasoning overlap (GitHub #27) is scored by hand after the scored run: the
 rubric, the scores file and the report column are in place, and the 15
@@ -137,7 +138,13 @@ unattended, which #25's definition of done requires:
    E's samples run sequentially with retry backoff. The default is now 900 s,
    the value the successful re-run used.
 
-A re-run of the rehearsal without either workaround completes #25.
+A re-run of the rehearsal without either workaround completes #25. Attempt 7,
+on 2026-11-16 on the frozen settings, did (`tuning/LOG.md`). Attempts 4-6
+before it stopped at Groq free-tier limits: the presenter's round 2 over 8,000
+tokens a minute, then the doctrinal attacker over 1,000 output tokens a minute,
+then the presenter's daily tokens. The first two are fixed by the rebuttal
+trim and shorter doctrinal objections; the third is planning (runbook,
+section 2).
 
 ---
 
@@ -169,9 +176,9 @@ Markdown report. Reasoning overlap is scored by hand into
 
 ### [RESOLVED] Arm E — the compute-matched control
 
-Written: `evaluation/harness/sampling.py`, decided in ADR 0011. Not yet run
-live; the rehearsal (GitHub #25) is its first run. The original specification
-follows.
+Written: `evaluation/harness/sampling.py`, decided in ADR 0011. Run live in
+the rehearsal (GitHub #25): on `icty_galic_terror` it made 7 presenter samples
+and 1 judge call, matching arm D's 8 calls. The original specification follows.
 
 It runs the presenter alone with retrieval, samples it *n* times at a
 temperature that produces genuine variation, and aggregates the samples into one

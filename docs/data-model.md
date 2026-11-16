@@ -210,9 +210,11 @@ ground truth appears in it.
 
 One JSON file per arm and case in `data/eval/<arm>/<case_id>.json`, written by
 `evaluation/harness/run.py`. Besides the outcome, confidence and citation
-counts, it records `prompt_hashes`, `model_roster`, `judge_backend` and
-`corpus`, the same `CorpusIdentity` a run artifact carries. The report refuses
-to combine results whose `corpus` differs, including one that has none.
+counts, it records `prompt_hashes`, `composite_prompt_hash`, `model_roster`,
+`judge_backend`, `embedding_model` and `corpus` (the same `CorpusIdentity` a run
+artifact carries). The report refuses to combine results whose `corpus`
+differs, or whose roster, prompt set or embedding model differs, including a
+result that does not record one: absence is its own value, never a match.
 
 ### `Arm`
 

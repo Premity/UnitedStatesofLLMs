@@ -200,6 +200,13 @@ corpus. On a fresh clone it is the 24-locator placeholder from `corpus/stub/`,
 and most real citations miss it. A live evaluation run refuses an empty index;
 the usual cause there is running the harness from outside the repo root.
 
+**Evaluation arms B-E fail with `nodename nor servname provided, or not known`**
+Retrieval tried Qdrant at the compose hostname `qdrant`, which the host cannot
+resolve; arm A retrieves nothing, so the run looks partial. The harness already
+swaps `qdrant` for `localhost` on the host (`evaluation/harness/host.py`), so
+seeing this means another hostname is set, or the stack is down. Check with
+`curl localhost:6333/healthz`.
+
 **API cannot reach Ollama**
 On Linux, the container needs `extra_hosts: host.docker.internal:host-gateway`
 (already in `docker-compose.yml`). Verify Ollama is listening on all interfaces,
@@ -258,6 +265,8 @@ assuming the space has leaked.
 make eval                      # every implemented arm — SLOW, consumes quota
 make eval-arm ARM=full_council # one arm
 make eval-report               # rebuild the report from existing results
+make eval-settings             # this machine's settings vs the frozen ones
+make eval-freeze               # re-record the frozen settings (only with a deliberate change)
 ```
 
-Never part of CI. See [evaluation.md](evaluation.md).
+Never part of CI. To run it, follow [runbook-evaluation.md](runbook-evaluation.md); for the design, see [evaluation.md](evaluation.md).

@@ -372,3 +372,38 @@ def test_the_report_shows_severity_per_arm_with_overruled_fatal_called_out() -> 
     rows = [line for line in report.splitlines() if line.startswith("| full_council | 0 / 1")]
     assert rows and rows[0].rstrip().endswith("| 1 |")
     assert "| single_attacker | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 |" in report
+
+
+def _with_settings(result: dict, judge: str = "openrouter/judge:free") -> dict:
+    return {
+        **result,
+        "model_roster": {
+            "presenter": "groq/p",
+            "attacker_doctrinal": "groq/d",
+            "attacker_evidentiary": "groq/e",
+            "judge": judge,
+        },
+        "composite_prompt_hash": "f8a652539767" + "0" * 52,
+        "embedding_model": "BAAI/bge-large-en-v1.5",
+    }
+
+
+def test_the_report_prints_the_settings_the_results_ran_under() -> None:
+    report = render_report([_with_settings(_result(arm="rag", correct=True, confidence=0.8))])
+    assert "Settings for every scored result" in report
+    assert "- judge: `openrouter/judge:free`" in report
+    assert "- prompts: `f8a652539767`" in report
+    assert "- embedding: `BAAI/bge-large-en-v1.5`" in report
+
+
+def test_results_from_two_rosters_are_refused_unless_allowed() -> None:
+    results = [
+        _with_settings(_result(arm="rag", correct=True, confidence=0.8, case_id="a")),
+        _with_settings(_result(arm="rag", correct=True, confidence=0.8, case_id="b"), judge="x"),
+    ]
+    with pytest.raises(ValueError, match="different settings"):
+        render_report(results)
+
+    report = render_report(results, allow_mixed_settings=True)
+    assert "Mixed settings" in report
+    assert _case_cells(report, "a", "rag")[-1] in {"S1", "S2"}
