@@ -25,6 +25,16 @@ REAL_MALFORMED = {
 }
 WELL_FORMED = {"type": "treaty", "instrument": "ap_i", "article": "51(2)"}
 
+#: A presenter's citation from a live arm C run on Gotovina: Rome Statute
+#: art. 8(2)(b)(iv), a real provision, with its paragraph dropped.
+REAL_DROPPED_PARAGRAPH = {
+    "type": "treaty",
+    "instrument": "rome_statute",
+    "article": "8(b)(iv)",
+    "quoted_text": "Intentionally launching an attack in the knowledge that such attack will "
+    "cause incidental loss of life or injury to civilians",
+}
+
 
 def _objection(citations: list[dict]) -> dict:
     return {
@@ -46,6 +56,8 @@ def _objection(citations: list[dict]) -> dict:
             {"type": "treaty", "instrument": "ap_i/art.51", "article": "51"},
             "instrument's id alone",
         ),
+        (REAL_DROPPED_PARAGRAPH, "write '8(2)(b)(iv)'"),
+        ({"type": "treaty", "instrument": "rome_statute", "article": "8(e)(i)"}, "8(2)(e)(i)"),
     ],
 )
 def test_a_malformed_citation_says_what_is_wrong(citation: dict, problem: str) -> None:
@@ -58,6 +70,13 @@ def test_a_malformed_citation_says_what_is_wrong(citation: dict, problem: str) -
         WELL_FORMED,
         {"type": "case", "instrument": "icty", "case_id": "icty_galic_tj", "paragraph": "58"},
         {"type": "customary", "instrument": "customary_ihl", "rule_number": 2},
+        # Article 8 written in full, and articles that really do start with a letter.
+        {"type": "treaty", "instrument": "rome_statute", "article": "8(2)(b)(iv)"},
+        {"type": "treaty", "instrument": "rome_statute", "article": "8"},
+        {"type": "treaty", "instrument": "rome_statute", "article": "28(a)"},
+        {"type": "treaty", "instrument": "rome_statute", "article": "8bis(2)(a)"},
+        # Another instrument's art. 8 is not Rome Statute art. 8.
+        {"type": "treaty", "instrument": "gc_iv", "article": "8(a)"},
     ],
 )
 def test_a_well_formed_citation_has_no_problem(citation: dict) -> None:
@@ -87,6 +106,19 @@ def test_a_presenter_reply_with_a_malformed_citation_is_rejected() -> None:
     }
     with pytest.raises(ValidationError, match=r"arguments\[0\]\.citations\[0\]"):
         _PresenterResponse.model_validate({"arguments": [argument]})
+
+
+def test_a_presenter_reply_dropping_article_8s_paragraph_is_sent_back() -> None:
+    argument = {"claim": "c", "reasoning": "r", "citations": [REAL_DROPPED_PARAGRAPH]}
+    with pytest.raises(ValidationError, match=r"8\(2\)\(b\)\(iv\)"):
+        _PresenterResponse.model_validate({"arguments": [argument]})
+
+
+def test_an_invented_article_8_provision_still_reaches_the_resolver() -> None:
+    # Only the shape is checked. A well-formed provision that does not exist
+    # passes here and still resolves `unresolved`: the fabrication signal stays.
+    invented = {"type": "treaty", "instrument": "rome_statute", "article": "8(2)(b)(xcix)"}
+    assert Citation.model_validate(invented).format_problem() is None
 
 
 def test_the_message_lists_every_problem_at_once() -> None:

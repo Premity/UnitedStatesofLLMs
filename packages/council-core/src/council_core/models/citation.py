@@ -30,6 +30,15 @@ from pydantic import BaseModel, Field, field_validator
 _ARTICLE_PREFIX_RE = re.compile(r"^(?:\s*art(?:icle)?(?:\.|\s)\s*)+", re.IGNORECASE)
 
 
+# Rome Statute art. 8 lists its war crimes under paragraph 2, so every lettered
+# subparagraph sits below a paragraph number: 8(2)(b)(iv). Models drop the
+# paragraph and write 8(b)(iv), a real provision that no locator matches; live,
+# a presenter cited Gotovina's three charges that way and all three scored as
+# fabrications. Only art. 8 is listed: other articles really do start with a
+# letter (28(a)), and the index holds no art.8(<letter>) locator.
+_LETTERED_UNDER_PARAGRAPH_RE = {"rome_statute": re.compile(r"^(8)(\([a-z]+\).*)$")}
+
+
 def _strip_article_prefix(article: str | None) -> str | None:
     """Drop a redundant 'art.'/'article' prefix a model put inside the field.
 
@@ -160,6 +169,17 @@ class Citation(BaseModel):
             return (
                 f"'instrument' must be the instrument's id alone, e.g. 'ap_i', not a locator "
                 f"('{self.instrument}'); put the article in 'article'."
+            )
+        pattern = _LETTERED_UNDER_PARAGRAPH_RE.get(self.instrument)
+        if (
+            self.type is CitationType.TREATY
+            and pattern
+            and (m := pattern.match(self.article or ""))
+        ):
+            return (
+                f"'{self.instrument}' article '{self.article}' leaves out the paragraph: its "
+                f"lettered subparagraphs sit under paragraph 2, so write '{m[1]}(2){m[2]}'. "
+                "Copy every level from the retrieved context heading."
             )
         return None
 
