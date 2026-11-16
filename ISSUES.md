@@ -24,7 +24,7 @@ the critical path is the scored run.
 
 | # | Item | Why it is where it is |
 | --- | --- | --- |
-| 1 | **The scored run** | All five arms on the three core cases, on the frozen settings. GitHub #26 |
+| 1 | **The scored run** | All five arms on the three core cases, on the frozen settings. GitHub #26. In progress: Gotovina ran 2026-11-16; Galić and Bemba are left, then the report and write-up |
 
 Reasoning overlap (GitHub #27) is scored by hand after the scored run: the
 rubric, the scores file and the report column are in place, and the 15
