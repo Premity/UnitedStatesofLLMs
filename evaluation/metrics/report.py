@@ -16,7 +16,10 @@ from metrics.provenance import (
     corpus_label,
     is_synthetic_result,
     load_result_files,
+    settings_label,
+    settings_parts,
     validate_corpus_consistency,
+    validate_settings_consistency,
 )
 from metrics.reasoning_overlap import (
     DEFAULT_SCORES_PATH,
@@ -369,6 +372,7 @@ def _case_rows(
     *,
     show_corpus: bool = False,
     overlap: dict[str, list[OverlapScore]] | None = None,
+    settings_names: dict[str, str] | None = None,
 ) -> list[str]:
     """One row per case and arm: every data point, so arms compare case by case.
 
@@ -380,12 +384,14 @@ def _case_rows(
         by_case[str(result.get("case_id", "unknown"))].append(result)
 
     corpus_head = " Citation index |" if show_corpus else ""
+    corpus_head += " Settings |" if settings_names else ""
     lines = [
         "| Case | Truth | Arm | Predicted | Correct | Confidence | "
         "Unresolved | Misquoted | Eligible citations | Attacker independence | "
         "Reasoning overlap |" + corpus_head,
         "| --- | --- | --- | --- | :---: | ---: | ---: | ---: | ---: | ---: | ---: |"
-        + (" --- |" if show_corpus else ""),
+        + (" --- |" if show_corpus else "")
+        + (" --- |" if settings_names else ""),
     ]
     for case_id in sorted(by_case):
         rows = sorted(by_case[case_id], key=lambda row: _arm_sort_key(str(row.get("arm"))))
@@ -393,6 +399,8 @@ def _case_rows(
             truth = result.get("ground_truth_outcome") or "?"
             arm = result.get("arm", "unknown")
             corpus_cell = f" {corpus_label(result)} |" if show_corpus else ""
+            if settings_names:
+                corpus_cell += f" {settings_names.get(settings_label(result), '?')} |"
             if result.get("status") == "error":
                 kind = "timed out" if result.get("error_type") == "timeout" else "error"
                 lines.append(
@@ -415,15 +423,42 @@ def _case_rows(
     return lines
 
 
+def _settings_lines(results: list[dict[str, Any]], variants: list[str]) -> list[str]:
+    """The roster, prompts and embedding model the scored results ran under.
+
+    Frozen for the scored run (ADR 0009, `evaluation/frozen-settings.json`) and
+    checked above, so one set is the normal case. With --allow-mixed-settings
+    every variant is listed and named, and the per-case table says which row
+    ran under which.
+    """
+    scored = [r for r in results if not is_synthetic_result(r)]
+    if not scored:
+        return []
+    if len(variants) == 1:
+        lines = ["Settings for every scored result (frozen, ADR 0009):", ""]
+        lines += [f"- {name}: `{value}`" for name, value in settings_parts(scored[0]).items()]
+        return [*lines, ""]
+    lines = [
+        "> **Mixed settings:** the scored results ran under more than one roster, prompt "
+        "set or embedding model, so arms may differ by more than their structure. The "
+        "per-case table names each row's settings:",
+        "",
+    ]
+    lines += [f"- S{i}: {label}" for i, label in enumerate(variants, 1)]
+    return [*lines, ""]
+
+
 def render_report(
     results: list[dict[str, Any]],
     *,
     allow_mixed_results: bool = False,
     allow_mixed_corpora: bool = False,
     overlap_scores: list[OverlapScore] | None = None,
+    allow_mixed_settings: bool = False,
 ) -> str:
     """Render arm metrics while keeping synthetic and real results separate."""
     validate_corpus_consistency(results, allow_mixed_corpora=allow_mixed_corpora)
+    validate_settings_consistency(results, allow_mixed_settings=allow_mixed_settings)
     overlap, unmatched = match_to_results(overlap_scores or [], results)
     provenance = {is_synthetic_result(result) for result in results}
     if len(provenance) > 1 and not allow_mixed_results:
@@ -482,6 +517,13 @@ def render_report(
                 "",
             )
         )
+    scored_settings = sorted({settings_label(r) for r in results if not is_synthetic_result(r)})
+    lines.extend(_settings_lines(results, scored_settings))
+    settings_names = (
+        {label: f"S{i}" for i, label in enumerate(scored_settings, 1)}
+        if len(scored_settings) > 1
+        else None
+    )
     corpora = sorted({corpus_label(result) for result in results})
     if len(corpora) == 1:
         lines.extend((f"Citation index: `{corpora[0]}`.", ""))
@@ -557,7 +599,14 @@ def render_report(
         )
         lines.extend(_severity_rows(summaries))
         lines.extend(("", "### Per case", ""))
-        lines.extend(_case_rows(group_results, show_corpus=len(corpora) > 1, overlap=overlap))
+        lines.extend(
+            _case_rows(
+                group_results,
+                show_corpus=len(corpora) > 1,
+                overlap=overlap,
+                settings_names=settings_names,
+            )
+        )
         lines.extend(("", "### Prompt hashes", ""))
         for arm, summary in summaries.items():
             lines.append(f"**{arm}**")
@@ -577,6 +626,7 @@ def generate_report(
     allow_mixed_results: bool = False,
     allow_mixed_corpora: bool = False,
     scores_path: Path = DEFAULT_SCORES_PATH,
+    allow_mixed_settings: bool = False,
 ) -> Path:
     """Load result artifacts from the evaluation directory and write Markdown."""
     results = load_result_files(
@@ -588,6 +638,7 @@ def generate_report(
         allow_mixed_results=allow_mixed_results,
         allow_mixed_corpora=allow_mixed_corpora,
         overlap_scores=load_scores(scores_path),
+        allow_mixed_settings=allow_mixed_settings,
     )
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(report, encoding="utf-8")
@@ -613,6 +664,12 @@ def build_parser() -> argparse.ArgumentParser:
         help="Report results scored against different citation indexes, labelled per case.",
     )
     parser.add_argument(
+        "--allow-mixed-settings",
+        action="store_true",
+        help="Report results run under different rosters, prompts or embedding models, "
+        "labelled per case.",
+    )
+    parser.add_argument(
         "--scores",
         type=Path,
         default=DEFAULT_SCORES_PATH,
@@ -629,6 +686,7 @@ def main() -> None:
         allow_mixed_results=args.allow_mixed_results,
         allow_mixed_corpora=args.allow_mixed_corpora,
         scores_path=args.scores,
+        allow_mixed_settings=args.allow_mixed_settings,
     )
     print(f"Evaluation report written to {output_path}")
 
