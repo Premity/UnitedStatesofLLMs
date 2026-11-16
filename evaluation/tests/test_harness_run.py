@@ -1073,7 +1073,11 @@ class TestArmEHarness:
         assert result["judge_calls"] == 1
         assert result["predicted_outcome"] == "rejected"
         assert result["outcome_correct"] is False
-        assert result["confidence"] == 1.0  # All samples agree on affirmed
+        # Confidence is the judge's, for the outcome it predicted. The vote's
+        # agreement rate is for a different outcome here, so it is kept apart.
+        assert result["confidence"] == 0.8
+        assert result["vote_counts"] == {"affirmed": expected_samples}
+        assert result["agreement_rate"] == 1.0
 
 
 class TestDryRunIsOffline:

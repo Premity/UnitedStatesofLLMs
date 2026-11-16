@@ -583,11 +583,13 @@ async def _run_arm_e(
 
     predicted_outcome = normalize_outcome(verdict.conclusion if verdict else None)
     outcome_correct = predicted_outcome == case.outcome.value
-    confidence = agg.agreement_rate
-    confidence_reasoning = (
-        f"Self-consistency agreement rate ({agg.winning_outcome}: "
-        f"{agg.vote_counts.get(agg.winning_outcome or '', 0)}/{agg.total_samples})"
-    )
+    # The judge's confidence, as in arm B, not the samples' agreement rate. The
+    # presenter argues for the proposition in every sample, so the vote has no
+    # real disagreement to measure, and it was read from the arguments' wording:
+    # "the commander failed to act" read as a "no". The vote stays in the result
+    # as a diagnostic (ADR 0011, amended).
+    confidence = verdict.confidence if verdict else None
+    confidence_reasoning = verdict.confidence_reasoning if verdict else ""
 
     all_resolved = [rc for a in agg.aggregated_arguments for rc in a.resolved_citations]
     citation_statuses = {
@@ -624,6 +626,7 @@ async def _run_arm_e(
         "total_calls": len(all_turns),
         "samples": n_samples,
         "vote_counts": agg.vote_counts,
+        "agreement_rate": agg.agreement_rate,
         "citation_statuses": citation_statuses,
         "verdict": verdict.model_dump(mode="json") if verdict else None,
         "dissent": [d.model_dump(mode="json") for d in (verdict.dissent if verdict else [])],
