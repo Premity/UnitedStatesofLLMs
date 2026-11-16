@@ -7,10 +7,10 @@ off one attacker changes nothing about how the other behaves.
 
 from __future__ import annotations
 
-from pydantic import BaseModel
+from pydantic import BaseModel, model_validator
 
 from app.roles.base import BaseRole
-from council_core.models.citation import ResolvedCitation
+from council_core.models.citation import ResolvedCitation, malformed_citations
 from council_core.models.debate import Argument, DebateConfig, Objection, Role, Turn
 
 _PROMPT_BY_ROLE = {
@@ -23,6 +23,17 @@ class _AttackerResponse(BaseModel):
     """Schema an attacker must return."""
 
     objections: list[Objection]
+
+    @model_validator(mode="after")
+    def _citations_are_well_formed(self) -> _AttackerResponse:
+        # A malformed citation goes back to the model through the repair prompt
+        # instead of reaching the resolver as an "unresolved" fabrication.
+        problem = malformed_citations(
+            [(f"objections[{i}]", item.citations) for i, item in enumerate(self.objections)]
+        )
+        if problem:
+            raise ValueError(problem)
+        return self
 
 
 class AttackerRole(BaseRole):

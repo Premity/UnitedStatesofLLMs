@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from pydantic import BaseModel
+from pydantic import BaseModel, model_validator
 
 from app.roles.base import BaseRole
-from council_core.models.citation import ResolvedCitation
+from council_core.models.citation import ResolvedCitation, malformed_citations
 from council_core.models.debate import (
     Argument,
     DebateConfig,
@@ -19,6 +19,17 @@ class _PresenterResponse(BaseModel):
     """Schema the presenter must return."""
 
     arguments: list[Argument]
+
+    @model_validator(mode="after")
+    def _citations_are_well_formed(self) -> _PresenterResponse:
+        # A malformed citation goes back to the model through the repair prompt
+        # instead of reaching the resolver as an "unresolved" fabrication.
+        problem = malformed_citations(
+            [(f"arguments[{i}]", item.citations) for i, item in enumerate(self.arguments)]
+        )
+        if problem:
+            raise ValueError(problem)
+        return self
 
 
 class PresenterRole(BaseRole):

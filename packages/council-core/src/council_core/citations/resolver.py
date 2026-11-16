@@ -28,7 +28,6 @@ import structlog
 from council_core.models.citation import (
     Citation,
     CitationStatus,
-    CitationType,
     ResolvedCitation,
 )
 from council_core.models.corpus import CorpusIdentity
@@ -202,15 +201,7 @@ class CitationResolver:
     @staticmethod
     def _locator_gap(citation: Citation) -> str | None:
         """Return a reason string if the citation lacks fields its type requires."""
-        match citation.type:
-            case CitationType.TREATY if not citation.article:
-                return "Treaty citation is missing an article locator."
-            case CitationType.CASE if not (citation.case_id and citation.paragraph):
-                return "Case citation requires both a case id and a paragraph."
-            case CitationType.CUSTOMARY if citation.rule_number is None:
-                return "Customary IHL citation is missing a rule number."
-            case _:
-                return None
+        return citation.locator_gap()
 
     def _quote_matches(self, quoted: str, corpus_text: str) -> bool:
         """Loose containment check for a claimed quotation.
