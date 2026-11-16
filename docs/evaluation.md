@@ -71,6 +71,15 @@ not as it *characterised* them. "The attacks struck civilians queuing for water"
 is a fact. "The attacks were indiscriminate" is the holding wearing a fact's
 clothes.
 
+**Leaving out the facts the reasoning stands on.** The facts must include every
+factual finding the tribunal's `key_reasoning` relies on, except the one the
+question asks about. If the tribunal inferred a purpose from a campaign's lack
+of military significance, the facts state that lack; they do not state the
+purpose. A record thinner than the tribunal's invites the debate to find a
+"gap" that the tribunal never had, and the council's attackers will find it
+(the Galić rehearsals, `tuning/LOG.md`). Take additions from the case file
+itself, never from memory of the case.
+
 **Only picking easy cases.** A set of settled questions makes every arm look
 equally good and measures nothing. `difficulty: contested` cases are where
 calibration separates the arms, and they should be a substantial share.
