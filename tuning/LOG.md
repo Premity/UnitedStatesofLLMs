@@ -10,7 +10,42 @@ from the result artifact or report. Keep held-out cases out of prompt tuning.
 | 2026-11-12 | — (judge JSON mode in `packages/council-core/src/council_core/llm/client.py`) | — | 0 | 0 | - | - | - | Request JSON mode for structured judge calls; no evaluation metrics claimed. |
 | 2026-11-16 | `prompts/judge/rule.md` (+ scorer fix, case facts; see below) | `6854889d75` (set `0455e4cb3248`) | 3 | 16 | B 0.33 · C 0.67 · D 0.67 | B 0.46 · C 0.22 · D 0.19 | B 0.57 · C 0.20 · D 0.18 | One run per arm and case; not separable, see below. |
 | 2026-11-16 | `prompts/shared/_citation_rules.md`, both attacker `challenge.md` (+ citation format check) | set `e687486954b3` | 2 of 3 | 10 | C 0.50 · D 0.50 (Gotovina errored) | - | - | Citation format fixed; exposed the judge prompt silencing the evidentiary attacker. See below. |
+| 2026-11-16 | `prompts/judge/rule.md` ("Weighing the facts" removed) | `aa219aad89` (set `f8a652539767`) | 3 | 7 | D 1.00 (3 of 3) | - | - | D only; C on Bemba hit a Groq limit. One run each. See below. |
 
+
+## Judge prompt corrected: the full council on its own facts fix, 2026-11-16
+
+**Change.** The first fix's "Weighing the facts" paragraph is removed from the
+judge prompt; "Answering the question" stays. With the citation fix in place,
+this isolates the case-facts change as the remaining fix for Galić.
+
+**Result** (D on the three core cases, `data/scratch/tune-03`, 7 judge
+attempts):
+
+| Case (truth) | D | Evidentiary objections (sustained / partial / overruled) | Unresolved |
+| --- | --- | --- | --- |
+| Galić (affirmed) | affirmed 0.75 | 2 / 3 / 2 | 0 / 36 |
+| Bemba (rejected) | rejected 0.68 | 0 / 2 / 3 | 1 / 18 |
+| Gotovina (rejected) | rejected 0.75 | 7 / 0 / 0 | 0 / 13 |
+
+- **The full council answered all three correctly**, the first time any arm
+  got Gotovina right. Galić stays right without the judge being pushed toward
+  Yes, so the case facts were the fix it needed.
+- **The evidentiary attacker is back in play**: sustained or partly sustained
+  in Galić and Gotovina, and decisive in Gotovina, an appeal about whether the
+  evidence supported the trial findings.
+- **The one unresolved citation is a real mis-citation**: the presenter quoted
+  AP I art. 86(2) verbatim but filed it under `customary_ihl`. It is well
+  formed, so the format check rightly lets it through, and the metric rightly
+  counts it.
+- **C on Bemba did not run**: Groq rate-limited the presenter's model
+  (`openai/gpt-oss-120b`) on this account after a day of runs. C under this
+  prompt is untested.
+
+One run per case, on the scored cases. Together with the first fix's run it
+shows the debate arms now reach the tribunal's answer where they did not, not
+how reliably. C needs a run under this prompt before the set is frozen for
+#26.
 
 ## Citation format fix, and a judge prompt that overcorrected, 2026-11-16
 
