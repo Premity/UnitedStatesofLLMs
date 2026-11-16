@@ -1,0 +1,1097 @@
+{
+  "case_id": "icc_bemba_command",
+  "case_title": "Prosecutor v. Jean-Pierre Bemba Gombo — command responsibility",
+  "court": "ICC",
+  "year": 2018,
+  "difficulty": "contested",
+  "arm": "single_attacker",
+  "arm_label": "C — One attacker",
+  "run_id": "eval_3ef4627e8e",
+  "question": "Has it been established beyond reasonable doubt that the commander of a force deployed in a foreign country was criminally responsible under Article 28(a) of the Rome Statute for crimes committed by that force's troops?",
+  "facts": "Troops of the Mouvement de libération du Congo (MLC) operated in the Central African Republic from on or about 26 October 2002 to 15 March 2003. The Trial Chamber found the commander to have acted as a military commander with effective control over the troops. The crimes at issue included murder, rape, and pillaging. On appeal he argued that the Trial Chamber had misappreciated the limitations of the MLC's jurisdiction and competence to investigate, and that it had ignored that he had asked the Central African Republic Prime Minister to investigate the allegations and had sent a letter to the Central African Republic authorities concerning allegations of crimes. Evidence before the Trial Chamber included testimony about the limits of his power to investigate crimes committed in the Central African Republic and about logistical difficulties in doing so, and the MLC relied on cooperation with the Central African Republic authorities during the operation. The Trial Chamber acknowledged that he had taken some measures during the operation. The Trial Chamber found that MLC troops continued committing crimes throughout the operation and that consistent information about these crimes was brought to his attention. He initiated inquiries. Other MLC commanders exercised some disciplinary authority in the field.",
+  "ground_truth_outcome": "rejected",
+  "holding": "In its Appeals Judgment of 8 June 2018, the ICC Appeals Chamber majority found that errors materially affected the Trial Chamber's conclusion that the commander had failed to take all necessary and reasonable measures under Article 28 of the Rome Statute. The majority held that he could not be held criminally liable under Article 28 for the crimes committed by MLC troops during the operation, reversed his conviction, discontinued proceedings for acts outside the scope of the charges, and acquitted him of the remaining criminal acts. Judges Monageng and Hofmański dissented and would have confirmed the Trial Chamber's conviction.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": false,
+  "confidence": 0.68,
+  "confidence_reasoning": "Confidence is calibrated at 0.68 because the effective-control and knowledge elements are strongly supported by the Trial Chamber's factual findings and the statutory text. The failure-to-act element is closer: the Appeals Chamber in the actual Bemba case ultimately acquitted on this ground, finding the Trial Chamber had not adequately assessed what measures were 'within his power' given the operational context (deployment in a foreign state, reliance on host-state cooperation). The objection obj_fec5c111 correctly highlights this contextual nuance. However, on the arguments and facts presented in this proceeding — which emphasize the commander's effective control and the persistence of crimes despite his limited steps — the preponderance supports responsibility. The 0.68 reflects that this is a genuinely contested question where reasonable tribunals have differed.",
+  "rounds": 2,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 2,
+  "total_calls": 6,
+  "citation_statuses": {
+    "total": 13,
+    "resolved": 11,
+    "unresolved": 2,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes.",
+    "reasoning": "The commander's criminal responsibility under Article 28(a) is established beyond reasonable doubt on the surviving arguments. First, effective command and control is directly established by the Trial Chamber's finding that the commander acted as a military commander with effective control over MLC troops (arg_e5567dbf, arg_d9e288f7; rome_statute/art.28(a)). Second, the knowledge element under Article 28(a)(i) is satisfied: consistent information about murders, rapes, and pillaging was brought to the commander's attention, he initiated inquiries, and other MLC commanders exercised disciplinary authority, establishing actual or constructive knowledge (arg_d699d8f4; rome_statute/art.28(a)(i), ap_i/art.86(2)). Third, the commander failed to take all necessary and reasonable measures within his power under Article 28(a)(ii). Although he sent a letter to CAR authorities and requested an investigation, crimes continued throughout the operation, demonstrating the insufficiency of those measures. The 'within his or her power' qualifier in Article 28(a)(ii) refers primarily to the commander's authority over his own forces — which the Trial Chamber found he possessed — not to his influence over the host state's judicial system. The surviving arguments (arg_28c7e666, arg_a80c82aa, arg_211c30b9) correctly apply this standard. The sustained objection regarding the customary law citation (obj_468ef978) does not defeat the knowledge argument because arg_d699d8f4 supports the same point with a valid treaty citation. The partial objection concerning the 'within his power' limitation (obj_fec5c111) is acknowledged but does not alter the conclusion: the commander's effective control over the troops meant that proactive disciplinary measures (arrests, sanctions, halting operations) were within his power, and his reliance on diplomatic correspondence alone was insufficient.",
+    "confidence": 0.68,
+    "confidence_reasoning": "Confidence is calibrated at 0.68 because the effective-control and knowledge elements are strongly supported by the Trial Chamber's factual findings and the statutory text. The failure-to-act element is closer: the Appeals Chamber in the actual Bemba case ultimately acquitted on this ground, finding the Trial Chamber had not adequately assessed what measures were 'within his power' given the operational context (deployment in a foreign state, reliance on host-state cooperation). The objection obj_fec5c111 correctly highlights this contextual nuance. However, on the arguments and facts presented in this proceeding — which emphasize the commander's effective control and the persistence of crimes despite his limited steps — the preponderance supports responsibility. The 0.68 reflects that this is a genuinely contested question where reasonable tribunals have differed.",
+    "surviving_argument_ids": [
+      "arg_e5567dbf",
+      "arg_d9e288f7",
+      "arg_d699d8f4",
+      "arg_28c7e666",
+      "arg_a80c82aa",
+      "arg_211c30b9"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_e5567dbf",
+      "claim": "The commander exercised effective command and control over MLC troops, satisfying the first element of Article 28(a).",
+      "reasoning": "Article 28(a) requires that a military commander or a person effectively acting as one have \"effective command and control\" over the forces whose crimes are at issue. The Trial Chamber’s finding that the commander acted as a military commander with effective control directly meets this statutory requirement.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_42995e80",
+      "claim": "The commander either knew or, owing to the circumstances, should have known about the murders, rapes, and pillaging committed by MLC troops.",
+      "reasoning": "Article 28(a)(i) imposes liability when the commander \"either knew or, owing to the circumstances at the time, should have known\" of the crimes. The record shows that consistent information about the crimes was brought to his attention, he initiated inquiries, and other MLC commanders exercised disciplinary authority, establishing that the commander had actual or constructive knowledge. The same knowledge standard is reflected in Customary IHL, Art. 86(2) of Additional Protocol I, which requires that a superior have information that should have enabled them to conclude the troops were committing or about to commit a breach.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)(i)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+        },
+        {
+          "type": "treaty",
+          "instrument": "customary_ihl",
+          "article": "86(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)(i)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "customary_ihl",
+            "article": "86(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+          },
+          "status": "unresolved",
+          "source_url": null,
+          "note": "No span at customary_ihl/art.86(2) in an indexed instrument."
+        }
+      ]
+    },
+    {
+      "id": "arg_211c30b9",
+      "claim": "The commander failed to take all necessary and reasonable measures within his power to prevent or repress the crimes, thereby satisfying the second element of Article 28(a).",
+      "reasoning": "Article 28(a)(ii) requires that the commander \"failed to take all necessary and reasonable measures within his or her power to prevent or repress\" the commission of crimes or to refer them to competent authorities. Although the commander sent a letter to CAR authorities and requested an investigation, the Tribunal found that MLC troops continued committing crimes throughout the operation and that the commander’s measures were insufficient given his effective control. The standard mirrors that of Additional Protocol I, Art. 86(2), which demands “all feasible measures within their power” to prevent or repress a breach.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)(ii)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+        },
+        {
+          "type": "treaty",
+          "instrument": "customary_ihl",
+          "article": "86(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "if they did not take all feasible measures within their power to prevent or repress the breach."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)(ii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "customary_ihl",
+            "article": "86(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "if they did not take all feasible measures within their power to prevent or repress the breach."
+          },
+          "status": "unresolved",
+          "source_url": null,
+          "note": "No span at customary_ihl/art.86(2) in an indexed instrument."
+        }
+      ]
+    },
+    {
+      "id": "arg_44a66ec2",
+      "claim": "The commander’s limited steps—requesting a CAR investigation and sending a letter—do not constitute “all necessary and reasonable measures” required by Article 28(a)(ii).",
+      "reasoning": "Article 28(a)(ii) obliges a commander to take \"all necessary and reasonable measures\"; mere diplomatic correspondence or reliance on host‑state investigations falls short when the commander possesses effective authority over the troops. The ICC’s jurisprudence interprets this clause as requiring proactive, effective actions (e.g., ordering arrests, disciplining perpetrators, halting operations) rather than passive reliance on external authorities. The factual record shows that despite the commander’s inquiries, crimes persisted, indicating that the measures taken were not sufficient to meet the statutory threshold.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)(ii)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)(ii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_d9e288f7",
+      "claim": "The commander exercised effective command and control over MLC troops, satisfying the first element of Article 28(a) of the Rome Statute.",
+      "reasoning": "The Trial Chamber found that the commander acted as a military commander with effective control over the forces, which directly meets the statutory requirement that a commander have effective command and control for liability under Article 28(a).",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_d699d8f4",
+      "claim": "The commander either knew or, owing to the circumstances, should have known about the murders, rapes, and pillaging committed by MLC troops.",
+      "reasoning": "Consistent information about the crimes was brought to the commander’s attention; he initiated inquiries and other MLC commanders exercised disciplinary authority, establishing actual or constructive knowledge. Article 28(a)(i) codifies that knowledge includes what the commander should have known given the circumstances, and the same standard is reflected in Article 86(2) of Additional Protocol I, which requires that a superior have information that should have enabled them to conclude that breaches were occurring.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)(i)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "86(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)(i)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "86(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_28c7e666",
+      "claim": "The commander failed to take all necessary and reasonable measures within his power to prevent or repress the crimes, satisfying the second element of Article 28(a).",
+      "reasoning": "Although the commander sent a letter to CAR authorities and requested an investigation, the crimes continued throughout the operation, indicating that the measures taken were insufficient. Article 28(a)(ii) requires that a commander take all necessary and reasonable measures within his or her power to prevent or repress the commission of crimes or to refer them to competent authorities.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)(ii)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)(ii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_a80c82aa",
+      "claim": "The limited steps taken by the commander—sending a diplomatic letter and requesting a CAR investigation—do not constitute “all necessary and reasonable measures” required by Article 28(a)(ii).",
+      "reasoning": "ICC jurisprudence interprets the requirement as demanding proactive, effective actions such as ordering arrests, disciplining perpetrators, or halting operations, rather than passive reliance on host‑state investigations. Where the commander possessed effective authority over the troops, reliance on external authorities falls short of the statutory threshold.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)(ii)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)(ii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [
+    {
+      "id": "obj_468ef978",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_42995e80",
+      "ground": "The argument erroneously cites a non-existent source identifier for the knowledge standard.",
+      "reasoning": "The argument relies on 'customary_ihl/art.86(2)' for the knowledge element. No such authority exists in the retrieved corpus; Article 86(2) is a treaty provision of Additional Protocol I, not a rule of customary international law. Citing a fabricated or non-existent legal basis undermines the argument's validity.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "86(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "86(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument arg_42995e80 cites 'customary_ihl/art.86(2)' as authority for the knowledge standard. No such instrument exists in the retrieved corpus; Article 86(2) is a treaty provision of Additional Protocol I (ap_i/art.86(2)), not a rule of customary international law. The citation is therefore unsupported and the objection is sustained. The substantive knowledge argument survives via arg_d699d8f4, which cites the correct treaty source."
+    },
+    {
+      "id": "obj_fec5c111",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_44a66ec2",
+      "ground": "The argument mischaracterizes the legal test by substituting a subjective 'effective authority' standard for the objective 'within his or her power' limitation in Article 28(a)(ii).",
+      "reasoning": "Article 28(a)(ii) explicitly conditions the duty to prevent or repress on measures that are 'within his or her power.' The argument ignores that the commander operated in a foreign jurisdiction (CAR) and relied on host-state cooperation. By demanding 'proactive, effective actions' without accounting for the objective limits of his power in that specific operational context, the argument fails to apply the statutory qualifier that defines the scope of the commander's legal obligation.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)(ii)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)(ii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "partial",
+      "disposition_reasoning": "The objection correctly identifies that Article 28(a)(ii) conditions the duty on measures 'within his or her power,' an objective assessment that must account for the operational context, including deployment in a foreign jurisdiction and reliance on host-state cooperation. The argument arg_44a66ec2 frames the standard as demanding 'proactive, effective actions' without explicitly engaging the factual limits of the commander's power in this specific deployment. However, the argument does cite the correct statutory text, and the 'within his power' qualifier primarily concerns the commander's authority over his own forces — which the Trial Chamber found he possessed. The objection is therefore sustained in part: the argument's analysis is incomplete but not fundamentally erroneous."
+    }
+  ],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "28(a)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "28",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "33(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "28(a)(i)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "28(a)(ii)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "33(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "86(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "25",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_b36fd7f6",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "e33d23c796fda7742890bc1915e83b894861069f11fa815a4350260e8c8e942d",
+      "arguments": [
+        {
+          "id": "arg_e5567dbf",
+          "claim": "The commander exercised effective command and control over MLC troops, satisfying the first element of Article 28(a).",
+          "reasoning": "Article 28(a) requires that a military commander or a person effectively acting as one have \"effective command and control\" over the forces whose crimes are at issue. The Trial Chamber’s finding that the commander acted as a military commander with effective control directly meets this statutory requirement.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_42995e80",
+          "claim": "The commander either knew or, owing to the circumstances, should have known about the murders, rapes, and pillaging committed by MLC troops.",
+          "reasoning": "Article 28(a)(i) imposes liability when the commander \"either knew or, owing to the circumstances at the time, should have known\" of the crimes. The record shows that consistent information about the crimes was brought to his attention, he initiated inquiries, and other MLC commanders exercised disciplinary authority, establishing that the commander had actual or constructive knowledge. The same knowledge standard is reflected in Customary IHL, Art. 86(2) of Additional Protocol I, which requires that a superior have information that should have enabled them to conclude the troops were committing or about to commit a breach.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "customary_ihl",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(i)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "customary_ihl",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+              },
+              "status": "unresolved",
+              "source_url": null,
+              "note": "No span at customary_ihl/art.86(2) in an indexed instrument."
+            }
+          ]
+        },
+        {
+          "id": "arg_211c30b9",
+          "claim": "The commander failed to take all necessary and reasonable measures within his power to prevent or repress the crimes, thereby satisfying the second element of Article 28(a).",
+          "reasoning": "Article 28(a)(ii) requires that the commander \"failed to take all necessary and reasonable measures within his or her power to prevent or repress\" the commission of crimes or to refer them to competent authorities. Although the commander sent a letter to CAR authorities and requested an investigation, the Tribunal found that MLC troops continued committing crimes throughout the operation and that the commander’s measures were insufficient given his effective control. The standard mirrors that of Additional Protocol I, Art. 86(2), which demands “all feasible measures within their power” to prevent or repress a breach.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(ii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+            },
+            {
+              "type": "treaty",
+              "instrument": "customary_ihl",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "if they did not take all feasible measures within their power to prevent or repress the breach."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(ii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "customary_ihl",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "if they did not take all feasible measures within their power to prevent or repress the breach."
+              },
+              "status": "unresolved",
+              "source_url": null,
+              "note": "No span at customary_ihl/art.86(2) in an indexed instrument."
+            }
+          ]
+        },
+        {
+          "id": "arg_44a66ec2",
+          "claim": "The commander’s limited steps—requesting a CAR investigation and sending a letter—do not constitute “all necessary and reasonable measures” required by Article 28(a)(ii).",
+          "reasoning": "Article 28(a)(ii) obliges a commander to take \"all necessary and reasonable measures\"; mere diplomatic correspondence or reliance on host‑state investigations falls short when the commander possesses effective authority over the troops. The ICC’s jurisprudence interprets this clause as requiring proactive, effective actions (e.g., ordering arrests, disciplining perpetrators, halting operations) rather than passive reliance on external authorities. The factual record shows that despite the commander’s inquiries, crimes persisted, indicating that the measures taken were not sufficient to meet the statutory threshold.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(ii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(ii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The commander exercised effective command and control over MLC troops, satisfying the first element of Article 28(a).\",\n      \"reasoning\": \"Article 28(a) requires that a military commander or a person effectively acting as one have \\\"effective command and control\\\" over the forces whose crimes are at issue. The Trial Chamber’s finding that the commander acted as a military commander with effective control directly meets this statutory requirement.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\",\n          \"quoted_text\": \"A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander either knew or, owing to the circumstances, should have known about the murders, rapes, and pillaging committed by MLC troops.\",\n      \"reasoning\": \"Article 28(a)(i) imposes liability when the commander \\\"either knew or, owing to the circumstances at the time, should have known\\\" of the crimes. The record shows that consistent information about the crimes was brought to his attention, he initiated inquiries, and other MLC commanders exercised disciplinary authority, establishing that the commander had actual or constructive knowledge. The same knowledge standard is reflected in Customary IHL, Art. 86(2) of Additional Protocol I, which requires that a superior have information that should have enabled them to conclude the troops were committing or about to commit a breach.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(i)\",\n          \"quoted_text\": \"That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"customary_ihl\",\n          \"article\": \"86(2)\",\n          \"quoted_text\": \"if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander failed to take all necessary and reasonable measures within his power to prevent or repress the crimes, thereby satisfying the second element of Article 28(a).\",\n      \"reasoning\": \"Article 28(a)(ii) requires that the commander \\\"failed to take all necessary and reasonable measures within his or her power to prevent or repress\\\" the commission of crimes or to refer them to competent authorities. Although the commander sent a letter to CAR authorities and requested an investigation, the Tribunal found that MLC troops continued committing crimes throughout the operation and that the commander’s measures were insufficient given his effective control. The standard mirrors that of Additional Protocol I, Art. 86(2), which demands “all feasible measures within their power” to prevent or repress a breach.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(ii)\",\n          \"quoted_text\": \"That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"customary_ihl\",\n          \"article\": \"86(2)\",\n          \"quoted_text\": \"if they did not take all feasible measures within their power to prevent or repress the breach.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander’s limited steps—requesting a CAR investigation and sending a letter—do not constitute “all necessary and reasonable measures” required by Article 28(a)(ii).\",\n      \"reasoning\": \"Article 28(a)(ii) obliges a commander to take \\\"all necessary and reasonable measures\\\"; mere diplomatic correspondence or reliance on host‑state investigations falls short when the commander possesses effective authority over the troops. The ICC’s jurisprudence interprets this clause as requiring proactive, effective actions (e.g., ordering arrests, disciplining perpetrators, halting operations) rather than passive reliance on external authorities. The factual record shows that despite the commander’s inquiries, crimes persisted, indicating that the measures taken were not sufficient to meet the statutory threshold.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(ii)\",\n          \"quoted_text\": \"That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T16:00:55.029933Z",
+      "completed_at": "2026-11-16T16:01:03.259448Z",
+      "prompt_tokens": 2502,
+      "completion_tokens": 1973,
+      "error": null
+    },
+    {
+      "id": "turn_d996d21b",
+      "round_number": 1,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "e98ade378c59d689554f0150f1ea358823a0f99e2abdcf5ba822ebd4ad09cca5",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_468ef978",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_42995e80",
+          "ground": "The argument erroneously cites a non-existent source identifier for the knowledge standard.",
+          "reasoning": "The argument relies on 'customary_ihl/art.86(2)' for the knowledge element. No such authority exists in the retrieved corpus; Article 86(2) is a treaty provision of Additional Protocol I, not a rule of customary international law. Citing a fabricated or non-existent legal basis undermines the argument's validity.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument arg_42995e80 cites 'customary_ihl/art.86(2)' as authority for the knowledge standard. No such instrument exists in the retrieved corpus; Article 86(2) is a treaty provision of Additional Protocol I (ap_i/art.86(2)), not a rule of customary international law. The citation is therefore unsupported and the objection is sustained. The substantive knowledge argument survives via arg_d699d8f4, which cites the correct treaty source."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_42995e80\",\n      \"ground\": \"The argument erroneously cites a non-existent source identifier for the knowledge standard.\",\n      \"reasoning\": \"The argument relies on 'customary_ihl/art.86(2)' for the knowledge element. No such authority exists in the retrieved corpus; Article 86(2) is a treaty provision of Additional Protocol I, not a rule of customary international law. Citing a fabricated or non-existent legal basis undermines the argument's validity.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"86(2)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T16:01:03.264491Z",
+      "completed_at": "2026-11-16T16:01:04.492980Z",
+      "prompt_tokens": 3488,
+      "completion_tokens": 190,
+      "error": null
+    },
+    {
+      "id": "turn_4c2b18dc",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "7a447f1158d64c02bdca1c3d8cd85e9a26f99237d1d545b875f6065dcbd1ba0d",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The commander's criminal responsibility under Article 28(a) of the Rome Statute has been established beyond reasonable doubt on the facts as given.\", \"reasoning\": \"All three elements of Article 28(a) are satisfied. First, the Trial Chamber found the commander acted as a military commander with effective control over MLC troops (arg_e5567dbf; rome_statute/art.28(a)). Second, consistent information about murder, rape, and pillaging was brought to his attention throughout the operation, he initiated inquiries, and other MLC commanders exercised disciplinary authority, establishing that he knew or, owing to the circumstances, should have known of the crimes (arg_42995e80; rome_statute/art.28(a)(i)). Third, despite sending a letter to CAR authorities and requesting an investigation, MLC troops continued committing crimes throughout the deployment, demonstrating that the measures taken were not \\\"all necessary and reasonable measures within his power\\\" to prevent or repress the crimes or submit them to competent authorities (arg_211c30b9, arg_44a66ec2; rome_statute/art.28(a)(ii)). The objection to arg_42995e80 correctly identifies an erroneous citation (customary_ihl/art.86(2) does not exist in the corpus; the treaty provision is ap_i/art.86(2)), but the argument's legal proposition rests on the resolved citation to rome_statute/art.28(a)(i), which directly supplies the knowledge standard. The erroneous citation therefore does not undermine the argument.\", \"confidence\": 0.85, \"confidence_reasoning\": \"The facts as presented track the three statutory elements of Article 28(a) clearly and are drawn from Trial Chamber findings. The only weakness is the absence of the Trial Chamber's full reasoning on the sufficiency of measures, but the fact that crimes persisted throughout the operation despite the commander's awareness and limited steps strongly supports the conclusion that the measures were insufficient. The confidence is not higher because the \\\"beyond reasonable doubt\\\" standard is demanding and the record does not include the Trial Chamber's detailed assessment of what further measures were feasible.\", \"rulings\": [{\"objection_id\": \"obj_468ef978\", \"disposition\": \"overruled\", \"reasoning\": \"The objection correctly notes that the argument cites 'customary_ihl/art.86(2)', which is not a source in the retrieved corpus (the treaty provision is ap_i/art.86(2)). However, the argument's knowledge standard is independently and directly supported by the resolved citation to rome_statute/art.28(a)(i), which sets out the identical 'knew or should have known' test. The erroneous citation is therefore superfluous and does not undermine the argument's validity.\"}], \"surviving_argument_ids\": [\"arg_e5567dbf\", \"arg_42995e80\", \"arg_211c30b9\", \"arg_44a66ec2\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-16T16:01:04.495430Z",
+      "completed_at": "2026-11-16T16:01:49.377767Z",
+      "prompt_tokens": 3740,
+      "completion_tokens": 2061,
+      "error": null
+    },
+    {
+      "id": "turn_ea2a6281",
+      "round_number": 2,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/rebuttal",
+      "prompt_hash": "b5985f4b063f8078ab0f35684b3da52fb50d372b4d3fbec01c814b9f7cafcf51",
+      "arguments": [
+        {
+          "id": "arg_d9e288f7",
+          "claim": "The commander exercised effective command and control over MLC troops, satisfying the first element of Article 28(a) of the Rome Statute.",
+          "reasoning": "The Trial Chamber found that the commander acted as a military commander with effective control over the forces, which directly meets the statutory requirement that a commander have effective command and control for liability under Article 28(a).",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_d699d8f4",
+          "claim": "The commander either knew or, owing to the circumstances, should have known about the murders, rapes, and pillaging committed by MLC troops.",
+          "reasoning": "Consistent information about the crimes was brought to the commander’s attention; he initiated inquiries and other MLC commanders exercised disciplinary authority, establishing actual or constructive knowledge. Article 28(a)(i) codifies that knowledge includes what the commander should have known given the circumstances, and the same standard is reflected in Article 86(2) of Additional Protocol I, which requires that a superior have information that should have enabled them to conclude that breaches were occurring.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(i)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_28c7e666",
+          "claim": "The commander failed to take all necessary and reasonable measures within his power to prevent or repress the crimes, satisfying the second element of Article 28(a).",
+          "reasoning": "Although the commander sent a letter to CAR authorities and requested an investigation, the crimes continued throughout the operation, indicating that the measures taken were insufficient. Article 28(a)(ii) requires that a commander take all necessary and reasonable measures within his or her power to prevent or repress the commission of crimes or to refer them to competent authorities.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(ii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(ii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_a80c82aa",
+          "claim": "The limited steps taken by the commander—sending a diplomatic letter and requesting a CAR investigation—do not constitute “all necessary and reasonable measures” required by Article 28(a)(ii).",
+          "reasoning": "ICC jurisprudence interprets the requirement as demanding proactive, effective actions such as ordering arrests, disciplining perpetrators, or halting operations, rather than passive reliance on host‑state investigations. Where the commander possessed effective authority over the troops, reliance on external authorities falls short of the statutory threshold.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(ii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(ii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The commander exercised effective command and control over MLC troops, satisfying the first element of Article 28(a) of the Rome Statute.\",\n      \"reasoning\": \"The Trial Chamber found that the commander acted as a military commander with effective control over the forces, which directly meets the statutory requirement that a commander have effective command and control for liability under Article 28(a).\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\",\n          \"quoted_text\": \"A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where:\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander either knew or, owing to the circumstances, should have known about the murders, rapes, and pillaging committed by MLC troops.\",\n      \"reasoning\": \"Consistent information about the crimes was brought to the commander’s attention; he initiated inquiries and other MLC commanders exercised disciplinary authority, establishing actual or constructive knowledge. Article 28(a)(i) codifies that knowledge includes what the commander should have known given the circumstances, and the same standard is reflected in Article 86(2) of Additional Protocol I, which requires that a superior have information that should have enabled them to conclude that breaches were occurring.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(i)\",\n          \"quoted_text\": \"That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"86(2)\",\n          \"quoted_text\": \"The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander failed to take all necessary and reasonable measures within his power to prevent or repress the crimes, satisfying the second element of Article 28(a).\",\n      \"reasoning\": \"Although the commander sent a letter to CAR authorities and requested an investigation, the crimes continued throughout the operation, indicating that the measures taken were insufficient. Article 28(a)(ii) requires that a commander take all necessary and reasonable measures within his or her power to prevent or repress the commission of crimes or to refer them to competent authorities.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(ii)\",\n          \"quoted_text\": \"That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The limited steps taken by the commander—sending a diplomatic letter and requesting a CAR investigation—do not constitute “all necessary and reasonable measures” required by Article 28(a)(ii).\",\n      \"reasoning\": \"ICC jurisprudence interprets the requirement as demanding proactive, effective actions such as ordering arrests, disciplining perpetrators, or halting operations, rather than passive reliance on host‑state investigations. Where the commander possessed effective authority over the troops, reliance on external authorities falls short of the statutory threshold.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(ii)\",\n          \"quoted_text\": \"That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T16:01:49.385640Z",
+      "completed_at": "2026-11-16T16:01:53.890461Z",
+      "prompt_tokens": 3286,
+      "completion_tokens": 1878,
+      "error": null
+    },
+    {
+      "id": "turn_554a4713",
+      "round_number": 2,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "16c6c8285bdaf12ca0ad3ce56de82488f8902e5074f690fbd93094257c61a4be",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_fec5c111",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_44a66ec2",
+          "ground": "The argument mischaracterizes the legal test by substituting a subjective 'effective authority' standard for the objective 'within his or her power' limitation in Article 28(a)(ii).",
+          "reasoning": "Article 28(a)(ii) explicitly conditions the duty to prevent or repress on measures that are 'within his or her power.' The argument ignores that the commander operated in a foreign jurisdiction (CAR) and relied on host-state cooperation. By demanding 'proactive, effective actions' without accounting for the objective limits of his power in that specific operational context, the argument fails to apply the statutory qualifier that defines the scope of the commander's legal obligation.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(ii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(ii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "partial",
+          "disposition_reasoning": "The objection correctly identifies that Article 28(a)(ii) conditions the duty on measures 'within his or her power,' an objective assessment that must account for the operational context, including deployment in a foreign jurisdiction and reliance on host-state cooperation. The argument arg_44a66ec2 frames the standard as demanding 'proactive, effective actions' without explicitly engaging the factual limits of the commander's power in this specific deployment. However, the argument does cite the correct statutory text, and the 'within his power' qualifier primarily concerns the commander's authority over his own forces — which the Trial Chamber found he possessed. The objection is therefore sustained in part: the argument's analysis is incomplete but not fundamentally erroneous."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_44a66ec2\",\n      \"ground\": \"The argument mischaracterizes the legal test by substituting a subjective 'effective authority' standard for the objective 'within his or her power' limitation in Article 28(a)(ii).\",\n      \"reasoning\": \"Article 28(a)(ii) explicitly conditions the duty to prevent or repress on measures that are 'within his or her power.' The argument ignores that the commander operated in a foreign jurisdiction (CAR) and relied on host-state cooperation. By demanding 'proactive, effective actions' without accounting for the objective limits of his power in that specific operational context, the argument fails to apply the statutory qualifier that defines the scope of the commander's legal obligation.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(ii)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T16:01:53.894943Z",
+      "completed_at": "2026-11-16T16:01:55.280915Z",
+      "prompt_tokens": 4020,
+      "completion_tokens": 238,
+      "error": null
+    },
+    {
+      "id": "turn_77a637d9",
+      "round_number": 2,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "b2720239d8fc2b359e5089c4a9ae43f921c05898ae020a570e94e31710231ded",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes.\", \"reasoning\": \"The commander's criminal responsibility under Article 28(a) is established beyond reasonable doubt on the surviving arguments. First, effective command and control is directly established by the Trial Chamber's finding that the commander acted as a military commander with effective control over MLC troops (arg_e5567dbf, arg_d9e288f7; rome_statute/art.28(a)). Second, the knowledge element under Article 28(a)(i) is satisfied: consistent information about murders, rapes, and pillaging was brought to the commander's attention, he initiated inquiries, and other MLC commanders exercised disciplinary authority, establishing actual or constructive knowledge (arg_d699d8f4; rome_statute/art.28(a)(i), ap_i/art.86(2)). Third, the commander failed to take all necessary and reasonable measures within his power under Article 28(a)(ii). Although he sent a letter to CAR authorities and requested an investigation, crimes continued throughout the operation, demonstrating the insufficiency of those measures. The 'within his or her power' qualifier in Article 28(a)(ii) refers primarily to the commander's authority over his own forces — which the Trial Chamber found he possessed — not to his influence over the host state's judicial system. The surviving arguments (arg_28c7e666, arg_a80c82aa, arg_211c30b9) correctly apply this standard. The sustained objection regarding the customary law citation (obj_468ef978) does not defeat the knowledge argument because arg_d699d8f4 supports the same point with a valid treaty citation. The partial objection concerning the 'within his power' limitation (obj_fec5c111) is acknowledged but does not alter the conclusion: the commander's effective control over the troops meant that proactive disciplinary measures (arrests, sanctions, halting operations) were within his power, and his reliance on diplomatic correspondence alone was insufficient.\", \"confidence\": 0.68, \"confidence_reasoning\": \"Confidence is calibrated at 0.68 because the effective-control and knowledge elements are strongly supported by the Trial Chamber's factual findings and the statutory text. The failure-to-act element is closer: the Appeals Chamber in the actual Bemba case ultimately acquitted on this ground, finding the Trial Chamber had not adequately assessed what measures were 'within his power' given the operational context (deployment in a foreign state, reliance on host-state cooperation). The objection obj_fec5c111 correctly highlights this contextual nuance. However, on the arguments and facts presented in this proceeding — which emphasize the commander's effective control and the persistence of crimes despite his limited steps — the preponderance supports responsibility. The 0.68 reflects that this is a genuinely contested question where reasonable tribunals have differed.\", \"rulings\": [{\"objection_id\": \"obj_468ef978\", \"disposition\": \"sustained\", \"reasoning\": \"The argument arg_42995e80 cites 'customary_ihl/art.86(2)' as authority for the knowledge standard. No such instrument exists in the retrieved corpus; Article 86(2) is a treaty provision of Additional Protocol I (ap_i/art.86(2)), not a rule of customary international law. The citation is therefore unsupported and the objection is sustained. The substantive knowledge argument survives via arg_d699d8f4, which cites the correct treaty source.\"}, {\"objection_id\": \"obj_fec5c111\", \"disposition\": \"partial\", \"reasoning\": \"The objection correctly identifies that Article 28(a)(ii) conditions the duty on measures 'within his or her power,' an objective assessment that must account for the operational context, including deployment in a foreign jurisdiction and reliance on host-state cooperation. The argument arg_44a66ec2 frames the standard as demanding 'proactive, effective actions' without explicitly engaging the factual limits of the commander's power in this specific deployment. However, the argument does cite the correct statutory text, and the 'within his power' qualifier primarily concerns the commander's authority over his own forces — which the Trial Chamber found he possessed. The objection is therefore sustained in part: the argument's analysis is incomplete but not fundamentally erroneous.\"}], \"surviving_argument_ids\": [\"arg_e5567dbf\", \"arg_d9e288f7\", \"arg_d699d8f4\", \"arg_28c7e666\", \"arg_a80c82aa\", \"arg_211c30b9\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-16T16:01:55.283121Z",
+      "completed_at": "2026-11-16T16:03:00.282824Z",
+      "prompt_tokens": 4455,
+      "completion_tokens": 3563,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-16T16:03:00.286416+00:00",
+  "duration_seconds": 125.45714266598225,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 2,
+  "judge_failures": 0,
+  "judge_failed": false
+}

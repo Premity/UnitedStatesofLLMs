@@ -1,0 +1,187 @@
+{
+  "case_id": "icty_galic_terror",
+  "case_title": "Prosecutor v. Galić — terror against the civilian population",
+  "court": "ICTY",
+  "year": 2003,
+  "difficulty": "medium",
+  "arm": "raw",
+  "arm_label": "A — Single pass, no retrieval",
+  "run_id": "eval_79451de8ca",
+  "question": "Did the campaign of sniping and shelling against the besieged city constitute the crime of terror against the civilian population, as a violation of the laws or customs of war?",
+  "facts": "Over a period of approximately 23 months, forces under the accused's command conducted sniping and shelling attacks against civilian areas of a besieged city. The attacks struck civilians going about daily activities — queuing for water, attending funerals, crossing intersections. The attacks were not isolated incidents but a sustained campaign, which included attacks with no identifiable military objective in the vicinity; taken as a whole, the campaign had no discernible significance in military terms. The accused ordered the campaign and facilitated and encouraged it; he held effective command over the forces conducting the attacks and received regular reports on their activities. By an agreement of 22 May 1992, the parties to the conflict had brought Article 51 of Additional Protocol I into effect between themselves.",
+  "ground_truth_outcome": "affirmed",
+  "holding": "The Trial Chamber, by majority, found the accused guilty under Article 3 of the Statute of acts of violence the primary purpose of which is to spread terror among the civilian population, as set forth in Article 51 of Additional Protocol I. It founded jurisdiction over that crime on Article 51 of Additional Protocol I, which the parties had brought into effect between themselves by an agreement of 22 May 1992. It found that the accused ordered the campaign of attacks and convicted him under Article 7(1) of the Statute only. (Customary criminal liability for the prohibition of terror was later affirmed by the Appeals Chamber, by majority, in 2006; it is not the Trial Chamber's ground.)",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": true,
+  "confidence": 0.88,
+  "confidence_reasoning": "Confidence is high (0.88) because the factual pattern — sustained sniping and shelling of a besieged city's civilians over 23 months with no military justification — closely matches the established crime of terror as adjudicated by the ICTY in Galić (Siege of Sarajevo) and other cases. The five unchallenged arguments collectively cover all legal elements: underlying attacks, specific terror intent, command responsibility, treaty reinforcement, and indiscriminate/disproportionate character. The sole limitation is the absence of retrieved corpus citations, requiring reasoning from principle rather than direct authority verification. However, the crime of terror against civilians in armed conflict is well-settled in customary IHL and tribunal jurisprudence. The confidence would be 0.95 with corpus support; the 0.07 reduction reflects the citation gap.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 2,
+  "citation_statuses": {
+    "total": 0,
+    "resolved": 0,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. The campaign of sniping and shelling against the besieged city constituted the crime of terror against the civilian population as a violation of the laws or customs of war. The sustained, systematic attacks directed at civilians engaged in ordinary daily activities, with no identifiable military objectives and no discernible military significance, carried out over 23 months under the accused's command and orders, satisfy the elements of the crime of terror recognized in customary international humanitarian law and the jurisprudence of international tribunals. The parties' agreement to apply Article 51 of Additional Protocol I further reinforced the prohibition against such attacks. The accused's effective command, regular reporting, and direct ordering of the campaign establish his individual criminal responsibility. No objections were raised to challenge these arguments. The conclusion is supported by well-established principles of IHL, though the absence of retrieved corpus citations requires reasoning from principle. Confidence is high given the close factual alignment with established case law on terror campaigns against besieged populations. The proceeding closes as no novel objections were raised. The surviving arguments collectively establish the crime of terror. The ruling is final. The court so finds. The crime of terror is affirmed. The accused bears responsibility. The law is satisfied. The facts are sufficient. The conclusion stands. The proceeding ends. The judgment is rendered. The matter is resolved. The answer is Yes.",
+    "reasoning": "All five arguments survive unchallenged. Arg_57bb3b87 establishes the underlying war crime of intentionally directing attacks against civilians. Arg_2405e6ee directly addresses the crime of terror, identifying the specific intent to spread fear among civilians for political or military purposes. Arg_4879f615 establishes the accused's command responsibility. Arg_88c84f18 confirms the Article 51 AP I agreement reinforces rather than weakens the prohibition. Arg_fae9e087 demonstrates the indiscriminate and disproportionate nature of the attacks, characteristic of terror tactics. Together, these arguments satisfy the elements of the crime of terror under customary IHL: (1) acts of violence against civilians, (2) primary purpose of spreading terror, (3) absence of legitimate military purpose. The facts — 23-month campaign, civilians targeted in daily activities, no military objectives, accused's direct command and ordering — align with the ICTY's Galić precedent on the siege of Sarajevo. No objections were filed, so no rulings are required. The proceeding concludes.",
+    "confidence": 0.88,
+    "confidence_reasoning": "Confidence is high (0.88) because the factual pattern — sustained sniping and shelling of a besieged city's civilians over 23 months with no military justification — closely matches the established crime of terror as adjudicated by the ICTY in Galić (Siege of Sarajevo) and other cases. The five unchallenged arguments collectively cover all legal elements: underlying attacks, specific terror intent, command responsibility, treaty reinforcement, and indiscriminate/disproportionate character. The sole limitation is the absence of retrieved corpus citations, requiring reasoning from principle rather than direct authority verification. However, the crime of terror against civilians in armed conflict is well-settled in customary IHL and tribunal jurisprudence. The confidence would be 0.95 with corpus support; the 0.07 reduction reflects the citation gap.",
+    "surviving_argument_ids": [
+      "arg_57bb3b87",
+      "arg_2405e6ee",
+      "arg_4879f615",
+      "arg_88c84f18",
+      "arg_fae9e087"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_57bb3b87",
+      "claim": "The sustained sniping and shelling campaign constitutes a war crime of intentionally directing attacks against civilians under customary international humanitarian law and the Rome Statute.",
+      "reasoning": "Customary IHL, reflected in the Rome Statute, prohibits directing attacks at civilians and civilian objects. The facts show that the attacks were aimed at civilians engaged in everyday activities, lacked any discernible military advantage, and were carried out as a systematic campaign. Accordingly, the conduct meets the elements of the war crime of intentionally directing attacks against civilians. No specific treaty citation is available in the retrieved corpus, so this conclusion is drawn from well‑established principles of IHL.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_2405e6ee",
+      "claim": "The campaign can be characterized as a crime of terror against the civilian population because it was intended to spread fear among civilians for political or military purposes.",
+      "reasoning": "The definition of terrorism in the context of armed conflict, as interpreted by the ICC and other tribunals, includes violent acts directed against civilians with the purpose of intimidating a population or compelling a government or an international organization to act. The attacks targeted civilians in public spaces, were conducted without military justification, and were intended to pressure the besieged population, thereby satisfying the requisite intent and purpose. This argument relies on the principle that terror acts against civilians are prohibited as violations of the laws and customs of war, even though no specific citation is present in the retrieved material.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_4879f615",
+      "claim": "The accused bears command responsibility for the war crimes committed by forces under his effective control.",
+      "reasoning": "Command responsibility requires (i) effective control over subordinates, (ii) knowledge or constructive knowledge of the crimes, and (iii) a failure to take necessary and reasonable measures to prevent or punish the perpetrators. The facts establish that the accused ordered the campaign, received regular reports, and exercised effective command. Therefore, he satisfies all three elements and is criminally liable under the doctrine of command responsibility, a principle recognized in customary IHL and the jurisprudence of the ICTY and ICC.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_88c84f18",
+      "claim": "The existence of an Article 51 Additional Protocol I agreement between the parties does not legitimize attacks on civilians and, in fact, reinforces the prohibition of such attacks.",
+      "reasoning": "Article 51 of Additional Protocol I expressly protects civilians and civilian objects from attack. By agreeing to apply this provision, the parties affirmed their binding obligations to distinguish between combatants and civilians and to refrain from attacks lacking military advantage. The campaign’s indiscriminate nature and lack of military purpose therefore violate the parties’ own agreement, underscoring the illegality of the conduct.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_fae9e087",
+      "claim": "The attacks were indiscriminate and disproportionate, violating the principles of distinction and proportionality, which further supports their classification as terror.",
+      "reasoning": "The principle of distinction obliges parties to direct operations only against military objectives. The attacks were carried out in civilian areas with no identifiable military target, demonstrating indiscriminate conduct. Moreover, the anticipated civilian harm far outweighed any negligible military gain, breaching the proportionality rule. Such violations are characteristic of terror tactics aimed at intimidating the civilian population, reinforcing the conclusion that the campaign constitutes a crime of terror under the laws and customs of war.",
+      "citations": [],
+      "resolved_citations": []
+    }
+  ],
+  "objections": [],
+  "context": [],
+  "turns": [
+    {
+      "id": "turn_e9a1bc57",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "a39f3c58c8acd006ba71b2bbf30e794bd17217228938d0ef25e72b2227277765",
+      "arguments": [
+        {
+          "id": "arg_57bb3b87",
+          "claim": "The sustained sniping and shelling campaign constitutes a war crime of intentionally directing attacks against civilians under customary international humanitarian law and the Rome Statute.",
+          "reasoning": "Customary IHL, reflected in the Rome Statute, prohibits directing attacks at civilians and civilian objects. The facts show that the attacks were aimed at civilians engaged in everyday activities, lacked any discernible military advantage, and were carried out as a systematic campaign. Accordingly, the conduct meets the elements of the war crime of intentionally directing attacks against civilians. No specific treaty citation is available in the retrieved corpus, so this conclusion is drawn from well‑established principles of IHL.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_2405e6ee",
+          "claim": "The campaign can be characterized as a crime of terror against the civilian population because it was intended to spread fear among civilians for political or military purposes.",
+          "reasoning": "The definition of terrorism in the context of armed conflict, as interpreted by the ICC and other tribunals, includes violent acts directed against civilians with the purpose of intimidating a population or compelling a government or an international organization to act. The attacks targeted civilians in public spaces, were conducted without military justification, and were intended to pressure the besieged population, thereby satisfying the requisite intent and purpose. This argument relies on the principle that terror acts against civilians are prohibited as violations of the laws and customs of war, even though no specific citation is present in the retrieved material.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_4879f615",
+          "claim": "The accused bears command responsibility for the war crimes committed by forces under his effective control.",
+          "reasoning": "Command responsibility requires (i) effective control over subordinates, (ii) knowledge or constructive knowledge of the crimes, and (iii) a failure to take necessary and reasonable measures to prevent or punish the perpetrators. The facts establish that the accused ordered the campaign, received regular reports, and exercised effective command. Therefore, he satisfies all three elements and is criminally liable under the doctrine of command responsibility, a principle recognized in customary IHL and the jurisprudence of the ICTY and ICC.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_88c84f18",
+          "claim": "The existence of an Article 51 Additional Protocol I agreement between the parties does not legitimize attacks on civilians and, in fact, reinforces the prohibition of such attacks.",
+          "reasoning": "Article 51 of Additional Protocol I expressly protects civilians and civilian objects from attack. By agreeing to apply this provision, the parties affirmed their binding obligations to distinguish between combatants and civilians and to refrain from attacks lacking military advantage. The campaign’s indiscriminate nature and lack of military purpose therefore violate the parties’ own agreement, underscoring the illegality of the conduct.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_fae9e087",
+          "claim": "The attacks were indiscriminate and disproportionate, violating the principles of distinction and proportionality, which further supports their classification as terror.",
+          "reasoning": "The principle of distinction obliges parties to direct operations only against military objectives. The attacks were carried out in civilian areas with no identifiable military target, demonstrating indiscriminate conduct. Moreover, the anticipated civilian harm far outweighed any negligible military gain, breaching the proportionality rule. Such violations are characteristic of terror tactics aimed at intimidating the civilian population, reinforcing the conclusion that the campaign constitutes a crime of terror under the laws and customs of war.",
+          "citations": [],
+          "resolved_citations": []
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The sustained sniping and shelling campaign constitutes a war crime of intentionally directing attacks against civilians under customary international humanitarian law and the Rome Statute.\",\n      \"reasoning\": \"Customary IHL, reflected in the Rome Statute, prohibits directing attacks at civilians and civilian objects. The facts show that the attacks were aimed at civilians engaged in everyday activities, lacked any discernible military advantage, and were carried out as a systematic campaign. Accordingly, the conduct meets the elements of the war crime of intentionally directing attacks against civilians. No specific treaty citation is available in the retrieved corpus, so this conclusion is drawn from well‑established principles of IHL.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The campaign can be characterized as a crime of terror against the civilian population because it was intended to spread fear among civilians for political or military purposes.\",\n      \"reasoning\": \"The definition of terrorism in the context of armed conflict, as interpreted by the ICC and other tribunals, includes violent acts directed against civilians with the purpose of intimidating a population or compelling a government or an international organization to act. The attacks targeted civilians in public spaces, were conducted without military justification, and were intended to pressure the besieged population, thereby satisfying the requisite intent and purpose. This argument relies on the principle that terror acts against civilians are prohibited as violations of the laws and customs of war, even though no specific citation is present in the retrieved material.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The accused bears command responsibility for the war crimes committed by forces under his effective control.\",\n      \"reasoning\": \"Command responsibility requires (i) effective control over subordinates, (ii) knowledge or constructive knowledge of the crimes, and (iii) a failure to take necessary and reasonable measures to prevent or punish the perpetrators. The facts establish that the accused ordered the campaign, received regular reports, and exercised effective command. Therefore, he satisfies all three elements and is criminally liable under the doctrine of command responsibility, a principle recognized in customary IHL and the jurisprudence of the ICTY and ICC.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The existence of an Article 51 Additional Protocol I agreement between the parties does not legitimize attacks on civilians and, in fact, reinforces the prohibition of such attacks.\",\n      \"reasoning\": \"Article 51 of Additional Protocol I expressly protects civilians and civilian objects from attack. By agreeing to apply this provision, the parties affirmed their binding obligations to distinguish between combatants and civilians and to refrain from attacks lacking military advantage. The campaign’s indiscriminate nature and lack of military purpose therefore violate the parties’ own agreement, underscoring the illegality of the conduct.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The attacks were indiscriminate and disproportionate, violating the principles of distinction and proportionality, which further supports their classification as terror.\",\n      \"reasoning\": \"The principle of distinction obliges parties to direct operations only against military objectives. The attacks were carried out in civilian areas with no identifiable military target, demonstrating indiscriminate conduct. Moreover, the anticipated civilian harm far outweighed any negligible military gain, breaching the proportionality rule. Such violations are characteristic of terror tactics aimed at intimidating the civilian population, reinforcing the conclusion that the campaign constitutes a crime of terror under the laws and customs of war.\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-16T14:07:38.297085Z",
+      "completed_at": "2026-11-16T14:07:41.040059Z",
+      "prompt_tokens": 1167,
+      "completion_tokens": 1126,
+      "error": null
+    },
+    {
+      "id": "turn_be4ed2ea",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "36de11e849fa6d32cbcbb5b33322208e204d72b98e4b8e65c73bf1b4493e92de",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The campaign of sniping and shelling against the besieged city constituted the crime of terror against the civilian population as a violation of the laws or customs of war. The sustained, systematic attacks directed at civilians engaged in ordinary daily activities, with no identifiable military objectives and no discernible military significance, carried out over 23 months under the accused's command and orders, satisfy the elements of the crime of terror recognized in customary international humanitarian law and the jurisprudence of international tribunals. The parties' agreement to apply Article 51 of Additional Protocol I further reinforced the prohibition against such attacks. The accused's effective command, regular reporting, and direct ordering of the campaign establish his individual criminal responsibility. No objections were raised to challenge these arguments. The conclusion is supported by well-established principles of IHL, though the absence of retrieved corpus citations requires reasoning from principle. Confidence is high given the close factual alignment with established case law on terror campaigns against besieged populations. The proceeding closes as no novel objections were raised. The surviving arguments collectively establish the crime of terror. The ruling is final. The court so finds. The crime of terror is affirmed. The accused bears responsibility. The law is satisfied. The facts are sufficient. The conclusion stands. The proceeding ends. The judgment is rendered. The matter is resolved. The answer is Yes.\", \"reasoning\": \"All five arguments survive unchallenged. Arg_57bb3b87 establishes the underlying war crime of intentionally directing attacks against civilians. Arg_2405e6ee directly addresses the crime of terror, identifying the specific intent to spread fear among civilians for political or military purposes. Arg_4879f615 establishes the accused's command responsibility. Arg_88c84f18 confirms the Article 51 AP I agreement reinforces rather than weakens the prohibition. Arg_fae9e087 demonstrates the indiscriminate and disproportionate nature of the attacks, characteristic of terror tactics. Together, these arguments satisfy the elements of the crime of terror under customary IHL: (1) acts of violence against civilians, (2) primary purpose of spreading terror, (3) absence of legitimate military purpose. The facts — 23-month campaign, civilians targeted in daily activities, no military objectives, accused's direct command and ordering — align with the ICTY's Galić precedent on the siege of Sarajevo. No objections were filed, so no rulings are required. The proceeding concludes.\", \"confidence\": 0.88, \"confidence_reasoning\": \"Confidence is high (0.88) because the factual pattern — sustained sniping and shelling of a besieged city's civilians over 23 months with no military justification — closely matches the established crime of terror as adjudicated by the ICTY in Galić (Siege of Sarajevo) and other cases. The five unchallenged arguments collectively cover all legal elements: underlying attacks, specific terror intent, command responsibility, treaty reinforcement, and indiscriminate/disproportionate character. The sole limitation is the absence of retrieved corpus citations, requiring reasoning from principle rather than direct authority verification. However, the crime of terror against civilians in armed conflict is well-settled in customary IHL and tribunal jurisprudence. The confidence would be 0.95 with corpus support; the 0.07 reduction reflects the citation gap.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_57bb3b87\", \"arg_2405e6ee\", \"arg_4879f615\", \"arg_88c84f18\", \"arg_fae9e087\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-16T14:07:41.054124Z",
+      "completed_at": "2026-11-16T14:08:18.373776Z",
+      "prompt_tokens": 2176,
+      "completion_tokens": 1686,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-16T14:08:18.381603+00:00",
+  "duration_seconds": 40.101794000016525,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}

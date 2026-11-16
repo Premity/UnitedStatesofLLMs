@@ -18,17 +18,18 @@ local citation status.
 
 ## What is left, in order
 
-Updated 2026-11-16. The harness exists and the scope is three cases (ADR 0012).
-The one-case rehearsal passed unattended on the frozen settings (GitHub #25);
-the critical path is the scored run.
+Updated 2026-11-16. The scored run is done (GitHub #26): all five arms on the
+three core cases and the stretch case Mrkšić, on the frozen settings. The
+reports and write-up are in `evaluation/reports/`, the results in
+`evaluation/results/scored-run/`.
 
 | # | Item | Why it is where it is |
 | --- | --- | --- |
-| 1 | **The scored run** | All five arms on the three core cases, on the frozen settings. GitHub #26. In progress: Gotovina and Galić ran 2026-11-16, and the stretch case Mrkšić ran 2026-11-16; Bemba is left, then the report and write-up |
+| 1 | **Reasoning overlap, by hand** | The rubric, the scores file and the report column are in place; the 15 core results are now there to score. GitHub #27 |
 
-Reasoning overlap (GitHub #27) is scored by hand after the scored run: the
-rubric, the scores file and the report column are in place, and the 15
-judgements wait for #26.
+The run changed one thing after it: arm E's confidence is its judge's, not the
+samples' agreement rate, which measured nothing (ADR 0011, amended). The four E
+results were rescored from their stored verdicts.
 
 One known limit to state in the report rather than fix: three Rome Statute
 weapons amendments are not indexed, because the source gives the inserted
@@ -823,8 +824,8 @@ three cases (15 runs) is the whole set. The rubric (0–2 per `key_reasoning`
 point, two independent scorers, agreement reported) is in
 `docs/evaluation.md`, section 5. Scores live in
 `evaluation/scores/reasoning_overlap.json`, keyed by `run_id`, and the report
-shows them per arm and per run. The scoring itself waits for the scored run
-(#26).
+shows them per arm and per run. The scored run (#26) is done, so the 15 core
+results are ready to score.
 
 ### [RESOLVED] Hosted demo — GitHub #18
 

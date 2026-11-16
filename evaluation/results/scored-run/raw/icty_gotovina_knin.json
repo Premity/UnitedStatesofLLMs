@@ -1,0 +1,187 @@
+{
+  "case_id": "icty_gotovina_knin",
+  "case_title": "Prosecutor v. Gotovina and Markač — artillery attacks on Krajina towns",
+  "court": "ICTY",
+  "year": 2012,
+  "difficulty": "contested",
+  "arm": "raw",
+  "arm_label": "A — Single pass, no retrieval",
+  "run_id": "eval_6290d0f20e",
+  "question": "Has it been established beyond reasonable doubt that the artillery attacks on Knin, Benkovac, Obrovac and Gračac were unlawful?",
+  "facts": "From at least July 1995 to about 30 September 1995, Croatian leaders and officials initiated Operation Storm, a military action aimed at taking control of territory in the Krajina region of Croatia. The first accused was a colonel-general in the Croatian army, commander of its Split Military District, and overall operational commander of Operation Storm in the southern part of the Krajina. The second accused was assistant minister of the interior and operational commander of the special police in Croatia. Artillery was used against Knin, Benkovac, Obrovac, and Gračac. The Trial Chamber analysed individual artillery impact sites in the four towns. It applied a 200-metre margin of error to all impact sites in each of the four towns and treated sites more than 200 metres from a target it considered legitimate as evidence of an unlawful attack. It found that the HV could not identify targets of opportunity, such as moving police or military vehicles, in the four towns. The trial record also included evidence of targets of opportunity in Knin. Expert witnesses testified about factors including wind speed and air temperature that could affect the accuracy of the weapons used. The Trial Chamber found that large numbers of civilians departed the Krajina region. The Trial Chamber found the artillery attacks on all four towns unlawful and convicted both accused.",
+  "ground_truth_outcome": "rejected",
+  "holding": "In its Appeals Judgment of 16 November 2012, the ICTY Appeals Chamber reversed the Trial Chamber's finding that the artillery attacks on Knin, Benkovac, Obrovac, and Gračac were unlawful. Judges Agius and Pocar dissented from this conclusion. The Chamber also reversed the convictions of Ante Gotovina and Mladen Markač and entered acquittals under Counts 1, 2, 4, 5, 6, 7, 8, and 9.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": false,
+  "confidence": 0.65,
+  "confidence_reasoning": "The question is genuinely contested — the defense arguments raise legitimate doctrinal points about the principle of distinction, the adequacy of a fixed margin of error in urban areas, and the inference of intent from impact patterns. These are the kinds of issues on which reasonable tribunals can differ, placing this in the 0.5–0.7 range. Confidence is not higher because the 200-metre margin, while accepted in practice, is not a bright-line rule and its application in densely populated towns could be debated; confidence is not lower because the Trial Chamber's comprehensive, evidence-specific analysis and the deference owed to its factual findings provide a firm basis for the conclusion. No corpus context was retrieved; this reasoning proceeds from general principles of IHL and appellate review without citation to specific authorities.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 2,
+  "citation_statuses": {
+    "total": 0,
+    "resolved": 0,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. The artillery attacks on Knin, Benkovac, Obrovac, and Gračac were established as unlawful beyond reasonable doubt by the Trial Chamber's judgment, and the defense challenges do not demonstrate that the Chamber's factual findings were unsupportable.",
+    "reasoning": "The Trial Chamber conducted a detailed, site-by-site analysis of individual artillery impact sites in all four towns, applied a 200-metre margin of error calibrated to the weapons and ranges used, heard expert testimony on environmental factors affecting accuracy, and made explicit factual findings that the HV could not identify targets of opportunity in the four towns (notwithstanding some evidence of moving vehicles in Knin, which the Chamber evidently assessed and found insufficient to justify the observed impact pattern). The Chamber's methodology — treating impacts more than 200 metres from any legitimate military objective as evidence of unlawful targeting — is a recognized approach in IHL jurisprudence for evaluating area bombardment. The defense arguments challenge the weight and inference of this evidence (margin of error too crude, environmental factors creating reasonable doubt, presence of military targets, command knowledge), but they amount to a request to re-weigh evidence and substitute the Chamber's credibility and factual determinations. On appellate review, a trial chamber's findings of fact, especially those based on detailed forensic analysis and expert assessment, are entitled to substantial deference and will not be overturned unless no reasonable trier of fact could have reached them. The defense submissions do not meet that threshold. The Chamber's conclusion that the attacks were indiscriminate and therefore unlawful, and its consequent convictions, stand as a valid determination beyond reasonable doubt.",
+    "confidence": 0.65,
+    "confidence_reasoning": "The question is genuinely contested — the defense arguments raise legitimate doctrinal points about the principle of distinction, the adequacy of a fixed margin of error in urban areas, and the inference of intent from impact patterns. These are the kinds of issues on which reasonable tribunals can differ, placing this in the 0.5–0.7 range. Confidence is not higher because the 200-metre margin, while accepted in practice, is not a bright-line rule and its application in densely populated towns could be debated; confidence is not lower because the Trial Chamber's comprehensive, evidence-specific analysis and the deference owed to its factual findings provide a firm basis for the conclusion. No corpus context was retrieved; this reasoning proceeds from general principles of IHL and appellate review without citation to specific authorities.",
+    "surviving_argument_ids": [
+      "arg_8db635c9",
+      "arg_1c8ed3f9",
+      "arg_e6447353",
+      "arg_2c467c54",
+      "arg_4651b45a"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_8db635c9",
+      "claim": "The 200‑metre margin of error applied by the Trial Chamber does not satisfy the requirement of the principle of distinction that attacks must be directed at verified military objectives, rendering the finding of unlawfulness speculative.",
+      "reasoning": "Under customary international humanitarian law, the principle of distinction obliges parties to verify that targets are military objectives before attacking. A blanket 200‑metre buffer does not provide the level of certainty required to exclude civilian objects, especially in densely populated towns. Because the Chamber relied on this margin rather than on concrete evidence that the specific shells struck civilian structures, a reasonable doubt remains as to whether the attacks were intentionally directed at civilians, precluding a finding beyond reasonable doubt of unlawfulness.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_1c8ed3f9",
+      "claim": "Expert testimony on wind speed, temperature, and artillery dispersion creates a genuine possibility that shells intended for legitimate military targets missed and struck civilian areas, thereby introducing reasonable doubt about the intent required for a war‑crime conviction.",
+      "reasoning": "The law of armed conflict requires that intent to target civilians be proven beyond reasonable doubt. The experts explained that environmental factors could cause significant deviation of artillery fire, meaning that even if the intended targets were military, the resulting impacts on civilian zones could be accidental. This possibility of accidental harm, absent proof of deliberate targeting, means the requisite mens rea for an unlawful attack has not been established beyond reasonable doubt.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_e6447353",
+      "claim": "The documented presence of legitimate military targets, such as police and military vehicles, within the towns undermines the inference that the artillery attacks were indiscriminate and therefore unlawful.",
+      "reasoning": "International humanitarian law permits attacks on military objectives, and the existence of such targets in Knin, Benkovac, Obrovac and Gračac means that the artillery could have been aimed at them. The Chamber’s conclusion that the HV could not identify targets of opportunity is contradicted by evidence of moving police and military vehicles, creating a factual dispute about whether the attacks were directed at civilians or legitimate military objects. This factual uncertainty prevents a finding of unlawful attacks beyond reasonable doubt.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_2c467c54",
+      "claim": "Command responsibility for the accused cannot be established beyond reasonable doubt because the prosecution has not proven that the commanders had knowledge of the unlawful nature of the attacks or that they failed to take feasible preventive measures.",
+      "reasoning": "The doctrine of command responsibility requires proof that a superior knew or had reason to know of the commission of war crimes and failed to prevent them or punish the perpetrators. The record shows no direct evidence that the colonel‑general or the assistant minister of the interior were aware that the artillery strikes were unlawfully directed at civilians, nor that they issued orders to avoid civilian areas. Without such proof, the element of knowledge remains unsettled, and the standard of beyond reasonable doubt is not met.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_4651b45a",
+      "claim": "The standard of proof required by the Rome Statute—beyond reasonable doubt—has not been satisfied by the evidence presented, as the factual and legal uncertainties identified above preclude a conclusive determination of unlawful artillery attacks.",
+      "reasoning": "Article 66 of the Rome Statute (as interpreted by the ICC jurisprudence) mandates that the prosecution must prove each element of the crime beyond reasonable doubt. The combination of an imprecise targeting methodology, plausible environmental causes for civilian impact, the existence of legitimate military targets, and the lack of proven commander knowledge collectively generate reasonable doubt. Consequently, the threshold for conviction on unlawful attacks has not been met.",
+      "citations": [],
+      "resolved_citations": []
+    }
+  ],
+  "objections": [],
+  "context": [],
+  "turns": [
+    {
+      "id": "turn_f1e2696c",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "f80732b94a1d01c027df5d0f7cc25d14e66a05246434ea4d8277ff4a57cb3ba0",
+      "arguments": [
+        {
+          "id": "arg_8db635c9",
+          "claim": "The 200‑metre margin of error applied by the Trial Chamber does not satisfy the requirement of the principle of distinction that attacks must be directed at verified military objectives, rendering the finding of unlawfulness speculative.",
+          "reasoning": "Under customary international humanitarian law, the principle of distinction obliges parties to verify that targets are military objectives before attacking. A blanket 200‑metre buffer does not provide the level of certainty required to exclude civilian objects, especially in densely populated towns. Because the Chamber relied on this margin rather than on concrete evidence that the specific shells struck civilian structures, a reasonable doubt remains as to whether the attacks were intentionally directed at civilians, precluding a finding beyond reasonable doubt of unlawfulness.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_1c8ed3f9",
+          "claim": "Expert testimony on wind speed, temperature, and artillery dispersion creates a genuine possibility that shells intended for legitimate military targets missed and struck civilian areas, thereby introducing reasonable doubt about the intent required for a war‑crime conviction.",
+          "reasoning": "The law of armed conflict requires that intent to target civilians be proven beyond reasonable doubt. The experts explained that environmental factors could cause significant deviation of artillery fire, meaning that even if the intended targets were military, the resulting impacts on civilian zones could be accidental. This possibility of accidental harm, absent proof of deliberate targeting, means the requisite mens rea for an unlawful attack has not been established beyond reasonable doubt.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_e6447353",
+          "claim": "The documented presence of legitimate military targets, such as police and military vehicles, within the towns undermines the inference that the artillery attacks were indiscriminate and therefore unlawful.",
+          "reasoning": "International humanitarian law permits attacks on military objectives, and the existence of such targets in Knin, Benkovac, Obrovac and Gračac means that the artillery could have been aimed at them. The Chamber’s conclusion that the HV could not identify targets of opportunity is contradicted by evidence of moving police and military vehicles, creating a factual dispute about whether the attacks were directed at civilians or legitimate military objects. This factual uncertainty prevents a finding of unlawful attacks beyond reasonable doubt.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_2c467c54",
+          "claim": "Command responsibility for the accused cannot be established beyond reasonable doubt because the prosecution has not proven that the commanders had knowledge of the unlawful nature of the attacks or that they failed to take feasible preventive measures.",
+          "reasoning": "The doctrine of command responsibility requires proof that a superior knew or had reason to know of the commission of war crimes and failed to prevent them or punish the perpetrators. The record shows no direct evidence that the colonel‑general or the assistant minister of the interior were aware that the artillery strikes were unlawfully directed at civilians, nor that they issued orders to avoid civilian areas. Without such proof, the element of knowledge remains unsettled, and the standard of beyond reasonable doubt is not met.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_4651b45a",
+          "claim": "The standard of proof required by the Rome Statute—beyond reasonable doubt—has not been satisfied by the evidence presented, as the factual and legal uncertainties identified above preclude a conclusive determination of unlawful artillery attacks.",
+          "reasoning": "Article 66 of the Rome Statute (as interpreted by the ICC jurisprudence) mandates that the prosecution must prove each element of the crime beyond reasonable doubt. The combination of an imprecise targeting methodology, plausible environmental causes for civilian impact, the existence of legitimate military targets, and the lack of proven commander knowledge collectively generate reasonable doubt. Consequently, the threshold for conviction on unlawful attacks has not been met.",
+          "citations": [],
+          "resolved_citations": []
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The 200‑metre margin of error applied by the Trial Chamber does not satisfy the requirement of the principle of distinction that attacks must be directed at verified military objectives, rendering the finding of unlawfulness speculative.\",\n      \"reasoning\": \"Under customary international humanitarian law, the principle of distinction obliges parties to verify that targets are military objectives before attacking. A blanket 200‑metre buffer does not provide the level of certainty required to exclude civilian objects, especially in densely populated towns. Because the Chamber relied on this margin rather than on concrete evidence that the specific shells struck civilian structures, a reasonable doubt remains as to whether the attacks were intentionally directed at civilians, precluding a finding beyond reasonable doubt of unlawfulness.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"Expert testimony on wind speed, temperature, and artillery dispersion creates a genuine possibility that shells intended for legitimate military targets missed and struck civilian areas, thereby introducing reasonable doubt about the intent required for a war‑crime conviction.\",\n      \"reasoning\": \"The law of armed conflict requires that intent to target civilians be proven beyond reasonable doubt. The experts explained that environmental factors could cause significant deviation of artillery fire, meaning that even if the intended targets were military, the resulting impacts on civilian zones could be accidental. This possibility of accidental harm, absent proof of deliberate targeting, means the requisite mens rea for an unlawful attack has not been established beyond reasonable doubt.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The documented presence of legitimate military targets, such as police and military vehicles, within the towns undermines the inference that the artillery attacks were indiscriminate and therefore unlawful.\",\n      \"reasoning\": \"International humanitarian law permits attacks on military objectives, and the existence of such targets in Knin, Benkovac, Obrovac and Gračac means that the artillery could have been aimed at them. The Chamber’s conclusion that the HV could not identify targets of opportunity is contradicted by evidence of moving police and military vehicles, creating a factual dispute about whether the attacks were directed at civilians or legitimate military objects. This factual uncertainty prevents a finding of unlawful attacks beyond reasonable doubt.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"Command responsibility for the accused cannot be established beyond reasonable doubt because the prosecution has not proven that the commanders had knowledge of the unlawful nature of the attacks or that they failed to take feasible preventive measures.\",\n      \"reasoning\": \"The doctrine of command responsibility requires proof that a superior knew or had reason to know of the commission of war crimes and failed to prevent them or punish the perpetrators. The record shows no direct evidence that the colonel‑general or the assistant minister of the interior were aware that the artillery strikes were unlawfully directed at civilians, nor that they issued orders to avoid civilian areas. Without such proof, the element of knowledge remains unsettled, and the standard of beyond reasonable doubt is not met.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The standard of proof required by the Rome Statute—beyond reasonable doubt—has not been satisfied by the evidence presented, as the factual and legal uncertainties identified above preclude a conclusive determination of unlawful artillery attacks.\",\n      \"reasoning\": \"Article 66 of the Rome Statute (as interpreted by the ICC jurisprudence) mandates that the prosecution must prove each element of the crime beyond reasonable doubt. The combination of an imprecise targeting methodology, plausible environmental causes for civilian impact, the existence of legitimate military targets, and the lack of proven commander knowledge collectively generate reasonable doubt. Consequently, the threshold for conviction on unlawful attacks has not been met.\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-16T11:36:29.543306Z",
+      "completed_at": "2026-11-16T11:36:32.922270Z",
+      "prompt_tokens": 1275,
+      "completion_tokens": 1286,
+      "error": null
+    },
+    {
+      "id": "turn_8ef1638d",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "486d7dbc9811c2649bd485f555b4037f00e39af4e70b521912d6be49617634a1",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The artillery attacks on Knin, Benkovac, Obrovac, and Gračac were established as unlawful beyond reasonable doubt by the Trial Chamber's judgment, and the defense challenges do not demonstrate that the Chamber's factual findings were unsupportable.\", \"reasoning\": \"The Trial Chamber conducted a detailed, site-by-site analysis of individual artillery impact sites in all four towns, applied a 200-metre margin of error calibrated to the weapons and ranges used, heard expert testimony on environmental factors affecting accuracy, and made explicit factual findings that the HV could not identify targets of opportunity in the four towns (notwithstanding some evidence of moving vehicles in Knin, which the Chamber evidently assessed and found insufficient to justify the observed impact pattern). The Chamber's methodology — treating impacts more than 200 metres from any legitimate military objective as evidence of unlawful targeting — is a recognized approach in IHL jurisprudence for evaluating area bombardment. The defense arguments challenge the weight and inference of this evidence (margin of error too crude, environmental factors creating reasonable doubt, presence of military targets, command knowledge), but they amount to a request to re-weigh evidence and substitute the Chamber's credibility and factual determinations. On appellate review, a trial chamber's findings of fact, especially those based on detailed forensic analysis and expert assessment, are entitled to substantial deference and will not be overturned unless no reasonable trier of fact could have reached them. The defense submissions do not meet that threshold. The Chamber's conclusion that the attacks were indiscriminate and therefore unlawful, and its consequent convictions, stand as a valid determination beyond reasonable doubt.\", \"confidence\": 0.65, \"confidence_reasoning\": \"The question is genuinely contested — the defense arguments raise legitimate doctrinal points about the principle of distinction, the adequacy of a fixed margin of error in urban areas, and the inference of intent from impact patterns. These are the kinds of issues on which reasonable tribunals can differ, placing this in the 0.5–0.7 range. Confidence is not higher because the 200-metre margin, while accepted in practice, is not a bright-line rule and its application in densely populated towns could be debated; confidence is not lower because the Trial Chamber's comprehensive, evidence-specific analysis and the deference owed to its factual findings provide a firm basis for the conclusion. No corpus context was retrieved; this reasoning proceeds from general principles of IHL and appellate review without citation to specific authorities.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_8db635c9\", \"arg_1c8ed3f9\", \"arg_e6447353\", \"arg_2c467c54\", \"arg_4651b45a\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-16T11:36:32.932679Z",
+      "completed_at": "2026-11-16T11:38:03.494855Z",
+      "prompt_tokens": 2343,
+      "completion_tokens": 5604,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-16T11:38:03.498137+00:00",
+  "duration_seconds": 93.96318233397324,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}

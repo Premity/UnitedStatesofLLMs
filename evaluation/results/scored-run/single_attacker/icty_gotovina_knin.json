@@ -1,0 +1,1513 @@
+{
+  "case_id": "icty_gotovina_knin",
+  "case_title": "Prosecutor v. Gotovina and Markač — artillery attacks on Krajina towns",
+  "court": "ICTY",
+  "year": 2012,
+  "difficulty": "contested",
+  "arm": "single_attacker",
+  "arm_label": "C — One attacker",
+  "run_id": "eval_fb33a34197",
+  "question": "Has it been established beyond reasonable doubt that the artillery attacks on Knin, Benkovac, Obrovac and Gračac were unlawful?",
+  "facts": "From at least July 1995 to about 30 September 1995, Croatian leaders and officials initiated Operation Storm, a military action aimed at taking control of territory in the Krajina region of Croatia. The first accused was a colonel-general in the Croatian army, commander of its Split Military District, and overall operational commander of Operation Storm in the southern part of the Krajina. The second accused was assistant minister of the interior and operational commander of the special police in Croatia. Artillery was used against Knin, Benkovac, Obrovac, and Gračac. The Trial Chamber analysed individual artillery impact sites in the four towns. It applied a 200-metre margin of error to all impact sites in each of the four towns and treated sites more than 200 metres from a target it considered legitimate as evidence of an unlawful attack. It found that the HV could not identify targets of opportunity, such as moving police or military vehicles, in the four towns. The trial record also included evidence of targets of opportunity in Knin. Expert witnesses testified about factors including wind speed and air temperature that could affect the accuracy of the weapons used. The Trial Chamber found that large numbers of civilians departed the Krajina region. The Trial Chamber found the artillery attacks on all four towns unlawful and convicted both accused.",
+  "ground_truth_outcome": "rejected",
+  "holding": "In its Appeals Judgment of 16 November 2012, the ICTY Appeals Chamber reversed the Trial Chamber's finding that the artillery attacks on Knin, Benkovac, Obrovac, and Gračac were unlawful. Judges Agius and Pocar dissented from this conclusion. The Chamber also reversed the convictions of Ante Gotovina and Mladen Markač and entered acquittals under Counts 1, 2, 4, 5, 6, 7, 8, and 9.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": false,
+  "confidence": 0.78,
+  "confidence_reasoning": "The confidence reflects that the Trial Chamber's explicit findings (inability to identify targets, 200m margin methodology, civilian displacement, conviction) directly satisfy the legal elements of multiple distinct war crimes under the Rome Statute. The sustained objections do not touch these core findings. The 0.78 (rather than 0.9+) accounts for the fact that we rely on the Trial Chamber's characterisation of the evidence rather than reviewing the primary evidence ourselves, and the 'beyond reasonable doubt' standard is inherently demanding.",
+  "rounds": 2,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 2,
+  "total_calls": 6,
+  "citation_statuses": {
+    "total": 18,
+    "resolved": 18,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. The artillery attacks on Knin, Benkovac, Obrovac, and Gračac were established beyond reasonable doubt as unlawful.",
+    "reasoning": "The sustained objections eliminate only the CCW Protocol III argument (which applies solely to incendiary weapons, not conventional artillery) and correct a citation error in one argument. The core international humanitarian law violations survive on multiple independent grounds: (1) violation of the principle of distinction — the Trial Chamber found the HV could not identify any legitimate military targets in the four towns and treated impact sites more than 200 metres from verified targets as evidence of unlawful attacks, satisfying the prohibition on attacking civilian objects and undefended towns under Article 8(2)(b)(v); (2) disproportionate attacks — the evidence of massive civilian displacement and absence of identifiable military targets establishes that incidental civilian harm was clearly excessive relative to any concrete and direct military advantage anticipated, violating Article 8(2)(b)(iv); (3) extensive destruction not justified by military necessity — the indiscriminate shelling caused widespread damage to civilian infrastructure without legitimate military purpose, constituting a grave breach under Article 8(2)(a)(iv). The Trial Chamber's factual findings — no targets of opportunity identifiable, 200-metre margin of error applied, large-scale civilian flight, and ultimate conviction of both accused — collectively meet the beyond-reasonable-doubt standard for each of these violations.",
+    "confidence": 0.78,
+    "confidence_reasoning": "The confidence reflects that the Trial Chamber's explicit findings (inability to identify targets, 200m margin methodology, civilian displacement, conviction) directly satisfy the legal elements of multiple distinct war crimes under the Rome Statute. The sustained objections do not touch these core findings. The 0.78 (rather than 0.9+) accounts for the fact that we rely on the Trial Chamber's characterisation of the evidence rather than reviewing the primary evidence ourselves, and the 'beyond reasonable doubt' standard is inherently demanding.",
+    "surviving_argument_ids": [
+      "arg_6100d480",
+      "arg_f5ec8082",
+      "arg_2ee1349a",
+      "arg_b07d66dc"
+    ],
+    "dissent": [
+      {
+        "id": "obj_2c34c518",
+        "raised_by": "attacker_doctrinal",
+        "target_argument_id": "arg_7dc6c734",
+        "ground": "The argument conflates the distinct legal tests for proportionality and the prohibition on extensive destruction, citing the wrong provision for the test it purports to apply.",
+        "reasoning": "The argument asserts a proportionality violation but cites Article 8(2)(a)(iv), which governs 'extensive destruction' as a grave breach. Proportionality is a separate requirement, typically addressed under Article 8(2)(b)(iv) (excessive incidental harm) or general IHL principles. Relying on the 'grave breach' provision for a proportionality calculation is a legal error because the elements and thresholds differ significantly between the two categories of war crimes.",
+        "citations": [
+          {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(a)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          }
+        ],
+        "resolved_citations": [
+          {
+            "citation": {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            "status": "resolved",
+            "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+            "note": null
+          },
+          {
+            "citation": {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            "status": "resolved",
+            "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+            "note": null
+          }
+        ],
+        "severity": "material",
+        "disposition": "overruled",
+        "disposition_reasoning": "The argument (arg_7dc6c734) cites the Rome Statute Article 8 generally, not Article 8(2)(a)(iv) specifically. Proportionality is correctly located in Article 8(2)(b)(iv), which falls within Article 8. The objection attacks a citation the argument does not make."
+      }
+    ]
+  },
+  "dissent": [
+    {
+      "id": "obj_2c34c518",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_7dc6c734",
+      "ground": "The argument conflates the distinct legal tests for proportionality and the prohibition on extensive destruction, citing the wrong provision for the test it purports to apply.",
+      "reasoning": "The argument asserts a proportionality violation but cites Article 8(2)(a)(iv), which governs 'extensive destruction' as a grave breach. Proportionality is a separate requirement, typically addressed under Article 8(2)(b)(iv) (excessive incidental harm) or general IHL principles. Relying on the 'grave breach' provision for a proportionality calculation is a legal error because the elements and thresholds differ significantly between the two categories of war crimes.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(a)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(a)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "overruled",
+      "disposition_reasoning": "The argument (arg_7dc6c734) cites the Rome Statute Article 8 generally, not Article 8(2)(a)(iv) specifically. Proportionality is correctly located in Article 8(2)(b)(iv), which falls within Article 8. The objection attacks a citation the argument does not make."
+    }
+  ],
+  "arguments": [
+    {
+      "id": "arg_6100d480",
+      "claim": "The artillery attacks on Knin, Benkovac, Obrovac and Gračac violated the principle of distinction because they were directed at areas where civilians were concentrated and no verifiable military objectives were identified.",
+      "reasoning": "International humanitarian law requires that attacks be directed solely at military objectives. The Trial Chamber found that the HV could not identify any targets of opportunity within the towns and applied a 200‑metre margin, treating impacts beyond that distance as evidence of unlawful attacks. This factual finding satisfies the legal requirement that attacks on civilian objects are prohibited, as reflected in the Rome Statute’s prohibition of attacks on undefended towns that are not military objectives.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "(v) Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "(v) Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_7dc6c734",
+      "claim": "The attacks were disproportionate because the expected civilian harm, including large‑scale displacement and civilian casualties, was clearly excessive in relation to any concrete and direct military advantage that could be gained.",
+      "reasoning": "The principle of proportionality bars attacks in which the incidental civilian loss would be excessive compared with the anticipated military gain. The Chamber’s evidence of massive civilian flight and the inability to identify legitimate targets demonstrates that the anticipated advantage was minimal, while the civilian harm was substantial, satisfying the proportionality test under the Rome Statute’s prohibition of extensive destruction not justified by military necessity.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "(iv) Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "(iv) Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_ff5b96ab",
+      "claim": "The use of artillery in densely populated areas without taking all feasible precautions breached the specific prohibitions of CCW Protocol III on attacks against military objectives located within concentrations of civilians.",
+      "reasoning": "Protocol III expressly forbids attacks on military objectives situated within civilian concentrations unless all feasible precautions are taken to limit incidental loss of life. The evidence shows no such precautions were implemented; impact sites were frequently more than 200 metres from any verified military target, indicating a failure to verify targets and to minimize civilian harm, thereby violating the protocol.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccw_p_iii",
+          "article": "2(3)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "It is further prohibited to make any military objective located within a concentration of civilians the object of attack by means of incendiary weapons other than air-delivered incendiary weapons, except when such military objective is clearly separated from the concentration of civilians and all feasible precautions are taken with a view to limiting the incendiary effects to the military objective and to avoiding, and in any event to minimizing, incidental loss of civilian life, injury to civilians and damage to civilian objects."
+        },
+        {
+          "type": "treaty",
+          "instrument": "ccw_p_iii",
+          "article": "2(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "It is prohibited in all circumstances to make any military objective located within a concentration of civilians the object of attack by air-delivered incendiary weapons."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccw_p_iii",
+            "article": "2(3)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "It is further prohibited to make any military objective located within a concentration of civilians the object of attack by means of incendiary weapons other than air-delivered incendiary weapons, except when such military objective is clearly separated from the concentration of civilians and all feasible precautions are taken with a view to limiting the incendiary effects to the military objective and to avoiding, and in any event to minimizing, incidental loss of civilian life, injury to civilians and damage to civilian objects."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccw_p_iii",
+            "article": "2(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "It is prohibited in all circumstances to make any military objective located within a concentration of civilians the object of attack by air-delivered incendiary weapons."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_38ad17c6",
+      "claim": "Beyond reasonable doubt, the artillery attacks constitute war crimes under the Rome Statute because they amount to intentional attacks on civilian objects and extensive, unjustified destruction of property.",
+      "reasoning": "Article 8(2)(b)(iv) and (v) of the Rome Statute enumerate war crimes that include extensive destruction not justified by military necessity and attacks on undefended towns. The factual record—absence of identifiable military targets, large civilian displacement, and indiscriminate impact locations—fulfills the elements of these crimes, meeting the standard of proof beyond reasonable doubt.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "(iv) Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "(v) Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "(iv) Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "(v) Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_f5ec8082",
+      "claim": "The artillery attacks on Knin, Benkovac, Obrovac and Gračac were attacks on civilian objects that were not military objectives, violating the principle of distinction.",
+      "reasoning": "The Trial Chamber found that the HV could not identify any legitimate military targets in the four towns and treated impact sites more than 200 metres from any verified target as evidence of unlawful attacks. Under international humanitarian law, attacks may only be directed at military objectives; attacks on undefended towns constitute a war crime. The factual findings satisfy the elements of the crime under the Rome Statute.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(v)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(v)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_2ee1349a",
+      "claim": "The artillery attacks were disproportionate because the expected civilian harm was clearly excessive in relation to the concrete and direct military advantage anticipated, violating the proportionality rule.",
+      "reasoning": "The Chamber’s evidence showed no identifiable military targets and documented massive civilian displacement, indicating that the anticipated military advantage was minimal while the incidental civilian loss was substantial. Launching an attack with knowledge that such loss would be excessive breaches the proportionality prohibition in the Rome Statute.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_b07d66dc",
+      "claim": "The artillery attacks caused extensive destruction of property not justified by military necessity, constituting a war crime under the Rome Statute.",
+      "reasoning": "The indiscriminate shelling resulted in widespread damage to civilian infrastructure and property in the four towns. The Trial Chamber found no legitimate military purpose for such destruction, satisfying the element of ‘extensive destruction… not justified by military necessity’ as defined in the Statute.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(a)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(a)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [
+    {
+      "id": "obj_55e395c6",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_ff5b96ab",
+      "ground": "The argument mischaracterizes the legal scope of CCW Protocol III, which applies only to incendiary weapons, not the artillery used in the underlying facts.",
+      "reasoning": "CCW Protocol III, Articles 2(2) and 2(3), expressly prohibit the use of 'incendiary weapons' against military objectives within civilian concentrations. The facts state that 'artillery' was used. Unless the shells contained incendiary warheads—which is not stated in the facts—the specific prohibitions of Protocol III are inapplicable. The argument relies on a treaty that does not govern the weapon system at issue.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccw_p_iii",
+          "article": "2(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "ccw_p_iii",
+          "article": "2(3)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccw_p_iii",
+            "article": "2(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccw_p_iii",
+            "article": "2(3)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "CCW Protocol III Articles 2(2) and 2(3) expressly govern 'incendiary weapons.' The facts state only that 'artillery' was used, with no indication of incendiary munitions. The protocol's specific prohibitions are therefore inapplicable to the weapon system at issue."
+    },
+    {
+      "id": "obj_2c34c518",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_7dc6c734",
+      "ground": "The argument conflates the distinct legal tests for proportionality and the prohibition on extensive destruction, citing the wrong provision for the test it purports to apply.",
+      "reasoning": "The argument asserts a proportionality violation but cites Article 8(2)(a)(iv), which governs 'extensive destruction' as a grave breach. Proportionality is a separate requirement, typically addressed under Article 8(2)(b)(iv) (excessive incidental harm) or general IHL principles. Relying on the 'grave breach' provision for a proportionality calculation is a legal error because the elements and thresholds differ significantly between the two categories of war crimes.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(a)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(a)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "overruled",
+      "disposition_reasoning": "The argument (arg_7dc6c734) cites the Rome Statute Article 8 generally, not Article 8(2)(a)(iv) specifically. Proportionality is correctly located in Article 8(2)(b)(iv), which falls within Article 8. The objection attacks a citation the argument does not make."
+    },
+    {
+      "id": "obj_90fb6117",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_38ad17c6",
+      "ground": "The argument erroneously cites Article 8(2)(b)(iv) for the crime of 'extensive destruction,' which is actually located at Article 8(2)(a)(iv) for international armed conflicts.",
+      "reasoning": "Article 8(2)(b)(iv) of the Rome Statute prohibits intentionally launching attacks with knowledge that incidental civilian harm is excessive. It does not define the crime of 'extensive destruction of property not justified by military necessity.' That crime is enumerated in Article 8(2)(a)(iv), a grave breach. Misidentifying the specific treaty provision undermines the legal basis for the characterization of the conduct as that specific war crime.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(a)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(a)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Argument arg_38ad17c6 incorrectly states that Article 8(2)(b)(iv) enumerates 'extensive destruction not justified by military necessity.' That crime is defined in Article 8(2)(a)(iv) (grave breaches). Article 8(2)(b)(iv) governs excessive incidental harm. The misidentification undermines the legal characterization."
+    },
+    {
+      "id": "obj_35d0be10",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_ff5b96ab",
+      "ground": "The argument mischaracterises the legal regime by applying a prohibition specific to incendiary weapons to conventional artillery shells.",
+      "reasoning": "CCW Protocol III, Articles 2(2) and 2(3), explicitly prohibit the use of 'incendiary weapons' against military objectives in civilian concentrations. The facts stipulate the use of 'artillery' and 'shelling', not incendiary munitions. As the underlying weapon system does not fall within the scope of Protocol III, this specific prohibition cannot be the basis for the conviction, rendering the legal characterisation erroneous.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccw_p_iii",
+          "article": "2(3)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "ccw_p_iii",
+          "article": "2(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccw_p_iii",
+            "article": "2(3)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccw_p_iii",
+            "article": "2(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Duplicate of obj_55e395c6. CCW Protocol III applies only to incendiary weapons; the facts describe conventional artillery. The protocol cannot form the basis for the conviction."
+    },
+    {
+      "id": "obj_53a5309b",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_38ad17c6",
+      "ground": "The argument incorrectly relies on Article 8(2)(a)(iv) of the Rome Statute, which applies only to grave breaches of the Geneva Conventions, not to other serious violations.",
+      "reasoning": "Article 8(2)(a) of the Rome Statute lists grave breaches of the Geneva Conventions. The prohibition on 'extensive destruction... not justified by military necessity' is located in Article 8(2)(a)(iv). However, the destruction of property in the context of a general attack is typically analysed under the law of targeting (distinction/proportionality) or the specific war crime of pillage/destruction under 8(2)(b)(xiii) or (c). More critically, the argument cites 8(2)(a)(iv) for 'extensive destruction' but the facts describe battlefield operations, not the specific grave breach context of 8(2)(a). The argument conflates the gravity threshold of grave breaches with the general prohibition on unlawful destruction, misapplying the legal instrument.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(a)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(a)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "partial",
+      "disposition_reasoning": "The objection misstates that arg_38ad17c6 cites Article 8(2)(a)(iv) — it actually cites 8(2)(b)(iv) and (v). However, the argument's substantive error (treating 8(2)(b)(iv) as the 'extensive destruction' provision) is correctly identified. The objection is sustained only to the extent it flags the misapplication of Article 8(2)(b)(iv)."
+    }
+  ],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw_p_iii",
+        "article": "2(3)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw_p_v",
+        "article": "4(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-v-2003",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "hague_cp",
+        "article": "8a(b)(5)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/hague-conv-1954",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw_p_iii",
+        "article": "2(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "56(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "56(5)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "59(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_3be43489",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "44df795a8d600a30e5ac2586eee8f64129f4c035442a4e78574e0e5929c976b0",
+      "arguments": [
+        {
+          "id": "arg_6100d480",
+          "claim": "The artillery attacks on Knin, Benkovac, Obrovac and Gračac violated the principle of distinction because they were directed at areas where civilians were concentrated and no verifiable military objectives were identified.",
+          "reasoning": "International humanitarian law requires that attacks be directed solely at military objectives. The Trial Chamber found that the HV could not identify any targets of opportunity within the towns and applied a 200‑metre margin, treating impacts beyond that distance as evidence of unlawful attacks. This factual finding satisfies the legal requirement that attacks on civilian objects are prohibited, as reflected in the Rome Statute’s prohibition of attacks on undefended towns that are not military objectives.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "(v) Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "(v) Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_7dc6c734",
+          "claim": "The attacks were disproportionate because the expected civilian harm, including large‑scale displacement and civilian casualties, was clearly excessive in relation to any concrete and direct military advantage that could be gained.",
+          "reasoning": "The principle of proportionality bars attacks in which the incidental civilian loss would be excessive compared with the anticipated military gain. The Chamber’s evidence of massive civilian flight and the inability to identify legitimate targets demonstrates that the anticipated advantage was minimal, while the civilian harm was substantial, satisfying the proportionality test under the Rome Statute’s prohibition of extensive destruction not justified by military necessity.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "(iv) Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "(iv) Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_ff5b96ab",
+          "claim": "The use of artillery in densely populated areas without taking all feasible precautions breached the specific prohibitions of CCW Protocol III on attacks against military objectives located within concentrations of civilians.",
+          "reasoning": "Protocol III expressly forbids attacks on military objectives situated within civilian concentrations unless all feasible precautions are taken to limit incidental loss of life. The evidence shows no such precautions were implemented; impact sites were frequently more than 200 metres from any verified military target, indicating a failure to verify targets and to minimize civilian harm, thereby violating the protocol.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccw_p_iii",
+              "article": "2(3)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "It is further prohibited to make any military objective located within a concentration of civilians the object of attack by means of incendiary weapons other than air-delivered incendiary weapons, except when such military objective is clearly separated from the concentration of civilians and all feasible precautions are taken with a view to limiting the incendiary effects to the military objective and to avoiding, and in any event to minimizing, incidental loss of civilian life, injury to civilians and damage to civilian objects."
+            },
+            {
+              "type": "treaty",
+              "instrument": "ccw_p_iii",
+              "article": "2(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "It is prohibited in all circumstances to make any military objective located within a concentration of civilians the object of attack by air-delivered incendiary weapons."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccw_p_iii",
+                "article": "2(3)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "It is further prohibited to make any military objective located within a concentration of civilians the object of attack by means of incendiary weapons other than air-delivered incendiary weapons, except when such military objective is clearly separated from the concentration of civilians and all feasible precautions are taken with a view to limiting the incendiary effects to the military objective and to avoiding, and in any event to minimizing, incidental loss of civilian life, injury to civilians and damage to civilian objects."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccw_p_iii",
+                "article": "2(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "It is prohibited in all circumstances to make any military objective located within a concentration of civilians the object of attack by air-delivered incendiary weapons."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_38ad17c6",
+          "claim": "Beyond reasonable doubt, the artillery attacks constitute war crimes under the Rome Statute because they amount to intentional attacks on civilian objects and extensive, unjustified destruction of property.",
+          "reasoning": "Article 8(2)(b)(iv) and (v) of the Rome Statute enumerate war crimes that include extensive destruction not justified by military necessity and attacks on undefended towns. The factual record—absence of identifiable military targets, large civilian displacement, and indiscriminate impact locations—fulfills the elements of these crimes, meeting the standard of proof beyond reasonable doubt.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "(iv) Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "(v) Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "(iv) Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "(v) Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The artillery attacks on Knin, Benkovac, Obrovac and Gračac violated the principle of distinction because they were directed at areas where civilians were concentrated and no verifiable military objectives were identified.\",\n      \"reasoning\": \"International humanitarian law requires that attacks be directed solely at military objectives. The Trial Chamber found that the HV could not identify any targets of opportunity within the towns and applied a 200‑metre margin, treating impacts beyond that distance as evidence of unlawful attacks. This factual finding satisfies the legal requirement that attacks on civilian objects are prohibited, as reflected in the Rome Statute’s prohibition of attacks on undefended towns that are not military objectives.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"(v) Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The attacks were disproportionate because the expected civilian harm, including large‑scale displacement and civilian casualties, was clearly excessive in relation to any concrete and direct military advantage that could be gained.\",\n      \"reasoning\": \"The principle of proportionality bars attacks in which the incidental civilian loss would be excessive compared with the anticipated military gain. The Chamber’s evidence of massive civilian flight and the inability to identify legitimate targets demonstrates that the anticipated advantage was minimal, while the civilian harm was substantial, satisfying the proportionality test under the Rome Statute’s prohibition of extensive destruction not justified by military necessity.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"(iv) Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The use of artillery in densely populated areas without taking all feasible precautions breached the specific prohibitions of CCW Protocol III on attacks against military objectives located within concentrations of civilians.\",\n      \"reasoning\": \"Protocol III expressly forbids attacks on military objectives situated within civilian concentrations unless all feasible precautions are taken to limit incidental loss of life. The evidence shows no such precautions were implemented; impact sites were frequently more than 200 metres from any verified military target, indicating a failure to verify targets and to minimize civilian harm, thereby violating the protocol.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccw_p_iii\",\n          \"article\": \"2(3)\",\n          \"quoted_text\": \"It is further prohibited to make any military objective located within a concentration of civilians the object of attack by means of incendiary weapons other than air-delivered incendiary weapons, except when such military objective is clearly separated from the concentration of civilians and all feasible precautions are taken with a view to limiting the incendiary effects to the military objective and to avoiding, and in any event to minimizing, incidental loss of civilian life, injury to civilians and damage to civilian objects.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccw_p_iii\",\n          \"article\": \"2(2)\",\n          \"quoted_text\": \"It is prohibited in all circumstances to make any military objective located within a concentration of civilians the object of attack by air-delivered incendiary weapons.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Beyond reasonable doubt, the artillery attacks constitute war crimes under the Rome Statute because they amount to intentional attacks on civilian objects and extensive, unjustified destruction of property.\",\n      \"reasoning\": \"Article 8(2)(b)(iv) and (v) of the Rome Statute enumerate war crimes that include extensive destruction not justified by military necessity and attacks on undefended towns. The factual record—absence of identifiable military targets, large civilian displacement, and indiscriminate impact locations—fulfills the elements of these crimes, meeting the standard of proof beyond reasonable doubt.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"(iv) Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"(v) Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives;\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T11:38:37.747339Z",
+      "completed_at": "2026-11-16T11:39:49.847257Z",
+      "prompt_tokens": 4424,
+      "completion_tokens": 2377,
+      "error": null
+    },
+    {
+      "id": "turn_ee576164",
+      "round_number": 1,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "cdcc3d587144256e4e313b105b0b19223385dfcf32c6b2a6fe772ce1e883160b",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_55e395c6",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_ff5b96ab",
+          "ground": "The argument mischaracterizes the legal scope of CCW Protocol III, which applies only to incendiary weapons, not the artillery used in the underlying facts.",
+          "reasoning": "CCW Protocol III, Articles 2(2) and 2(3), expressly prohibit the use of 'incendiary weapons' against military objectives within civilian concentrations. The facts state that 'artillery' was used. Unless the shells contained incendiary warheads—which is not stated in the facts—the specific prohibitions of Protocol III are inapplicable. The argument relies on a treaty that does not govern the weapon system at issue.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccw_p_iii",
+              "article": "2(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "ccw_p_iii",
+              "article": "2(3)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccw_p_iii",
+                "article": "2(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccw_p_iii",
+                "article": "2(3)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "CCW Protocol III Articles 2(2) and 2(3) expressly govern 'incendiary weapons.' The facts state only that 'artillery' was used, with no indication of incendiary munitions. The protocol's specific prohibitions are therefore inapplicable to the weapon system at issue."
+        },
+        {
+          "id": "obj_2c34c518",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_7dc6c734",
+          "ground": "The argument conflates the distinct legal tests for proportionality and the prohibition on extensive destruction, citing the wrong provision for the test it purports to apply.",
+          "reasoning": "The argument asserts a proportionality violation but cites Article 8(2)(a)(iv), which governs 'extensive destruction' as a grave breach. Proportionality is a separate requirement, typically addressed under Article 8(2)(b)(iv) (excessive incidental harm) or general IHL principles. Relying on the 'grave breach' provision for a proportionality calculation is a legal error because the elements and thresholds differ significantly between the two categories of war crimes.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "overruled",
+          "disposition_reasoning": "The argument (arg_7dc6c734) cites the Rome Statute Article 8 generally, not Article 8(2)(a)(iv) specifically. Proportionality is correctly located in Article 8(2)(b)(iv), which falls within Article 8. The objection attacks a citation the argument does not make."
+        },
+        {
+          "id": "obj_90fb6117",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_38ad17c6",
+          "ground": "The argument erroneously cites Article 8(2)(b)(iv) for the crime of 'extensive destruction,' which is actually located at Article 8(2)(a)(iv) for international armed conflicts.",
+          "reasoning": "Article 8(2)(b)(iv) of the Rome Statute prohibits intentionally launching attacks with knowledge that incidental civilian harm is excessive. It does not define the crime of 'extensive destruction of property not justified by military necessity.' That crime is enumerated in Article 8(2)(a)(iv), a grave breach. Misidentifying the specific treaty provision undermines the legal basis for the characterization of the conduct as that specific war crime.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Argument arg_38ad17c6 incorrectly states that Article 8(2)(b)(iv) enumerates 'extensive destruction not justified by military necessity.' That crime is defined in Article 8(2)(a)(iv) (grave breaches). Article 8(2)(b)(iv) governs excessive incidental harm. The misidentification undermines the legal characterization."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_ff5b96ab\",\n      \"ground\": \"The argument mischaracterizes the legal scope of CCW Protocol III, which applies only to incendiary weapons, not the artillery used in the underlying facts.\",\n      \"reasoning\": \"CCW Protocol III, Articles 2(2) and 2(3), expressly prohibit the use of 'incendiary weapons' against military objectives within civilian concentrations. The facts state that 'artillery' was used. Unless the shells contained incendiary warheads—which is not stated in the facts—the specific prohibitions of Protocol III are inapplicable. The argument relies on a treaty that does not govern the weapon system at issue.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccw_p_iii\",\n          \"article\": \"2(2)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccw_p_iii\",\n          \"article\": \"2(3)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_7dc6c734\",\n      \"ground\": \"The argument conflates the distinct legal tests for proportionality and the prohibition on extensive destruction, citing the wrong provision for the test it purports to apply.\",\n      \"reasoning\": \"The argument asserts a proportionality violation but cites Article 8(2)(a)(iv), which governs 'extensive destruction' as a grave breach. Proportionality is a separate requirement, typically addressed under Article 8(2)(b)(iv) (excessive incidental harm) or general IHL principles. Relying on the 'grave breach' provision for a proportionality calculation is a legal error because the elements and thresholds differ significantly between the two categories of war crimes.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(iv)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(iv)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_38ad17c6\",\n      \"ground\": \"The argument erroneously cites Article 8(2)(b)(iv) for the crime of 'extensive destruction,' which is actually located at Article 8(2)(a)(iv) for international armed conflicts.\",\n      \"reasoning\": \"Article 8(2)(b)(iv) of the Rome Statute prohibits intentionally launching attacks with knowledge that incidental civilian harm is excessive. It does not define the crime of 'extensive destruction of property not justified by military necessity.' That crime is enumerated in Article 8(2)(a)(iv), a grave breach. Misidentifying the specific treaty provision undermines the legal basis for the characterization of the conduct as that specific war crime.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(iv)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(iv)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T11:39:49.857021Z",
+      "completed_at": "2026-11-16T11:39:52.063683Z",
+      "prompt_tokens": 5116,
+      "completion_tokens": 796,
+      "error": null
+    },
+    {
+      "id": "turn_4cc075f4",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "6cf9a230b4d2a29f9783574d1d3de2706a2ca971be67178434f560061c0d249f",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The artillery attacks on Knin, Benkovac, Obrovac, and Gračac were established as unlawful beyond reasonable doubt on the basis of the principle of distinction. The Trial Chamber’s factual findings — that the HV could not identify any military targets of opportunity in the four towns and that impact sites beyond a 200‑metre margin from any legitimate target evidenced indiscriminate bombardment — satisfy the legal standard for intentionally directing attacks against civilian objects under customary IHL and the Rome Statute. The surviving distinction argument (arg_6100d480) is sufficient to support the conclusion; the proportionality argument survives only in weakened form, and the CCW Protocol III and Rome Statute mis-citation arguments were correctly defeated by the objections. The Trial Chamber’s conviction on this record meets the beyond‑reasonable‑doubt threshold.\", \"reasoning\": \"Objection obj_55e395c6 is sustained: CCW Protocol III governs only incendiary weapons, and the facts describe artillery without specifying incendiary warheads; therefore arg_ff5b96ab fails. Objection obj_90fb6117 is sustained: arg_38ad17c6 incorrectly locates the crime of extensive destruction at Article 8(2)(b)(iv) (which addresses disproportionate incidental harm) rather than Article 8(2)(a)(iv) (grave breach of extensive destruction); the argument’s legal characterization is therefore unsupported. Objection obj_2c34c518 is partially sustained: arg_7dc6c734 conflates the proportionality test (excessive incidental harm) with the distinct grave‑breach prohibition on extensive destruction not justified by military necessity, though it cites the Rome Statute generally rather than a specific subsection; the argument remains viable only as a proportionality claim under Article 8(2)(b)(iv). Arg_6100d480 faces no objection and stands on the Trial Chamber’s finding that no verifiable military objectives were identified in the towns, which directly establishes a violation of the principle of distinction (Rome Statute, Art. 8(2)(b)(i)–(ii); customary IHL Rule 1). That finding alone suffices to render the attacks unlawful beyond reasonable doubt.\", \"confidence\": 0.7, \"confidence_reasoning\": \"The conclusion rests on a single fully surviving argument (distinction) supported by the Trial Chamber’s explicit factual findings. The proportionality argument survives only partially, and two arguments were correctly defeated. The beyond‑reasonable‑doubt standard is met by the Trial Chamber’s conviction, but confidence is tempered because the record before us is a summary and the legal analysis depends heavily on the Chamber’s credibility assessments regarding target identification and the 200‑metre margin. A higher confidence would require direct access to the evidentiary record or appellate affirmation.\", \"rulings\": [{\"objection_id\": \"obj_55e395c6\", \"disposition\": \"sustained\", \"reasoning\": \"CCW Protocol III, Articles 2(2) and 2(3), expressly prohibit attacks with 'incendiary weapons' against military objectives within civilian concentrations. The facts state only that 'artillery was used' and do not indicate that the shells were incendiary. The treaty therefore does not apply to the weapon system at issue, and arg_ff5b96ab’s reliance on it is misplaced.\"}, {\"objection_id\": \"obj_2c34c518\", \"disposition\": \"partial\", \"reasoning\": \"Arg_7dc6c734 invokes the proportionality principle but frames it as 'extensive destruction not justified by military necessity,' which is the language of the grave‑breach provision in Article 8(2)(a)(iv). Proportionality (excessive incidental harm) is codified separately in Article 8(2)(b)(iv). The argument conflates two distinct legal tests, though its general citation to the Rome Statute is not itself erroneous. The objection is sustained to the extent the argument relies on the grave‑breach provision for a proportionality analysis; it is overruled as to the general citation.\"}, {\"objection_id\": \"obj_90fb6117\", \"disposition\": \"sustained\", \"reasoning\": \"Arg_38ad17c6 states that 'Article 8(2)(b)(iv) and (v) of the Rome Statute enumerate war crimes that include extensive destruction not justified by military necessity.' Article 8(2)(b)(iv) addresses disproportionate incidental harm; the crime of extensive destruction of property not justified by military necessity is located at Article 8(2)(a)(iv) (grave breaches). The misidentification of the treaty provision undermines the argument’s legal basis for characterizing the conduct as that specific war crime.\"}], \"surviving_argument_ids\": [\"arg_6100d480\", \"arg_7dc6c734\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-16T11:39:52.067900Z",
+      "completed_at": "2026-11-16T11:40:42.378278Z",
+      "prompt_tokens": 5805,
+      "completion_tokens": 2705,
+      "error": null
+    },
+    {
+      "id": "turn_a3730884",
+      "round_number": 2,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/rebuttal",
+      "prompt_hash": "162d584c818b99e3c2ac251ad890b00c6e0981857e9e79c2605f5e8d787d4485",
+      "arguments": [
+        {
+          "id": "arg_f5ec8082",
+          "claim": "The artillery attacks on Knin, Benkovac, Obrovac and Gračac were attacks on civilian objects that were not military objectives, violating the principle of distinction.",
+          "reasoning": "The Trial Chamber found that the HV could not identify any legitimate military targets in the four towns and treated impact sites more than 200 metres from any verified target as evidence of unlawful attacks. Under international humanitarian law, attacks may only be directed at military objectives; attacks on undefended towns constitute a war crime. The factual findings satisfy the elements of the crime under the Rome Statute.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(v)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(v)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_2ee1349a",
+          "claim": "The artillery attacks were disproportionate because the expected civilian harm was clearly excessive in relation to the concrete and direct military advantage anticipated, violating the proportionality rule.",
+          "reasoning": "The Chamber’s evidence showed no identifiable military targets and documented massive civilian displacement, indicating that the anticipated military advantage was minimal while the incidental civilian loss was substantial. Launching an attack with knowledge that such loss would be excessive breaches the proportionality prohibition in the Rome Statute.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_b07d66dc",
+          "claim": "The artillery attacks caused extensive destruction of property not justified by military necessity, constituting a war crime under the Rome Statute.",
+          "reasoning": "The indiscriminate shelling resulted in widespread damage to civilian infrastructure and property in the four towns. The Trial Chamber found no legitimate military purpose for such destruction, satisfying the element of ‘extensive destruction… not justified by military necessity’ as defined in the Statute.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The artillery attacks on Knin, Benkovac, Obrovac and Gračac were attacks on civilian objects that were not military objectives, violating the principle of distinction.\",\n      \"reasoning\": \"The Trial Chamber found that the HV could not identify any legitimate military targets in the four towns and treated impact sites more than 200 metres from any verified target as evidence of unlawful attacks. Under international humanitarian law, attacks may only be directed at military objectives; attacks on undefended towns constitute a war crime. The factual findings satisfy the elements of the crime under the Rome Statute.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(v)\",\n          \"quoted_text\": \"Attacking or bombarding, by whatever means, towns, villages, dwellings or buildings which are undefended and which are not military objectives;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The artillery attacks were disproportionate because the expected civilian harm was clearly excessive in relation to the concrete and direct military advantage anticipated, violating the proportionality rule.\",\n      \"reasoning\": \"The Chamber’s evidence showed no identifiable military targets and documented massive civilian displacement, indicating that the anticipated military advantage was minimal while the incidental civilian loss was substantial. Launching an attack with knowledge that such loss would be excessive breaches the proportionality prohibition in the Rome Statute.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(iv)\",\n          \"quoted_text\": \"Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The artillery attacks caused extensive destruction of property not justified by military necessity, constituting a war crime under the Rome Statute.\",\n      \"reasoning\": \"The indiscriminate shelling resulted in widespread damage to civilian infrastructure and property in the four towns. The Trial Chamber found no legitimate military purpose for such destruction, satisfying the element of ‘extensive destruction… not justified by military necessity’ as defined in the Statute.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(iv)\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T11:40:42.387015Z",
+      "completed_at": "2026-11-16T11:40:47.362935Z",
+      "prompt_tokens": 5242,
+      "completion_tokens": 2055,
+      "error": null
+    },
+    {
+      "id": "turn_0fb5462b",
+      "round_number": 2,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "734c4d714d98c8cdad23957b769df48ff03af6358be2158334f9d1dbfa06370a",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_35d0be10",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_ff5b96ab",
+          "ground": "The argument mischaracterises the legal regime by applying a prohibition specific to incendiary weapons to conventional artillery shells.",
+          "reasoning": "CCW Protocol III, Articles 2(2) and 2(3), explicitly prohibit the use of 'incendiary weapons' against military objectives in civilian concentrations. The facts stipulate the use of 'artillery' and 'shelling', not incendiary munitions. As the underlying weapon system does not fall within the scope of Protocol III, this specific prohibition cannot be the basis for the conviction, rendering the legal characterisation erroneous.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccw_p_iii",
+              "article": "2(3)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "ccw_p_iii",
+              "article": "2(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccw_p_iii",
+                "article": "2(3)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccw_p_iii",
+                "article": "2(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Duplicate of obj_55e395c6. CCW Protocol III applies only to incendiary weapons; the facts describe conventional artillery. The protocol cannot form the basis for the conviction."
+        },
+        {
+          "id": "obj_53a5309b",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_38ad17c6",
+          "ground": "The argument incorrectly relies on Article 8(2)(a)(iv) of the Rome Statute, which applies only to grave breaches of the Geneva Conventions, not to other serious violations.",
+          "reasoning": "Article 8(2)(a) of the Rome Statute lists grave breaches of the Geneva Conventions. The prohibition on 'extensive destruction... not justified by military necessity' is located in Article 8(2)(a)(iv). However, the destruction of property in the context of a general attack is typically analysed under the law of targeting (distinction/proportionality) or the specific war crime of pillage/destruction under 8(2)(b)(xiii) or (c). More critically, the argument cites 8(2)(a)(iv) for 'extensive destruction' but the facts describe battlefield operations, not the specific grave breach context of 8(2)(a). The argument conflates the gravity threshold of grave breaches with the general prohibition on unlawful destruction, misapplying the legal instrument.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "partial",
+          "disposition_reasoning": "The objection misstates that arg_38ad17c6 cites Article 8(2)(a)(iv) — it actually cites 8(2)(b)(iv) and (v). However, the argument's substantive error (treating 8(2)(b)(iv) as the 'extensive destruction' provision) is correctly identified. The objection is sustained only to the extent it flags the misapplication of Article 8(2)(b)(iv)."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_ff5b96ab\",\n      \"ground\": \"The argument mischaracterises the legal regime by applying a prohibition specific to incendiary weapons to conventional artillery shells.\",\n      \"reasoning\": \"CCW Protocol III, Articles 2(2) and 2(3), explicitly prohibit the use of 'incendiary weapons' against military objectives in civilian concentrations. The facts stipulate the use of 'artillery' and 'shelling', not incendiary munitions. As the underlying weapon system does not fall within the scope of Protocol III, this specific prohibition cannot be the basis for the conviction, rendering the legal characterisation erroneous.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccw_p_iii\",\n          \"article\": \"2(3)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccw_p_iii\",\n          \"article\": \"2(2)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_38ad17c6\",\n      \"ground\": \"The argument incorrectly relies on Article 8(2)(a)(iv) of the Rome Statute, which applies only to grave breaches of the Geneva Conventions, not to other serious violations.\",\n      \"reasoning\": \"Article 8(2)(a) of the Rome Statute lists grave breaches of the Geneva Conventions. The prohibition on 'extensive destruction... not justified by military necessity' is located in Article 8(2)(a)(iv). However, the destruction of property in the context of a general attack is typically analysed under the law of targeting (distinction/proportionality) or the specific war crime of pillage/destruction under 8(2)(b)(xiii) or (c). More critically, the argument cites 8(2)(a)(iv) for 'extensive destruction' but the facts describe battlefield operations, not the specific grave breach context of 8(2)(a). The argument conflates the gravity threshold of grave breaches with the general prohibition on unlawful destruction, misapplying the legal instrument.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(iv)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T11:40:47.365519Z",
+      "completed_at": "2026-11-16T11:40:49.010509Z",
+      "prompt_tokens": 5494,
+      "completion_tokens": 558,
+      "error": null
+    },
+    {
+      "id": "turn_8035f59f",
+      "round_number": 2,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "a1ee9370417dcd7fa0e14f0c81d5be3cfb7c256d3cbdae990e7f460ba482341f",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The artillery attacks on Knin, Benkovac, Obrovac, and Gračac were established beyond reasonable doubt as unlawful.\", \"reasoning\": \"The sustained objections eliminate only the CCW Protocol III argument (which applies solely to incendiary weapons, not conventional artillery) and correct a citation error in one argument. The core international humanitarian law violations survive on multiple independent grounds: (1) violation of the principle of distinction — the Trial Chamber found the HV could not identify any legitimate military targets in the four towns and treated impact sites more than 200 metres from verified targets as evidence of unlawful attacks, satisfying the prohibition on attacking civilian objects and undefended towns under Article 8(2)(b)(v); (2) disproportionate attacks — the evidence of massive civilian displacement and absence of identifiable military targets establishes that incidental civilian harm was clearly excessive relative to any concrete and direct military advantage anticipated, violating Article 8(2)(b)(iv); (3) extensive destruction not justified by military necessity — the indiscriminate shelling caused widespread damage to civilian infrastructure without legitimate military purpose, constituting a grave breach under Article 8(2)(a)(iv). The Trial Chamber's factual findings — no targets of opportunity identifiable, 200-metre margin of error applied, large-scale civilian flight, and ultimate conviction of both accused — collectively meet the beyond-reasonable-doubt standard for each of these violations.\", \"confidence\": 0.78, \"confidence_reasoning\": \"The confidence reflects that the Trial Chamber's explicit findings (inability to identify targets, 200m margin methodology, civilian displacement, conviction) directly satisfy the legal elements of multiple distinct war crimes under the Rome Statute. The sustained objections do not touch these core findings. The 0.78 (rather than 0.9+) accounts for the fact that we rely on the Trial Chamber's characterisation of the evidence rather than reviewing the primary evidence ourselves, and the 'beyond reasonable doubt' standard is inherently demanding.\", \"rulings\": [{\"objection_id\": \"obj_55e395c6\", \"disposition\": \"sustained\", \"reasoning\": \"CCW Protocol III Articles 2(2) and 2(3) expressly govern 'incendiary weapons.' The facts state only that 'artillery' was used, with no indication of incendiary munitions. The protocol's specific prohibitions are therefore inapplicable to the weapon system at issue.\"}, {\"objection_id\": \"obj_2c34c518\", \"disposition\": \"overruled\", \"reasoning\": \"The argument (arg_7dc6c734) cites the Rome Statute Article 8 generally, not Article 8(2)(a)(iv) specifically. Proportionality is correctly located in Article 8(2)(b)(iv), which falls within Article 8. The objection attacks a citation the argument does not make.\"}, {\"objection_id\": \"obj_90fb6117\", \"disposition\": \"sustained\", \"reasoning\": \"Argument arg_38ad17c6 incorrectly states that Article 8(2)(b)(iv) enumerates 'extensive destruction not justified by military necessity.' That crime is defined in Article 8(2)(a)(iv) (grave breaches). Article 8(2)(b)(iv) governs excessive incidental harm. The misidentification undermines the legal characterization.\"}, {\"objection_id\": \"obj_35d0be10\", \"disposition\": \"sustained\", \"reasoning\": \"Duplicate of obj_55e395c6. CCW Protocol III applies only to incendiary weapons; the facts describe conventional artillery. The protocol cannot form the basis for the conviction.\"}, {\"objection_id\": \"obj_53a5309b\", \"disposition\": \"partial\", \"reasoning\": \"The objection misstates that arg_38ad17c6 cites Article 8(2)(a)(iv) — it actually cites 8(2)(b)(iv) and (v). However, the argument's substantive error (treating 8(2)(b)(iv) as the 'extensive destruction' provision) is correctly identified. The objection is sustained only to the extent it flags the misapplication of Article 8(2)(b)(iv).\"}], \"surviving_argument_ids\": [\"arg_6100d480\", \"arg_f5ec8082\", \"arg_2ee1349a\", \"arg_b07d66dc\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-16T11:40:49.012936Z",
+      "completed_at": "2026-11-16T11:41:38.971638Z",
+      "prompt_tokens": 6629,
+      "completion_tokens": 2543,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-16T11:41:38.974656+00:00",
+  "duration_seconds": 181.45526462502312,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 2,
+  "judge_failures": 0,
+  "judge_failed": false
+}

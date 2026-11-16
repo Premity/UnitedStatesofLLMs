@@ -1,0 +1,992 @@
+{
+  "case_id": "icty_mrksic_vukovar",
+  "case_title": "Prosecutor v. Mile Mrkšić — killing of prisoners of war from Vukovar hospital",
+  "court": "ICTY",
+  "year": 2007,
+  "difficulty": "medium",
+  "arm": "single_attacker",
+  "arm_label": "C — One attacker",
+  "run_id": "eval_cc2c004d9b",
+  "question": "Was the commander of the forces in control of the area criminally responsible for the killing of prisoners of war taken from a hospital after the surrender of Croatian forces?",
+  "facts": "Croatian forces in the Vukovar area capitulated on 18 November 1991. An agreement provided for wounded or sick patients fit to travel to be evacuated to Croatia, with the hospital under ICRC protection and the evacuation monitored by the European Community Monitoring Mission. On 19 November, the JNA entered Vukovar hospital; military police of the Guards Motorised Brigade took over security. More than 200 men, and two women, who were or were believed to have been involved in Croatian forces were taken from the hospital on 20 November. The initial plan was to transport the men under JNA guard to the prisoner-of-war facility at Sremska Mitrovica, where they could later be exchanged for Serb prisoners held by Croatian authorities. At the JNA barracks, local Territorial Defence and paramilitary forces threatened and verbally abused the men; JNA military police removed those forces from the compound. The prisoners were subsequently taken to a hangar at Ovčara. JNA military police guarded them there, but Territorial Defence and paramilitary forces had access to them at times, and the guards' efforts were inconsistent. Members of those forces severely beat prisoners at the hangar. Some senior JNA officers visited and tried to improve the military police response, with effects that were ineffective or temporary. Between 2000 and 2100 hours, an order from the command of Operational Group South directed the JNA military police guarding the prisoners to withdraw. The prisoners were then in the custody of the Vukovar Territorial Defence. Territorial Defence and paramilitary forces took prisoners in small groups to an isolated location and shot them. At least 200 persons died at Ovčara on 20 and 21 November 1991, in almost all cases from gunshot wounds; 194 of the persons named in the indictment were among those killed. The commander of Operational Group South had earlier ordered that the prisoners be taken to Sremska Mitrovica. Local Territorial Defence and paramilitary forces were hostile to members of the Croatian forces. A number of JNA officers reported to the commander the conduct of those forces at the JNA barracks and at Ovčara, and he was informed of killings at Velepromet the preceding day. The local Serb government opposed the transfer of prisoners to Sremska Mitrovica, and its wishes appear to have been a significant factor in the commander's decision concerning their custody.",
+  "ground_truth_outcome": "affirmed",
+  "holding": "In its Trial Judgment of 27 September 2007, the ICTY Trial Chamber found Mile Mrkšić guilty under Article 7(1) for aiding and abetting murder, torture, and cruel treatment, as violations of the laws or customs of war under Article 3. The crimes-against-humanity counts were dismissed for all three accused because the victims were not civilians for the purposes of Article 5. The three accused were treated differently: Miroslav Radić was acquitted on all counts; Mrkšić was convicted of murder, torture, and cruel treatment; and Veselin Šljivančanin was convicted of torture only and acquitted on the other counts. The Chamber imposed a single sentence of 20 years' imprisonment on Mrkšić.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": true,
+  "confidence": 0.75,
+  "confidence_reasoning": "The factual record closely mirrors the ICTY's Ovčara/Vukovar findings (e.g., Mrkšić, Šljivančanin, Milošević). Command responsibility for withdrawing the only protective guard while aware of the threat is well settled. The 0.75 reflects that the knowledge inference, while strong, is drawn from reported conduct and prior killings rather than a direct order to kill; a tribunal could conceivably demand a higher threshold of specific intent awareness, though 'had reason to know' is the prevailing standard.",
+  "rounds": 2,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 2,
+  "total_calls": 6,
+  "citation_statuses": {
+    "total": 10,
+    "resolved": 10,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. The commander of Operational Group South was criminally responsible for the killing of prisoners of war taken from Vukovar hospital.",
+    "reasoning": "The sustained objections correctly narrow the legal theories: (1) the substantive crime of wilful killing (Rome Statute Art. 8(2)(a)(i)) is established by the facts — over 200 protected prisoners were intentionally shot — but that crime must be attributed to the commander through a mode of liability, not merely alleged; (2) the 'overall control' test is for state attribution, not individual command responsibility; (3) Article 121 GC III imposes a state-level procedural duty, not a standalone war crime. However, the command-responsibility arguments (arg_ebdda8b9, arg_cfc85062) survive the partial objection (obj_b3b4e154) because the facts supply the required mental element: the commander was informed of hostile conduct by Territorial Defence and paramilitary forces at the JNA barracks and at Ovčara, and of killings at Velepromet the preceding day. This constitutes information that 'put the superior on notice' (actual or constructive knowledge). He exercised effective control over the JNA military police — the only force guarding the prisoners — and ordered their withdrawal, thereby abandoning the prisoners to forces he knew or had reason to know would kill them. This omission satisfies the actus reus (failure to prevent) and mens rea (knowledge of risk) of command responsibility under customary IHL and ICTY jurisprudence. The failure to initiate an Article 121 enquiry, while not a war crime itself, corroborates the knowledge finding.",
+    "confidence": 0.75,
+    "confidence_reasoning": "The factual record closely mirrors the ICTY's Ovčara/Vukovar findings (e.g., Mrkšić, Šljivančanin, Milošević). Command responsibility for withdrawing the only protective guard while aware of the threat is well settled. The 0.75 reflects that the knowledge inference, while strong, is drawn from reported conduct and prior killings rather than a direct order to kill; a tribunal could conceivably demand a higher threshold of specific intent awareness, though 'had reason to know' is the prevailing standard.",
+    "surviving_argument_ids": [
+      "arg_ebdda8b9",
+      "arg_cfc85062",
+      "arg_95f58eee"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_e08a3309",
+      "claim": "The mass killing of the captured Croatian combatants constitutes a grave breach of the Geneva Conventions and therefore a war crime of wilful killing under the Rome Statute.",
+      "reasoning": "The victims were prisoners of war taken from a protected hospital after surrender, thus they were persons protected under the Third Geneva Convention. The intentional shooting of at least 200 of them is a \"Wilful killing\" of protected persons, which the Rome Statute classifies as a grave breach of the Geneva Conventions and a war crime (art. 8(a)(i)). The factual record shows that the killings were carried out by forces under the commander’s overall control, satisfying the material element of the crime.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Grave breaches of the Geneva Conventions of 12 August 1949, namely, any of the following acts against persons or property protected under the provisions of the relevant Geneva Convention:\n(i) Wilful killing;"
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Killing or wounding a combatant who, having laid down his arms or having no longer means of defence, has surrendered at discretion;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Grave breaches of the Geneva Conventions of 12 August 1949, namely, any of the following acts against persons or property protected under the provisions of the relevant Geneva Convention:\n(i) Wilful killing;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Killing or wounding a combatant who, having laid down his arms or having no longer means of defence, has surrendered at discretion;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_ebdda8b9",
+      "claim": "The commander of Operational Group South bears command responsibility for the crimes because he had effective control over the JNA military police and could have prevented the transfer of the prisoners to hostile forces.",
+      "reasoning": "Customary international humanitarian law imposes a duty on commanders to take all feasible measures to prevent or repress the commission of war crimes by forces subordinate to them. The commander ordered the withdrawal of the JNA military police, thereby abandoning the prisoners to the Territorial Defence and paramilitary units that subsequently executed them. This omission fulfills the mental element of knowledge (or should have known) and the failure to act, establishing command responsibility. While the retrieved corpus does not contain an explicit statement of the command‑responsibility doctrine, the principle is universally recognized in customary IHL and has been applied by international tribunals.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_c5f5fca9",
+      "claim": "The commander violated the specific duty of the Detaining Power to investigate deaths of prisoners of war, as set out in the Third Geneva Convention, thereby breaching international law.",
+      "reasoning": "Article 121 of the Third Geneva Convention obliges the Detaining Power to conduct an immediate official enquiry into any death or serious injury of a prisoner of war and to inform the Protecting Power. The commander, as the senior authority of the Detaining Power in the area, failed to initiate such an enquiry after the mass killings, and instead allowed the perpetrators to act with impunity. This failure is a breach of the Convention and reinforces his criminal liability.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iii",
+          "article": "121",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Every death or serious injury of a prisoner of war caused or suspected to have been caused by a sentry, another prisoner of war, or any other person, as well as any death the cause of which is unknown, shall be immediately followed by an official enquiry by the Detaining Power."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iii",
+            "article": "121",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Every death or serious injury of a prisoner of war caused or suspected to have been caused by a sentry, another prisoner of war, or any other person, as well as any death the cause of which is unknown, shall be immediately followed by an official enquiry by the Detaining Power."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_1828e653",
+      "claim": "The mass killing of the captured Croatian combatants constitutes the war crime of wilful killing of protected persons under the Rome Statute.",
+      "reasoning": "The victims were prisoners of war taken from a protected hospital after surrender, therefore they were persons protected by the Third Geneva Convention. Their intentional shooting satisfies the material element of wilful killing, which the Rome Statute lists as a grave breach of the Geneva Conventions and a war crime.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Wilful killing"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Wilful killing"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_cfc85062",
+      "claim": "The commander of Operational Group South is criminally liable under the doctrine of command responsibility for the killings.",
+      "reasoning": "Customary international humanitarian law imposes a duty on commanders who have effective control over subordinates to take all feasible measures to prevent or repress the commission of war crimes and to punish perpetrators. The commander exercised effective control over the JNA military police, was informed of the hostile conduct of Territorial Defence and paramilitary forces, and ordered the withdrawal of the police guard, thereby abandoning the prisoners to those forces that subsequently executed them. This omission, coupled with the knowledge (or constructive knowledge) of the risk, satisfies the elements of command responsibility recognized in international jurisprudence (e.g., ICTY, ICC).",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_95f58eee",
+      "claim": "The commander’s failure to conduct an official enquiry into the deaths of the prisoners, as required by Article 121 of the Third Geneva Convention, demonstrates the requisite knowledge for command responsibility and constitutes a breach of his duty as Detaining Power.",
+      "reasoning": "Article 121 obliges the Detaining Power to launch an immediate official enquiry into any death of a prisoner of war and to inform the Protecting Power. The commander, as the senior authority of the Detaining Power in the area, did not initiate such an enquiry after the mass killings, indicating either actual knowledge or willful blindness to the crimes. While the breach of this procedural duty is not itself a standalone war crime, it evidences the commander’s knowledge and failure to act, reinforcing his criminal liability under command responsibility.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iii",
+          "article": "121",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Every death or serious injury of a prisoner of war ... shall be immediately followed by an official enquiry by the Detaining Power."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iii",
+            "article": "121",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Every death or serious injury of a prisoner of war ... shall be immediately followed by an official enquiry by the Detaining Power."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [
+    {
+      "id": "obj_7f4bdf71",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_e08a3309",
+      "ground": "The argument conflates the act of the subordinates with the legal elements required for command responsibility.",
+      "reasoning": "Article 8(2)(a)(i) of the Rome Statute defines the war crime of wilful killing, but the question is whether the *commander* is criminally responsible for it. The argument fails to address the distinct legal elements of command responsibility (knowledge, effective control, and failure to prevent/punish) which are the basis for holding a superior liable for the acts of subordinates. Citing the substantive crime without addressing the mode of liability is legally insufficient.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(a)(i)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(a)(i)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument cites the substantive war crime (wilful killing) but does not address the distinct elements of command responsibility (effective control, knowledge, failure to prevent/punish) required to hold a superior liable for subordinates' acts. The objection correctly identifies this doctrinal gap."
+    },
+    {
+      "id": "obj_84fa8293",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_c5f5fca9",
+      "ground": "The argument incorrectly characterizes a breach of a procedural treaty obligation as a standalone basis for criminal liability.",
+      "reasoning": "Article 121 of the Third Geneva Convention imposes a duty on the Detaining Power to conduct official enquiries into deaths. A failure to do so is a breach of the Convention by the State or the Detaining Power, but it does not, in itself, constitute a war crime or establish individual criminal responsibility for the commander. The argument confuses a state-level procedural obligation with the elements of a crime under international criminal law.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iii",
+          "article": "121",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iii",
+            "article": "121",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Article 121 GC III imposes a procedural obligation on the Detaining Power (a state organ), not an individual criminal duty. Its breach is a treaty violation, not a war crime under the Rome Statute, and does not by itself establish individual criminal responsibility."
+    },
+    {
+      "id": "obj_a63ebfeb",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_e08a3309",
+      "ground": "The argument incorrectly characterizes the perpetrators as being under the commander's 'overall control' for the purpose of establishing the material element of the war crime.",
+      "reasoning": "The facts state the killings were committed by Territorial Defence and paramilitary forces, not the JNA. The 'overall control' test is a threshold for attributing conduct to a state party (jurisdiction/statehood), not a standalone element of the crime of wilful killing itself. The material element requires the specific intent of the direct perpetrators, which is distinct from the commander's control over the forces involved.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(a)(i)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(a)(i)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The 'overall control' test (Tadić) governs attribution of conduct to a state or organization for jurisdictional purposes, not the material element of an individual's criminal liability. The direct perpetrators were Territorial Defence and paramilitary forces, not JNA forces under the commander's direct command; the argument's reliance on 'overall control' is misplaced."
+    },
+    {
+      "id": "obj_8f7606b7",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_c5f5fca9",
+      "ground": "The argument erroneously elevates the procedural duty to investigate under Article 121 GC III into a standalone war crime.",
+      "reasoning": "Article 121 imposes an administrative obligation on the Detaining Power to conduct enquiries and notify the Protecting Power. It is not listed as a war crime in Article 8 of the Rome Statute. While failure to investigate may be evidence of command responsibility (mens rea), it does not independently constitute a 'grave breach' or a separate war crime.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iii",
+          "article": "121",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iii",
+            "article": "121",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Article 121 is not enumerated as a war crime in Rome Statute Art. 8(2)(a). Failure to investigate may serve as evidence of a commander's knowledge or willful blindness for command responsibility, but it is not an independent grave breach or war crime."
+    },
+    {
+      "id": "obj_b3b4e154",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_ebdda8b9",
+      "ground": "The argument relies on a 'constructive knowledge' standard that conflates the duty to act with the mental element of command responsibility.",
+      "reasoning": "Command responsibility requires actual knowledge or information that 'put the superior on notice' of crimes. Asserting that the commander 'could have prevented' the transfer is a statement of capability, not of knowledge. Without establishing that he knew or should have known of the *specific* intent to kill (not just the transfer), the mental element of 'willful blind eye' or 'had reason to know' is not met by the mere fact of ordering a withdrawal.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "material",
+      "disposition": "partial",
+      "disposition_reasoning": "The objection correctly states that mere capability to prevent ('could have prevented') is not equivalent to the mental element of command responsibility, which requires actual knowledge or 'had reason to know.' However, the facts — reports of hostile conduct at the barracks and Ovčara, and knowledge of the Velepromet killings the day before — provide the requisite notice. The argument survives to the extent it relies on these facts rather than on capability alone."
+    }
+  ],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iv",
+        "article": "19",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_ii",
+        "article": "19(g)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gcii-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iii",
+        "article": "75(b)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iii",
+        "article": "121",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_ii",
+        "article": "4(2)(c)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iii",
+        "article": "33",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "31(4)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_e85550b2",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "4346704eae29f13aa0d51f474d32c6e5b26f261ee12d120348155bbfa29d3e75",
+      "arguments": [
+        {
+          "id": "arg_e08a3309",
+          "claim": "The mass killing of the captured Croatian combatants constitutes a grave breach of the Geneva Conventions and therefore a war crime of wilful killing under the Rome Statute.",
+          "reasoning": "The victims were prisoners of war taken from a protected hospital after surrender, thus they were persons protected under the Third Geneva Convention. The intentional shooting of at least 200 of them is a \"Wilful killing\" of protected persons, which the Rome Statute classifies as a grave breach of the Geneva Conventions and a war crime (art. 8(a)(i)). The factual record shows that the killings were carried out by forces under the commander’s overall control, satisfying the material element of the crime.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Grave breaches of the Geneva Conventions of 12 August 1949, namely, any of the following acts against persons or property protected under the provisions of the relevant Geneva Convention:\n(i) Wilful killing;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Killing or wounding a combatant who, having laid down his arms or having no longer means of defence, has surrendered at discretion;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Grave breaches of the Geneva Conventions of 12 August 1949, namely, any of the following acts against persons or property protected under the provisions of the relevant Geneva Convention:\n(i) Wilful killing;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Killing or wounding a combatant who, having laid down his arms or having no longer means of defence, has surrendered at discretion;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_ebdda8b9",
+          "claim": "The commander of Operational Group South bears command responsibility for the crimes because he had effective control over the JNA military police and could have prevented the transfer of the prisoners to hostile forces.",
+          "reasoning": "Customary international humanitarian law imposes a duty on commanders to take all feasible measures to prevent or repress the commission of war crimes by forces subordinate to them. The commander ordered the withdrawal of the JNA military police, thereby abandoning the prisoners to the Territorial Defence and paramilitary units that subsequently executed them. This omission fulfills the mental element of knowledge (or should have known) and the failure to act, establishing command responsibility. While the retrieved corpus does not contain an explicit statement of the command‑responsibility doctrine, the principle is universally recognized in customary IHL and has been applied by international tribunals.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_c5f5fca9",
+          "claim": "The commander violated the specific duty of the Detaining Power to investigate deaths of prisoners of war, as set out in the Third Geneva Convention, thereby breaching international law.",
+          "reasoning": "Article 121 of the Third Geneva Convention obliges the Detaining Power to conduct an immediate official enquiry into any death or serious injury of a prisoner of war and to inform the Protecting Power. The commander, as the senior authority of the Detaining Power in the area, failed to initiate such an enquiry after the mass killings, and instead allowed the perpetrators to act with impunity. This failure is a breach of the Convention and reinforces his criminal liability.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "121",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Every death or serious injury of a prisoner of war caused or suspected to have been caused by a sentry, another prisoner of war, or any other person, as well as any death the cause of which is unknown, shall be immediately followed by an official enquiry by the Detaining Power."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "121",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Every death or serious injury of a prisoner of war caused or suspected to have been caused by a sentry, another prisoner of war, or any other person, as well as any death the cause of which is unknown, shall be immediately followed by an official enquiry by the Detaining Power."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The mass killing of the captured Croatian combatants constitutes a grave breach of the Geneva Conventions and therefore a war crime of wilful killing under the Rome Statute.\",\n      \"reasoning\": \"The victims were prisoners of war taken from a protected hospital after surrender, thus they were persons protected under the Third Geneva Convention. The intentional shooting of at least 200 of them is a \\\"Wilful killing\\\" of protected persons, which the Rome Statute classifies as a grave breach of the Geneva Conventions and a war crime (art. 8(a)(i)). The factual record shows that the killings were carried out by forces under the commander’s overall control, satisfying the material element of the crime.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Grave breaches of the Geneva Conventions of 12 August 1949, namely, any of the following acts against persons or property protected under the provisions of the relevant Geneva Convention:\\n(i) Wilful killing;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Killing or wounding a combatant who, having laid down his arms or having no longer means of defence, has surrendered at discretion;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander of Operational Group South bears command responsibility for the crimes because he had effective control over the JNA military police and could have prevented the transfer of the prisoners to hostile forces.\",\n      \"reasoning\": \"Customary international humanitarian law imposes a duty on commanders to take all feasible measures to prevent or repress the commission of war crimes by forces subordinate to them. The commander ordered the withdrawal of the JNA military police, thereby abandoning the prisoners to the Territorial Defence and paramilitary units that subsequently executed them. This omission fulfills the mental element of knowledge (or should have known) and the failure to act, establishing command responsibility. While the retrieved corpus does not contain an explicit statement of the command‑responsibility doctrine, the principle is universally recognized in customary IHL and has been applied by international tribunals.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The commander violated the specific duty of the Detaining Power to investigate deaths of prisoners of war, as set out in the Third Geneva Convention, thereby breaching international law.\",\n      \"reasoning\": \"Article 121 of the Third Geneva Convention obliges the Detaining Power to conduct an immediate official enquiry into any death or serious injury of a prisoner of war and to inform the Protecting Power. The commander, as the senior authority of the Detaining Power in the area, failed to initiate such an enquiry after the mass killings, and instead allowed the perpetrators to act with impunity. This failure is a breach of the Convention and reinforces his criminal liability.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"121\",\n          \"quoted_text\": \"Every death or serious injury of a prisoner of war caused or suspected to have been caused by a sentry, another prisoner of war, or any other person, as well as any death the cause of which is unknown, shall be immediately followed by an official enquiry by the Detaining Power.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T13:43:23.704842Z",
+      "completed_at": "2026-11-16T13:43:28.221808Z",
+      "prompt_tokens": 4724,
+      "completion_tokens": 1808,
+      "error": null
+    },
+    {
+      "id": "turn_b5eb38f1",
+      "round_number": 1,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "94e47217a270c8a54895bc4f74f0830e956e6a3e2502bdbb89488d7c96ae3c77",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_7f4bdf71",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_e08a3309",
+          "ground": "The argument conflates the act of the subordinates with the legal elements required for command responsibility.",
+          "reasoning": "Article 8(2)(a)(i) of the Rome Statute defines the war crime of wilful killing, but the question is whether the *commander* is criminally responsible for it. The argument fails to address the distinct legal elements of command responsibility (knowledge, effective control, and failure to prevent/punish) which are the basis for holding a superior liable for the acts of subordinates. Citing the substantive crime without addressing the mode of liability is legally insufficient.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(i)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument cites the substantive war crime (wilful killing) but does not address the distinct elements of command responsibility (effective control, knowledge, failure to prevent/punish) required to hold a superior liable for subordinates' acts. The objection correctly identifies this doctrinal gap."
+        },
+        {
+          "id": "obj_84fa8293",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_c5f5fca9",
+          "ground": "The argument incorrectly characterizes a breach of a procedural treaty obligation as a standalone basis for criminal liability.",
+          "reasoning": "Article 121 of the Third Geneva Convention imposes a duty on the Detaining Power to conduct official enquiries into deaths. A failure to do so is a breach of the Convention by the State or the Detaining Power, but it does not, in itself, constitute a war crime or establish individual criminal responsibility for the commander. The argument confuses a state-level procedural obligation with the elements of a crime under international criminal law.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "121",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "121",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Article 121 GC III imposes a procedural obligation on the Detaining Power (a state organ), not an individual criminal duty. Its breach is a treaty violation, not a war crime under the Rome Statute, and does not by itself establish individual criminal responsibility."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_e08a3309\",\n      \"ground\": \"The argument conflates the act of the subordinates with the legal elements required for command responsibility.\",\n      \"reasoning\": \"Article 8(2)(a)(i) of the Rome Statute defines the war crime of wilful killing, but the question is whether the *commander* is criminally responsible for it. The argument fails to address the distinct legal elements of command responsibility (knowledge, effective control, and failure to prevent/punish) which are the basis for holding a superior liable for the acts of subordinates. Citing the substantive crime without addressing the mode of liability is legally insufficient.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(i)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_c5f5fca9\",\n      \"ground\": \"The argument incorrectly characterizes a breach of a procedural treaty obligation as a standalone basis for criminal liability.\",\n      \"reasoning\": \"Article 121 of the Third Geneva Convention imposes a duty on the Detaining Power to conduct official enquiries into deaths. A failure to do so is a breach of the Convention by the State or the Detaining Power, but it does not, in itself, constitute a war crime or establish individual criminal responsibility for the commander. The argument confuses a state-level procedural obligation with the elements of a crime under international criminal law.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"121\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T13:43:28.249902Z",
+      "completed_at": "2026-11-16T13:43:29.640014Z",
+      "prompt_tokens": 5617,
+      "completion_tokens": 422,
+      "error": null
+    },
+    {
+      "id": "turn_e6d7b803",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "30c5829ddd8622a2b35f3982439c042c0067078bb1e3488c924b2c4bb20d4366",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The commander of Operational Group South was criminally responsible for the killing of the prisoners of war under the doctrine of command responsibility.\", \"reasoning\": \"The objection to arg_e08a3309 is sustained: that argument establishes the underlying war crime of wilful killing (Rome Statute art. 8(2)(a)(i)) but does not address the mode of liability for a commander. The objection to arg_c5f5fca9 is sustained: a breach of the Detaining Power's procedural duty under GC III art. 121 is a state-level obligation and does not, by itself, constitute an individual war crime. However, arg_ebdda8b9 survives both objections. It correctly identifies that the commander had effective control over the JNA military police, knew or should have known of the risk (reports of hostility, abuse at the barracks and Ovčara, and killings at Velepromet the previous day), and failed to take necessary and reasonable measures to prevent the crime — instead ordering the withdrawal of the only protective force and leaving the prisoners in the custody of hostile Territorial Defence and paramilitary units. This satisfies the elements of command responsibility under customary IHL and Article 28 of the Rome Statute. Although the retrieved corpus does not contain the explicit command-responsibility provision, the doctrine is universally recognized in customary international law and the factual record here meets its requirements.\", \"confidence\": 0.75, \"confidence_reasoning\": \"The factual pattern — effective control, knowledge of risk, and a deliberate omission that enabled the killings — is a strong fit for command responsibility. The confidence is not higher because the retrieved context lacks the treaty text (Rome Statute art. 28) or customary rule that expressly codifies the doctrine, so the legal basis rests on an authority not in the provided spans. The conclusion would be firmer with that citation, but the principle is settled enough that the gap does not change the outcome.\", \"rulings\": [{\"objection_id\": \"obj_7f4bdf71\", \"disposition\": \"sustained\", \"reasoning\": \"The argument cites the substantive crime (wilful killing under Rome Statute art. 8(2)(a)(i)) but does not address the distinct elements of command responsibility — effective control, knowledge, and failure to prevent or punish — which are required to hold a superior criminally liable for the acts of subordinates. The objection correctly identifies this gap.\"}, {\"objection_id\": \"obj_84fa8293\", \"disposition\": \"sustained\", \"reasoning\": \"GC III art. 121 imposes a procedural duty on the Detaining Power (a State) to conduct enquiries into prisoner deaths. A failure to fulfil that duty is a breach of the Convention by the State, not a standalone war crime giving rise to individual criminal responsibility. The argument conflates state responsibility with individual criminal liability.\"}], \"surviving_argument_ids\": [\"arg_ebdda8b9\", \"arg_e08a3309\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-16T13:43:29.641055Z",
+      "completed_at": "2026-11-16T13:44:16.134536Z",
+      "prompt_tokens": 6007,
+      "completion_tokens": 2027,
+      "error": null
+    },
+    {
+      "id": "turn_d1418bfa",
+      "round_number": 2,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/rebuttal",
+      "prompt_hash": "a717cc5c3e17133c3bd9417141af6851c212799cb37a30d00ec91cc6610d284f",
+      "arguments": [
+        {
+          "id": "arg_1828e653",
+          "claim": "The mass killing of the captured Croatian combatants constitutes the war crime of wilful killing of protected persons under the Rome Statute.",
+          "reasoning": "The victims were prisoners of war taken from a protected hospital after surrender, therefore they were persons protected by the Third Geneva Convention. Their intentional shooting satisfies the material element of wilful killing, which the Rome Statute lists as a grave breach of the Geneva Conventions and a war crime.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Wilful killing"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Wilful killing"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_cfc85062",
+          "claim": "The commander of Operational Group South is criminally liable under the doctrine of command responsibility for the killings.",
+          "reasoning": "Customary international humanitarian law imposes a duty on commanders who have effective control over subordinates to take all feasible measures to prevent or repress the commission of war crimes and to punish perpetrators. The commander exercised effective control over the JNA military police, was informed of the hostile conduct of Territorial Defence and paramilitary forces, and ordered the withdrawal of the police guard, thereby abandoning the prisoners to those forces that subsequently executed them. This omission, coupled with the knowledge (or constructive knowledge) of the risk, satisfies the elements of command responsibility recognized in international jurisprudence (e.g., ICTY, ICC).",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_95f58eee",
+          "claim": "The commander’s failure to conduct an official enquiry into the deaths of the prisoners, as required by Article 121 of the Third Geneva Convention, demonstrates the requisite knowledge for command responsibility and constitutes a breach of his duty as Detaining Power.",
+          "reasoning": "Article 121 obliges the Detaining Power to launch an immediate official enquiry into any death of a prisoner of war and to inform the Protecting Power. The commander, as the senior authority of the Detaining Power in the area, did not initiate such an enquiry after the mass killings, indicating either actual knowledge or willful blindness to the crimes. While the breach of this procedural duty is not itself a standalone war crime, it evidences the commander’s knowledge and failure to act, reinforcing his criminal liability under command responsibility.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "121",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Every death or serious injury of a prisoner of war ... shall be immediately followed by an official enquiry by the Detaining Power."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "121",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Every death or serious injury of a prisoner of war ... shall be immediately followed by an official enquiry by the Detaining Power."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The mass killing of the captured Croatian combatants constitutes the war crime of wilful killing of protected persons under the Rome Statute.\",\n      \"reasoning\": \"The victims were prisoners of war taken from a protected hospital after surrender, therefore they were persons protected by the Third Geneva Convention. Their intentional shooting satisfies the material element of wilful killing, which the Rome Statute lists as a grave breach of the Geneva Conventions and a war crime.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Wilful killing\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander of Operational Group South is criminally liable under the doctrine of command responsibility for the killings.\",\n      \"reasoning\": \"Customary international humanitarian law imposes a duty on commanders who have effective control over subordinates to take all feasible measures to prevent or repress the commission of war crimes and to punish perpetrators. The commander exercised effective control over the JNA military police, was informed of the hostile conduct of Territorial Defence and paramilitary forces, and ordered the withdrawal of the police guard, thereby abandoning the prisoners to those forces that subsequently executed them. This omission, coupled with the knowledge (or constructive knowledge) of the risk, satisfies the elements of command responsibility recognized in international jurisprudence (e.g., ICTY, ICC).\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The commander’s failure to conduct an official enquiry into the deaths of the prisoners, as required by Article 121 of the Third Geneva Convention, demonstrates the requisite knowledge for command responsibility and constitutes a breach of his duty as Detaining Power.\",\n      \"reasoning\": \"Article 121 obliges the Detaining Power to launch an immediate official enquiry into any death of a prisoner of war and to inform the Protecting Power. The commander, as the senior authority of the Detaining Power in the area, did not initiate such an enquiry after the mass killings, indicating either actual knowledge or willful blindness to the crimes. While the breach of this procedural duty is not itself a standalone war crime, it evidences the commander’s knowledge and failure to act, reinforcing his criminal liability under command responsibility.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"121\",\n          \"quoted_text\": \"Every death or serious injury of a prisoner of war ... shall be immediately followed by an official enquiry by the Detaining Power.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-16T13:44:16.143495Z",
+      "completed_at": "2026-11-16T13:44:19.869944Z",
+      "prompt_tokens": 5567,
+      "completion_tokens": 1371,
+      "error": null
+    },
+    {
+      "id": "turn_dc4b286f",
+      "round_number": 2,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "c9eee36ed168eeea2937b13ba9a1c11c07e334a097e14f573db4b92316bab47b",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_a63ebfeb",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_e08a3309",
+          "ground": "The argument incorrectly characterizes the perpetrators as being under the commander's 'overall control' for the purpose of establishing the material element of the war crime.",
+          "reasoning": "The facts state the killings were committed by Territorial Defence and paramilitary forces, not the JNA. The 'overall control' test is a threshold for attributing conduct to a state party (jurisdiction/statehood), not a standalone element of the crime of wilful killing itself. The material element requires the specific intent of the direct perpetrators, which is distinct from the commander's control over the forces involved.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(i)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The 'overall control' test (Tadić) governs attribution of conduct to a state or organization for jurisdictional purposes, not the material element of an individual's criminal liability. The direct perpetrators were Territorial Defence and paramilitary forces, not JNA forces under the commander's direct command; the argument's reliance on 'overall control' is misplaced."
+        },
+        {
+          "id": "obj_8f7606b7",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_c5f5fca9",
+          "ground": "The argument erroneously elevates the procedural duty to investigate under Article 121 GC III into a standalone war crime.",
+          "reasoning": "Article 121 imposes an administrative obligation on the Detaining Power to conduct enquiries and notify the Protecting Power. It is not listed as a war crime in Article 8 of the Rome Statute. While failure to investigate may be evidence of command responsibility (mens rea), it does not independently constitute a 'grave breach' or a separate war crime.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "121",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "121",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Article 121 is not enumerated as a war crime in Rome Statute Art. 8(2)(a). Failure to investigate may serve as evidence of a commander's knowledge or willful blindness for command responsibility, but it is not an independent grave breach or war crime."
+        },
+        {
+          "id": "obj_b3b4e154",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_ebdda8b9",
+          "ground": "The argument relies on a 'constructive knowledge' standard that conflates the duty to act with the mental element of command responsibility.",
+          "reasoning": "Command responsibility requires actual knowledge or information that 'put the superior on notice' of crimes. Asserting that the commander 'could have prevented' the transfer is a statement of capability, not of knowledge. Without establishing that he knew or should have known of the *specific* intent to kill (not just the transfer), the mental element of 'willful blind eye' or 'had reason to know' is not met by the mere fact of ordering a withdrawal.",
+          "citations": [],
+          "resolved_citations": [],
+          "severity": "material",
+          "disposition": "partial",
+          "disposition_reasoning": "The objection correctly states that mere capability to prevent ('could have prevented') is not equivalent to the mental element of command responsibility, which requires actual knowledge or 'had reason to know.' However, the facts — reports of hostile conduct at the barracks and Ovčara, and knowledge of the Velepromet killings the day before — provide the requisite notice. The argument survives to the extent it relies on these facts rather than on capability alone."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_e08a3309\",\n      \"ground\": \"The argument incorrectly characterizes the perpetrators as being under the commander's 'overall control' for the purpose of establishing the material element of the war crime.\",\n      \"reasoning\": \"The facts state the killings were committed by Territorial Defence and paramilitary forces, not the JNA. The 'overall control' test is a threshold for attributing conduct to a state party (jurisdiction/statehood), not a standalone element of the crime of wilful killing itself. The material element requires the specific intent of the direct perpetrators, which is distinct from the commander's control over the forces involved.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(i)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_c5f5fca9\",\n      \"ground\": \"The argument erroneously elevates the procedural duty to investigate under Article 121 GC III into a standalone war crime.\",\n      \"reasoning\": \"Article 121 imposes an administrative obligation on the Detaining Power to conduct enquiries and notify the Protecting Power. It is not listed as a war crime in Article 8 of the Rome Statute. While failure to investigate may be evidence of command responsibility (mens rea), it does not independently constitute a 'grave breach' or a separate war crime.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"121\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_ebdda8b9\",\n      \"ground\": \"The argument relies on a 'constructive knowledge' standard that conflates the duty to act with the mental element of command responsibility.\",\n      \"reasoning\": \"Command responsibility requires actual knowledge or information that 'put the superior on notice' of crimes. Asserting that the commander 'could have prevented' the transfer is a statement of capability, not of knowledge. Without establishing that he knew or should have known of the *specific* intent to kill (not just the transfer), the mental element of 'willful blind eye' or 'had reason to know' is not met by the mere fact of ordering a withdrawal.\",\n      \"severity\": \"material\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-16T13:44:19.871954Z",
+      "completed_at": "2026-11-16T13:44:21.799772Z",
+      "prompt_tokens": 6068,
+      "completion_tokens": 614,
+      "error": null
+    },
+    {
+      "id": "turn_5abe0cc3",
+      "round_number": 2,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "a8ad09ea6d074b5827866f8fca53f07d2ddc11529c4b563ae979b3736f707524",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The commander of Operational Group South was criminally responsible for the killing of prisoners of war taken from Vukovar hospital.\", \"reasoning\": \"The sustained objections correctly narrow the legal theories: (1) the substantive crime of wilful killing (Rome Statute Art. 8(2)(a)(i)) is established by the facts — over 200 protected prisoners were intentionally shot — but that crime must be attributed to the commander through a mode of liability, not merely alleged; (2) the 'overall control' test is for state attribution, not individual command responsibility; (3) Article 121 GC III imposes a state-level procedural duty, not a standalone war crime. However, the command-responsibility arguments (arg_ebdda8b9, arg_cfc85062) survive the partial objection (obj_b3b4e154) because the facts supply the required mental element: the commander was informed of hostile conduct by Territorial Defence and paramilitary forces at the JNA barracks and at Ovčara, and of killings at Velepromet the preceding day. This constitutes information that 'put the superior on notice' (actual or constructive knowledge). He exercised effective control over the JNA military police — the only force guarding the prisoners — and ordered their withdrawal, thereby abandoning the prisoners to forces he knew or had reason to know would kill them. This omission satisfies the actus reus (failure to prevent) and mens rea (knowledge of risk) of command responsibility under customary IHL and ICTY jurisprudence. The failure to initiate an Article 121 enquiry, while not a war crime itself, corroborates the knowledge finding.\", \"confidence\": 0.75, \"confidence_reasoning\": \"The factual record closely mirrors the ICTY's Ovčara/Vukovar findings (e.g., Mrkšić, Šljivančanin, Milošević). Command responsibility for withdrawing the only protective guard while aware of the threat is well settled. The 0.75 reflects that the knowledge inference, while strong, is drawn from reported conduct and prior killings rather than a direct order to kill; a tribunal could conceivably demand a higher threshold of specific intent awareness, though 'had reason to know' is the prevailing standard.\", \"rulings\": [{\"objection_id\": \"obj_7f4bdf71\", \"disposition\": \"sustained\", \"reasoning\": \"The argument cites the substantive war crime (wilful killing) but does not address the distinct elements of command responsibility (effective control, knowledge, failure to prevent/punish) required to hold a superior liable for subordinates' acts. The objection correctly identifies this doctrinal gap.\"}, {\"objection_id\": \"obj_a63ebfeb\", \"disposition\": \"sustained\", \"reasoning\": \"The 'overall control' test (Tadić) governs attribution of conduct to a state or organization for jurisdictional purposes, not the material element of an individual's criminal liability. The direct perpetrators were Territorial Defence and paramilitary forces, not JNA forces under the commander's direct command; the argument's reliance on 'overall control' is misplaced.\"}, {\"objection_id\": \"obj_84fa8293\", \"disposition\": \"sustained\", \"reasoning\": \"Article 121 GC III imposes a procedural obligation on the Detaining Power (a state organ), not an individual criminal duty. Its breach is a treaty violation, not a war crime under the Rome Statute, and does not by itself establish individual criminal responsibility.\"}, {\"objection_id\": \"obj_8f7606b7\", \"disposition\": \"sustained\", \"reasoning\": \"Article 121 is not enumerated as a war crime in Rome Statute Art. 8(2)(a). Failure to investigate may serve as evidence of a commander's knowledge or willful blindness for command responsibility, but it is not an independent grave breach or war crime.\"}, {\"objection_id\": \"obj_b3b4e154\", \"disposition\": \"partial\", \"reasoning\": \"The objection correctly states that mere capability to prevent ('could have prevented') is not equivalent to the mental element of command responsibility, which requires actual knowledge or 'had reason to know.' However, the facts — reports of hostile conduct at the barracks and Ovčara, and knowledge of the Velepromet killings the day before — provide the requisite notice. The argument survives to the extent it relies on these facts rather than on capability alone.\"}], \"surviving_argument_ids\": [\"arg_ebdda8b9\", \"arg_cfc85062\", \"arg_95f58eee\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-16T13:44:21.801855Z",
+      "completed_at": "2026-11-16T13:45:06.748398Z",
+      "prompt_tokens": 6935,
+      "completion_tokens": 2179,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-16T13:45:06.754473+00:00",
+  "duration_seconds": 105.56532230001176,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 2,
+  "judge_failures": 0,
+  "judge_failed": false
+}

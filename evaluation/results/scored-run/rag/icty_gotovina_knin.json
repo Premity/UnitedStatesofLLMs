@@ -1,0 +1,384 @@
+{
+  "case_id": "icty_gotovina_knin",
+  "case_title": "Prosecutor v. Gotovina and Markač — artillery attacks on Krajina towns",
+  "court": "ICTY",
+  "year": 2012,
+  "difficulty": "contested",
+  "arm": "rag",
+  "arm_label": "B — Single pass with retrieval",
+  "run_id": "eval_c5571f323a",
+  "question": "Has it been established beyond reasonable doubt that the artillery attacks on Knin, Benkovac, Obrovac and Gračac were unlawful?",
+  "facts": "From at least July 1995 to about 30 September 1995, Croatian leaders and officials initiated Operation Storm, a military action aimed at taking control of territory in the Krajina region of Croatia. The first accused was a colonel-general in the Croatian army, commander of its Split Military District, and overall operational commander of Operation Storm in the southern part of the Krajina. The second accused was assistant minister of the interior and operational commander of the special police in Croatia. Artillery was used against Knin, Benkovac, Obrovac, and Gračac. The Trial Chamber analysed individual artillery impact sites in the four towns. It applied a 200-metre margin of error to all impact sites in each of the four towns and treated sites more than 200 metres from a target it considered legitimate as evidence of an unlawful attack. It found that the HV could not identify targets of opportunity, such as moving police or military vehicles, in the four towns. The trial record also included evidence of targets of opportunity in Knin. Expert witnesses testified about factors including wind speed and air temperature that could affect the accuracy of the weapons used. The Trial Chamber found that large numbers of civilians departed the Krajina region. The Trial Chamber found the artillery attacks on all four towns unlawful and convicted both accused.",
+  "ground_truth_outcome": "rejected",
+  "holding": "In its Appeals Judgment of 16 November 2012, the ICTY Appeals Chamber reversed the Trial Chamber's finding that the artillery attacks on Knin, Benkovac, Obrovac, and Gračac were unlawful. Judges Agius and Pocar dissented from this conclusion. The Chamber also reversed the convictions of Ante Gotovina and Mladen Markač and entered acquittals under Counts 1, 2, 4, 5, 6, 7, 8, and 9.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": false,
+  "confidence": 0.85,
+  "confidence_reasoning": "The Trial Chamber's explicit finding of unlawfulness and conviction of both accused, combined with a resolved citation to Article 8(2)(b)(ii) and factual findings that directly satisfy the legal test (inability to identify military targets, impacts in civilian areas, civilian exodus), provide strong support. Confidence is not higher because the customary law arguments lack specific citations in the retrieved context, and one argument carries a misquoted citation, but these are supplementary to the primary treaty-based ground.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 2,
+  "citation_statuses": {
+    "total": 2,
+    "resolved": 1,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 1
+  },
+  "verdict": {
+    "conclusion": "Yes. The artillery attacks on Knin, Benkovac, Obrovac, and Gračac were established as unlawful beyond reasonable doubt.",
+    "reasoning": "The Trial Chamber's findings — that the HV could not identify legitimate military targets or targets of opportunity in the four towns, that a 200-metre margin of error placed impacts in civilian areas, that expert testimony on environmental factors affecting accuracy was disregarded, and that large-scale civilian flight resulted — collectively satisfy the elements of intentionally directing attacks against civilian objects under Article 8(2)(b)(ii) of the Rome Statute (arg_f346c7ae, citation resolved). The customary law arguments (arg_bb15a91a, arg_2b19468f) further support that the failure to distinguish and take feasible precautions rendered the attacks indiscriminate and disproportionate. Argument arg_8562767c is weakened by a misquoted citation (the quoted text corresponds to Article 8(2)(a)(iv), not 8(2)(b)(iv)), but this does not undermine the core finding, which rests on the resolved citation and the factual record. No objections were filed to challenge these arguments.",
+    "confidence": 0.85,
+    "confidence_reasoning": "The Trial Chamber's explicit finding of unlawfulness and conviction of both accused, combined with a resolved citation to Article 8(2)(b)(ii) and factual findings that directly satisfy the legal test (inability to identify military targets, impacts in civilian areas, civilian exodus), provide strong support. Confidence is not higher because the customary law arguments lack specific citations in the retrieved context, and one argument carries a misquoted citation, but these are supplementary to the primary treaty-based ground.",
+    "surviving_argument_ids": [
+      "arg_f346c7ae",
+      "arg_bb15a91a",
+      "arg_2b19468f"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_8562767c",
+      "claim": "The artillery attacks on Knin, Benkovac, Obrovac and Gračac constitute extensive destruction not justified by military necessity, therefore they constitute a war crime under Article 8(2)(b)(iv) of the Rome Statute.",
+      "reasoning": "Article 8(2)(b)(iv) criminalises \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly\". The Trial Chamber found that the HV could not identify legitimate military targets in the four towns and applied a 200‑metre margin of error, treating impacts beyond that distance as unlawful. The large‑scale artillery bombardment caused widespread damage to civilian infrastructure and forced the mass departure of civilians, evidencing destruction that was not proportionate to any concrete military advantage and thus not justified by military necessity.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly"
+          },
+          "status": "misquoted",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": "Quoted text does not appear at this locator."
+        }
+      ]
+    },
+    {
+      "id": "arg_f346c7ae",
+      "claim": "The attacks were directed against civilian objects, i.e., towns and dwellings that were not military objectives, violating Article 8(2)(b)(ii) of the Rome Statute.",
+      "reasoning": "Article 8(2)(b)(ii) prohibits \"Intentionally directing attacks against civilian objects, that is, objects which are not military objectives\". The Chamber’s analysis showed that the artillery impacts were located in residential areas of the four towns, beyond any identifiable military target, and that the HV could not locate targets of opportunity such as moving police or military vehicles. Consequently, the attacks were directed at civilian objects rather than legitimate military objectives.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(ii)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Intentionally directing attacks against civilian objects, that is, objects which are not military objectives"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(ii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Intentionally directing attacks against civilian objects, that is, objects which are not military objectives"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_bb15a91a",
+      "claim": "The conduct of the artillery attacks violated the principle of distinction and proportionality, customary rules of international humanitarian law, because the HV failed to take feasible precautions to verify targets and to limit incidental civilian harm.",
+      "reasoning": "Customary IHL requires parties to distinguish between civilians and combatants and to ensure that attacks are not excessive in relation to the anticipated military advantage. The evidence that the HV could not identify targets of opportunity, relied on a blanket 200‑metre error margin, and ignored expert testimony on wind and temperature effects demonstrates a failure to take feasible precautions. This breach of distinction and proportionality renders the attacks unlawful, even if some military advantage was claimed.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_2b19468f",
+      "claim": "Even assuming the presence of some military objectives, the indiscriminate nature of the artillery fire—evidenced by the inability to differentiate targets and the massive civilian exodus—makes the attacks unlawful under the customary rule prohibiting indiscriminate attacks.",
+      "reasoning": "Customary rule 14 (distinction) obliges parties to direct operations only against military objectives. The Chamber’s finding that the HV could not identify moving police or military vehicles, combined with the large number of civilians fleeing the area, shows that the attacks were not directed at specific military objectives and were therefore indiscriminate. Indiscriminate attacks are prohibited irrespective of any claimed military necessity.",
+      "citations": [],
+      "resolved_citations": []
+    }
+  ],
+  "objections": [],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw_p_iii",
+        "article": "2(3)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw_p_v",
+        "article": "4(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-v-2003",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "hague_cp",
+        "article": "8a(b)(5)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/hague-conv-1954",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw_p_iii",
+        "article": "2(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "56(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "56(5)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "59(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_d9d2e2ac",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "44df795a8d600a30e5ac2586eee8f64129f4c035442a4e78574e0e5929c976b0",
+      "arguments": [
+        {
+          "id": "arg_8562767c",
+          "claim": "The artillery attacks on Knin, Benkovac, Obrovac and Gračac constitute extensive destruction not justified by military necessity, therefore they constitute a war crime under Article 8(2)(b)(iv) of the Rome Statute.",
+          "reasoning": "Article 8(2)(b)(iv) criminalises \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly\". The Trial Chamber found that the HV could not identify legitimate military targets in the four towns and applied a 200‑metre margin of error, treating impacts beyond that distance as unlawful. The large‑scale artillery bombardment caused widespread damage to civilian infrastructure and forced the mass departure of civilians, evidencing destruction that was not proportionate to any concrete military advantage and thus not justified by military necessity.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly"
+              },
+              "status": "misquoted",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": "Quoted text does not appear at this locator."
+            }
+          ]
+        },
+        {
+          "id": "arg_f346c7ae",
+          "claim": "The attacks were directed against civilian objects, i.e., towns and dwellings that were not military objectives, violating Article 8(2)(b)(ii) of the Rome Statute.",
+          "reasoning": "Article 8(2)(b)(ii) prohibits \"Intentionally directing attacks against civilian objects, that is, objects which are not military objectives\". The Chamber’s analysis showed that the artillery impacts were located in residential areas of the four towns, beyond any identifiable military target, and that the HV could not locate targets of opportunity such as moving police or military vehicles. Consequently, the attacks were directed at civilian objects rather than legitimate military objectives.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(ii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Intentionally directing attacks against civilian objects, that is, objects which are not military objectives"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(ii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Intentionally directing attacks against civilian objects, that is, objects which are not military objectives"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_bb15a91a",
+          "claim": "The conduct of the artillery attacks violated the principle of distinction and proportionality, customary rules of international humanitarian law, because the HV failed to take feasible precautions to verify targets and to limit incidental civilian harm.",
+          "reasoning": "Customary IHL requires parties to distinguish between civilians and combatants and to ensure that attacks are not excessive in relation to the anticipated military advantage. The evidence that the HV could not identify targets of opportunity, relied on a blanket 200‑metre error margin, and ignored expert testimony on wind and temperature effects demonstrates a failure to take feasible precautions. This breach of distinction and proportionality renders the attacks unlawful, even if some military advantage was claimed.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_2b19468f",
+          "claim": "Even assuming the presence of some military objectives, the indiscriminate nature of the artillery fire—evidenced by the inability to differentiate targets and the massive civilian exodus—makes the attacks unlawful under the customary rule prohibiting indiscriminate attacks.",
+          "reasoning": "Customary rule 14 (distinction) obliges parties to direct operations only against military objectives. The Chamber’s finding that the HV could not identify moving police or military vehicles, combined with the large number of civilians fleeing the area, shows that the attacks were not directed at specific military objectives and were therefore indiscriminate. Indiscriminate attacks are prohibited irrespective of any claimed military necessity.",
+          "citations": [],
+          "resolved_citations": []
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The artillery attacks on Knin, Benkovac, Obrovac and Gračac constitute extensive destruction not justified by military necessity, therefore they constitute a war crime under Article 8(2)(b)(iv) of the Rome Statute.\",\n      \"reasoning\": \"Article 8(2)(b)(iv) criminalises \\\"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly\\\". The Trial Chamber found that the HV could not identify legitimate military targets in the four towns and applied a 200‑metre margin of error, treating impacts beyond that distance as unlawful. The large‑scale artillery bombardment caused widespread damage to civilian infrastructure and forced the mass departure of civilians, evidencing destruction that was not proportionate to any concrete military advantage and thus not justified by military necessity.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(iv)\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The attacks were directed against civilian objects, i.e., towns and dwellings that were not military objectives, violating Article 8(2)(b)(ii) of the Rome Statute.\",\n      \"reasoning\": \"Article 8(2)(b)(ii) prohibits \\\"Intentionally directing attacks against civilian objects, that is, objects which are not military objectives\\\". The Chamber’s analysis showed that the artillery impacts were located in residential areas of the four towns, beyond any identifiable military target, and that the HV could not locate targets of opportunity such as moving police or military vehicles. Consequently, the attacks were directed at civilian objects rather than legitimate military objectives.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(ii)\",\n          \"quoted_text\": \"Intentionally directing attacks against civilian objects, that is, objects which are not military objectives\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The conduct of the artillery attacks violated the principle of distinction and proportionality, customary rules of international humanitarian law, because the HV failed to take feasible precautions to verify targets and to limit incidental civilian harm.\",\n      \"reasoning\": \"Customary IHL requires parties to distinguish between civilians and combatants and to ensure that attacks are not excessive in relation to the anticipated military advantage. The evidence that the HV could not identify targets of opportunity, relied on a blanket 200‑metre error margin, and ignored expert testimony on wind and temperature effects demonstrates a failure to take feasible precautions. This breach of distinction and proportionality renders the attacks unlawful, even if some military advantage was claimed.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"Even assuming the presence of some military objectives, the indiscriminate nature of the artillery fire—evidenced by the inability to differentiate targets and the massive civilian exodus—makes the attacks unlawful under the customary rule prohibiting indiscriminate attacks.\",\n      \"reasoning\": \"Customary rule 14 (distinction) obliges parties to direct operations only against military objectives. The Chamber’s finding that the HV could not identify moving police or military vehicles, combined with the large number of civilians fleeing the area, shows that the attacks were not directed at specific military objectives and were therefore indiscriminate. Indiscriminate attacks are prohibited irrespective of any claimed military necessity.\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-16T11:38:05.003331Z",
+      "completed_at": "2026-11-16T11:38:09.213585Z",
+      "prompt_tokens": 4167,
+      "completion_tokens": 1722,
+      "error": null
+    },
+    {
+      "id": "turn_728fe63b",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "76ac51b8febd6002cdcfdf00dfe687ff26e60d18467dbd4dd28fffe35fc2d6d8",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The artillery attacks on Knin, Benkovac, Obrovac, and Gračac were established as unlawful beyond reasonable doubt.\", \"reasoning\": \"The Trial Chamber's findings — that the HV could not identify legitimate military targets or targets of opportunity in the four towns, that a 200-metre margin of error placed impacts in civilian areas, that expert testimony on environmental factors affecting accuracy was disregarded, and that large-scale civilian flight resulted — collectively satisfy the elements of intentionally directing attacks against civilian objects under Article 8(2)(b)(ii) of the Rome Statute (arg_f346c7ae, citation resolved). The customary law arguments (arg_bb15a91a, arg_2b19468f) further support that the failure to distinguish and take feasible precautions rendered the attacks indiscriminate and disproportionate. Argument arg_8562767c is weakened by a misquoted citation (the quoted text corresponds to Article 8(2)(a)(iv), not 8(2)(b)(iv)), but this does not undermine the core finding, which rests on the resolved citation and the factual record. No objections were filed to challenge these arguments.\", \"confidence\": 0.85, \"confidence_reasoning\": \"The Trial Chamber's explicit finding of unlawfulness and conviction of both accused, combined with a resolved citation to Article 8(2)(b)(ii) and factual findings that directly satisfy the legal test (inability to identify military targets, impacts in civilian areas, civilian exodus), provide strong support. Confidence is not higher because the customary law arguments lack specific citations in the retrieved context, and one argument carries a misquoted citation, but these are supplementary to the primary treaty-based ground.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_f346c7ae\", \"arg_bb15a91a\", \"arg_2b19468f\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-16T11:38:09.214971Z",
+      "completed_at": "2026-11-16T11:38:37.514476Z",
+      "prompt_tokens": 5264,
+      "completion_tokens": 1287,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-16T11:38:37.517698+00:00",
+  "duration_seconds": 34.01636366697494,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}
