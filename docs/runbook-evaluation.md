@@ -70,14 +70,16 @@ splitting cases across people is faster.
 | --- | --- | --- |
 | OpenRouter judge, free tier | 50 requests/day | The harness caps itself at **40** and refuses to start a run that would pass it. |
 | Judge calls per case, all five arms | 7 (A 1, B 1, C 2, D 2, E 1) | The harness reserves 3 attempts per call, **21 per case**, before it starts. |
-| Groq, presenter (`gpt-oss-120b`) | about 200,000 tokens/day | Three full cases used one account's whole day on 2026-11-15. |
+| Groq, presenter (`gpt-oss-120b`) | 200,000 tokens per rolling 24 hours | Three full cases used one account's whole day on 2026-11-15. A case uses about 75,000. Failed and retried requests count too, so the result files undercount what Groq has charged. |
 | Groq, presenter (`gpt-oss-120b`), per request | 8,000 tokens per minute on the free tier, and one request may not exceed it | The presenter's round 2 is the biggest request: 5,100–5,900 tokens by the model's own count before the rebuttal's trim, 3,100–3,800 after. Groq counts the same request higher (one was refused at 8,278) |
-| Groq, doctrinal attacker (`qwen3.8-27b`) | on some accounts, 1,000 output tokens/minute | One account's Gotovina runs failed on it twice in a day; the same calls passed hours earlier. |
+| Groq, doctrinal attacker (`qwen3.8-27b`) | on some accounts, 1,000 output tokens/minute | A request Groq expects to exceed it is refused outright. Its prompt keeps replies short (about 500–600 tokens) for this reason. |
 | Time | about 15 minutes per case | Mostly the free judge: 27–341 s per call. |
 | Quota tracking | per results folder | The harness counts today's judge calls from `quota_log.json` in the folder it writes to. Keep using `data/eval/`; if you move results, keep the log (section 5). |
 
-**Plan on two cases per person per day, one case per command.** The daily
-counters reset at 00:00 UTC (05:30 IST).
+**Plan on two cases per person per day, one case per command.** The
+harness's judge count resets at 00:00 UTC (05:30 IST). Groq's daily token
+limit doesn't: it's a rolling 24 hours, and its error says how long to wait.
+Start a case on a fresh Groq day, not after a day of other runs.
 
 ---
 
@@ -111,7 +113,7 @@ freeze; `git checkout develop && git pull`.
 
 ## 4. The frozen settings
 
-The settings were frozen on 2026-11-16 (fingerprint `deb1d80c7856`), in the
+The settings were frozen on 2026-11-16 (fingerprint `df941348ab17`), in the
 same PR as the last prompt and case-fact changes, and before the rehearsal.
 From then until the scored run ends, nothing under `prompts/`, the roster or
 the case facts may change; a change invalidates every case already scored
@@ -196,7 +198,7 @@ make eval ARGS="--case icty_gotovina_knin --resume"
 
 | Error mentions | Cause | Do |
 | --- | --- | --- |
-| `Rate limit reached for model ...` (Groq), mentioning tokens per day | Your Groq account's daily token budget is spent | Stop; `--resume` after 00:00 UTC |
+| `Rate limit reached for model ...` (Groq), mentioning tokens per day | Your Groq account's token budget for the last 24 hours is spent | Stop; `--resume` after the wait the error names |
 | `Request too large ... output tokens per minute (OTPM)` (Groq) | Your Groq tier's per-minute output limit for that model | Wait a few minutes and `--resume`; if it repeats, hand the case to someone else |
 | `413 Request Entity Too Large` … `tokens per minute (TPM): Limit 8000` (Groq, `gpt-oss-120b`) | One presenter request is bigger than the free tier's whole per-minute allowance; waiting never fixes it | The rebuttal trims whole long articles to keep round 2 under it (`app/roles/presenter.py`). If it still appears, report it with the case: it means a debate's round 2 has outgrown the trim |
 | `QuotaExceededError` | The run would pass the 40-call cap | Tomorrow |

@@ -39,8 +39,12 @@ mandate: the correctness of the legal test, the elements of the crime, the
 interpretation of the authority cited. Leave evidentiary sufficiency to your
 counterpart.
 
-Raise between zero and four objections. Quality over volume — each one is ruled
+Raise between zero and three objections. Quality over volume — each one is ruled
 on individually, and weak objections are overruled.
+
+Keep each `reasoning` under 100 words: the decisive legal point and the
+authority for it, not a survey of every point that could be made. A tight
+objection is easier to sustain than a long one.
 
 Return JSON:
 
@@ -50,7 +54,7 @@ Return JSON:
     {
       "target_argument_id": "arg_xxxxxxxx",
       "ground": "One sentence stating the basis of the objection.",
-      "reasoning": "The full argument for why this claim fails as a matter of law.",
+      "reasoning": "Why this claim fails as a matter of law, in under 100 words.",
       "severity": "fatal | material | minor",
       "citations": [
         {"type": "treaty", "instrument": "ap_i", "article": "51(2)"},
