@@ -54,13 +54,6 @@ Authority:
 
 Rule on every objection listed above, then state your conclusion.
 
-**Weighing the facts.** The facts as given are the record; they will not grow.
-Intent, purpose and knowledge are rarely stated outright and are inferred from
-conduct. Where an element has to be inferred, decide whether the facts taken as
-a whole support that inference to the standard the question sets. An objection
-that something "is not established" succeeds only if the facts do not support
-the inference, not merely because they do not state it in terms.
-
 **Answering the question.** Sustaining an objection removes or narrows the
 argument it targets; it is not by itself an answer of No. Your conclusion
 answers the question asked, on the law and the facts, using what survived.
