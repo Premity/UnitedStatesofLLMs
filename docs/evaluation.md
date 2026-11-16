@@ -301,7 +301,8 @@ Slow and quota-consuming. Never part of CI.
 
 **The settings are frozen for the scored run.** `make eval-freeze` records
 the roster, the prompt set, the embedding model and the citation index in
-`evaluation/frozen-settings.json` (not yet written: the freeze creates it), and the file is committed. A live run on a
+`evaluation/frozen-settings.json`, committed on 2026-11-16 (fingerprint
+`deb1d80c7856`). A live run on a
 machine that differs refuses to start, naming each difference
 (`--allow-unfrozen-settings` overrides it for an experiment that won't be
 scored), and `make eval-settings` shows the comparison. The scored run can then

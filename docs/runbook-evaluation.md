@@ -71,6 +71,7 @@ splitting cases across people is faster.
 | OpenRouter judge, free tier | 50 requests/day | The harness caps itself at **40** and refuses to start a run that would pass it. |
 | Judge calls per case, all five arms | 7 (A 1, B 1, C 2, D 2, E 1) | The harness reserves 3 attempts per call, **21 per case**, before it starts. |
 | Groq, presenter (`gpt-oss-120b`) | about 200,000 tokens/day | Three full cases used one account's whole day on 2026-11-15. |
+| Groq, presenter (`gpt-oss-120b`), per request | 8,000 tokens per minute on the free tier, and one request may not exceed it | The presenter's round 2 is the biggest request: 5,100–5,900 tokens by the model's own count before the rebuttal's trim, 3,100–3,800 after. Groq counts the same request higher (one was refused at 8,278) |
 | Groq, doctrinal attacker (`qwen3.8-27b`) | on some accounts, 1,000 output tokens/minute | One account's Gotovina runs failed on it twice in a day; the same calls passed hours earlier. |
 | Time | about 15 minutes per case | Mostly the free judge: 27–341 s per call. |
 | Quota tracking | per results folder | The harness counts today's judge calls from `quota_log.json` in the folder it writes to. Keep using `data/eval/`; if you move results, keep the log (section 5). |
@@ -93,7 +94,7 @@ make eval-settings                      # "Matches the frozen settings"
 ```
 
 `make eval-settings` prints your roster, prompt set, embedding model and index,
-and compares them with `evaluation/frozen-settings.json` (not yet written until section 4). A live run on a
+and compares them with `evaluation/frozen-settings.json` (section 4). A live run on a
 machine that doesn't match refuses to start, naming each difference:
 
 | It says | Fix |
@@ -103,21 +104,23 @@ machine that doesn't match refuses to start, naming each difference:
 | `EMBEDDING_MODEL is ... here` | Restore it from `.env.example`, `make down && make up`, then re-import the index |
 | `citation index is ... here` | Re-import the kit's bundle (section 1, step 4) |
 
-If it says **"Nothing is frozen yet"**, the settings haven't been frozen;
-don't start the scored run until they have been (section 4).
+If it says **"Nothing is frozen yet"**, you're on a branch from before the
+freeze; `git checkout develop && git pull`.
 
 ---
 
-## 4. Freezing the settings (one person, once)
+## 4. The frozen settings
 
-Freeze after the last prompt or case-fact change, and before the first scored
-case. From then until the scored run ends, nothing under `prompts/`, the
-roster or the case facts may change; a change invalidates every case already
-scored (ADR 0009).
+The settings were frozen on 2026-11-16 (fingerprint `deb1d80c7856`), in the
+same PR as the last prompt and case-fact changes, and before the rehearsal.
+From then until the scored run ends, nothing under `prompts/`, the roster or
+the case facts may change; a change invalidates every case already scored
+(ADR 0009).
 
-1. On an up-to-date `develop` that passes section 3, run `make eval-freeze`.
-2. Commit `evaluation/frozen-settings.json`, which does not exist until this step, in a PR into `develop`, and merge it.
-3. Everyone pulls, and `make eval-settings` then says "Matches".
+If a change is ever unavoidable, re-freeze deliberately: make the change, run
+`make eval-freeze` on a machine that passes section 3, commit
+`evaluation/frozen-settings.json` with it in one PR, re-run the rehearsal, and
+re-run every case already scored.
 
 ---
 
@@ -195,6 +198,7 @@ make eval ARGS="--case icty_gotovina_knin --resume"
 | --- | --- | --- |
 | `Rate limit reached for model ...` (Groq), mentioning tokens per day | Your Groq account's daily token budget is spent | Stop; `--resume` after 00:00 UTC |
 | `Request too large ... output tokens per minute (OTPM)` (Groq) | Your Groq tier's per-minute output limit for that model | Wait a few minutes and `--resume`; if it repeats, hand the case to someone else |
+| `413 Request Entity Too Large` … `tokens per minute (TPM): Limit 8000` (Groq, `gpt-oss-120b`) | One presenter request is bigger than the free tier's whole per-minute allowance; waiting never fixes it | The rebuttal trims whole long articles to keep round 2 under it (`app/roles/presenter.py`). If it still appears, report it with the case: it means a debate's round 2 has outgrown the trim |
 | `QuotaExceededError` | The run would pass the 40-call cap | Tomorrow |
 | `Case timed out after 900 seconds` | A very slow judge | `--resume`; if it repeats, `--case-timeout 1500` |
 | `differ from the frozen ones` | Section 3 | Fix the machine; never use `--allow-unfrozen-settings` for scored cases |
