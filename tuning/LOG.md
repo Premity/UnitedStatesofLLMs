@@ -13,12 +13,14 @@ from the result artifact or report. Keep held-out cases out of prompt tuning.
 | 2026-11-16 | `prompts/judge/rule.md` ("Weighing the facts" removed) | `aa219aad89` (set `f8a652539767`) | 3 | 7 | D 1.00 (3 of 3) | - | - | D only; C on Bemba hit a Groq limit. One run each. See below. |
 | 2026-11-16 | — (no change: arm C on the final prompts) | set `f8a652539767` | 3 | 5 | C 0.33 (1 of 3) | C 0.45 | C 0.49 | Exposed Rome Statute art. 8 citations with the paragraph dropped. See below. |
 | 2026-11-16 | — (art. 8 paragraph check in `council_core/models/citation.py`) | set `f8a652539767` | 1 | 2 | C 0.00 (Gotovina) | - | - | Unresolved 3 → 0; the repair did not fire, the presenter cited correctly first time. See below. |
+| 2026-11-16 | `prompts/attacker_doctrinal/challenge.md` (shorter objections) | set `8205576bb484` | 1 | 2 | C 1.00 (Galić) | - | - | Doctrinal replies 599 and 520 tokens; for Groq's 1,000 output tokens/minute. See the rehearsal section. |
 
 
-## Rehearsal (#25) on the frozen settings: two attempts, both stopped at arm D, 2026-11-16
+## Rehearsal (#25) on the frozen settings: three attempts, all stopped on Groq limits, 2026-11-16
 
-Both on settings fingerprint `deb1d80c7856`, `icty_galic_terror`, no flags but
-`--go`. Neither completes #25.
+Attempts 4 and 5 on settings fingerprint `deb1d80c7856`, attempt 6 on
+`df941348ab17` (below); `icty_galic_terror`, no flags but `--go`. None
+completes #25.
 
 | Attempt | A | B | C | D | E | Judge attempts |
 | --- | --- | --- | --- | --- | --- | ---: |
@@ -59,6 +61,27 @@ large` for `qwen3.8-27b`, output tokens per minute: limit 1,000, requested
   recurs on this account, worst when a long reply also needs a repair.
 - **Next:** shorten the attacker's replies. That is a prompt change, so the
   settings will be re-frozen.
+
+**Fix.** `prompts/attacker_doctrinal/challenge.md` asks for each objection's
+reasoning in under 100 words, and at most three objections instead of four;
+it never raised four in practice. The evidentiary attacker already wrote a
+median of 48 words against the doctrinal attacker's 138, so the two now argue
+at comparable length. Re-frozen: prompt set `8205576bb484`, fingerprint
+`df941348ab17`.
+
+**Check** (C on Galić, `data/eval-doctrinal-brief`, 2 judge attempts):
+affirmed 0.75, correct, with 0 unresolved citations out of 21. The doctrinal
+replies were 599 and 520 tokens, with 2 objections each and 64-79 words of
+reasoning, against a median of 745 tokens before. One run, so it shows only
+that the replies got shorter, not how this affects rulings.
+
+**Attempt 6** (`data/eval`, fingerprint `df941348ab17`): A and B affirmed,
+correct. C, D and E errored on the presenter's first call: Groq's daily token
+limit for `gpt-oss-120b` (200,000; 198,658 used). The day's tuning runs had
+spent it. The limit is a rolling 24 hours, not a reset at 00:00 UTC, and
+Groq's count was nearly double what the result files record, because failed
+and retried requests count too. The doctrinal change has not yet run inside
+a full council.
 
 ## Arm C on the final prompts, and the art. 8 paragraph check, 2026-11-16
 
