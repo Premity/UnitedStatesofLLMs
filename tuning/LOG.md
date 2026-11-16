@@ -16,6 +16,37 @@ from the result artifact or report. Keep held-out cases out of prompt tuning.
 | 2026-11-16 | `prompts/attacker_doctrinal/challenge.md` (shorter objections) | set `8205576bb484` | 1 | 2 | C 1.00 (Galić) | - | - | Doctrinal replies 599 and 520 tokens; for Groq's 1,000 output tokens/minute. See the rehearsal section. |
 
 
+## Rehearsal (#25) passes unattended: attempt 7, 2026-11-16
+
+All five arms on `icty_galic_terror`, settings fingerprint `df941348ab17`, at
+`f3bc234`, no flags but `--go` and `--output-dir data/eval-rehearsal-7`. New Groq
+and OpenRouter keys, so the folder starts a fresh quota log; the day's earlier
+21 judge attempts were on the old OpenRouter key.
+
+| Arm | Predicted (truth: affirmed) | Confidence | Judge attempts | Calls | Time |
+| --- | --- | ---: | ---: | ---: | ---: |
+| A raw | affirmed | 0.85 | 1 | 2 | 19 s |
+| B rag | affirmed | 0.92 | 2 | 2 | 60 s |
+| C single_attacker | affirmed | 0.75 | 2 | 6 | 124 s |
+| D full_council | affirmed | 0.85 | 2 | 8 | 134 s |
+| E self_consistency | affirmed | 1.00 | 1 | 8 | 407 s |
+
+744 s in all. Against #25 and runbook section 5:
+
+- **All five completed** with no errors, no `--resume`, nobody stepping in. B's
+  judge reply failed to parse once and the client's own repair fixed it; that
+  is the harness working, not an intervention.
+- **E's 7 samples = D's 8 calls - 1.**
+- **Citations:** 0 `unresolved` in any arm; one `misquoted` in C, of 47 in all.
+- **Severity:** every objection carries one, 3 of 3 in C and 9 of 9 in D.
+- **Judge attempts match the quota log:** 1 + 2 + 2 + 2 + 1 = 8.
+- **The fixes held:**
+  - Doctrinal replies 241-591 tokens, under the 1,000 limit.
+  - The presenter's round-2 prompt was 3,453-3,471 tokens, against
+    5,100-5,900 before the trim.
+- **D overruled 8 of 9 objections.** One case, so this shows nothing about
+  rulings on the shorter objections; the scored run will.
+
 ## Rehearsal (#25) on the frozen settings: three attempts, all stopped on Groq limits, 2026-11-16
 
 Attempts 4 and 5 on settings fingerprint `deb1d80c7856`, attempt 6 on

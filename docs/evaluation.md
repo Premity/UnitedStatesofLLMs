@@ -350,18 +350,20 @@ Arm E will not add judge calls in proportion to its sample count: it aggregates
 rehearsal (GitHub #25): `icty_galic_terror`, full corpus, the free-tier roster in
 `.env`, wall-clock seconds per arm.
 
-| Arm | Model calls | Run 1 | Run 2 |
-| --- | ---: | ---: | ---: |
-| A raw | 2 | 36 | 29 |
-| B rag | 2 | 40 | 46 |
-| C single_attacker | 6 | 274 | 149 |
-| D full_council | 8 | 268 | 332 |
-| E self_consistency | 8 | 290 | 350 |
-| **All five** | 26 | **908** (15.1 min) | **907** (15.1 min) |
+| Arm | Model calls | Run 1 | Run 2 | Run 7 (unattended) |
+| --- | ---: | ---: | ---: | ---: |
+| A raw | 2 | 36 | 29 | 19 |
+| B rag | 2 | 40 | 46 | 60 |
+| C single_attacker | 6 | 274 | 149 | 124 |
+| D full_council | 8 | 268 | 332 | 134 |
+| E self_consistency | 8 | 290 | 350 | 407 |
+| **All five** | 26 | **908** (15.1 min) | **907** (15.1 min) | **744** (12.4 min) |
 
 Run 1's arm E is its re-run at 900 s; the first attempt timed out at the old 300 s
 default. Run 2's arm E is also a re-run, after the judge returned JSON missing
 `reasoning` and `confidence` twice; the time shown is the run that completed.
+Run 7 is the first to complete all five arms with no re-run, on the frozen
+settings (`tuning/LOG.md`).
 
 Where the time goes:
 
