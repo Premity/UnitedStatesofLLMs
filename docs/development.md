@@ -265,6 +265,8 @@ assuming the space has leaked.
 make eval                      # every implemented arm — SLOW, consumes quota
 make eval-arm ARM=full_council # one arm
 make eval-report               # rebuild the report from existing results
+make eval-settings             # this machine's settings vs the frozen ones
+make eval-freeze               # record the frozen settings (once, before #26)
 ```
 
-Never part of CI. See [evaluation.md](evaluation.md).
+Never part of CI. To run it, follow [runbook-evaluation.md](runbook-evaluation.md); for the design, see [evaluation.md](evaluation.md).

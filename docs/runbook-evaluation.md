@@ -1,0 +1,255 @@
+# Runbook: running the evaluation
+
+Step by step, for anyone on the team: set up a machine, check it matches
+everyone else's, run cases, send the results back, and combine them into the
+report. Why the evaluation is designed this way is in
+[evaluation.md](evaluation.md); this page is only what to do.
+
+It covers the rehearsal (GitHub #25: all five arms on one case, unattended)
+and the scored run (#26: all five arms on the three core cases).
+
+---
+
+## 0. What you need
+
+- The repo, on `develop`, up to date: `git checkout develop && git pull`.
+- Docker running, with `docker compose` (v2).
+- `uv` on your PATH. Check with `uv --version`; if it's missing,
+  `curl -LsSf https://astral.sh/uv/install.sh | sh`, then open a new terminal.
+- The **index kit** (`ihl-index-kit-<hash>.zip`), sent to you privately.
+- Two free API keys, which are yours and never shared:
+
+  | Key | Get it at | Used by |
+  | --- | --- | --- |
+  | `GROQ_API_KEY` | https://console.groq.com/keys | presenter and both attackers |
+  | `OPENROUTER_API_KEY` | https://openrouter.ai/keys | the judge |
+
+Every command below runs from the repo root.
+
+---
+
+## 1. Set up the machine (once)
+
+1. `make setup`. Creates `.env` from `.env.example` if you don't have one,
+   installs dependencies and hooks. Safe to re-run.
+2. In `.env`, set the two keys. **Leave every `COUNCIL_*_MODEL` line and
+   `EMBEDDING_MODEL` exactly as `.env.example` has them.** Every machine must
+   run the same models; section 3 checks it.
+3. `make up`. The first build takes several minutes. Then wait until
+   `curl -fsS localhost:6333/healthz && echo ok` prints `ok`.
+4. Import the index. Unzip the kit, then:
+
+   ```bash
+   mkdir -p data/bundles
+   cp /path/to/unzipped/ihl-index-<hash>.tar data/bundles/
+   make import-index FILE=data/bundles/ihl-index-<hash>.tar
+   docker compose restart api
+   ```
+
+   Never run `make fetch`, `make index` or `make corpus` for the evaluation.
+   An index you build yourself won't match everyone else's, and the embedding
+   stage needs more memory than most laptops have.
+5. Smoke test, offline, no quota:
+
+   ```bash
+   uv run python -m harness.run --all-arms --dry-run --case icty_galic_terror \
+     --output-dir data/scratch/dry-run
+   ```
+
+   All five arms print a result line. Dry-run results are synthetic, so keep
+   them out of `data/eval/`.
+
+---
+
+## 2. Know your limits before you spend them
+
+Free tiers, per account. Each person's runs use their own keys, which is why
+splitting cases across people is faster.
+
+| Limit | Value | What it means |
+| --- | --- | --- |
+| OpenRouter judge, free tier | 50 requests/day | The harness caps itself at **40** and refuses to start a run that would pass it. |
+| Judge calls per case, all five arms | 7 (A 1, B 1, C 2, D 2, E 1) | The harness reserves 3 attempts per call, **21 per case**, before it starts. |
+| Groq, presenter (`gpt-oss-120b`) | about 200,000 tokens/day | Three full cases used one account's whole day on 2026-11-15. |
+| Groq, doctrinal attacker (`qwen3.8-27b`) | on some accounts, 1,000 output tokens/minute | One account's Gotovina runs failed on it twice in a day; the same calls passed hours earlier. |
+| Time | about 15 minutes per case | Mostly the free judge: 27–341 s per call. |
+| Quota tracking | per results folder | The harness counts today's judge calls from `quota_log.json` in the folder it writes to. Keep using `data/eval/`; if you move results, keep the log (section 5). |
+
+**Plan on two cases per person per day, one case per command.** The daily
+counters reset at 00:00 UTC (05:30 IST).
+
+---
+
+## 3. Before every live run
+
+Run all of these. Each catches something that is otherwise silent.
+
+```bash
+git checkout develop && git pull        # the frozen prompts and case facts
+git status --short prompts evaluation   # must print nothing: no local edits
+make up                                 # stack running
+make index-status                       # no "Problems"; Fingerprint as in the kit
+make eval-settings                      # "Matches the frozen settings"
+```
+
+`make eval-settings` prints your roster, prompt set, embedding model and index,
+and compares them with `evaluation/frozen-settings.json` (not yet written until section 4). A live run on a
+machine that doesn't match refuses to start, naming each difference:
+
+| It says | Fix |
+| --- | --- |
+| `<role> model is ... here` | Restore that `COUNCIL_*_MODEL` line in `.env` from `.env.example`, then `docker compose restart api` |
+| `prompt set is ... here` | You have local edits under `prompts/`, or you're on the wrong branch: `git status`, `git checkout develop` |
+| `EMBEDDING_MODEL is ... here` | Restore it from `.env.example`, `make down && make up`, then re-import the index |
+| `citation index is ... here` | Re-import the kit's bundle (section 1, step 4) |
+
+If it says **"Nothing is frozen yet"**, the settings haven't been frozen;
+don't start the scored run until they have been (section 4).
+
+---
+
+## 4. Freezing the settings (one person, once)
+
+Freeze after the last prompt or case-fact change, and before the first scored
+case. From then until the scored run ends, nothing under `prompts/`, the
+roster or the case facts may change; a change invalidates every case already
+scored (ADR 0009).
+
+1. On an up-to-date `develop` that passes section 3, run `make eval-freeze`.
+2. Commit `evaluation/frozen-settings.json`, which does not exist until this step, in a PR into `develop`, and merge it.
+3. Everyone pulls, and `make eval-settings` then says "Matches".
+
+---
+
+## 5. The rehearsal (#25)
+
+All five arms on one case, with nobody stepping in, on the frozen settings.
+
+```bash
+make eval ARGS="--case icty_galic_terror"
+```
+
+The harness prints the settings fingerprint and the judge budget, then asks
+you to type `go`. The arms run in order A, B, C, D, E; E needs D's result,
+because its sample count comes from D's call count.
+
+It passes when:
+
+- all five arms complete, with no errors and no `--resume`;
+- E's `samples` is D's `total_calls` minus one (see the result files);
+- the report's citation counts look plausible: few `unresolved`;
+- both attackers' objections carry a `severity`;
+- judge calls match the quota log.
+
+Record the run in `tuning/LOG.md`. Then **move its results out of
+`data/eval/`**, so they don't mix with the scored run, but **keep the quota
+log**. The harness counts today's judge calls from the log in the results
+folder, so a fresh folder would think nothing had been spent and could take
+you past OpenRouter's real limit of 50.
+
+```bash
+mv data/eval data/eval-rehearsal-$(date +%Y%m%d)
+mkdir -p data/eval && cp data/eval-rehearsal-$(date +%Y%m%d)/quota_log.json data/eval/
+```
+
+---
+
+## 6. The scored run (#26)
+
+### Who runs what
+
+Split the three core cases by person, and write the split down where everyone
+can see it before anyone starts. Each case is run **once**, by one person.
+
+| Case | Run by | Date | Done |
+| --- | --- | --- | --- |
+| `icty_galic_terror` | | | |
+| `icty_gotovina_knin` | | | |
+| `icc_bemba_command` | | | |
+
+The three stretch cases (`--tier stretch`) come only after all three core cases
+are done, if quota allows (ADR 0012).
+
+### Running a case
+
+One case per command:
+
+```bash
+make eval ARGS="--case icty_gotovina_knin"
+```
+
+Results go to `data/eval/<arm>/<case>.json`. Leave the machine alone while it
+runs: about 15 minutes, longer on a slow judge day.
+
+### When something fails
+
+A failed or timed-out arm is saved as an error, not scored. Fix the cause, then
+re-run with `--resume`: that skips the arms already done and re-runs only the
+failed ones.
+
+```bash
+make eval ARGS="--case icty_gotovina_knin --resume"
+```
+
+| Error mentions | Cause | Do |
+| --- | --- | --- |
+| `Rate limit reached for model ...` (Groq), mentioning tokens per day | Your Groq account's daily token budget is spent | Stop; `--resume` after 00:00 UTC |
+| `Request too large ... output tokens per minute (OTPM)` (Groq) | Your Groq tier's per-minute output limit for that model | Wait a few minutes and `--resume`; if it repeats, hand the case to someone else |
+| `QuotaExceededError` | The run would pass the 40-call cap | Tomorrow |
+| `Case timed out after 900 seconds` | A very slow judge | `--resume`; if it repeats, `--case-timeout 1500` |
+| `differ from the frozen ones` | Section 3 | Fix the machine; never use `--allow-unfrozen-settings` for scored cases |
+| `citation index ... is missing or empty` | Wrong folder, or the index was never imported | Run from the repo root; section 1, step 4 |
+| `StructuredOutputError` | A model returned malformed JSON twice | `--resume` |
+| `Qdrant is not reachable` | The stack is down | `make up` |
+
+Stop after two consecutive judge failures; the harness does too.
+
+### Sending your results back
+
+When your cases are done, package them, check them, and send the zip
+privately. It contains corpus text from the retrieved context.
+
+```bash
+zip -r eval-results-$(whoami)-$(date +%Y%m%d).zip data/eval
+grep -rIlE "API_KEY|gsk_|sk-or-|Bearer " data/eval && echo "STOP: possible secret" || echo "clean"
+make eval-settings > settings-$(whoami).txt   # send this too
+```
+
+Send nothing from `.env` or `data/logs/`.
+
+---
+
+## 7. Combining the results (one person)
+
+1. Unzip everyone's results into one folder, keeping the
+   `<arm>/<case>.json` layout. Each case was run by one person, so no file
+   collides. Keep each person's `quota_log.json` aside, renamed. They aren't
+   results, and every zip has one.
+
+   ```bash
+   for z in eval-results-*.zip; do unzip -o -q "$z" -d "unzipped-${z%.zip}"; done
+   for arm in raw rag single_attacker full_council self_consistency; do
+     mkdir -p "data/eval-combined/$arm"
+     cp unzipped-*/data/eval/"$arm"/*.json "data/eval-combined/$arm/" 2>/dev/null || true
+   done
+   ```
+
+   Check that `data/eval-combined/` holds 15 files, three cases by five arms:
+   `find data/eval-combined -name '*.json' | wc -l`.
+2. Generate the report:
+
+   ```bash
+   uv run python -m metrics.report --results-dir data/eval-combined \
+     --output evaluation/reports/evaluation-report.md
+   ```
+
+   It refuses results scored against different citation indexes, or run under
+   different rosters, prompts or embedding models. **Don't override that for
+   the scored run.** It means a machine was off the frozen settings, and that
+   case has to be re-run on a matching machine.
+3. The report's header names the settings every result ran under. Commit the
+   report, and the result files a reader needs to check the dissent logs
+   (#26).
+
+Then score reasoning overlap by hand (#27, `docs/evaluation.md` section 5)
+and write up, stating the limits #26 lists.

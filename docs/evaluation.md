@@ -299,6 +299,15 @@ make eval-report                # rebuild the report from existing results
 
 Slow and quota-consuming. Never part of CI.
 
+**The settings are frozen for the scored run.** `make eval-freeze` records
+the roster, the prompt set, the embedding model and the citation index in
+`evaluation/frozen-settings.json` (not yet written: the freeze creates it), and the file is committed. A live run on a
+machine that differs refuses to start, naming each difference
+(`--allow-unfrozen-settings` overrides it for an experiment that won't be
+scored), and `make eval-settings` shows the comparison. The scored run can then
+be split across several people's machines, and their results pooled. Step by
+step: [runbook-evaluation.md](runbook-evaluation.md).
+
 **Run from the repo root**, as the `make` targets do. On the host the harness
 finds `data/` and `prompts/` relative to the working directory. From anywhere
 else it finds no citation index, so a live run refuses to start rather than
@@ -390,6 +399,12 @@ run's reasoning overlap where it has been scored. At three
 cases this table is the result: it shows which arm got which case wrong, which
 the averages hide. A run that errored or timed out is marked as such, not
 scored.
+
+The header also lists the roster, prompt set and embedding model the results
+ran under. Results that differ in any of them are refused unless the report is
+run with `--allow-mixed-settings`, which names each variant and labels each
+per-case row with it: two rosters mean the arms differ by model as well as by
+structure (ADR 0009).
 
 The header names the citation index that scored the results (its hash prefix,
 instrument and locator counts). Results scored against different indexes, or

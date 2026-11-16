@@ -22,6 +22,7 @@ make test          # tests only (fast, no network)
 make fmt           # auto-fix and format
 make corpus        # fetch + index — SLOW, network + embedding (see below)
 make index-status  # this machine's index fingerprint; must match across machines
+make eval-settings # roster, prompts, embedding, index vs evaluation/frozen-settings.json
 make eval          # ablation harness — SLOW, consumes API quota
 ```
 
@@ -155,7 +156,7 @@ tree, not prose. Everything they cannot check is on you.
 Audited 2026-11-09 against the tree, not against this file's previous claims;
 evaluation lines updated 2026-11-14.
 
-**Built and tested** (630 tests: 472 Python, 158 frontend): the domain model,
+**Built and tested** (643 tests: 485 Python, 158 frontend): the domain model,
 citation resolver, LLM gateway, prompts, LangGraph orchestrator, SSE, run
 persistence, the corpus fetcher, the indexer, the frontend courtroom,
 transcript, dissent log, replay and theming, the case picker, and the
