@@ -12,6 +12,7 @@ import pytest
 from council_core.models.case import Outcome
 from harness.cases import (
     CORE_CASE_IDS,
+    EXTENDED_CASE_IDS,
     STRETCH_CASE_IDS,
     load_cases,
     select_cases,
@@ -41,7 +42,32 @@ def test_stretch_tier_follows_core_and_never_overlaps_it(dev_cases) -> None:
     assert [case.id for case in stretch] == list(STRETCH_CASE_IDS)
     assert not set(CORE_CASE_IDS) & set(STRETCH_CASE_IDS)
     everything = select_cases(dev_cases, tier="all")
-    assert [case.id for case in everything] == list(CORE_CASE_IDS + STRETCH_CASE_IDS)
+    assert [case.id for case in everything] == list(
+        CORE_CASE_IDS + STRETCH_CASE_IDS + EXTENDED_CASE_IDS
+    )
+
+
+def test_every_fixture_is_in_exactly_one_tier(dev_cases) -> None:
+    """A fixture outside every tier can never be run; one in two would be run twice."""
+    tiers = [CORE_CASE_IDS, STRETCH_CASE_IDS, EXTENDED_CASE_IDS]
+    for case in dev_cases:
+        assert sum(case.id in tier for tier in tiers) == 1, case.id
+    assert len(select_cases(dev_cases, tier="all")) == len(dev_cases)
+
+
+def test_extended_tier_covers_every_outcome(dev_cases) -> None:
+    outcomes = {case.outcome for case in select_cases(dev_cases, tier="extended")}
+    assert outcomes == set(Outcome)
+
+
+def test_fictional_cases_say_so(dev_cases) -> None:
+    """A `hyp_` case's ground truth is authored, not a tribunal's; the file must say so."""
+    for case in dev_cases:
+        fictional = case.id.startswith("hyp_")
+        assert fictional == (case.court == "Hypothetical"), case.id
+        if fictional:
+            assert case.holding.startswith("Authored ground truth"), case.id
+            assert case.source_case_id is None, case.id
 
 
 def test_case_ids_narrow_a_tier_and_keep_its_order(dev_cases) -> None:
