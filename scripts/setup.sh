@@ -69,17 +69,15 @@ uv run pre-commit install --hook-type commit-msg >/dev/null
 ok "pre-commit and commit-msg hooks installed"
 
 # ── Ollama ────────────────────────────────────────────────────────────────────
-info "Checking Ollama (attacker models)"
+info "Checking Ollama (optional)"
+echo "    Every role defaults to a hosted model (Groq, OpenRouter); Ollama is"
+echo "    needed only if you set a COUNCIL_*_MODEL to an ollama/ id."
 if command -v ollama >/dev/null 2>&1; then
     ok "ollama found"
-    echo "    Pull the attacker models if you have not already:"
-    echo "      ollama pull qwen3.5:14b"
-    echo "      ollama pull gemma3:12b"
 else
-    warn "ollama not found on the host."
-    echo "    Either install it (https://ollama.com/download) — recommended —"
-    echo "    or run the containerised profile:  make up-ollama"
-    echo "    then set COUNCIL_OLLAMA_BASE_URL=http://ollama:11434 in .env"
+    echo "    Not installed. If you do want a local role: install it"
+    echo "    (https://ollama.com/download), or run the containerised profile"
+    echo "    with  make up-ollama  and set COUNCIL_OLLAMA_BASE_URL=http://ollama:11434"
 fi
 
 echo
