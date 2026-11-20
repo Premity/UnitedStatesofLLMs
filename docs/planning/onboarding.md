@@ -29,50 +29,54 @@ The literature review found three gaps this design answers:
 | Gap | Response |
 | --- | --- |
 | Citations are checked only *after* an answer is written | Every citation is resolved against an indexed corpus **at the role boundary**, before the judge reads it |
-| Adversarial scrutiny is simulated — all agents are one model | The four roles run on **four different model families**, so disagreement is a property of the models, not the sampling temperature |
+| Adversarial scrutiny is simulated — all agents are one model | The four roles run on **three different model families** (two share GPT-OSS; ADR 0009), so disagreement is a property of the models, not the sampling temperature |
 | Reported confidence does not track correctness | The judge must justify a calibrated confidence, and we measure its calibration explicitly |
 
 If you read nothing else, read [docs/architecture.md](../architecture.md).
 
 ---
 
-## 2. What actually works today
+## 2. Where the project stands
 
-As of 2026-11-03: **the debate has run end to end against live models, at
-least once.** `data/runs/run_404ea44ab227` is a real completed artifact —
-grounded arguments, both attackers, a judge ruling, a dissent log.
+Updated 2026-11-20. **Everything is built and has run live.** The open work is
+evaluation, not code.
 
 | Area | State |
 | --- | --- |
 | Domain models, LLM gateway, citation resolver | Written, tested |
-| Debate graph, roles, SSE, run persistence | **Completed a real live run** — parallel attacker join confirmed working |
-| Frontend | Written in full — the SSE framing bug that would have silently broken it is fixed; **no one has yet watched it render a live run in a browser** |
-| Corpus fetcher and parsers | **Working** — 23 instruments plus the 161 customary rules |
-| Citation index | **Working** — all four statuses resolve against real text; every citation in the one real run so far resolved |
-| Qdrant embedding and upsert | Working — 3,482 points indexed and confirmed queryable |
-| Evaluation metrics | Written — **zero tests** |
-| Evaluation harness runner | **Does not exist** |
+| Debate graph, roles, SSE, run persistence | Written, tested, run live many times |
+| Frontend: courtroom, dissent log, replay, theming, case picker | Written, tested, run against live streams |
+| Corpus fetcher and indexer | Written, tested, run: 23 treaties plus the 161 customary rules, 3,482 indexed points |
+| Sharing a built index between machines | `make export-index` / `make import-index` (ADR 0014) |
+| Evaluation harness, metrics, report, arms A–E | Written, tested, run: the scored run (GitHub #26) is done |
+| Case fixtures | Twenty, five of them fictional (ADR 0012, amended) |
 
-Consequences you will hit immediately:
+What is left:
 
-- **The judge is on OpenRouter's free tier (`nemotron-3-ultra`), capped at 50
-  requests/day account-wide** — roughly 16 debates/day, fine for development
-  but not for a 40–80 case scored run. See ISSUES.md for the full roster
-  history (Gemini, then Groq, then OpenRouter) and what to fix before then.
-- **3 of 4 roles are now OpenAI-family models** (presenter and the
-  evidentiary attacker both run `gpt-oss`, via Groq) — the "four different
-  model families" claim in the table above no longer fully holds. See
-  ISSUES.md, "Attackers moved to Groq", before citing that claim anywhere.
-- `make eval` cannot run — there is no runner.
+- **Reasoning overlap, scored by hand** (GitHub #27; `docs/evaluation.md`,
+  section 5).
+- **Running the `extended` tier** of cases, which have not been scored yet.
+  Follow [runbook-evaluation.md](../runbook-evaluation.md).
 
-**Two things worth reading before you start**, both of which will save you a
-day. [ISSUES.md](../../ISSUES.md) lists what is broken and what was found
-running the system for the first time. [corpus-findings.md](../corpus-findings.md)
-collects the eleven problems that came up building the corpus — eight of which
-produced plausible wrong output rather than an error, which is the failure
-mode this project can least afford.
+Things you will hit early:
 
-This is the work. See [implementation-plan.md](implementation-plan.md).
+- **The free tiers set the pace.** The judge runs on OpenRouter's free tier
+  (50 requests a day per account; the harness caps itself at 40) and the other
+  roles on Groq's. One case through all five arms takes about 15 minutes and a
+  fifth of a day's judge quota. Section 2 of the runbook has the numbers.
+- **Two of the four roles share a model family.** The presenter and the
+  evidentiary attacker both run GPT-OSS on Groq, a known compromise recorded in
+  [ADR 0009](../adr/0009-presenter-on-groq.md). Don't claim "four different
+  model families" without that caveat.
+- **The evaluation settings are frozen.** Roster, prompts, embedding model and
+  index are pinned in `evaluation/frozen-settings.json`; a live run on a
+  machine that differs refuses to start. `make eval-settings` shows why.
+
+**Two things worth reading before you start.** [ISSUES.md](../../ISSUES.md)
+records what was found running the system, and what is still open.
+[corpus-findings.md](../corpus-findings.md) collects the eleven problems that
+came up building the corpus — eight of which produced plausible wrong output
+rather than an error, which is the failure mode this project can least afford.
 
 ---
 
@@ -125,12 +129,25 @@ points Ollama at localhost. Scripts run outside Docker also need
 
 ### Getting the corpus
 
+**Import the shared index** — the usual way, and the only one for evaluation.
+Ask a teammate for the index kit (`ihl-index-kit-<hash>.zip`, sent privately:
+it contains corpus text), unzip it, then:
+
+```bash
+make import-index FILE=path/to/ihl-index-<hash>.tar
+docker compose restart api   # it loads the citation index once, at startup
+make index-status            # its Fingerprint line must match the kit's
+```
+
+**Or build it yourself**, which an evaluation machine must not do (its index
+would not match everyone else's):
+
 ```bash
 make fetch          # 24 documents: 23 treaties + the 161 customary rules
 make index-local    # embed and upsert, under a memory cap
 ```
 
-`make fetch` takes seconds. **`make index-local` does not** — it embeds ~2,200
+`make fetch` takes seconds. **`make index-local` does not** — it embeds 3,482
 spans with a 1.2GB model, and on a 16GB laptop that is enough to get something
 OOM-killed. It runs inside a systemd scope with a hard memory ceiling so the
 job dies rather than your editor; raise it with `MEM_CAP=6G` if the job is
@@ -153,6 +170,11 @@ make test           # tests only, fast, no network
 `make up` builds the shared base image first. A bare `docker compose build`
 does not, and you will get `council-base: image not found`.
 
+`make up` does not rebuild the service images. After a pull that changes
+dependencies, a Dockerfile, or the frontend's build config
+(`tailwind.config.ts`, `package.json`), run `make build` first; only the
+frontend's `src/`, `public/` and `index.html` are mounted live.
+
 ### Verify your setup
 
 ```bash
@@ -170,14 +192,14 @@ whenever something behaves oddly; it is faster than guessing.
 | Command | Removes | Keeps |
 | --- | --- | --- |
 | `make clean` | caches, build artifacts | everything in `data/` |
-| `make reset-qdrant` | the Qdrant volume | pulled Ollama models |
+| `make reset-qdrant` | the Qdrant volume | everything else |
 | `make reindex` | the Qdrant collection, then rebuilds | `data/cache/`, so no re-fetch |
 | `make clean-runs` | saved debate runs | everything else |
 | `make nuke` | **all** volumes — full clean slate | nothing |
 
 All of these prompt before destroying anything. `make nuke` is the start-over
-button; `make reset-qdrant` is there for when only the index is wrong and
-re-pulling ~17GB of models would be beside the point.
+button; `make reset-qdrant` is there for when only the index is wrong and the
+rest of the stack is fine.
 
 ---
 
@@ -187,8 +209,8 @@ re-pulling ~17GB of models would be beside the point.
 packages/council-core/   Domain models, LLM gateway, citation resolver, exports
 runtime/api/             Debate graph, roles, SSE, run persistence
 runtime/frontend/        Courtroom view, dissent log
-pipeline/fetcher/        Corpus download          (STUB)
-pipeline/indexer/        Chunk, embed, index      (STUB)
+pipeline/fetcher/        Corpus download from the manifests
+pipeline/indexer/        Chunk, embed, index; share a built index
 evaluation/              Ablation arms, metrics, case fixtures
 prompts/                 Versioned templates, hashed into every run
 corpus/manifests/        Defines corpus scope — the fetcher never crawls
@@ -263,16 +285,20 @@ choice that someone could reasonably have made differently, write it down.
 
 ## 7. Picking up work
 
-1. Read [implementation-plan.md](implementation-plan.md) — work is organised
-   into five **tracks**.
-2. Claim a task in standup. Tasks are sized at roughly half a day to two days.
-3. Check the task's **Depends on** before starting. If it is unmet, pick another.
-4. Check the **Touches** column. If someone else is in those files, coordinate.
-5. A task is done when its **Done when** command passes. Not before.
+The build plan's tracks are finished; [implementation-plan.md](implementation-plan.md)
+and [timeline.md](timeline.md) are kept as the record of how the work was
+planned. Open work is in the GitHub issues and in "What is left, in order" at
+the top of [ISSUES.md](../../ISSUES.md).
 
-**Everyone also writes case fixtures.** It is the one task that cannot be
-hurried at the end, and the one where four people genuinely beat one person
-working four times as long. See [fixtures-guide.md](fixtures-guide.md).
+1. Pick an open issue, or ask what is next.
+2. Branch off `develop` (section 6).
+3. Change the docs the change outdates in the same PR; the PR template's
+   **Docs** section lists what to check.
+4. A change is done when `make check` passes and the PR's own checks pass.
+
+Writing a new evaluation case? Read the README in `evaluation/cases/` first:
+leaking the holding into the facts is the mistake that is easiest to make and
+hardest to see.
 
 ### Where to look
 
@@ -281,10 +307,10 @@ working four times as long. See [fixtures-guide.md](fixtures-guide.md).
 | How does the system work? | [architecture.md](../architecture.md) |
 | What are the formal contracts? | [system-design.md](../system-design.md) |
 | Why was X decided? | [adr/](../adr/) |
-| What is broken or missing? | [ISSUES.md](../../ISSUES.md) |
-| How do I evaluate it? | [evaluation.md](../evaluation.md) |
+| What is open, and what went wrong? | [ISSUES.md](../../ISSUES.md) |
+| How do I evaluate it? | [evaluation.md](../evaluation.md) (design) · [runbook-evaluation.md](../runbook-evaluation.md) (steps) |
 | What is the corpus? | [corpus.md](../corpus.md) |
 | What went wrong building it? | [corpus-findings.md](../corpus-findings.md) |
-| How do I write a fixture? | [fixtures-guide.md](fixtures-guide.md) |
-| What am I doing this week? | [implementation-plan.md](implementation-plan.md) · [timeline.md](timeline.md) |
-| How do I get the first debate running? | [t0-runbook.md](t0-runbook.md) |
+| How do I write a case? | [evaluation/cases/README.md](../../evaluation/cases/README.md) · [fixtures-guide.md](fixtures-guide.md) |
+| How was the build planned? | [implementation-plan.md](implementation-plan.md) · [timeline.md](timeline.md) (historical) |
+| How was the first debate got running? | [t0-runbook.md](t0-runbook.md) (historical) |

@@ -154,9 +154,9 @@ tree, not prose. Everything they cannot check is on you.
 ## Current state
 
 Audited 2026-11-09 against the tree, not against this file's previous claims;
-evaluation lines updated 2026-11-16.
+evaluation lines updated 2026-11-16; corpus and docs lines 2026-11-20.
 
-**Built and tested** (663 tests: 505 Python, 158 frontend): the domain model,
+**Built and tested** (666 tests: 508 Python, 158 frontend): the domain model,
 citation resolver, LLM gateway, prompts, LangGraph orchestrator, SSE, run
 persistence, the corpus fetcher, the indexer, the frontend courtroom,
 transcript, dissent log, replay and theming, the case picker, and the
@@ -167,21 +167,23 @@ cases plus the stretch case Mrkšić (ADR 0012). The reports and the write-up ar
 in `evaluation/reports/`, and the 20 results, corpus text removed, in
 `evaluation/results/scored-run/`. Arm E's confidence is its judge's, not the
 samples' agreement (ADR 0011, amended). Left: reasoning overlap scored by hand
-(#27). Don't plan around 40–80 cases or propose writing fixtures.
+(#27). The case set is now twenty (ADR 0012, amended 2026-11-20): an `extended`
+tier adds eight real cases and five fictional `hyp_` ones whose ground truth is
+authored. Don't plan around 40–80 cases.
 
 **The corpus is a per-machine artifact.** `data/cache/` and `data/index/` are
 gitignored (ADR 0007): the corpus travels as manifests, and each machine
 resolves against whatever it last fetched. A fresh clone gets the 24-article
-placeholder `setup.sh` copies from `corpus/stub/`. **Evaluation runs on
-Anudveg's machine, which has the full corpus** — treaties plus the 161
-customary rules.
+placeholder `setup.sh` copies from `corpus/stub/`. **Evaluation runs on any
+machine that has imported the shared index kit** (ADR 0014; built on Anudveg's
+machine: 23 treaties plus the 161 customary rules, 3,482 locators, fingerprint
+`8ffefb5a30ab`), and only if `make eval-settings` matches the frozen settings.
+`docs/runbook-evaluation.md` is the procedure.
 
 Hamd's machine deliberately does not run the indexer: 16GB, and the embedding
-stage has OOM-killed his editor. It gets the full index by importing a bundle
-from Anudveg's machine instead (ADR 0014: `make export-index` there,
-`make import-index FILE=…` here). Until it has, most citations resolve
-`out_of_corpus` here, and that is the local index being small, not a
-fabrication signal. Don't read citation statuses as signal without checking
+stage has OOM-killed his editor. It has imported the kit instead. A machine
+that has not resolves most citations `out_of_corpus`, and that is the local
+index being small, not a fabrication signal. Don't read citation statuses as signal without checking
 `make index-status`, and don't propose running `make corpus` as a fix. A run artifact's `metadata.corpus` and an evaluation
 result's `corpus` say which index scored it. What the local index holds:
 
@@ -196,6 +198,11 @@ See [ISSUES.md](ISSUES.md).
 
 - **`council-base: image not found`** — run `make build-base` first. `make up`
   does it automatically; bare `docker compose build` does not.
+- **`make up` does not rebuild images.** In dev only the frontend's `src/`,
+  `public/` and `index.html` are bind-mounted; `tailwind.config.ts`,
+  `package.json` and every Dockerfile are baked in. After a pull that changes
+  them, `make build && make up`. A stale frontend image is how light mode once
+  rendered dark backgrounds with light-theme text.
 - **Ollama unreachable from a container on Linux** — needs
   `extra_hosts: host.docker.internal:host-gateway` (already in compose) and
   Ollama listening on `0.0.0.0`.
@@ -209,8 +216,9 @@ See [ISSUES.md](ISSUES.md).
   the worked example: `None` means "not stated", never `minor`).
 - **A manifest `status: "fetched"` describes the machine that fetched it.**
   `mark_fetched()` writes it and it is committed, so it travels; the documents
-  do not. `status: "fetched"` on all 23 treaties alongside a 9-instrument local
-  index is the normal state here, not a broken fetch. Check `data/cache/` and
+  do not. `status: "fetched"` on all 23 treaties alongside a small local index
+  is the normal state of a machine that has neither fetched nor imported, not a
+  broken fetch. Check `data/cache/` and
   the index's `instruments` key for what this machine actually has.
 - **The same corpus hash does not mean the same retrieval.** A result's
   `corpus` hashes the citation index only; two machines can share it while
