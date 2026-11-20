@@ -2,7 +2,7 @@
 
 **Project:** Council of AI — adversarial multi-agent debate for international
 humanitarian law analysis
-**Version:** 0.1.0 · **Status:** Scaffold; corpus pipeline unimplemented
+**Version:** 0.1.0 · **Status:** Built and evaluated (scored run done, 2026-11-16; see §14)
 **Audience:** Engineers building on this system, and reviewers assessing it
 
 > This document is the system-design reference: requirements, constraints,
@@ -105,10 +105,10 @@ answer is contested, and what it had to survive.*
           ┌───────────────┬───────────┼───────────┬──────────────┐
           ▼               ▼           ▼           ▼              ▼
     ┌──────────┐   ┌───────────┐ ┌────────┐ ┌──────────┐  ┌───────────┐
-    │ Mistral  │   │  Google   │ │ Ollama │ │  Qdrant  │  │ ICRC/ICC/ │
-    │   API    │   │ AI Studio │ │ (local)│ │  (local) │  │ ICJ/ICTY  │
-    │presenter │   │   judge   │ │attacker│ │ retrieval│  │  sources  │
-    │free tier │   │ free tier │ │  ×2    │ │          │  │  (fetch)  │
+    │   Groq   │   │OpenRouter │ │ Ollama │ │  Qdrant  │  │ ICRC/ICC/ │
+    │   API    │   │    API    │ │(opt-in)│ │  (local) │  │ ICJ/ICTY  │
+    │presenter,│   │   judge   │ │any role│ │ retrieval│  │  sources  │
+    │attack ×2 │   │ free tier │ │ if set │ │          │  │  (fetch)  │
     └──────────┘   └───────────┘ └────────┘ └──────────┘  └───────────┘
        external        external     local       local        external
                                                              (offline)
@@ -449,7 +449,7 @@ that died halfway remains inspectable.
 | Tier | Content | Location | Committed |
 | --- | --- | --- | --- |
 | 1 | Treaties, customary IHL, UN resolutions | `corpus/` | **Yes** — small, canonical, worth diffing |
-| 2 | Curated jurisprudence (~40–80 cases) | `data/cache/` | No |
+| 2 | Curated jurisprudence (8 judgments in `corpus/manifests/cases.json`; unfetched by decision, see ISSUES.md) | `data/cache/` | No |
 | 3 | Everything else | Not ingested | → `out_of_corpus` |
 
 Scope is defined by committed manifests; the fetcher never crawls (ADR 0007).
@@ -563,8 +563,9 @@ both angles. High Jaccard *combined with* high target overlap is the bad signal.
 
 ### 9.5 Statistical constraint
 
-With 40–80 cases, differences between arms C and D carry **wide confidence
-intervals**. `bootstrap_ci` is provided; a small gap with overlapping intervals
+Even at the 40–80 cases an arm comparison needs, differences between arms C and
+D carry **wide confidence intervals**; the case set here is twenty (ADR 0012,
+amended), so they are wider still. `bootstrap_ci` is provided; a small gap with overlapping intervals
 is not a result. Below 10 completed cases the report prints no intervals at all,
 and compares the arms case by case (ADR 0012). Overselling one would be a poor look on a project whose premise
 is that overconfidence is dangerous.
@@ -769,23 +770,24 @@ already passed both individually.
 
 Domain models · citation resolver (+ tests) · LiteLLM gateway · prompt loader ·
 export renderers · all four roles · LangGraph orchestration (+ termination
-tests) · SSE streaming · run persistence · retrieval service · React courtroom
-and dissent log · evaluation arms and three metric modules · Docker stacks ·
-CI · documentation.
+tests) · SSE streaming · run persistence · retrieval service · React courtroom,
+dissent log, replay, theming and case picker · corpus fetcher and indexer (23
+treaties plus the 161 customary rules, 3,482 points) · index bundles shared
+between machines (ADR 0014) · evaluation harness, metrics, report and arms A–E,
+with frozen settings · Docker stacks · CI · documentation.
 
-### 14.2 Not implemented
+The scored run (GitHub #26) is done: all five arms on the three core cases and
+one stretch case, in `evaluation/reports/`.
+
+### 14.2 Not implemented, or not done
 
 | Gap | Impact | Blocks |
 | --- | --- | --- |
-| **Corpus fetcher** | No corpus documents | Retrieval, citations, evaluation |
-| **Corpus indexer** | No Qdrant collection, no citation index | Same |
-| Evaluation runner | Arms and metrics exist; no driver | Results |
-| Case fixtures | 1 of a target 40–80 | Statistical validity |
-| Sprite artwork | Placeholder plinths | Cosmetic only |
-
-**Until the pipeline runs, retrieval returns nothing and every citation resolves
-as `out_of_corpus`.** This is stated in the README, `ISSUES.md`, `CLAUDE.md`, and
-`docs/corpus.md` rather than left to be discovered.
+| Judgments and UN resolutions unfetched (by decision) | Citations to them resolve `out_of_corpus` | Nothing; stated in results |
+| Reasoning overlap scored by hand (GitHub #27) | No reasoning-overlap figures yet | That column of the report |
+| The `extended` case tier not yet run | Twenty cases exist; four have results | A larger comparison |
+| No held-out case set | Nothing measures generalisation | Claims beyond the dev cases |
+| Sprite artwork | SVG figures instead (WONTFIX) | Cosmetic only |
 
 ### 14.3 Open decisions
 

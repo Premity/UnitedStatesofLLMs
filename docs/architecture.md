@@ -43,7 +43,7 @@ whether something qualifies:
 | **api** | `runtime/api/` | `:8000` HTTP + SSE | Debate orchestration, citation resolution, run persistence |
 | **frontend** | `runtime/frontend/` | `:3000` dev, `:80` prod | Courtroom view, dissent log, citation inspection |
 | **qdrant** | *(image)* | `:6333` | Holds the `ihl_corpus` collection |
-| **ollama** | *(image)* | `:11434` | Serves both attacker models locally |
+| **ollama** | *(image, opt-in)* | `:11434` | Serves a role locally only if its `COUNCIL_*_MODEL` is an `ollama/` id; the default roster is hosted (Groq, OpenRouter) |
 | **fetcher** | `pipeline/fetcher/` | reads manifests → `data/cache/` | Downloads the manifest-defined corpus |
 | **indexer** | `pipeline/indexer/` | `data/cache/` → Qdrant + index | Chunks, embeds, writes the citation index |
 
@@ -71,7 +71,7 @@ testable without standing up Qdrant or calling a model.
 ### Two regions, one interface
 
 The components divide into an **offline pipeline** (`fetcher`, `indexer`) and an
-**online runtime** (`api`, `frontend`, `qdrant`, `ollama`). They have separate
+**online runtime** (`api`, `frontend`, `qdrant`, and the opt-in `ollama`). They have separate
 compose files and never run at the same time.
 
 The only channel between them is the two datastores: the pipeline writes the
@@ -251,7 +251,7 @@ carries no information the transcript does not.
 | Variable | Read by | Purpose |
 | --- | --- | --- |
 | `COUNCIL_*_MODEL` | api | LiteLLM model id per role |
-| `COUNCIL_OLLAMA_BASE_URL` | api | Host or containerised Ollama |
+| `COUNCIL_OLLAMA_BASE_URL` | api | Host or containerised Ollama, used only for `ollama/` ids |
 | `EMBEDDING_MODEL` | api, indexer | **Must match between them** |
 | `QDRANT_URL` | api, indexer | Service name in compose, localhost in pipeline |
 | `MAX_CONCURRENT_DEBATES` | api | Free-tier quota guard |

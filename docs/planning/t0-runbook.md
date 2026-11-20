@@ -1,5 +1,10 @@
 # T0 runbook — first light
 
+> **Historical, 2026-11-20.** T0 is done: debates have run end to end against
+> live models many times, and the roster has changed since this was written.
+> Kept as the record of how first light was reached. To run the system now,
+> follow the README's quick start.
+
 Step-by-step instructions for getting a debate to run end to end for the first
 time.
 

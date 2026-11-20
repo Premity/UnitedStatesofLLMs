@@ -18,7 +18,7 @@ local citation status.
 
 ## What is left, in order
 
-Updated 2026-11-16. The scored run is done (GitHub #26): all five arms on the
+Updated 2026-11-20. The scored run is done (GitHub #26): all five arms on the
 three core cases and the stretch case Mrkšić, on the frozen settings. The
 reports and write-up are in `evaluation/reports/`, the results in
 `evaluation/results/scored-run/`.
@@ -26,6 +26,7 @@ reports and write-up are in `evaluation/reports/`, the results in
 | # | Item | Why it is where it is |
 | --- | --- | --- |
 | 1 | **Reasoning overlap, by hand** | The rubric, the scores file and the report column are in place; the 15 core results are now there to score. GitHub #27 |
+| 2 | **Run the `extended` case tier** | Fourteen cases, five fictional, take the set to twenty (ADR 0012, amended); none has results yet. Same frozen settings, same runbook |
 
 The run changed one thing after it: arm E's confidence is its judge's, not the
 samples' agreement rate, which measured nothing (ADR 0011, amended). The four E
@@ -58,10 +59,11 @@ against is whatever that machine last fetched. A run artifact's
 | Machine | Resolves |
 | --- | --- |
 | Fresh clone (`corpus/stub/citation_index.json`, copied by `setup.sh`) | 24 locators, 4 instruments |
-| A machine that has run `make corpus` | ~5,000+, 23 instruments + 161 customary rules |
+| A machine that has run `make corpus`, or imported the index kit | 3,482 locators: 23 treaties + the 161 customary rules (24 instruments) |
 
-**The evaluation machine is the one that matters,** and it has the full corpus.
-Scored runs and fabrication metrics come from there.
+**Scored runs and fabrication metrics come from machines holding the shared
+index** (fingerprint `8ffefb5a30ab`), checked by `make eval-settings` before
+every live run.
 
 **A machine that cannot embed can import the evaluation machine's index**
 (ADR 0014): `make export-index` there, `make import-index FILE=…` here, and
@@ -208,8 +210,9 @@ See [docs/evaluation.md](docs/evaluation.md) for the full ladder.
 
 ### [RESOLVED] Evaluation case fixtures
 
-Seven dev cases, no held-out set. The target of 40–80 was cut: the scored run is
-three of the seven, with three more as a stretch (ADR 0012). Below ~40 the
+Twenty dev cases, no held-out set (seven until 2026-11-20). The target of 40–80
+was cut: the scored run was three of the seven, with three more as a stretch
+(ADR 0012); an `extended` tier adds the other fourteen, five of them fictional. Below ~40 the
 bootstrap intervals are too wide for any arm comparison to mean anything, so the
 results are a demonstration, not a statistical comparison.
 
@@ -305,7 +308,7 @@ to three cases (GitHub #21). One case through all five arms is up to 7 judge
 calls (A 1, B 1, C 2, D 2, E 1), so the run is 21 before any repair or retry —
 within one day's 50.
 
-### [MEDIUM] Presenter moved from Mistral to Groq
+### [RESOLVED] Presenter moved from Mistral to Groq
 
 Mistral returned 429 on the first request from a fresh free-tier account.
 
@@ -514,7 +517,7 @@ prompt template describes its schema only in prose rather than showing it —
 split), so they don't have this specific vulnerability, but it's worth
 keeping in mind for any future per-round prompt variants.
 
-### [LOW] Blank `COUNCIL_SEED=` crashed settings
+### [RESOLVED] Blank `COUNCIL_SEED=` crashed settings
 
 `.env.example` ships `COUNCIL_SEED=` empty, which failed integer parsing in
 `RoleModels`. Fixed with `env_ignore_empty=True`.

@@ -272,8 +272,10 @@ the argument.
 
 ## Statistical honesty
 
-With 40–80 cases, differences between arms C and D carry **wide confidence
-intervals**. With the three cases actually scored (ADR 0012) there is no
+Even at 40–80 cases, differences between arms C and D carry **wide confidence
+intervals**. The case set is twenty (ADR 0012, amended), so once all twenty are
+run the report prints intervals, and they will be wide; a gap with overlapping
+intervals is not a result. With the three cases actually scored there is no
 meaningful interval at all: three cases have 10 distinct bootstrap resamples, so
 a percentile interval over them describes the resampling, not the uncertainty.
 
@@ -297,6 +299,7 @@ project whose entire premise is that overconfidence is dangerous.
 ```bash
 make eval ARGS="--case icty_galic_terror"   # all five arms on one core case
 make eval ARGS="--tier stretch --case icty_martic_zagreb"   # a stretch case
+make eval ARGS="--tier all --case hyp_pow_militia"          # any of the twenty
 make eval-arm ARM=full_council  # one arm over the core tier
 make eval-report                # rebuild the report from existing results
 ```

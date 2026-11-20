@@ -1026,7 +1026,8 @@ def build_parser() -> argparse.ArgumentParser:
         choices=list(TIERS),
         default="core",
         help="Which cases to run (ADR 0012): core (the scored three, default), "
-        "stretch (only with quota left over), or all.",
+        "stretch (only with quota left over), extended (the fourteen that take the set "
+        "to twenty), or all. A case outside core needs its tier: --tier all --case ID.",
     )
     parser.add_argument(
         "--case",

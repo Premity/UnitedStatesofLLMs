@@ -32,10 +32,34 @@ The medium-difficulty cases, to balance a core set that is two-thirds hard. A
 stretch case counts only once all five arms have completed on it.
 """
 
+EXTENDED_CASE_IDS: tuple[str, ...] = (
+    "hyp_perfidy_ambulance",
+    "icty_prlic_old_bridge",
+    "icj_nuclear_weapons_self_defence",
+    "icc_ntaganda_own_forces",
+    "hyp_pow_militia",
+    "icty_oric_srebrenica",
+    "scsl_norman_child_recruitment",
+    "hyp_cluster_shared_control",
+    "icj_croatia_serbia_genocide",
+    "hyp_starvation_wells",
+    "icty_halilovic_grabovica",
+    "icj_wall_gc_iv",
+    "hyp_hospital_warning",
+    "icty_boskoski_ljuboten",
+)
+"""The fourteen cases that take the set to twenty (ADR 0012, amended).
+
+Interleaved by outcome and by real versus fictional, so a run stopped partway
+still covers a spread. `hyp_` cases are fictional: invented states and events,
+real law, and an authored ground truth rather than a tribunal's.
+"""
+
 TIERS: dict[str, tuple[str, ...]] = {
     "core": CORE_CASE_IDS,
     "stretch": STRETCH_CASE_IDS,
-    "all": CORE_CASE_IDS + STRETCH_CASE_IDS,
+    "extended": EXTENDED_CASE_IDS,
+    "all": CORE_CASE_IDS + STRETCH_CASE_IDS + EXTENDED_CASE_IDS,
 }
 
 

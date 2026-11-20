@@ -64,9 +64,9 @@ T0 = datetime(2026, 11, 1, 12, 0, 0, tzinfo=UTC)
 
 MODELS = {
     Role.PRESENTER: "groq/openai/gpt-oss-120b",
-    Role.ATTACKER_DOCTRINAL: "ollama/qwen3.5:14b",
-    Role.ATTACKER_EVIDENTIARY: "ollama/gemma3:12b",
-    Role.JUDGE: "gemini/gemini-3.1-pro-preview",
+    Role.ATTACKER_DOCTRINAL: "groq/qwen/qwen3.8-27b",
+    Role.ATTACKER_EVIDENTIARY: "groq/openai/gpt-oss-20b",
+    Role.JUDGE: "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
 }
 
 # Stand-in for the SHA-256 of a rendered prompt. Real recordings carry the true
