@@ -112,6 +112,11 @@ generalisation.
 Did the system reach the tribunal's conclusion? Ternary — affirmed / rejected /
 indeterminate. The headline number, and trivially scorable.
 
+A debate that ends without a verdict, or with a conclusion no answer can be
+read from, is predicted `no_verdict` and scored wrong. It used to fall back to
+`indeterminate`, which scored a failed debate as correct on every case whose
+ground truth is indeterminate.
+
 ### 2. Calibration — the important one
 
 `evaluation/metrics/calibration.py`

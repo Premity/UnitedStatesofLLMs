@@ -33,6 +33,7 @@ from harness.quota import (
     get_expected_calls,
 )
 from harness.run import (
+    NO_VERDICT,
     EmptyCorpusIndexError,
     MockJudgeRole,
     _run_arm_e,
@@ -467,6 +468,19 @@ class TestOutcomeNormalization:
         assert normalize_outcome(text) == expected
 
     @pytest.mark.parametrize(
+        "text",
+        [None, "", "Unknown holding", "Yes, the accused is not criminally responsible."],
+    )
+    def test_an_unreadable_prediction_is_no_verdict(self, text: str | None) -> None:
+        assert normalize_outcome(text, unreadable=NO_VERDICT) == NO_VERDICT
+
+    def test_an_explicit_indeterminate_is_still_read_as_one(self) -> None:
+        assert (
+            normalize_outcome("Indeterminate. The facts do not settle it.", unreadable=NO_VERDICT)
+            == "indeterminate"
+        )
+
+    @pytest.mark.parametrize(
         ("claim", "expected"),
         [
             ("The conduct is prohibited.", "affirmed"),
@@ -660,6 +674,38 @@ class TestHarnessExecution:
         assert "prompt_hashes" in result
         assert result["synthetic"] is True
         assert tracker.get_today_usage() == 0  # Zero quota logged
+
+    @pytest.mark.asyncio
+    @pytest.mark.parametrize(
+        "verdict",
+        [None, Verdict(conclusion="The record speaks for itself.", reasoning="", confidence=0.6)],
+        ids=["no_verdict", "unreadable_verdict"],
+    )
+    async def test_a_debate_without_a_readable_verdict_is_wrong_on_an_indeterminate_case(
+        self, temp_eval_dir: Path, sample_case: Case, verdict: Verdict | None
+    ) -> None:
+        """PR #42 review: falling back to `indeterminate` scored a failed debate correct."""
+        case = sample_case.model_copy(update={"outcome": Outcome.INDETERMINATE})
+        final_state = {
+            "current_round": 1,
+            "turns": [_make_turn(Role.PRESENTER, round_number=1)],
+            "arguments": [],
+            "objections": [],
+            "context": [],
+            "verdict": verdict,
+        }
+
+        with patch("harness.run.compiled_graph.ainvoke", AsyncMock(return_value=final_state)):
+            result = await run_case(
+                arm=ARMS["rag"],
+                case=case,
+                judge_backend="api",  # the mock backend never runs the graph
+                output_dir=temp_eval_dir,
+                quota_tracker=QuotaTracker(temp_eval_dir / "quota_log.json"),
+            )
+
+        assert result["predicted_outcome"] == NO_VERDICT
+        assert result["outcome_correct"] is False
 
     @pytest.mark.asyncio
     async def test_result_records_the_index_that_scored_it(
