@@ -407,3 +407,26 @@ def test_results_from_two_rosters_are_refused_unless_allowed() -> None:
     report = render_report(results, allow_mixed_settings=True)
     assert "Mixed settings" in report
     assert _case_cells(report, "a", "rag")[-1] in {"S1", "S2"}
+
+
+def test_fictional_cases_are_reported_apart_from_adjudicated_ones() -> None:
+    """ADR 0012, amended: pooled alone, recall and reasoning can't be told apart."""
+    results = [
+        _result(arm="rag", correct=True, confidence=0.9, case_id="icty_a"),
+        _result(arm="rag", correct=True, confidence=0.9, case_id="icty_b"),
+        _result(arm="rag", correct=False, confidence=0.9, case_id="hyp_a"),
+        _result(arm="rag", correct=True, confidence=0.9, case_id="hyp_b"),
+    ]
+
+    report = render_report(results)
+
+    assert "### Fictional and adjudicated cases" in report
+    row = next(line for line in report.splitlines() if line.startswith("| rag | 1.000"))
+    cells = [cell.strip() for cell in row.strip("|").split("|")]
+    assert cells[1] == "1.000 (n=2)"  # adjudicated
+    assert cells[3] == "0.500 (n=2)"  # fictional
+
+
+def test_a_report_without_fictional_cases_has_no_split_table() -> None:
+    report = render_report([_result(arm="rag", correct=True, confidence=0.9)])
+    assert "Fictional and adjudicated" not in report

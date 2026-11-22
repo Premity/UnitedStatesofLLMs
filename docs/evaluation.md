@@ -117,6 +117,10 @@ read from, is predicted `no_verdict` and scored wrong. It used to fall back to
 `indeterminate`, which scored a failed debate as correct on every case whose
 ground truth is indeterminate.
 
+The report gives accuracy and Brier for fictional (`hyp_`) and adjudicated cases
+apart as well as pooled: an arm that does well only on adjudicated cases may be
+recalling the judgment rather than reasoning to it.
+
 ### 2. Calibration — the important one
 
 `evaluation/metrics/calibration.py`
