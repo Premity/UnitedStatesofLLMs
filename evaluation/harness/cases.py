@@ -90,7 +90,7 @@ def select_cases(
 
     Args:
         cases: The loaded fixtures.
-        tier: `core`, `stretch` or `all` (see `TIERS`).
+        tier: `core`, `stretch`, `extended` or `all` (see `TIERS`).
         case_ids: If given, narrow the tier to these ids. Each must be in the
             tier, so a typo or a case outside the scope fails loudly instead of
             silently running nothing.
