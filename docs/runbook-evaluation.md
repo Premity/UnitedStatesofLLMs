@@ -74,12 +74,29 @@ splitting cases across people is faster.
 | Groq, presenter (`gpt-oss-120b`), per request | 8,000 tokens per minute on the free tier, and one request may not exceed it | The presenter's round 2 is the biggest request: 5,100–5,900 tokens by the model's own count before the rebuttal's trim, 3,100–3,800 after. Groq counts the same request higher (one was refused at 8,278) |
 | Groq, doctrinal attacker (`qwen3.8-27b`) | on some accounts, 1,000 output tokens/minute | A request Groq expects to exceed it is refused outright. Its prompt keeps replies short (about 500–600 tokens) for this reason. |
 | Time | about 15 minutes per case | Mostly the free judge: 27–341 s per call. |
-| Quota tracking | per results folder | The harness counts today's judge calls from `quota_log.json` in the folder it writes to. Keep using `data/eval/`; if you move results, keep the log (section 5). |
+| Quota tracking | per results folder, or per `--quota-log` | The harness counts today's judge calls from `quota_log.json` in the folder it writes to. Keep using `data/eval/`; if you move results, keep the log (section 5). `--quota-log PATH` points it at another log, one per OpenRouter account. |
 
 **Plan on two cases per person per day, one case per command.** The
 harness's judge count resets at 00:00 UTC (05:30 IST). Groq's daily token
 limit doesn't: it's a rolling 24 hours, and its error says how long to wait.
 Start a case on a fresh Groq day, not after a day of other runs.
+
+**One machine, several accounts' keys.** `scripts/eval_rotate.py` runs the
+pending `extended` cases one at a time and keeps one Groq key and one
+OpenRouter key until a provider refuses for quota. Then it stops the harness,
+rests only that key (for the wait Groq's error names), and resumes the case
+with the next key: `--resume` restarts at the failed arm, so finished arms are
+never re-run. An OpenRouter key also counts as spent when its own quota log in
+`data/eval-quota/` has no room under the 40-attempt cap. Put one key per line in
+`.keys/groq.txt` and `.keys/openrouter.txt` (gitignored). Use one key per
+account: keys from the same account share its limit. The script names keys by
+a hash prefix and never prints them.
+
+```bash
+uv run python scripts/eval_rotate.py --status   # keys, rests, pending cases and arms
+uv run python scripts/eval_rotate.py            # run until done or every key rests
+uv run python scripts/eval_rotate.py --wait     # ...and sleep until a key is back
+```
 
 ---
 

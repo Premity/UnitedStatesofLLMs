@@ -399,6 +399,13 @@ class TestCliAndArmResolution:
         assert args.case_timeout == 12.5
         assert args.max_consecutive_failures == 4
 
+    def test_cli_parser_quota_log_defaults_to_none(self) -> None:
+        assert build_parser().parse_args(["--arm", "rag"]).quota_log is None
+
+    def test_cli_parser_accepts_a_per_account_quota_log(self) -> None:
+        args = build_parser().parse_args(["--arm", "rag", "--quota-log", "q/or-1.json"])
+        assert args.quota_log == Path("q/or-1.json")
+
     @pytest.mark.parametrize(
         ("flag", "value"),
         [("--case-timeout", "0"), ("--max-consecutive-failures", "0")],

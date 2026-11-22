@@ -1103,6 +1103,13 @@ def build_parser() -> argparse.ArgumentParser:
         help="Directory to write results into (default: data/eval).",
     )
     parser.add_argument(
+        "--quota-log",
+        type=Path,
+        default=None,
+        help="Judge quota log to check and charge (default: <output-dir>/quota_log.json). "
+        "Give each OpenRouter account its own log: the daily cap is per account.",
+    )
+    parser.add_argument(
         "--cases-dir",
         type=Path,
         default=None,
@@ -1172,7 +1179,7 @@ async def async_main(args: argparse.Namespace) -> None:
     if args.limit is not None and args.limit > 0:
         cases = cases[: args.limit]
 
-    quota_tracker = QuotaTracker(args.output_dir / "quota_log.json")
+    quota_tracker = QuotaTracker(args.quota_log or args.output_dir / "quota_log.json")
 
     await run_evaluation(
         arms=arms,
