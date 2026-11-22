@@ -96,7 +96,13 @@ a hash prefix and never prints them.
 uv run python scripts/eval_rotate.py --status   # keys, rests, pending cases and arms
 uv run python scripts/eval_rotate.py            # run until done or every key rests
 uv run python scripts/eval_rotate.py --wait     # ...and sleep until a key is back
+uv run python scripts/eval_rotate.py --workers 2 --wait   # two cases at once
 ```
+
+`--workers` is optional and defaults to 1. Each worker runs a different case
+with its own Groq and OpenRouter key, so it needs at least that many keys of
+each, and loads its own embedding model: about 1.5 GB of RAM a worker. On a
+16 GB machine with an editor open, two is the ceiling.
 
 ---
 

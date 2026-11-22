@@ -36,6 +36,7 @@ import os
 import re
 import subprocess
 import sys
+import threading
 import time
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
@@ -93,7 +94,6 @@ def env_file_value(name: str) -> str | None:
 
 def load_state() -> dict:
     state = json.loads(STATE_PATH.read_text(encoding="utf-8")) if STATE_PATH.exists() else {}
-    state.setdefault("current", {})
     state.setdefault("resting_until", {})
     return state
 
@@ -112,8 +112,6 @@ def resting_until(state: dict, name: str) -> datetime | None:
 
 def rest(state: dict, name: str, until: datetime) -> None:
     state["resting_until"][name] = until.isoformat()
-    if name in state["current"].values():
-        state["current"] = {p: n for p, n in state["current"].items() if n != name}
 
 
 def next_utc_midnight() -> datetime:
@@ -190,13 +188,18 @@ def is_rate_limit(text: str) -> bool:
 # ── Choosing keys ──────────────────────────────────────────────────────────────
 
 
-def pick(provider: str, keys: dict[str, str], state: dict, usable) -> str | None:
-    """The key in use if it still works, else the first one that does."""
-    current = state["current"].get(provider)
+def pick(keys: dict[str, str], state: dict, taken: set[str], current: str | None, usable):
+    """The worker's key if it still works, else the first free one that does.
+
+    `taken` holds the keys other workers hold: two workers on one key would
+    drain one account twice as fast and trip its limit mid-case.
+    """
     order = sorted(keys, key=lambda k: keys[k] != current)  # current first, file order after
     for key in order:
-        if not resting_until(state, keys[key]) and usable(key, keys[key]):
-            state["current"][provider] = keys[key]
+        name = keys[key]
+        if name in taken and name != current:
+            continue
+        if not resting_until(state, name) and usable(key, name):
             return key
     return None
 
@@ -204,7 +207,7 @@ def pick(provider: str, keys: dict[str, str], state: dict, usable) -> str | None
 # ── Running ────────────────────────────────────────────────────────────────────
 
 
-def run_case(case_id, groq_key, or_key, or_name, secrets, log_file) -> tuple[int, str]:
+def run_case(case_id, groq_key, or_key, or_name, secrets, log, prefix) -> tuple[int, str]:
     """Run the harness on one case. Stops it at the first rate-limit error.
 
     Returns the exit code and the rate-limit error line ('' if none).
@@ -225,11 +228,10 @@ def run_case(case_id, groq_key, or_key, or_name, secrets, log_file) -> tuple[int
     for line in proc.stdout:
         for secret, name in secrets.items():
             line = line.replace(secret, f"<{name}>")
-        log_file.write(line)
-        log_file.flush()
+        log(prefix + line)
         stripped = line.strip()
         if stripped.startswith(("->", "Running arm", "Judge attempts", "Stopping")):
-            print("   ", stripped[:300], flush=True)
+            say(f"{prefix}    {stripped[:300]}")
         if stripped.startswith("-> ERROR") and is_rate_limit(stripped):
             limit_line = stripped
             proc.terminate()  # the arms after this one would fail on the same key
@@ -242,11 +244,18 @@ def run_case(case_id, groq_key, or_key, or_name, secrets, log_file) -> tuple[int
     return code, limit_line
 
 
+_print_lock = threading.Lock()
+
+
+def say(text: str) -> None:
+    with _print_lock:
+        print(text, flush=True)
+
+
 def print_status(groq: dict, openrouter: dict, state: dict) -> None:
     def note(name: str) -> str:
         until = resting_until(state, name)
-        in_use = " (in use)" if name in state["current"].values() else ""
-        return f"{in_use}, resting until {until:%Y-%m-%d %H:%M} UTC" if until else in_use
+        return f", resting until {until:%Y-%m-%d %H:%M} UTC" if until else ""
 
     print(f"Groq keys ({len(groq)}):")
     for name in groq.values():
@@ -264,6 +273,124 @@ def print_status(groq: dict, openrouter: dict, state: dict) -> None:
         print(f"  {case_id} ({detail})")
 
 
+class Runner:
+    """Workers share one lock over which cases and keys are taken, and the state file."""
+
+    def __init__(self, groq: dict, openrouter: dict, args: argparse.Namespace) -> None:
+        self.groq, self.openrouter, self.args = groq, openrouter, args
+        self.secrets = {**groq, **openrouter}
+        self.state = load_state()
+        self.lock = threading.Lock()
+        self.cases_taken: set[str] = set()
+        self.keys_taken: set[str] = set()
+        self.tries: dict[str, int] = {}
+        self.finished = 0
+        self.running = 0
+        LOG_DIR.mkdir(parents=True, exist_ok=True)
+        self.log_path = LOG_DIR / f"eval-rotate-{now():%Y%m%d}.log"
+        self.log_file = self.log_path.open("a", encoding="utf-8")
+
+    def log(self, text: str) -> None:
+        with self.lock:
+            self.log_file.write(text)
+            self.log_file.flush()
+
+    def claim(self, current: dict[str, str | None]):
+        """Under the lock: a case and a key pair for one worker, or why there is none.
+
+        Returns (case_id, groq_key, or_key), ("done", wake_time) or ("wait", wake_time).
+        """
+        if self.args.max_cases is not None and self.finished + self.running >= self.args.max_cases:
+            return ("done", None)
+        pending = [
+            c
+            for c in pending_cases()
+            if c not in self.cases_taken and self.tries.get(c, 0) < MAX_TRIES_PER_CASE
+        ]
+        if not pending:
+            return ("done", None)
+        case_id = pending[0]
+        needed = reservation(case_id)
+        groq_key = pick(self.groq, self.state, self.keys_taken, current["groq"], lambda k, n: True)
+        or_key = pick(
+            self.openrouter,
+            self.state,
+            self.keys_taken,
+            current["openrouter"],
+            lambda k, n: judge_used(k, n) + needed <= MAX_DAILY_QUOTA,
+        )
+        if groq_key is None or or_key is None:
+            if self.running:  # another worker holds keys; they come back when it finishes
+                return ("wait", now() + timedelta(minutes=2))
+            if not self.args.wait:
+                return ("done", None)
+            rests = [t for n in self.secrets.values() if (t := resting_until(self.state, n))]
+            return ("wait", min(rests + ([next_utc_midnight()] if or_key is None else [])))
+        self.cases_taken.add(case_id)
+        self.keys_taken |= {self.groq[groq_key], self.openrouter[or_key]}
+        self.running += 1
+        return (case_id, groq_key, or_key)
+
+    def worker(self, number: int) -> None:
+        prefix = f"[w{number}] " if self.args.workers > 1 else ""
+        current: dict[str, str | None] = {"groq": None, "openrouter": None}
+        announced_wait = False
+        while True:
+            with self.lock:
+                claim = self.claim(current)
+            if claim[0] == "done":
+                return
+            if claim[0] == "wait":
+                wake = claim[1]
+                if not announced_wait or self.running == 0:
+                    say(f"{prefix}No free keys; waiting until {wake:%Y-%m-%d %H:%M} UTC.")
+                    announced_wait = True
+                time.sleep(max(60.0, (wake - now()).total_seconds()))
+                continue
+            announced_wait = False
+            case_id, groq_key, or_key = claim
+            g_name, o_name = self.groq[groq_key], self.openrouter[or_key]
+            current.update(groq=g_name, openrouter=o_name)
+            todo = [arm for arm, s in case_status(case_id).items() if s != "completed"]
+            say(
+                f"{prefix}=== {case_id} [{', '.join(todo)}] on {g_name} + {o_name} "
+                f"({now():%Y-%m-%dT%H:%M:%SZ})"
+            )
+            self.log(f"{prefix}=== {case_id} on {g_name} + {o_name} {now().isoformat()}\n")
+            code, limit_line = run_case(
+                case_id, groq_key, or_key, o_name, self.secrets, self.log, prefix
+            )
+            self.log(f"{prefix}=== exit {code} {now().isoformat()}\n")
+
+            with self.lock:
+                self.running -= 1
+                self.cases_taken.discard(case_id)
+                self.keys_taken -= {g_name, o_name}
+                if limit_line:
+                    # Quota, not a fault: rest the key and resume the case; no try is spent.
+                    if "openrouter" in limit_line.lower():
+                        rest(self.state, o_name, next_utc_midnight())
+                        current["openrouter"] = None
+                        say(f"{prefix}    {o_name} is out of quota; resting it until 00:05 UTC.")
+                    else:
+                        until = now() + (groq_wait(limit_line) or GROQ_DEFAULT_REST)
+                        rest(self.state, g_name, until)
+                        current["groq"] = None
+                        say(
+                            f"{prefix}    {g_name} is out of quota; resting it until {until:%H:%M} UTC."
+                        )
+                    save_state(self.state)
+                elif case_id not in pending_cases():
+                    self.finished += 1
+                else:
+                    self.tries[case_id] = self.tries.get(case_id, 0) + 1
+                    say(
+                        f"{prefix}    exit {code}, case incomplete "
+                        f"(try {self.tries[case_id]}/{MAX_TRIES_PER_CASE}); "
+                        f"see {self.log_path.relative_to(ROOT)}."
+                    )
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("--status", action="store_true", help="Show keys and cases, then exit.")
@@ -271,91 +398,40 @@ def main() -> int:
     parser.add_argument(
         "--wait", action="store_true", help="When every key rests, sleep until one is back."
     )
+    parser.add_argument(
+        "--workers",
+        type=int,
+        default=1,
+        help="Cases to run at once (default 1). Each worker holds its own Groq and OpenRouter "
+        "key and loads its own embedding model, about 1.5 GB of RAM.",
+    )
     args = parser.parse_args()
 
     KEYS_DIR.mkdir(mode=0o700, exist_ok=True)
     groq = {k: label("groq", k) for k in read_keys(KEYS_DIR / "groq.txt")}
     openrouter = {k: label("or", k) for k in read_keys(KEYS_DIR / "openrouter.txt")}
-    secrets = {**groq, **openrouter}
-    state = load_state()
 
     if args.status:
-        print_status(groq, openrouter, state)
+        print_status(groq, openrouter, load_state())
         return 0
     if not groq or not openrouter:
         print("No keys: add them to .keys/groq.txt and .keys/openrouter.txt.", file=sys.stderr)
         return 1
+    if args.workers < 1:
+        parser.error("--workers must be at least 1")
+    workers = min(args.workers, len(groq), len(openrouter))
+    if workers < args.workers:
+        print(f"Only {workers} worker(s): each needs its own Groq and OpenRouter key.")
+    args.workers = workers
 
-    LOG_DIR.mkdir(parents=True, exist_ok=True)
-    log_path = LOG_DIR / f"eval-rotate-{now():%Y%m%d}.log"
-    finished = 0
-    tries: dict[str, int] = {}
-    with log_path.open("a", encoding="utf-8") as log_file:
-        while True:
-            pending = [c for c in pending_cases() if tries.get(c, 0) < MAX_TRIES_PER_CASE]
-            if not pending:
-                print("No runnable cases left.")
-                break
-            if args.max_cases is not None and finished >= args.max_cases:
-                print(f"Stopped after {finished} case(s) (--max-cases).")
-                break
-
-            case_id = pending[0]
-            needed = reservation(case_id)
-            groq_key = pick("groq", groq, state, lambda k, n: True)
-            or_key = pick(
-                "openrouter",
-                openrouter,
-                state,
-                lambda k, n, needed=needed: judge_used(k, n) + needed <= MAX_DAILY_QUOTA,
-            )
-            save_state(state)
-            if groq_key is None or or_key is None:
-                short = "Groq" if groq_key is None else "OpenRouter"
-                print(f"Every {short} key is resting or out of judge quota.")
-                print_status(groq, openrouter, state)
-                if not args.wait:
-                    break
-                wake = min(
-                    [t for n in secrets.values() if (t := resting_until(state, n))]
-                    + ([next_utc_midnight()] if or_key is None else [])
-                )
-                print(f"Sleeping until {wake:%Y-%m-%d %H:%M} UTC (--wait).", flush=True)
-                time.sleep(max(60.0, (wake - now()).total_seconds()))
-                continue
-
-            g_name, o_name = groq[groq_key], openrouter[or_key]
-            todo = [arm for arm, s in case_status(case_id).items() if s != "completed"]
-            print(
-                f"=== {case_id} [{', '.join(todo)}] on {g_name} + {o_name} "
-                f"({now():%Y-%m-%dT%H:%M:%SZ})",
-                flush=True,
-            )
-            log_file.write(f"=== {case_id} on {g_name} + {o_name} {now().isoformat()}\n")
-            code, limit_line = run_case(case_id, groq_key, or_key, o_name, secrets, log_file)
-            log_file.write(f"=== exit {code} {now().isoformat()}\n")
-
-            if limit_line:
-                # Quota, not a fault: rest the key and resume the case; no try is spent.
-                if "openrouter" in limit_line.lower():
-                    rest(state, o_name, next_utc_midnight())
-                    print(f"    {o_name} is out of quota; resting it until 00:05 UTC.")
-                else:
-                    until = now() + (groq_wait(limit_line) or GROQ_DEFAULT_REST)
-                    rest(state, g_name, until)
-                    print(f"    {g_name} is out of quota; resting it until {until:%H:%M} UTC.")
-                save_state(state)
-                continue
-            if case_id not in pending_cases():
-                finished += 1
-                continue
-            tries[case_id] = tries.get(case_id, 0) + 1
-            print(
-                f"    exit {code}, case incomplete (try {tries[case_id]}/{MAX_TRIES_PER_CASE}); "
-                f"see {log_path.relative_to(ROOT)}."
-            )
-
-    print(f"Log: {log_path.relative_to(ROOT)}")
+    runner = Runner(groq, openrouter, args)
+    threads = [threading.Thread(target=runner.worker, args=(n + 1,)) for n in range(workers)]
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.join()
+    runner.log_file.close()
+    print(f"Finished {runner.finished} case(s). Log: {runner.log_path.relative_to(ROOT)}")
     return 0
 
 
