@@ -186,7 +186,7 @@
       "id": "turn_doctrinal_r1",
       "round_number": 1,
       "role": "attacker_doctrinal",
-      "model_id": "ollama/qwen3.5:14b",
+      "model_id": "groq/qwen/qwen3.8-27b",
       "prompt_id": "attacker_doctrinal/challenge",
       "prompt_hash": "0000000000000000000000000000000000000000000000000000000000000000",
       "arguments": [],
@@ -249,6 +249,7 @@
               "note": "No span at ap_i/art.51(9) in an indexed instrument."
             }
           ],
+          "severity": null,
           "disposition": "overruled",
           "disposition_reasoning": "The terror prohibition is customary and applies in both international and non-international armed conflict, so the characterisation of the conflict does not dispose of the claim. The objection also cites Article 51(9), which does not exist; Article 51 ends at paragraph 8."
         },
@@ -310,6 +311,7 @@
               "note": null
             }
           ],
+          "severity": null,
           "disposition": "partial",
           "disposition_reasoning": "Sound as to the indiscriminate-attack argument, which is narrowed accordingly. It does not reach the terror claim, where purpose rather than proportionality is the operative question."
         }
@@ -328,7 +330,7 @@
       "id": "turn_evidentiary_r1",
       "round_number": 1,
       "role": "attacker_evidentiary",
-      "model_id": "ollama/gemma3:12b",
+      "model_id": "groq/openai/gpt-oss-20b",
       "prompt_id": "attacker_evidentiary/challenge",
       "prompt_hash": "0000000000000000000000000000000000000000000000000000000000000000",
       "arguments": [],
@@ -367,6 +369,7 @@
               "note": "Quoted text does not appear at this locator."
             }
           ],
+          "severity": null,
           "disposition": "sustained",
           "disposition_reasoning": "The quoted wording does not appear in Article 51(2). The presenter's own reasoning, however, tracks the actual text, so the defect is in the quotation rather than the argument."
         },
@@ -422,14 +425,15 @@
                 "rule_number": 156,
                 "quoted_text": null
               },
-              "status": "out_of_corpus",
-              "corpus_text": null,
-              "source_url": null,
-              "note": "Instrument 'customary_ihl' is not in the indexed corpus."
+              "status": "resolved",
+              "corpus_text": "Serious violations of international humanitarian law constitute war crimes.",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
             }
           ],
+          "severity": null,
           "disposition": "overruled",
-          "disposition_reasoning": "Purpose may be inferred from the pattern and duration of the attacks, and the facts as given describe a campaign rather than isolated incidents. The objection is noted as a limit on the confidence attached to the holding, and both authorities it cites are outside the indexed corpus and so unverified here."
+          "disposition_reasoning": "Purpose may be inferred from the pattern and duration of the attacks, and the facts as given describe a campaign rather than isolated incidents. The objection is noted as a limit on the confidence attached to the holding. Customary Rule 156 was verified against the corpus; the Galić trial judgement is outside the indexed corpus and so unverified here."
         }
       ],
       "raw_response": "[generated fixture — no model output]",
@@ -453,7 +457,7 @@
       "id": "turn_judge_r1",
       "round_number": 1,
       "role": "judge",
-      "model_id": "gemini/gemini-3.1-pro-preview",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
       "prompt_id": "judge/rule",
       "prompt_hash": "0000000000000000000000000000000000000000000000000000000000000000",
       "arguments": [],
@@ -536,6 +540,7 @@
               "note": "No span at ap_i/art.51(9) in an indexed instrument."
             }
           ],
+          "severity": null,
           "disposition": "overruled",
           "disposition_reasoning": "The terror prohibition is customary and applies in both international and non-international armed conflict, so the characterisation of the conflict does not dispose of the claim. The objection also cites Article 51(9), which does not exist; Article 51 ends at paragraph 8."
         },
@@ -591,14 +596,15 @@
                 "rule_number": 156,
                 "quoted_text": null
               },
-              "status": "out_of_corpus",
-              "corpus_text": null,
-              "source_url": null,
-              "note": "Instrument 'customary_ihl' is not in the indexed corpus."
+              "status": "resolved",
+              "corpus_text": "Serious violations of international humanitarian law constitute war crimes.",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
             }
           ],
+          "severity": null,
           "disposition": "overruled",
-          "disposition_reasoning": "Purpose may be inferred from the pattern and duration of the attacks, and the facts as given describe a campaign rather than isolated incidents. The objection is noted as a limit on the confidence attached to the holding, and both authorities it cites are outside the indexed corpus and so unverified here."
+          "disposition_reasoning": "Purpose may be inferred from the pattern and duration of the attacks, and the facts as given describe a campaign rather than isolated incidents. The objection is noted as a limit on the confidence attached to the holding. Customary Rule 156 was verified against the corpus; the Galić trial judgement is outside the indexed corpus and so unverified here."
         }
       ]
     }
@@ -707,7 +713,7 @@
       "id": "turn_doctrinal_r2",
       "round_number": 2,
       "role": "attacker_doctrinal",
-      "model_id": "ollama/qwen3.5:14b",
+      "model_id": "groq/qwen/qwen3.8-27b",
       "prompt_id": "attacker_doctrinal/challenge",
       "prompt_hash": "0000000000000000000000000000000000000000000000000000000000000000",
       "arguments": [],
@@ -746,6 +752,7 @@
               "note": null
             }
           ],
+          "severity": null,
           "disposition": "overruled",
           "disposition_reasoning": "The narrowing is to attacks where no objective is identified on the record at all, which does not depend on what was apparent at the time. The point is noted as a limit on how far the finding extends."
         }
@@ -764,7 +771,7 @@
       "id": "turn_evidentiary_r2",
       "round_number": 2,
       "role": "attacker_evidentiary",
-      "model_id": "ollama/gemma3:12b",
+      "model_id": "groq/openai/gpt-oss-20b",
       "prompt_id": "attacker_evidentiary/challenge",
       "prompt_hash": "0000000000000000000000000000000000000000000000000000000000000000",
       "arguments": [],
@@ -790,7 +797,7 @@
       "id": "turn_judge_r2",
       "round_number": 2,
       "role": "judge",
-      "model_id": "gemini/gemini-3.1-pro-preview",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
       "prompt_id": "judge/rule",
       "prompt_hash": "0000000000000000000000000000000000000000000000000000000000000000",
       "arguments": [],
@@ -873,6 +880,7 @@
               "note": "No span at ap_i/art.51(9) in an indexed instrument."
             }
           ],
+          "severity": null,
           "disposition": "overruled",
           "disposition_reasoning": "The terror prohibition is customary and applies in both international and non-international armed conflict, so the characterisation of the conflict does not dispose of the claim. The objection also cites Article 51(9), which does not exist; Article 51 ends at paragraph 8."
         },
@@ -928,14 +936,15 @@
                 "rule_number": 156,
                 "quoted_text": null
               },
-              "status": "out_of_corpus",
-              "corpus_text": null,
-              "source_url": null,
-              "note": "Instrument 'customary_ihl' is not in the indexed corpus."
+              "status": "resolved",
+              "corpus_text": "Serious violations of international humanitarian law constitute war crimes.",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
             }
           ],
+          "severity": null,
           "disposition": "overruled",
-          "disposition_reasoning": "Purpose may be inferred from the pattern and duration of the attacks, and the facts as given describe a campaign rather than isolated incidents. The objection is noted as a limit on the confidence attached to the holding, and both authorities it cites are outside the indexed corpus and so unverified here."
+          "disposition_reasoning": "Purpose may be inferred from the pattern and duration of the attacks, and the facts as given describe a campaign rather than isolated incidents. The objection is noted as a limit on the confidence attached to the holding. Customary Rule 156 was verified against the corpus; the Galić trial judgement is outside the indexed corpus and so unverified here."
         },
         {
           "id": "obj_precaution_standard",
@@ -971,6 +980,7 @@
               "note": null
             }
           ],
+          "severity": null,
           "disposition": "overruled",
           "disposition_reasoning": "The narrowing is to attacks where no objective is identified on the record at all, which does not depend on what was apparent at the time. The point is noted as a limit on how far the finding extends."
         }

@@ -189,11 +189,9 @@ p.append(arrow(BL + 334, PIPE_Y + 57, BL + 368, PIPE_Y + 57))
 # ── Providers ─────────────────────────────────────────────────────────────
 PV_X = BL + 640
 p.append(band(PV_X, PIPE_Y, 394, 104, "MODEL PROVIDERS", kind="external"))
-p.append(box(PV_X + 20, PIPE_Y + 30, 112, 54, "Mistral", kind="external", fs=12, sub="presenter"))
-p.append(box(PV_X + 146, PIPE_Y + 30, 112, 54, "Gemini", kind="external", fs=12, sub="judge"))
-p.append(
-    box(PV_X + 272, PIPE_Y + 30, 102, 54, "Ollama", kind="external", fs=12, sub="attackers ×2")
-)
+p.append(box(PV_X + 20, PIPE_Y + 30, 112, 54, "Groq", kind="external", fs=12, sub="presenter + 2"))
+p.append(box(PV_X + 146, PIPE_Y + 30, 112, 54, "OpenRouter", kind="external", fs=12, sub="judge"))
+p.append(box(PV_X + 272, PIPE_Y + 30, 102, 54, "Ollama", kind="external", fs=12, sub="optional"))
 
 # ── Right gutter: pipeline writes the stores ──────────────────────────────
 GR = 1176

@@ -112,6 +112,15 @@ generalisation.
 Did the system reach the tribunal's conclusion? Ternary — affirmed / rejected /
 indeterminate. The headline number, and trivially scorable.
 
+A debate that ends without a verdict, or with a conclusion no answer can be
+read from, is predicted `no_verdict` and scored wrong. It used to fall back to
+`indeterminate`, which scored a failed debate as correct on every case whose
+ground truth is indeterminate.
+
+The report gives accuracy and Brier for fictional (`hyp_`) and adjudicated cases
+apart as well as pooled: an arm that does well only on adjudicated cases may be
+recalling the judgment rather than reasoning to it.
+
 ### 2. Calibration — the important one
 
 `evaluation/metrics/calibration.py`
@@ -272,8 +281,10 @@ the argument.
 
 ## Statistical honesty
 
-With 40–80 cases, differences between arms C and D carry **wide confidence
-intervals**. With the three cases actually scored (ADR 0012) there is no
+Even at 40–80 cases, differences between arms C and D carry **wide confidence
+intervals**. The case set is twenty (ADR 0012, amended), so once all twenty are
+run the report prints intervals, and they will be wide; a gap with overlapping
+intervals is not a result. With the three cases actually scored there is no
 meaningful interval at all: three cases have 10 distinct bootstrap resamples, so
 a percentile interval over them describes the resampling, not the uncertainty.
 
@@ -297,6 +308,7 @@ project whose entire premise is that overconfidence is dangerous.
 ```bash
 make eval ARGS="--case icty_galic_terror"   # all five arms on one core case
 make eval ARGS="--tier stretch --case icty_martic_zagreb"   # a stretch case
+make eval ARGS="--tier all --case hyp_pow_militia"          # any of the twenty
 make eval-arm ARM=full_council  # one arm over the core tier
 make eval-report                # rebuild the report from existing results
 ```

@@ -345,6 +345,58 @@ def _summarize_arm(results: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def is_fictional(result: dict[str, Any]) -> bool:
+    """A `hyp_` case: invented facts, authored ground truth (ADR 0012, amended)."""
+    return result.get("court") == "Hypothetical" or str(result.get("case_id", "")).startswith(
+        "hyp_"
+    )
+
+
+def _origin_rows(by_arm: dict[str, list[dict[str, Any]]]) -> list[str]:
+    """Accuracy and Brier per arm, fictional cases apart from adjudicated ones.
+
+    Pooling hides the question the fictional cases exist to answer: whether an
+    arm reasons its way to the outcome or recalls a famous judgment.
+    """
+    lines = [
+        "### Fictional and adjudicated cases",
+        "",
+        "Fictional (`hyp_`) cases have invented facts, so no model can recall their "
+        "outcome, and an authored ground truth, not a tribunal's. An arm that does well "
+        "only on adjudicated cases may be recalling the judgment.",
+        "",
+        "| Arm | Adjudicated accuracy | Adjudicated Brier | Fictional accuracy | Fictional Brier |",
+        "| --- | ---: | ---: | ---: | ---: |",
+    ]
+    for arm, rows in sorted(by_arm.items(), key=lambda item: _arm_sort_key(item[0])):
+        cells = []
+        for subset in (
+            [r for r in rows if not is_fictional(r)],
+            [r for r in rows if is_fictional(r)],
+        ):
+            summary = _summarize_arm(subset)
+            shown = summary["intervals"]
+            cells.append(
+                _format_metric(
+                    summary["accuracy"],
+                    summary["accuracy_ci"],
+                    sample_size=summary["accuracy_n"],
+                    intervals=shown,
+                )
+            )
+            cells.append(
+                _format_metric(
+                    summary["brier"],
+                    summary["brier_ci"],
+                    sample_size=summary["calibration_n"],
+                    intervals=shown,
+                )
+            )
+        lines.append(f"| {arm} | " + " | ".join(cells) + " |")
+    lines.append("")
+    return lines
+
+
 def _arm_sort_key(arm: str) -> tuple[int, str]:
     return (ARM_ORDER.index(arm), arm) if arm in ARM_ORDER else (len(ARM_ORDER), arm)
 
@@ -585,6 +637,9 @@ def render_report(
                 f"{MIN_CASES_FOR_INTERVALS} completed cases. These rows support no claim "
                 "of a difference between arms; read the per-case table."
             )
+        if any(is_fictional(result) for result in group_results):
+            lines.append("")
+            lines.extend(_origin_rows(by_arm))
         lines.extend(
             (
                 "",

@@ -1,5 +1,10 @@
 # Implementation plan
 
+> **Historical, 2026-11-20.** Every track below is finished, and the evaluation
+> scope was cut to a small case set (ADR 0012). Kept as the record of how the
+> build was planned. What is open now is in [ISSUES.md](../../ISSUES.md) and the
+> GitHub issues.
+
 Five tracks, ~25 tasks. Four people, three weeks, everyone able to work on
 anything.
 

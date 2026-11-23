@@ -178,7 +178,9 @@ and its write-up in `evaluation/reports/write-up.md`. Use this table again for
 any later run.
 
 The three stretch cases (`--tier stretch`) come only after all three core cases
-are done, if quota allows (ADR 0012).
+are done, if quota allows (ADR 0012). The fourteen `extended` cases take the set
+to twenty; run one with `--tier all --case <id>`, since a bare `--case` looks
+only in the core tier.
 
 ### Running a case
 
@@ -245,8 +247,8 @@ Send nothing from `.env` or `data/logs/`.
    done
    ```
 
-   Check that `data/eval-combined/` holds 15 files, three cases by five arms:
-   `find data/eval-combined -name '*.json' | wc -l`.
+   Check that `data/eval-combined/` holds five files per case run, one per arm
+   (15 for the three core cases): `find data/eval-combined -name '*.json' | wc -l`.
 
    A zip made on Windows warns that it "appears to use backslashes as path
    separators"; `unzip` converts them, so the warning is harmless.

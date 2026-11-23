@@ -1,6 +1,11 @@
 # Writing case fixtures
 
-Everyone writes ~15. This is the one task that cannot be hurried at the end, and
+> **Superseded on scope, 2026-11-14 and 2026-11-20.** The plan for everyone to
+> write ~15 was cut (ADR 0012). The set is twenty cases, five of them
+> fictional; `evaluation/cases/README.md` is the current guide, including how to
+> write a fictional case. The advice below on leaking the holding still applies.
+
+The original plan: everyone writes ~15. This is the one task that cannot be hurried at the end, and
 the one where a silent mistake corrupts every number in the final report.
 
 Budget 20–40 minutes per case once you have a rhythm.

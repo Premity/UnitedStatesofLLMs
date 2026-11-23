@@ -36,7 +36,7 @@ from run_debate import FACTS, QUESTION  # the same test case record_fixture.py u
 
 from council_core.citations import CitationResolver
 from council_core.citations.resolver import JsonCorpusIndex
-from council_core.models.citation import Citation, CitationType
+from council_core.models.citation import Citation, CitationStatus, CitationType, ResolvedCitation
 from council_core.models.debate import (
     Argument,
     Objection,
@@ -64,9 +64,9 @@ T0 = datetime(2026, 11, 1, 12, 0, 0, tzinfo=UTC)
 
 MODELS = {
     Role.PRESENTER: "groq/openai/gpt-oss-120b",
-    Role.ATTACKER_DOCTRINAL: "ollama/qwen3.5:14b",
-    Role.ATTACKER_EVIDENTIARY: "ollama/gemma3:12b",
-    Role.JUDGE: "gemini/gemini-3.1-pro-preview",
+    Role.ATTACKER_DOCTRINAL: "groq/qwen/qwen3.8-27b",
+    Role.ATTACKER_EVIDENTIARY: "groq/openai/gpt-oss-20b",
+    Role.JUDGE: "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
 }
 
 # Stand-in for the SHA-256 of a rendered prompt. Real recordings carry the true
@@ -91,6 +91,39 @@ def case(case_id: str, paragraph: str) -> Citation:
 
 def customary(rule: int) -> Citation:
     return Citation(type=CitationType.CUSTOMARY, instrument="customary_ihl", rule_number=rule)
+
+
+def verification_note(labels: list[str], resolved: list[ResolvedCitation]) -> str:
+    """Say which cited authorities the corpus could check, from their real statuses.
+
+    Written from the resolver's output rather than by hand, so the judge's text
+    can't contradict the status chip beside it: Rule 156 resolves against the
+    full index and is out of corpus on the stub one.
+    """
+
+    def listed(names: list[str]) -> str:
+        return " and ".join(names)
+
+    checked = [
+        n for n, rc in zip(labels, resolved, strict=True) if rc.status == CitationStatus.RESOLVED
+    ]
+    unchecked = [
+        n
+        for n, rc in zip(labels, resolved, strict=True)
+        if rc.status == CitationStatus.OUT_OF_CORPUS
+    ]
+    parts = []
+    if checked:
+        parts.append(
+            f"{listed(checked)} {'was' if len(checked) == 1 else 'were'} verified against the corpus"
+        )
+    if unchecked:
+        verb = "is" if len(unchecked) == 1 else "are"
+        parts.append(
+            f"{listed(unchecked)} {verb} outside the indexed corpus and so unverified here"
+        )
+    note = "; ".join(parts)
+    return note[:1].upper() + note[1:] + "." if note else ""
 
 
 def build_rounds(resolve) -> list[tuple[list[Turn], Verdict]]:
@@ -273,6 +306,7 @@ def build_rounds(resolve) -> list[tuple[list[Turn], Verdict]]:
     )
 
     o4_cites = [case("icty_galic_tj", "769"), customary(156)]
+    o4_resolved = resolve(o4_cites)
     o4 = Objection(
         id="obj_evidentiary_basis",
         raised_by=Role.ATTACKER_EVIDENTIARY,
@@ -288,13 +322,13 @@ def build_rounds(resolve) -> list[tuple[list[Turn], Verdict]]:
             "Without that, the terror finding is asserted rather than shown."
         ),
         citations=o4_cites,
-        resolved_citations=resolve(o4_cites),
+        resolved_citations=o4_resolved,
         disposition=ObjectionDisposition.OVERRULED,
         disposition_reasoning=(
             "Purpose may be inferred from the pattern and duration of the attacks, and the "
             "facts as given describe a campaign rather than isolated incidents. The objection "
-            "is noted as a limit on the confidence attached to the holding, and both "
-            "authorities it cites are outside the indexed corpus and so unverified here."
+            "is noted as a limit on the confidence attached to the holding. "
+            + verification_note(["the Galić trial judgement", "customary Rule 156"], o4_resolved)
         ),
     )
 

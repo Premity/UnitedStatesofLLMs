@@ -163,10 +163,27 @@ ARM_ALIASES: dict[str, str] = {
 }
 
 
-def normalize_outcome(conclusion: str | None) -> str:
-    """Normalize a free-text conclusion or holding into a standard Outcome value."""
+NO_VERDICT = "no_verdict"
+"""A prediction when the judge gave no verdict, or one no answer can be read from.
+
+Never a ground truth, so it always scores wrong. Falling back to `indeterminate`
+instead scored a failed debate as correct on every indeterminate case.
+"""
+
+
+def normalize_outcome(
+    conclusion: str | None, *, unreadable: str = Outcome.INDETERMINATE.value
+) -> str:
+    """Normalize a free-text conclusion or holding into a standard Outcome value.
+
+    Args:
+        conclusion: The text to read.
+        unreadable: What to return when no answer can be read from it: none
+            given, a "Yes" that denies itself, or no recognised wording.
+            Predictions pass `NO_VERDICT`, so an unreadable verdict scores wrong.
+    """
     if not conclusion:
-        return Outcome.INDETERMINATE.value
+        return unreadable
     text = conclusion.lower().strip()
     # The judge is told to open with "Yes.", "No." or "Indeterminate." as the direct
     # answer, so an opener is the answer. Only a "Yes" is second-guessed, and only
@@ -183,7 +200,7 @@ def normalize_outcome(conclusion: str | None) -> str:
         response = text[answer.end() :].lstrip(" \t,.;:!")
         first_sentence = re.split(r"(?<=[.!?])\s+", response, maxsplit=1)[0]
         return (
-            Outcome.INDETERMINATE.value
+            unreadable
             if _contains_negative_outcome(first_sentence, include_bare_did_not=False)
             else Outcome.AFFIRMED.value
         )
@@ -215,7 +232,7 @@ def normalize_outcome(conclusion: str | None) -> str:
     ):
         return Outcome.AFFIRMED.value
 
-    return Outcome.INDETERMINATE.value
+    return unreadable
 
 
 def _contains_negative_outcome(text: str, *, include_bare_did_not: bool = True) -> bool:
@@ -413,7 +430,7 @@ async def _run_standard_arm(
         actual_judge_calls = sum(1 for turn in turns if turn.role == Role.JUDGE)
 
     predicted_outcome = (
-        normalize_outcome(verdict.conclusion) if verdict else Outcome.INDETERMINATE.value
+        normalize_outcome(verdict.conclusion, unreadable=NO_VERDICT) if verdict else NO_VERDICT
     )
     outcome_correct = predicted_outcome == case.outcome.value
     confidence = verdict.confidence if verdict else None
@@ -581,7 +598,9 @@ async def _run_arm_e(
     duration = (datetime.now(UTC) - started).total_seconds()
     actual_judge_calls = 1 if judge_backend != "mock" else 0
 
-    predicted_outcome = normalize_outcome(verdict.conclusion if verdict else None)
+    predicted_outcome = normalize_outcome(
+        verdict.conclusion if verdict else None, unreadable=NO_VERDICT
+    )
     outcome_correct = predicted_outcome == case.outcome.value
     # The judge's confidence, as in arm B, not the samples' agreement rate. The
     # presenter argues for the proposition in every sample, so the vote has no
@@ -1026,7 +1045,8 @@ def build_parser() -> argparse.ArgumentParser:
         choices=list(TIERS),
         default="core",
         help="Which cases to run (ADR 0012): core (the scored three, default), "
-        "stretch (only with quota left over), or all.",
+        "stretch (only with quota left over), extended (the fourteen that take the set "
+        "to twenty), or all. A case outside core needs its tier: --tier all --case ID.",
     )
     parser.add_argument(
         "--case",

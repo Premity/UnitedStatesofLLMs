@@ -126,7 +126,8 @@ Scored against adjudicated cases where a tribunal's holding is the ground truth:
 - **Attacker independence** — do the two attackers actually raise different objections?
 
 The scored evaluation is **three cases**, plus one stretch case
-([ADR 0012](docs/adr/0012-three-case-evaluation.md)). That shows the method
+([ADR 0012](docs/adr/0012-three-case-evaluation.md)). The case set has since
+grown to twenty, five of them fictional so no model can recall the outcome. That shows the method
 running end to end and what each arm did on each case. It cannot show a
 statistical difference between arms, and the
 [write-up](evaluation/reports/write-up.md) does not claim one.
@@ -144,18 +145,30 @@ make setup            # env file, Python deps, git hooks
 # fill in GROQ_API_KEY and OPENROUTER_API_KEY in .env
 
 make up               # start the stack (Qdrant, API, frontend)
-make fetch            # the corpus: 24 documents, ~30 seconds
-make index-local      # embed and index -- SLOW, see below
+make import-index FILE=path/to/ihl-index-<hash>.tar   # the shared index, see below
+docker compose restart api                            # it reads the index at startup
 make doctor           # confirm the result
 ```
 
 Then open **http://localhost:3000**.
 
-**`make index-local` takes around 45 minutes** and is the only slow step. It
-embeds ~2,200 spans with a 1.2GB model, which on a 16GB machine is enough to
-get something OOM-killed, so it runs under a memory cap — the job dies rather
-than your editor. Raise it with `MEM_CAP=6G` if the job is what gets killed.
-Safe to interrupt and re-run: it overwrites rather than duplicating.
+**The index comes from a teammate**, as an index kit (`ihl-index-kit-<hash>.zip`)
+sent privately because it holds corpus text. Importing it gives your machine the
+same index as everyone else's, which the evaluation requires
+([ADR 0014](docs/adr/0014-shared-index-bundles.md)); `make index-status` prints
+the fingerprint to compare.
+
+**Or build it yourself** with `make fetch && make index-local`. The fetch takes
+about 30 seconds; **the index takes around 45 minutes**. It embeds 3,482 spans
+with a 1.2GB model, which on a 16GB machine is enough to get something
+OOM-killed, so it runs under a memory cap — the job dies rather than your
+editor. Raise it with `MEM_CAP=6G` if the job is what gets killed. Safe to
+interrupt and re-run: it overwrites rather than duplicating. Don't use a
+self-built index for evaluation runs.
+
+**After pulling changes, `make build` before `make up`** if dependencies or the
+frontend's build config changed: `make up` does not rebuild images, and only the
+frontend's `src/` is mounted live.
 
 `make doctor` is read-only and tells you what is set up, what is missing, and
 what to run next. Reach for it whenever something behaves oddly.
@@ -164,11 +177,12 @@ Run `make help` for everything else.
 
 ### Project status
 
-**This is a scaffold under active construction.** The domain model, debate
-graph, roles, API, frontend and corpus pipeline are written and have run end to
-end against live models. The scored run is done: all five arms on the three
-core cases and one stretch case, written up in
-[evaluation/reports/write-up.md](evaluation/reports/write-up.md).
+**Built, and evaluated on a small case set.** The domain model, debate graph,
+roles, API, frontend and corpus pipeline are written and have run end to end
+against live models. The scored run is done: all five arms on the three core
+cases and one stretch case, written up in
+[evaluation/reports/write-up.md](evaluation/reports/write-up.md). Left: reasoning
+overlap scored by hand (#27), and the twenty-case `extended` tier, not yet run.
 
 | Area | State |
 | --- | --- |
@@ -177,23 +191,22 @@ core cases and one stretch case, written up in
 | Frontend courtroom, record, replay, theming | Written, tested, run against a live stream |
 | Corpus fetcher and indexer | Written, tested, run |
 | Evaluation metrics | Written, tested |
-| Evaluation harness runner and report | Written, tested; the scored run done on 4 cases |
+| Evaluation harness runner and report | Written, tested; the scored run done on 4 of the 20 cases |
 | Arm E, the compute-matched control | Written, tested, run live; its confidence is now its judge's (ADR 0011, amended) |
 
 The corpus is a **per-machine build artifact**: `data/cache/` and `data/index/`
 are gitignored, so the corpus travels as manifests and each machine resolves
 against whatever it last fetched. A fresh clone gets the 24-article placeholder
-`make setup` copies from `corpus/stub/`, and `make corpus` fetches the real one.
+`make setup` copies from `corpus/stub/`; importing the index kit, or
+`make corpus`, replaces it with the real one.
 
 A machine that has not fetched resolves most citations as `out_of_corpus` — the
 index being small, not a model inventing authority. `make doctor` reports what
 the local index actually holds.
 
 Building on this? Start with
-**[docs/planning/onboarding.md](docs/planning/onboarding.md)**, then pick up a
-task from the
-[implementation plan](docs/planning/implementation-plan.md). Open items are in
-[ISSUES.md](ISSUES.md).
+**[docs/planning/onboarding.md](docs/planning/onboarding.md)**. Open items are
+in [ISSUES.md](ISSUES.md) and the GitHub issues.
 
 ---
 
@@ -260,8 +273,8 @@ nobody downloads CUDA fifteen times. The three Python services still share a
 `council-base` image holding the pinned runtime, `uv` and `council-core`, built
 once and reused. ([ADR 0001](docs/adr/0001-no-torch-fastembed.md))
 
-**Every model behind one gateway.** LiteLLM means switching the attackers from
-local Ollama to Cloudflare Workers AI for a hosted demo is an env-var change,
+**Every model behind one gateway.** LiteLLM means moving a role between
+providers — Groq, OpenRouter, or a local Ollama model — is an env-var change,
 not a code change. ([ADR 0002](docs/adr/0002-litellm-model-gateway.md))
 
 ---
@@ -274,9 +287,9 @@ not a code change. ([ADR 0002](docs/adr/0002-litellm-model-gateway.md))
 | Document | What it covers |
 | --- | --- |
 | [docs/planning/onboarding.md](docs/planning/onboarding.md) | **Start here** — what works today, how to run it, how to pick up work |
-| [docs/planning/implementation-plan.md](docs/planning/implementation-plan.md) | The five tracks, every task, what blocks what |
-| [docs/planning/timeline.md](docs/planning/timeline.md) | Three-week schedule, the quota constraint, what gets cut |
-| [docs/planning/fixtures-guide.md](docs/planning/fixtures-guide.md) | How to write an evaluation case without leaking the holding |
+| [docs/planning/implementation-plan.md](docs/planning/implementation-plan.md) | How the build was planned: five tracks, every task (historical) |
+| [docs/planning/timeline.md](docs/planning/timeline.md) | The original three-week schedule and quota arithmetic (historical) |
+| [evaluation/cases/README.md](evaluation/cases/README.md) | How to write an evaluation case, real or fictional, without leaking the holding |
 | [docs/system-design.md](docs/system-design.md) | **Full system design** — requirements, components, data flow, failure modes |
 | [docs/architecture.md](docs/architecture.md) | Narrative walkthrough of the debate graph |
 | [docs/development.md](docs/development.md) | Every command, the dev loop, troubleshooting |
@@ -287,7 +300,7 @@ not a code change. ([ADR 0002](docs/adr/0002-litellm-model-gateway.md))
 | [docs/api-contract.md](docs/api-contract.md) | Endpoints, SSE event shapes |
 | [docs/adr/](docs/adr/) | Why the significant decisions went the way they did |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Branching, commit format, PR process |
-| [ISSUES.md](ISSUES.md) | What is not built yet |
+| [ISSUES.md](ISSUES.md) | What is left, and what went wrong on the way |
 
 ---
 

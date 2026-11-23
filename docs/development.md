@@ -69,7 +69,13 @@ make prod-up     # prod
 ```
 
 In dev, `runtime/api/app`, `prompts/`, and `council_core` are bind-mounted, so
-editing Python or a prompt template reloads the server in place.
+editing Python or a prompt template reloads the server in place. For the
+frontend only `src/`, `public/` and `index.html` are mounted; its build config
+and dependencies are baked into the image.
+
+**`make up` does not rebuild images.** After pulling a change to dependencies,
+a Dockerfile, or the frontend's `tailwind.config.ts` or `package.json`, run
+`make build` first.
 
 ---
 
@@ -189,6 +195,12 @@ in every stored run artifact that referenced it.
 **`council-base: image not found`**
 Run `make build-base`. Every service inherits from it. `make up` does this
 automatically; a bare `docker compose build` does not.
+
+**The frontend looks wrong after a pull** (for example, light mode shows dark
+backgrounds with light-theme text)
+The frontend image is older than the code: `tailwind.config.ts` and
+`package.json` are baked in, not mounted, so `make up` keeps serving the old
+build. `make build && make up`, then hard-refresh the browser.
 
 **`InvalidUpdateError: Can receive only one value per step`**
 A parallel node returned the full state instead of just its own keys. Both

@@ -553,7 +553,7 @@ describe("a second round's ruling", () => {
     const transcript = screen.getByRole("region", { name: "Transcript" });
     const silent = within(transcript)
       .getAllByRole("article")
-      .find((card) => card.textContent?.includes("Round 2 · gemma3:12b"));
+      .find((card) => card.textContent?.includes("Round 2 · gpt-oss-20b"));
 
     expect(silent).toBeDefined();
     expect(within(silent!).getByText("Evidentiary Counsel")).toBeInTheDocument();
