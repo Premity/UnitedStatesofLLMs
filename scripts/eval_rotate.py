@@ -181,7 +181,15 @@ def pending_cases() -> list[str]:
 
 
 def is_rate_limit(text: str) -> bool:
+    """A key that has run out, as opposed to one request that can never fit.
+
+    Groq raises "Request too large ... tokens per minute" as a RateLimitError when a
+    single request exceeds the per-minute cap. Every key has the same cap, so resting
+    the key fixes nothing; it is an ordinary failure that spends one of the case's tries.
+    """
     lowered = text.lower()
+    if "request too large" in lowered:
+        return False
     return any(s in lowered for s in ("ratelimit", "rate limit", "rate_limit", "429"))
 
 
@@ -377,7 +385,7 @@ class Runner:
                         rest(self.state, g_name, until)
                         current["groq"] = None
                         say(
-                            f"{prefix}    {g_name} is out of quota; resting it until {until:%H:%M} UTC."
+                            f"{prefix}    {g_name} is out of quota; resting it until {until:%Y-%m-%d %H:%M} UTC."
                         )
                     save_state(self.state)
                 elif case_id not in pending_cases():
