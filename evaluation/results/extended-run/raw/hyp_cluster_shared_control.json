@@ -1,0 +1,157 @@
+{
+  "case_id": "hyp_cluster_shared_control",
+  "case_title": "Fictional: the Halvek Pass combined targeting cell",
+  "court": "Hypothetical",
+  "year": 2026,
+  "difficulty": "contested",
+  "arm": "raw",
+  "arm_label": "A — Single pass, no retrieval",
+  "run_id": "eval_d9f0be870f",
+  "question": "Did the Republic of Calvaro breach its obligations under the Convention on Cluster Munitions when its co-director of the combined targeting cell signed the tasking order for the strike near Halvek Pass?",
+  "facts": "An international armed conflict has existed since March 2025 between the Republic of Calvaro and the Federation of Drennick. The Kingdom of Sorvenia, which is not a party to the Convention on Cluster Munitions, entered the conflict as Calvaro's ally in June 2025. Calvaro has been a party to the Convention on Cluster Munitions since 2012; Drennick is not a party. Calvaro formally notified Sorvenia of its obligations under the Convention and urged it not to use cluster munitions. The two allies set up a Combined Air Targeting Cell co-directed by a Calvaran colonel and a Sorvenian colonel. Under the cell's written procedures, every tasking order, including the munition to be used, takes effect only when signed by both co-directors, and neither can change the munition alone. Only Sorvenian aircraft fly the cell's missions. On 3 October 2025 the Sorvenian co-director proposed a strike on a Drennick armoured column near Halvek Pass using air-delivered cluster munitions. The Calvaran co-director raised no objection to the munition and signed the tasking order, which specified cluster munitions. Sorvenian aircraft carried out the strike that day using cluster munitions.",
+  "ground_truth_outcome": "indeterminate",
+  "holding": "Authored ground truth for a fictional case; no tribunal has ruled on it. Indeterminate. Article 21(3) permits a State Party and its personnel to engage in military cooperation and operations with states not party that might engage in prohibited activities, but Article 21(4) does not authorise a State Party to itself use cluster munitions or to expressly request their use where the choice of munitions is within its exclusive control. Here the choice was jointly controlled, not within Calvaro's exclusive control, and Calvaro did not itself deliver the munitions, so Article 21(4)(c) and (d) are not clearly engaged. Whether co-signing an order that specifies cluster munitions is protected cooperation under Article 21(3), or is assistance or encouragement prohibited by Article 1(1)(c), depends on how the two provisions interact, which the text of the Convention does not resolve and on which states parties have taken differing positions.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": false,
+  "confidence": 0.85,
+  "confidence_reasoning": "The treaty obligation under Article 1(1)(c) is unambiguous and the facts show a direct, necessary act of assistance (the required signature) by a Calvaran official acting in an official capacity. The only reason confidence is not higher is the absence of retrieved corpus context to verify the exact treaty wording and any relevant interpretive guidance; the conclusion rests on the plain text of the Convention as widely published.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 2,
+  "citation_statuses": {
+    "total": 0,
+    "resolved": 0,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. The Republic of Calvaro breached its obligations under the Convention on Cluster Munitions when its co-director signed the tasking order authorizing the use of cluster munitions by Sorvenian aircraft.",
+    "reasoning": "No objections were filed against the three arguments presented. Arguments arg_9d71935d and arg_1d34d573 correctly identify the applicable legal standard: Article 1(1)(c) of the Convention on Cluster Munitions obligates States Parties never to 'assist, encourage or induce anyone to engage in any activity prohibited to a State Party under this Convention.' The prohibited activities include the use of cluster munitions (Art. 1(1)(a)). The facts establish that the Calvaran co-director's signature was a necessary condition for the strike to proceed — the written procedures required both co-directors to sign, and neither could change the munition alone. By signing the tasking order that specified cluster munitions, Calvaro directly assisted and authorized the prohibited use. The fact that Sorvenia is not a party to the Convention is immaterial; Article 1(1)(c) applies to 'anyone.' Argument arg_65f53e4b reaches the same conclusion but cites Article 4 (stockpile destruction) rather than the transfer prohibition in Article 1(1)(b); the facts do not show a physical transfer of munitions, so this argument is less well-grounded but does not affect the outcome. Because no corpus context was retrieved, this reasoning proceeds from principle based on the treaty text as generally known.",
+    "confidence": 0.85,
+    "confidence_reasoning": "The treaty obligation under Article 1(1)(c) is unambiguous and the facts show a direct, necessary act of assistance (the required signature) by a Calvaran official acting in an official capacity. The only reason confidence is not higher is the absence of retrieved corpus context to verify the exact treaty wording and any relevant interpretive guidance; the conclusion rests on the plain text of the Convention as widely published.",
+    "surviving_argument_ids": [
+      "arg_9d71935d",
+      "arg_1d34d573",
+      "arg_65f53e4b"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_9d71935d",
+      "claim": "Calvaro breached its obligation under Article 1 of the Convention on Cluster Munitions by authorising the use of cluster munitions through the co‑director’s signature on the tasking order.",
+      "reasoning": "Article 1 of the Convention imposes an absolute prohibition on the use of cluster munitions by State parties. The co‑director, acting as an official of Calvaro, signed the tasking order that expressly authorised the employment of cluster munitions by Sorvenian aircraft. By providing the necessary state‑level authorisation, Calvaro effectively facilitated the prohibited use, thereby breaching its treaty obligation. This analysis follows the principle that a State party is responsible for any act that it directly or indirectly causes, even where the actual firing is performed by a non‑party ally.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_1d34d573",
+      "claim": "The Convention’s obligations apply extraterritorially to Calvaro’s assistance to a non‑party ally, making Calvaro liable for the strike despite the weapons being launched by Sorvenian aircraft.",
+      "reasoning": "Customary international law on state responsibility holds that a State is responsible for internationally wrongful acts it aids, assists, or otherwise enables, even when the act is carried out by another State. The Convention’s purpose—to prevent the humanitarian impact of cluster munitions—has been interpreted to impose a duty on parties to ensure that their assistance does not result in the use of such weapons by others. Calvaro’s participation in the combined targeting cell and its co‑director’s signature constitute the requisite assistance, satisfying the test for state responsibility and thus constituting a breach of the Convention.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_65f53e4b",
+      "claim": "Calvaro violated Article 4 of the Convention on Cluster Munitions by effectively transferring cluster munitions to a non‑party State, Sorvenia, through the joint tasking process.",
+      "reasoning": "Article 4 prohibits the transfer of cluster munitions to non‑party States. While the physical munitions remained under Sorvenian control, the joint targeting cell’s procedural requirement that both co‑directors sign the tasking order created a legal conduit through which Calvaro authorised the deployment of its own stockpiled cluster munitions by a non‑party. This functional transfer—authorising the use of Calvaro’s munitions by another State—falls within the scope of the prohibition, constituting a breach of Article 4.",
+      "citations": [],
+      "resolved_citations": []
+    }
+  ],
+  "objections": [],
+  "context": [],
+  "turns": [
+    {
+      "id": "turn_d07f697a",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "2d5401a376733df771cf75e30d95f518445841bae92d0bf414d94c92e97787da",
+      "arguments": [
+        {
+          "id": "arg_9d71935d",
+          "claim": "Calvaro breached its obligation under Article 1 of the Convention on Cluster Munitions by authorising the use of cluster munitions through the co‑director’s signature on the tasking order.",
+          "reasoning": "Article 1 of the Convention imposes an absolute prohibition on the use of cluster munitions by State parties. The co‑director, acting as an official of Calvaro, signed the tasking order that expressly authorised the employment of cluster munitions by Sorvenian aircraft. By providing the necessary state‑level authorisation, Calvaro effectively facilitated the prohibited use, thereby breaching its treaty obligation. This analysis follows the principle that a State party is responsible for any act that it directly or indirectly causes, even where the actual firing is performed by a non‑party ally.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_1d34d573",
+          "claim": "The Convention’s obligations apply extraterritorially to Calvaro’s assistance to a non‑party ally, making Calvaro liable for the strike despite the weapons being launched by Sorvenian aircraft.",
+          "reasoning": "Customary international law on state responsibility holds that a State is responsible for internationally wrongful acts it aids, assists, or otherwise enables, even when the act is carried out by another State. The Convention’s purpose—to prevent the humanitarian impact of cluster munitions—has been interpreted to impose a duty on parties to ensure that their assistance does not result in the use of such weapons by others. Calvaro’s participation in the combined targeting cell and its co‑director’s signature constitute the requisite assistance, satisfying the test for state responsibility and thus constituting a breach of the Convention.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_65f53e4b",
+          "claim": "Calvaro violated Article 4 of the Convention on Cluster Munitions by effectively transferring cluster munitions to a non‑party State, Sorvenia, through the joint tasking process.",
+          "reasoning": "Article 4 prohibits the transfer of cluster munitions to non‑party States. While the physical munitions remained under Sorvenian control, the joint targeting cell’s procedural requirement that both co‑directors sign the tasking order created a legal conduit through which Calvaro authorised the deployment of its own stockpiled cluster munitions by a non‑party. This functional transfer—authorising the use of Calvaro’s munitions by another State—falls within the scope of the prohibition, constituting a breach of Article 4.",
+          "citations": [],
+          "resolved_citations": []
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"Calvaro breached its obligation under Article 1 of the Convention on Cluster Munitions by authorising the use of cluster munitions through the co‑director’s signature on the tasking order.\",\n      \"reasoning\": \"Article 1 of the Convention imposes an absolute prohibition on the use of cluster munitions by State parties. The co‑director, acting as an official of Calvaro, signed the tasking order that expressly authorised the employment of cluster munitions by Sorvenian aircraft. By providing the necessary state‑level authorisation, Calvaro effectively facilitated the prohibited use, thereby breaching its treaty obligation. This analysis follows the principle that a State party is responsible for any act that it directly or indirectly causes, even where the actual firing is performed by a non‑party ally.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The Convention’s obligations apply extraterritorially to Calvaro’s assistance to a non‑party ally, making Calvaro liable for the strike despite the weapons being launched by Sorvenian aircraft.\",\n      \"reasoning\": \"Customary international law on state responsibility holds that a State is responsible for internationally wrongful acts it aids, assists, or otherwise enables, even when the act is carried out by another State. The Convention’s purpose—to prevent the humanitarian impact of cluster munitions—has been interpreted to impose a duty on parties to ensure that their assistance does not result in the use of such weapons by others. Calvaro’s participation in the combined targeting cell and its co‑director’s signature constitute the requisite assistance, satisfying the test for state responsibility and thus constituting a breach of the Convention.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"Calvaro violated Article 4 of the Convention on Cluster Munitions by effectively transferring cluster munitions to a non‑party State, Sorvenia, through the joint tasking process.\",\n      \"reasoning\": \"Article 4 prohibits the transfer of cluster munitions to non‑party States. While the physical munitions remained under Sorvenian control, the joint targeting cell’s procedural requirement that both co‑directors sign the tasking order created a legal conduit through which Calvaro authorised the deployment of its own stockpiled cluster munitions by a non‑party. This functional transfer—authorising the use of Calvaro’s munitions by another State—falls within the scope of the prohibition, constituting a breach of Article 4.\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:50:26.061093Z",
+      "completed_at": "2026-11-23T00:50:28.590154Z",
+      "prompt_tokens": 1292,
+      "completion_tokens": 1079,
+      "error": null
+    },
+    {
+      "id": "turn_308aef01",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "969bf4c7a315eaa738a67ce4a48cf843132e7430fab529339f7bf11345e46e27",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The Republic of Calvaro breached its obligations under the Convention on Cluster Munitions when its co-director signed the tasking order authorizing the use of cluster munitions by Sorvenian aircraft.\", \"reasoning\": \"No objections were filed against the three arguments presented. Arguments arg_9d71935d and arg_1d34d573 correctly identify the applicable legal standard: Article 1(1)(c) of the Convention on Cluster Munitions obligates States Parties never to 'assist, encourage or induce anyone to engage in any activity prohibited to a State Party under this Convention.' The prohibited activities include the use of cluster munitions (Art. 1(1)(a)). The facts establish that the Calvaran co-director's signature was a necessary condition for the strike to proceed — the written procedures required both co-directors to sign, and neither could change the munition alone. By signing the tasking order that specified cluster munitions, Calvaro directly assisted and authorized the prohibited use. The fact that Sorvenia is not a party to the Convention is immaterial; Article 1(1)(c) applies to 'anyone.' Argument arg_65f53e4b reaches the same conclusion but cites Article 4 (stockpile destruction) rather than the transfer prohibition in Article 1(1)(b); the facts do not show a physical transfer of munitions, so this argument is less well-grounded but does not affect the outcome. Because no corpus context was retrieved, this reasoning proceeds from principle based on the treaty text as generally known.\", \"confidence\": 0.85, \"confidence_reasoning\": \"The treaty obligation under Article 1(1)(c) is unambiguous and the facts show a direct, necessary act of assistance (the required signature) by a Calvaran official acting in an official capacity. The only reason confidence is not higher is the absence of retrieved corpus context to verify the exact treaty wording and any relevant interpretive guidance; the conclusion rests on the plain text of the Convention as widely published.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_9d71935d\", \"arg_1d34d573\", \"arg_65f53e4b\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-23T00:50:28.594987Z",
+      "completed_at": "2026-11-23T00:50:52.546643Z",
+      "prompt_tokens": 2100,
+      "completion_tokens": 1602,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-23T00:50:52.547946+00:00",
+  "duration_seconds": 26.493052593024913,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}

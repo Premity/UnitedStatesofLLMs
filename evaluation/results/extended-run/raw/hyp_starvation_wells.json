@@ -1,0 +1,172 @@
+{
+  "case_id": "hyp_starvation_wells",
+  "case_title": "Fictional: the wells of the Velmir Valley",
+  "court": "Hypothetical",
+  "year": 2026,
+  "difficulty": "medium",
+  "arm": "raw",
+  "arm_label": "A — Single pass, no retrieval",
+  "run_id": "eval_0fbd9b513e",
+  "question": "Did the destruction of the wells and grain stores in the Velmir Valley violate the prohibition on destroying or rendering useless objects indispensable to the survival of the civilian population?",
+  "facts": "An international armed conflict has existed since March 2025 between the Republic of Calvaro and the Federation of Drennick, both parties to the four Geneva Conventions of 1949, Additional Protocol I and the Rome Statute. The Velmir Valley is Calvaran territory. Drennick forces occupied it from April to November 2025. About 6,000 villagers live in the valley and depend for drinking water on fourteen village wells and for food over the winter on communal grain stores. No Calvaran armed forces were present in the valley during the occupation, and the wells and stores were not used by any armed forces other than the occupying Drennick troops, who also drew supplies from their own logistics chain. On 20 November 2025, as Drennick forces withdrew ahead of a Calvaran advance, the Drennick brigade commander issued a written order: 'Fill or poison all wells and burn all grain stores in the valley before withdrawal. Nothing is to be left for those who return.' Drennick engineers poured diesel fuel into all fourteen wells and burned the grain stores. Advancing Calvaran units carried their own water in tanker vehicles. Villagers who returned in December found no usable drinking water in the valley. Drennick later stated that the destruction was required by imperative military necessity, to deny water to the advancing Calvaran forces.",
+  "ground_truth_outcome": "affirmed",
+  "holding": "Authored ground truth for a fictional case; no tribunal has ruled on it. Yes. Article 54(2) of Additional Protocol I prohibits destroying or rendering useless objects indispensable to the survival of the civilian population, such as drinking water installations and supplies and foodstuffs, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse party, whatever the motive. The wells and grain stores were such objects, and the written order shows the purpose of denying them to whoever returned. The exceptions in Article 54(3) do not apply: the objects were not used solely for the sustenance of the adverse party's armed forces, nor in direct support of military action. The derogation for imperative military necessity in Article 54(5) is available only to a party in the defence of its own national territory under its control; the Velmir Valley is Calvaran territory, so it is not available to Drennick. Customary Rule 54 leads to the same result.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": true,
+  "confidence": 0.9,
+  "confidence_reasoning": "The facts are undisputed and squarely fit the prohibition: civilian objects indispensable to survival, no military use by either side, deliberate destruction on withdrawal, and a written order evidencing intent to deny them to returning civilians. The military necessity claim is factually baseless because the advancing force carried its own water. This is a clear violation under treaty law (AP I Art. 54, Rome Statute Art. 8(2)(b)(xxv)) and customary IHL (Rule 54). Confidence is high because the factual predicates are uncontested and the legal rule is settled.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 2,
+  "citation_statuses": {
+    "total": 0,
+    "resolved": 0,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. The destruction of the wells and grain stores in the Velmir Valley violated the prohibition on destroying or rendering useless objects indispensable to the survival of the civilian population. The objects were civilian in character, essential for the survival of 6,000 villagers, and were not used for any military purpose by either party. The attacking force had its own logistics, and the advancing force carried its own water, negating any claim of concrete military advantage. The written order to 'fill or poison all wells and burn all grain stores' demonstrates specific intent to deprive the civilian population of these indispensable objects. No valid military necessity justification exists on these facts.",
+    "reasoning": "All four arguments survive unchallenged because no objections were filed. Arg_87d4a0d4 establishes the core violation: the wells and grain stores are objects indispensable to civilian survival and were deliberately destroyed. Arg_d020489f defeats the military necessity defense by showing the objects were not used for military operations and the advancing forces had independent water supplies, so no concrete military advantage was gained. Arg_ed209428 confirms the violation of the principle of distinction. Arg_9fa178f7 establishes individual criminal responsibility of the brigade commander. I reason from principle because the retrieved context contains no corpus authority; all citations would be unsupported.",
+    "confidence": 0.9,
+    "confidence_reasoning": "The facts are undisputed and squarely fit the prohibition: civilian objects indispensable to survival, no military use by either side, deliberate destruction on withdrawal, and a written order evidencing intent to deny them to returning civilians. The military necessity claim is factually baseless because the advancing force carried its own water. This is a clear violation under treaty law (AP I Art. 54, Rome Statute Art. 8(2)(b)(xxv)) and customary IHL (Rule 54). Confidence is high because the factual predicates are uncontested and the legal rule is settled.",
+    "surviving_argument_ids": [
+      "arg_87d4a0d4",
+      "arg_d020489f",
+      "arg_ed209428",
+      "arg_9fa178f7"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_87d4a0d4",
+      "claim": "The deliberate poisoning of all fourteen wells and the burning of the communal grain stores constitute a violation of the prohibition on attacking objects indispensable to the survival of the civilian population.",
+      "reasoning": "Under the core principles of international humanitarian law, objects such as water sources and food stores that are essential for civilian survival are protected from attack unless they are being used for military purposes. The wells and grain stores in the Velmir Valley were not used by Drennick forces for any military purpose and were the sole source of drinking water and winter food for 6,000 civilians. Their destruction therefore breaches the rule that forbids making such objects useless for the civilian population.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_d020489f",
+      "claim": "The destruction cannot be justified by the doctrine of imperative military necessity because the wells and grain stores were not being used to support Drennick’s military operations.",
+      "reasoning": "The principle of military necessity permits attacks only when they are directed at a legitimate military objective and are required to achieve a concrete military advantage. Here, the occupying forces relied on their own logistics and did not depend on the wells or grain stores for any operational need. Consequently, there was no concrete military advantage to be gained by destroying these objects, rendering the claimed necessity unfounded.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_ed209428",
+      "claim": "The order to ‘fill or poison all wells and burn all grain stores’ violates the principle of distinction, which obliges parties to differentiate between military objectives and civilian objects.",
+      "reasoning": "Distinction requires that attacks be directed solely at military objectives. The wells and grain stores are civilian objects; they were not being used for any military purpose and were essential for the civilian population’s survival. Issuing an order to destroy them indiscriminately demonstrates a failure to make the required distinction, thereby breaching this fundamental rule of IHL.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_9fa178f7",
+      "claim": "The brigade commander bears individual criminal responsibility under the doctrine of command responsibility for ordering the unlawful destruction of civilian objects.",
+      "reasoning": "Command responsibility imposes liability on superiors who knew or should have known about the commission of war crimes by subordinates and failed to prevent or punish such acts. The commander issued a written order explicitly directing the poisoning of wells and burning of grain stores, fully aware that these actions would deprive civilians of essential resources. His direct involvement satisfies the knowledge and control elements required for command responsibility.",
+      "citations": [],
+      "resolved_citations": []
+    }
+  ],
+  "objections": [],
+  "context": [],
+  "turns": [
+    {
+      "id": "turn_a50c9e9a",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "e84bc4670109de255e1600e9b7e7f5f102264072f25fdc59edc9b4a54c550310",
+      "arguments": [
+        {
+          "id": "arg_87d4a0d4",
+          "claim": "The deliberate poisoning of all fourteen wells and the burning of the communal grain stores constitute a violation of the prohibition on attacking objects indispensable to the survival of the civilian population.",
+          "reasoning": "Under the core principles of international humanitarian law, objects such as water sources and food stores that are essential for civilian survival are protected from attack unless they are being used for military purposes. The wells and grain stores in the Velmir Valley were not used by Drennick forces for any military purpose and were the sole source of drinking water and winter food for 6,000 civilians. Their destruction therefore breaches the rule that forbids making such objects useless for the civilian population.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_d020489f",
+          "claim": "The destruction cannot be justified by the doctrine of imperative military necessity because the wells and grain stores were not being used to support Drennick’s military operations.",
+          "reasoning": "The principle of military necessity permits attacks only when they are directed at a legitimate military objective and are required to achieve a concrete military advantage. Here, the occupying forces relied on their own logistics and did not depend on the wells or grain stores for any operational need. Consequently, there was no concrete military advantage to be gained by destroying these objects, rendering the claimed necessity unfounded.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_ed209428",
+          "claim": "The order to ‘fill or poison all wells and burn all grain stores’ violates the principle of distinction, which obliges parties to differentiate between military objectives and civilian objects.",
+          "reasoning": "Distinction requires that attacks be directed solely at military objectives. The wells and grain stores are civilian objects; they were not being used for any military purpose and were essential for the civilian population’s survival. Issuing an order to destroy them indiscriminately demonstrates a failure to make the required distinction, thereby breaching this fundamental rule of IHL.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_9fa178f7",
+          "claim": "The brigade commander bears individual criminal responsibility under the doctrine of command responsibility for ordering the unlawful destruction of civilian objects.",
+          "reasoning": "Command responsibility imposes liability on superiors who knew or should have known about the commission of war crimes by subordinates and failed to prevent or punish such acts. The commander issued a written order explicitly directing the poisoning of wells and burning of grain stores, fully aware that these actions would deprive civilians of essential resources. His direct involvement satisfies the knowledge and control elements required for command responsibility.",
+          "citations": [],
+          "resolved_citations": []
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The deliberate poisoning of all fourteen wells and the burning of the communal grain stores constitute a violation of the prohibition on attacking objects indispensable to the survival of the civilian population.\",\n      \"reasoning\": \"Under the core principles of international humanitarian law, objects such as water sources and food stores that are essential for civilian survival are protected from attack unless they are being used for military purposes. The wells and grain stores in the Velmir Valley were not used by Drennick forces for any military purpose and were the sole source of drinking water and winter food for 6,000 civilians. Their destruction therefore breaches the rule that forbids making such objects useless for the civilian population.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The destruction cannot be justified by the doctrine of imperative military necessity because the wells and grain stores were not being used to support Drennick’s military operations.\",\n      \"reasoning\": \"The principle of military necessity permits attacks only when they are directed at a legitimate military objective and are required to achieve a concrete military advantage. Here, the occupying forces relied on their own logistics and did not depend on the wells or grain stores for any operational need. Consequently, there was no concrete military advantage to be gained by destroying these objects, rendering the claimed necessity unfounded.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The order to ‘fill or poison all wells and burn all grain stores’ violates the principle of distinction, which obliges parties to differentiate between military objectives and civilian objects.\",\n      \"reasoning\": \"Distinction requires that attacks be directed solely at military objectives. The wells and grain stores are civilian objects; they were not being used for any military purpose and were essential for the civilian population’s survival. Issuing an order to destroy them indiscriminately demonstrates a failure to make the required distinction, thereby breaching this fundamental rule of IHL.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The brigade commander bears individual criminal responsibility under the doctrine of command responsibility for ordering the unlawful destruction of civilian objects.\",\n      \"reasoning\": \"Command responsibility imposes liability on superiors who knew or should have known about the commission of war crimes by subordinates and failed to prevent or punish such acts. The commander issued a written order explicitly directing the poisoning of wells and burning of grain stores, fully aware that these actions would deprive civilians of essential resources. His direct involvement satisfies the knowledge and control elements required for command responsibility.\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:58:15.402168Z",
+      "completed_at": "2026-11-23T00:58:17.588455Z",
+      "prompt_tokens": 1291,
+      "completion_tokens": 924,
+      "error": null
+    },
+    {
+      "id": "turn_79b36f71",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "fc93a45665c0330daab8dcf8270c704b43c39eb38ecd049122c7f94f035f9d22",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The destruction of the wells and grain stores in the Velmir Valley violated the prohibition on destroying or rendering useless objects indispensable to the survival of the civilian population. The objects were civilian in character, essential for the survival of 6,000 villagers, and were not used for any military purpose by either party. The attacking force had its own logistics, and the advancing force carried its own water, negating any claim of concrete military advantage. The written order to 'fill or poison all wells and burn all grain stores' demonstrates specific intent to deprive the civilian population of these indispensable objects. No valid military necessity justification exists on these facts.\", \"reasoning\": \"All four arguments survive unchallenged because no objections were filed. Arg_87d4a0d4 establishes the core violation: the wells and grain stores are objects indispensable to civilian survival and were deliberately destroyed. Arg_d020489f defeats the military necessity defense by showing the objects were not used for military operations and the advancing forces had independent water supplies, so no concrete military advantage was gained. Arg_ed209428 confirms the violation of the principle of distinction. Arg_9fa178f7 establishes individual criminal responsibility of the brigade commander. I reason from principle because the retrieved context contains no corpus authority; all citations would be unsupported.\", \"confidence\": 0.9, \"confidence_reasoning\": \"The facts are undisputed and squarely fit the prohibition: civilian objects indispensable to survival, no military use by either side, deliberate destruction on withdrawal, and a written order evidencing intent to deny them to returning civilians. The military necessity claim is factually baseless because the advancing force carried its own water. This is a clear violation under treaty law (AP I Art. 54, Rome Statute Art. 8(2)(b)(xxv)) and customary IHL (Rule 54). Confidence is high because the factual predicates are uncontested and the legal rule is settled.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_87d4a0d4\", \"arg_d020489f\", \"arg_ed209428\", \"arg_9fa178f7\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-23T00:58:17.593439Z",
+      "completed_at": "2026-11-23T00:58:31.307179Z",
+      "prompt_tokens": 2123,
+      "completion_tokens": 1310,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-23T00:58:31.308579+00:00",
+  "duration_seconds": 15.913141204975545,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}

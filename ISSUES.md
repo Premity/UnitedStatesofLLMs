@@ -18,15 +18,26 @@ local citation status.
 
 ## What is left, in order
 
-Updated 2026-11-20. The scored run is done (GitHub #26): all five arms on the
+Updated 2026-11-24. The scored run is done (GitHub #26): all five arms on the
 three core cases and the stretch case Mrkšić, on the frozen settings. The
 reports and write-up are in `evaluation/reports/`, the results in
 `evaluation/results/scored-run/`.
 
+The `extended` tier has run too, on the same frozen settings: all fourteen
+cases, results in `evaluation/results/extended-run/`, and an eighteen-case
+report in `evaluation/reports/evaluation-report-eighteen-cases.md`. The three
+errors are arm E on Nuclear Weapons, Halilović and Bošković. One request in
+each was over the 8,000-tokens-per-minute cap on Groq's free tier, and every
+free key has that cap, so the arms are recorded as errors.
+
+The other two stretch cases, Martić and Strugar, were attempted and are not
+counted. On both, arm D's request was over the same cap, which leaves fewer
+than five arms, and a stretch case counts only when all five complete
+(ADR 0012).
+
 | # | Item | Why it is where it is |
 | --- | --- | --- |
 | 1 | **Reasoning overlap, by hand** | The rubric, the scores file and the report column are in place; the 15 core results are now there to score. GitHub #27 |
-| 2 | **Run the `extended` case tier** | Fourteen cases, five fictional, take the set to twenty (ADR 0012, amended); none has results yet. Same frozen settings, same runbook |
 
 The run changed one thing after it: arm E's confidence is its judge's, not the
 samples' agreement rate, which measured nothing (ADR 0011, amended). The four E

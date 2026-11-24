@@ -1,0 +1,1851 @@
+{
+  "case_id": "icc_ntaganda_own_forces",
+  "case_title": "Prosecutor v. Bosco Ntaganda — rape and sexual slavery within the same armed group",
+  "court": "ICC",
+  "year": 2017,
+  "difficulty": "contested",
+  "arm": "full_council",
+  "arm_label": "D — Full council",
+  "run_id": "eval_f825b5d659",
+  "question": "Can members of an armed group be victims of the war crimes of rape and sexual slavery under Article 8(2)(e)(vi) of the Rome Statute when the crimes are committed against them by members of the same armed group?",
+  "facts": "The accused was charged with crimes committed during a non-international armed conflict in Ituri, in the Democratic Republic of the Congo, by the Union des Patriotes Congolais/Forces Patriotiques pour la Libération du Congo (UPC/FPLC). Two counts charged the rape and the sexual slavery of UPC/FPLC child soldiers, as war crimes under Article 8(2)(e)(vi) of the Rome Statute; the alleged victims were members of the UPC/FPLC and the alleged perpetrators were also members of the UPC/FPLC. The defence challenged the Court's jurisdiction over these counts, arguing that under the established framework of international law, members of an armed group are not protected against crimes committed by their own group, and that a member of an armed force attains protection only on ceasing to be a member, laying down arms or being placed hors de combat. A Trial Chamber held that the Court had jurisdiction, and the defence appealed.",
+  "ground_truth_outcome": "affirmed",
+  "holding": "In its Judgment of 15 June 2017, the ICC Appeals Chamber unanimously confirmed the Trial Chamber's decision that the Court has jurisdiction over the two counts. Members of an armed force or group are not categorically excluded from protection against the war crimes of rape and sexual slavery under Article 8(2)(b)(xxii) and (e)(vi); there are no requirements that victims be protected persons in the sense of the grave breaches provisions or persons taking no active part in hostilities under Common Article 3. It is the nexus requirement, that the conduct took place in the context of and was associated with an armed conflict, that delineates war crimes from ordinary crimes.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": true,
+  "confidence": 0.85,
+  "confidence_reasoning": "The conclusion rests on the unambiguous text of Article 8(2)(e)(vi) and the structural contrast with Article 8(2)(c), both present in the retrieved context. No citation is missing or fabricated. The evidentiary objections are legally irrelevant to the certified question, and the doctrinal objections only eliminate a flawed supporting argument, not the correct ones. Confidence is not 0.9+ because the “also constituting” clause could be read by some tribunals as importing Common Article 3’s personal scope, though the better reading and subsequent ICC jurisprudence (not in the corpus) reject that view.",
+  "rounds": 2,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 2,
+  "total_calls": 8,
+  "citation_statuses": {
+    "total": 17,
+    "resolved": 17,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. Members of an armed group can be victims of the war crimes of rape and sexual slavery under Article 8(2)(e)(vi) of the Rome Statute when the crimes are committed by members of the same armed group. Article 8(2)(e)(vi) criminalises the acts of rape, sexual slavery, and other forms of sexual violence without conditioning the offence on the victim’s status, membership, or cessation of hostilities. The provision’s reference to acts “also constituting a serious violation of article 3 common to the four Geneva Conventions” describes the gravity and nature of the prohibited conduct, not the personal scope of protection. This reading is confirmed by the Statute’s structure: Article 8(2)(c) expressly limits its reach to “persons taking no active part in the hostilities,” while Article 8(2)(e)(vi) contains no such limitation. The defence’s “cessation-of-membership” requirement finds no support in the text.",
+    "reasoning": "The surviving arguments (arg_85914ed0, arg_297dbb5b, arg_4282101b, arg_3d3f2ad3, arg_1274977f, arg_83c5a8b5) correctly rely on the plain text of Article 8(2)(e)(vi), which enumerates rape and sexual slavery as standalone war crimes in non-international armed conflicts without any victim-status qualifier. The sustained doctrinal objections (obj_0a53e8d3, obj_cbefa4e9) properly expose the flaw in arg_fe9343e9, which erroneously imported the “active participation” test from Article 8(2)(c) and cited a provision that does not list sexual violence. The evidentiary objections (obj_8b78ad00, obj_15a7a82d, obj_84aae146, obj_2dcf2146, obj_09f4f057, obj_60c2982f, obj_91c54416) are overruled because the question presented is a pure issue of statutory interpretation — whether the Rome Statute permits such victims — not a factual determination of whether the alleged acts occurred. At the jurisdictional and legal-sufficiency stage, the charges as pleaded are taken as true.",
+    "confidence": 0.85,
+    "confidence_reasoning": "The conclusion rests on the unambiguous text of Article 8(2)(e)(vi) and the structural contrast with Article 8(2)(c), both present in the retrieved context. No citation is missing or fabricated. The evidentiary objections are legally irrelevant to the certified question, and the doctrinal objections only eliminate a flawed supporting argument, not the correct ones. Confidence is not 0.9+ because the “also constituting” clause could be read by some tribunals as importing Common Article 3’s personal scope, though the better reading and subsequent ICC jurisprudence (not in the corpus) reject that view.",
+    "surviving_argument_ids": [
+      "arg_85914ed0",
+      "arg_297dbb5b",
+      "arg_4282101b",
+      "arg_3d3f2ad3",
+      "arg_1274977f",
+      "arg_83c5a8b5"
+    ],
+    "dissent": [
+      {
+        "id": "obj_8b78ad00",
+        "raised_by": "attacker_evidentiary",
+        "target_argument_id": "arg_85914ed0",
+        "ground": "The record does not provide evidence that the alleged acts were rape or sexual slavery.",
+        "reasoning": "The facts as given state only that the accused was charged with rape and sexual slavery; they do not describe any conduct that would demonstrate the acts actually occurred. Without such evidence, the argument that these acts are war crimes cannot be substantiated.",
+        "citations": [],
+        "resolved_citations": [],
+        "severity": "fatal",
+        "disposition": "overruled",
+        "disposition_reasoning": "The objection demands evidentiary proof that the acts occurred, but the certified question is a legal one: whether the Rome Statute permits members of an armed group to be victims of the enumerated crimes. At the jurisdictional and legal-sufficiency stage, the charges as pleaded are assumed true; factual proof is for trial."
+      },
+      {
+        "id": "obj_15a7a82d",
+        "raised_by": "attacker_evidentiary",
+        "target_argument_id": "arg_fe9343e9",
+        "ground": "The record does not establish that the child soldiers were compelled to serve or were not taking an active part in hostilities.",
+        "reasoning": "The facts identify the alleged victims as UPC/FPLC child soldiers but provide no information on whether they were forced to serve or whether they were actively participating in hostilities. Therefore the claim that they fall under the protection of Article 8(2)(c) lacks factual support.",
+        "citations": [],
+        "resolved_citations": [],
+        "severity": "fatal",
+        "disposition": "overruled",
+        "disposition_reasoning": "Like the preceding evidentiary objections, this demands factual findings about the victims’ status that are irrelevant to the pure legal question of statutory scope. Moreover, the argument it targets (arg_fe9343e9) is already undermined by sustained doctrinal objections."
+      },
+      {
+        "id": "obj_84aae146",
+        "raised_by": "attacker_evidentiary",
+        "target_argument_id": "arg_1274977f",
+        "ground": "The record does not establish that the alleged acts constitute rape or sexual slavery.",
+        "reasoning": "As with the first objection, the facts only mention the charges; no description or evidence of the alleged conduct is provided. Consequently, the war‑crime element required by Article 5(1)(c) cannot be proven from the record.",
+        "citations": [],
+        "resolved_citations": [],
+        "severity": "fatal",
+        "disposition": "overruled",
+        "disposition_reasoning": "The objection repeats the evidentiary challenge already overruled. The war-crime element for jurisdictional purposes is satisfied by the allegation of conduct falling within Article 8(2)(e)(vi); factual verification is not required at this stage."
+      },
+      {
+        "id": "obj_2dcf2146",
+        "raised_by": "attacker_evidentiary",
+        "target_argument_id": "arg_85914ed0",
+        "ground": "The facts do not establish that the alleged acts were actually rape and sexual slavery.",
+        "reasoning": "The record only states that the accused was charged with rape and sexual slavery; it provides no evidence that the acts occurred, so the factual predicate that the conduct was rape/sexual slavery is not satisfied.",
+        "citations": [
+          {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vi)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          }
+        ],
+        "resolved_citations": [
+          {
+            "citation": {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vi)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            "status": "resolved",
+            "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+            "note": null
+          }
+        ],
+        "severity": "material",
+        "disposition": "overruled",
+        "disposition_reasoning": "Duplicate of obj_8b78ad00; same reasoning applies."
+      },
+      {
+        "id": "obj_09f4f057",
+        "raised_by": "attacker_evidentiary",
+        "target_argument_id": "arg_fe9343e9",
+        "ground": "The facts do not establish that the child soldiers were not taking an active part in hostilities.",
+        "reasoning": "The record only identifies the victims as child soldiers forced to serve; it does not provide evidence that they were inactive or that they were taking no active part in hostilities, which is required for the protection under Article 8(2)(c).",
+        "citations": [
+          {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          }
+        ],
+        "resolved_citations": [
+          {
+            "citation": {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            "status": "resolved",
+            "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+            "note": null
+          }
+        ],
+        "severity": "material",
+        "disposition": "overruled",
+        "disposition_reasoning": "Duplicate of obj_15a7a82d; same reasoning applies."
+      },
+      {
+        "id": "obj_60c2982f",
+        "raised_by": "attacker_evidentiary",
+        "target_argument_id": "arg_1274977f",
+        "ground": "The facts do not establish that the alleged conduct satisfies the war‑crime element.",
+        "reasoning": "The alleged conduct is defined only by the charges of rape and sexual slavery; there is no evidence in the record that these acts actually occurred, so the factual predicate that the conduct meets the war‑crime element is not met.",
+        "citations": [
+          {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vi)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          }
+        ],
+        "resolved_citations": [
+          {
+            "citation": {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vi)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            "status": "resolved",
+            "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+            "note": null
+          }
+        ],
+        "severity": "material",
+        "disposition": "overruled",
+        "disposition_reasoning": "Duplicate of obj_84aae146; same reasoning applies."
+      },
+      {
+        "id": "obj_91c54416",
+        "raised_by": "attacker_evidentiary",
+        "target_argument_id": "arg_83c5a8b5",
+        "ground": "The facts do not establish that the alleged conduct is a war crime.",
+        "reasoning": "Like the previous argument, this relies on the existence of rape or sexual slavery; the record only alleges the charges and does not provide evidence that the acts actually took place, so the factual predicate that the conduct is a war crime is not satisfied.",
+        "citations": [
+          {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vi)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          }
+        ],
+        "resolved_citations": [
+          {
+            "citation": {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vi)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            "status": "resolved",
+            "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+            "note": null
+          }
+        ],
+        "severity": "material",
+        "disposition": "overruled",
+        "disposition_reasoning": "Duplicate of obj_84aae146 and obj_60c2982f; same reasoning applies."
+      }
+    ]
+  },
+  "dissent": [
+    {
+      "id": "obj_8b78ad00",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_85914ed0",
+      "ground": "The record does not provide evidence that the alleged acts were rape or sexual slavery.",
+      "reasoning": "The facts as given state only that the accused was charged with rape and sexual slavery; they do not describe any conduct that would demonstrate the acts actually occurred. Without such evidence, the argument that these acts are war crimes cannot be substantiated.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "fatal",
+      "disposition": "overruled",
+      "disposition_reasoning": "The objection demands evidentiary proof that the acts occurred, but the certified question is a legal one: whether the Rome Statute permits members of an armed group to be victims of the enumerated crimes. At the jurisdictional and legal-sufficiency stage, the charges as pleaded are assumed true; factual proof is for trial."
+    },
+    {
+      "id": "obj_15a7a82d",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_fe9343e9",
+      "ground": "The record does not establish that the child soldiers were compelled to serve or were not taking an active part in hostilities.",
+      "reasoning": "The facts identify the alleged victims as UPC/FPLC child soldiers but provide no information on whether they were forced to serve or whether they were actively participating in hostilities. Therefore the claim that they fall under the protection of Article 8(2)(c) lacks factual support.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "fatal",
+      "disposition": "overruled",
+      "disposition_reasoning": "Like the preceding evidentiary objections, this demands factual findings about the victims’ status that are irrelevant to the pure legal question of statutory scope. Moreover, the argument it targets (arg_fe9343e9) is already undermined by sustained doctrinal objections."
+    },
+    {
+      "id": "obj_84aae146",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_1274977f",
+      "ground": "The record does not establish that the alleged acts constitute rape or sexual slavery.",
+      "reasoning": "As with the first objection, the facts only mention the charges; no description or evidence of the alleged conduct is provided. Consequently, the war‑crime element required by Article 5(1)(c) cannot be proven from the record.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "fatal",
+      "disposition": "overruled",
+      "disposition_reasoning": "The objection repeats the evidentiary challenge already overruled. The war-crime element for jurisdictional purposes is satisfied by the allegation of conduct falling within Article 8(2)(e)(vi); factual verification is not required at this stage."
+    },
+    {
+      "id": "obj_2dcf2146",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_85914ed0",
+      "ground": "The facts do not establish that the alleged acts were actually rape and sexual slavery.",
+      "reasoning": "The record only states that the accused was charged with rape and sexual slavery; it provides no evidence that the acts occurred, so the factual predicate that the conduct was rape/sexual slavery is not satisfied.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vi)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vi)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "overruled",
+      "disposition_reasoning": "Duplicate of obj_8b78ad00; same reasoning applies."
+    },
+    {
+      "id": "obj_09f4f057",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_fe9343e9",
+      "ground": "The facts do not establish that the child soldiers were not taking an active part in hostilities.",
+      "reasoning": "The record only identifies the victims as child soldiers forced to serve; it does not provide evidence that they were inactive or that they were taking no active part in hostilities, which is required for the protection under Article 8(2)(c).",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "overruled",
+      "disposition_reasoning": "Duplicate of obj_15a7a82d; same reasoning applies."
+    },
+    {
+      "id": "obj_60c2982f",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_1274977f",
+      "ground": "The facts do not establish that the alleged conduct satisfies the war‑crime element.",
+      "reasoning": "The alleged conduct is defined only by the charges of rape and sexual slavery; there is no evidence in the record that these acts actually occurred, so the factual predicate that the conduct meets the war‑crime element is not met.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vi)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vi)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "overruled",
+      "disposition_reasoning": "Duplicate of obj_84aae146; same reasoning applies."
+    },
+    {
+      "id": "obj_91c54416",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_83c5a8b5",
+      "ground": "The facts do not establish that the alleged conduct is a war crime.",
+      "reasoning": "Like the previous argument, this relies on the existence of rape or sexual slavery; the record only alleges the charges and does not provide evidence that the acts actually took place, so the factual predicate that the conduct is a war crime is not satisfied.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vi)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vi)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "overruled",
+      "disposition_reasoning": "Duplicate of obj_84aae146 and obj_60c2982f; same reasoning applies."
+    }
+  ],
+  "arguments": [
+    {
+      "id": "arg_85914ed0",
+      "claim": "Rape and sexual slavery are war crimes in a non‑international armed conflict under Article 8(2)(e)(vi) of the Rome Statute, irrespective of the victim’s membership in the armed group.",
+      "reasoning": "Article 8(2)(e)(vi) lists \"Committing rape, sexual slavery, ...\" as a serious violation applicable to non‑international armed conflicts. The provision does not condition liability on the victim’s status; it criminalises the act itself. Accordingly, when members of the UPC/FPLC are subjected to rape or sexual slavery by fellow members, the conduct falls squarely within the definition of a war crime.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vi)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7 , paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vi)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7 , paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_fe9343e9",
+      "claim": "Members of an armed group who are not taking an active part in hostilities, including child soldiers who have been forced to serve, are protected persons under Article 8(2)(c) and may therefore be victims of war crimes.",
+      "reasoning": "Article 8(2)(c) incorporates the protections of Common Article 3, stating that serious violations committed \"against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat…\" are war crimes. The child soldiers in this case were compelled to serve and, as minors, lack the capacity to take a genuine active part; they are therefore covered by the protection language and can be victims of the sexual violence.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat by sickness, wounds, detention or any other cause:"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat by sickness, wounds, detention or any other cause:"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_1274977f",
+      "claim": "The ICC has jurisdiction over the alleged conduct because the acts satisfy the war‑crime element set out in Article 5(1)(c).",
+      "reasoning": "Article 5(1)(c) confers jurisdiction on the Court over war crimes. Since the alleged rapes and sexual slavery are captured by Article 8(2)(e)(vi), the conduct meets the definition of a war crime, triggering the Court’s jurisdiction under Article 5(1)(c).",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "5(1)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "War crimes;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "5(1)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "War crimes;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_4282101b",
+      "claim": "The defence’s argument that protection only attaches after a combatant ceases to be a member of an armed group is inconsistent with the Rome Statute’s wording and with customary international humanitarian law.",
+      "reasoning": "Neither Article 8(2)(e)(vi) nor Article 8(2)(c) conditions the applicability of the war‑crime provisions on the victim’s cessation of membership. The statutes focus on the nature of the act and the victim’s status as a person taking no active part in hostilities, not on whether the victim has formally left the group. Consequently, the defence’s reliance on a “cessation‑of‑membership” requirement lacks textual support and cannot defeat jurisdiction.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vi)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7 , paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions;"
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat by sickness, wounds, detention or any other cause:"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vi)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7 , paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat by sickness, wounds, detention or any other cause:"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_297dbb5b",
+      "claim": "Article 8(2)(e)(vi) of the Rome Statute criminalises rape and sexual slavery in a non‑international armed conflict regardless of the victim’s membership in the armed group.",
+      "reasoning": "The provision expressly lists “Committing rape, sexual slavery …” as a serious violation applicable to non‑international armed conflicts. The text contains no qualifier linking the offence to the victim’s status, so the conduct alleged against UPC/FPLC child soldiers falls within the definition of a war crime even though both perpetrator and victim belong to the same armed group.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vi)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, and any other form of sexual violence also constituting a serious violation of article 3 common to the four Geneva Conventions;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vi)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, and any other form of sexual violence also constituting a serious violation of article 3 common to the four Geneva Conventions;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_83c5a8b5",
+      "claim": "The ICC has jurisdiction over the alleged conduct under Article 5(1)(c) because the acts are alleged war crimes defined by Article 8(2)(e)(vi).",
+      "reasoning": "Article 5(1)(c) confers jurisdiction on the Court over war crimes. Since the prosecution’s charges allege conduct that falls within the scope of Article 8(2)(e)(vi), the statutory element of a war crime is satisfied for jurisdictional purposes. Jurisdiction is triggered by the alleged conduct, not by a factual finding of the acts at the preliminary stage.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "5(1)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "War crimes;"
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vi)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, and any other form of sexual violence also constituting a serious violation of article 3 common to the four Geneva Conventions;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "5(1)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "War crimes;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vi)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, and any other form of sexual violence also constituting a serious violation of article 3 common to the four Geneva Conventions;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_3d3f2ad3",
+      "claim": "The defence’s argument that protection against war crimes attaches only after a combatant ceases to be a member of an armed group is inconsistent with the wording of Article 8(2)(e)(vi).",
+      "reasoning": "Article 8(2)(e)(vi) enumerates prohibited acts without any condition that the victim must have ceased membership, laid down arms, or be hors de combat. Therefore the Statute does not require a cessation‑of‑membership prerequisite for the victim’s protection, and the defence’s reliance on such a requirement lacks textual support.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vi)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, and any other form of sexual violence also constituting a serious violation of article 3 common to the four Geneva Conventions;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vi)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, and any other form of sexual violence also constituting a serious violation of article 3 common to the four Geneva Conventions;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [
+    {
+      "id": "obj_0a53e8d3",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_fe9343e9",
+      "ground": "The argument conflates the distinct legal bases of Article 8(2)(c) and Article 8(2)(e)(vi) by importing the 'active participation' requirement of the former into the latter.",
+      "reasoning": "The charges are brought under Article 8(2)(e)(vi), which defines war crimes in NIACs as 'other serious violations... within the established framework of international law.' Unlike Article 8(2)(c), which is explicitly limited to 'persons taking no active part in the hostilities,' Article 8(2)(e)(vi) contains no such status-based limitation. The argument's reliance on Article 8(2)(c) to define the protected class for Article 8(2)(e)(vi) is a misapplication of the Statute's structure.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vi)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vi)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The objection correctly identifies that arg_fe9343e9 conflates the distinct legal bases of Article 8(2)(c) and Article 8(2)(e)(vi). Article 8(2)(c) is expressly limited to ‘persons taking no active part in the hostilities,’ while Article 8(2)(e)(vi) contains no such status-based limitation. The argument’s reliance on Article 8(2)(c) to define the protected class for Article 8(2)(e)(vi) misapplies the Statute’s structure."
+    },
+    {
+      "id": "obj_8b78ad00",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_85914ed0",
+      "ground": "The record does not provide evidence that the alleged acts were rape or sexual slavery.",
+      "reasoning": "The facts as given state only that the accused was charged with rape and sexual slavery; they do not describe any conduct that would demonstrate the acts actually occurred. Without such evidence, the argument that these acts are war crimes cannot be substantiated.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "fatal",
+      "disposition": "overruled",
+      "disposition_reasoning": "The objection demands evidentiary proof that the acts occurred, but the certified question is a legal one: whether the Rome Statute permits members of an armed group to be victims of the enumerated crimes. At the jurisdictional and legal-sufficiency stage, the charges as pleaded are assumed true; factual proof is for trial."
+    },
+    {
+      "id": "obj_15a7a82d",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_fe9343e9",
+      "ground": "The record does not establish that the child soldiers were compelled to serve or were not taking an active part in hostilities.",
+      "reasoning": "The facts identify the alleged victims as UPC/FPLC child soldiers but provide no information on whether they were forced to serve or whether they were actively participating in hostilities. Therefore the claim that they fall under the protection of Article 8(2)(c) lacks factual support.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "fatal",
+      "disposition": "overruled",
+      "disposition_reasoning": "Like the preceding evidentiary objections, this demands factual findings about the victims’ status that are irrelevant to the pure legal question of statutory scope. Moreover, the argument it targets (arg_fe9343e9) is already undermined by sustained doctrinal objections."
+    },
+    {
+      "id": "obj_84aae146",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_1274977f",
+      "ground": "The record does not establish that the alleged acts constitute rape or sexual slavery.",
+      "reasoning": "As with the first objection, the facts only mention the charges; no description or evidence of the alleged conduct is provided. Consequently, the war‑crime element required by Article 5(1)(c) cannot be proven from the record.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "fatal",
+      "disposition": "overruled",
+      "disposition_reasoning": "The objection repeats the evidentiary challenge already overruled. The war-crime element for jurisdictional purposes is satisfied by the allegation of conduct falling within Article 8(2)(e)(vi); factual verification is not required at this stage."
+    },
+    {
+      "id": "obj_cbefa4e9",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_fe9343e9",
+      "ground": "The argument relies on Article 8(2)(c) to establish protection for child soldiers, but this provision only applies to serious violations of Common Article 3, which does not list rape or sexual slavery.",
+      "reasoning": "Article 8(2)(c) is limited to violations of Common Article 3, which only covers violence to life and person, outrages on dignity, hostages, and summary executions. It does not include rape or sexual slavery. Therefore, it cannot serve as the basis for characterizing these specific acts as war crimes. The correct legal basis is Article 8(2)(e)(vi), which explicitly lists these acts.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vi)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vi)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The objection correctly notes that Article 8(2)(c) incorporates only the serious violations of Common Article 3, which does not list rape or sexual slavery. Those acts are expressly enumerated in Article 8(2)(e)(vi). Therefore, Article 8(2)(c) cannot serve as the legal basis for characterising these acts as war crimes."
+    },
+    {
+      "id": "obj_2dcf2146",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_85914ed0",
+      "ground": "The facts do not establish that the alleged acts were actually rape and sexual slavery.",
+      "reasoning": "The record only states that the accused was charged with rape and sexual slavery; it provides no evidence that the acts occurred, so the factual predicate that the conduct was rape/sexual slavery is not satisfied.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vi)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vi)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "overruled",
+      "disposition_reasoning": "Duplicate of obj_8b78ad00; same reasoning applies."
+    },
+    {
+      "id": "obj_09f4f057",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_fe9343e9",
+      "ground": "The facts do not establish that the child soldiers were not taking an active part in hostilities.",
+      "reasoning": "The record only identifies the victims as child soldiers forced to serve; it does not provide evidence that they were inactive or that they were taking no active part in hostilities, which is required for the protection under Article 8(2)(c).",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "overruled",
+      "disposition_reasoning": "Duplicate of obj_15a7a82d; same reasoning applies."
+    },
+    {
+      "id": "obj_60c2982f",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_1274977f",
+      "ground": "The facts do not establish that the alleged conduct satisfies the war‑crime element.",
+      "reasoning": "The alleged conduct is defined only by the charges of rape and sexual slavery; there is no evidence in the record that these acts actually occurred, so the factual predicate that the conduct meets the war‑crime element is not met.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vi)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vi)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "overruled",
+      "disposition_reasoning": "Duplicate of obj_84aae146; same reasoning applies."
+    },
+    {
+      "id": "obj_91c54416",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_83c5a8b5",
+      "ground": "The facts do not establish that the alleged conduct is a war crime.",
+      "reasoning": "Like the previous argument, this relies on the existence of rape or sexual slavery; the record only alleges the charges and does not provide evidence that the acts actually took place, so the factual predicate that the conduct is a war crime is not satisfied.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vi)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vi)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "overruled",
+      "disposition_reasoning": "Duplicate of obj_84aae146 and obj_60c2982f; same reasoning applies."
+    }
+  ],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(d)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "5(1)(c)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(f)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(b)(iii)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(e)(iii)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(b)(xxii)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(c)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_7ba98d57",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "94edbd7f32f3f37d7c8ecaf54e2e2b135adfecb17cd4e8ac27884857293f53cf",
+      "arguments": [
+        {
+          "id": "arg_85914ed0",
+          "claim": "Rape and sexual slavery are war crimes in a non‑international armed conflict under Article 8(2)(e)(vi) of the Rome Statute, irrespective of the victim’s membership in the armed group.",
+          "reasoning": "Article 8(2)(e)(vi) lists \"Committing rape, sexual slavery, ...\" as a serious violation applicable to non‑international armed conflicts. The provision does not condition liability on the victim’s status; it criminalises the act itself. Accordingly, when members of the UPC/FPLC are subjected to rape or sexual slavery by fellow members, the conduct falls squarely within the definition of a war crime.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vi)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7 , paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(e)(vi)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7 , paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_fe9343e9",
+          "claim": "Members of an armed group who are not taking an active part in hostilities, including child soldiers who have been forced to serve, are protected persons under Article 8(2)(c) and may therefore be victims of war crimes.",
+          "reasoning": "Article 8(2)(c) incorporates the protections of Common Article 3, stating that serious violations committed \"against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat…\" are war crimes. The child soldiers in this case were compelled to serve and, as minors, lack the capacity to take a genuine active part; they are therefore covered by the protection language and can be victims of the sexual violence.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat by sickness, wounds, detention or any other cause:"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat by sickness, wounds, detention or any other cause:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_1274977f",
+          "claim": "The ICC has jurisdiction over the alleged conduct because the acts satisfy the war‑crime element set out in Article 5(1)(c).",
+          "reasoning": "Article 5(1)(c) confers jurisdiction on the Court over war crimes. Since the alleged rapes and sexual slavery are captured by Article 8(2)(e)(vi), the conduct meets the definition of a war crime, triggering the Court’s jurisdiction under Article 5(1)(c).",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "5(1)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "War crimes;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "5(1)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "War crimes;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_4282101b",
+          "claim": "The defence’s argument that protection only attaches after a combatant ceases to be a member of an armed group is inconsistent with the Rome Statute’s wording and with customary international humanitarian law.",
+          "reasoning": "Neither Article 8(2)(e)(vi) nor Article 8(2)(c) conditions the applicability of the war‑crime provisions on the victim’s cessation of membership. The statutes focus on the nature of the act and the victim’s status as a person taking no active part in hostilities, not on whether the victim has formally left the group. Consequently, the defence’s reliance on a “cessation‑of‑membership” requirement lacks textual support and cannot defeat jurisdiction.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vi)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7 , paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat by sickness, wounds, detention or any other cause:"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(e)(vi)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7 , paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat by sickness, wounds, detention or any other cause:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"Rape and sexual slavery are war crimes in a non‑international armed conflict under Article 8(2)(e)(vi) of the Rome Statute, irrespective of the victim’s membership in the armed group.\",\n      \"reasoning\": \"Article 8(2)(e)(vi) lists \\\"Committing rape, sexual slavery, ...\\\" as a serious violation applicable to non‑international armed conflicts. The provision does not condition liability on the victim’s status; it criminalises the act itself. Accordingly, when members of the UPC/FPLC are subjected to rape or sexual slavery by fellow members, the conduct falls squarely within the definition of a war crime.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(e)(vi)\",\n          \"quoted_text\": \"Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7 , paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Members of an armed group who are not taking an active part in hostilities, including child soldiers who have been forced to serve, are protected persons under Article 8(2)(c) and may therefore be victims of war crimes.\",\n      \"reasoning\": \"Article 8(2)(c) incorporates the protections of Common Article 3, stating that serious violations committed \\\"against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat…\\\" are war crimes. The child soldiers in this case were compelled to serve and, as minors, lack the capacity to take a genuine active part; they are therefore covered by the protection language and can be victims of the sexual violence.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(c)\",\n          \"quoted_text\": \"In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat by sickness, wounds, detention or any other cause:\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The ICC has jurisdiction over the alleged conduct because the acts satisfy the war‑crime element set out in Article 5(1)(c).\",\n      \"reasoning\": \"Article 5(1)(c) confers jurisdiction on the Court over war crimes. Since the alleged rapes and sexual slavery are captured by Article 8(2)(e)(vi), the conduct meets the definition of a war crime, triggering the Court’s jurisdiction under Article 5(1)(c).\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"5(1)(c)\",\n          \"quoted_text\": \"War crimes;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The defence’s argument that protection only attaches after a combatant ceases to be a member of an armed group is inconsistent with the Rome Statute’s wording and with customary international humanitarian law.\",\n      \"reasoning\": \"Neither Article 8(2)(e)(vi) nor Article 8(2)(c) conditions the applicability of the war‑crime provisions on the victim’s cessation of membership. The statutes focus on the nature of the act and the victim’s status as a person taking no active part in hostilities, not on whether the victim has formally left the group. Consequently, the defence’s reliance on a “cessation‑of‑membership” requirement lacks textual support and cannot defeat jurisdiction.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(e)(vi)\",\n          \"quoted_text\": \"Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7 , paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(c)\",\n          \"quoted_text\": \"In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat by sickness, wounds, detention or any other cause:\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:59:28.818949Z",
+      "completed_at": "2026-11-22T17:59:34.050837Z",
+      "prompt_tokens": 3859,
+      "completion_tokens": 2273,
+      "error": null
+    },
+    {
+      "id": "turn_8169e97c",
+      "round_number": 1,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "183677c16fcc8b857808c448d9dfb0410a084a06d0b213bcf2bece2819b1f973",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_0a53e8d3",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_fe9343e9",
+          "ground": "The argument conflates the distinct legal bases of Article 8(2)(c) and Article 8(2)(e)(vi) by importing the 'active participation' requirement of the former into the latter.",
+          "reasoning": "The charges are brought under Article 8(2)(e)(vi), which defines war crimes in NIACs as 'other serious violations... within the established framework of international law.' Unlike Article 8(2)(c), which is explicitly limited to 'persons taking no active part in the hostilities,' Article 8(2)(e)(vi) contains no such status-based limitation. The argument's reliance on Article 8(2)(c) to define the protected class for Article 8(2)(e)(vi) is a misapplication of the Statute's structure.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vi)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(e)(vi)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The objection correctly identifies that arg_fe9343e9 conflates the distinct legal bases of Article 8(2)(c) and Article 8(2)(e)(vi). Article 8(2)(c) is expressly limited to ‘persons taking no active part in the hostilities,’ while Article 8(2)(e)(vi) contains no such status-based limitation. The argument’s reliance on Article 8(2)(c) to define the protected class for Article 8(2)(e)(vi) misapplies the Statute’s structure."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_fe9343e9\",\n      \"ground\": \"The argument conflates the distinct legal bases of Article 8(2)(c) and Article 8(2)(e)(vi) by importing the 'active participation' requirement of the former into the latter.\",\n      \"reasoning\": \"The charges are brought under Article 8(2)(e)(vi), which defines war crimes in NIACs as 'other serious violations... within the established framework of international law.' Unlike Article 8(2)(c), which is explicitly limited to 'persons taking no active part in the hostilities,' Article 8(2)(e)(vi) contains no such status-based limitation. The argument's reliance on Article 8(2)(c) to define the protected class for Article 8(2)(e)(vi) is a misapplication of the Statute's structure.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(c)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(e)(vi)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:59:34.051669Z",
+      "completed_at": "2026-11-22T17:59:35.176144Z",
+      "prompt_tokens": 4856,
+      "completion_tokens": 308,
+      "error": null
+    },
+    {
+      "id": "turn_1284b330",
+      "round_number": 1,
+      "role": "attacker_evidentiary",
+      "model_id": "groq/openai/gpt-oss-20b",
+      "prompt_id": "attacker_evidentiary/challenge",
+      "prompt_hash": "82da013f45f5551f8482f650fba49c8500b7478210c46127b8cbd52cb58d6640",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_8b78ad00",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_85914ed0",
+          "ground": "The record does not provide evidence that the alleged acts were rape or sexual slavery.",
+          "reasoning": "The facts as given state only that the accused was charged with rape and sexual slavery; they do not describe any conduct that would demonstrate the acts actually occurred. Without such evidence, the argument that these acts are war crimes cannot be substantiated.",
+          "citations": [],
+          "resolved_citations": [],
+          "severity": "fatal",
+          "disposition": "overruled",
+          "disposition_reasoning": "The objection demands evidentiary proof that the acts occurred, but the certified question is a legal one: whether the Rome Statute permits members of an armed group to be victims of the enumerated crimes. At the jurisdictional and legal-sufficiency stage, the charges as pleaded are assumed true; factual proof is for trial."
+        },
+        {
+          "id": "obj_15a7a82d",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_fe9343e9",
+          "ground": "The record does not establish that the child soldiers were compelled to serve or were not taking an active part in hostilities.",
+          "reasoning": "The facts identify the alleged victims as UPC/FPLC child soldiers but provide no information on whether they were forced to serve or whether they were actively participating in hostilities. Therefore the claim that they fall under the protection of Article 8(2)(c) lacks factual support.",
+          "citations": [],
+          "resolved_citations": [],
+          "severity": "fatal",
+          "disposition": "overruled",
+          "disposition_reasoning": "Like the preceding evidentiary objections, this demands factual findings about the victims’ status that are irrelevant to the pure legal question of statutory scope. Moreover, the argument it targets (arg_fe9343e9) is already undermined by sustained doctrinal objections."
+        },
+        {
+          "id": "obj_84aae146",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_1274977f",
+          "ground": "The record does not establish that the alleged acts constitute rape or sexual slavery.",
+          "reasoning": "As with the first objection, the facts only mention the charges; no description or evidence of the alleged conduct is provided. Consequently, the war‑crime element required by Article 5(1)(c) cannot be proven from the record.",
+          "citations": [],
+          "resolved_citations": [],
+          "severity": "fatal",
+          "disposition": "overruled",
+          "disposition_reasoning": "The objection repeats the evidentiary challenge already overruled. The war-crime element for jurisdictional purposes is satisfied by the allegation of conduct falling within Article 8(2)(e)(vi); factual verification is not required at this stage."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_85914ed0\",\n      \"ground\": \"The record does not provide evidence that the alleged acts were rape or sexual slavery.\",\n      \"reasoning\": \"The facts as given state only that the accused was charged with rape and sexual slavery; they do not describe any conduct that would demonstrate the acts actually occurred. Without such evidence, the argument that these acts are war crimes cannot be substantiated.\",\n      \"severity\": \"fatal\",\n      \"citations\": []\n    },\n    {\n      \"target_argument_id\": \"arg_fe9343e9\",\n      \"ground\": \"The record does not establish that the child soldiers were compelled to serve or were not taking an active part in hostilities.\",\n      \"reasoning\": \"The facts identify the alleged victims as UPC/FPLC child soldiers but provide no information on whether they were forced to serve or whether they were actively participating in hostilities. Therefore the claim that they fall under the protection of Article 8(2)(c) lacks factual support.\",\n      \"severity\": \"fatal\",\n      \"citations\": []\n    },\n    {\n      \"target_argument_id\": \"arg_1274977f\",\n      \"ground\": \"The record does not establish that the alleged acts constitute rape or sexual slavery.\",\n      \"reasoning\": \"As with the first objection, the facts only mention the charges; no description or evidence of the alleged conduct is provided. Consequently, the war‑crime element required by Article 5(1)(c) cannot be proven from the record.\",\n      \"severity\": \"fatal\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:59:34.054672Z",
+      "completed_at": "2026-11-22T17:59:35.895436Z",
+      "prompt_tokens": 4654,
+      "completion_tokens": 1320,
+      "error": null
+    },
+    {
+      "id": "turn_7f39916c",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "b1a7511ea5585770a1f31301ed21cf5f60bd8e2a574c3575f0c607a6439a77aa",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. Members of an armed group can be victims of the war crimes of rape and sexual slavery under Article 8(2)(e)(vi) of the Rome Statute when the crimes are committed by members of the same armed group.\", \"reasoning\": \"The sustained objection (obj_0a53e8d3) correctly identifies that arg_fe9343e9 improperly conflates Article 8(2)(c) and Article 8(2)(e)(vi) by importing the former's explicit 'active participation' language into the latter. However, the surviving arguments establish the Court's jurisdiction on independent grounds. Arg_85914ed0 correctly notes that Article 8(2)(e)(vi) criminalizes the acts of rape and sexual slavery as serious violations 'within the established framework of international law,' and the provision's text does not contain a categorical exclusion for victims who are members of the perpetrator's armed group. Arg_4282101b demonstrates that the defence's proposed 'cessation-of-membership' requirement finds no support in the text of either Article 8(2)(e)(vi) or Article 8(2)(c). While Article 8(2)(e)(vi) requires the acts to constitute 'a serious violation of article 3 common to the four Geneva Conventions,' Common Article 3 protects 'persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat' — a formulation that is status-based and context-dependent, not a blanket exclusion based on group membership. Child soldiers compelled to serve, or fighters not actively engaged in hostilities at the time of the crime, may fall within this protection. The evidentiary objections (obj_8b78ad00, obj_15a7a82d, obj_84aae146) are overruled because the question presented is one of legal capacity and jurisdiction, not factual sufficiency; the facts as given allege charges of rape and sexual slavery of child soldiers, which suffices to frame the legal issue. Arg_1274977f confirms that if the acts constitute war crimes under Article 8(2)(e)(vi), jurisdiction under Article 5(1)(c) follows.\", \"confidence\": 0.75, \"confidence_reasoning\": \"The Rome Statute text is the sole authority in the retrieved context. Article 8(2)(e)(vi)'s reference to Common Article 3 creates ambiguity: the 'established framework of international law' language suggests a broad prohibition, but the explicit cross-reference to Common Article 3 imports its 'active participation' threshold. The defence's bright-line rule lacks textual support, yet the Statute does not unequivocally resolve whether same-group members can be victims. ICC jurisprudence (Ntaganda) ultimately answered yes, but that authority is not in the retrieved corpus. Given the textual indicators — the non-exhaustive 'including' in Common Article 3, the absence of a membership-based exclusion in Article 8(2)(e), and the gravity of sexual violence in the 'established framework' — the better reading supports jurisdiction, but the ambiguity warrants confidence below 0.8.\", \"rulings\": [{\"objection_id\": \"obj_0a53e8d3\", \"disposition\": \"sustained\", \"reasoning\": \"The objection correctly identifies a doctrinal error in arg_fe9343e9. Article 8(2)(c) explicitly limits its scope to 'persons taking no active part in the hostilities,' while Article 8(2)(e)(vi) defines the crime by reference to 'the established framework of international law' and a cross-reference to Common Article 3, not by incorporating Article 8(2)(c)'s protected-persons language. Arg_fe9343e9 improperly uses Article 8(2)(c) to define the victim class for Article 8(2)(e)(vi), conflating two distinct subparagraphs with different structural roles.\"}, {\"objection_id\": \"obj_8b78ad00\", \"disposition\": \"overruled\", \"reasoning\": \"The question presented is a legal one — whether members of an armed group *can* be victims under Article 8(2)(e)(vi) — not whether the prosecution has proven the acts occurred. The facts as given state that the accused was charged with rape and sexual slavery of UPC/FPLC child soldiers; for purposes of a jurisdictional ruling, the Chamber assumes the allegations describe conduct that, if proven, would satisfy the elements. Evidentiary sufficiency is a matter for trial, not for a jurisdictional appeal.\"}, {\"objection_id\": \"obj_15a7a82d\", \"disposition\": \"overruled\", \"reasoning\": \"Same rationale as obj_8b78ad00. The legal question concerns the capacity of child soldiers (or any armed-group members) to be victims under the Statute. The facts identify the alleged victims as child soldiers; whether they were compelled or actively participating goes to the merits of the 'active participation' analysis under Common Article 3, not to the threshold legal issue of whether the Court has jurisdiction over such allegations.\"}, {\"objection_id\": \"obj_84aae146\", \"disposition\": \"overruled\", \"reasoning\": \"Identical to obj_8b78ad00. The objection challenges factual proof, but the proceeding addresses the legal validity of the charges. The war-crime element for Article 5(1)(c) jurisdiction is satisfied if the alleged acts, as charged, fall within Article 8(2)(e)(vi). The facts as given allege rape and sexual slavery; that suffices to raise the legal question.\"}], \"surviving_argument_ids\": [\"arg_85914ed0\", \"arg_1274977f\", \"arg_4282101b\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-22T17:59:35.896320Z",
+      "completed_at": "2026-11-22T18:01:21.136137Z",
+      "prompt_tokens": 5463,
+      "completion_tokens": 4587,
+      "error": null
+    },
+    {
+      "id": "turn_469176e0",
+      "round_number": 2,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/rebuttal",
+      "prompt_hash": "16bd683cc232d44ec620fde4243e373bf6c139d0265c7881fdd04e8d934544fc",
+      "arguments": [
+        {
+          "id": "arg_297dbb5b",
+          "claim": "Article 8(2)(e)(vi) of the Rome Statute criminalises rape and sexual slavery in a non‑international armed conflict regardless of the victim’s membership in the armed group.",
+          "reasoning": "The provision expressly lists “Committing rape, sexual slavery …” as a serious violation applicable to non‑international armed conflicts. The text contains no qualifier linking the offence to the victim’s status, so the conduct alleged against UPC/FPLC child soldiers falls within the definition of a war crime even though both perpetrator and victim belong to the same armed group.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vi)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, and any other form of sexual violence also constituting a serious violation of article 3 common to the four Geneva Conventions;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(e)(vi)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, and any other form of sexual violence also constituting a serious violation of article 3 common to the four Geneva Conventions;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_83c5a8b5",
+          "claim": "The ICC has jurisdiction over the alleged conduct under Article 5(1)(c) because the acts are alleged war crimes defined by Article 8(2)(e)(vi).",
+          "reasoning": "Article 5(1)(c) confers jurisdiction on the Court over war crimes. Since the prosecution’s charges allege conduct that falls within the scope of Article 8(2)(e)(vi), the statutory element of a war crime is satisfied for jurisdictional purposes. Jurisdiction is triggered by the alleged conduct, not by a factual finding of the acts at the preliminary stage.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "5(1)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "War crimes;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vi)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, and any other form of sexual violence also constituting a serious violation of article 3 common to the four Geneva Conventions;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "5(1)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "War crimes;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(e)(vi)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, and any other form of sexual violence also constituting a serious violation of article 3 common to the four Geneva Conventions;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_3d3f2ad3",
+          "claim": "The defence’s argument that protection against war crimes attaches only after a combatant ceases to be a member of an armed group is inconsistent with the wording of Article 8(2)(e)(vi).",
+          "reasoning": "Article 8(2)(e)(vi) enumerates prohibited acts without any condition that the victim must have ceased membership, laid down arms, or be hors de combat. Therefore the Statute does not require a cessation‑of‑membership prerequisite for the victim’s protection, and the defence’s reliance on such a requirement lacks textual support.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vi)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, and any other form of sexual violence also constituting a serious violation of article 3 common to the four Geneva Conventions;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(e)(vi)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, and any other form of sexual violence also constituting a serious violation of article 3 common to the four Geneva Conventions;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"Article 8(2)(e)(vi) of the Rome Statute criminalises rape and sexual slavery in a non‑international armed conflict regardless of the victim’s membership in the armed group.\",\n      \"reasoning\": \"The provision expressly lists “Committing rape, sexual slavery …” as a serious violation applicable to non‑international armed conflicts. The text contains no qualifier linking the offence to the victim’s status, so the conduct alleged against UPC/FPLC child soldiers falls within the definition of a war crime even though both perpetrator and victim belong to the same armed group.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(e)(vi)\",\n          \"quoted_text\": \"Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, and any other form of sexual violence also constituting a serious violation of article 3 common to the four Geneva Conventions;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The ICC has jurisdiction over the alleged conduct under Article 5(1)(c) because the acts are alleged war crimes defined by Article 8(2)(e)(vi).\",\n      \"reasoning\": \"Article 5(1)(c) confers jurisdiction on the Court over war crimes. Since the prosecution’s charges allege conduct that falls within the scope of Article 8(2)(e)(vi), the statutory element of a war crime is satisfied for jurisdictional purposes. Jurisdiction is triggered by the alleged conduct, not by a factual finding of the acts at the preliminary stage.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"5(1)(c)\",\n          \"quoted_text\": \"War crimes;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(e)(vi)\",\n          \"quoted_text\": \"Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, and any other form of sexual violence also constituting a serious violation of article 3 common to the four Geneva Conventions;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The defence’s argument that protection against war crimes attaches only after a combatant ceases to be a member of an armed group is inconsistent with the wording of Article 8(2)(e)(vi).\",\n      \"reasoning\": \"Article 8(2)(e)(vi) enumerates prohibited acts without any condition that the victim must have ceased membership, laid down arms, or be hors de combat. Therefore the Statute does not require a cessation‑of‑membership prerequisite for the victim’s protection, and the defence’s reliance on such a requirement lacks textual support.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(e)(vi)\",\n          \"quoted_text\": \"Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, and any other form of sexual violence also constituting a serious violation of article 3 common to the four Geneva Conventions;\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T18:01:21.137343Z",
+      "completed_at": "2026-11-22T18:01:26.333749Z",
+      "prompt_tokens": 3038,
+      "completion_tokens": 2188,
+      "error": null
+    },
+    {
+      "id": "turn_bc25a6ed",
+      "round_number": 2,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "9e953a0a60a8bb5137ce478d1050efc024e8514d4c82aceb38f26e6b93173994",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_cbefa4e9",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_fe9343e9",
+          "ground": "The argument relies on Article 8(2)(c) to establish protection for child soldiers, but this provision only applies to serious violations of Common Article 3, which does not list rape or sexual slavery.",
+          "reasoning": "Article 8(2)(c) is limited to violations of Common Article 3, which only covers violence to life and person, outrages on dignity, hostages, and summary executions. It does not include rape or sexual slavery. Therefore, it cannot serve as the basis for characterizing these specific acts as war crimes. The correct legal basis is Article 8(2)(e)(vi), which explicitly lists these acts.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vi)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(e)(vi)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The objection correctly notes that Article 8(2)(c) incorporates only the serious violations of Common Article 3, which does not list rape or sexual slavery. Those acts are expressly enumerated in Article 8(2)(e)(vi). Therefore, Article 8(2)(c) cannot serve as the legal basis for characterising these acts as war crimes."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_fe9343e9\",\n      \"ground\": \"The argument relies on Article 8(2)(c) to establish protection for child soldiers, but this provision only applies to serious violations of Common Article 3, which does not list rape or sexual slavery.\",\n      \"reasoning\": \"Article 8(2)(c) is limited to violations of Common Article 3, which only covers violence to life and person, outrages on dignity, hostages, and summary executions. It does not include rape or sexual slavery. Therefore, it cannot serve as the basis for characterizing these specific acts as war crimes. The correct legal basis is Article 8(2)(e)(vi), which explicitly lists these acts.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(c)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(e)(vi)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T18:01:26.334922Z",
+      "completed_at": "2026-11-22T18:01:27.374409Z",
+      "prompt_tokens": 5315,
+      "completion_tokens": 274,
+      "error": null
+    },
+    {
+      "id": "turn_1f818606",
+      "round_number": 2,
+      "role": "attacker_evidentiary",
+      "model_id": "groq/openai/gpt-oss-20b",
+      "prompt_id": "attacker_evidentiary/challenge",
+      "prompt_hash": "577821754ba9740fb8ca1399f7140a834cdd6648c3c800fe434a87b6748cbc6d",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_2dcf2146",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_85914ed0",
+          "ground": "The facts do not establish that the alleged acts were actually rape and sexual slavery.",
+          "reasoning": "The record only states that the accused was charged with rape and sexual slavery; it provides no evidence that the acts occurred, so the factual predicate that the conduct was rape/sexual slavery is not satisfied.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vi)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(e)(vi)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "overruled",
+          "disposition_reasoning": "Duplicate of obj_8b78ad00; same reasoning applies."
+        },
+        {
+          "id": "obj_09f4f057",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_fe9343e9",
+          "ground": "The facts do not establish that the child soldiers were not taking an active part in hostilities.",
+          "reasoning": "The record only identifies the victims as child soldiers forced to serve; it does not provide evidence that they were inactive or that they were taking no active part in hostilities, which is required for the protection under Article 8(2)(c).",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "overruled",
+          "disposition_reasoning": "Duplicate of obj_15a7a82d; same reasoning applies."
+        },
+        {
+          "id": "obj_60c2982f",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_1274977f",
+          "ground": "The facts do not establish that the alleged conduct satisfies the war‑crime element.",
+          "reasoning": "The alleged conduct is defined only by the charges of rape and sexual slavery; there is no evidence in the record that these acts actually occurred, so the factual predicate that the conduct meets the war‑crime element is not met.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vi)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(e)(vi)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "overruled",
+          "disposition_reasoning": "Duplicate of obj_84aae146; same reasoning applies."
+        },
+        {
+          "id": "obj_91c54416",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_83c5a8b5",
+          "ground": "The facts do not establish that the alleged conduct is a war crime.",
+          "reasoning": "Like the previous argument, this relies on the existence of rape or sexual slavery; the record only alleges the charges and does not provide evidence that the acts actually took place, so the factual predicate that the conduct is a war crime is not satisfied.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vi)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(e)(vi)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "overruled",
+          "disposition_reasoning": "Duplicate of obj_84aae146 and obj_60c2982f; same reasoning applies."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_85914ed0\",\n      \"ground\": \"The facts do not establish that the alleged acts were actually rape and sexual slavery.\",\n      \"reasoning\": \"The record only states that the accused was charged with rape and sexual slavery; it provides no evidence that the acts occurred, so the factual predicate that the conduct was rape/sexual slavery is not satisfied.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(e)(vi)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_fe9343e9\",\n      \"ground\": \"The facts do not establish that the child soldiers were not taking an active part in hostilities.\",\n      \"reasoning\": \"The record only identifies the victims as child soldiers forced to serve; it does not provide evidence that they were inactive or that they were taking no active part in hostilities, which is required for the protection under Article 8(2)(c).\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(c)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_1274977f\",\n      \"ground\": \"The facts do not establish that the alleged conduct satisfies the war‑crime element.\",\n      \"reasoning\": \"The alleged conduct is defined only by the charges of rape and sexual slavery; there is no evidence in the record that these acts actually occurred, so the factual predicate that the conduct meets the war‑crime element is not met.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(e)(vi)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_83c5a8b5\",\n      \"ground\": \"The facts do not establish that the alleged conduct is a war crime.\",\n      \"reasoning\": \"Like the previous argument, this relies on the existence of rape or sexual slavery; the record only alleges the charges and does not provide evidence that the acts actually took place, so the factual predicate that the conduct is a war crime is not satisfied.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(e)(vi)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T18:01:26.335897Z",
+      "completed_at": "2026-11-22T18:01:31.811061Z",
+      "prompt_tokens": 5094,
+      "completion_tokens": 4314,
+      "error": null
+    },
+    {
+      "id": "turn_12176c51",
+      "round_number": 2,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "680fd1135721c7bbfc90b146657dfaaf64025a9e7085c199dd83cd69b78e6ffc",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. Members of an armed group can be victims of the war crimes of rape and sexual slavery under Article 8(2)(e)(vi) of the Rome Statute when the crimes are committed by members of the same armed group. Article 8(2)(e)(vi) criminalises the acts of rape, sexual slavery, and other forms of sexual violence without conditioning the offence on the victim’s status, membership, or cessation of hostilities. The provision’s reference to acts “also constituting a serious violation of article 3 common to the four Geneva Conventions” describes the gravity and nature of the prohibited conduct, not the personal scope of protection. This reading is confirmed by the Statute’s structure: Article 8(2)(c) expressly limits its reach to “persons taking no active part in the hostilities,” while Article 8(2)(e)(vi) contains no such limitation. The defence’s “cessation-of-membership” requirement finds no support in the text.\", \"reasoning\": \"The surviving arguments (arg_85914ed0, arg_297dbb5b, arg_4282101b, arg_3d3f2ad3, arg_1274977f, arg_83c5a8b5) correctly rely on the plain text of Article 8(2)(e)(vi), which enumerates rape and sexual slavery as standalone war crimes in non-international armed conflicts without any victim-status qualifier. The sustained doctrinal objections (obj_0a53e8d3, obj_cbefa4e9) properly expose the flaw in arg_fe9343e9, which erroneously imported the “active participation” test from Article 8(2)(c) and cited a provision that does not list sexual violence. The evidentiary objections (obj_8b78ad00, obj_15a7a82d, obj_84aae146, obj_2dcf2146, obj_09f4f057, obj_60c2982f, obj_91c54416) are overruled because the question presented is a pure issue of statutory interpretation — whether the Rome Statute permits such victims — not a factual determination of whether the alleged acts occurred. At the jurisdictional and legal-sufficiency stage, the charges as pleaded are taken as true.\", \"confidence\": 0.85, \"confidence_reasoning\": \"The conclusion rests on the unambiguous text of Article 8(2)(e)(vi) and the structural contrast with Article 8(2)(c), both present in the retrieved context. No citation is missing or fabricated. The evidentiary objections are legally irrelevant to the certified question, and the doctrinal objections only eliminate a flawed supporting argument, not the correct ones. Confidence is not 0.9+ because the “also constituting” clause could be read by some tribunals as importing Common Article 3’s personal scope, though the better reading and subsequent ICC jurisprudence (not in the corpus) reject that view.\", \"rulings\": [{\"objection_id\": \"obj_0a53e8d3\", \"disposition\": \"sustained\", \"reasoning\": \"The objection correctly identifies that arg_fe9343e9 conflates the distinct legal bases of Article 8(2)(c) and Article 8(2)(e)(vi). Article 8(2)(c) is expressly limited to ‘persons taking no active part in the hostilities,’ while Article 8(2)(e)(vi) contains no such status-based limitation. The argument’s reliance on Article 8(2)(c) to define the protected class for Article 8(2)(e)(vi) misapplies the Statute’s structure.\"}, {\"objection_id\": \"obj_8b78ad00\", \"disposition\": \"overruled\", \"reasoning\": \"The objection demands evidentiary proof that the acts occurred, but the certified question is a legal one: whether the Rome Statute permits members of an armed group to be victims of the enumerated crimes. At the jurisdictional and legal-sufficiency stage, the charges as pleaded are assumed true; factual proof is for trial.\"}, {\"objection_id\": \"obj_15a7a82d\", \"disposition\": \"overruled\", \"reasoning\": \"Like the preceding evidentiary objections, this demands factual findings about the victims’ status that are irrelevant to the pure legal question of statutory scope. Moreover, the argument it targets (arg_fe9343e9) is already undermined by sustained doctrinal objections.\"}, {\"objection_id\": \"obj_84aae146\", \"disposition\": \"overruled\", \"reasoning\": \"The objection repeats the evidentiary challenge already overruled. The war-crime element for jurisdictional purposes is satisfied by the allegation of conduct falling within Article 8(2)(e)(vi); factual verification is not required at this stage.\"}, {\"objection_id\": \"obj_cbefa4e9\", \"disposition\": \"sustained\", \"reasoning\": \"The objection correctly notes that Article 8(2)(c) incorporates only the serious violations of Common Article 3, which does not list rape or sexual slavery. Those acts are expressly enumerated in Article 8(2)(e)(vi). Therefore, Article 8(2)(c) cannot serve as the legal basis for characterising these acts as war crimes.\"}, {\"objection_id\": \"obj_2dcf2146\", \"disposition\": \"overruled\", \"reasoning\": \"Duplicate of obj_8b78ad00; same reasoning applies.\"}, {\"objection_id\": \"obj_09f4f057\", \"disposition\": \"overruled\", \"reasoning\": \"Duplicate of obj_15a7a82d; same reasoning applies.\"}, {\"objection_id\": \"obj_60c2982f\", \"disposition\": \"overruled\", \"reasoning\": \"Duplicate of obj_84aae146; same reasoning applies.\"}, {\"objection_id\": \"obj_91c54416\", \"disposition\": \"overruled\", \"reasoning\": \"Duplicate of obj_84aae146 and obj_60c2982f; same reasoning applies.\"}], \"surviving_argument_ids\": [\"arg_85914ed0\", \"arg_297dbb5b\", \"arg_4282101b\", \"arg_3d3f2ad3\", \"arg_1274977f\", \"arg_83c5a8b5\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-22T18:01:31.811949Z",
+      "completed_at": "2026-11-22T18:03:15.524162Z",
+      "prompt_tokens": 6584,
+      "completion_tokens": 4053,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-22T18:03:15.525578+00:00",
+  "duration_seconds": 227.1013880399987,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 2,
+  "judge_failures": 0,
+  "judge_failed": false
+}

@@ -1,0 +1,172 @@
+{
+  "case_id": "icty_halilovic_grabovica",
+  "case_title": "Prosecutor v. Sefer Halilović — effective control over troops in Grabovica",
+  "court": "ICTY",
+  "year": 2007,
+  "difficulty": "medium",
+  "arm": "raw",
+  "arm_label": "A — Single pass, no retrieval",
+  "run_id": "eval_9fce55dc44",
+  "question": "Has it been established beyond reasonable doubt that the senior ABiH officer was criminally responsible as a superior, under Article 7(3) of the ICTY Statute, for the murders of civilians committed by ABiH troops in Grabovica on 8 and 9 September 1993?",
+  "facts": "In September 1993, units of the ABiH 9th Motorised Brigade, 10th Mountain Brigade and 2nd Independent Battalion, all subordinated to the ABiH 1st Corps, were sent from Sarajevo to the Jablanica sector of Herzegovina for combat operations to lift the HVO blockade of Mostar, following an order issued by the officer concerned. He had been the supreme ABiH commander until 8 June 1993, when a new post of Commander of the Main Staff was created and filled by another officer; he remained Chief of the Main Staff, a post made one of three rotating Deputy Commanders on 18 July 1993. By an order of 30 August 1993 the Commander of the Main Staff appointed him leader of an Inspection Team with coordinating and monitoring functions in the areas of the 4th and 6th Corps; the order required him to consult the Commander on any drastic proposals and allowed him to issue orders only in keeping with his authority. Troops were billeted with the Bosnian Croat inhabitants of Grabovica, a village under ABiH control since May 1993. On 8 and 9 September 1993, thirteen inhabitants taking no active part in hostilities were murdered by members of the 9th Brigade and unidentified ABiH members. The 9th Brigade unit was then under the command of the commander of the axis of attack, who had issued the combat order for that axis; the evidence did not establish that the axis commander was subordinated to the officer. The officer learned of the crimes on the evening of 9 September, after the last proven killing, and instructed a member of his team to work with the civilian and military security services on the investigation, which was already under way and was conducted by the 6th Corps Security Service and military police units. Some lower-ranking soldiers regarded him as commander of the operation; higher-ranking officers testified that he was tasked with coordinating combat activities.",
+  "ground_truth_outcome": "rejected",
+  "holding": "In its Judgement of 16 November 2005, the ICTY Trial Chamber found that the Prosecution had not proved beyond reasonable doubt that the accused was de jure or de facto commander of the operation, nor that he had effective control over the troops who committed the murders in Grabovica, nor that he had the material ability to punish the perpetrators. It acquitted him of the only charge, murder as a violation of the laws or customs of war under Articles 3 and 7(3). On 16 October 2007 the Appeals Chamber dismissed the Prosecution's appeal and affirmed the acquittal.",
+  "predicted_outcome": "rejected",
+  "outcome_correct": true,
+  "confidence": 0.78,
+  "confidence_reasoning": "The confidence is moderately high because the factual matrix aligns closely with the established elements of superior responsibility — effective control, knowledge during the commission of crimes, and failure to prevent or punish — and the facts as given fail each element. The absence of any objections means the defence arguments stand unopposed. The confidence is not higher because the question asks whether responsibility has been established 'beyond reasonable doubt,' which is a demanding standard, and a tribunal might draw different inferences from the same facts (e.g., whether the officer's coordination role amounted to de facto control). However, on the record provided, the answer is clearly negative.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 2,
+  "citation_statuses": {
+    "total": 0,
+    "resolved": 0,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "No.",
+    "reasoning": "No objections were filed against the four arguments presented. All four arguments therefore survive unchallenged. Collectively they demonstrate that the prosecution has not established the officer's superior responsibility beyond reasonable doubt. First, the officer lacked effective control over the 9th Motorised Brigade and the axis commander who directed the operation; his role was limited to coordination and monitoring, and he lacked authority to issue operational orders or enforce discipline over the perpetrators (arg_9af57e13). Second, his knowledge of the crimes arose only on the evening of 9 September, after the last proven killing, and he promptly instructed his team to cooperate with the ongoing investigation, negating any failure to punish (arg_558f0913). Third, his formal positions — rotating Deputy Commander and head of an Inspection Team with consultative functions — do not satisfy the legal threshold of a 'superior' under Article 7(3) because he exercised neither de jure nor de facto command over the units that committed the murders (arg_69dedf2c). Fourth, the evidentiary record contains only circumstantial indications without direct proof of a superior-subordinate relationship, knowledge during the commission of the crimes, or failure to prevent or punish, leaving the standard of proof unmet (arg_94b5cc19). The facts as given are consistent with each of these points. Because no corpus context was retrieved, this reasoning proceeds from general principles of superior responsibility under international criminal law.",
+    "confidence": 0.78,
+    "confidence_reasoning": "The confidence is moderately high because the factual matrix aligns closely with the established elements of superior responsibility — effective control, knowledge during the commission of crimes, and failure to prevent or punish — and the facts as given fail each element. The absence of any objections means the defence arguments stand unopposed. The confidence is not higher because the question asks whether responsibility has been established 'beyond reasonable doubt,' which is a demanding standard, and a tribunal might draw different inferences from the same facts (e.g., whether the officer's coordination role amounted to de facto control). However, on the record provided, the answer is clearly negative.",
+    "surviving_argument_ids": [
+      "arg_9af57e13",
+      "arg_558f0913",
+      "arg_69dedf2c",
+      "arg_94b5cc19"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_9af57e13",
+      "claim": "The officer did not exercise effective control over the ABiH troops that committed the murders, and therefore cannot be held liable as a superior under Article 7(3) of the ICTY Statute.",
+      "reasoning": "Effective control requires that the alleged superior have the material power to prevent or punish the commission of the crime. The facts show that the officer’s role was limited to coordination and monitoring, he was not the commander of the 9th Motorised Brigade, and the axis commander who issued the combat order was not subordinate to him. Consequently, the officer lacked the authority to issue commands to the perpetrators or to enforce discipline over them, which is a prerequisite for superior responsibility. In the absence of any evidence that he directed, ordered, or otherwise exercised command over the units that carried out the killings, the element of effective control is not satisfied.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_558f0913",
+      "claim": "The officer’s knowledge of the crimes arose only after the murders had been completed, and his subsequent instruction to cooperate with the investigation does not constitute a failure to punish that would trigger liability under Article 7(3).",
+      "reasoning": "Article 7(3) imposes liability when a superior knows or has reason to know of the commission of a crime by subordinates and fails to take necessary and reasonable measures to prevent or punish it. The officer learned of the killings on the evening of 9 September, after the last proven murder, and immediately ordered cooperation with the civilian and military security services. This prompt action demonstrates that he did not willfully neglect his duty to punish; rather, he took steps to facilitate the investigation. Because the knowledge was contemporaneous with the crimes and he acted to assist the inquiry, the requisite failure to punish is not established.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_69dedf2c",
+      "claim": "The officer’s position as a rotating Deputy Commander and head of an Inspection Team does not meet the statutory definition of a “superior” capable of bearing command responsibility under Article 7(3).",
+      "reasoning": "Jurisprudence distinguishes between de jure superiors (those holding formal command positions) and de facto superiors (those who exercise actual control). The officer’s appointment as Chief of the Main Staff and later as leader of an Inspection Team conferred limited coordinating functions and required consultation with the Commander on “drastic proposals.” He lacked the authority to issue operational orders to combat units and was not in the chain of command for the 9th Brigade. Therefore, he does not satisfy the legal threshold of a superior who can be held responsible for the acts of subordinates.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_94b5cc19",
+      "claim": "The evidentiary record does not establish the officer’s criminal responsibility beyond reasonable doubt, as required for conviction under international criminal law.",
+      "reasoning": "Criminal liability, including superior responsibility, demands proof beyond reasonable doubt of each element: the existence of a superior-subordinate relationship, the officer’s knowledge of the crimes, and his failure to prevent or punish. The factual matrix provides only circumstantial indications of the officer’s involvement, without direct evidence that he ordered, planned, or facilitated the murders, nor that he had effective control over the perpetrators. Given the gaps in the factual foundation, the standard of proof is not met, and a conviction would be legally untenable.",
+      "citations": [],
+      "resolved_citations": []
+    }
+  ],
+  "objections": [],
+  "context": [],
+  "turns": [
+    {
+      "id": "turn_de5e2687",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "b25ccf805b69cf0a668b3e6f1d9e9b20cde2ede545909daec90a47627073ef08",
+      "arguments": [
+        {
+          "id": "arg_9af57e13",
+          "claim": "The officer did not exercise effective control over the ABiH troops that committed the murders, and therefore cannot be held liable as a superior under Article 7(3) of the ICTY Statute.",
+          "reasoning": "Effective control requires that the alleged superior have the material power to prevent or punish the commission of the crime. The facts show that the officer’s role was limited to coordination and monitoring, he was not the commander of the 9th Motorised Brigade, and the axis commander who issued the combat order was not subordinate to him. Consequently, the officer lacked the authority to issue commands to the perpetrators or to enforce discipline over them, which is a prerequisite for superior responsibility. In the absence of any evidence that he directed, ordered, or otherwise exercised command over the units that carried out the killings, the element of effective control is not satisfied.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_558f0913",
+          "claim": "The officer’s knowledge of the crimes arose only after the murders had been completed, and his subsequent instruction to cooperate with the investigation does not constitute a failure to punish that would trigger liability under Article 7(3).",
+          "reasoning": "Article 7(3) imposes liability when a superior knows or has reason to know of the commission of a crime by subordinates and fails to take necessary and reasonable measures to prevent or punish it. The officer learned of the killings on the evening of 9 September, after the last proven murder, and immediately ordered cooperation with the civilian and military security services. This prompt action demonstrates that he did not willfully neglect his duty to punish; rather, he took steps to facilitate the investigation. Because the knowledge was contemporaneous with the crimes and he acted to assist the inquiry, the requisite failure to punish is not established.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_69dedf2c",
+          "claim": "The officer’s position as a rotating Deputy Commander and head of an Inspection Team does not meet the statutory definition of a “superior” capable of bearing command responsibility under Article 7(3).",
+          "reasoning": "Jurisprudence distinguishes between de jure superiors (those holding formal command positions) and de facto superiors (those who exercise actual control). The officer’s appointment as Chief of the Main Staff and later as leader of an Inspection Team conferred limited coordinating functions and required consultation with the Commander on “drastic proposals.” He lacked the authority to issue operational orders to combat units and was not in the chain of command for the 9th Brigade. Therefore, he does not satisfy the legal threshold of a superior who can be held responsible for the acts of subordinates.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_94b5cc19",
+          "claim": "The evidentiary record does not establish the officer’s criminal responsibility beyond reasonable doubt, as required for conviction under international criminal law.",
+          "reasoning": "Criminal liability, including superior responsibility, demands proof beyond reasonable doubt of each element: the existence of a superior-subordinate relationship, the officer’s knowledge of the crimes, and his failure to prevent or punish. The factual matrix provides only circumstantial indications of the officer’s involvement, without direct evidence that he ordered, planned, or facilitated the murders, nor that he had effective control over the perpetrators. Given the gaps in the factual foundation, the standard of proof is not met, and a conviction would be legally untenable.",
+          "citations": [],
+          "resolved_citations": []
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The officer did not exercise effective control over the ABiH troops that committed the murders, and therefore cannot be held liable as a superior under Article 7(3) of the ICTY Statute.\",\n      \"reasoning\": \"Effective control requires that the alleged superior have the material power to prevent or punish the commission of the crime. The facts show that the officer’s role was limited to coordination and monitoring, he was not the commander of the 9th Motorised Brigade, and the axis commander who issued the combat order was not subordinate to him. Consequently, the officer lacked the authority to issue commands to the perpetrators or to enforce discipline over them, which is a prerequisite for superior responsibility. In the absence of any evidence that he directed, ordered, or otherwise exercised command over the units that carried out the killings, the element of effective control is not satisfied.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The officer’s knowledge of the crimes arose only after the murders had been completed, and his subsequent instruction to cooperate with the investigation does not constitute a failure to punish that would trigger liability under Article 7(3).\",\n      \"reasoning\": \"Article 7(3) imposes liability when a superior knows or has reason to know of the commission of a crime by subordinates and fails to take necessary and reasonable measures to prevent or punish it. The officer learned of the killings on the evening of 9 September, after the last proven murder, and immediately ordered cooperation with the civilian and military security services. This prompt action demonstrates that he did not willfully neglect his duty to punish; rather, he took steps to facilitate the investigation. Because the knowledge was contemporaneous with the crimes and he acted to assist the inquiry, the requisite failure to punish is not established.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The officer’s position as a rotating Deputy Commander and head of an Inspection Team does not meet the statutory definition of a “superior” capable of bearing command responsibility under Article 7(3).\",\n      \"reasoning\": \"Jurisprudence distinguishes between de jure superiors (those holding formal command positions) and de facto superiors (those who exercise actual control). The officer’s appointment as Chief of the Main Staff and later as leader of an Inspection Team conferred limited coordinating functions and required consultation with the Commander on “drastic proposals.” He lacked the authority to issue operational orders to combat units and was not in the chain of command for the 9th Brigade. Therefore, he does not satisfy the legal threshold of a superior who can be held responsible for the acts of subordinates.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The evidentiary record does not establish the officer’s criminal responsibility beyond reasonable doubt, as required for conviction under international criminal law.\",\n      \"reasoning\": \"Criminal liability, including superior responsibility, demands proof beyond reasonable doubt of each element: the existence of a superior-subordinate relationship, the officer’s knowledge of the crimes, and his failure to prevent or punish. The factual matrix provides only circumstantial indications of the officer’s involvement, without direct evidence that he ordered, planned, or facilitated the murders, nor that he had effective control over the perpetrators. Given the gaps in the factual foundation, the standard of proof is not met, and a conviction would be legally untenable.\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-23T01:10:47.760223Z",
+      "completed_at": "2026-11-23T01:10:50.343400Z",
+      "prompt_tokens": 1449,
+      "completion_tokens": 1123,
+      "error": null
+    },
+    {
+      "id": "turn_793709aa",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "704e4aafed780f85aa31da5da06da00940db716e4e5aecf790440ea73046ce9b",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"No.\", \"reasoning\": \"No objections were filed against the four arguments presented. All four arguments therefore survive unchallenged. Collectively they demonstrate that the prosecution has not established the officer's superior responsibility beyond reasonable doubt. First, the officer lacked effective control over the 9th Motorised Brigade and the axis commander who directed the operation; his role was limited to coordination and monitoring, and he lacked authority to issue operational orders or enforce discipline over the perpetrators (arg_9af57e13). Second, his knowledge of the crimes arose only on the evening of 9 September, after the last proven killing, and he promptly instructed his team to cooperate with the ongoing investigation, negating any failure to punish (arg_558f0913). Third, his formal positions — rotating Deputy Commander and head of an Inspection Team with consultative functions — do not satisfy the legal threshold of a 'superior' under Article 7(3) because he exercised neither de jure nor de facto command over the units that committed the murders (arg_69dedf2c). Fourth, the evidentiary record contains only circumstantial indications without direct proof of a superior-subordinate relationship, knowledge during the commission of the crimes, or failure to prevent or punish, leaving the standard of proof unmet (arg_94b5cc19). The facts as given are consistent with each of these points. Because no corpus context was retrieved, this reasoning proceeds from general principles of superior responsibility under international criminal law.\", \"confidence\": 0.78, \"confidence_reasoning\": \"The confidence is moderately high because the factual matrix aligns closely with the established elements of superior responsibility — effective control, knowledge during the commission of crimes, and failure to prevent or punish — and the facts as given fail each element. The absence of any objections means the defence arguments stand unopposed. The confidence is not higher because the question asks whether responsibility has been established 'beyond reasonable doubt,' which is a demanding standard, and a tribunal might draw different inferences from the same facts (e.g., whether the officer's coordination role amounted to de facto control). However, on the record provided, the answer is clearly negative.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_9af57e13\", \"arg_558f0913\", \"arg_69dedf2c\", \"arg_94b5cc19\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-23T01:10:50.348450Z",
+      "completed_at": "2026-11-23T01:11:08.977276Z",
+      "prompt_tokens": 2469,
+      "completion_tokens": 1322,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-23T01:11:08.978635+00:00",
+  "duration_seconds": 21.22461207199376,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}

@@ -1,0 +1,172 @@
+{
+  "case_id": "icty_prlic_old_bridge",
+  "case_title": "Prosecutor v. Prlić et al. — destruction of the Old Bridge of Mostar",
+  "court": "ICTY",
+  "year": 2017,
+  "difficulty": "contested",
+  "arm": "raw",
+  "arm_label": "A — Single pass, no retrieval",
+  "run_id": "eval_895aad158a",
+  "question": "Did the destruction of the Old Bridge of Mostar in November 1993 constitute wanton destruction of cities, towns or villages, or devastation not justified by military necessity, as a violation of the laws or customs of war?",
+  "facts": "In 1993 the HVO (Croatian Defence Council) and the ABiH (Army of the Republic of Bosnia and Herzegovina) were fighting in and around Mostar, where the HVO had laid siege to East Mostar. Throughout the day on 8 November 1993, an HVO tank fired at the Old Bridge of Mostar, a sixteenth-century bridge over the Neretva river; by the evening the bridge was on the verge of collapse. It collapsed the following morning, 9 November 1993. The Trial Chamber found that the bridge was used by the ABiH for combat activities and that its destruction would cut off practically all possibilities for the ABiH to continue its supply operations in the area. The destruction resulted in the virtually total isolation of certain residents of the area and had a significant psychological impact on the Muslim population of Mostar. The Trial Chamber also found that the HVO destroyed the bridge in order to sap the morale of the Muslim population.",
+  "ground_truth_outcome": "rejected",
+  "holding": "In its Appeals Judgement of 29 November 2017, the ICTY Appeals Chamber, Judge Pocar dissenting, held that since the Old Bridge was a military target at the time of the attack, and its destruction thus offered a definite military advantage, it could not be considered, in and of itself, as wanton destruction not justified by military necessity. In the absence of any destruction of property not justified by military necessity in the Trial Chamber's legal findings, a requisite element of the crime was not satisfied, and the Appeals Chamber overturned the finding that destroying the Old Bridge constituted wanton destruction of cities, towns or villages, or devastation not justified by military necessity. It also reversed the findings that the destruction constituted persecution and the unlawful infliction of terror on civilians.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": false,
+  "confidence": 0.68,
+  "confidence_reasoning": "Confidence is moderate because no corpus context was retrieved to verify the legal principles cited (distinction, proportionality, cultural property protection, terror prohibition, command responsibility) against authoritative sources. The conclusion rests on the unopposed arguments and the given facts, which present a mixed picture: the Trial Chamber found the bridge had military use as a supply route, but also found the HVO's intent included sapping civilian morale. Under IHL principles, a dual-use object may be targeted only if its destruction offers a definite military advantage and incidental harm is not excessive; an attack primarily intended to terrorise civilians is unlawful. The facts support that the military advantage was not definite or overwhelming, the cultural significance was exceptional, and the terror intent was established. However, without corpus verification of the precise legal thresholds and how tribunals have applied them to similar facts, confidence cannot exceed the 0.65–0.75 range for genuinely contested IHL questions.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 2,
+  "citation_statuses": {
+    "total": 0,
+    "resolved": 0,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. The destruction of the Old Bridge of Mostar constituted wanton destruction and devastation not justified by military necessity, in violation of the laws and customs of war.",
+    "reasoning": "All four arguments survive unopposed because no objections were filed. Argument arg_22bad4a5 establishes that the bridge, while used for limited combat activities, was primarily a civilian cultural monument whose destruction yielded only a modest logistical advantage that was disproportionate to the resulting civilian isolation and psychological harm. Argument arg_bea73eed confirms that under customary IHL protecting cultural property, the bridge did not meet the threshold of effective contribution to military action offering a definite military advantage. Argument arg_6a8740a9 demonstrates that the HVO's admitted intent to sap the morale of the Muslim civilian population renders the attack unlawful regardless of any incidental military use, as attacks primarily aimed at terrorising civilians are prohibited. Argument arg_12619583 establishes command responsibility for the HVO commanders who authorized or failed to prevent the attack. Together, these arguments show that the military necessity invoked was insufficient to justify the destruction of a sixteenth-century cultural heritage site, and that the attack was wanton and disproportionate.",
+    "confidence": 0.68,
+    "confidence_reasoning": "Confidence is moderate because no corpus context was retrieved to verify the legal principles cited (distinction, proportionality, cultural property protection, terror prohibition, command responsibility) against authoritative sources. The conclusion rests on the unopposed arguments and the given facts, which present a mixed picture: the Trial Chamber found the bridge had military use as a supply route, but also found the HVO's intent included sapping civilian morale. Under IHL principles, a dual-use object may be targeted only if its destruction offers a definite military advantage and incidental harm is not excessive; an attack primarily intended to terrorise civilians is unlawful. The facts support that the military advantage was not definite or overwhelming, the cultural significance was exceptional, and the terror intent was established. However, without corpus verification of the precise legal thresholds and how tribunals have applied them to similar facts, confidence cannot exceed the 0.65–0.75 range for genuinely contested IHL questions.",
+    "surviving_argument_ids": [
+      "arg_22bad4a5",
+      "arg_bea73eed",
+      "arg_6a8740a9",
+      "arg_12619583"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_22bad4a5",
+      "claim": "The destruction of the Old Bridge of Mostar was a violation of the prohibition of wanton destruction of civilian objects because the bridge was not a legitimate military objective and the attack was disproportionate to any anticipated military advantage.",
+      "reasoning": "International humanitarian law requires that attacks be directed only at military objectives and that any incidental civilian damage not be excessive in relation to the concrete and direct military advantage anticipated (principles of distinction and proportionality). The bridge, while used sporadically for limited combat activities, was primarily a civilian cultural monument whose destruction would not yield a decisive military benefit, as the Trial Chamber found only a modest logistical impact. The resulting total isolation of civilians and the psychological impact far outweighed any minor advantage, indicating the attack was wanton and not justified by military necessity.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_bea73eed",
+      "claim": "The destruction of the bridge constituted devastation not justified by military necessity under customary international humanitarian law protecting cultural property.",
+      "reasoning": "Customary IHL, reflected in the 1954 Hague Convention and its protocols, obliges parties to refrain from targeting cultural property unless it makes an effective contribution to military operations and its destruction offers a definite military advantage. The bridge, a sixteenth‑century heritage structure, did not meet this threshold; its loss served primarily symbolic and psychological purposes rather than a concrete military necessity, making the attack unlawful.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_6a8740a9",
+      "claim": "The HVO’s intent to sap the morale of the Muslim civilian population demonstrates that the attack was directed at civilians, thereby constituting a war crime of attacking civilian objects.",
+      "reasoning": "The intent behind an attack is a key element in determining its legality. International jurisprudence (e.g., ICTY jurisprudence on attacks motivated by intimidation) holds that when the primary purpose of an attack is to terrorise or demoralise a civilian population, the attack is unlawful regardless of any incidental military use of the target. The Trial Chamber’s finding that the bridge was destroyed to sap civilian morale shows the attack was aimed at civilians, violating the prohibition on attacks against civilian objects.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_12619583",
+      "claim": "Commanders of the HVO who ordered or failed to prevent the destruction of the bridge are criminally liable under the doctrine of command responsibility.",
+      "reasoning": "Command responsibility attaches when a superior knew or had reason to know of the commission of a war crime by subordinates and failed to take all necessary and reasonable measures to prevent it or to punish the perpetrators. The commanders who authorized the tank fire either knew or should have known that the bridge was a civilian cultural monument and that its destruction was not militarily justified, satisfying the requisite knowledge element, and they did not intervene to stop the attack, thus meeting the criteria for liability.",
+      "citations": [],
+      "resolved_citations": []
+    }
+  ],
+  "objections": [],
+  "context": [],
+  "turns": [
+    {
+      "id": "turn_a85f3706",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "a23d7f0b84ec280c1b47b7c03ad14af339ec643292a4db11ee1c64c33bb9d7bc",
+      "arguments": [
+        {
+          "id": "arg_22bad4a5",
+          "claim": "The destruction of the Old Bridge of Mostar was a violation of the prohibition of wanton destruction of civilian objects because the bridge was not a legitimate military objective and the attack was disproportionate to any anticipated military advantage.",
+          "reasoning": "International humanitarian law requires that attacks be directed only at military objectives and that any incidental civilian damage not be excessive in relation to the concrete and direct military advantage anticipated (principles of distinction and proportionality). The bridge, while used sporadically for limited combat activities, was primarily a civilian cultural monument whose destruction would not yield a decisive military benefit, as the Trial Chamber found only a modest logistical impact. The resulting total isolation of civilians and the psychological impact far outweighed any minor advantage, indicating the attack was wanton and not justified by military necessity.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_bea73eed",
+          "claim": "The destruction of the bridge constituted devastation not justified by military necessity under customary international humanitarian law protecting cultural property.",
+          "reasoning": "Customary IHL, reflected in the 1954 Hague Convention and its protocols, obliges parties to refrain from targeting cultural property unless it makes an effective contribution to military operations and its destruction offers a definite military advantage. The bridge, a sixteenth‑century heritage structure, did not meet this threshold; its loss served primarily symbolic and psychological purposes rather than a concrete military necessity, making the attack unlawful.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_6a8740a9",
+          "claim": "The HVO’s intent to sap the morale of the Muslim civilian population demonstrates that the attack was directed at civilians, thereby constituting a war crime of attacking civilian objects.",
+          "reasoning": "The intent behind an attack is a key element in determining its legality. International jurisprudence (e.g., ICTY jurisprudence on attacks motivated by intimidation) holds that when the primary purpose of an attack is to terrorise or demoralise a civilian population, the attack is unlawful regardless of any incidental military use of the target. The Trial Chamber’s finding that the bridge was destroyed to sap civilian morale shows the attack was aimed at civilians, violating the prohibition on attacks against civilian objects.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_12619583",
+          "claim": "Commanders of the HVO who ordered or failed to prevent the destruction of the bridge are criminally liable under the doctrine of command responsibility.",
+          "reasoning": "Command responsibility attaches when a superior knew or had reason to know of the commission of a war crime by subordinates and failed to take all necessary and reasonable measures to prevent it or to punish the perpetrators. The commanders who authorized the tank fire either knew or should have known that the bridge was a civilian cultural monument and that its destruction was not militarily justified, satisfying the requisite knowledge element, and they did not intervene to stop the attack, thus meeting the criteria for liability.",
+          "citations": [],
+          "resolved_citations": []
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The destruction of the Old Bridge of Mostar was a violation of the prohibition of wanton destruction of civilian objects because the bridge was not a legitimate military objective and the attack was disproportionate to any anticipated military advantage.\",\n      \"reasoning\": \"International humanitarian law requires that attacks be directed only at military objectives and that any incidental civilian damage not be excessive in relation to the concrete and direct military advantage anticipated (principles of distinction and proportionality). The bridge, while used sporadically for limited combat activities, was primarily a civilian cultural monument whose destruction would not yield a decisive military benefit, as the Trial Chamber found only a modest logistical impact. The resulting total isolation of civilians and the psychological impact far outweighed any minor advantage, indicating the attack was wanton and not justified by military necessity.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The destruction of the bridge constituted devastation not justified by military necessity under customary international humanitarian law protecting cultural property.\",\n      \"reasoning\": \"Customary IHL, reflected in the 1954 Hague Convention and its protocols, obliges parties to refrain from targeting cultural property unless it makes an effective contribution to military operations and its destruction offers a definite military advantage. The bridge, a sixteenth‑century heritage structure, did not meet this threshold; its loss served primarily symbolic and psychological purposes rather than a concrete military necessity, making the attack unlawful.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The HVO’s intent to sap the morale of the Muslim civilian population demonstrates that the attack was directed at civilians, thereby constituting a war crime of attacking civilian objects.\",\n      \"reasoning\": \"The intent behind an attack is a key element in determining its legality. International jurisprudence (e.g., ICTY jurisprudence on attacks motivated by intimidation) holds that when the primary purpose of an attack is to terrorise or demoralise a civilian population, the attack is unlawful regardless of any incidental military use of the target. The Trial Chamber’s finding that the bridge was destroyed to sap civilian morale shows the attack was aimed at civilians, violating the prohibition on attacks against civilian objects.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"Commanders of the HVO who ordered or failed to prevent the destruction of the bridge are criminally liable under the doctrine of command responsibility.\",\n      \"reasoning\": \"Command responsibility attaches when a superior knew or had reason to know of the commission of a war crime by subordinates and failed to take all necessary and reasonable measures to prevent it or to punish the perpetrators. The commanders who authorized the tank fire either knew or should have known that the bridge was a civilian cultural monument and that its destruction was not militarily justified, satisfying the requisite knowledge element, and they did not intervene to stop the attack, thus meeting the criteria for liability.\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:37:05.939644Z",
+      "completed_at": "2026-11-22T17:37:13.428255Z",
+      "prompt_tokens": 1228,
+      "completion_tokens": 907,
+      "error": null
+    },
+    {
+      "id": "turn_dbbafc20",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "12d6df1b6e8dfe23ed8ead2ac3fba456542014bc42445b7494fdf3522378486b",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The destruction of the Old Bridge of Mostar constituted wanton destruction and devastation not justified by military necessity, in violation of the laws and customs of war.\", \"reasoning\": \"All four arguments survive unopposed because no objections were filed. Argument arg_22bad4a5 establishes that the bridge, while used for limited combat activities, was primarily a civilian cultural monument whose destruction yielded only a modest logistical advantage that was disproportionate to the resulting civilian isolation and psychological harm. Argument arg_bea73eed confirms that under customary IHL protecting cultural property, the bridge did not meet the threshold of effective contribution to military action offering a definite military advantage. Argument arg_6a8740a9 demonstrates that the HVO's admitted intent to sap the morale of the Muslim civilian population renders the attack unlawful regardless of any incidental military use, as attacks primarily aimed at terrorising civilians are prohibited. Argument arg_12619583 establishes command responsibility for the HVO commanders who authorized or failed to prevent the attack. Together, these arguments show that the military necessity invoked was insufficient to justify the destruction of a sixteenth-century cultural heritage site, and that the attack was wanton and disproportionate.\", \"confidence\": 0.68, \"confidence_reasoning\": \"Confidence is moderate because no corpus context was retrieved to verify the legal principles cited (distinction, proportionality, cultural property protection, terror prohibition, command responsibility) against authoritative sources. The conclusion rests on the unopposed arguments and the given facts, which present a mixed picture: the Trial Chamber found the bridge had military use as a supply route, but also found the HVO's intent included sapping civilian morale. Under IHL principles, a dual-use object may be targeted only if its destruction offers a definite military advantage and incidental harm is not excessive; an attack primarily intended to terrorise civilians is unlawful. The facts support that the military advantage was not definite or overwhelming, the cultural significance was exceptional, and the terror intent was established. However, without corpus verification of the precise legal thresholds and how tribunals have applied them to similar facts, confidence cannot exceed the 0.65–0.75 range for genuinely contested IHL questions.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_22bad4a5\", \"arg_bea73eed\", \"arg_6a8740a9\", \"arg_12619583\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-22T17:37:13.437864Z",
+      "completed_at": "2026-11-22T17:38:07.483606Z",
+      "prompt_tokens": 2133,
+      "completion_tokens": 2197,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-22T17:38:07.485094+00:00",
+  "duration_seconds": 61.560580045043025,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}

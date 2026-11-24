@@ -1,0 +1,929 @@
+{
+  "case_id": "icj_nuclear_weapons_self_defence",
+  "case_title": "Nuclear Weapons Advisory Opinion — use in an extreme circumstance of self-defence",
+  "court": "ICJ",
+  "year": 1996,
+  "difficulty": "contested",
+  "arm": "single_attacker",
+  "arm_label": "C — One attacker",
+  "run_id": "eval_7701f62d88",
+  "question": "Is the threat or use of nuclear weapons unlawful under international law, including the principles and rules of humanitarian law, in an extreme circumstance of self-defence in which the very survival of a State would be at stake?",
+  "facts": "The UN General Assembly asked the International Court of Justice whether the threat or use of nuclear weapons in any circumstance is permitted under international law. Nuclear weapons are explosive devices whose energy results from the fusion or fission of the atom. That process releases not only immense quantities of heat and energy but also powerful and prolonged radiation. The destructive power of nuclear weapons cannot be contained in either space or time, and their radiation can affect health, agriculture, natural resources and demography over a very wide area and damage the genetic make-up of future generations. No treaty of general application prohibits nuclear weapons as such. A number of states maintain nuclear arsenals under a declared policy of deterrence, and some states made submissions that the use of low-yield or tactical nuclear weapons against military targets in remote areas could be consistent with humanitarian law.",
+  "ground_truth_outcome": "indeterminate",
+  "holding": "In its Advisory Opinion of 8 July 1996, the International Court of Justice held (para. 105(2)E), by seven votes to seven, by the President's casting vote, that the threat or use of nuclear weapons would generally be contrary to the rules of international law applicable in armed conflict, and in particular the principles and rules of humanitarian law; but that, in view of the current state of international law and of the elements of fact at its disposal, the Court cannot conclude definitively whether the threat or use of nuclear weapons would be lawful or unlawful in an extreme circumstance of self-defence, in which the very survival of a State would be at stake.",
+  "predicted_outcome": "indeterminate",
+  "outcome_correct": true,
+  "confidence": 0.7,
+  "confidence_reasoning": "The question is the same one the ICJ addressed in its 1996 Advisory Opinion, where the Court found it could not reach a definitive conclusion. The sustained objections correctly dismantle the Rome Statute-based arguments, leaving only the Additional Protocol I Article 54 arguments. Those arguments are legally coherent but limited by treaty participation, uncertain customary status, and the potential applicability of the Article 54(5) derogation in the precise 'extreme circumstance of self-defence' the question posits. A confidence of 0.7 reflects that the surviving arguments create a serious case for unlawfulness but do not conclusively resolve a question the ICJ itself left open.",
+  "rounds": 2,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 2,
+  "total_calls": 6,
+  "citation_statuses": {
+    "total": 10,
+    "resolved": 10,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Indeterminate.",
+    "reasoning": "Three objections were raised and all are sustained. Objection obj_09d08186 correctly identifies that Rome Statute Article 8(2)(b)(xx) conditions the prohibition on inherently indiscriminate weapons on their being 'the subject of a comprehensive prohibition and... included in an annex to this Statute'; nuclear weapons are not so listed, so arg_bbe5c673 fails on its own cited authority. Objection obj_102c44a5 is likewise well-founded: CCW Protocol III Article 2(3) regulates incendiary weapons specifically, not nuclear weapons, and the Rome Statute's conditional prohibition does not apply. Objection obj_3580d8cb correctly distinguishes the Rome Statute's function (defining war crimes for ICC jurisdiction) from the broader question of lawfulness under general international law (jus ad bellum and jus in bello); the Statute does not independently resolve the latter. The surviving arguments (arg_7ee25631 and arg_1efbcc46, both invoking Additional Protocol I Article 54) establish a plausible case that nuclear use would destroy objects indispensable to civilian survival and that the Article 54(5) derogation — limited to a State's own territory in defence against invasion — does not cover trans-boundary nuclear effects. However, these arguments rest on treaty obligations binding only parties to Additional Protocol I (which several nuclear-armed States have not ratified), the customary status of Article 54 is contested, and the extreme self-defence scenario described may engage the very 'imperative military necessity' the derogation contemplates. The International Court of Justice itself concluded it could not determine definitively whether threat or use would be lawful or unlawful in an extreme circumstance of self-defence. The present record does not overcome that indeterminacy.",
+    "confidence": 0.7,
+    "confidence_reasoning": "The question is the same one the ICJ addressed in its 1996 Advisory Opinion, where the Court found it could not reach a definitive conclusion. The sustained objections correctly dismantle the Rome Statute-based arguments, leaving only the Additional Protocol I Article 54 arguments. Those arguments are legally coherent but limited by treaty participation, uncertain customary status, and the potential applicability of the Article 54(5) derogation in the precise 'extreme circumstance of self-defence' the question posits. A confidence of 0.7 reflects that the surviving arguments create a serious case for unlawfulness but do not conclusively resolve a question the ICJ itself left open.",
+    "surviving_argument_ids": [
+      "arg_7ee25631",
+      "arg_1efbcc46"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_6c30dc7c",
+      "claim": "The threat or use of nuclear weapons is unlawful because it violates the prohibition on attacks that cause widespread, long‑term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated.",
+      "reasoning": "Article 8 of the Rome Statute criminalises intentional attacks known to cause such extensive environmental damage that is disproportionate to the anticipated military advantage. Nuclear detonations inevitably produce massive, long‑lasting environmental harm far exceeding any concrete advantage, thereby breaching the proportionality rule and constituting a war crime.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_7ee25631",
+      "claim": "Even in an extreme self‑defence scenario, the use of nuclear weapons is prohibited because it would destroy objects indispensable to the survival of the civilian population, which Additional Protocol I article 54 forbids except under a narrow derogation that does not apply to the trans‑boundary effects of nuclear weapons.",
+      "reasoning": "Article 54 of Additional Protocol I expressly bans attacks on food, water, agricultural land and other essential civilian objects, allowing derogation only within a State’s own territory when required by imperative military necessity. Nuclear weapons cannot be limited to such territory and inevitably affect indispensable civilian objects across borders, so the derogation does not legitimize their use.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "54",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "54",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_bbe5c673",
+      "claim": "Nuclear weapons are inherently indiscriminate and cause superfluous injury, thus their use constitutes a war crime under the Rome Statute and breaches the principle of distinction reflected in CCW Protocol III article 2(3).",
+      "reasoning": "The Rome Statute’s paragraph (xx) criminalises weapons that are inherently indiscriminate or cause unnecessary suffering. Nuclear weapons cannot be directed at a specific military objective without affecting civilians, mirroring the prohibition in CCW Protocol III article 2(3) on incendiary weapons used in concentrations of civilians where feasible precautions cannot be taken. Consequently, employing nuclear weapons violates both the specific prohibition on indiscriminate weapons and the broader principle of distinction.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "(xx) Employing weapons, projectiles and material and methods of warfare which are of a nature to cause superfluous injury or unnecessary suffering or which are inherently indiscriminate in violation of the international law of armed conflict, provided that such weapons, projectiles and material and methods of warfare are the subject of a comprehensive prohibition and are included in an annex to this Statute, by an amendment in accordance with the relevant provisions set forth in articles 121   and 123 ;"
+        },
+        {
+          "type": "treaty",
+          "instrument": "ccw_p_iii",
+          "article": "2(3)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "It is further prohibited to make any military objective located within a concentration of civilians the object of attack by means of incendiary weapons other than air‑delivered incendiary weapons, except when such military objective is clearly separated from the concentration of civilians and all feasible precautions are taken with a view to limiting the incendiary effects to the military objective and to avoiding, and in any event to minimizing, incidental loss of civilian life, injury to civilians and damage civilian objects."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "(xx) Employing weapons, projectiles and material and methods of warfare which are of a nature to cause superfluous injury or unnecessary suffering or which are inherently indiscriminate in violation of the international law of armed conflict, provided that such weapons, projectiles and material and methods of warfare are the subject of a comprehensive prohibition and are included in an annex to this Statute, by an amendment in accordance with the relevant provisions set forth in articles 121   and 123 ;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccw_p_iii",
+            "article": "2(3)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "It is further prohibited to make any military objective located within a concentration of civilians the object of attack by means of incendiary weapons other than air‑delivered incendiary weapons, except when such military objective is clearly separated from the concentration of civilians and all feasible precautions are taken with a view to limiting the incendiary effects to the military objective and to avoiding, and in any event to minimizing, incidental loss of civilian life, injury to civilians and damage civilian objects."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_cabd90fa",
+      "claim": "The threat or use of nuclear weapons is unlawful because it violates the prohibition on attacks that cause widespread, long‑term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated.",
+      "reasoning": "Article 8(2)(b)(iv) of the Rome Statute criminalises intentional attacks that are known to cause widespread, long‑term and severe environmental damage that is clearly excessive compared with the concrete and direct military advantage sought. A nuclear detonation inevitably produces massive, long‑lasting radiation, thermal, blast and ecological effects that far exceed any specific military gain, thereby failing the proportionality test and constituting a war crime under the Statute.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_1efbcc46",
+      "claim": "Even in an extreme self‑defence scenario, the use of nuclear weapons is prohibited because it would destroy objects indispensable to the survival of the civilian population, which Additional Protocol I article 54 forbids except for a narrow derogation that does not apply to nuclear weapons.",
+      "reasoning": "Article 54 of Additional Protocol I expressly bans attacks on objects indispensable to civilian survival—such as food, water, agricultural land and livestock—unless the destruction occurs within the State’s own territory and is justified by imperative military necessity. Nuclear weapons cannot be confined to a limited area; their blast, heat and radiation inevitably affect indispensable civilian objects across borders, and the limited derogation does not extend to such trans‑boundary, indiscriminate effects. Consequently, their use breaches the prohibition on attacking indispensable civilian objects.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "54",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them move away, or for any other motive."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "54",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them move away, or for any other motive."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [
+    {
+      "id": "obj_09d08186",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_bbe5c673",
+      "ground": "The argument fails to satisfy the specific legal conditions required for a weapon to be classified as 'inherently indiscriminate' under the Rome Statute.",
+      "reasoning": "Article 8(2)(b)(xx) of the Rome Statute explicitly conditions the prohibition on 'inherently indiscriminate' weapons on them being 'the subject of a comprehensive prohibition and... included in an annex to this Statute.' Nuclear weapons are not currently listed in the relevant annex. Therefore, characterizing their use as a war crime under this specific sub-paragraph is legally incorrect based on the cited text.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(xx)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(xx)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Rome Statute Article 8(2)(b)(xx) explicitly requires that inherently indiscriminate weapons be 'the subject of a comprehensive prohibition and... included in an annex to this Statute.' Nuclear weapons are not listed in any such annex. The argument therefore fails on the very provision it cites."
+    },
+    {
+      "id": "obj_102c44a5",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_bbe5c673",
+      "ground": "The argument misstates the legal test by conflating the general prohibition on indiscriminate attacks with a specific, conditional prohibition that does not apply to nuclear weapons.",
+      "reasoning": "Rome Statute Art. 8(2)(b)(xx) criminalizes weapons that are 'the subject of a comprehensive prohibition' and listed in an annex; nuclear weapons are not listed. Citing CCW Protocol III Art. 2(3) is legally inapposite because it regulates 'incendiary weapons' specifically, not nuclear or indiscriminate weapons generally. The authority cited does not support the proposition that nuclear weapons are per se illegal under these specific provisions.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(xx)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "ccw_p_iii",
+          "article": "2(3)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(xx)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccw_p_iii",
+            "article": "2(3)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument conflates the general principle of distinction with a specific, conditional criminalisation that does not apply to nuclear weapons. CCW Protocol III Article 2(3) regulates incendiary weapons, not nuclear weapons, and provides no basis for a per se prohibition on nuclear use."
+    },
+    {
+      "id": "obj_3580d8cb",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_6c30dc7c",
+      "ground": "The argument incorrectly characterizes a treaty war crime provision as establishing a general prohibition on the threat or use of nuclear weapons in self-defence.",
+      "reasoning": "Article 8 of the Rome Statute defines war crimes for the jurisdiction of the ICC; it does not independently determine the lawfulness of nuclear weapons under general international law (jus ad bellum or jus in bello) in a self-defence scenario. The argument fails to distinguish between the specific criminal liability for disproportionate attacks and the broader legal question of whether the use of nuclear weapons is permitted under international law in extreme self-defence.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The Rome Statute defines war crimes for the jurisdiction of the International Criminal Court; it does not independently determine the lawfulness of nuclear weapons under general international law (jus ad bellum or jus in bello). The argument fails to distinguish individual criminal liability from the broader legal question presented."
+    }
+  ],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw_p_v",
+        "article": "4(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-v-2003",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw_p_v",
+        "article": "6",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-v-2003",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw_p_iii",
+        "article": "1",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw_p_ii",
+        "article": "6(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-ii-1980",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw_p_iii",
+        "article": "2(3)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "54",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw_p_v",
+        "article": "3(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-v-2003",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_18c6c47c",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "5c647a3d80be2b497769ab55be4c48e8a53a966b819d18c2135dfc426b0f8d76",
+      "arguments": [
+        {
+          "id": "arg_6c30dc7c",
+          "claim": "The threat or use of nuclear weapons is unlawful because it violates the prohibition on attacks that cause widespread, long‑term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated.",
+          "reasoning": "Article 8 of the Rome Statute criminalises intentional attacks known to cause such extensive environmental damage that is disproportionate to the anticipated military advantage. Nuclear detonations inevitably produce massive, long‑lasting environmental harm far exceeding any concrete advantage, thereby breaching the proportionality rule and constituting a war crime.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_7ee25631",
+          "claim": "Even in an extreme self‑defence scenario, the use of nuclear weapons is prohibited because it would destroy objects indispensable to the survival of the civilian population, which Additional Protocol I article 54 forbids except under a narrow derogation that does not apply to the trans‑boundary effects of nuclear weapons.",
+          "reasoning": "Article 54 of Additional Protocol I expressly bans attacks on food, water, agricultural land and other essential civilian objects, allowing derogation only within a State’s own territory when required by imperative military necessity. Nuclear weapons cannot be limited to such territory and inevitably affect indispensable civilian objects across borders, so the derogation does not legitimize their use.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_bbe5c673",
+          "claim": "Nuclear weapons are inherently indiscriminate and cause superfluous injury, thus their use constitutes a war crime under the Rome Statute and breaches the principle of distinction reflected in CCW Protocol III article 2(3).",
+          "reasoning": "The Rome Statute’s paragraph (xx) criminalises weapons that are inherently indiscriminate or cause unnecessary suffering. Nuclear weapons cannot be directed at a specific military objective without affecting civilians, mirroring the prohibition in CCW Protocol III article 2(3) on incendiary weapons used in concentrations of civilians where feasible precautions cannot be taken. Consequently, employing nuclear weapons violates both the specific prohibition on indiscriminate weapons and the broader principle of distinction.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "(xx) Employing weapons, projectiles and material and methods of warfare which are of a nature to cause superfluous injury or unnecessary suffering or which are inherently indiscriminate in violation of the international law of armed conflict, provided that such weapons, projectiles and material and methods of warfare are the subject of a comprehensive prohibition and are included in an annex to this Statute, by an amendment in accordance with the relevant provisions set forth in articles 121   and 123 ;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "ccw_p_iii",
+              "article": "2(3)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "It is further prohibited to make any military objective located within a concentration of civilians the object of attack by means of incendiary weapons other than air‑delivered incendiary weapons, except when such military objective is clearly separated from the concentration of civilians and all feasible precautions are taken with a view to limiting the incendiary effects to the military objective and to avoiding, and in any event to minimizing, incidental loss of civilian life, injury to civilians and damage civilian objects."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "(xx) Employing weapons, projectiles and material and methods of warfare which are of a nature to cause superfluous injury or unnecessary suffering or which are inherently indiscriminate in violation of the international law of armed conflict, provided that such weapons, projectiles and material and methods of warfare are the subject of a comprehensive prohibition and are included in an annex to this Statute, by an amendment in accordance with the relevant provisions set forth in articles 121   and 123 ;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccw_p_iii",
+                "article": "2(3)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "It is further prohibited to make any military objective located within a concentration of civilians the object of attack by means of incendiary weapons other than air‑delivered incendiary weapons, except when such military objective is clearly separated from the concentration of civilians and all feasible precautions are taken with a view to limiting the incendiary effects to the military objective and to avoiding, and in any event to minimizing, incidental loss of civilian life, injury to civilians and damage civilian objects."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The threat or use of nuclear weapons is unlawful because it violates the prohibition on attacks that cause widespread, long‑term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated.\",\n      \"reasoning\": \"Article 8 of the Rome Statute criminalises intentional attacks known to cause such extensive environmental damage that is disproportionate to the anticipated military advantage. Nuclear detonations inevitably produce massive, long‑lasting environmental harm far exceeding any concrete advantage, thereby breaching the proportionality rule and constituting a war crime.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Even in an extreme self‑defence scenario, the use of nuclear weapons is prohibited because it would destroy objects indispensable to the survival of the civilian population, which Additional Protocol I article 54 forbids except under a narrow derogation that does not apply to the trans‑boundary effects of nuclear weapons.\",\n      \"reasoning\": \"Article 54 of Additional Protocol I expressly bans attacks on food, water, agricultural land and other essential civilian objects, allowing derogation only within a State’s own territory when required by imperative military necessity. Nuclear weapons cannot be limited to such territory and inevitably affect indispensable civilian objects across borders, so the derogation does not legitimize their use.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54\",\n          \"quoted_text\": \"It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Nuclear weapons are inherently indiscriminate and cause superfluous injury, thus their use constitutes a war crime under the Rome Statute and breaches the principle of distinction reflected in CCW Protocol III article 2(3).\",\n      \"reasoning\": \"The Rome Statute’s paragraph (xx) criminalises weapons that are inherently indiscriminate or cause unnecessary suffering. Nuclear weapons cannot be directed at a specific military objective without affecting civilians, mirroring the prohibition in CCW Protocol III article 2(3) on incendiary weapons used in concentrations of civilians where feasible precautions cannot be taken. Consequently, employing nuclear weapons violates both the specific prohibition on indiscriminate weapons and the broader principle of distinction.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"(xx) Employing weapons, projectiles and material and methods of warfare which are of a nature to cause superfluous injury or unnecessary suffering or which are inherently indiscriminate in violation of the international law of armed conflict, provided that such weapons, projectiles and material and methods of warfare are the subject of a comprehensive prohibition and are included in an annex to this Statute, by an amendment in accordance with the relevant provisions set forth in articles 121   and 123 ;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccw_p_iii\",\n          \"article\": \"2(3)\",\n          \"quoted_text\": \"It is further prohibited to make any military objective located within a concentration of civilians the object of attack by means of incendiary weapons other than air‑delivered incendiary weapons, except when such military objective is clearly separated from the concentration of civilians and all feasible precautions are taken with a view to limiting the incendiary effects to the military objective and to avoiding, and in any event to minimizing, incidental loss of civilian life, injury to civilians and damage civilian objects.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:55:01.300142Z",
+      "completed_at": "2026-11-22T17:55:07.718403Z",
+      "prompt_tokens": 4776,
+      "completion_tokens": 2833,
+      "error": null
+    },
+    {
+      "id": "turn_a5950f90",
+      "round_number": 1,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "06be0803f8f2c8d3d6d2de0e58f79bc1c130495089e56648b42cfb20980dfb33",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_09d08186",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_bbe5c673",
+          "ground": "The argument fails to satisfy the specific legal conditions required for a weapon to be classified as 'inherently indiscriminate' under the Rome Statute.",
+          "reasoning": "Article 8(2)(b)(xx) of the Rome Statute explicitly conditions the prohibition on 'inherently indiscriminate' weapons on them being 'the subject of a comprehensive prohibition and... included in an annex to this Statute.' Nuclear weapons are not currently listed in the relevant annex. Therefore, characterizing their use as a war crime under this specific sub-paragraph is legally incorrect based on the cited text.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(xx)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(xx)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Rome Statute Article 8(2)(b)(xx) explicitly requires that inherently indiscriminate weapons be 'the subject of a comprehensive prohibition and... included in an annex to this Statute.' Nuclear weapons are not listed in any such annex. The argument therefore fails on the very provision it cites."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_bbe5c673\",\n      \"ground\": \"The argument fails to satisfy the specific legal conditions required for a weapon to be classified as 'inherently indiscriminate' under the Rome Statute.\",\n      \"reasoning\": \"Article 8(2)(b)(xx) of the Rome Statute explicitly conditions the prohibition on 'inherently indiscriminate' weapons on them being 'the subject of a comprehensive prohibition and... included in an annex to this Statute.' Nuclear weapons are not currently listed in the relevant annex. Therefore, characterizing their use as a war crime under this specific sub-paragraph is legally incorrect based on the cited text.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(xx)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:55:07.721300Z",
+      "completed_at": "2026-11-22T17:55:08.733515Z",
+      "prompt_tokens": 5605,
+      "completion_tokens": 223,
+      "error": null
+    },
+    {
+      "id": "turn_4c2d9ab3",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "4ba933b006f59547279320e8c1636cbc5c72b666818620ee5174a78c75feb013",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Indeterminate.\", \"reasoning\": \"The objection to arg_bbe5c673 is sustained: Rome Statute article 8(2)(b)(xx) expressly conditions the war-crime prohibition on inherently indiscriminate weapons on their being 'the subject of a comprehensive prohibition and... included in an annex to this Statute.' Nuclear weapons are not so listed; therefore the argument's reliance on that sub-paragraph fails. The surviving arguments (arg_6c30dc7c and arg_7ee25631) establish that nuclear-weapon use would presumptively violate the proportionality rule (Rome Statute art. 8(2)(b)(iv)) and the prohibition on attacking objects indispensable to civilian survival (AP I art. 54). However, neither argument addresses the specific exception posed by the question — an extreme circumstance of self-defence in which the very survival of a State is at stake. The ICJ in its 1996 Advisory Opinion likewise found that the law available to it could not resolve that narrow contingency. On the record before me, the question therefore remains unresolved.\", \"confidence\": 0.65, \"confidence_reasoning\": \"The surviving arguments credibly demonstrate that nuclear-weapon use would ordinarily breach core IHL rules, but the precise scenario in the question (extreme self-defence, survival of the State at stake) is the very contingency the ICJ left open. Because the parties' submissions do not engage that exception, a definitive Yes or No cannot be reached on this record. A confidence of 0.65 reflects that the general illegality is well supported while the specific exception remains genuinely contested.\", \"rulings\": [{\"objection_id\": \"obj_09d08186\", \"disposition\": \"sustained\", \"reasoning\": \"The objection correctly identifies that Rome Statute article 8(2)(b)(xx) requires a weapon to be 'the subject of a comprehensive prohibition and... included in an annex to this Statute' before its use constitutes a war crime under that sub-paragraph. Nuclear weapons are not listed in any such annex; therefore the argument's characterization of their use as a war crime under article 8(2)(b)(xx) is legally incorrect on the cited text.\"}], \"surviving_argument_ids\": [\"arg_6c30dc7c\", \"arg_7ee25631\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-22T17:55:08.734600Z",
+      "completed_at": "2026-11-22T17:55:42.963100Z",
+      "prompt_tokens": 5846,
+      "completion_tokens": 1728,
+      "error": null
+    },
+    {
+      "id": "turn_462915d0",
+      "round_number": 2,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/rebuttal",
+      "prompt_hash": "767ea9febc7916f9d8f2a3a90aa482d0dc20fcfa516f4dcd1d7fac2a8d877f11",
+      "arguments": [
+        {
+          "id": "arg_cabd90fa",
+          "claim": "The threat or use of nuclear weapons is unlawful because it violates the prohibition on attacks that cause widespread, long‑term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated.",
+          "reasoning": "Article 8(2)(b)(iv) of the Rome Statute criminalises intentional attacks that are known to cause widespread, long‑term and severe environmental damage that is clearly excessive compared with the concrete and direct military advantage sought. A nuclear detonation inevitably produces massive, long‑lasting radiation, thermal, blast and ecological effects that far exceed any specific military gain, thereby failing the proportionality test and constituting a war crime under the Statute.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_1efbcc46",
+          "claim": "Even in an extreme self‑defence scenario, the use of nuclear weapons is prohibited because it would destroy objects indispensable to the survival of the civilian population, which Additional Protocol I article 54 forbids except for a narrow derogation that does not apply to nuclear weapons.",
+          "reasoning": "Article 54 of Additional Protocol I expressly bans attacks on objects indispensable to civilian survival—such as food, water, agricultural land and livestock—unless the destruction occurs within the State’s own territory and is justified by imperative military necessity. Nuclear weapons cannot be confined to a limited area; their blast, heat and radiation inevitably affect indispensable civilian objects across borders, and the limited derogation does not extend to such trans‑boundary, indiscriminate effects. Consequently, their use breaches the prohibition on attacking indispensable civilian objects.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them move away, or for any other motive."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them move away, or for any other motive."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The threat or use of nuclear weapons is unlawful because it violates the prohibition on attacks that cause widespread, long‑term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated.\",\n      \"reasoning\": \"Article 8(2)(b)(iv) of the Rome Statute criminalises intentional attacks that are known to cause widespread, long‑term and severe environmental damage that is clearly excessive compared with the concrete and direct military advantage sought. A nuclear detonation inevitably produces massive, long‑lasting radiation, thermal, blast and ecological effects that far exceed any specific military gain, thereby failing the proportionality test and constituting a war crime under the Statute.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(iv)\",\n          \"quoted_text\": \"Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Even in an extreme self‑defence scenario, the use of nuclear weapons is prohibited because it would destroy objects indispensable to the survival of the civilian population, which Additional Protocol I article 54 forbids except for a narrow derogation that does not apply to nuclear weapons.\",\n      \"reasoning\": \"Article 54 of Additional Protocol I expressly bans attacks on objects indispensable to civilian survival—such as food, water, agricultural land and livestock—unless the destruction occurs within the State’s own territory and is justified by imperative military necessity. Nuclear weapons cannot be confined to a limited area; their blast, heat and radiation inevitably affect indispensable civilian objects across borders, and the limited derogation does not extend to such trans‑boundary, indiscriminate effects. Consequently, their use breaches the prohibition on attacking indispensable civilian objects.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54\",\n          \"quoted_text\": \"It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them move away, or for any other motive.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:55:42.965991Z",
+      "completed_at": "2026-11-22T17:55:48.055789Z",
+      "prompt_tokens": 5440,
+      "completion_tokens": 1939,
+      "error": null
+    },
+    {
+      "id": "turn_edd605f7",
+      "round_number": 2,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "a07bb1a1f8a2960274a2759e77e5ea557e8a2096fd2eb74a750f3e5ca4f5aa3c",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_102c44a5",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_bbe5c673",
+          "ground": "The argument misstates the legal test by conflating the general prohibition on indiscriminate attacks with a specific, conditional prohibition that does not apply to nuclear weapons.",
+          "reasoning": "Rome Statute Art. 8(2)(b)(xx) criminalizes weapons that are 'the subject of a comprehensive prohibition' and listed in an annex; nuclear weapons are not listed. Citing CCW Protocol III Art. 2(3) is legally inapposite because it regulates 'incendiary weapons' specifically, not nuclear or indiscriminate weapons generally. The authority cited does not support the proposition that nuclear weapons are per se illegal under these specific provisions.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(xx)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "ccw_p_iii",
+              "article": "2(3)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(xx)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccw_p_iii",
+                "article": "2(3)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-iii-1980",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument conflates the general principle of distinction with a specific, conditional criminalisation that does not apply to nuclear weapons. CCW Protocol III Article 2(3) regulates incendiary weapons, not nuclear weapons, and provides no basis for a per se prohibition on nuclear use."
+        },
+        {
+          "id": "obj_3580d8cb",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_6c30dc7c",
+          "ground": "The argument incorrectly characterizes a treaty war crime provision as establishing a general prohibition on the threat or use of nuclear weapons in self-defence.",
+          "reasoning": "Article 8 of the Rome Statute defines war crimes for the jurisdiction of the ICC; it does not independently determine the lawfulness of nuclear weapons under general international law (jus ad bellum or jus in bello) in a self-defence scenario. The argument fails to distinguish between the specific criminal liability for disproportionate attacks and the broader legal question of whether the use of nuclear weapons is permitted under international law in extreme self-defence.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The Rome Statute defines war crimes for the jurisdiction of the International Criminal Court; it does not independently determine the lawfulness of nuclear weapons under general international law (jus ad bellum or jus in bello). The argument fails to distinguish individual criminal liability from the broader legal question presented."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_bbe5c673\",\n      \"ground\": \"The argument misstates the legal test by conflating the general prohibition on indiscriminate attacks with a specific, conditional prohibition that does not apply to nuclear weapons.\",\n      \"reasoning\": \"Rome Statute Art. 8(2)(b)(xx) criminalizes weapons that are 'the subject of a comprehensive prohibition' and listed in an annex; nuclear weapons are not listed. Citing CCW Protocol III Art. 2(3) is legally inapposite because it regulates 'incendiary weapons' specifically, not nuclear or indiscriminate weapons generally. The authority cited does not support the proposition that nuclear weapons are per se illegal under these specific provisions.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(xx)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccw_p_iii\",\n          \"article\": \"2(3)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_6c30dc7c\",\n      \"ground\": \"The argument incorrectly characterizes a treaty war crime provision as establishing a general prohibition on the threat or use of nuclear weapons in self-defence.\",\n      \"reasoning\": \"Article 8 of the Rome Statute defines war crimes for the jurisdiction of the ICC; it does not independently determine the lawfulness of nuclear weapons under general international law (jus ad bellum or jus in bello) in a self-defence scenario. The argument fails to distinguish between the specific criminal liability for disproportionate attacks and the broader legal question of whether the use of nuclear weapons is permitted under international law in extreme self-defence.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(iv)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:55:48.056655Z",
+      "completed_at": "2026-11-22T17:55:49.539786Z",
+      "prompt_tokens": 5957,
+      "completion_tokens": 483,
+      "error": null
+    },
+    {
+      "id": "turn_80d89b64",
+      "round_number": 2,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "4a14d92f6f132a9f009f3d043875d94c52fff41edca207981293f6dae4f15531",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Indeterminate.\", \"reasoning\": \"Three objections were raised and all are sustained. Objection obj_09d08186 correctly identifies that Rome Statute Article 8(2)(b)(xx) conditions the prohibition on inherently indiscriminate weapons on their being 'the subject of a comprehensive prohibition and... included in an annex to this Statute'; nuclear weapons are not so listed, so arg_bbe5c673 fails on its own cited authority. Objection obj_102c44a5 is likewise well-founded: CCW Protocol III Article 2(3) regulates incendiary weapons specifically, not nuclear weapons, and the Rome Statute's conditional prohibition does not apply. Objection obj_3580d8cb correctly distinguishes the Rome Statute's function (defining war crimes for ICC jurisdiction) from the broader question of lawfulness under general international law (jus ad bellum and jus in bello); the Statute does not independently resolve the latter. The surviving arguments (arg_7ee25631 and arg_1efbcc46, both invoking Additional Protocol I Article 54) establish a plausible case that nuclear use would destroy objects indispensable to civilian survival and that the Article 54(5) derogation — limited to a State's own territory in defence against invasion — does not cover trans-boundary nuclear effects. However, these arguments rest on treaty obligations binding only parties to Additional Protocol I (which several nuclear-armed States have not ratified), the customary status of Article 54 is contested, and the extreme self-defence scenario described may engage the very 'imperative military necessity' the derogation contemplates. The International Court of Justice itself concluded it could not determine definitively whether threat or use would be lawful or unlawful in an extreme circumstance of self-defence. The present record does not overcome that indeterminacy.\", \"confidence\": 0.7, \"confidence_reasoning\": \"The question is the same one the ICJ addressed in its 1996 Advisory Opinion, where the Court found it could not reach a definitive conclusion. The sustained objections correctly dismantle the Rome Statute-based arguments, leaving only the Additional Protocol I Article 54 arguments. Those arguments are legally coherent but limited by treaty participation, uncertain customary status, and the potential applicability of the Article 54(5) derogation in the precise 'extreme circumstance of self-defence' the question posits. A confidence of 0.7 reflects that the surviving arguments create a serious case for unlawfulness but do not conclusively resolve a question the ICJ itself left open.\", \"rulings\": [{\"objection_id\": \"obj_09d08186\", \"disposition\": \"sustained\", \"reasoning\": \"Rome Statute Article 8(2)(b)(xx) explicitly requires that inherently indiscriminate weapons be 'the subject of a comprehensive prohibition and... included in an annex to this Statute.' Nuclear weapons are not listed in any such annex. The argument therefore fails on the very provision it cites.\"}, {\"objection_id\": \"obj_102c44a5\", \"disposition\": \"sustained\", \"reasoning\": \"The argument conflates the general principle of distinction with a specific, conditional criminalisation that does not apply to nuclear weapons. CCW Protocol III Article 2(3) regulates incendiary weapons, not nuclear weapons, and provides no basis for a per se prohibition on nuclear use.\"}, {\"objection_id\": \"obj_3580d8cb\", \"disposition\": \"sustained\", \"reasoning\": \"The Rome Statute defines war crimes for the jurisdiction of the International Criminal Court; it does not independently determine the lawfulness of nuclear weapons under general international law (jus ad bellum or jus in bello). The argument fails to distinguish individual criminal liability from the broader legal question presented.\"}], \"surviving_argument_ids\": [\"arg_7ee25631\", \"arg_1efbcc46\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-22T17:55:49.540621Z",
+      "completed_at": "2026-11-22T17:56:41.708938Z",
+      "prompt_tokens": 6572,
+      "completion_tokens": 2370,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-22T17:56:41.710132+00:00",
+  "duration_seconds": 100.76240029401379,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 2,
+  "judge_failures": 0,
+  "judge_failed": false
+}

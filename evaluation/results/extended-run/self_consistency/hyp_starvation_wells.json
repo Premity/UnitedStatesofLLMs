@@ -1,0 +1,1421 @@
+{
+  "case_id": "hyp_starvation_wells",
+  "case_title": "Fictional: the wells of the Velmir Valley",
+  "court": "Hypothetical",
+  "year": 2026,
+  "difficulty": "medium",
+  "arm": "self_consistency",
+  "arm_label": "E — Self-consistency control (compute-matched)",
+  "run_id": "eval_e6f7d3e883",
+  "question": "Did the destruction of the wells and grain stores in the Velmir Valley violate the prohibition on destroying or rendering useless objects indispensable to the survival of the civilian population?",
+  "facts": "An international armed conflict has existed since March 2025 between the Republic of Calvaro and the Federation of Drennick, both parties to the four Geneva Conventions of 1949, Additional Protocol I and the Rome Statute. The Velmir Valley is Calvaran territory. Drennick forces occupied it from April to November 2025. About 6,000 villagers live in the valley and depend for drinking water on fourteen village wells and for food over the winter on communal grain stores. No Calvaran armed forces were present in the valley during the occupation, and the wells and stores were not used by any armed forces other than the occupying Drennick troops, who also drew supplies from their own logistics chain. On 20 November 2025, as Drennick forces withdrew ahead of a Calvaran advance, the Drennick brigade commander issued a written order: 'Fill or poison all wells and burn all grain stores in the valley before withdrawal. Nothing is to be left for those who return.' Drennick engineers poured diesel fuel into all fourteen wells and burned the grain stores. Advancing Calvaran units carried their own water in tanker vehicles. Villagers who returned in December found no usable drinking water in the valley. Drennick later stated that the destruction was required by imperative military necessity, to deny water to the advancing Calvaran forces.",
+  "ground_truth_outcome": "affirmed",
+  "holding": "Authored ground truth for a fictional case; no tribunal has ruled on it. Yes. Article 54(2) of Additional Protocol I prohibits destroying or rendering useless objects indispensable to the survival of the civilian population, such as drinking water installations and supplies and foodstuffs, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse party, whatever the motive. The wells and grain stores were such objects, and the written order shows the purpose of denying them to whoever returned. The exceptions in Article 54(3) do not apply: the objects were not used solely for the sustenance of the adverse party's armed forces, nor in direct support of military action. The derogation for imperative military necessity in Article 54(5) is available only to a party in the defence of its own national territory under its control; the Velmir Valley is Calvaran territory, so it is not available to Drennick. Customary Rule 54 leads to the same result.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": true,
+  "confidence": 0.95,
+  "confidence_reasoning": "The treaty text is unambiguous, the facts directly match the prohibited conduct and intent, and the two potential exceptions are factually inapplicable. This is a straightforward application of settled law to clear facts, leaving minimal room for reasonable disagreement.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 8,
+  "samples": 7,
+  "vote_counts": {
+    "rejected": 5,
+    "affirmed": 2
+  },
+  "agreement_rate": 0.7142857142857143,
+  "citation_statuses": {
+    "total": 4,
+    "resolved": 4,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. The destruction of the wells and grain stores in the Velmir Valley violated the prohibition on destroying or rendering useless objects indispensable to the survival of the civilian population. The acts fall squarely within the conduct prohibited by Article 54(2) of Additional Protocol I, and neither the use-based exemption in Article 54(3) nor the derogation clause in Article 54(5) applies on the facts given.",
+    "reasoning": "The wells are drinking-water installations and the grain stores are foodstuffs, both expressly listed in Article 54(2) as objects indispensable to civilian survival. The brigade commander's written order — 'Fill or poison all wells and burn all grain stores in the valley before withdrawal. Nothing is to be left for those who return' — demonstrates the specific purpose of denying these objects for their sustenance value to the civilian population, which is the precise intent the prohibition targets. Article 54(3) does not apply because the objects were not used by Drennick forces as sustenance solely for their armed forces nor in direct support of military action; Drennick relied on its own logistics chain. Article 54(5) does not apply because the destruction occurred during withdrawal from Calvaran territory, not within territory under Drennick's own control, and the destruction was not required by imperative military necessity given Drennick's independent supply lines. The prohibition is also reflected in Article 14 of Additional Protocol II and customary international humanitarian law.",
+    "confidence": 0.95,
+    "confidence_reasoning": "The treaty text is unambiguous, the facts directly match the prohibited conduct and intent, and the two potential exceptions are factually inapplicable. This is a straightforward application of settled law to clear facts, leaving minimal room for reasonable disagreement.",
+    "surviving_argument_ids": [
+      "arg_1c8f173b",
+      "arg_0d178bff",
+      "arg_538ac7a5",
+      "arg_49d8c882"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_1c8f173b",
+      "claim": "The deliberate poisoning of all fourteen wells and the burning of the communal grain stores constitute a prohibited attack under Article 54(2) of Additional Protocol I.",
+      "reasoning": "Article 54(2) expressly forbids the destruction or rendering useless of objects indispensable to civilian survival for the purpose of denying them to the civilian population, regardless of motive. The wells are drinking‑water installations and the grain stores are foodstuffs; both were destroyed with the explicit intent to leave no usable water or food for the returning villagers. This matches the prohibited conduct described in the treaty provision.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "54(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as ... drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them to move away, or for any other motive."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "54(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as ... drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them to move away, or for any other motive."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_0d178bff",
+      "claim": "The exemption in Article 54(3) does not apply because the wells and grain stores were not used solely for the sustenance of Drennick’s armed forces nor in direct support of military action.",
+      "reasoning": "Paragraph 3(a) permits attacks on objects used solely as sustenance for a party’s armed forces, and 3(b) permits attacks if the objects are used in direct support of military action, provided the attack does not cause starvation of the civilian population. The facts show that Drennick troops relied on their own logistics and did not use the valley’s wells or stores for any military purpose; consequently the objects were not used for sustenance of forces nor for direct military support, and the exemption cannot be invoked.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "54",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The prohibitions in paragraph 2 shall not apply to such of the objects covered by it as are used by an adverse Party: (a) as sustenance solely for the members of its armed forces; or (b) if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "54",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The prohibitions in paragraph 2 shall not apply to such of the objects covered by it as are used by an adverse Party: (a) as sustenance solely for the members of its armed forces; or (b) if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_538ac7a5",
+      "claim": "The derogation clause in Article 54(5) does not legitimize the destruction because the situation does not satisfy the strict requirement of \"imperative military necessity\" and the act would inevitably cause civilian starvation.",
+      "reasoning": "Article 54(5) allows derogation only within territory under a party’s own control and only when required by imperative military necessity. Here the wells and stores were destroyed while Drennick was withdrawing from Calvaran territory, not within territory it controlled. Moreover, the destruction was not essential to any immediate military operation; Drennick already possessed its own water and food supplies. The resulting lack of water and food for 6,000 civilians demonstrates that the act would cause starvation, which the treaty expressly forbids even in cases of necessity.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "54",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "54",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_49d8c882",
+      "claim": "The conduct amounts to a war crime of using starvation as a method of warfare under Article 14 of Additional Protocol II, reflecting customary international humanitarian law.",
+      "reasoning": "Article 14 of AP II reiterates that starvation of civilians is prohibited and that attacking objects indispensable to civilian survival for that purpose is likewise prohibited. The intentional poisoning of wells and burning of grain stores was undertaken expressly to deprive the civilian population of water and food, satisfying the definition of starvation as a method of warfare. As both parties are parties to the Geneva Conventions and their Protocols, the prohibition applies and the act constitutes a war crime under the Rome Statute’s incorporation of customary IHL.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_ii",
+          "article": "14",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as ... drinking water installations and supplies and irrigation works."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_ii",
+            "article": "14",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as ... drinking water installations and supplies and irrigation works."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "54(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "54",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccm",
+        "article": "3",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccm",
+        "article": "4",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw_p_v",
+        "article": "4(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-v-2003",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ottawa",
+        "article": "5",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ottawa-1997",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_ii",
+        "article": "14",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccm",
+        "article": "3(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_431cad45",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "e45b14f58b340443b9c0a3ce080e09bf7a20b75ffcedc3067404848edf0f73ee",
+      "arguments": [
+        {
+          "id": "arg_1c8f173b",
+          "claim": "The deliberate poisoning of all fourteen wells and the burning of the communal grain stores constitute a prohibited attack under Article 54(2) of Additional Protocol I.",
+          "reasoning": "Article 54(2) expressly forbids the destruction or rendering useless of objects indispensable to civilian survival for the purpose of denying them to the civilian population, regardless of motive. The wells are drinking‑water installations and the grain stores are foodstuffs; both were destroyed with the explicit intent to leave no usable water or food for the returning villagers. This matches the prohibited conduct described in the treaty provision.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as ... drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them to move away, or for any other motive."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as ... drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them to move away, or for any other motive."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_0d178bff",
+          "claim": "The exemption in Article 54(3) does not apply because the wells and grain stores were not used solely for the sustenance of Drennick’s armed forces nor in direct support of military action.",
+          "reasoning": "Paragraph 3(a) permits attacks on objects used solely as sustenance for a party’s armed forces, and 3(b) permits attacks if the objects are used in direct support of military action, provided the attack does not cause starvation of the civilian population. The facts show that Drennick troops relied on their own logistics and did not use the valley’s wells or stores for any military purpose; consequently the objects were not used for sustenance of forces nor for direct military support, and the exemption cannot be invoked.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The prohibitions in paragraph 2 shall not apply to such of the objects covered by it as are used by an adverse Party: (a) as sustenance solely for the members of its armed forces; or (b) if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The prohibitions in paragraph 2 shall not apply to such of the objects covered by it as are used by an adverse Party: (a) as sustenance solely for the members of its armed forces; or (b) if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_538ac7a5",
+          "claim": "The derogation clause in Article 54(5) does not legitimize the destruction because the situation does not satisfy the strict requirement of \"imperative military necessity\" and the act would inevitably cause civilian starvation.",
+          "reasoning": "Article 54(5) allows derogation only within territory under a party’s own control and only when required by imperative military necessity. Here the wells and stores were destroyed while Drennick was withdrawing from Calvaran territory, not within territory it controlled. Moreover, the destruction was not essential to any immediate military operation; Drennick already possessed its own water and food supplies. The resulting lack of water and food for 6,000 civilians demonstrates that the act would cause starvation, which the treaty expressly forbids even in cases of necessity.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_49d8c882",
+          "claim": "The conduct amounts to a war crime of using starvation as a method of warfare under Article 14 of Additional Protocol II, reflecting customary international humanitarian law.",
+          "reasoning": "Article 14 of AP II reiterates that starvation of civilians is prohibited and that attacking objects indispensable to civilian survival for that purpose is likewise prohibited. The intentional poisoning of wells and burning of grain stores was undertaken expressly to deprive the civilian population of water and food, satisfying the definition of starvation as a method of warfare. As both parties are parties to the Geneva Conventions and their Protocols, the prohibition applies and the act constitutes a war crime under the Rome Statute’s incorporation of customary IHL.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_ii",
+              "article": "14",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as ... drinking water installations and supplies and irrigation works."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_ii",
+                "article": "14",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as ... drinking water installations and supplies and irrigation works."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The deliberate poisoning of all fourteen wells and the burning of the communal grain stores constitute a prohibited attack under Article 54(2) of Additional Protocol I.\",\n      \"reasoning\": \"Article 54(2) expressly forbids the destruction or rendering useless of objects indispensable to civilian survival for the purpose of denying them to the civilian population, regardless of motive. The wells are drinking‑water installations and the grain stores are foodstuffs; both were destroyed with the explicit intent to leave no usable water or food for the returning villagers. This matches the prohibited conduct described in the treaty provision.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54(2)\",\n          \"quoted_text\": \"It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as ... drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them to move away, or for any other motive.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The exemption in Article 54(3) does not apply because the wells and grain stores were not used solely for the sustenance of Drennick’s armed forces nor in direct support of military action.\",\n      \"reasoning\": \"Paragraph 3(a) permits attacks on objects used solely as sustenance for a party’s armed forces, and 3(b) permits attacks if the objects are used in direct support of military action, provided the attack does not cause starvation of the civilian population. The facts show that Drennick troops relied on their own logistics and did not use the valley’s wells or stores for any military purpose; consequently the objects were not used for sustenance of forces nor for direct military support, and the exemption cannot be invoked.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54\",\n          \"quoted_text\": \"The prohibitions in paragraph 2 shall not apply to such of the objects covered by it as are used by an adverse Party: (a) as sustenance solely for the members of its armed forces; or (b) if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The derogation clause in Article 54(5) does not legitimize the destruction because the situation does not satisfy the strict requirement of \\\"imperative military necessity\\\" and the act would inevitably cause civilian starvation.\",\n      \"reasoning\": \"Article 54(5) allows derogation only within territory under a party’s own control and only when required by imperative military necessity. Here the wells and stores were destroyed while Drennick was withdrawing from Calvaran territory, not within territory it controlled. Moreover, the destruction was not essential to any immediate military operation; Drennick already possessed its own water and food supplies. The resulting lack of water and food for 6,000 civilians demonstrates that the act would cause starvation, which the treaty expressly forbids even in cases of necessity.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54\",\n          \"quoted_text\": \"In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The conduct amounts to a war crime of using starvation as a method of warfare under Article 14 of Additional Protocol II, reflecting customary international humanitarian law.\",\n      \"reasoning\": \"Article 14 of AP II reiterates that starvation of civilians is prohibited and that attacking objects indispensable to civilian survival for that purpose is likewise prohibited. The intentional poisoning of wells and burning of grain stores was undertaken expressly to deprive the civilian population of water and food, satisfying the definition of starvation as a method of warfare. As both parties are parties to the Geneva Conventions and their Protocols, the prohibition applies and the act constitutes a war crime under the Rome Statute’s incorporation of customary IHL.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_ii\",\n          \"article\": \"14\",\n          \"quoted_text\": \"Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as ... drinking water installations and supplies and irrigation works.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T01:05:09.558499Z",
+      "completed_at": "2026-11-23T01:05:14.052767Z",
+      "prompt_tokens": 5000,
+      "completion_tokens": 1799,
+      "error": null
+    },
+    {
+      "id": "turn_7fe302fa",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "e45b14f58b340443b9c0a3ce080e09bf7a20b75ffcedc3067404848edf0f73ee",
+      "arguments": [
+        {
+          "id": "arg_8877f7e1",
+          "claim": "The destruction of the wells and grain stores in the Velmir Valley violated the prohibition on attacking objects indispensable to the civilian population under Additional Protocol I.",
+          "reasoning": "Article 54(2) of Additional Protocol I expressly forbids attacking, destroying, removing or rendering useless objects indispensable to civilian survival—such as drinking‑water installations and foodstuffs—for the purpose of denying their sustenance value, irrespective of motive. The Drennick forces deliberately poisoned all fourteen wells and burned the grain stores expressly to leave nothing for the returning civilian population, satisfying the prohibited purpose.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them to move away, or for any other motive."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them to move away, or for any other motive."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_2fd31c0b",
+          "claim": "The exemption in paragraph 3 of Article 54 does not apply to the wells and grain stores because they were not used for the sustenance of Drennick’s armed forces nor for direct military support.",
+          "reasoning": "Paragraph 3(b) allows attacks on objects not used for sustenance only when such attacks are in direct support of military action and do not leave the civilian population with inadequate food or water that would cause starvation or forced movement. The wells and grain stores were never employed to supply Drennick troops; the occupying force relied on its own logistics. Consequently, the conditions of the exemption are not met, and the prohibition remains applicable.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_478b05ae",
+          "claim": "The derogation clause in paragraph 5 of Article 54 cannot lawfully justify the destruction because it is limited to a Party defending its own national territory, not an occupying force acting in enemy territory.",
+          "reasoning": "Paragraph 5 permits derogation from the prohibitions only when a Party, within territory under its own control, faces imperative military necessity in the defence of its national territory against invasion. Drennick was an occupying power in Calvaran territory, not defending its own national territory, and therefore the conditions for derogation are absent. The claimed “imperative military necessity” to deny water to the enemy does not meet the narrow scope of the derogation provision.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_ef485752",
+          "claim": "The conduct also breaches the broader prohibition on starvation as a method of warfare contained in Additional Protocol II, reinforcing its illegality under customary international humanitarian law.",
+          "reasoning": "Article 14 of Additional Protocol II declares that starvation of civilians is prohibited and, consequently, the attack, destruction, removal or rendering useless of objects indispensable to civilian survival for that purpose is forbidden. The intentional poisoning of wells and burning of grain stores was a deliberate act aimed at depriving the civilian population of water and food, thereby constituting a method of warfare that seeks to starve civilians.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_ii",
+              "article": "14",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_ii",
+                "article": "14",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The destruction of the wells and grain stores in the Velmir Valley violated the prohibition on attacking objects indispensable to the civilian population under Additional Protocol I.\",\n      \"reasoning\": \"Article 54(2) of Additional Protocol I expressly forbids attacking, destroying, removing or rendering useless objects indispensable to civilian survival—such as drinking‑water installations and foodstuffs—for the purpose of denying their sustenance value, irrespective of motive. The Drennick forces deliberately poisoned all fourteen wells and burned the grain stores expressly to leave nothing for the returning civilian population, satisfying the prohibited purpose.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54(2)\",\n          \"quoted_text\": \"It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them to move away, or for any other motive.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The exemption in paragraph 3 of Article 54 does not apply to the wells and grain stores because they were not used for the sustenance of Drennick’s armed forces nor for direct military support.\",\n      \"reasoning\": \"Paragraph 3(b) allows attacks on objects not used for sustenance only when such attacks are in direct support of military action and do not leave the civilian population with inadequate food or water that would cause starvation or forced movement. The wells and grain stores were never employed to supply Drennick troops; the occupying force relied on its own logistics. Consequently, the conditions of the exemption are not met, and the prohibition remains applicable.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54\",\n          \"quoted_text\": \"if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The derogation clause in paragraph 5 of Article 54 cannot lawfully justify the destruction because it is limited to a Party defending its own national territory, not an occupying force acting in enemy territory.\",\n      \"reasoning\": \"Paragraph 5 permits derogation from the prohibitions only when a Party, within territory under its own control, faces imperative military necessity in the defence of its national territory against invasion. Drennick was an occupying power in Calvaran territory, not defending its own national territory, and therefore the conditions for derogation are absent. The claimed “imperative military necessity” to deny water to the enemy does not meet the narrow scope of the derogation provision.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54\",\n          \"quoted_text\": \"In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The conduct also breaches the broader prohibition on starvation as a method of warfare contained in Additional Protocol II, reinforcing its illegality under customary international humanitarian law.\",\n      \"reasoning\": \"Article 14 of Additional Protocol II declares that starvation of civilians is prohibited and, consequently, the attack, destruction, removal or rendering useless of objects indispensable to civilian survival for that purpose is forbidden. The intentional poisoning of wells and burning of grain stores was a deliberate act aimed at depriving the civilian population of water and food, thereby constituting a method of warfare that seeks to starve civilians.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_ii\",\n          \"article\": \"14\",\n          \"quoted_text\": \"Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T01:05:14.053062Z",
+      "completed_at": "2026-11-23T01:06:21.943406Z",
+      "prompt_tokens": 5000,
+      "completion_tokens": 2460,
+      "error": null
+    },
+    {
+      "id": "turn_d7536d64",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "e45b14f58b340443b9c0a3ce080e09bf7a20b75ffcedc3067404848edf0f73ee",
+      "arguments": [
+        {
+          "id": "arg_8296b4ca",
+          "claim": "The deliberate poisoning of the fourteen wells and burning of the grain stores violated the absolute prohibition in Additional Protocol I Article 54(2).",
+          "reasoning": "Article 54(2) expressly forbids attacking, destroying, removing or rendering useless objects indispensable to civilian survival, such as drinking water installations and foodstuffs, for the purpose of denying their sustenance value to the civilian population, \"whatever the motive\". The wells provided the only drinking water for 6,000 civilians and the grain stores were the sole winter food supply. The Drennick order was to \"fill or poison all wells and burn all grain stores\" expressly to leave nothing for the returning population, satisfying the prohibited purpose. Hence the act breaches the norm.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them to move away, or for any other motive."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them to move away, or for any other motive."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_6d345d9d",
+          "claim": "The claimed justification of \"imperative military necessity\" does not lawfully derogate the prohibition because the wells and grain stores were not used by Drennick forces for their own sustenance or direct military support.",
+          "reasoning": "Article 54(5) allows derogation \"where required by imperative military necessity\" only in the territory under a Party’s own control and only in respect of objects used by that Party for its armed forces. The wells and stores were used exclusively by the civilian population; Drennick troops relied on their own logistics and did not depend on these objects. Consequently the condition for lawful derogation is not met, and the prohibition remains applicable.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_45af4741",
+          "claim": "The destruction of the wells and grain stores cannot be justified as a reprisal because Additional Protocol I Article 54(4) expressly bars reprisals against such objects.",
+          "reasoning": "Article 54(4) states that \"These objects shall not be made the object of reprisals.\" The Drennick order was a retaliatory measure intended to punish the civilian population for the impending Calvaran advance. Since the objects are protected from reprisals, the action is unlawful irrespective of any claimed military motive.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "These objects shall not be made the object of reprisals."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "These objects shall not be made the object of reprisals."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_007024bd",
+          "claim": "The conduct also breaches Additional Protocol II Article 14, which mirrors the prohibition in Protocol I and reinforces that starvation methods are prohibited.",
+          "reasoning": "Article 14 of Protocol II reiterates that starvation of civilians is prohibited and that it is therefore prohibited to attack, destroy, remove or render useless objects indispensable to civilian survival for that purpose. Although Protocol II applies to non‑international conflicts, its provisions reflect customary international humanitarian law and support the interpretation that the same norm applies in the present international armed conflict, confirming the violation.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_ii",
+              "article": "14",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_ii",
+                "article": "14",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The deliberate poisoning of the fourteen wells and burning of the grain stores violated the absolute prohibition in Additional Protocol I Article 54(2).\",\n      \"reasoning\": \"Article 54(2) expressly forbids attacking, destroying, removing or rendering useless objects indispensable to civilian survival, such as drinking water installations and foodstuffs, for the purpose of denying their sustenance value to the civilian population, \\\"whatever the motive\\\". The wells provided the only drinking water for 6,000 civilians and the grain stores were the sole winter food supply. The Drennick order was to \\\"fill or poison all wells and burn all grain stores\\\" expressly to leave nothing for the returning population, satisfying the prohibited purpose. Hence the act breaches the norm.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54(2)\",\n          \"quoted_text\": \"It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them to move away, or for any other motive.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The claimed justification of \\\"imperative military necessity\\\" does not lawfully derogate the prohibition because the wells and grain stores were not used by Drennick forces for their own sustenance or direct military support.\",\n      \"reasoning\": \"Article 54(5) allows derogation \\\"where required by imperative military necessity\\\" only in the territory under a Party’s own control and only in respect of objects used by that Party for its armed forces. The wells and stores were used exclusively by the civilian population; Drennick troops relied on their own logistics and did not depend on these objects. Consequently the condition for lawful derogation is not met, and the prohibition remains applicable.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54\",\n          \"quoted_text\": \"In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The destruction of the wells and grain stores cannot be justified as a reprisal because Additional Protocol I Article 54(4) expressly bars reprisals against such objects.\",\n      \"reasoning\": \"Article 54(4) states that \\\"These objects shall not be made the object of reprisals.\\\" The Drennick order was a retaliatory measure intended to punish the civilian population for the impending Calvaran advance. Since the objects are protected from reprisals, the action is unlawful irrespective of any claimed military motive.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54\",\n          \"quoted_text\": \"These objects shall not be made the object of reprisals.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The conduct also breaches Additional Protocol II Article 14, which mirrors the prohibition in Protocol I and reinforces that starvation methods are prohibited.\",\n      \"reasoning\": \"Article 14 of Protocol II reiterates that starvation of civilians is prohibited and that it is therefore prohibited to attack, destroy, remove or render useless objects indispensable to civilian survival for that purpose. Although Protocol II applies to non‑international conflicts, its provisions reflect customary international humanitarian law and support the interpretation that the same norm applies in the present international armed conflict, confirming the violation.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_ii\",\n          \"article\": \"14\",\n          \"quoted_text\": \"Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T01:06:21.943683Z",
+      "completed_at": "2026-11-23T01:07:29.517896Z",
+      "prompt_tokens": 5000,
+      "completion_tokens": 2307,
+      "error": null
+    },
+    {
+      "id": "turn_7be20f95",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "e45b14f58b340443b9c0a3ce080e09bf7a20b75ffcedc3067404848edf0f73ee",
+      "arguments": [
+        {
+          "id": "arg_6337dcd1",
+          "claim": "The deliberate poisoning of the fourteen wells and burning of the grain stores by Drennick forces violated the prohibition in Additional Protocol I to the Geneva Conventions on attacking objects indispensable to the survival of the civilian population.",
+          "reasoning": "Article 54(2) of AP I expressly forbids attacking, destroying, removing or rendering useless objects such as drinking‑water installations and foodstuffs \"for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive\". The Drennick order expressly aimed to leave nothing for the returning civilian population, and the subsequent actions poisoned all wells and destroyed all grain stores, directly matching the prohibited conduct described in the treaty.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as ... drinking water installations and supplies ... for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them to move away, or for any other motive."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as ... drinking water installations and supplies ... for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them to move away, or for any other motive."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_92e7b06f",
+          "claim": "The derogation provision in Article 54(5) of Additional Protocol I does not legitimize Drennick’s actions because the occupied Velmir Valley was not \"territory under its own control\".",
+          "reasoning": "Article 54(5) permits derogation \"within such territory under its own control\" where imperative military necessity exists. The Velmir Valley remained Calvaran territory; Drennick was an occupying power, not exercising sovereign control over its own national territory. Consequently, the derogation clause is inapplicable, and the prohibition in paragraph 2 remains fully binding.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54(5)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54(5)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_351e680c",
+          "claim": "Even assuming a military purpose, the attacks contravened Article 54(3)(b) of Additional Protocol I and the parallel rule in Additional Protocol II, because they would leave the civilian population with inadequate water and food, amounting to a method of starvation.",
+          "reasoning": "Article 54(3)(b) allows attacks on objects used in direct support of military action only if they do not cause the civilian population to suffer starvation or forced movement. Here the wells and grain stores were not used to sustain Drennick forces; they were destroyed precisely to deprive civilians of water and food, creating conditions of starvation. The same principle is reiterated in Article 14 of AP II, which prohibits attacks on indispensable objects \"for that purpose\" of starving civilians. Both provisions therefore render Drennick’s conduct unlawful.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54(3)(b)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement."
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_ii",
+              "article": "14",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as ... drinking water installations and supplies ..."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54(3)(b)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_ii",
+                "article": "14",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as ... drinking water installations and supplies ..."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The deliberate poisoning of the fourteen wells and burning of the grain stores by Drennick forces violated the prohibition in Additional Protocol I to the Geneva Conventions on attacking objects indispensable to the survival of the civilian population.\",\n      \"reasoning\": \"Article 54(2) of AP I expressly forbids attacking, destroying, removing or rendering useless objects such as drinking‑water installations and foodstuffs \\\"for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive\\\". The Drennick order expressly aimed to leave nothing for the returning civilian population, and the subsequent actions poisoned all wells and destroyed all grain stores, directly matching the prohibited conduct described in the treaty.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54(2)\",\n          \"quoted_text\": \"It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as ... drinking water installations and supplies ... for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them to move away, or for any other motive.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The derogation provision in Article 54(5) of Additional Protocol I does not legitimize Drennick’s actions because the occupied Velmir Valley was not \\\"territory under its own control\\\".\",\n      \"reasoning\": \"Article 54(5) permits derogation \\\"within such territory under its own control\\\" where imperative military necessity exists. The Velmir Valley remained Calvaran territory; Drennick was an occupying power, not exercising sovereign control over its own national territory. Consequently, the derogation clause is inapplicable, and the prohibition in paragraph 2 remains fully binding.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54(5)\",\n          \"quoted_text\": \"In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Even assuming a military purpose, the attacks contravened Article 54(3)(b) of Additional Protocol I and the parallel rule in Additional Protocol II, because they would leave the civilian population with inadequate water and food, amounting to a method of starvation.\",\n      \"reasoning\": \"Article 54(3)(b) allows attacks on objects used in direct support of military action only if they do not cause the civilian population to suffer starvation or forced movement. Here the wells and grain stores were not used to sustain Drennick forces; they were destroyed precisely to deprive civilians of water and food, creating conditions of starvation. The same principle is reiterated in Article 14 of AP II, which prohibits attacks on indispensable objects \\\"for that purpose\\\" of starving civilians. Both provisions therefore render Drennick’s conduct unlawful.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54(3)(b)\",\n          \"quoted_text\": \"if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_ii\",\n          \"article\": \"14\",\n          \"quoted_text\": \"Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as ... drinking water installations and supplies ...\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T01:07:29.518150Z",
+      "completed_at": "2026-11-23T01:07:48.346349Z",
+      "prompt_tokens": 5000,
+      "completion_tokens": 1931,
+      "error": null
+    },
+    {
+      "id": "turn_ddf66ad5",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "e45b14f58b340443b9c0a3ce080e09bf7a20b75ffcedc3067404848edf0f73ee",
+      "arguments": [
+        {
+          "id": "arg_642a94d5",
+          "claim": "The destruction of the wells and grain stores by Drennick forces violated the prohibition in Article 54(2) of Additional Protocol I.",
+          "reasoning": "Article 54(2) expressly forbids attacking or rendering useless objects indispensable to civilian survival for the purpose of denying their sustenance value, regardless of motive. The wells and grain stores were the sole sources of drinking water and winter food for the 6,000 civilians in the Velmir Valley, and Drennick’s order was to “fill or poison all wells and burn all grain stores… Nothing is to be left for those who return,” indicating the specific purpose of denying these essentials to the civilian population. Accordingly, the conduct falls squarely within the prohibited category.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them to move away, or for any other motive."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them to move away, or for any other motive."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_a286dc40",
+          "claim": "The exception in Article 54(3) of Additional Protocol I does not apply to the wells and grain stores because they were not used for the sustenance of Drennick’s armed forces nor for direct military support.",
+          "reasoning": "Paragraph 3 limits the prohibition only to objects used by an adverse Party either (a) as sustenance for its armed forces or (b) in direct support of military action, and even then prohibits actions that would leave civilians with inadequate food or water. The facts show that the wells and grain stores were exclusively used by the civilian population; Drennick troops relied on their own logistics and did not consume the local water or grain. Therefore the exception does not cover the objects destroyed, and the prohibition remains applicable.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The prohibitions in paragraph 2 shall not apply to such of the objects covered by it as are used by an adverse Party: (a) as sustenance solely for the members of its armed forces; or (b) if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The prohibitions in paragraph 2 shall not apply to such of the objects covered by it as are used by an adverse Party: (a) as sustenance solely for the members of its armed forces; or (b) if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_474c35c0",
+          "claim": "The claim of “imperative military necessity” does not justify the destruction because derogation under Article 54(5) is limited to a Party’s own territory under its control, which the occupied Velmir Valley was not.",
+          "reasoning": "Article 54(5) permits derogation from the prohibition only when a Party acts within its own national territory that it controls. At the time of the destruction, the valley was under Drennick occupation, not under Drennick’s sovereign control, and therefore the derogation clause cannot be invoked. Moreover, the action left the civilian population without water and food, satisfying the condition in paragraph 3(b) that such actions must not be expected to cause starvation, which they plainly did.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity."
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The prohibitions in paragraph 2 shall not apply to such of the objects covered by it as are used by an adverse Party: (a) as sustenance solely for the members of its armed forces; or (b) if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The prohibitions in paragraph 2 shall not apply to such of the objects covered by it as are used by an adverse Party: (a) as sustenance solely for the members of its armed forces; or (b) if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_d786bcf2",
+          "claim": "The conduct also constitutes a war crime under Article 14 of Additional Protocol II, which mirrors the prohibition in Protocol I and applies to all parties in an international armed conflict.",
+          "reasoning": "Article 14 of Additional Protocol II prohibits starvation as a method of warfare and bans the attack, destruction, removal or rendering useless of objects indispensable to civilian survival for that purpose. Although Protocol II primarily governs non‑international conflicts, its language reflects customary international humanitarian law that is applicable in international conflicts as well. The intentional poisoning of wells and burning of grain stores to deprive civilians of water and food squarely fits the prohibited conduct described in Article 14, reinforcing the conclusion that a war crime has been committed.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_ii",
+              "article": "14",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_ii",
+                "article": "14",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The destruction of the wells and grain stores by Drennick forces violated the prohibition in Article 54(2) of Additional Protocol I.\",\n      \"reasoning\": \"Article 54(2) expressly forbids attacking or rendering useless objects indispensable to civilian survival for the purpose of denying their sustenance value, regardless of motive. The wells and grain stores were the sole sources of drinking water and winter food for the 6,000 civilians in the Velmir Valley, and Drennick’s order was to “fill or poison all wells and burn all grain stores… Nothing is to be left for those who return,” indicating the specific purpose of denying these essentials to the civilian population. Accordingly, the conduct falls squarely within the prohibited category.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54(2)\",\n          \"quoted_text\": \"It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them to move away, or for any other motive.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The exception in Article 54(3) of Additional Protocol I does not apply to the wells and grain stores because they were not used for the sustenance of Drennick’s armed forces nor for direct military support.\",\n      \"reasoning\": \"Paragraph 3 limits the prohibition only to objects used by an adverse Party either (a) as sustenance for its armed forces or (b) in direct support of military action, and even then prohibits actions that would leave civilians with inadequate food or water. The facts show that the wells and grain stores were exclusively used by the civilian population; Drennick troops relied on their own logistics and did not consume the local water or grain. Therefore the exception does not cover the objects destroyed, and the prohibition remains applicable.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54\",\n          \"quoted_text\": \"The prohibitions in paragraph 2 shall not apply to such of the objects covered by it as are used by an adverse Party: (a) as sustenance solely for the members of its armed forces; or (b) if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The claim of “imperative military necessity” does not justify the destruction because derogation under Article 54(5) is limited to a Party’s own territory under its control, which the occupied Velmir Valley was not.\",\n      \"reasoning\": \"Article 54(5) permits derogation from the prohibition only when a Party acts within its own national territory that it controls. At the time of the destruction, the valley was under Drennick occupation, not under Drennick’s sovereign control, and therefore the derogation clause cannot be invoked. Moreover, the action left the civilian population without water and food, satisfying the condition in paragraph 3(b) that such actions must not be expected to cause starvation, which they plainly did.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54\",\n          \"quoted_text\": \"In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54\",\n          \"quoted_text\": \"The prohibitions in paragraph 2 shall not apply to such of the objects covered by it as are used by an adverse Party: (a) as sustenance solely for the members of its armed forces; or (b) if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The conduct also constitutes a war crime under Article 14 of Additional Protocol II, which mirrors the prohibition in Protocol I and applies to all parties in an international armed conflict.\",\n      \"reasoning\": \"Article 14 of Additional Protocol II prohibits starvation as a method of warfare and bans the attack, destruction, removal or rendering useless of objects indispensable to civilian survival for that purpose. Although Protocol II primarily governs non‑international conflicts, its language reflects customary international humanitarian law that is applicable in international conflicts as well. The intentional poisoning of wells and burning of grain stores to deprive civilians of water and food squarely fits the prohibited conduct described in Article 14, reinforcing the conclusion that a war crime has been committed.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_ii\",\n          \"article\": \"14\",\n          \"quoted_text\": \"Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T01:07:48.346626Z",
+      "completed_at": "2026-11-23T01:08:24.602900Z",
+      "prompt_tokens": 5000,
+      "completion_tokens": 2667,
+      "error": null
+    },
+    {
+      "id": "turn_a8711fc5",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "e45b14f58b340443b9c0a3ce080e09bf7a20b75ffcedc3067404848edf0f73ee",
+      "arguments": [
+        {
+          "id": "arg_cf630757",
+          "claim": "The deliberate poisoning of all fourteen wells and the burning of the communal grain stores by Drennick forces violated the prohibition in Article 54(2) of Additional Protocol I.",
+          "reasoning": "Article 54(2) expressly forbids attacking, destroying, removing or rendering useless objects indispensable to the survival of the civilian population, such as drinking‑water installations and foodstuffs, for the purpose of denying them to civilians, \"whatever the motive\". The wells and grain stores were the sole sources of drinking water and winter food for the 6,000 villagers, and Drennick’s order was to render them unusable before withdrawal, satisfying both the object and the specific purpose elements of the prohibition.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as ... drinking water installations and supplies ... for the specific purpose of denying them for their sustenance value to the civilian population ... whatever the motive"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as ... drinking water installations and supplies ... for the specific purpose of denying them for their sustenance value to the civilian population ... whatever the motive"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_d549adca",
+          "claim": "The exception in Article 54(3)(a) and (b) does not excuse the destruction because the wells and grain stores were not used for the sustenance of Drennick’s armed forces nor for direct support of military action.",
+          "reasoning": "Paragraph 3 lists two narrow circumstances where the prohibition does not apply: (a) when the objects are used solely for the sustenance of the adverse Party’s armed forces, or (b) when they are used, not as sustenance, but in direct support of military action. The facts show that the wells and stores were exclusively used by the civilian population; Drennick troops relied on their own logistics and did not consume the village water or grain. Hence neither sub‑paragraph applies, and the prohibition remains fully applicable.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The prohibitions in paragraph 2 shall not apply to such of the objects covered by it as are used by an adverse Party: (a) as sustenance solely for the members of its armed forces; or (b) if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The prohibitions in paragraph 2 shall not apply to such of the objects covered by it as are used by an adverse Party: (a) as sustenance solely for the members of its armed forces; or (b) if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_d45bc79c",
+          "claim": "The derogation provision in Article 54(5) cannot be invoked by Drennick because it applies only to objects within the territory of the Party that is exercising imperative military necessity, not to occupied foreign territory.",
+          "reasoning": "Article 54(5) permits derogation \"within such territory under its own control\" where imperative military necessity demands it. At the time of the destruction, the Velmir Valley was under Drennick occupation, but it remained Calvaran sovereign territory. International law does not allow an occupying power to invoke the derogation for objects that are indispensable to the occupied civilian population, as the provision is limited to the occupying power’s own territory. Consequently, the derogation is inapplicable, and the prohibition remains binding.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54(5)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54(5)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_049a5569",
+          "claim": "Even assuming a claim of imperative military necessity, the conduct remains unlawful because Article 54(3) expressly bars actions that would leave the civilian population with inadequate water or food leading to starvation or forced movement.",
+          "reasoning": "Paragraph 3 imposes a substantive limitation on any permitted use of the objects: \"in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement.\" The poisoning of all wells and destruction of grain stores would inevitably deprive the 6,000 villagers of essential water and food, satisfying the condition of causing starvation or forced displacement, thus violating the absolute safeguard regardless of any claimed military necessity.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_b3776f95",
+          "claim": "The conduct also breaches the parallel prohibition in Article 14 of Additional Protocol II, which extends the same protection to objects indispensable to civilian survival in non‑international armed conflicts, reinforcing the illegality of the acts.",
+          "reasoning": "Article 14 of AP II reiterates that starvation as a method of combat is prohibited and that attacking, destroying, removing or rendering useless objects indispensable to civilian survival is likewise prohibited. Although the conflict here is international, the wording of AP II reflects customary international humanitarian law, confirming the universal nature of the rule and supporting the conclusion that Drennick’s actions constitute a war crime.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_ii",
+              "article": "14",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as ... drinking water installations and supplies ..."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_ii",
+                "article": "14",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as ... drinking water installations and supplies ..."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The deliberate poisoning of all fourteen wells and the burning of the communal grain stores by Drennick forces violated the prohibition in Article 54(2) of Additional Protocol I.\",\n      \"reasoning\": \"Article 54(2) expressly forbids attacking, destroying, removing or rendering useless objects indispensable to the survival of the civilian population, such as drinking‑water installations and foodstuffs, for the purpose of denying them to civilians, \\\"whatever the motive\\\". The wells and grain stores were the sole sources of drinking water and winter food for the 6,000 villagers, and Drennick’s order was to render them unusable before withdrawal, satisfying both the object and the specific purpose elements of the prohibition.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54(2)\",\n          \"quoted_text\": \"It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as ... drinking water installations and supplies ... for the specific purpose of denying them for their sustenance value to the civilian population ... whatever the motive\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The exception in Article 54(3)(a) and (b) does not excuse the destruction because the wells and grain stores were not used for the sustenance of Drennick’s armed forces nor for direct support of military action.\",\n      \"reasoning\": \"Paragraph 3 lists two narrow circumstances where the prohibition does not apply: (a) when the objects are used solely for the sustenance of the adverse Party’s armed forces, or (b) when they are used, not as sustenance, but in direct support of military action. The facts show that the wells and stores were exclusively used by the civilian population; Drennick troops relied on their own logistics and did not consume the village water or grain. Hence neither sub‑paragraph applies, and the prohibition remains fully applicable.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54\",\n          \"quoted_text\": \"The prohibitions in paragraph 2 shall not apply to such of the objects covered by it as are used by an adverse Party: (a) as sustenance solely for the members of its armed forces; or (b) if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The derogation provision in Article 54(5) cannot be invoked by Drennick because it applies only to objects within the territory of the Party that is exercising imperative military necessity, not to occupied foreign territory.\",\n      \"reasoning\": \"Article 54(5) permits derogation \\\"within such territory under its own control\\\" where imperative military necessity demands it. At the time of the destruction, the Velmir Valley was under Drennick occupation, but it remained Calvaran sovereign territory. International law does not allow an occupying power to invoke the derogation for objects that are indispensable to the occupied civilian population, as the provision is limited to the occupying power’s own territory. Consequently, the derogation is inapplicable, and the prohibition remains binding.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54(5)\",\n          \"quoted_text\": \"In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Even assuming a claim of imperative military necessity, the conduct remains unlawful because Article 54(3) expressly bars actions that would leave the civilian population with inadequate water or food leading to starvation or forced movement.\",\n      \"reasoning\": \"Paragraph 3 imposes a substantive limitation on any permitted use of the objects: \\\"in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement.\\\" The poisoning of all wells and destruction of grain stores would inevitably deprive the 6,000 villagers of essential water and food, satisfying the condition of causing starvation or forced displacement, thus violating the absolute safeguard regardless of any claimed military necessity.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54\",\n          \"quoted_text\": \"provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The conduct also breaches the parallel prohibition in Article 14 of Additional Protocol II, which extends the same protection to objects indispensable to civilian survival in non‑international armed conflicts, reinforcing the illegality of the acts.\",\n      \"reasoning\": \"Article 14 of AP II reiterates that starvation as a method of combat is prohibited and that attacking, destroying, removing or rendering useless objects indispensable to civilian survival is likewise prohibited. Although the conflict here is international, the wording of AP II reflects customary international humanitarian law, confirming the universal nature of the rule and supporting the conclusion that Drennick’s actions constitute a war crime.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_ii\",\n          \"article\": \"14\",\n          \"quoted_text\": \"Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as ... drinking water installations and supplies ...\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T01:08:24.603173Z",
+      "completed_at": "2026-11-23T01:09:31.447643Z",
+      "prompt_tokens": 5000,
+      "completion_tokens": 1942,
+      "error": null
+    },
+    {
+      "id": "turn_36f6c094",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "e45b14f58b340443b9c0a3ce080e09bf7a20b75ffcedc3067404848edf0f73ee",
+      "arguments": [
+        {
+          "id": "arg_a2cde101",
+          "claim": "The destruction of the wells and grain stores by Drennick forces violated the prohibition on attacking objects indispensable to the survival of the civilian population.",
+          "reasoning": "Article 54(2) of Additional Protocol I expressly forbids attacking, destroying, removing or rendering useless such objects for the purpose of denying their sustenance value to civilians, \"whatever the motive\". The wells supplied drinking water to 6,000 civilians and the grain stores provided essential food for the winter. Drennick’s order to fill the wells with diesel and burn the grain stores was undertaken precisely to deny these essentials to the civilian population, satisfying the prohibited purpose. The same prohibition is reiterated in Article 14 of Additional Protocol II, confirming that starvation as a method of combat is forbidden and that objects indispensable to civilian survival may not be destroyed for that purpose.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them to move away, or for any other motive."
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_ii",
+              "article": "14",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them to move away, or for any other motive."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_ii",
+                "article": "14",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_35163d9f",
+          "claim": "The exception in paragraph 3 of Article 54, which permits attacks on objects used by an adverse party for its armed forces, does not apply to the wells and grain stores.",
+          "reasoning": "Paragraph 3(a) allows destruction of objects \"as sustenance solely for the members of its armed forces\" and paragraph 3(b) permits destruction when the objects are used \"in direct support of military action\" provided civilian starvation is not caused. The facts show that Drennick troops relied on their own logistical supply and did not use the village wells or grain stores for sustenance or military support. Consequently, the wells and stores were not being used by the adverse party for the purposes contemplated in the exception, and the prohibition remains fully applicable.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The prohibitions in paragraph 2 shall not apply to such of the objects covered by it as are used by an adverse Party: (a) as sustenance solely for the members of its armed forces; or (b) if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The prohibitions in paragraph 2 shall not apply to such of the objects covered by it as are used by an adverse Party: (a) as sustenance solely for the members of its armed forces; or (b) if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_f9e4614b",
+          "claim": "The derogation provision in paragraph 5 of Article 54 does not legitimize Drennick’s destruction of the wells and grain stores.",
+          "reasoning": "Paragraph 5 allows derogation \"within such territory under its own control\" where \"imperative military necessity\" exists, primarily in defence of a Party’s national territory against invasion. At the time of the destruction, the valley was occupied foreign territory, not Drennick’s national territory, and the alleged military necessity was to deny water to the advancing Calvaran forces—not to protect Drennick’s own forces or territory. Moreover, the derogation cannot be invoked when the action would leave the civilian population with inadequate food or water leading to starvation, a limitation echoed in paragraph 3(b). Therefore, the derogation does not excuse the prohibited conduct.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity."
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "54",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The prohibitions in paragraph 2 shall not apply to such of the objects covered by it as are used by an adverse Party: (a) as sustenance solely for the members of its armed forces; or (b) if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "54",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The prohibitions in paragraph 2 shall not apply to such of the objects covered by it as are used by an adverse Party: (a) as sustenance solely for the members of its armed forces; or (b) if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The destruction of the wells and grain stores by Drennick forces violated the prohibition on attacking objects indispensable to the survival of the civilian population.\",\n      \"reasoning\": \"Article 54(2) of Additional Protocol I expressly forbids attacking, destroying, removing or rendering useless such objects for the purpose of denying their sustenance value to civilians, \\\"whatever the motive\\\". The wells supplied drinking water to 6,000 civilians and the grain stores provided essential food for the winter. Drennick’s order to fill the wells with diesel and burn the grain stores was undertaken precisely to deny these essentials to the civilian population, satisfying the prohibited purpose. The same prohibition is reiterated in Article 14 of Additional Protocol II, confirming that starvation as a method of combat is forbidden and that objects indispensable to civilian survival may not be destroyed for that purpose.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54(2)\",\n          \"quoted_text\": \"It is prohibited to attack, destroy, remove or render useless objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works, for the specific purpose of denying them for their sustenance value to the civilian population or to the adverse Party, whatever the motive, whether in order to starve out civilians, to cause them to move away, or for any other motive.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_ii\",\n          \"article\": \"14\",\n          \"quoted_text\": \"Starvation of civilians as a method of combat is prohibited. It is therefore prohibited to attack, destroy, remove or render useless, for that purpose, objects indispensable to the survival of the civilian population, such as foodstuffs, agricultural areas for the production of foodstuffs, crops, livestock, drinking water installations and supplies and irrigation works.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The exception in paragraph 3 of Article 54, which permits attacks on objects used by an adverse party for its armed forces, does not apply to the wells and grain stores.\",\n      \"reasoning\": \"Paragraph 3(a) allows destruction of objects \\\"as sustenance solely for the members of its armed forces\\\" and paragraph 3(b) permits destruction when the objects are used \\\"in direct support of military action\\\" provided civilian starvation is not caused. The facts show that Drennick troops relied on their own logistical supply and did not use the village wells or grain stores for sustenance or military support. Consequently, the wells and stores were not being used by the adverse party for the purposes contemplated in the exception, and the prohibition remains fully applicable.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54\",\n          \"quoted_text\": \"The prohibitions in paragraph 2 shall not apply to such of the objects covered by it as are used by an adverse Party: (a) as sustenance solely for the members of its armed forces; or (b) if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The derogation provision in paragraph 5 of Article 54 does not legitimize Drennick’s destruction of the wells and grain stores.\",\n      \"reasoning\": \"Paragraph 5 allows derogation \\\"within such territory under its own control\\\" where \\\"imperative military necessity\\\" exists, primarily in defence of a Party’s national territory against invasion. At the time of the destruction, the valley was occupied foreign territory, not Drennick’s national territory, and the alleged military necessity was to deny water to the advancing Calvaran forces—not to protect Drennick’s own forces or territory. Moreover, the derogation cannot be invoked when the action would leave the civilian population with inadequate food or water leading to starvation, a limitation echoed in paragraph 3(b). Therefore, the derogation does not excuse the prohibited conduct.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54\",\n          \"quoted_text\": \"In recognition of the vital requirements of any Party to the conflict in the defence of its national territory against invasion, derogation from the prohibitions contained in paragraph 2 may be made by a Party to the conflict within such territory under its own control where required by imperative military necessity.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"54\",\n          \"quoted_text\": \"The prohibitions in paragraph 2 shall not apply to such of the objects covered by it as are used by an adverse Party: (a) as sustenance solely for the members of its armed forces; or (b) if not as sustenance, then in direct support of military action, provided, however, that in no event shall actions against these objects be taken which may be expected to leave the civilian population with such inadequate food or water as to cause its starvation or force its movement.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T01:09:31.447896Z",
+      "completed_at": "2026-11-23T01:09:51.036480Z",
+      "prompt_tokens": 5000,
+      "completion_tokens": 2278,
+      "error": null
+    },
+    {
+      "id": "turn_605f65d2",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "111d4974eb94b05410e6faf07e75e42d9030a2216a17f49f8d71108b0aaf0a7e",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The destruction of the wells and grain stores in the Velmir Valley violated the prohibition on destroying or rendering useless objects indispensable to the survival of the civilian population. The acts fall squarely within the conduct prohibited by Article 54(2) of Additional Protocol I, and neither the use-based exemption in Article 54(3) nor the derogation clause in Article 54(5) applies on the facts given.\", \"reasoning\": \"The wells are drinking-water installations and the grain stores are foodstuffs, both expressly listed in Article 54(2) as objects indispensable to civilian survival. The brigade commander's written order — 'Fill or poison all wells and burn all grain stores in the valley before withdrawal. Nothing is to be left for those who return' — demonstrates the specific purpose of denying these objects for their sustenance value to the civilian population, which is the precise intent the prohibition targets. Article 54(3) does not apply because the objects were not used by Drennick forces as sustenance solely for their armed forces nor in direct support of military action; Drennick relied on its own logistics chain. Article 54(5) does not apply because the destruction occurred during withdrawal from Calvaran territory, not within territory under Drennick's own control, and the destruction was not required by imperative military necessity given Drennick's independent supply lines. The prohibition is also reflected in Article 14 of Additional Protocol II and customary international humanitarian law.\", \"confidence\": 0.95, \"confidence_reasoning\": \"The treaty text is unambiguous, the facts directly match the prohibited conduct and intent, and the two potential exceptions are factually inapplicable. This is a straightforward application of settled law to clear facts, leaving minimal room for reasonable disagreement.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_1c8f173b\", \"arg_0d178bff\", \"arg_538ac7a5\", \"arg_49d8c882\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-23T01:09:51.036802Z",
+      "completed_at": "2026-11-23T01:10:03.951041Z",
+      "prompt_tokens": 6056,
+      "completion_tokens": 905,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-23T01:10:03.951275+00:00",
+  "duration_seconds": 294.9134566739667,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}

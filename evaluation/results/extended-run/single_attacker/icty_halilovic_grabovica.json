@@ -1,0 +1,1857 @@
+{
+  "case_id": "icty_halilovic_grabovica",
+  "case_title": "Prosecutor v. Sefer Halilović — effective control over troops in Grabovica",
+  "court": "ICTY",
+  "year": 2007,
+  "difficulty": "medium",
+  "arm": "single_attacker",
+  "arm_label": "C — One attacker",
+  "run_id": "eval_9068b255a9",
+  "question": "Has it been established beyond reasonable doubt that the senior ABiH officer was criminally responsible as a superior, under Article 7(3) of the ICTY Statute, for the murders of civilians committed by ABiH troops in Grabovica on 8 and 9 September 1993?",
+  "facts": "In September 1993, units of the ABiH 9th Motorised Brigade, 10th Mountain Brigade and 2nd Independent Battalion, all subordinated to the ABiH 1st Corps, were sent from Sarajevo to the Jablanica sector of Herzegovina for combat operations to lift the HVO blockade of Mostar, following an order issued by the officer concerned. He had been the supreme ABiH commander until 8 June 1993, when a new post of Commander of the Main Staff was created and filled by another officer; he remained Chief of the Main Staff, a post made one of three rotating Deputy Commanders on 18 July 1993. By an order of 30 August 1993 the Commander of the Main Staff appointed him leader of an Inspection Team with coordinating and monitoring functions in the areas of the 4th and 6th Corps; the order required him to consult the Commander on any drastic proposals and allowed him to issue orders only in keeping with his authority. Troops were billeted with the Bosnian Croat inhabitants of Grabovica, a village under ABiH control since May 1993. On 8 and 9 September 1993, thirteen inhabitants taking no active part in hostilities were murdered by members of the 9th Brigade and unidentified ABiH members. The 9th Brigade unit was then under the command of the commander of the axis of attack, who had issued the combat order for that axis; the evidence did not establish that the axis commander was subordinated to the officer. The officer learned of the crimes on the evening of 9 September, after the last proven killing, and instructed a member of his team to work with the civilian and military security services on the investigation, which was already under way and was conducted by the 6th Corps Security Service and military police units. Some lower-ranking soldiers regarded him as commander of the operation; higher-ranking officers testified that he was tasked with coordinating combat activities.",
+  "ground_truth_outcome": "rejected",
+  "holding": "In its Judgement of 16 November 2005, the ICTY Trial Chamber found that the Prosecution had not proved beyond reasonable doubt that the accused was de jure or de facto commander of the operation, nor that he had effective control over the troops who committed the murders in Grabovica, nor that he had the material ability to punish the perpetrators. It acquitted him of the only charge, murder as a violation of the laws or customs of war under Articles 3 and 7(3). On 16 October 2007 the Appeals Chamber dismissed the Prosecution's appeal and affirmed the acquittal.",
+  "predicted_outcome": "rejected",
+  "outcome_correct": true,
+  "confidence": 0.78,
+  "confidence_reasoning": "The facts are clear on the critical points: the perpetrators were under a different tactical commander (axis commander) not shown to be subordinate to the officer; the officer's formal mandate was coordinating/monitoring with explicit limitations; and he learned of the crimes after they occurred. ICTY jurisprudence consistently holds that coordination at a higher echelon does not constitute effective control over lower-level tactical units commanded by others. The confidence is not higher only because some lower-ranking soldiers perceived the officer as the operation commander, creating a minor factual ambiguity, but this is outweighed by the testimony of higher-ranking officers and the written order defining his role.",
+  "rounds": 2,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 2,
+  "total_calls": 6,
+  "citation_statuses": {
+    "total": 27,
+    "resolved": 24,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 3
+  },
+  "verdict": {
+    "conclusion": "No. It has not been established beyond reasonable doubt that the senior ABiH officer was criminally responsible as a superior under Article 7(3) of the ICTY Statute for the murders in Grabovica.",
+    "reasoning": "The sustained objections collectively demonstrate that the prosecution has not proven the 'effective authority and control' element of superior responsibility over the specific perpetrators. The 9th Motorised Brigade unit that committed the murders was under the command of an axis commander who issued the combat order, and the evidence did not establish that this axis commander was subordinated to the officer. The officer's role was defined by the 30 August 1993 order as leading an Inspection Team with 'coordinating and monitoring functions' over the 4th and 6th Corps, with authority to issue orders 'only in keeping with his authority' and a requirement to consult the Commander on drastic proposals. This functional scope — coordination at the corps level — does not equate to the material ability to prevent or punish crimes committed by a specific brigade under a different tactical commander, as required by the ICTY's 'effective control' test (cf. Hadžihasanović, Kubura, Orić). Customary Rule 152, cited by the prosecution, addresses liability for crimes committed pursuant to orders, not failure to prevent, and is inapposite because the officer did not order the murders. The officer learned of the killings only on the evening of 9 September, after the last proven killing, eliminating any opportunity to prevent them. His subsequent instruction to a team member to cooperate with the ongoing 6th Corps investigation, while a measure, does not remedy the absence of the prerequisite superior-subordinate relationship over the perpetrators.",
+    "confidence": 0.78,
+    "confidence_reasoning": "The facts are clear on the critical points: the perpetrators were under a different tactical commander (axis commander) not shown to be subordinate to the officer; the officer's formal mandate was coordinating/monitoring with explicit limitations; and he learned of the crimes after they occurred. ICTY jurisprudence consistently holds that coordination at a higher echelon does not constitute effective control over lower-level tactical units commanded by others. The confidence is not higher only because some lower-ranking soldiers perceived the officer as the operation commander, creating a minor factual ambiguity, but this is outweighed by the testimony of higher-ranking officers and the written order defining his role.",
+    "surviving_argument_ids": [
+      "arg_66c570fd",
+      "arg_6217b7bc",
+      "arg_691951d7",
+      "arg_618acdac",
+      "arg_d626855a",
+      "arg_39eabd4f"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_45e7c0c5",
+      "claim": "The senior ABiH officer exercised effective command and control over the units that perpetrated the murders, satisfying the “effective authority and control” element of superior responsibility under Article 7(3) ICTY Statute.",
+      "reasoning": "The officer, as Chief of the Main Staff and leader of an Inspection Team with coordinating and monitoring functions over the 4th and 6th Corps, was empowered to issue orders consistent with his authority and to consult the Commander on drastic proposals. This functional authority placed him in a position to direct or influence the deployment of the 9th Motorised Brigade, which carried out the killings. Under Rome Statute art.28(a) a person who is “effectively acting as a military commander” and has “effective command and control” is liable, and customary rule.152 confirms that commanders are responsible for crimes committed pursuant to their orders.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes; and (ii) That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+        },
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 152,
+          "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes; and (ii) That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+          },
+          "status": "misquoted",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": "Quoted text does not appear at this locator."
+        },
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 152,
+            "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_66c570fd",
+      "claim": "The officer knew, or had reason to know, that the troops under his effective control were committing murders of civilians in Grabovica.",
+      "reasoning": "The officer’s coordinating role, his presence in the operational area, and the billeting of troops with the civilian population created circumstances that should have alerted him to unlawful killings. He learned of the murders on the evening of 9 September, indicating that information was available to him during the commission. Under Rome Statute art.28(b)(i) and customary rule.153, a superior who “knew, or consciously disregarded information which clearly indicated” the commission of crimes is liable.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+        },
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 153,
+          "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission, or if such crimes had been committed, to punish the persons responsible."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 153,
+            "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission, or if such crimes had been committed, to punish the persons responsible."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_6217b7bc",
+      "claim": "The officer failed to take all necessary and reasonable measures within his power to prevent the murders or to punish the perpetrators, breaching the duty of command responsibility.",
+      "reasoning": "After learning of the killings, the officer only instructed a team member to cooperate with an ongoing investigation, without ordering immediate arrest, disciplinary action, or preventive measures for remaining troops. This passive response falls short of the “all necessary and reasonable measures” standard required by art.28(b)(ii) and by AP I art.86(2), which obliges superiors to take feasible measures to prevent or repress a breach.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "86(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "86(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_d9fb7eb8",
+      "claim": "The lack of a formal subordinate relationship between the officer and the axis commander of the 9th Brigade does not preclude liability because superior responsibility is grounded in effective control, not formal hierarchy.",
+      "reasoning": "Both the Rome Statute (art.28(a)) and customary rule.152 focus on “effective command and control” rather than on rank or formal subordination. The officer’s inspection‑team mandate gave him the practical authority to coordinate combat activities, satisfying the effective control requirement despite the axis commander not being formally subordinate.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be"
+        },
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 152,
+          "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 152,
+            "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_c2cef21e",
+      "claim": "The officer’s continued role as Chief of the Main Staff and leader of the Inspection Team after June 1993 retained the functional authority necessary for command responsibility, despite the creation of a new post of Commander of the Main Staff.",
+      "reasoning": "The factual record shows that the 30 August 1993 order expressly authorized the officer to issue orders “only in keeping with his authority” and to consult the Commander on drastic proposals, preserving his ability to direct operations. This retained functional authority satisfies the effective control test required for superior liability.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_691951d7",
+      "claim": "The senior ABiH officer exercised effective authority and control over the 9th Motorised Brigade, satisfying the “effective control” element of superior responsibility under Article 7(3) of the ICTY Statute.",
+      "reasoning": "Article 28(b) of the Rome Statute imposes liability on a superior who had effective authority and control over subordinates who committed crimes, irrespective of formal hierarchy. The officer, as Chief of the Main Staff and leader of an Inspection Team with coordinating and monitoring functions over the 4th and 6th Corps, was empowered by the 30 August 1993 order to issue orders within his authority, giving him practical power to direct the deployment and operations of units, including the 9th Brigade. Customary rule 153 likewise establishes responsibility where a superior has effective control. Accordingly, the officer met the effective‑control requirement.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "effective authority and control"
+        },
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 153,
+          "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "effective authority and control"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 153,
+            "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_618acdac",
+      "claim": "The officer knew, or had reason to know, that the troops under his effective control were committing murders of civilians in Grabovica.",
+      "reasoning": "The officer’s coordinating role placed him in a position to receive timely information; the billeting of troops with civilians and the proximity of combat operations would have made the killings apparent. He learned of the murders on the evening of 9 September, showing that relevant information was available during the commission. Under Article 28(b)(i) and customary rule 153, actual or constructive knowledge satisfies the knowledge element of command responsibility.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "effective authority and control"
+        },
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 153,
+          "quoted_text": "if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "effective authority and control"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 153,
+            "quoted_text": "if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_d626855a",
+      "claim": "The officer failed to take all necessary and reasonable measures within his power to prevent or repress the murders or to punish the perpetrators.",
+      "reasoning": "After learning of the killings, the officer only instructed a team member to cooperate with an ongoing investigation, without ordering immediate arrest, disciplinary action, or preventive measures for remaining troops. Article 28(b)(ii) and Additional Protocol I article 86(2) require a superior to take all feasible measures to prevent or repress a breach; the officer’s minimal response falls short of this standard, satisfying the failure‑to‑act element.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "failed to take all necessary and reasonable measures"
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "86(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "if they did not take all feasible measures within their power to prevent or repress the breach"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "failed to take all necessary and reasonable measures"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "86(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "if they did not take all feasible measures within their power to prevent or repress the breach"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_39eabd4f",
+      "claim": "The officer’s functional authority persisted after the creation of the new post of Commander of the Main Staff, preserving his effective control over the forces involved.",
+      "reasoning": "The 30 August 1993 order expressly authorized the officer to issue orders “only in keeping with his authority” and to consult on drastic proposals, demonstrating that his functional authority was retained despite organizational changes. This retained authority satisfies the effective‑control requirement articulated in Article 28 and customary rule 153.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "effective authority and control"
+        },
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 153,
+          "quoted_text": "effective control of the superior"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "effective authority and control"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 153,
+            "quoted_text": "effective control of the superior"
+          },
+          "status": "misquoted",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": "Quoted text does not appear at this locator."
+        }
+      ]
+    },
+    {
+      "id": "arg_0a732843",
+      "claim": "Effective control for command responsibility does not require a formal subordinate relationship; factual authority is sufficient.",
+      "reasoning": "Both Article 28(b) of the Rome Statute and customary rule 153 focus on “effective authority and control” rather than on formal rank or hierarchy. Additional Protocol I article 86(2) likewise imposes liability on superiors who possessed the power to prevent breaches, regardless of formal subordination. The officer’s inspection‑team mandate gave him factual authority over the deployment and conduct of the 9th Brigade, satisfying the control requirement even though the brigade’s axis commander was not formally subordinate.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "effective authority and control"
+        },
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 153,
+          "quoted_text": "effective control of the superior"
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "86(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "effective authority and control"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 153,
+            "quoted_text": "effective control of the superior"
+          },
+          "status": "misquoted",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": "Quoted text does not appear at this locator."
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "86(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [
+    {
+      "id": "obj_5734287d",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_45e7c0c5",
+      "ground": "The argument mischaracterizes the legal basis for liability by conflating 'effective command' with 'issuing orders' and citing a rule that does not apply to the facts.",
+      "reasoning": "Rule 152 addresses liability for crimes committed 'pursuant to their orders.' The facts state the officer issued a combat order for the operation, but the murders were committed by troops under an axis commander not subordinated to the officer. There is no allegation the officer ordered the murders. Therefore, Rule 152 is legally inapposite, and the 'effective command' claim fails because the troops were not under his control for the specific criminal acts.",
+      "citations": [
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 152,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 152,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Rule 152 addresses liability for crimes committed 'pursuant to their orders.' The murders were not ordered by the officer, and the perpetrators were under an axis commander not subordinated to him. The argument conflates ordering liability with failure-to-prevent liability and overstates effective control."
+    },
+    {
+      "id": "obj_a188786a",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_d9fb7eb8",
+      "ground": "The argument incorrectly asserts that 'effective control' is satisfied by a coordinating role where the specific subordinate unit was under a different command structure.",
+      "reasoning": "Superior responsibility requires the superior to have effective control over the specific subordinates who committed the crimes. The facts state the 9th Brigade was under an axis commander not subordinated to the officer. A 'coordinating and monitoring' mandate over the Corps does not translate to effective command over a specific brigade's tactical actions, especially when that brigade was commanded by another officer. The argument ignores the requirement of a specific superior-subordinate link for the perpetrators.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Superior responsibility requires effective control over the specific subordinates who committed the crimes. The 9th Brigade was under an axis commander not subordinated to the officer. A coordinating role over corps-level structures does not translate to effective command over a specific brigade's tactical actions."
+    },
+    {
+      "id": "obj_85729dab",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_c2cef21e",
+      "ground": "The argument mischaracterizes the legal effect of the 30 August 1993 order, which expressly limited the officer's authority to issuing orders 'only in keeping with his authority' and consulting the Commander on drastic proposals, thereby negating the 'effective command and control' required for superior responsibility.",
+      "reasoning": "The 30 August 1993 order explicitly restricted the officer's power to issue orders 'only in keeping with his authority' and required consultation on 'drastic proposals.' This functional limitation contradicts the assertion of 'retained functional authority' sufficient for command responsibility. The order demonstrates a lack of effective control over the specific operational decisions leading to the crimes, as the officer was subordinate to the Commander for such matters.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "86(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "86(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The 30 August 1993 order expressly limited the officer's authority to issuing orders 'only in keeping with his authority' and required consultation on drastic proposals. This language restricts, rather than confirms, the independent decision-making power necessary for effective control."
+    },
+    {
+      "id": "obj_0aa13181",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_0a732843",
+      "ground": "The argument misapplies the 'effective control' test by conflating 'coordinating and monitoring' functions with the direct operational authority required to prevent or repress specific crimes under Article 86(2) of AP I.",
+      "reasoning": "AP I, Article 86(2) requires superiors to take 'all feasible measures within their power to prevent or repress the breach.' The officer's role was limited to 'coordinating and monitoring' and required consultation for drastic actions. This functional scope does not equate to the direct operational control necessary to satisfy the duty to prevent or repress the specific murders committed by the 9th Brigade, which was under the command of the axis commander.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "86(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(b)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "86(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(b)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "AP I Article 86(2) requires superiors to take 'all feasible measures within their power to prevent or repress the breach.' The officer's coordinating/monitoring role with a consultation requirement does not equate to the direct operational control over the 9th Brigade necessary to satisfy this duty."
+    },
+    {
+      "id": "obj_d3f18715",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_d9fb7eb8",
+      "ground": "The argument fails to distinguish between 'coordinating' a broader operation and 'effective control' over the specific unit (9th Brigade) that committed the crimes, which was under the command of the axis commander.",
+      "reasoning": "The facts state that the 9th Brigade was under the command of the axis commander, who issued the combat order. The officer's role was 'coordinating and monitoring' over the 4th and 6th Corps, not direct command over the 9th Brigade. The 'effective control' required for superior responsibility must be over the specific subordinates who committed the crimes, not just a general coordinating role over larger corps structures.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 152,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 152,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument fails to distinguish between coordinating a broader operation and exercising effective control over the specific unit (9th Brigade) that committed the crimes, which was under the command of the axis commander. This repeats the core defect identified in obj_a188786a."
+    }
+  ],
+  "context": [
+    {
+      "citation": {
+        "type": "customary",
+        "instrument": "customary_ihl",
+        "article": null,
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": 152,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "28",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "86(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "28(a)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "customary",
+        "instrument": "customary_ihl",
+        "article": null,
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": 153,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "33(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iii",
+        "article": "96",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_7b9e6697",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "c37badf760ca939de9dfb990c38c14ef029834315c3e9c9813fe7ba0c1e6c59e",
+      "arguments": [
+        {
+          "id": "arg_45e7c0c5",
+          "claim": "The senior ABiH officer exercised effective command and control over the units that perpetrated the murders, satisfying the “effective authority and control” element of superior responsibility under Article 7(3) ICTY Statute.",
+          "reasoning": "The officer, as Chief of the Main Staff and leader of an Inspection Team with coordinating and monitoring functions over the 4th and 6th Corps, was empowered to issue orders consistent with his authority and to consult the Commander on drastic proposals. This functional authority placed him in a position to direct or influence the deployment of the 9th Motorised Brigade, which carried out the killings. Under Rome Statute art.28(a) a person who is “effectively acting as a military commander” and has “effective command and control” is liable, and customary rule.152 confirms that commanders are responsible for crimes committed pursuant to their orders.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes; and (ii) That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 152,
+              "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes; and (ii) That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+              },
+              "status": "misquoted",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": "Quoted text does not appear at this locator."
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 152,
+                "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_66c570fd",
+          "claim": "The officer knew, or had reason to know, that the troops under his effective control were committing murders of civilians in Grabovica.",
+          "reasoning": "The officer’s coordinating role, his presence in the operational area, and the billeting of troops with the civilian population created circumstances that should have alerted him to unlawful killings. He learned of the murders on the evening of 9 September, indicating that information was available to him during the commission. Under Rome Statute art.28(b)(i) and customary rule.153, a superior who “knew, or consciously disregarded information which clearly indicated” the commission of crimes is liable.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 153,
+              "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission, or if such crimes had been committed, to punish the persons responsible."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 153,
+                "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission, or if such crimes had been committed, to punish the persons responsible."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_6217b7bc",
+          "claim": "The officer failed to take all necessary and reasonable measures within his power to prevent the murders or to punish the perpetrators, breaching the duty of command responsibility.",
+          "reasoning": "After learning of the killings, the officer only instructed a team member to cooperate with an ongoing investigation, without ordering immediate arrest, disciplinary action, or preventive measures for remaining troops. This passive response falls short of the “all necessary and reasonable measures” standard required by art.28(b)(ii) and by AP I art.86(2), which obliges superiors to take feasible measures to prevent or repress a breach.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_d9fb7eb8",
+          "claim": "The lack of a formal subordinate relationship between the officer and the axis commander of the 9th Brigade does not preclude liability because superior responsibility is grounded in effective control, not formal hierarchy.",
+          "reasoning": "Both the Rome Statute (art.28(a)) and customary rule.152 focus on “effective command and control” rather than on rank or formal subordination. The officer’s inspection‑team mandate gave him the practical authority to coordinate combat activities, satisfying the effective control requirement despite the axis commander not being formally subordinate.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be"
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 152,
+              "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 152,
+                "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_c2cef21e",
+          "claim": "The officer’s continued role as Chief of the Main Staff and leader of the Inspection Team after June 1993 retained the functional authority necessary for command responsibility, despite the creation of a new post of Commander of the Main Staff.",
+          "reasoning": "The factual record shows that the 30 August 1993 order expressly authorized the officer to issue orders “only in keeping with his authority” and to consult the Commander on drastic proposals, preserving his ability to direct operations. This retained functional authority satisfies the effective control test required for superior liability.",
+          "citations": [],
+          "resolved_citations": []
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The senior ABiH officer exercised effective command and control over the units that perpetrated the murders, satisfying the “effective authority and control” element of superior responsibility under Article 7(3) ICTY Statute.\",\n      \"reasoning\": \"The officer, as Chief of the Main Staff and leader of an Inspection Team with coordinating and monitoring functions over the 4th and 6th Corps, was empowered to issue orders consistent with his authority and to consult the Commander on drastic proposals. This functional authority placed him in a position to direct or influence the deployment of the 9th Motorised Brigade, which carried out the killings. Under Rome Statute art.28(a) a person who is “effectively acting as a military commander” and has “effective command and control” is liable, and customary rule.152 confirms that commanders are responsible for crimes committed pursuant to their orders.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\",\n          \"quoted_text\": \"A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes; and (ii) That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution.\"\n        },\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 152,\n          \"quoted_text\": \"Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The officer knew, or had reason to know, that the troops under his effective control were committing murders of civilians in Grabovica.\",\n      \"reasoning\": \"The officer’s coordinating role, his presence in the operational area, and the billeting of troops with the civilian population created circumstances that should have alerted him to unlawful killings. He learned of the murders on the evening of 9 September, indicating that information was available to him during the commission. Under Rome Statute art.28(b)(i) and customary rule.153, a superior who “knew, or consciously disregarded information which clearly indicated” the commission of crimes is liable.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28\",\n          \"quoted_text\": \"A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes;\"\n        },\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 153,\n          \"quoted_text\": \"Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission, or if such crimes had been committed, to punish the persons responsible.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The officer failed to take all necessary and reasonable measures within his power to prevent the murders or to punish the perpetrators, breaching the duty of command responsibility.\",\n      \"reasoning\": \"After learning of the killings, the officer only instructed a team member to cooperate with an ongoing investigation, without ordering immediate arrest, disciplinary action, or preventive measures for remaining troops. This passive response falls short of the “all necessary and reasonable measures” standard required by art.28(b)(ii) and by AP I art.86(2), which obliges superiors to take feasible measures to prevent or repress a breach.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28\",\n          \"quoted_text\": \"That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"86(2)\",\n          \"quoted_text\": \"The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The lack of a formal subordinate relationship between the officer and the axis commander of the 9th Brigade does not preclude liability because superior responsibility is grounded in effective control, not formal hierarchy.\",\n      \"reasoning\": \"Both the Rome Statute (art.28(a)) and customary rule.152 focus on “effective command and control” rather than on rank or formal subordination. The officer’s inspection‑team mandate gave him the practical authority to coordinate combat activities, satisfying the effective control requirement despite the axis commander not being formally subordinate.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\",\n          \"quoted_text\": \"A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be\"\n        },\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 152,\n          \"quoted_text\": \"Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The officer’s continued role as Chief of the Main Staff and leader of the Inspection Team after June 1993 retained the functional authority necessary for command responsibility, despite the creation of a new post of Commander of the Main Staff.\",\n      \"reasoning\": \"The factual record shows that the 30 August 1993 order expressly authorized the officer to issue orders “only in keeping with his authority” and to consult the Commander on drastic proposals, preserving his ability to direct operations. This retained functional authority satisfies the effective control test required for superior liability.\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-23T01:18:39.339811Z",
+      "completed_at": "2026-11-23T01:18:54.577835Z",
+      "prompt_tokens": 4495,
+      "completion_tokens": 4022,
+      "error": null
+    },
+    {
+      "id": "turn_cfc256a9",
+      "round_number": 1,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "c17abded7d91faa39ccc7250bc2e9745f39af29ebb452d85dc110048fef2d884",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_5734287d",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_45e7c0c5",
+          "ground": "The argument mischaracterizes the legal basis for liability by conflating 'effective command' with 'issuing orders' and citing a rule that does not apply to the facts.",
+          "reasoning": "Rule 152 addresses liability for crimes committed 'pursuant to their orders.' The facts state the officer issued a combat order for the operation, but the murders were committed by troops under an axis commander not subordinated to the officer. There is no allegation the officer ordered the murders. Therefore, Rule 152 is legally inapposite, and the 'effective command' claim fails because the troops were not under his control for the specific criminal acts.",
+          "citations": [
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 152,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 152,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Rule 152 addresses liability for crimes committed 'pursuant to their orders.' The murders were not ordered by the officer, and the perpetrators were under an axis commander not subordinated to him. The argument conflates ordering liability with failure-to-prevent liability and overstates effective control."
+        },
+        {
+          "id": "obj_a188786a",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_d9fb7eb8",
+          "ground": "The argument incorrectly asserts that 'effective control' is satisfied by a coordinating role where the specific subordinate unit was under a different command structure.",
+          "reasoning": "Superior responsibility requires the superior to have effective control over the specific subordinates who committed the crimes. The facts state the 9th Brigade was under an axis commander not subordinated to the officer. A 'coordinating and monitoring' mandate over the Corps does not translate to effective command over a specific brigade's tactical actions, especially when that brigade was commanded by another officer. The argument ignores the requirement of a specific superior-subordinate link for the perpetrators.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Superior responsibility requires effective control over the specific subordinates who committed the crimes. The 9th Brigade was under an axis commander not subordinated to the officer. A coordinating role over corps-level structures does not translate to effective command over a specific brigade's tactical actions."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_45e7c0c5\",\n      \"ground\": \"The argument mischaracterizes the legal basis for liability by conflating 'effective command' with 'issuing orders' and citing a rule that does not apply to the facts.\",\n      \"reasoning\": \"Rule 152 addresses liability for crimes committed 'pursuant to their orders.' The facts state the officer issued a combat order for the operation, but the murders were committed by troops under an axis commander not subordinated to the officer. There is no allegation the officer ordered the murders. Therefore, Rule 152 is legally inapposite, and the 'effective command' claim fails because the troops were not under his control for the specific criminal acts.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 152\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_d9fb7eb8\",\n      \"ground\": \"The argument incorrectly asserts that 'effective control' is satisfied by a coordinating role where the specific subordinate unit was under a different command structure.\",\n      \"reasoning\": \"Superior responsibility requires the superior to have effective control over the specific subordinates who committed the crimes. The facts state the 9th Brigade was under an axis commander not subordinated to the officer. A 'coordinating and monitoring' mandate over the Corps does not translate to effective command over a specific brigade's tactical actions, especially when that brigade was commanded by another officer. The argument ignores the requirement of a specific superior-subordinate link for the perpetrators.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T01:18:54.580881Z",
+      "completed_at": "2026-11-23T01:18:56.113219Z",
+      "prompt_tokens": 5682,
+      "completion_tokens": 443,
+      "error": null
+    },
+    {
+      "id": "turn_7ea7c8ce",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "e19434dac3a9c193bb9caecf4aafda7aeefa3f81f4d71c77802c003d324017e4",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"No.\", \"reasoning\": \"The two sustained objections defeat the core of the prosecution's case. Objection obj_5734287d correctly shows that arg_45e7c0c5 misapplies customary rule 152, which addresses liability for crimes committed 'pursuant to their orders' — a theory not alleged here — and that the Rome Statute art.28(a) citation was misquoted. Objection obj_a188786a correctly demonstrates that the officer's coordinating and monitoring mandate over the 4th and 6th Corps did not amount to 'effective command and control' over the 9th Motorised Brigade, which the facts explicitly place under an axis commander not subordinated to the officer. Without a superior–subordinate relationship grounded in effective control over the specific perpetrators, the knowledge (arg_66c570fd) and failure-to-act (arg_6217b7bc) arguments cannot support Article 7(3) liability. Arg_c2cef21e's claim of retained functional authority is likewise insufficient because the 30 August 1993 order limited the officer to consulting on drastic proposals and issuing orders only 'in keeping with his authority,' confirming the absence of material ability to prevent or punish the brigade's tactical actions. The murders occurred before the officer learned of them, and his post-hoc referral to an ongoing investigation does not cure the missing control element.\", \"confidence\": 0.85, \"confidence_reasoning\": \"The facts are specific and the legal standard for superior responsibility under Article 7(3) ICTY Statute (mirrored in Rome Statute art.28 and customary rule 153) is well settled: effective control over the perpetrators is a threshold requirement. The retrieved authorities (Rome Statute art.28, customary rules 152 and 153, AP I art.86(2)) all condition liability on that relationship. The sustained objections directly target this element with record support, and no surviving argument establishes it. Confidence is high but not absolute because a trial chamber could theoretically infer effective control from a broader pattern of authority not fully captured in the given facts.\", \"rulings\": [{\"objection_id\": \"obj_5734287d\", \"disposition\": \"sustained\", \"reasoning\": \"Rule 152 addresses liability for crimes committed 'pursuant to their orders.' The argument cites it to support a general 'effective command' theory, but the facts do not allege the officer ordered the murders, and the 9th Brigade was under an axis commander not subordinated to him. The Rome Statute art.28(a) citation was also misquoted. The objection correctly identifies the doctrinal mismatch.\"}, {\"objection_id\": \"obj_a188786a\", \"disposition\": \"sustained\", \"reasoning\": \"Superior responsibility under Article 7(3) and Rome Statute art.28(a) requires effective control over the specific subordinates who committed the crimes. The facts state the 9th Brigade was commanded by an axis commander not subordinated to the officer, and the officer's mandate was coordinating and monitoring with a requirement to consult on drastic proposals. A coordinating role at Corps level does not equate to effective command over a brigade's tactical operations. The objection correctly applies the specific-subordinate-link requirement.\"}], \"surviving_argument_ids\": [\"arg_66c570fd\", \"arg_6217b7bc\", \"arg_c2cef21e\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-23T01:18:56.114181Z",
+      "completed_at": "2026-11-23T01:19:40.983632Z",
+      "prompt_tokens": 6128,
+      "completion_tokens": 2475,
+      "error": null
+    },
+    {
+      "id": "turn_ebbd58ba",
+      "round_number": 2,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/rebuttal",
+      "prompt_hash": "5034aba11e5141d477d5ac18d7c59f4ef09aa571d54099b5b7d9d5babb14646f",
+      "arguments": [
+        {
+          "id": "arg_691951d7",
+          "claim": "The senior ABiH officer exercised effective authority and control over the 9th Motorised Brigade, satisfying the “effective control” element of superior responsibility under Article 7(3) of the ICTY Statute.",
+          "reasoning": "Article 28(b) of the Rome Statute imposes liability on a superior who had effective authority and control over subordinates who committed crimes, irrespective of formal hierarchy. The officer, as Chief of the Main Staff and leader of an Inspection Team with coordinating and monitoring functions over the 4th and 6th Corps, was empowered by the 30 August 1993 order to issue orders within his authority, giving him practical power to direct the deployment and operations of units, including the 9th Brigade. Customary rule 153 likewise establishes responsibility where a superior has effective control. Accordingly, the officer met the effective‑control requirement.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "effective authority and control"
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 153,
+              "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "effective authority and control"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 153,
+                "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_618acdac",
+          "claim": "The officer knew, or had reason to know, that the troops under his effective control were committing murders of civilians in Grabovica.",
+          "reasoning": "The officer’s coordinating role placed him in a position to receive timely information; the billeting of troops with civilians and the proximity of combat operations would have made the killings apparent. He learned of the murders on the evening of 9 September, showing that relevant information was available during the commission. Under Article 28(b)(i) and customary rule 153, actual or constructive knowledge satisfies the knowledge element of command responsibility.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "effective authority and control"
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 153,
+              "quoted_text": "if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "effective authority and control"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 153,
+                "quoted_text": "if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_d626855a",
+          "claim": "The officer failed to take all necessary and reasonable measures within his power to prevent or repress the murders or to punish the perpetrators.",
+          "reasoning": "After learning of the killings, the officer only instructed a team member to cooperate with an ongoing investigation, without ordering immediate arrest, disciplinary action, or preventive measures for remaining troops. Article 28(b)(ii) and Additional Protocol I article 86(2) require a superior to take all feasible measures to prevent or repress a breach; the officer’s minimal response falls short of this standard, satisfying the failure‑to‑act element.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "failed to take all necessary and reasonable measures"
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "if they did not take all feasible measures within their power to prevent or repress the breach"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "failed to take all necessary and reasonable measures"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "if they did not take all feasible measures within their power to prevent or repress the breach"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_39eabd4f",
+          "claim": "The officer’s functional authority persisted after the creation of the new post of Commander of the Main Staff, preserving his effective control over the forces involved.",
+          "reasoning": "The 30 August 1993 order expressly authorized the officer to issue orders “only in keeping with his authority” and to consult on drastic proposals, demonstrating that his functional authority was retained despite organizational changes. This retained authority satisfies the effective‑control requirement articulated in Article 28 and customary rule 153.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "effective authority and control"
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 153,
+              "quoted_text": "effective control of the superior"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "effective authority and control"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 153,
+                "quoted_text": "effective control of the superior"
+              },
+              "status": "misquoted",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": "Quoted text does not appear at this locator."
+            }
+          ]
+        },
+        {
+          "id": "arg_0a732843",
+          "claim": "Effective control for command responsibility does not require a formal subordinate relationship; factual authority is sufficient.",
+          "reasoning": "Both Article 28(b) of the Rome Statute and customary rule 153 focus on “effective authority and control” rather than on formal rank or hierarchy. Additional Protocol I article 86(2) likewise imposes liability on superiors who possessed the power to prevent breaches, regardless of formal subordination. The officer’s inspection‑team mandate gave him factual authority over the deployment and conduct of the 9th Brigade, satisfying the control requirement even though the brigade’s axis commander was not formally subordinate.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "effective authority and control"
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 153,
+              "quoted_text": "effective control of the superior"
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "effective authority and control"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 153,
+                "quoted_text": "effective control of the superior"
+              },
+              "status": "misquoted",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": "Quoted text does not appear at this locator."
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The senior ABiH officer exercised effective authority and control over the 9th Motorised Brigade, satisfying the “effective control” element of superior responsibility under Article 7(3) of the ICTY Statute.\",\n      \"reasoning\": \"Article 28(b) of the Rome Statute imposes liability on a superior who had effective authority and control over subordinates who committed crimes, irrespective of formal hierarchy. The officer, as Chief of the Main Staff and leader of an Inspection Team with coordinating and monitoring functions over the 4th and 6th Corps, was empowered by the 30 August 1993 order to issue orders within his authority, giving him practical power to direct the deployment and operations of units, including the 9th Brigade. Customary rule 153 likewise establishes responsibility where a superior has effective control. Accordingly, the officer met the effective‑control requirement.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28\",\n          \"quoted_text\": \"effective authority and control\"\n        },\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 153,\n          \"quoted_text\": \"Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The officer knew, or had reason to know, that the troops under his effective control were committing murders of civilians in Grabovica.\",\n      \"reasoning\": \"The officer’s coordinating role placed him in a position to receive timely information; the billeting of troops with civilians and the proximity of combat operations would have made the killings apparent. He learned of the murders on the evening of 9 September, showing that relevant information was available during the commission. Under Article 28(b)(i) and customary rule 153, actual or constructive knowledge satisfies the knowledge element of command responsibility.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28\",\n          \"quoted_text\": \"effective authority and control\"\n        },\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 153,\n          \"quoted_text\": \"if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The officer failed to take all necessary and reasonable measures within his power to prevent or repress the murders or to punish the perpetrators.\",\n      \"reasoning\": \"After learning of the killings, the officer only instructed a team member to cooperate with an ongoing investigation, without ordering immediate arrest, disciplinary action, or preventive measures for remaining troops. Article 28(b)(ii) and Additional Protocol I article 86(2) require a superior to take all feasible measures to prevent or repress a breach; the officer’s minimal response falls short of this standard, satisfying the failure‑to‑act element.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28\",\n          \"quoted_text\": \"failed to take all necessary and reasonable measures\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"86(2)\",\n          \"quoted_text\": \"if they did not take all feasible measures within their power to prevent or repress the breach\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The officer’s functional authority persisted after the creation of the new post of Commander of the Main Staff, preserving his effective control over the forces involved.\",\n      \"reasoning\": \"The 30 August 1993 order expressly authorized the officer to issue orders “only in keeping with his authority” and to consult on drastic proposals, demonstrating that his functional authority was retained despite organizational changes. This retained authority satisfies the effective‑control requirement articulated in Article 28 and customary rule 153.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28\",\n          \"quoted_text\": \"effective authority and control\"\n        },\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 153,\n          \"quoted_text\": \"effective control of the superior\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Effective control for command responsibility does not require a formal subordinate relationship; factual authority is sufficient.\",\n      \"reasoning\": \"Both Article 28(b) of the Rome Statute and customary rule 153 focus on “effective authority and control” rather than on formal rank or hierarchy. Additional Protocol I article 86(2) likewise imposes liability on superiors who possessed the power to prevent breaches, regardless of formal subordination. The officer’s inspection‑team mandate gave him factual authority over the deployment and conduct of the 9th Brigade, satisfying the control requirement even though the brigade’s axis commander was not formally subordinate.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28\",\n          \"quoted_text\": \"effective authority and control\"\n        },\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 153,\n          \"quoted_text\": \"effective control of the superior\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"86(2)\",\n          \"quoted_text\": \"if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T01:19:40.986598Z",
+      "completed_at": "2026-11-23T01:19:50.200816Z",
+      "prompt_tokens": 3541,
+      "completion_tokens": 3070,
+      "error": null
+    },
+    {
+      "id": "turn_04c76937",
+      "round_number": 2,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "9b9c7337d58f3fcb74c6111bb7d4016a39441825f13c6adc3117ece84825fb11",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_85729dab",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_c2cef21e",
+          "ground": "The argument mischaracterizes the legal effect of the 30 August 1993 order, which expressly limited the officer's authority to issuing orders 'only in keeping with his authority' and consulting the Commander on drastic proposals, thereby negating the 'effective command and control' required for superior responsibility.",
+          "reasoning": "The 30 August 1993 order explicitly restricted the officer's power to issue orders 'only in keeping with his authority' and required consultation on 'drastic proposals.' This functional limitation contradicts the assertion of 'retained functional authority' sufficient for command responsibility. The order demonstrates a lack of effective control over the specific operational decisions leading to the crimes, as the officer was subordinate to the Commander for such matters.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The 30 August 1993 order expressly limited the officer's authority to issuing orders 'only in keeping with his authority' and required consultation on drastic proposals. This language restricts, rather than confirms, the independent decision-making power necessary for effective control."
+        },
+        {
+          "id": "obj_0aa13181",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_0a732843",
+          "ground": "The argument misapplies the 'effective control' test by conflating 'coordinating and monitoring' functions with the direct operational authority required to prevent or repress specific crimes under Article 86(2) of AP I.",
+          "reasoning": "AP I, Article 86(2) requires superiors to take 'all feasible measures within their power to prevent or repress the breach.' The officer's role was limited to 'coordinating and monitoring' and required consultation for drastic actions. This functional scope does not equate to the direct operational control necessary to satisfy the duty to prevent or repress the specific murders committed by the 9th Brigade, which was under the command of the axis commander.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(b)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(b)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "AP I Article 86(2) requires superiors to take 'all feasible measures within their power to prevent or repress the breach.' The officer's coordinating/monitoring role with a consultation requirement does not equate to the direct operational control over the 9th Brigade necessary to satisfy this duty."
+        },
+        {
+          "id": "obj_d3f18715",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_d9fb7eb8",
+          "ground": "The argument fails to distinguish between 'coordinating' a broader operation and 'effective control' over the specific unit (9th Brigade) that committed the crimes, which was under the command of the axis commander.",
+          "reasoning": "The facts state that the 9th Brigade was under the command of the axis commander, who issued the combat order. The officer's role was 'coordinating and monitoring' over the 4th and 6th Corps, not direct command over the 9th Brigade. The 'effective control' required for superior responsibility must be over the specific subordinates who committed the crimes, not just a general coordinating role over larger corps structures.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 152,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 152,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument fails to distinguish between coordinating a broader operation and exercising effective control over the specific unit (9th Brigade) that committed the crimes, which was under the command of the axis commander. This repeats the core defect identified in obj_a188786a."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_c2cef21e\",\n      \"ground\": \"The argument mischaracterizes the legal effect of the 30 August 1993 order, which expressly limited the officer's authority to issuing orders 'only in keeping with his authority' and consulting the Commander on drastic proposals, thereby negating the 'effective command and control' required for superior responsibility.\",\n      \"reasoning\": \"The 30 August 1993 order explicitly restricted the officer's power to issue orders 'only in keeping with his authority' and required consultation on 'drastic proposals.' This functional limitation contradicts the assertion of 'retained functional authority' sufficient for command responsibility. The order demonstrates a lack of effective control over the specific operational decisions leading to the crimes, as the officer was subordinate to the Commander for such matters.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"86(2)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_0a732843\",\n      \"ground\": \"The argument misapplies the 'effective control' test by conflating 'coordinating and monitoring' functions with the direct operational authority required to prevent or repress specific crimes under Article 86(2) of AP I.\",\n      \"reasoning\": \"AP I, Article 86(2) requires superiors to take 'all feasible measures within their power to prevent or repress the breach.' The officer's role was limited to 'coordinating and monitoring' and required consultation for drastic actions. This functional scope does not equate to the direct operational control necessary to satisfy the duty to prevent or repress the specific murders committed by the 9th Brigade, which was under the command of the axis commander.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"86(2)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(b)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_d9fb7eb8\",\n      \"ground\": \"The argument fails to distinguish between 'coordinating' a broader operation and 'effective control' over the specific unit (9th Brigade) that committed the crimes, which was under the command of the axis commander.\",\n      \"reasoning\": \"The facts state that the 9th Brigade was under the command of the axis commander, who issued the combat order. The officer's role was 'coordinating and monitoring' over the 4th and 6th Corps, not direct command over the 9th Brigade. The 'effective control' required for superior responsibility must be over the specific subordinates who committed the crimes, not just a general coordinating role over larger corps structures.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\"\n        },\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 152\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T01:19:50.201745Z",
+      "completed_at": "2026-11-23T01:19:52.350441Z",
+      "prompt_tokens": 6530,
+      "completion_tokens": 813,
+      "error": null
+    },
+    {
+      "id": "turn_fec4ba36",
+      "round_number": 2,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "85282f7a3b70a8e6865f8f3808d12e45ebf640bf68e8b3104aefff9f27ff0031",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"No. It has not been established beyond reasonable doubt that the senior ABiH officer was criminally responsible as a superior under Article 7(3) of the ICTY Statute for the murders in Grabovica.\", \"reasoning\": \"The sustained objections collectively demonstrate that the prosecution has not proven the 'effective authority and control' element of superior responsibility over the specific perpetrators. The 9th Motorised Brigade unit that committed the murders was under the command of an axis commander who issued the combat order, and the evidence did not establish that this axis commander was subordinated to the officer. The officer's role was defined by the 30 August 1993 order as leading an Inspection Team with 'coordinating and monitoring functions' over the 4th and 6th Corps, with authority to issue orders 'only in keeping with his authority' and a requirement to consult the Commander on drastic proposals. This functional scope — coordination at the corps level — does not equate to the material ability to prevent or punish crimes committed by a specific brigade under a different tactical commander, as required by the ICTY's 'effective control' test (cf. Hadžihasanović, Kubura, Orić). Customary Rule 152, cited by the prosecution, addresses liability for crimes committed pursuant to orders, not failure to prevent, and is inapposite because the officer did not order the murders. The officer learned of the killings only on the evening of 9 September, after the last proven killing, eliminating any opportunity to prevent them. His subsequent instruction to a team member to cooperate with the ongoing 6th Corps investigation, while a measure, does not remedy the absence of the prerequisite superior-subordinate relationship over the perpetrators.\", \"confidence\": 0.78, \"confidence_reasoning\": \"The facts are clear on the critical points: the perpetrators were under a different tactical commander (axis commander) not shown to be subordinate to the officer; the officer's formal mandate was coordinating/monitoring with explicit limitations; and he learned of the crimes after they occurred. ICTY jurisprudence consistently holds that coordination at a higher echelon does not constitute effective control over lower-level tactical units commanded by others. The confidence is not higher only because some lower-ranking soldiers perceived the officer as the operation commander, creating a minor factual ambiguity, but this is outweighed by the testimony of higher-ranking officers and the written order defining his role.\", \"rulings\": [{\"objection_id\": \"obj_5734287d\", \"disposition\": \"sustained\", \"reasoning\": \"Rule 152 addresses liability for crimes committed 'pursuant to their orders.' The murders were not ordered by the officer, and the perpetrators were under an axis commander not subordinated to him. The argument conflates ordering liability with failure-to-prevent liability and overstates effective control.\"}, {\"objection_id\": \"obj_a188786a\", \"disposition\": \"sustained\", \"reasoning\": \"Superior responsibility requires effective control over the specific subordinates who committed the crimes. The 9th Brigade was under an axis commander not subordinated to the officer. A coordinating role over corps-level structures does not translate to effective command over a specific brigade's tactical actions.\"}, {\"objection_id\": \"obj_85729dab\", \"disposition\": \"sustained\", \"reasoning\": \"The 30 August 1993 order expressly limited the officer's authority to issuing orders 'only in keeping with his authority' and required consultation on drastic proposals. This language restricts, rather than confirms, the independent decision-making power necessary for effective control.\"}, {\"objection_id\": \"obj_0aa13181\", \"disposition\": \"sustained\", \"reasoning\": \"AP I Article 86(2) requires superiors to take 'all feasible measures within their power to prevent or repress the breach.' The officer's coordinating/monitoring role with a consultation requirement does not equate to the direct operational control over the 9th Brigade necessary to satisfy this duty.\"}, {\"objection_id\": \"obj_d3f18715\", \"disposition\": \"sustained\", \"reasoning\": \"The argument fails to distinguish between coordinating a broader operation and exercising effective control over the specific unit (9th Brigade) that committed the crimes, which was under the command of the axis commander. This repeats the core defect identified in obj_a188786a.\"}], \"surviving_argument_ids\": [\"arg_66c570fd\", \"arg_6217b7bc\", \"arg_691951d7\", \"arg_618acdac\", \"arg_d626855a\", \"arg_39eabd4f\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-23T01:19:52.351324Z",
+      "completed_at": "2026-11-23T01:20:32.595614Z",
+      "prompt_tokens": 7633,
+      "completion_tokens": 2950,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-23T01:20:32.597060+00:00",
+  "duration_seconds": 113.97453642700566,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 2,
+  "judge_failures": 0,
+  "judge_failed": false
+}

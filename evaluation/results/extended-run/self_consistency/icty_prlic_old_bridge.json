@@ -1,0 +1,1254 @@
+{
+  "case_id": "icty_prlic_old_bridge",
+  "case_title": "Prosecutor v. Prlić et al. — destruction of the Old Bridge of Mostar",
+  "court": "ICTY",
+  "year": 2017,
+  "difficulty": "contested",
+  "arm": "self_consistency",
+  "arm_label": "E — Self-consistency control (compute-matched)",
+  "run_id": "eval_10140f00ac",
+  "question": "Did the destruction of the Old Bridge of Mostar in November 1993 constitute wanton destruction of cities, towns or villages, or devastation not justified by military necessity, as a violation of the laws or customs of war?",
+  "facts": "In 1993 the HVO (Croatian Defence Council) and the ABiH (Army of the Republic of Bosnia and Herzegovina) were fighting in and around Mostar, where the HVO had laid siege to East Mostar. Throughout the day on 8 November 1993, an HVO tank fired at the Old Bridge of Mostar, a sixteenth-century bridge over the Neretva river; by the evening the bridge was on the verge of collapse. It collapsed the following morning, 9 November 1993. The Trial Chamber found that the bridge was used by the ABiH for combat activities and that its destruction would cut off practically all possibilities for the ABiH to continue its supply operations in the area. The destruction resulted in the virtually total isolation of certain residents of the area and had a significant psychological impact on the Muslim population of Mostar. The Trial Chamber also found that the HVO destroyed the bridge in order to sap the morale of the Muslim population.",
+  "ground_truth_outcome": "rejected",
+  "holding": "In its Appeals Judgement of 29 November 2017, the ICTY Appeals Chamber, Judge Pocar dissenting, held that since the Old Bridge was a military target at the time of the attack, and its destruction thus offered a definite military advantage, it could not be considered, in and of itself, as wanton destruction not justified by military necessity. In the absence of any destruction of property not justified by military necessity in the Trial Chamber's legal findings, a requisite element of the crime was not satisfied, and the Appeals Chamber overturned the finding that destroying the Old Bridge constituted wanton destruction of cities, towns or villages, or devastation not justified by military necessity. It also reversed the findings that the destruction constituted persecution and the unlawful infliction of terror on civilians.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": false,
+  "confidence": 0.75,
+  "confidence_reasoning": "The conclusion rests on the Trial Chamber's explicit finding of intent to sap civilian morale, which directly satisfies the 'wantonly' element. The military necessity analysis is closer: cutting off ABiH supply routes is a concrete advantage, but the bridge's cultural significance, civilian isolation effects, and the HVO's stated psychological purpose make the necessity defense weak. The 0.75 reflects that the conflict's classification (international vs. non-international) could affect the precise treaty provision, but the customary rule applies regardless. The absence of objections means no counter-arguments were tested.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 8,
+  "samples": 7,
+  "vote_counts": {
+    "rejected": 2,
+    "affirmed": 5
+  },
+  "agreement_rate": 0.7142857142857143,
+  "citation_statuses": {
+    "total": 5,
+    "resolved": 4,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 1
+  },
+  "verdict": {
+    "conclusion": "Yes. The destruction of the Old Bridge of Mostar constituted wanton destruction not justified by military necessity, in violation of the laws and customs of war.",
+    "reasoning": "The Trial Chamber's findings establish two critical facts: (1) the bridge was used by the ABiH for combat activities and as a supply route, making it a military objective; (2) the HVO destroyed it 'in order to sap the morale of the Muslim population.' This dual character — a military objective attacked with the primary purpose of terrorizing civilians — brings the act within the prohibition of extensive destruction of property not justified by military necessity and carried out unlawfully and wantonly. Rome Statute Article 8(2)(a)(iv) (grave breaches) and the customary rule it reflects both criminalize such destruction when the military necessity is outweighed by the wanton character of the act. The argument that the bridge's cultural heritage status alone bars attack (arg_257652d4) is qualified by AP II Article 16's military-use exception, which the facts trigger. However, the wantonness finding (arg_1e2e7060) and the lack of imperative military necessity (arg_22a78ea6, arg_728668c7) survive independently. Argument arg_4d6f9c2e is unsupported because its citation to Article 8(2)(b)(iv) is misquoted; that provision addresses disproportionate incidental harm, not the grave breach of extensive wanton destruction. The surviving arguments collectively establish the violation.",
+    "confidence": 0.75,
+    "confidence_reasoning": "The conclusion rests on the Trial Chamber's explicit finding of intent to sap civilian morale, which directly satisfies the 'wantonly' element. The military necessity analysis is closer: cutting off ABiH supply routes is a concrete advantage, but the bridge's cultural significance, civilian isolation effects, and the HVO's stated psychological purpose make the necessity defense weak. The 0.75 reflects that the conflict's classification (international vs. non-international) could affect the precise treaty provision, but the customary rule applies regardless. The absence of objections means no counter-arguments were tested.",
+    "surviving_argument_ids": [
+      "arg_257652d4",
+      "arg_22a78ea6",
+      "arg_1e2e7060",
+      "arg_728668c7"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_257652d4",
+      "claim": "The Old Bridge of Mostar is a historic monument protected as cultural property, and attacks against it are prohibited by international law.",
+      "reasoning": "The bridge is a sixteenth‑century structure and therefore qualifies as a historic monument. Article 16 of Additional Protocol II expressly prohibits any acts of hostility directed against historic monuments that constitute the cultural heritage of peoples, unless such monuments are being used for military purposes. The facts show no evidence that the bridge was indispensable to the HVO’s military operations, only that it was used by the ABiH for limited combat activities, so the prohibition applies.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_ii",
+          "article": "16",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_ii",
+            "article": "16",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_22a78ea6",
+      "claim": "The destruction of the bridge was not justified by military necessity.",
+      "reasoning": "Article 8(2)(a)(iv) of the Rome Statute criminalises extensive destruction of property that is not justified by military necessity. The HVO’s own assessment was that the bridge’s loss would cut off ABiH supply routes, but the same assessment acknowledged that the bridge’s collapse would isolate civilians and cause severe psychological impact. The anticipated concrete and direct military advantage was therefore marginal compared with the extensive cultural and civilian harm, failing the military‑necessity test.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(a)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(a)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_1e2e7060",
+      "claim": "The attack was carried out wantonly, reflecting an intent to harm civilian morale rather than achieve a legitimate military objective.",
+      "reasoning": "The Trial Chamber found that the HVO destroyed the bridge in order to sap the morale of the Muslim population. This demonstrates the requisite intent to cause destruction beyond what is necessary for military purposes, satisfying the \"wantonly\" element of the crime defined in Article 8(2)(a)(iv) of the Rome Statute.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(a)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(a)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_4d6f9c2e",
+      "claim": "The destruction of the Old Bridge constitutes a grave breach of the Geneva Conventions incorporated into the Rome Statute as a war crime.",
+      "reasoning": "Article 8(2)(b)(iv) lists as a war crime \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\" which mirrors the wording of 8(2)(a)(iv). Because the bridge’s destruction meets both the lack of military necessity and the wanton intent, it falls squarely within this grave breach provision.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+          },
+          "status": "misquoted",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": "Quoted text does not appear at this locator."
+        }
+      ]
+    },
+    {
+      "id": "arg_728668c7",
+      "claim": "The act amounts to wanton destruction of a town’s essential infrastructure, violating the customary rule prohibiting devastation not justified by military necessity.",
+      "reasoning": "Customary International Humanitarian Law, reflected in the Rome Statute’s articulation of the same principle, forbids devastation of civilian objects that is not imperative for military operations. The bridge was a key civilian crossing; its elimination isolated residents and inflicted psychological harm, with no demonstrated imperative military advantage, thus breaching the customary prohibition against wanton devastation of towns, villages or cities.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(a)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(a)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw_p_v",
+        "article": "4(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-v-2003",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(a)(iv)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw_p_v",
+        "article": "3(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-v-2003",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw_p_v",
+        "article": "3(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-v-2003",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "54(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "cwc",
+        "article": "3(1)(b)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/cwc-1993",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_ii",
+        "article": "16",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_ff14cd9b",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "a77569a7fe437f8ad6395feff050a681a4abcb601e927d7ca85fecbeb0dd2149",
+      "arguments": [
+        {
+          "id": "arg_1702f052",
+          "claim": "The destruction of the Old Bridge of Mostar was an extensive destruction of property not justified by military necessity and therefore constitutes a war crime under article 8(2)(a)(iv) of the Rome Statute.",
+          "reasoning": "Article 8(2)(a)(iv) criminalises \"extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly\". The bridge was a sixteenth‑century cultural monument whose loss did not provide an imperative military advantage; the HVO’s own findings that the attack was intended to sap Muslim morale show a motive unrelated to necessity. Consequently the act fits the statutory elements of extensive, unlawful and wanton destruction.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_0c94d2d7",
+          "claim": "The Old Bridge, as a historic monument, was protected by Additional Protocol II to the 1977 Additional Protocol I, making its intentional destruction prohibited under international humanitarian law.",
+          "reasoning": "Article 16 of Additional Protocol II expressly prohibits \"any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples\". The bridge, dating from the sixteenth century, is a historic monument and part of the cultural heritage of Mostar. Its deliberate targeting for psychological effect therefore violated this protection.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_ii",
+              "article": "16",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_ii",
+                "article": "16",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_e9008d18",
+          "claim": "Even assuming the bridge was used for limited logistical purposes, the attack failed the proportionality test and was therefore a wanton act of devastation not justified by military necessity.",
+          "reasoning": "Customary IHL requires that attacks on objects which are not indispensable military objectives must not cause incidental civilian harm that is excessive in relation to the concrete and direct military advantage anticipated. The bridge’s destruction isolated civilians, caused significant psychological trauma, and eliminated a cultural landmark, while the asserted military benefit – cutting off ABiH supply routes – was marginal and could have been achieved by less destructive means. The primary motive, as found by the Trial Chamber, was to demoralise the civilian population, indicating a wanton character. Because the proportionality balance was not met, the act constitutes devastation not justified by military necessity under customary law.",
+          "citations": [],
+          "resolved_citations": []
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The destruction of the Old Bridge of Mostar was an extensive destruction of property not justified by military necessity and therefore constitutes a war crime under article 8(2)(a)(iv) of the Rome Statute.\",\n      \"reasoning\": \"Article 8(2)(a)(iv) criminalises \\\"extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly\\\". The bridge was a sixteenth‑century cultural monument whose loss did not provide an imperative military advantage; the HVO’s own findings that the attack was intended to sap Muslim morale show a motive unrelated to necessity. Consequently the act fits the statutory elements of extensive, unlawful and wanton destruction.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(iv)\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The Old Bridge, as a historic monument, was protected by Additional Protocol II to the 1977 Additional Protocol I, making its intentional destruction prohibited under international humanitarian law.\",\n      \"reasoning\": \"Article 16 of Additional Protocol II expressly prohibits \\\"any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples\\\". The bridge, dating from the sixteenth century, is a historic monument and part of the cultural heritage of Mostar. Its deliberate targeting for psychological effect therefore violated this protection.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_ii\",\n          \"article\": \"16\",\n          \"quoted_text\": \"Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Even assuming the bridge was used for limited logistical purposes, the attack failed the proportionality test and was therefore a wanton act of devastation not justified by military necessity.\",\n      \"reasoning\": \"Customary IHL requires that attacks on objects which are not indispensable military objectives must not cause incidental civilian harm that is excessive in relation to the concrete and direct military advantage anticipated. The bridge’s destruction isolated civilians, caused significant psychological trauma, and eliminated a cultural landmark, while the asserted military benefit – cutting off ABiH supply routes – was marginal and could have been achieved by less destructive means. The primary motive, as found by the Trial Chamber, was to demoralise the civilian population, indicating a wanton character. Because the proportionality balance was not met, the act constitutes devastation not justified by military necessity under customary law.\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:48:03.229288Z",
+      "completed_at": "2026-11-22T17:48:07.243815Z",
+      "prompt_tokens": 4053,
+      "completion_tokens": 1621,
+      "error": null
+    },
+    {
+      "id": "turn_af2399b6",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "a77569a7fe437f8ad6395feff050a681a4abcb601e927d7ca85fecbeb0dd2149",
+      "arguments": [
+        {
+          "id": "arg_e8009e35",
+          "claim": "The Old Bridge of Mostar was a protected historic monument and therefore a civilian object, making its intentional destruction prohibited under international law.",
+          "reasoning": "The bridge, dating from the sixteenth century, qualifies as a historic monument that constitutes the cultural heritage of the Bosniak population. Article 16 of the 1977 Additional Protocol II expressly prohibits any acts of hostility directed against historic monuments, works of art or places of worship that form part of a people’s cultural heritage. Because the bridge was not a military objective, its deliberate targeting by an HVO tank violated this prohibition.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_ii",
+              "article": "16",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_ii",
+                "article": "16",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_7321ac04",
+          "claim": "The destruction of the bridge was not justified by military necessity, satisfying the first limb of the war‑crime element in Rome Statute art. 8(2)(a)(iv).",
+          "reasoning": "Rome Statute art. 8(2)(a)(iv) defines a war crime as \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\". The Trial Chamber found that the bridge’s loss would merely cut off supply routes for the ABiH but did not demonstrate a concrete, direct, and proportionate military advantage that outweighed the cultural and humanitarian loss. Hence the destruction was not imperatively demanded by the necessities of war and fails the military‑necessity test.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_72e2c158",
+          "claim": "The bridge was destroyed wantonly, as demonstrated by the HVO’s motive to sap the morale of the Muslim civilian population.",
+          "reasoning": "The element of \"unlawfully and wantonly\" in art. 8(2)(a)(iv) requires that the destruction be carried out with reckless disregard for the protected status of the object and for civilian welfare. The Trial Chamber concluded that the HVO’s purpose was to demoralise the Bosniak population, a motive unrelated to any legitimate military aim. This intentional targeting for psychological effect satisfies the wanton‑destruction requirement.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_314871ec",
+          "claim": "The destruction of the Old Bridge constitutes the war‑crime of devastation of a town, as it resulted in the virtual isolation of residents and significant psychological impact on the civilian population.",
+          "reasoning": "Rome Statute art. 8 lists as a war crime \"extensive destruction and appropriation of property, not justified by military necessity\" which, under customary IHL, covers the devastation of cities, towns or villages. By destroying the sole crossing over the Neretra, the HVO effectively cut off the civilian population of East Mostar, depriving them of movement, access to supplies and causing widespread fear. This meets the definition of devastation of a town under the Statute and customary law.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The Old Bridge of Mostar was a protected historic monument and therefore a civilian object, making its intentional destruction prohibited under international law.\",\n      \"reasoning\": \"The bridge, dating from the sixteenth century, qualifies as a historic monument that constitutes the cultural heritage of the Bosniak population. Article 16 of the 1977 Additional Protocol II expressly prohibits any acts of hostility directed against historic monuments, works of art or places of worship that form part of a people’s cultural heritage. Because the bridge was not a military objective, its deliberate targeting by an HVO tank violated this prohibition.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_ii\",\n          \"article\": \"16\",\n          \"quoted_text\": \"Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The destruction of the bridge was not justified by military necessity, satisfying the first limb of the war‑crime element in Rome Statute art. 8(2)(a)(iv).\",\n      \"reasoning\": \"Rome Statute art. 8(2)(a)(iv) defines a war crime as \\\"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\\\". The Trial Chamber found that the bridge’s loss would merely cut off supply routes for the ABiH but did not demonstrate a concrete, direct, and proportionate military advantage that outweighed the cultural and humanitarian loss. Hence the destruction was not imperatively demanded by the necessities of war and fails the military‑necessity test.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(iv)\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The bridge was destroyed wantonly, as demonstrated by the HVO’s motive to sap the morale of the Muslim civilian population.\",\n      \"reasoning\": \"The element of \\\"unlawfully and wantonly\\\" in art. 8(2)(a)(iv) requires that the destruction be carried out with reckless disregard for the protected status of the object and for civilian welfare. The Trial Chamber concluded that the HVO’s purpose was to demoralise the Bosniak population, a motive unrelated to any legitimate military aim. This intentional targeting for psychological effect satisfies the wanton‑destruction requirement.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(iv)\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The destruction of the Old Bridge constitutes the war‑crime of devastation of a town, as it resulted in the virtual isolation of residents and significant psychological impact on the civilian population.\",\n      \"reasoning\": \"Rome Statute art. 8 lists as a war crime \\\"extensive destruction and appropriation of property, not justified by military necessity\\\" which, under customary IHL, covers the devastation of cities, towns or villages. By destroying the sole crossing over the Neretra, the HVO effectively cut off the civilian population of East Mostar, depriving them of movement, access to supplies and causing widespread fear. This meets the definition of devastation of a town under the Statute and customary law.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(iv)\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:48:07.244042Z",
+      "completed_at": "2026-11-22T17:48:41.840214Z",
+      "prompt_tokens": 4053,
+      "completion_tokens": 1797,
+      "error": null
+    },
+    {
+      "id": "turn_ddaf8f4a",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "a77569a7fe437f8ad6395feff050a681a4abcb601e927d7ca85fecbeb0dd2149",
+      "arguments": [
+        {
+          "id": "arg_257652d4",
+          "claim": "The Old Bridge of Mostar is a historic monument protected as cultural property, and attacks against it are prohibited by international law.",
+          "reasoning": "The bridge is a sixteenth‑century structure and therefore qualifies as a historic monument. Article 16 of Additional Protocol II expressly prohibits any acts of hostility directed against historic monuments that constitute the cultural heritage of peoples, unless such monuments are being used for military purposes. The facts show no evidence that the bridge was indispensable to the HVO’s military operations, only that it was used by the ABiH for limited combat activities, so the prohibition applies.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_ii",
+              "article": "16",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_ii",
+                "article": "16",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_22a78ea6",
+          "claim": "The destruction of the bridge was not justified by military necessity.",
+          "reasoning": "Article 8(2)(a)(iv) of the Rome Statute criminalises extensive destruction of property that is not justified by military necessity. The HVO’s own assessment was that the bridge’s loss would cut off ABiH supply routes, but the same assessment acknowledged that the bridge’s collapse would isolate civilians and cause severe psychological impact. The anticipated concrete and direct military advantage was therefore marginal compared with the extensive cultural and civilian harm, failing the military‑necessity test.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_1e2e7060",
+          "claim": "The attack was carried out wantonly, reflecting an intent to harm civilian morale rather than achieve a legitimate military objective.",
+          "reasoning": "The Trial Chamber found that the HVO destroyed the bridge in order to sap the morale of the Muslim population. This demonstrates the requisite intent to cause destruction beyond what is necessary for military purposes, satisfying the \"wantonly\" element of the crime defined in Article 8(2)(a)(iv) of the Rome Statute.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_4d6f9c2e",
+          "claim": "The destruction of the Old Bridge constitutes a grave breach of the Geneva Conventions incorporated into the Rome Statute as a war crime.",
+          "reasoning": "Article 8(2)(b)(iv) lists as a war crime \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\" which mirrors the wording of 8(2)(a)(iv). Because the bridge’s destruction meets both the lack of military necessity and the wanton intent, it falls squarely within this grave breach provision.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "misquoted",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": "Quoted text does not appear at this locator."
+            }
+          ]
+        },
+        {
+          "id": "arg_728668c7",
+          "claim": "The act amounts to wanton destruction of a town’s essential infrastructure, violating the customary rule prohibiting devastation not justified by military necessity.",
+          "reasoning": "Customary International Humanitarian Law, reflected in the Rome Statute’s articulation of the same principle, forbids devastation of civilian objects that is not imperative for military operations. The bridge was a key civilian crossing; its elimination isolated residents and inflicted psychological harm, with no demonstrated imperative military advantage, thus breaching the customary prohibition against wanton devastation of towns, villages or cities.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The Old Bridge of Mostar is a historic monument protected as cultural property, and attacks against it are prohibited by international law.\",\n      \"reasoning\": \"The bridge is a sixteenth‑century structure and therefore qualifies as a historic monument. Article 16 of Additional Protocol II expressly prohibits any acts of hostility directed against historic monuments that constitute the cultural heritage of peoples, unless such monuments are being used for military purposes. The facts show no evidence that the bridge was indispensable to the HVO’s military operations, only that it was used by the ABiH for limited combat activities, so the prohibition applies.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_ii\",\n          \"article\": \"16\",\n          \"quoted_text\": \"Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The destruction of the bridge was not justified by military necessity.\",\n      \"reasoning\": \"Article 8(2)(a)(iv) of the Rome Statute criminalises extensive destruction of property that is not justified by military necessity. The HVO’s own assessment was that the bridge’s loss would cut off ABiH supply routes, but the same assessment acknowledged that the bridge’s collapse would isolate civilians and cause severe psychological impact. The anticipated concrete and direct military advantage was therefore marginal compared with the extensive cultural and civilian harm, failing the military‑necessity test.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(iv)\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The attack was carried out wantonly, reflecting an intent to harm civilian morale rather than achieve a legitimate military objective.\",\n      \"reasoning\": \"The Trial Chamber found that the HVO destroyed the bridge in order to sap the morale of the Muslim population. This demonstrates the requisite intent to cause destruction beyond what is necessary for military purposes, satisfying the \\\"wantonly\\\" element of the crime defined in Article 8(2)(a)(iv) of the Rome Statute.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(iv)\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The destruction of the Old Bridge constitutes a grave breach of the Geneva Conventions incorporated into the Rome Statute as a war crime.\",\n      \"reasoning\": \"Article 8(2)(b)(iv) lists as a war crime \\\"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\\\" which mirrors the wording of 8(2)(a)(iv). Because the bridge’s destruction meets both the lack of military necessity and the wanton intent, it falls squarely within this grave breach provision.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(iv)\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The act amounts to wanton destruction of a town’s essential infrastructure, violating the customary rule prohibiting devastation not justified by military necessity.\",\n      \"reasoning\": \"Customary International Humanitarian Law, reflected in the Rome Statute’s articulation of the same principle, forbids devastation of civilian objects that is not imperative for military operations. The bridge was a key civilian crossing; its elimination isolated residents and inflicted psychological harm, with no demonstrated imperative military advantage, thus breaching the customary prohibition against wanton devastation of towns, villages or cities.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(iv)\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:48:41.840459Z",
+      "completed_at": "2026-11-22T17:49:49.032660Z",
+      "prompt_tokens": 4053,
+      "completion_tokens": 1998,
+      "error": null
+    },
+    {
+      "id": "turn_741c5998",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "a77569a7fe437f8ad6395feff050a681a4abcb601e927d7ca85fecbeb0dd2149",
+      "arguments": [
+        {
+          "id": "arg_ea2cdd0e",
+          "claim": "The destruction of the Old Bridge of Mostar violated the prohibition on attacks against cultural property under Additional Protocol II because the bridge is a historic monument and its destruction was not imperatively demanded by military necessity.",
+          "reasoning": "The bridge, a sixteenth‑century structure, qualifies as a historic monument under international law. Article 16 of Additional Protocol II expressly prohibits any act of hostility directed against historic monuments unless such destruction is imperatively demanded by the necessities of war. The Tribunal’s findings indicate the HVO’s purpose was to sap the morale of the Muslim civilian population, not to achieve a pressing military objective, and no evidence shows that the bridge’s loss was indispensable for military operations. Accordingly, the destruction was not imperatively demanded and breached the cultural‑property protection norm.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_ii",
+              "article": "16",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_ii",
+                "article": "16",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_96117127",
+          "claim": "The destruction of the bridge constitutes extensive destruction of property not justified by military necessity, thereby constituting a war crime under Rome Statute article 8(2)(a)(iv).",
+          "reasoning": "Article 8(2)(a)(iv) of the Rome Statute criminalises \"extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly.\" The bridge’s demolition eliminated a civilian cultural asset, isolated residents, and produced only a marginal tactical effect—cutting off ABiH supply routes—while the Tribunal found the primary motive was psychological. The damage far outweighed any concrete military advantage, showing the destruction was not justified by necessity and thus fulfills the statutory element of the war‑crime provision.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_69f4b3eb",
+          "claim": "The intentional targeting of the bridge to sap civilian morale demonstrates the act was carried out wantonly, satisfying the \"unlawfully and wantonly\" element of Rome Statute article 8(2)(b)(iv).",
+          "reasoning": "Article 8(2)(b)(iv) mirrors the language of 8(2)(a)(iv) for other serious violations, requiring that the extensive destruction be \"unlawfully and wantonly\" carried out. The Trial Chamber’s finding that the HVO destroyed the bridge expressly to demoralise the Muslim civilian population reveals a deliberate intent to cause unnecessary suffering to civilians, not merely to achieve a military objective. This purposeful disregard for civilian welfare meets the mental element of wantonness, triggering liability under article 8(2)(b)(iv).",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "misquoted",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": "Quoted text does not appear at this locator."
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The destruction of the Old Bridge of Mostar violated the prohibition on attacks against cultural property under Additional Protocol II because the bridge is a historic monument and its destruction was not imperatively demanded by military necessity.\",\n      \"reasoning\": \"The bridge, a sixteenth‑century structure, qualifies as a historic monument under international law. Article 16 of Additional Protocol II expressly prohibits any act of hostility directed against historic monuments unless such destruction is imperatively demanded by the necessities of war. The Tribunal’s findings indicate the HVO’s purpose was to sap the morale of the Muslim civilian population, not to achieve a pressing military objective, and no evidence shows that the bridge’s loss was indispensable for military operations. Accordingly, the destruction was not imperatively demanded and breached the cultural‑property protection norm.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_ii\",\n          \"article\": \"16\",\n          \"quoted_text\": \"Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The destruction of the bridge constitutes extensive destruction of property not justified by military necessity, thereby constituting a war crime under Rome Statute article 8(2)(a)(iv).\",\n      \"reasoning\": \"Article 8(2)(a)(iv) of the Rome Statute criminalises \\\"extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly.\\\" The bridge’s demolition eliminated a civilian cultural asset, isolated residents, and produced only a marginal tactical effect—cutting off ABiH supply routes—while the Tribunal found the primary motive was psychological. The damage far outweighed any concrete military advantage, showing the destruction was not justified by necessity and thus fulfills the statutory element of the war‑crime provision.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(iv)\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The intentional targeting of the bridge to sap civilian morale demonstrates the act was carried out wantonly, satisfying the \\\"unlawfully and wantonly\\\" element of Rome Statute article 8(2)(b)(iv).\",\n      \"reasoning\": \"Article 8(2)(b)(iv) mirrors the language of 8(2)(a)(iv) for other serious violations, requiring that the extensive destruction be \\\"unlawfully and wantonly\\\" carried out. The Trial Chamber’s finding that the HVO destroyed the bridge expressly to demoralise the Muslim civilian population reveals a deliberate intent to cause unnecessary suffering to civilians, not merely to achieve a military objective. This purposeful disregard for civilian welfare meets the mental element of wantonness, triggering liability under article 8(2)(b)(iv).\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(iv)\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:49:49.032956Z",
+      "completed_at": "2026-11-22T17:50:24.058128Z",
+      "prompt_tokens": 4053,
+      "completion_tokens": 2036,
+      "error": null
+    },
+    {
+      "id": "turn_6a5147ab",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "a77569a7fe437f8ad6395feff050a681a4abcb601e927d7ca85fecbeb0dd2149",
+      "arguments": [
+        {
+          "id": "arg_2344d4a0",
+          "claim": "The HVO’s destruction of the Old Bridge of Mostar constitutes extensive destruction of property not justified by military necessity and carried out unlawfully and wantonly within the meaning of Article 8(2)(a)(iv) of the Rome Statute.",
+          "reasoning": "The bridge is civilian property. The Trial Chamber found that its demolition was intended to sap the morale of the Muslim population rather than to achieve a decisive military advantage. No imperative military necessity was demonstrated, and the act was carried out deliberately. Under the Rome Statute, such conduct fits the definition of a war crime of extensive destruction not justified by military necessity and done wantonly.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_5d02998c",
+          "claim": "The Old Bridge, as a sixteenth‑century historic monument, is protected under Additional Protocol II to the Geneva Conventions, Art. 16, which prohibits attacks on historic monuments unless imperatively demanded by military necessity; the HVO’s action does not satisfy that exception.",
+          "reasoning": "The bridge qualifies as a historic monument and cultural heritage. Art. 16 of AP II expressly forbids any acts of hostility directed against such monuments unless the destruction is imperatively demanded by the necessities of war. The evidence shows the bridge’s demolition was motivated by psychological warfare, not by an imperative military need, thus breaching the protocol.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_ii",
+              "article": "16",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_ii",
+                "article": "16",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_a9d7138c",
+          "claim": "The destruction was directed primarily to sap civilian morale rather than to achieve a concrete military advantage, violating the principle of distinction and constituting a wanton attack on a civilian object.",
+          "reasoning": "Customary international humanitarian law requires parties to distinguish between military objectives and civilian objects and to direct attacks only at the former. Even if the bridge was occasionally used for supply, the Tribunal’s finding that the primary purpose of its demolition was to demoralize the civilian population shows the attack was not aimed at a legitimate military target but at civilians themselves. Such conduct is prohibited as a wanton attack on civilian objects.",
+          "citations": [],
+          "resolved_citations": []
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The HVO’s destruction of the Old Bridge of Mostar constitutes extensive destruction of property not justified by military necessity and carried out unlawfully and wantonly within the meaning of Article 8(2)(a)(iv) of the Rome Statute.\",\n      \"reasoning\": \"The bridge is civilian property. The Trial Chamber found that its demolition was intended to sap the morale of the Muslim population rather than to achieve a decisive military advantage. No imperative military necessity was demonstrated, and the act was carried out deliberately. Under the Rome Statute, such conduct fits the definition of a war crime of extensive destruction not justified by military necessity and done wantonly.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(iv)\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The Old Bridge, as a sixteenth‑century historic monument, is protected under Additional Protocol II to the Geneva Conventions, Art. 16, which prohibits attacks on historic monuments unless imperatively demanded by military necessity; the HVO’s action does not satisfy that exception.\",\n      \"reasoning\": \"The bridge qualifies as a historic monument and cultural heritage. Art. 16 of AP II expressly forbids any acts of hostility directed against such monuments unless the destruction is imperatively demanded by the necessities of war. The evidence shows the bridge’s demolition was motivated by psychological warfare, not by an imperative military need, thus breaching the protocol.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_ii\",\n          \"article\": \"16\",\n          \"quoted_text\": \"Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The destruction was directed primarily to sap civilian morale rather than to achieve a concrete military advantage, violating the principle of distinction and constituting a wanton attack on a civilian object.\",\n      \"reasoning\": \"Customary international humanitarian law requires parties to distinguish between military objectives and civilian objects and to direct attacks only at the former. Even if the bridge was occasionally used for supply, the Tribunal’s finding that the primary purpose of its demolition was to demoralize the civilian population shows the attack was not aimed at a legitimate military target but at civilians themselves. Such conduct is prohibited as a wanton attack on civilian objects.\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:50:24.058658Z",
+      "completed_at": "2026-11-22T17:51:30.513081Z",
+      "prompt_tokens": 4053,
+      "completion_tokens": 1596,
+      "error": null
+    },
+    {
+      "id": "turn_4743a619",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "a77569a7fe437f8ad6395feff050a681a4abcb601e927d7ca85fecbeb0dd2149",
+      "arguments": [
+        {
+          "id": "arg_f3a72810",
+          "claim": "The Old Bridge of Mostar was a civilian object, and its destruction constituted an intentional attack against a civilian object prohibited by international humanitarian law.",
+          "reasoning": "Under Article 8(2)(b)(ii) of the Rome Statute, attacks directed at objects that are not military objectives are prohibited. A bridge is a civilian object unless its destruction offers a definite military advantage. The Tribunal found the bridge was used for limited combat activities, but the primary purpose of its destruction was to isolate residents and sap morale, not to achieve a decisive military gain. Accordingly, the bridge remained a civilian object and the HVO’s attack violated the statutory prohibition.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(ii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Intentionally directing attacks against civilian objects, that is, objects which are not military objectives;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(ii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Intentionally directing attacks against civilian objects, that is, objects which are not military objectives;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_49a24ede",
+          "claim": "The destruction of the bridge was not justified by military necessity and therefore breached the prohibition on extensive destruction of property.",
+          "reasoning": "Article 8(2)(a)(iv) of the Rome Statute criminalises \"extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly.\" The HVO claimed a military advantage of cutting ABiH supply routes, yet the bridge’s collapse produced only a limited tactical effect while causing irreversible loss of a historic cultural monument and severe humanitarian impact. The anticipated advantage was not proportionate to the scale of destruction, failing the necessity test and meeting the elements of the statutory prohibition.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_d717396b",
+          "claim": "The act was committed wantonly, as demonstrated by the HVO’s motive to demoralise the Muslim population, satisfying the \"wantonly\" element of the war‑crime provision.",
+          "reasoning": "The term \"wantonly\" in Article 8(2)(a)(iv) requires a reckless disregard for civilian protection, often evidenced by an intent to cause suffering beyond any legitimate military purpose. The Trial Chamber explicitly found that the HVO destroyed the bridge \"in order to sap the morale of the Muslim population,\" showing a purpose unrelated to imperative military necessity. This intent fulfills the wanton element, rendering the conduct unlawful under the Rome Statute.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_64aaa7f3",
+          "claim": "The destruction of the Old Bridge constitutes a war crime of extensive destruction of property under international law.",
+          "reasoning": "Combining the findings that (i) the bridge was a civilian object, (ii) the destruction lacked military necessity, and (iii) it was carried out wantonly, all three elements of Article 8(2)(a)(iv) are satisfied. Consequently, the act meets the definition of a war crime of extensive destruction and appropriation of property, rendering the responsible HVO commanders criminally liable under the Rome Statute.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The Old Bridge of Mostar was a civilian object, and its destruction constituted an intentional attack against a civilian object prohibited by international humanitarian law.\",\n      \"reasoning\": \"Under Article 8(2)(b)(ii) of the Rome Statute, attacks directed at objects that are not military objectives are prohibited. A bridge is a civilian object unless its destruction offers a definite military advantage. The Tribunal found the bridge was used for limited combat activities, but the primary purpose of its destruction was to isolate residents and sap morale, not to achieve a decisive military gain. Accordingly, the bridge remained a civilian object and the HVO’s attack violated the statutory prohibition.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(ii)\",\n          \"quoted_text\": \"Intentionally directing attacks against civilian objects, that is, objects which are not military objectives;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The destruction of the bridge was not justified by military necessity and therefore breached the prohibition on extensive destruction of property.\",\n      \"reasoning\": \"Article 8(2)(a)(iv) of the Rome Statute criminalises \\\"extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly.\\\" The HVO claimed a military advantage of cutting ABiH supply routes, yet the bridge’s collapse produced only a limited tactical effect while causing irreversible loss of a historic cultural monument and severe humanitarian impact. The anticipated advantage was not proportionate to the scale of destruction, failing the necessity test and meeting the elements of the statutory prohibition.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(iv)\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The act was committed wantonly, as demonstrated by the HVO’s motive to demoralise the Muslim population, satisfying the \\\"wantonly\\\" element of the war‑crime provision.\",\n      \"reasoning\": \"The term \\\"wantonly\\\" in Article 8(2)(a)(iv) requires a reckless disregard for civilian protection, often evidenced by an intent to cause suffering beyond any legitimate military purpose. The Trial Chamber explicitly found that the HVO destroyed the bridge \\\"in order to sap the morale of the Muslim population,\\\" showing a purpose unrelated to imperative military necessity. This intent fulfills the wanton element, rendering the conduct unlawful under the Rome Statute.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(iv)\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The destruction of the Old Bridge constitutes a war crime of extensive destruction of property under international law.\",\n      \"reasoning\": \"Combining the findings that (i) the bridge was a civilian object, (ii) the destruction lacked military necessity, and (iii) it was carried out wantonly, all three elements of Article 8(2)(a)(iv) are satisfied. Consequently, the act meets the definition of a war crime of extensive destruction and appropriation of property, rendering the responsible HVO commanders criminally liable under the Rome Statute.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(iv)\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:51:30.513343Z",
+      "completed_at": "2026-11-22T17:52:05.839227Z",
+      "prompt_tokens": 4053,
+      "completion_tokens": 2069,
+      "error": null
+    },
+    {
+      "id": "turn_472b8390",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "a77569a7fe437f8ad6395feff050a681a4abcb601e927d7ca85fecbeb0dd2149",
+      "arguments": [
+        {
+          "id": "arg_f060b751",
+          "claim": "The Old Bridge of Mostar was a protected historic monument and its destruction violated the prohibition on attacks against cultural property.",
+          "reasoning": "Article 16 of Additional Protocol II expressly prohibits any act of hostility directed against historic monuments that constitute the cultural heritage of peoples. The bridge, a sixteenth‑century structure, was a historic monument and part of the cultural heritage of Mostar. Its deliberate destruction therefore breached this rule irrespective of any alleged military use.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_ii",
+              "article": "16",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_ii",
+                "article": "16",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_fff9cd77",
+          "claim": "The bridge was a civilian object, not a military objective, and its targeting violated the prohibition on attacks against civilian objects.",
+          "reasoning": "Article 8(b)(ii) of the Rome Statute defines a civilian object as one which is not a military objective. The bridge served primarily civilian traffic and, although the ABiH allegedly used it for limited supply movements, the Tribunal found that its destruction would cut off virtually all possibilities for ABiH supply operations – indicating that the bridge’s principal function was civilian. Targeting it therefore constituted an intentional attack on a civilian object, prohibited by the Statute.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Intentionally directing attacks against civilian objects, that is, objects which are not military objectives;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Intentionally directing attacks against civilian objects, that is, objects which are not military objectives;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_42f68f00",
+          "claim": "The destruction of the bridge was extensive, not justified by military necessity, and carried out wantonly, satisfying the war‑crime element of extensive destruction of property under Article 8(2)(a)(iv) of the Rome Statute.",
+          "reasoning": "Article 8(2)(a)(iv) criminalises \"extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly\". The bridge’s demolition eliminated a vital civilian crossing, isolated residents, and was undertaken to sap the morale of the Muslim population – motives unrelated to a concrete military advantage. The Tribunal’s finding that the bridge’s loss would merely cut off ABiH supply possibilities does not establish a proportional military gain sufficient to justify such total destruction, rendering the act unjustified and wanton.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_8b6ae647",
+          "claim": "The bridge’s destruction amounts to devastation of a town, constituting a violation of the customary rule prohibiting devastation not justified by military necessity.",
+          "reasoning": "Customary international humanitarian law, reflected in the jurisprudence of the ICTY and ICC, recognises that the wanton destruction of infrastructure which causes widespread civilian hardship constitutes \"devastation\" of a locality. The bridge’s demolition isolated a portion of Mostar’s civilian population, inflicted severe psychological harm, and disrupted essential civilian movement, thereby meeting the factual elements of devastation. Although the specific customary rule number is not contained in the retrieved corpus, the principle is well‑established and applies here.",
+          "citations": [],
+          "resolved_citations": []
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The Old Bridge of Mostar was a protected historic monument and its destruction violated the prohibition on attacks against cultural property.\",\n      \"reasoning\": \"Article 16 of Additional Protocol II expressly prohibits any act of hostility directed against historic monuments that constitute the cultural heritage of peoples. The bridge, a sixteenth‑century structure, was a historic monument and part of the cultural heritage of Mostar. Its deliberate destruction therefore breached this rule irrespective of any alleged military use.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_ii\",\n          \"article\": \"16\",\n          \"quoted_text\": \"Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The bridge was a civilian object, not a military objective, and its targeting violated the prohibition on attacks against civilian objects.\",\n      \"reasoning\": \"Article 8(b)(ii) of the Rome Statute defines a civilian object as one which is not a military objective. The bridge served primarily civilian traffic and, although the ABiH allegedly used it for limited supply movements, the Tribunal found that its destruction would cut off virtually all possibilities for ABiH supply operations – indicating that the bridge’s principal function was civilian. Targeting it therefore constituted an intentional attack on a civilian object, prohibited by the Statute.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Intentionally directing attacks against civilian objects, that is, objects which are not military objectives;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The destruction of the bridge was extensive, not justified by military necessity, and carried out wantonly, satisfying the war‑crime element of extensive destruction of property under Article 8(2)(a)(iv) of the Rome Statute.\",\n      \"reasoning\": \"Article 8(2)(a)(iv) criminalises \\\"extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly\\\". The bridge’s demolition eliminated a vital civilian crossing, isolated residents, and was undertaken to sap the morale of the Muslim population – motives unrelated to a concrete military advantage. The Tribunal’s finding that the bridge’s loss would merely cut off ABiH supply possibilities does not establish a proportional military gain sufficient to justify such total destruction, rendering the act unjustified and wanton.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(iv)\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The bridge’s destruction amounts to devastation of a town, constituting a violation of the customary rule prohibiting devastation not justified by military necessity.\",\n      \"reasoning\": \"Customary international humanitarian law, reflected in the jurisprudence of the ICTY and ICC, recognises that the wanton destruction of infrastructure which causes widespread civilian hardship constitutes \\\"devastation\\\" of a locality. The bridge’s demolition isolated a portion of Mostar’s civilian population, inflicted severe psychological harm, and disrupted essential civilian movement, thereby meeting the factual elements of devastation. Although the specific customary rule number is not contained in the retrieved corpus, the principle is well‑established and applies here.\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:52:05.839510Z",
+      "completed_at": "2026-11-22T17:52:40.452621Z",
+      "prompt_tokens": 4053,
+      "completion_tokens": 1685,
+      "error": null
+    },
+    {
+      "id": "turn_67c1eb3b",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "c19ba8d292d10b9d8e4db80cdd0b3b9ca5468f08474c970e6ad0f07b5502d6a5",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The destruction of the Old Bridge of Mostar constituted wanton destruction not justified by military necessity, in violation of the laws and customs of war.\", \"reasoning\": \"The Trial Chamber's findings establish two critical facts: (1) the bridge was used by the ABiH for combat activities and as a supply route, making it a military objective; (2) the HVO destroyed it 'in order to sap the morale of the Muslim population.' This dual character — a military objective attacked with the primary purpose of terrorizing civilians — brings the act within the prohibition of extensive destruction of property not justified by military necessity and carried out unlawfully and wantonly. Rome Statute Article 8(2)(a)(iv) (grave breaches) and the customary rule it reflects both criminalize such destruction when the military necessity is outweighed by the wanton character of the act. The argument that the bridge's cultural heritage status alone bars attack (arg_257652d4) is qualified by AP II Article 16's military-use exception, which the facts trigger. However, the wantonness finding (arg_1e2e7060) and the lack of imperative military necessity (arg_22a78ea6, arg_728668c7) survive independently. Argument arg_4d6f9c2e is unsupported because its citation to Article 8(2)(b)(iv) is misquoted; that provision addresses disproportionate incidental harm, not the grave breach of extensive wanton destruction. The surviving arguments collectively establish the violation.\", \"confidence\": 0.75, \"confidence_reasoning\": \"The conclusion rests on the Trial Chamber's explicit finding of intent to sap civilian morale, which directly satisfies the 'wantonly' element. The military necessity analysis is closer: cutting off ABiH supply routes is a concrete advantage, but the bridge's cultural significance, civilian isolation effects, and the HVO's stated psychological purpose make the necessity defense weak. The 0.75 reflects that the conflict's classification (international vs. non-international) could affect the precise treaty provision, but the customary rule applies regardless. The absence of objections means no counter-arguments were tested.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_257652d4\", \"arg_22a78ea6\", \"arg_1e2e7060\", \"arg_728668c7\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-22T17:52:40.452943Z",
+      "completed_at": "2026-11-22T17:53:23.048637Z",
+      "prompt_tokens": 5193,
+      "completion_tokens": 1960,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-22T17:53:23.048854+00:00",
+  "duration_seconds": 320.202089071041,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}

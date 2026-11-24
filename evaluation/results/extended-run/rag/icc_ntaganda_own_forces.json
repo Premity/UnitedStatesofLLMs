@@ -1,0 +1,577 @@
+{
+  "case_id": "icc_ntaganda_own_forces",
+  "case_title": "Prosecutor v. Bosco Ntaganda — rape and sexual slavery within the same armed group",
+  "court": "ICC",
+  "year": 2017,
+  "difficulty": "contested",
+  "arm": "rag",
+  "arm_label": "B — Single pass with retrieval",
+  "run_id": "eval_9182e7fbb2",
+  "question": "Can members of an armed group be victims of the war crimes of rape and sexual slavery under Article 8(2)(e)(vi) of the Rome Statute when the crimes are committed against them by members of the same armed group?",
+  "facts": "The accused was charged with crimes committed during a non-international armed conflict in Ituri, in the Democratic Republic of the Congo, by the Union des Patriotes Congolais/Forces Patriotiques pour la Libération du Congo (UPC/FPLC). Two counts charged the rape and the sexual slavery of UPC/FPLC child soldiers, as war crimes under Article 8(2)(e)(vi) of the Rome Statute; the alleged victims were members of the UPC/FPLC and the alleged perpetrators were also members of the UPC/FPLC. The defence challenged the Court's jurisdiction over these counts, arguing that under the established framework of international law, members of an armed group are not protected against crimes committed by their own group, and that a member of an armed force attains protection only on ceasing to be a member, laying down arms or being placed hors de combat. A Trial Chamber held that the Court had jurisdiction, and the defence appealed.",
+  "ground_truth_outcome": "affirmed",
+  "holding": "In its Judgment of 15 June 2017, the ICC Appeals Chamber unanimously confirmed the Trial Chamber's decision that the Court has jurisdiction over the two counts. Members of an armed force or group are not categorically excluded from protection against the war crimes of rape and sexual slavery under Article 8(2)(b)(xxii) and (e)(vi); there are no requirements that victims be protected persons in the sense of the grave breaches provisions or persons taking no active part in hostilities under Common Article 3. It is the nexus requirement, that the conduct took place in the context of and was associated with an armed conflict, that delineates war crimes from ordinary crimes.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": true,
+  "confidence": 0.9,
+  "confidence_reasoning": "The conclusion rests on the plain text of Articles 8(2)(c) and 8(2)(e)(vi) of the Rome Statute, which are in the retrieved context and unambiguous. The interpretation is reinforced by the ICC's jurisprudence in Ntaganda (though not cited in the retrieved context, the statutory basis is sufficient). No objections were raised to test the arguments, and the facts given (child soldiers victimised by their own group) fit squarely within the \"persons taking no active part in the hostilities\" language. The only reason confidence is not 1.0 is the theoretical possibility that an appellate chamber could adopt a narrower reading of \"persons taking no active part,\" but the textual and teleological arguments against such a reading are overwhelming.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 2,
+  "citation_statuses": {
+    "total": 6,
+    "resolved": 6,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. Members of an armed group can be victims of the war crimes of rape and sexual slavery under Article 8(2)(e)(vi) of the Rome Statute when the crimes are committed by members of the same armed group, at least where the victims are not taking an active part in hostilities at the time — as is the case with child soldiers subjected to sexual violence by their own commanders.",
+    "reasoning": "No objections were filed in this round, so all four arguments stand unchallenged. The statutory text of Article 8(2)(e)(vi) criminalises \"Committing rape, sexual slavery…\" in non-international armed conflicts without limiting the victim category to civilians or enemy personnel. Article 8(2)(c) expressly extends the protection of Common Article 3 to \"persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat.\" The victims here were UPC/FPLC child soldiers under fifteen; they were not lawfully participating in hostilities and, when subjected to rape and sexual slavery by their own commanders, were plainly not taking an active part in hostilities. The defence's contention that protection attaches only upon formal separation from the armed group finds no support in the text of Article 8(2)(c) or (e)(vi) and is contrary to the object and purpose of the Rome Statute. The Trial Chamber's jurisdictional ruling is therefore correct.",
+    "confidence": 0.9,
+    "confidence_reasoning": "The conclusion rests on the plain text of Articles 8(2)(c) and 8(2)(e)(vi) of the Rome Statute, which are in the retrieved context and unambiguous. The interpretation is reinforced by the ICC's jurisprudence in Ntaganda (though not cited in the retrieved context, the statutory basis is sufficient). No objections were raised to test the arguments, and the facts given (child soldiers victimised by their own group) fit squarely within the \"persons taking no active part in the hostilities\" language. The only reason confidence is not 1.0 is the theoretical possibility that an appellate chamber could adopt a narrower reading of \"persons taking no active part,\" but the textual and teleological arguments against such a reading are overwhelming.",
+    "surviving_argument_ids": [
+      "arg_fbbcfa1f",
+      "arg_dcfe2ef7",
+      "arg_5d06eff6",
+      "arg_08203e72"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_fbbcfa1f",
+      "claim": "Article 8(2)(e)(vi) of the Rome Statute criminalises rape and sexual slavery in non‑international armed conflicts irrespective of whether the victim is a civilian or a member of an armed group.",
+      "reasoning": "The provision lists \"Committing rape, sexual slavery…\" as a war crime applicable in NIACs. The text does not qualify the victim as a protected civilian; therefore the prohibition applies to any person subjected to such conduct, including members of the perpetrating armed group.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "(vi) Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "(vi) Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_dcfe2ef7",
+      "claim": "Article 8(2)(c) extends protection to persons taking no active part in hostilities, including members of armed forces who have laid down their arms or are hors de combat, so the prohibition in 8(2)(e)(vi) applies to them.",
+      "reasoning": "Paragraph 2(c) states that serious violations of article 3 apply to \"persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat…\". Because the crime of rape/sexual slavery is listed under 8(2)(e)(vi) as a serious violation, the protected‑person regime of 8(2)(c) covers such victims even when they belong to the same armed group as the perpetrators.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat by sickness, wounds, detention or any other cause"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat by sickness, wounds, detention or any other cause"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_5d06eff6",
+      "claim": "Child soldiers of the UPC/FPLC who were subjected to rape or sexual slavery were not taking an active part in hostilities at the time of the offences and therefore fell within the protected category of Article 8(2)(c).",
+      "reasoning": "International humanitarian law recognises that children under fifteen are not combatants for the purposes of protection, and when they are detained, captured, or otherwise hors de combat they are \"persons taking no active part in the hostilities\". Consequently, the sexual violence inflicted upon them triggers the war‑crime liability set out in 8(2)(e)(vi).",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat"
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "(vi) Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "(vi) Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_08203e72",
+      "claim": "The defence’s argument that protection against war crimes accrues only after a combatant ceases membership in the armed group is inconsistent with the wording of Article 8(2)(c) and the object and purpose of the Rome Statute.",
+      "reasoning": "Article 8(2)(c) expressly protects \"persons taking no active part in the hostilities\" regardless of prior affiliation, and the Statute’s purpose is to ensure accountability for grave violations committed in the context of armed conflict, not to create a loophole based on group membership. Therefore, the defence’s narrow reading is contrary to the text and intent of the Rome Statute.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat"
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "(vi) Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "(vi) Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(d)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "5(1)(c)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(f)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(b)(iii)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(e)(iii)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(b)(xxii)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(c)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_76914909",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "94edbd7f32f3f37d7c8ecaf54e2e2b135adfecb17cd4e8ac27884857293f53cf",
+      "arguments": [
+        {
+          "id": "arg_fbbcfa1f",
+          "claim": "Article 8(2)(e)(vi) of the Rome Statute criminalises rape and sexual slavery in non‑international armed conflicts irrespective of whether the victim is a civilian or a member of an armed group.",
+          "reasoning": "The provision lists \"Committing rape, sexual slavery…\" as a war crime applicable in NIACs. The text does not qualify the victim as a protected civilian; therefore the prohibition applies to any person subjected to such conduct, including members of the perpetrating armed group.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "(vi) Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "(vi) Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_dcfe2ef7",
+          "claim": "Article 8(2)(c) extends protection to persons taking no active part in hostilities, including members of armed forces who have laid down their arms or are hors de combat, so the prohibition in 8(2)(e)(vi) applies to them.",
+          "reasoning": "Paragraph 2(c) states that serious violations of article 3 apply to \"persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat…\". Because the crime of rape/sexual slavery is listed under 8(2)(e)(vi) as a serious violation, the protected‑person regime of 8(2)(c) covers such victims even when they belong to the same armed group as the perpetrators.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat by sickness, wounds, detention or any other cause"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat by sickness, wounds, detention or any other cause"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_5d06eff6",
+          "claim": "Child soldiers of the UPC/FPLC who were subjected to rape or sexual slavery were not taking an active part in hostilities at the time of the offences and therefore fell within the protected category of Article 8(2)(c).",
+          "reasoning": "International humanitarian law recognises that children under fifteen are not combatants for the purposes of protection, and when they are detained, captured, or otherwise hors de combat they are \"persons taking no active part in the hostilities\". Consequently, the sexual violence inflicted upon them triggers the war‑crime liability set out in 8(2)(e)(vi).",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat"
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "(vi) Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "(vi) Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_08203e72",
+          "claim": "The defence’s argument that protection against war crimes accrues only after a combatant ceases membership in the armed group is inconsistent with the wording of Article 8(2)(c) and the object and purpose of the Rome Statute.",
+          "reasoning": "Article 8(2)(c) expressly protects \"persons taking no active part in the hostilities\" regardless of prior affiliation, and the Statute’s purpose is to ensure accountability for grave violations committed in the context of armed conflict, not to create a loophole based on group membership. Therefore, the defence’s narrow reading is contrary to the text and intent of the Rome Statute.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat"
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "(vi) Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "(vi) Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"Article 8(2)(e)(vi) of the Rome Statute criminalises rape and sexual slavery in non‑international armed conflicts irrespective of whether the victim is a civilian or a member of an armed group.\",\n      \"reasoning\": \"The provision lists \\\"Committing rape, sexual slavery…\\\" as a war crime applicable in NIACs. The text does not qualify the victim as a protected civilian; therefore the prohibition applies to any person subjected to such conduct, including members of the perpetrating armed group.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"(vi) Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Article 8(2)(c) extends protection to persons taking no active part in hostilities, including members of armed forces who have laid down their arms or are hors de combat, so the prohibition in 8(2)(e)(vi) applies to them.\",\n      \"reasoning\": \"Paragraph 2(c) states that serious violations of article 3 apply to \\\"persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat…\\\". Because the crime of rape/sexual slavery is listed under 8(2)(e)(vi) as a serious violation, the protected‑person regime of 8(2)(c) covers such victims even when they belong to the same armed group as the perpetrators.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(c)\",\n          \"quoted_text\": \"In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat by sickness, wounds, detention or any other cause\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Child soldiers of the UPC/FPLC who were subjected to rape or sexual slavery were not taking an active part in hostilities at the time of the offences and therefore fell within the protected category of Article 8(2)(c).\",\n      \"reasoning\": \"International humanitarian law recognises that children under fifteen are not combatants for the purposes of protection, and when they are detained, captured, or otherwise hors de combat they are \\\"persons taking no active part in the hostilities\\\". Consequently, the sexual violence inflicted upon them triggers the war‑crime liability set out in 8(2)(e)(vi).\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(c)\",\n          \"quoted_text\": \"persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"(vi) Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The defence’s argument that protection against war crimes accrues only after a combatant ceases membership in the armed group is inconsistent with the wording of Article 8(2)(c) and the object and purpose of the Rome Statute.\",\n      \"reasoning\": \"Article 8(2)(c) expressly protects \\\"persons taking no active part in the hostilities\\\" regardless of prior affiliation, and the Statute’s purpose is to ensure accountability for grave violations committed in the context of armed conflict, not to create a loophole based on group membership. Therefore, the defence’s narrow reading is contrary to the text and intent of the Rome Statute.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(c)\",\n          \"quoted_text\": \"persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"(vi) Committing rape, sexual slavery, enforced prostitution, forced pregnancy, as defined in article 7, paragraph 2 (f), enforced sterilization, or any other form of sexual violence also constituting a grave breach of the Geneva Conventions\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:54:25.626349Z",
+      "completed_at": "2026-11-22T17:54:31.453818Z",
+      "prompt_tokens": 3859,
+      "completion_tokens": 2538,
+      "error": null
+    },
+    {
+      "id": "turn_f208ec68",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "fcc15313ef327d440a1cbe365ce737c9ec3ecbfc81866537a09618f1d19b329d",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. Members of an armed group can be victims of the war crimes of rape and sexual slavery under Article 8(2)(e)(vi) of the Rome Statute when the crimes are committed by members of the same armed group, at least where the victims are not taking an active part in hostilities at the time — as is the case with child soldiers subjected to sexual violence by their own commanders.\", \"reasoning\": \"No objections were filed in this round, so all four arguments stand unchallenged. The statutory text of Article 8(2)(e)(vi) criminalises \\\"Committing rape, sexual slavery…\\\" in non-international armed conflicts without limiting the victim category to civilians or enemy personnel. Article 8(2)(c) expressly extends the protection of Common Article 3 to \\\"persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat.\\\" The victims here were UPC/FPLC child soldiers under fifteen; they were not lawfully participating in hostilities and, when subjected to rape and sexual slavery by their own commanders, were plainly not taking an active part in hostilities. The defence's contention that protection attaches only upon formal separation from the armed group finds no support in the text of Article 8(2)(c) or (e)(vi) and is contrary to the object and purpose of the Rome Statute. The Trial Chamber's jurisdictional ruling is therefore correct.\", \"confidence\": 0.9, \"confidence_reasoning\": \"The conclusion rests on the plain text of Articles 8(2)(c) and 8(2)(e)(vi) of the Rome Statute, which are in the retrieved context and unambiguous. The interpretation is reinforced by the ICC's jurisprudence in Ntaganda (though not cited in the retrieved context, the statutory basis is sufficient). No objections were raised to test the arguments, and the facts given (child soldiers victimised by their own group) fit squarely within the \\\"persons taking no active part in the hostilities\\\" language. The only reason confidence is not 1.0 is the theoretical possibility that an appellate chamber could adopt a narrower reading of \\\"persons taking no active part,\\\" but the textual and teleological arguments against such a reading are overwhelming.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_fbbcfa1f\", \"arg_dcfe2ef7\", \"arg_5d06eff6\", \"arg_08203e72\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-22T17:54:31.455041Z",
+      "completed_at": "2026-11-22T17:55:11.393094Z",
+      "prompt_tokens": 4916,
+      "completion_tokens": 1649,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-22T17:55:11.394213+00:00",
+  "duration_seconds": 47.88001130503835,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}

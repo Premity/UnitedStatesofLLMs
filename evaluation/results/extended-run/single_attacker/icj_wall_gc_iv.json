@@ -1,0 +1,1053 @@
+{
+  "case_id": "icj_wall_gc_iv",
+  "case_title": "Wall Advisory Opinion — applicability of the Fourth Geneva Convention",
+  "court": "ICJ",
+  "year": 2004,
+  "difficulty": "settled",
+  "arm": "single_attacker",
+  "arm_label": "C — One attacker",
+  "run_id": "eval_d7f0e1ef5c",
+  "question": "Is the Fourth Geneva Convention applicable in the Palestinian territories that lay east of the 1949 Armistice Line and were occupied by Israel during the 1967 conflict?",
+  "facts": "The 1949 General Armistice Agreement between Israel and Jordan fixed a demarcation line, the Green Line, between Israeli and Jordanian forces. During the armed conflict of 1967, Israel occupied the territories lying between the Green Line and the former eastern boundary of Palestine under the British Mandate, including East Jerusalem. Both Israel and Jordan were parties to the Fourth Geneva Convention of 1949 at the time of the 1967 conflict. Israel took the position that the Convention was not applicable de jure to those territories because, under Article 2, paragraph 2, it applies only to the occupation of territory of a High Contracting Party, and Jordan had not been recognised as the sovereign of the territories before 1967.",
+  "ground_truth_outcome": "affirmed",
+  "holding": "In its Advisory Opinion of 9 July 2004, the International Court of Justice held that the Fourth Geneva Convention is applicable in any occupied territory in the event of an armed conflict arising between two or more High Contracting Parties, and that it is therefore applicable in the Palestinian territories which before the 1967 conflict lay to the east of the Green Line and which, during that conflict, were occupied by Israel, there being no need for any enquiry into the precise prior status of those territories.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": true,
+  "confidence": 0.92,
+  "confidence_reasoning": "The surviving arguments rely on the treaty text of GC IV (Art. 2(2), Art. 14) and AP I (Art. 4), all of which are in the retrieved context and were not challenged. The legal question is settled: the ICJ Advisory Opinion on the Wall (2004), UNSC Resolutions 242, 338, 446, 452, 465, 471, 476, 478, 2334, the ICRC's official commentary, and the near-unanimous view of High Contracting Parties all affirm GC IV's de jure applicability. The only remaining uncertainty would be if a tribunal were to adopt Israel's unique textual interpretation, but that position has been consistently rejected in authoritative interpretations. The confidence reflects the strength of the surviving treaty-based arguments and the absence of any viable counter-argument in the record.",
+  "rounds": 2,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 2,
+  "total_calls": 6,
+  "citation_statuses": {
+    "total": 11,
+    "resolved": 11,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. The Fourth Geneva Convention applies to the Palestinian territories east of the 1949 Armistice Line occupied by Israel in 1967. Article 2(2) of the Convention extends to cases of occupation of the territory of a High Contracting Party; Jordan was a High Contracting Party administering the West Bank at the time. Additional Protocol I, Article 4 confirms that the Convention's application does not depend on the legal status of the territory. The Convention's own Article 14 expressly contemplates its operation \"in occupied areas.\" Israel's objection — that Jordan lacked recognized sovereignty — is not a condition found in the treaty text and has been rejected by the International Court of Justice, the International Committee of the Red Cross, and the overwhelming majority of States.",
+    "reasoning": "Four objections were raised. Two (obj_ef6e95ae, obj_932ff47e) correctly noted that Rome Statute Article 8(2)(c) governs non-international armed conflicts and cannot support the applicability of GC IV in the 1967 international armed conflict; they are sustained, defeating arg_2a362c6c. Two (obj_4dd38b82, obj_5d53b15a) correctly noted that the CCW acceptance mechanism (Article 7) governs the CCW and its Protocols, not the Geneva Conventions, and does not create an independent basis for GC IV applicability; they are sustained, defeating arg_f6e26ec8. The surviving arguments (arg_9ff6afcc, arg_61164232, arg_ee687bc9, arg_a15604d4, arg_cf1d27c3, arg_98fdac96) rest on the plain text of GC IV Article 2(2), the confirmatory provision of AP I Article 4, and the internal evidence of GC IV Article 14. No objection was raised against these core arguments. Together they establish that the Convention applies to territory coming under the effective control of a High Contracting Party (Israel) that previously belonged to or was administered by another High Contracting Party (Jordan), irrespective of the prior sovereign status.",
+    "confidence": 0.92,
+    "confidence_reasoning": "The surviving arguments rely on the treaty text of GC IV (Art. 2(2), Art. 14) and AP I (Art. 4), all of which are in the retrieved context and were not challenged. The legal question is settled: the ICJ Advisory Opinion on the Wall (2004), UNSC Resolutions 242, 338, 446, 452, 465, 471, 476, 478, 2334, the ICRC's official commentary, and the near-unanimous view of High Contracting Parties all affirm GC IV's de jure applicability. The only remaining uncertainty would be if a tribunal were to adopt Israel's unique textual interpretation, but that position has been consistently rejected in authoritative interpretations. The confidence reflects the strength of the surviving treaty-based arguments and the absence of any viable counter-argument in the record.",
+    "surviving_argument_ids": [
+      "arg_9ff6afcc",
+      "arg_61164232",
+      "arg_ee687bc9",
+      "arg_a15604d4",
+      "arg_cf1d27c3",
+      "arg_98fdac96"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_9ff6afcc",
+      "claim": "The Fourth Geneva Convention (GC IV) applies to any territory that comes under the effective control of a High Contracting Party, regardless of the prior sovereign status of that territory.",
+      "reasoning": "Article 2(2) of GC IV expressly provides that the Convention applies to cases of partial or total occupation of the territory of a High Contracting Party. The provision is formulated in terms of \"territory of a High Contracting Party\" and does not condition applicability on the existence of a recognized sovereign prior to occupation. Therefore, the legal status of the West Bank before 1967 is irrelevant to the Convention’s applicability.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_61164232",
+      "claim": "Both Israel and Jordan were parties to the Fourth Geneva Convention at the time of the 1967 conflict, satisfying the requirement that the occupied territory belongs to a High Contracting Party.",
+      "reasoning": "Article 2(2) requires that the occupied territory be that of a High Contracting Party; Jordan’s ratification of GC IV makes the West Bank, which was under Jordanian administration, fall within that definition. Article 4 of Additional Protocol I confirms that the application of the Conventions does not depend on the legal status of the occupied territory, reinforcing that the Convention applies irrespective of disputed sovereignty.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "4",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The application of the Conventions and of this Protocol, as well as the conclusion of the agreements provided for therein, shall not affect the legal status of the Parties to the conflict. Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "4",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The application of the Conventions and of this Protocol, as well as the conclusion of the agreements provided for therein, shall not affect the legal status of the Parties to the conflict. Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_2a362c6c",
+      "claim": "The Rome Statute treats serious violations of Article 3 common to the four Geneva Conventions as war crimes, indicating that the protections of GC IV are considered applicable in the situation of the 1967 occupation.",
+      "reasoning": "Article 8(2)(c) of the Rome Statute criminalises serious violations of Article 3 common to the Geneva Conventions in non‑international armed conflicts. By incorporating Article 3 into its war‑crime regime, the Statute affirms the universal applicability of the Geneva Conventions’ minimum protections, including in territories under occupation, regardless of the prior sovereign status.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts ..."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts ..."
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_f6e26ec8",
+      "claim": "Under the acceptance mechanism of the Convention on Certain Conventional Weapons (CCW), a High Contracting Party may be bound to apply the Geneva Conventions to an armed conflict even where the other party is not a party, provided the relevant authority accepts the obligations; Israel, as a High Contracting Party, is therefore bound to apply GC IV to the occupied territories.",
+      "reasoning": "Article 7(4) of the CCW provides that the Convention and its annexed Protocols shall apply to an armed conflict against a High Contracting Party when an authority of the opposing side accepts and applies the obligations of the Geneva Conventions. Article 7 further states that any High Contracting Party shall be bound by the Convention in relation to a State that is not a party if that State accepts the Convention. Israel’s status as a High Contracting Party combined with Jordan’s prior acceptance of the Conventions creates a legal basis for the applicability of GC IV to the territories Israel occupied in 1967.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccw",
+          "article": "7(4)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "This Convention, and the annexed Protocols by which a High Contracting Party is bound, shall apply with respect to an armed conflict against that High Contracting Party of the type referred to in Article 1, paragraph 4, of Additional Protocol I..."
+        },
+        {
+          "type": "treaty",
+          "instrument": "ccw",
+          "article": "7",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Any High Contracting Party shall be bound by this Convention and any Protocol annexed thereto which is in force for it, in any situation contemplated by Article 1, in relation to any State which is not a party to this Convention or bound by the relevant annexed Protocol, if the latter accepts and applies this Convention or the relevant Protocol, and so notifies the Depositary."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccw",
+            "article": "7(4)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "This Convention, and the annexed Protocols by which a High Contracting Party is bound, shall apply with respect to an armed conflict against that High Contracting Party of the type referred to in Article 1, paragraph 4, of Additional Protocol I..."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-1980",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccw",
+            "article": "7",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Any High Contracting Party shall be bound by this Convention and any Protocol annexed thereto which is in force for it, in any situation contemplated by Article 1, in relation to any State which is not a party to this Convention or bound by the relevant annexed Protocol, if the latter accepts and applies this Convention or the relevant Protocol, and so notifies the Depositary."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-1980",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_ee687bc9",
+      "claim": "The humanitarian purpose of GC IV, exemplified by its provisions for hospital and safety zones in occupied areas, demonstrates that the Convention is intended to operate in occupied territories.",
+      "reasoning": "Article 14 of GC IV authorises the establishment of hospital and safety zones \"in occupied areas\" to protect civilians and other protected persons. This explicit reference to occupied territories confirms the drafters’ intent that the Convention’s protective regime applies wherever occupation occurs, reinforcing its applicability to the Palestinian territories occupied in 1967.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iv",
+          "article": "14",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "In time of peace, the High Contracting Parties and, after the outbreak of hostilities, the Parties thereto, may establish in their own territory and, if the need arises, in occupied areas, hospital and safety zones and localities so organized as to protect from the effects of war..."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iv",
+            "article": "14",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "In time of peace, the High Contracting Parties and, after the outbreak of hostilities, the Parties thereto, may establish in their own territory and, if the need arises, in occupied areas, hospital and safety zones and localities so organized as to protect from the effects of war..."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_a15604d4",
+      "claim": "The Fourth Geneva Convention applies to the territories east of the 1949 Armistice Line because they are occupied territories under the effective control of a High Contracting Party, and Article 2(2) of the Convention does not condition applicability on prior sovereign status.",
+      "reasoning": "Article 2(2) of GC IV defines the scope of the Convention in terms of occupation of the territory of a High Contracting Party, without requiring that the occupied land have been the sovereign territory of that Party before occupation. International law interprets the provision as focusing on the factual situation of effective control, not on historical sovereignty. Consequently, the West Bank and Gaza, being under Israel’s effective control since 1967, fall within the Convention’s reach.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_cf1d27c3",
+      "claim": "Jordan’s prior ratification of the Fourth Geneva Convention makes the West Bank territory a ‘territory of a High Contracting Party’ at the time of the 1967 occupation, satisfying the territorial requirement of Article 2(2).",
+      "reasoning": "Both Israel and Jordan were parties to GC IV in 1967. The International Committee of the Red Cross’s commentary in Additional Protocol I, Article 4, confirms that the application of the Conventions does not depend on the legal status of the occupied territory. Therefore, Jordan’s status as a High Contracting Party extends the Convention’s applicability to the West Bank, irrespective of the disputed pre‑1967 sovereignty.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "4",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The application of the Conventions and of this Protocol, as well as the conclusion of the agreements provided for therein, shall not affect the legal status of the Parties to the conflict. Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "4",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The application of the Conventions and of this Protocol, as well as the conclusion of the agreements provided for therein, shall not affect the legal status of the Parties to the conflict. Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_98fdac96",
+      "claim": "The Fourth Geneva Convention was intended to operate in occupied territories, as evidenced by its explicit provisions for hospital and safety zones in such areas.",
+      "reasoning": "Article 14 of GC IV authorises the establishment of hospital and safety zones \"in occupied areas\" to protect civilians and other protected persons. This explicit reference demonstrates the drafters’ intent that the Convention’s protective regime applies wherever occupation occurs, confirming its applicability to the Palestinian territories occupied in 1967.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iv",
+          "article": "14",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "In time of peace, the High Contracting Parties and, after the outbreak of hostilities, the Parties thereto, may establish in their own territory and, if the need arises, in occupied areas, hospital and safety zones and localities so organized as to protect from the effects of war, wounded, sick and aged persons, children under fifteen, expectant mothers and mothers of children under seven."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iv",
+            "article": "14",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "In time of peace, the High Contracting Parties and, after the outbreak of hostilities, the Parties thereto, may establish in their own territory and, if the need arises, in occupied areas, hospital and safety zones and localities so organized as to protect from the effects of war, wounded, sick and aged persons, children under fifteen, expectant mothers and mothers of children under seven."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [
+    {
+      "id": "obj_ef6e95ae",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_2a362c6c",
+      "ground": "The argument mischaracterizes the scope of Rome Statute Article 8(2)(c) by conflating non-international armed conflict provisions with the applicability of the Fourth Geneva Convention to international occupation.",
+      "reasoning": "Article 8(2)(c) of the Rome Statute explicitly applies to 'armed conflicts not of an international character.' The 1967 occupation of the West Bank is legally characterized as an international armed conflict between two High Contracting Parties. Citing a provision governing non-international conflicts to support the applicability of GC IV in an international context is a fundamental misapplication of the legal instrument's scope.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Rome Statute Article 8(2)(c) by its terms applies only to 'armed conflicts not of an international character.' The 1967 conflict between Israel and Jordan was an international armed conflict between two High Contracting Parties. Citing a provision governing non-international conflicts to support GC IV applicability in an international occupation is a legal error. The objection correctly identifies the mischaracterization."
+    },
+    {
+      "id": "obj_4dd38b82",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_f6e26ec8",
+      "ground": "The argument erroneously applies the acceptance mechanism of the Convention on Certain Conventional Weapons (CCW) to the Geneva Conventions, which are not annexed to the CCW.",
+      "reasoning": "Article 7(4) of the CCW governs the application of the CCW and its annexed Protocols, not the Geneva Conventions. While it references the Geneva Conventions in the context of acceptance by an authority, it does not create an independent legal basis for the retroactive or alternative application of GC IV where the treaty's own Article 2(2) conditions are already met or contested. The CCW does not override the specific territorial applicability rules of GC IV.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccw",
+          "article": "7(4)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccw",
+            "article": "7(4)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-1980",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "CCW Article 7(4) governs the application of the CCW and its annexed Protocols (weapons treaties) when an authority accepts the Geneva Conventions. It does not modify, supplement, or create an independent basis for the applicability of the Fourth Geneva Convention itself, which has its own scope provision in Article 2. The objection correctly identifies the non sequitur."
+    },
+    {
+      "id": "obj_932ff47e",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_2a362c6c",
+      "ground": "The cited authority establishes a standard for non-international armed conflicts, not for the legal characterization of the 1967 international occupation.",
+      "reasoning": "Article 8(2)(c) of the Rome Statute applies specifically to armed conflicts 'not of an international character'. The 1967 conflict between Israel and Jordan was an international armed conflict. Citing a provision that governs the threshold for war crimes in non-international conflicts provides no legal support for the applicability of the Fourth Geneva Convention in an international occupation. The argument conflates the scope of criminal jurisdiction in civil wars with the treaty law governing international belligerency.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Same reasoning as obj_ef6e95ae. Article 8(2)(c) establishes a war-crimes threshold for non-international armed conflicts; it does not speak to the treaty-law applicability of GC IV in an international occupation. The objection is well-founded."
+    },
+    {
+      "id": "obj_5d53b15a",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_f6e26ec8",
+      "ground": "The cited authority concerns the Convention on Certain Conventional Weapons and is irrelevant to the applicability of the Geneva Conventions to the occupied territories.",
+      "reasoning": "Article 7(4) of the CCW governs the application of the CCW and its annexed Protocols (weapons conventions) to conflicts involving non-state authorities. It does not expand or modify the applicability of the Fourth Geneva Convention (GC IV) to occupied territory. GC IV is a distinct treaty with its own scope provisions (Article 2). Using the CCW's acceptance mechanism to argue for the applicability of GC IV is a non sequitur; the two instruments address different legal subjects and do not have cross-applicability provisions.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccw",
+          "article": "7(4)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccw",
+            "article": "7(4)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-1980",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The CCW is a distinct instrument addressing conventional weapons. Its acceptance mechanism in Article 7 does not expand or alter the territorial scope of GC IV. The two treaties operate in separate domains. The objection is correct."
+    }
+  ],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_ii",
+        "article": "4",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gcii-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw",
+        "article": "7(4)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-1980",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(c)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw",
+        "article": "7",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-1980",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_iii",
+        "article": "1",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apiii-2005",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "4",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iv",
+        "article": "14",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_4e968d70",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "be67945ec3607c4a7de24cc1086b7b389cdc182772d83c09fe0dada4dda71eb4",
+      "arguments": [
+        {
+          "id": "arg_9ff6afcc",
+          "claim": "The Fourth Geneva Convention (GC IV) applies to any territory that comes under the effective control of a High Contracting Party, regardless of the prior sovereign status of that territory.",
+          "reasoning": "Article 2(2) of GC IV expressly provides that the Convention applies to cases of partial or total occupation of the territory of a High Contracting Party. The provision is formulated in terms of \"territory of a High Contracting Party\" and does not condition applicability on the existence of a recognized sovereign prior to occupation. Therefore, the legal status of the West Bank before 1967 is irrelevant to the Convention’s applicability.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_61164232",
+          "claim": "Both Israel and Jordan were parties to the Fourth Geneva Convention at the time of the 1967 conflict, satisfying the requirement that the occupied territory belongs to a High Contracting Party.",
+          "reasoning": "Article 2(2) requires that the occupied territory be that of a High Contracting Party; Jordan’s ratification of GC IV makes the West Bank, which was under Jordanian administration, fall within that definition. Article 4 of Additional Protocol I confirms that the application of the Conventions does not depend on the legal status of the occupied territory, reinforcing that the Convention applies irrespective of disputed sovereignty.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The application of the Conventions and of this Protocol, as well as the conclusion of the agreements provided for therein, shall not affect the legal status of the Parties to the conflict. Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The application of the Conventions and of this Protocol, as well as the conclusion of the agreements provided for therein, shall not affect the legal status of the Parties to the conflict. Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_2a362c6c",
+          "claim": "The Rome Statute treats serious violations of Article 3 common to the four Geneva Conventions as war crimes, indicating that the protections of GC IV are considered applicable in the situation of the 1967 occupation.",
+          "reasoning": "Article 8(2)(c) of the Rome Statute criminalises serious violations of Article 3 common to the Geneva Conventions in non‑international armed conflicts. By incorporating Article 3 into its war‑crime regime, the Statute affirms the universal applicability of the Geneva Conventions’ minimum protections, including in territories under occupation, regardless of the prior sovereign status.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts ..."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts ..."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_f6e26ec8",
+          "claim": "Under the acceptance mechanism of the Convention on Certain Conventional Weapons (CCW), a High Contracting Party may be bound to apply the Geneva Conventions to an armed conflict even where the other party is not a party, provided the relevant authority accepts the obligations; Israel, as a High Contracting Party, is therefore bound to apply GC IV to the occupied territories.",
+          "reasoning": "Article 7(4) of the CCW provides that the Convention and its annexed Protocols shall apply to an armed conflict against a High Contracting Party when an authority of the opposing side accepts and applies the obligations of the Geneva Conventions. Article 7 further states that any High Contracting Party shall be bound by the Convention in relation to a State that is not a party if that State accepts the Convention. Israel’s status as a High Contracting Party combined with Jordan’s prior acceptance of the Conventions creates a legal basis for the applicability of GC IV to the territories Israel occupied in 1967.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccw",
+              "article": "7(4)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "This Convention, and the annexed Protocols by which a High Contracting Party is bound, shall apply with respect to an armed conflict against that High Contracting Party of the type referred to in Article 1, paragraph 4, of Additional Protocol I..."
+            },
+            {
+              "type": "treaty",
+              "instrument": "ccw",
+              "article": "7",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Any High Contracting Party shall be bound by this Convention and any Protocol annexed thereto which is in force for it, in any situation contemplated by Article 1, in relation to any State which is not a party to this Convention or bound by the relevant annexed Protocol, if the latter accepts and applies this Convention or the relevant Protocol, and so notifies the Depositary."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccw",
+                "article": "7(4)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "This Convention, and the annexed Protocols by which a High Contracting Party is bound, shall apply with respect to an armed conflict against that High Contracting Party of the type referred to in Article 1, paragraph 4, of Additional Protocol I..."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-1980",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccw",
+                "article": "7",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Any High Contracting Party shall be bound by this Convention and any Protocol annexed thereto which is in force for it, in any situation contemplated by Article 1, in relation to any State which is not a party to this Convention or bound by the relevant annexed Protocol, if the latter accepts and applies this Convention or the relevant Protocol, and so notifies the Depositary."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-1980",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_ee687bc9",
+          "claim": "The humanitarian purpose of GC IV, exemplified by its provisions for hospital and safety zones in occupied areas, demonstrates that the Convention is intended to operate in occupied territories.",
+          "reasoning": "Article 14 of GC IV authorises the establishment of hospital and safety zones \"in occupied areas\" to protect civilians and other protected persons. This explicit reference to occupied territories confirms the drafters’ intent that the Convention’s protective regime applies wherever occupation occurs, reinforcing its applicability to the Palestinian territories occupied in 1967.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iv",
+              "article": "14",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "In time of peace, the High Contracting Parties and, after the outbreak of hostilities, the Parties thereto, may establish in their own territory and, if the need arises, in occupied areas, hospital and safety zones and localities so organized as to protect from the effects of war..."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iv",
+                "article": "14",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "In time of peace, the High Contracting Parties and, after the outbreak of hostilities, the Parties thereto, may establish in their own territory and, if the need arises, in occupied areas, hospital and safety zones and localities so organized as to protect from the effects of war..."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The Fourth Geneva Convention (GC IV) applies to any territory that comes under the effective control of a High Contracting Party, regardless of the prior sovereign status of that territory.\",\n      \"reasoning\": \"Article 2(2) of GC IV expressly provides that the Convention applies to cases of partial or total occupation of the territory of a High Contracting Party. The provision is formulated in terms of \\\"territory of a High Contracting Party\\\" and does not condition applicability on the existence of a recognized sovereign prior to occupation. Therefore, the legal status of the West Bank before 1967 is irrelevant to the Convention’s applicability.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"Both Israel and Jordan were parties to the Fourth Geneva Convention at the time of the 1967 conflict, satisfying the requirement that the occupied territory belongs to a High Contracting Party.\",\n      \"reasoning\": \"Article 2(2) requires that the occupied territory be that of a High Contracting Party; Jordan’s ratification of GC IV makes the West Bank, which was under Jordanian administration, fall within that definition. Article 4 of Additional Protocol I confirms that the application of the Conventions does not depend on the legal status of the occupied territory, reinforcing that the Convention applies irrespective of disputed sovereignty.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"4\",\n          \"quoted_text\": \"The application of the Conventions and of this Protocol, as well as the conclusion of the agreements provided for therein, shall not affect the legal status of the Parties to the conflict. Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The Rome Statute treats serious violations of Article 3 common to the four Geneva Conventions as war crimes, indicating that the protections of GC IV are considered applicable in the situation of the 1967 occupation.\",\n      \"reasoning\": \"Article 8(2)(c) of the Rome Statute criminalises serious violations of Article 3 common to the Geneva Conventions in non‑international armed conflicts. By incorporating Article 3 into its war‑crime regime, the Statute affirms the universal applicability of the Geneva Conventions’ minimum protections, including in territories under occupation, regardless of the prior sovereign status.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(c)\",\n          \"quoted_text\": \"In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts ...\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Under the acceptance mechanism of the Convention on Certain Conventional Weapons (CCW), a High Contracting Party may be bound to apply the Geneva Conventions to an armed conflict even where the other party is not a party, provided the relevant authority accepts the obligations; Israel, as a High Contracting Party, is therefore bound to apply GC IV to the occupied territories.\",\n      \"reasoning\": \"Article 7(4) of the CCW provides that the Convention and its annexed Protocols shall apply to an armed conflict against a High Contracting Party when an authority of the opposing side accepts and applies the obligations of the Geneva Conventions. Article 7 further states that any High Contracting Party shall be bound by the Convention in relation to a State that is not a party if that State accepts the Convention. Israel’s status as a High Contracting Party combined with Jordan’s prior acceptance of the Conventions creates a legal basis for the applicability of GC IV to the territories Israel occupied in 1967.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccw\",\n          \"article\": \"7(4)\",\n          \"quoted_text\": \"This Convention, and the annexed Protocols by which a High Contracting Party is bound, shall apply with respect to an armed conflict against that High Contracting Party of the type referred to in Article 1, paragraph 4, of Additional Protocol I...\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccw\",\n          \"article\": \"7\",\n          \"quoted_text\": \"Any High Contracting Party shall be bound by this Convention and any Protocol annexed thereto which is in force for it, in any situation contemplated by Article 1, in relation to any State which is not a party to this Convention or bound by the relevant annexed Protocol, if the latter accepts and applies this Convention or the relevant Protocol, and so notifies the Depositary.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The humanitarian purpose of GC IV, exemplified by its provisions for hospital and safety zones in occupied areas, demonstrates that the Convention is intended to operate in occupied territories.\",\n      \"reasoning\": \"Article 14 of GC IV authorises the establishment of hospital and safety zones \\\"in occupied areas\\\" to protect civilians and other protected persons. This explicit reference to occupied territories confirms the drafters’ intent that the Convention’s protective regime applies wherever occupation occurs, reinforcing its applicability to the Palestinian territories occupied in 1967.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iv\",\n          \"article\": \"14\",\n          \"quoted_text\": \"In time of peace, the High Contracting Parties and, after the outbreak of hostilities, the Parties thereto, may establish in their own territory and, if the need arises, in occupied areas, hospital and safety zones and localities so organized as to protect from the effects of war...\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-24T01:07:01.086197Z",
+      "completed_at": "2026-11-24T01:07:07.690432Z",
+      "prompt_tokens": 4676,
+      "completion_tokens": 2977,
+      "error": null
+    },
+    {
+      "id": "turn_68205d9c",
+      "round_number": 1,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "797b3376c040f1b095f238c2bcb6f812c6ac7f52a997be87214837c5473ae156",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_ef6e95ae",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_2a362c6c",
+          "ground": "The argument mischaracterizes the scope of Rome Statute Article 8(2)(c) by conflating non-international armed conflict provisions with the applicability of the Fourth Geneva Convention to international occupation.",
+          "reasoning": "Article 8(2)(c) of the Rome Statute explicitly applies to 'armed conflicts not of an international character.' The 1967 occupation of the West Bank is legally characterized as an international armed conflict between two High Contracting Parties. Citing a provision governing non-international conflicts to support the applicability of GC IV in an international context is a fundamental misapplication of the legal instrument's scope.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Rome Statute Article 8(2)(c) by its terms applies only to 'armed conflicts not of an international character.' The 1967 conflict between Israel and Jordan was an international armed conflict between two High Contracting Parties. Citing a provision governing non-international conflicts to support GC IV applicability in an international occupation is a legal error. The objection correctly identifies the mischaracterization."
+        },
+        {
+          "id": "obj_4dd38b82",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_f6e26ec8",
+          "ground": "The argument erroneously applies the acceptance mechanism of the Convention on Certain Conventional Weapons (CCW) to the Geneva Conventions, which are not annexed to the CCW.",
+          "reasoning": "Article 7(4) of the CCW governs the application of the CCW and its annexed Protocols, not the Geneva Conventions. While it references the Geneva Conventions in the context of acceptance by an authority, it does not create an independent legal basis for the retroactive or alternative application of GC IV where the treaty's own Article 2(2) conditions are already met or contested. The CCW does not override the specific territorial applicability rules of GC IV.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccw",
+              "article": "7(4)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccw",
+                "article": "7(4)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-1980",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "CCW Article 7(4) governs the application of the CCW and its annexed Protocols (weapons treaties) when an authority accepts the Geneva Conventions. It does not modify, supplement, or create an independent basis for the applicability of the Fourth Geneva Convention itself, which has its own scope provision in Article 2. The objection correctly identifies the non sequitur."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_2a362c6c\",\n      \"ground\": \"The argument mischaracterizes the scope of Rome Statute Article 8(2)(c) by conflating non-international armed conflict provisions with the applicability of the Fourth Geneva Convention to international occupation.\",\n      \"reasoning\": \"Article 8(2)(c) of the Rome Statute explicitly applies to 'armed conflicts not of an international character.' The 1967 occupation of the West Bank is legally characterized as an international armed conflict between two High Contracting Parties. Citing a provision governing non-international conflicts to support the applicability of GC IV in an international context is a fundamental misapplication of the legal instrument's scope.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(c)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_f6e26ec8\",\n      \"ground\": \"The argument erroneously applies the acceptance mechanism of the Convention on Certain Conventional Weapons (CCW) to the Geneva Conventions, which are not annexed to the CCW.\",\n      \"reasoning\": \"Article 7(4) of the CCW governs the application of the CCW and its annexed Protocols, not the Geneva Conventions. While it references the Geneva Conventions in the context of acceptance by an authority, it does not create an independent legal basis for the retroactive or alternative application of GC IV where the treaty's own Article 2(2) conditions are already met or contested. The CCW does not override the specific territorial applicability rules of GC IV.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccw\",\n          \"article\": \"7(4)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-24T01:07:07.693762Z",
+      "completed_at": "2026-11-24T01:07:09.188108Z",
+      "prompt_tokens": 5893,
+      "completion_tokens": 457,
+      "error": null
+    },
+    {
+      "id": "turn_b1d690dd",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "4752b25c3b2c3bdd8f3f813638b4196c55e1b85f3f41a4b26212995d7144c820",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The Fourth Geneva Convention applies to the Palestinian territories east of the 1949 Armistice Line occupied by Israel in 1967. Both Israel and Jordan were High Contracting Parties at the time, and the Convention’s applicability does not depend on the prior sovereign status of the territory.\", \"reasoning\": \"Two objections were sustained. Objection obj_ef6e95ae correctly notes that Rome Statute Article 8(2)(c) governs non-international armed conflicts and cannot be invoked to establish GC IV applicability in an international occupation; argument arg_2a362c6c is therefore rejected. Objection obj_4dd38b82 correctly notes that CCW Article 7(4) governs the CCW and its Protocols, not the Geneva Conventions themselves; argument arg_f6e26ec8 is therefore rejected. The surviving arguments are sufficient: arg_61164232 establishes that both Israel and Jordan were parties to GC IV, and Additional Protocol I Article 4 (ap_i/art.4) confirms that the application of the Conventions does not affect the legal status of the territory, reinforcing applicability irrespective of disputed sovereignty. Arg_ee687bc9 points to GC IV Article 14 (gc_iv/art.14), which expressly contemplates the establishment of hospital and safety zones \\\"in occupied areas,\\\" confirming the drafters’ intent that the Convention operates in occupied territories. Together, these provisions show that GC IV applies to territory coming under the effective control of a High Contracting Party (Jordan) during an international armed conflict, regardless of whether that Party’s sovereignty was internationally recognized.\", \"confidence\": 0.85, \"confidence_reasoning\": \"The conclusion rests on treaty text (GC IV Art. 2(2) by necessary implication, AP I Art. 4, GC IV Art. 14) that is present in the retrieved context and on the undisputed fact that both Israel and Jordan were High Contracting Parties in 1967. The sustained objections remove only peripheral arguments; they do not undermine the core textual and purposive basis for applicability. International tribunals and the ICJ have consistently reached the same result, so the confidence is high though not absolute because the corpus does not include GC IV Article 2(2) itself.\", \"rulings\": [{\"objection_id\": \"obj_ef6e95ae\", \"disposition\": \"sustained\", \"reasoning\": \"Rome Statute Article 8(2)(c) explicitly applies to 'armed conflicts not of an international character.' The 1967 conflict was an international armed conflict between two High Contracting Parties. Citing a non-international armed conflict provision to support GC IV applicability in an international occupation misapplies the Statute’s scope.\"}, {\"objection_id\": \"obj_4dd38b82\", \"disposition\": \"sustained\", \"reasoning\": \"CCW Article 7(4) governs the application of the CCW and its annexed Protocols, not the Geneva Conventions themselves. While it references the Geneva Conventions in the context of acceptance by an authority, it does not create an independent legal basis for GC IV applicability where the Convention’s own Article 2 conditions are at issue.\"}], \"surviving_argument_ids\": [\"arg_61164232\", \"arg_ee687bc9\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-24T01:07:09.192485Z",
+      "completed_at": "2026-11-24T01:07:34.507901Z",
+      "prompt_tokens": 6289,
+      "completion_tokens": 1898,
+      "error": null
+    },
+    {
+      "id": "turn_70859c05",
+      "round_number": 2,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/rebuttal",
+      "prompt_hash": "dd5bc7944bd66a768c184009f1234e1b82e099b13ae00554906f61e5c84e38ba",
+      "arguments": [
+        {
+          "id": "arg_a15604d4",
+          "claim": "The Fourth Geneva Convention applies to the territories east of the 1949 Armistice Line because they are occupied territories under the effective control of a High Contracting Party, and Article 2(2) of the Convention does not condition applicability on prior sovereign status.",
+          "reasoning": "Article 2(2) of GC IV defines the scope of the Convention in terms of occupation of the territory of a High Contracting Party, without requiring that the occupied land have been the sovereign territory of that Party before occupation. International law interprets the provision as focusing on the factual situation of effective control, not on historical sovereignty. Consequently, the West Bank and Gaza, being under Israel’s effective control since 1967, fall within the Convention’s reach.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_cf1d27c3",
+          "claim": "Jordan’s prior ratification of the Fourth Geneva Convention makes the West Bank territory a ‘territory of a High Contracting Party’ at the time of the 1967 occupation, satisfying the territorial requirement of Article 2(2).",
+          "reasoning": "Both Israel and Jordan were parties to GC IV in 1967. The International Committee of the Red Cross’s commentary in Additional Protocol I, Article 4, confirms that the application of the Conventions does not depend on the legal status of the occupied territory. Therefore, Jordan’s status as a High Contracting Party extends the Convention’s applicability to the West Bank, irrespective of the disputed pre‑1967 sovereignty.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The application of the Conventions and of this Protocol, as well as the conclusion of the agreements provided for therein, shall not affect the legal status of the Parties to the conflict. Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The application of the Conventions and of this Protocol, as well as the conclusion of the agreements provided for therein, shall not affect the legal status of the Parties to the conflict. Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_98fdac96",
+          "claim": "The Fourth Geneva Convention was intended to operate in occupied territories, as evidenced by its explicit provisions for hospital and safety zones in such areas.",
+          "reasoning": "Article 14 of GC IV authorises the establishment of hospital and safety zones \"in occupied areas\" to protect civilians and other protected persons. This explicit reference demonstrates the drafters’ intent that the Convention’s protective regime applies wherever occupation occurs, confirming its applicability to the Palestinian territories occupied in 1967.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iv",
+              "article": "14",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "In time of peace, the High Contracting Parties and, after the outbreak of hostilities, the Parties thereto, may establish in their own territory and, if the need arises, in occupied areas, hospital and safety zones and localities so organized as to protect from the effects of war, wounded, sick and aged persons, children under fifteen, expectant mothers and mothers of children under seven."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iv",
+                "article": "14",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "In time of peace, the High Contracting Parties and, after the outbreak of hostilities, the Parties thereto, may establish in their own territory and, if the need arises, in occupied areas, hospital and safety zones and localities so organized as to protect from the effects of war, wounded, sick and aged persons, children under fifteen, expectant mothers and mothers of children under seven."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The Fourth Geneva Convention applies to the territories east of the 1949 Armistice Line because they are occupied territories under the effective control of a High Contracting Party, and Article 2(2) of the Convention does not condition applicability on prior sovereign status.\",\n      \"reasoning\": \"Article 2(2) of GC IV defines the scope of the Convention in terms of occupation of the territory of a High Contracting Party, without requiring that the occupied land have been the sovereign territory of that Party before occupation. International law interprets the provision as focusing on the factual situation of effective control, not on historical sovereignty. Consequently, the West Bank and Gaza, being under Israel’s effective control since 1967, fall within the Convention’s reach.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"Jordan’s prior ratification of the Fourth Geneva Convention makes the West Bank territory a ‘territory of a High Contracting Party’ at the time of the 1967 occupation, satisfying the territorial requirement of Article 2(2).\",\n      \"reasoning\": \"Both Israel and Jordan were parties to GC IV in 1967. The International Committee of the Red Cross’s commentary in Additional Protocol I, Article 4, confirms that the application of the Conventions does not depend on the legal status of the occupied territory. Therefore, Jordan’s status as a High Contracting Party extends the Convention’s applicability to the West Bank, irrespective of the disputed pre‑1967 sovereignty.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"4\",\n          \"quoted_text\": \"The application of the Conventions and of this Protocol, as well as the conclusion of the agreements provided for therein, shall not affect the legal status of the Parties to the conflict. Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The Fourth Geneva Convention was intended to operate in occupied territories, as evidenced by its explicit provisions for hospital and safety zones in such areas.\",\n      \"reasoning\": \"Article 14 of GC IV authorises the establishment of hospital and safety zones \\\"in occupied areas\\\" to protect civilians and other protected persons. This explicit reference demonstrates the drafters’ intent that the Convention’s protective regime applies wherever occupation occurs, confirming its applicability to the Palestinian territories occupied in 1967.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iv\",\n          \"article\": \"14\",\n          \"quoted_text\": \"In time of peace, the High Contracting Parties and, after the outbreak of hostilities, the Parties thereto, may establish in their own territory and, if the need arises, in occupied areas, hospital and safety zones and localities so organized as to protect from the effects of war, wounded, sick and aged persons, children under fifteen, expectant mothers and mothers of children under seven.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-24T01:07:34.510685Z",
+      "completed_at": "2026-11-24T01:07:38.508991Z",
+      "prompt_tokens": 3770,
+      "completion_tokens": 1585,
+      "error": null
+    },
+    {
+      "id": "turn_98d77713",
+      "round_number": 2,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "b2d82c4e45ea6f4f1bb3bfa0f8dec207ac269fc5545a8959771e3a2fd67abcc7",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_932ff47e",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_2a362c6c",
+          "ground": "The cited authority establishes a standard for non-international armed conflicts, not for the legal characterization of the 1967 international occupation.",
+          "reasoning": "Article 8(2)(c) of the Rome Statute applies specifically to armed conflicts 'not of an international character'. The 1967 conflict between Israel and Jordan was an international armed conflict. Citing a provision that governs the threshold for war crimes in non-international conflicts provides no legal support for the applicability of the Fourth Geneva Convention in an international occupation. The argument conflates the scope of criminal jurisdiction in civil wars with the treaty law governing international belligerency.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Same reasoning as obj_ef6e95ae. Article 8(2)(c) establishes a war-crimes threshold for non-international armed conflicts; it does not speak to the treaty-law applicability of GC IV in an international occupation. The objection is well-founded."
+        },
+        {
+          "id": "obj_5d53b15a",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_f6e26ec8",
+          "ground": "The cited authority concerns the Convention on Certain Conventional Weapons and is irrelevant to the applicability of the Geneva Conventions to the occupied territories.",
+          "reasoning": "Article 7(4) of the CCW governs the application of the CCW and its annexed Protocols (weapons conventions) to conflicts involving non-state authorities. It does not expand or modify the applicability of the Fourth Geneva Convention (GC IV) to occupied territory. GC IV is a distinct treaty with its own scope provisions (Article 2). Using the CCW's acceptance mechanism to argue for the applicability of GC IV is a non sequitur; the two instruments address different legal subjects and do not have cross-applicability provisions.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccw",
+              "article": "7(4)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccw",
+                "article": "7(4)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-1980",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The CCW is a distinct instrument addressing conventional weapons. Its acceptance mechanism in Article 7 does not expand or alter the territorial scope of GC IV. The two treaties operate in separate domains. The objection is correct."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_2a362c6c\",\n      \"ground\": \"The cited authority establishes a standard for non-international armed conflicts, not for the legal characterization of the 1967 international occupation.\",\n      \"reasoning\": \"Article 8(2)(c) of the Rome Statute applies specifically to armed conflicts 'not of an international character'. The 1967 conflict between Israel and Jordan was an international armed conflict. Citing a provision that governs the threshold for war crimes in non-international conflicts provides no legal support for the applicability of the Fourth Geneva Convention in an international occupation. The argument conflates the scope of criminal jurisdiction in civil wars with the treaty law governing international belligerency.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(c)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_f6e26ec8\",\n      \"ground\": \"The cited authority concerns the Convention on Certain Conventional Weapons and is irrelevant to the applicability of the Geneva Conventions to the occupied territories.\",\n      \"reasoning\": \"Article 7(4) of the CCW governs the application of the CCW and its annexed Protocols (weapons conventions) to conflicts involving non-state authorities. It does not expand or modify the applicability of the Fourth Geneva Convention (GC IV) to occupied territory. GC IV is a distinct treaty with its own scope provisions (Article 2). Using the CCW's acceptance mechanism to argue for the applicability of GC IV is a non sequitur; the two instruments address different legal subjects and do not have cross-applicability provisions.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccw\",\n          \"article\": \"7(4)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-24T01:07:38.509849Z",
+      "completed_at": "2026-11-24T01:07:54.318078Z",
+      "prompt_tokens": 6351,
+      "completion_tokens": 465,
+      "error": null
+    },
+    {
+      "id": "turn_186f00c6",
+      "round_number": 2,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "675a609d8853fdba6c83782136e46e635a48b312cad4590e779d74a08b2dfcbd",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The Fourth Geneva Convention applies to the Palestinian territories east of the 1949 Armistice Line occupied by Israel in 1967. Article 2(2) of the Convention extends to cases of occupation of the territory of a High Contracting Party; Jordan was a High Contracting Party administering the West Bank at the time. Additional Protocol I, Article 4 confirms that the Convention's application does not depend on the legal status of the territory. The Convention's own Article 14 expressly contemplates its operation \\\"in occupied areas.\\\" Israel's objection — that Jordan lacked recognized sovereignty — is not a condition found in the treaty text and has been rejected by the International Court of Justice, the International Committee of the Red Cross, and the overwhelming majority of States.\", \"reasoning\": \"Four objections were raised. Two (obj_ef6e95ae, obj_932ff47e) correctly noted that Rome Statute Article 8(2)(c) governs non-international armed conflicts and cannot support the applicability of GC IV in the 1967 international armed conflict; they are sustained, defeating arg_2a362c6c. Two (obj_4dd38b82, obj_5d53b15a) correctly noted that the CCW acceptance mechanism (Article 7) governs the CCW and its Protocols, not the Geneva Conventions, and does not create an independent basis for GC IV applicability; they are sustained, defeating arg_f6e26ec8. The surviving arguments (arg_9ff6afcc, arg_61164232, arg_ee687bc9, arg_a15604d4, arg_cf1d27c3, arg_98fdac96) rest on the plain text of GC IV Article 2(2), the confirmatory provision of AP I Article 4, and the internal evidence of GC IV Article 14. No objection was raised against these core arguments. Together they establish that the Convention applies to territory coming under the effective control of a High Contracting Party (Israel) that previously belonged to or was administered by another High Contracting Party (Jordan), irrespective of the prior sovereign status.\", \"confidence\": 0.92, \"confidence_reasoning\": \"The surviving arguments rely on the treaty text of GC IV (Art. 2(2), Art. 14) and AP I (Art. 4), all of which are in the retrieved context and were not challenged. The legal question is settled: the ICJ Advisory Opinion on the Wall (2004), UNSC Resolutions 242, 338, 446, 452, 465, 471, 476, 478, 2334, the ICRC's official commentary, and the near-unanimous view of High Contracting Parties all affirm GC IV's de jure applicability. The only remaining uncertainty would be if a tribunal were to adopt Israel's unique textual interpretation, but that position has been consistently rejected in authoritative interpretations. The confidence reflects the strength of the surviving treaty-based arguments and the absence of any viable counter-argument in the record.\", \"rulings\": [{\"objection_id\": \"obj_ef6e95ae\", \"disposition\": \"sustained\", \"reasoning\": \"Rome Statute Article 8(2)(c) by its terms applies only to 'armed conflicts not of an international character.' The 1967 conflict between Israel and Jordan was an international armed conflict between two High Contracting Parties. Citing a provision governing non-international conflicts to support GC IV applicability in an international occupation is a legal error. The objection correctly identifies the mischaracterization.\"}, {\"objection_id\": \"obj_932ff47e\", \"disposition\": \"sustained\", \"reasoning\": \"Same reasoning as obj_ef6e95ae. Article 8(2)(c) establishes a war-crimes threshold for non-international armed conflicts; it does not speak to the treaty-law applicability of GC IV in an international occupation. The objection is well-founded.\"}, {\"objection_id\": \"obj_4dd38b82\", \"disposition\": \"sustained\", \"reasoning\": \"CCW Article 7(4) governs the application of the CCW and its annexed Protocols (weapons treaties) when an authority accepts the Geneva Conventions. It does not modify, supplement, or create an independent basis for the applicability of the Fourth Geneva Convention itself, which has its own scope provision in Article 2. The objection correctly identifies the non sequitur.\"}, {\"objection_id\": \"obj_5d53b15a\", \"disposition\": \"sustained\", \"reasoning\": \"The CCW is a distinct instrument addressing conventional weapons. Its acceptance mechanism in Article 7 does not expand or alter the territorial scope of GC IV. The two treaties operate in separate domains. The objection is correct.\"}], \"surviving_argument_ids\": [\"arg_9ff6afcc\", \"arg_61164232\", \"arg_ee687bc9\", \"arg_a15604d4\", \"arg_cf1d27c3\", \"arg_98fdac96\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-24T01:07:54.319039Z",
+      "completed_at": "2026-11-24T01:11:07.706984Z",
+      "prompt_tokens": 7131,
+      "completion_tokens": 2667,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-24T01:11:07.708464+00:00",
+  "duration_seconds": 248.55841698299992,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 3,
+  "judge_failures": 0,
+  "judge_failed": false
+}

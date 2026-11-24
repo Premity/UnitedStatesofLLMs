@@ -1,0 +1,664 @@
+{
+  "case_id": "icty_halilovic_grabovica",
+  "case_title": "Prosecutor v. Sefer Halilović — effective control over troops in Grabovica",
+  "court": "ICTY",
+  "year": 2007,
+  "difficulty": "medium",
+  "arm": "rag",
+  "arm_label": "B — Single pass with retrieval",
+  "run_id": "eval_e2c11a9050",
+  "question": "Has it been established beyond reasonable doubt that the senior ABiH officer was criminally responsible as a superior, under Article 7(3) of the ICTY Statute, for the murders of civilians committed by ABiH troops in Grabovica on 8 and 9 September 1993?",
+  "facts": "In September 1993, units of the ABiH 9th Motorised Brigade, 10th Mountain Brigade and 2nd Independent Battalion, all subordinated to the ABiH 1st Corps, were sent from Sarajevo to the Jablanica sector of Herzegovina for combat operations to lift the HVO blockade of Mostar, following an order issued by the officer concerned. He had been the supreme ABiH commander until 8 June 1993, when a new post of Commander of the Main Staff was created and filled by another officer; he remained Chief of the Main Staff, a post made one of three rotating Deputy Commanders on 18 July 1993. By an order of 30 August 1993 the Commander of the Main Staff appointed him leader of an Inspection Team with coordinating and monitoring functions in the areas of the 4th and 6th Corps; the order required him to consult the Commander on any drastic proposals and allowed him to issue orders only in keeping with his authority. Troops were billeted with the Bosnian Croat inhabitants of Grabovica, a village under ABiH control since May 1993. On 8 and 9 September 1993, thirteen inhabitants taking no active part in hostilities were murdered by members of the 9th Brigade and unidentified ABiH members. The 9th Brigade unit was then under the command of the commander of the axis of attack, who had issued the combat order for that axis; the evidence did not establish that the axis commander was subordinated to the officer. The officer learned of the crimes on the evening of 9 September, after the last proven killing, and instructed a member of his team to work with the civilian and military security services on the investigation, which was already under way and was conducted by the 6th Corps Security Service and military police units. Some lower-ranking soldiers regarded him as commander of the operation; higher-ranking officers testified that he was tasked with coordinating combat activities.",
+  "ground_truth_outcome": "rejected",
+  "holding": "In its Judgement of 16 November 2005, the ICTY Trial Chamber found that the Prosecution had not proved beyond reasonable doubt that the accused was de jure or de facto commander of the operation, nor that he had effective control over the troops who committed the murders in Grabovica, nor that he had the material ability to punish the perpetrators. It acquitted him of the only charge, murder as a violation of the laws or customs of war under Articles 3 and 7(3). On 16 October 2007 the Appeals Chamber dismissed the Prosecution's appeal and affirmed the acquittal.",
+  "predicted_outcome": "rejected",
+  "outcome_correct": true,
+  "confidence": 0.78,
+  "confidence_reasoning": "The factual findings — particularly that the axis commander was not shown to be subordinated to the officer and that the officer learned of the crimes only after they ended — are decisive. ICTY jurisprudence (e.g., Čelebići, Blaškić, Hadžihasanović) consistently requires effective control over the specific perpetrators, not merely coordination or monitoring. The confidence is not higher because the 'coordinating' role and lower-ranking soldiers' perceptions create some ambiguity, but the preponderance of evidence (higher-ranking testimony, written order terms, lack of subordination of axis commander) weighs clearly against effective control.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 2,
+  "citation_statuses": {
+    "total": 8,
+    "resolved": 8,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "No. It has not been established beyond reasonable doubt that the senior ABiH officer was criminally responsible as a superior under Article 7(3) of the ICTY Statute for the murders in Grabovica.",
+    "reasoning": "The three elements of superior responsibility under Article 7(3) — (1) a superior-subordinate relationship of effective control, (2) knowledge (actual or constructive) at the time of the crimes, and (3) failure to take necessary and reasonable measures to prevent or punish — are not all satisfied on the facts given. First, the evidence did not establish that the axis commander of the 9th Brigade was subordinated to the officer; the officer's 30 August 1993 appointment gave him only 'coordinating and monitoring functions' with authority to issue orders 'in keeping with his authority' and a duty to consult the Commander on drastic proposals. Higher-ranking officers testified his role was coordinating combat activities, not exercising effective command. This falls short of the 'effective authority and control' required by customary IHL and reflected in the Rome Statute. Second, the officer learned of the killings on the evening of 9 September, after the last proven killing; there is no evidence he knew or had reason to know during the commission. Third, once informed, he instructed his team to cooperate with the investigation already underway by the 6th Corps Security Service and military police — a reasonable step toward punishment. The arguments relying on effective control (arg_90253ec7, arg_c15b4b18) and constructive knowledge (arg_b654e80d) are not supported by the facts; the failure-to-act argument (arg_dcd899ab) fails because the duty to prevent had lapsed and the duty to punish was being addressed through the existing investigation.",
+    "confidence": 0.78,
+    "confidence_reasoning": "The factual findings — particularly that the axis commander was not shown to be subordinated to the officer and that the officer learned of the crimes only after they ended — are decisive. ICTY jurisprudence (e.g., Čelebići, Blaškić, Hadžihasanović) consistently requires effective control over the specific perpetrators, not merely coordination or monitoring. The confidence is not higher because the 'coordinating' role and lower-ranking soldiers' perceptions create some ambiguity, but the preponderance of evidence (higher-ranking testimony, written order terms, lack of subordination of axis commander) weighs clearly against effective control.",
+    "surviving_argument_ids": [],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_90253ec7",
+      "claim": "The senior ABiH officer exercised effective command and control over the troops that perpetrated the murders in Grabovica, satisfying the effective authority element of command responsibility under Article 7(3) of the ICTY Statute.",
+      "reasoning": "The officer held the position of Chief of the Main Staff and was appointed leader of an Inspection Team with coordinating and monitoring functions over the 4th and 6th Corps, which included the 9th Motorised Brigade that carried out the killings. His authority to issue orders \"in keeping with his authority\" and to consult the Commander on drastic proposals demonstrates functional control over the forces, meeting the \"effective command and control\" requirement articulated in the Rome Statute and reflected in customary law.",
+      "citations": [
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 152,
+          "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes; and (ii) That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 152,
+            "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes; and (ii) That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_b654e80d",
+      "claim": "The officer knew, or at the very least should have known, that the 9th Brigade was committing murders of civilians on 8–9 September 1993.",
+      "reasoning": "Given his coordinating role, his presence in the area, and the fact that troops were billeted with the civilian population, the officer had constructive knowledge of the operations. He learned of the killings on the evening of 9 September, which is contemporaneous with the crimes, indicating that the information was readily available to him and that a reasonable commander in his position would have been aware of the unlawful conduct as it unfolded.",
+      "citations": [
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 153,
+          "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission, or if such crimes had been committed, to punish the persons responsible."
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes; and (ii) That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 153,
+            "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission, or if such crimes had been committed, to punish the persons responsible."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes; and (ii) That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_dcd899ab",
+      "claim": "The officer failed to take all necessary and reasonable measures to prevent the murders or to punish the perpetrators, thereby breaching his duty of command responsibility.",
+      "reasoning": "After learning of the killings, the officer merely instructed a member of his team to cooperate with an ongoing investigation, without ordering the immediate arrest of the perpetrators, without issuing preventive orders to his troops, and without ensuring disciplinary action. Under the Rome Statute and the Additional Protocol I, a commander must take \"all necessary and reasonable measures\" to prevent or repress the commission of crimes, which includes prompt punitive action. The officer’s limited response falls short of this standard.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes; and (ii) That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "86(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes; and (ii) That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "86(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_c15b4b18",
+      "claim": "The absence of a formal subordinate relationship between the officer and the axis commander does not preclude liability because command responsibility is grounded in effective control, not merely hierarchical subordination.",
+      "reasoning": "Customary IHL and the Rome Statute recognize that liability arises where a superior has effective authority to issue orders and enforce discipline, even if the chain of command is informal. The officer’s role as chief of staff and inspection team leader gave him the practical ability to direct, monitor, and discipline the 9th Brigade’s actions, satisfying the effective control requirement despite the lack of a direct reporting line.",
+      "citations": [
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 152,
+          "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+        },
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 153,
+          "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission, or if such crimes had been committed, to punish the persons responsible."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 152,
+            "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 153,
+            "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission, or if such crimes had been committed, to punish the persons responsible."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [],
+  "context": [
+    {
+      "citation": {
+        "type": "customary",
+        "instrument": "customary_ihl",
+        "article": null,
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": 152,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "28",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "86(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "28(a)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "customary",
+        "instrument": "customary_ihl",
+        "article": null,
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": 153,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "33(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iii",
+        "article": "96",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_dbeb0cd1",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "c37badf760ca939de9dfb990c38c14ef029834315c3e9c9813fe7ba0c1e6c59e",
+      "arguments": [
+        {
+          "id": "arg_90253ec7",
+          "claim": "The senior ABiH officer exercised effective command and control over the troops that perpetrated the murders in Grabovica, satisfying the effective authority element of command responsibility under Article 7(3) of the ICTY Statute.",
+          "reasoning": "The officer held the position of Chief of the Main Staff and was appointed leader of an Inspection Team with coordinating and monitoring functions over the 4th and 6th Corps, which included the 9th Motorised Brigade that carried out the killings. His authority to issue orders \"in keeping with his authority\" and to consult the Commander on drastic proposals demonstrates functional control over the forces, meeting the \"effective command and control\" requirement articulated in the Rome Statute and reflected in customary law.",
+          "citations": [
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 152,
+              "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes; and (ii) That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 152,
+                "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes; and (ii) That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_b654e80d",
+          "claim": "The officer knew, or at the very least should have known, that the 9th Brigade was committing murders of civilians on 8–9 September 1993.",
+          "reasoning": "Given his coordinating role, his presence in the area, and the fact that troops were billeted with the civilian population, the officer had constructive knowledge of the operations. He learned of the killings on the evening of 9 September, which is contemporaneous with the crimes, indicating that the information was readily available to him and that a reasonable commander in his position would have been aware of the unlawful conduct as it unfolded.",
+          "citations": [
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 153,
+              "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission, or if such crimes had been committed, to punish the persons responsible."
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes; and (ii) That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 153,
+                "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission, or if such crimes had been committed, to punish the persons responsible."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes; and (ii) That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_dcd899ab",
+          "claim": "The officer failed to take all necessary and reasonable measures to prevent the murders or to punish the perpetrators, thereby breaching his duty of command responsibility.",
+          "reasoning": "After learning of the killings, the officer merely instructed a member of his team to cooperate with an ongoing investigation, without ordering the immediate arrest of the perpetrators, without issuing preventive orders to his troops, and without ensuring disciplinary action. Under the Rome Statute and the Additional Protocol I, a commander must take \"all necessary and reasonable measures\" to prevent or repress the commission of crimes, which includes prompt punitive action. The officer’s limited response falls short of this standard.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes; and (ii) That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes; and (ii) That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_c15b4b18",
+          "claim": "The absence of a formal subordinate relationship between the officer and the axis commander does not preclude liability because command responsibility is grounded in effective control, not merely hierarchical subordination.",
+          "reasoning": "Customary IHL and the Rome Statute recognize that liability arises where a superior has effective authority to issue orders and enforce discipline, even if the chain of command is informal. The officer’s role as chief of staff and inspection team leader gave him the practical ability to direct, monitor, and discipline the 9th Brigade’s actions, satisfying the effective control requirement despite the lack of a direct reporting line.",
+          "citations": [
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 152,
+              "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 153,
+              "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission, or if such crimes had been committed, to punish the persons responsible."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 152,
+                "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 153,
+                "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission, or if such crimes had been committed, to punish the persons responsible."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The senior ABiH officer exercised effective command and control over the troops that perpetrated the murders in Grabovica, satisfying the effective authority element of command responsibility under Article 7(3) of the ICTY Statute.\",\n      \"reasoning\": \"The officer held the position of Chief of the Main Staff and was appointed leader of an Inspection Team with coordinating and monitoring functions over the 4th and 6th Corps, which included the 9th Motorised Brigade that carried out the killings. His authority to issue orders \\\"in keeping with his authority\\\" and to consult the Commander on drastic proposals demonstrates functional control over the forces, meeting the \\\"effective command and control\\\" requirement articulated in the Rome Statute and reflected in customary law.\",\n      \"citations\": [\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 152,\n          \"quoted_text\": \"Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28\",\n          \"quoted_text\": \"A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes; and (ii) That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The officer knew, or at the very least should have known, that the 9th Brigade was committing murders of civilians on 8–9 September 1993.\",\n      \"reasoning\": \"Given his coordinating role, his presence in the area, and the fact that troops were billeted with the civilian population, the officer had constructive knowledge of the operations. He learned of the killings on the evening of 9 September, which is contemporaneous with the crimes, indicating that the information was readily available to him and that a reasonable commander in his position would have been aware of the unlawful conduct as it unfolded.\",\n      \"citations\": [\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 153,\n          \"quoted_text\": \"Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission, or if such crimes had been committed, to punish the persons responsible.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28\",\n          \"quoted_text\": \"A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes; and (ii) That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The officer failed to take all necessary and reasonable measures to prevent the murders or to punish the perpetrators, thereby breaching his duty of command responsibility.\",\n      \"reasoning\": \"After learning of the killings, the officer merely instructed a member of his team to cooperate with an ongoing investigation, without ordering the immediate arrest of the perpetrators, without issuing preventive orders to his troops, and without ensuring disciplinary action. Under the Rome Statute and the Additional Protocol I, a commander must take \\\"all necessary and reasonable measures\\\" to prevent or repress the commission of crimes, which includes prompt punitive action. The officer’s limited response falls short of this standard.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28\",\n          \"quoted_text\": \"A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces, where: (i) That military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes; and (ii) That military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"86(2)\",\n          \"quoted_text\": \"The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The absence of a formal subordinate relationship between the officer and the axis commander does not preclude liability because command responsibility is grounded in effective control, not merely hierarchical subordination.\",\n      \"reasoning\": \"Customary IHL and the Rome Statute recognize that liability arises where a superior has effective authority to issue orders and enforce discipline, even if the chain of command is informal. The officer’s role as chief of staff and inspection team leader gave him the practical ability to direct, monitor, and discipline the 9th Brigade’s actions, satisfying the effective control requirement despite the lack of a direct reporting line.\",\n      \"citations\": [\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 152,\n          \"quoted_text\": \"Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders.\"\n        },\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 153,\n          \"quoted_text\": \"Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission, or if such crimes had been committed, to punish the persons responsible.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T01:17:57.392152Z",
+      "completed_at": "2026-11-23T01:18:03.928805Z",
+      "prompt_tokens": 4495,
+      "completion_tokens": 2919,
+      "error": null
+    },
+    {
+      "id": "turn_587769b7",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "86af015a828b77bfc179fa5d728b917ef56364e74012431a4f487db58dd7ffa8",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"No. It has not been established beyond reasonable doubt that the senior ABiH officer was criminally responsible as a superior under Article 7(3) of the ICTY Statute for the murders in Grabovica.\", \"reasoning\": \"The three elements of superior responsibility under Article 7(3) — (1) a superior-subordinate relationship of effective control, (2) knowledge (actual or constructive) at the time of the crimes, and (3) failure to take necessary and reasonable measures to prevent or punish — are not all satisfied on the facts given. First, the evidence did not establish that the axis commander of the 9th Brigade was subordinated to the officer; the officer's 30 August 1993 appointment gave him only 'coordinating and monitoring functions' with authority to issue orders 'in keeping with his authority' and a duty to consult the Commander on drastic proposals. Higher-ranking officers testified his role was coordinating combat activities, not exercising effective command. This falls short of the 'effective authority and control' required by customary IHL and reflected in the Rome Statute. Second, the officer learned of the killings on the evening of 9 September, after the last proven killing; there is no evidence he knew or had reason to know during the commission. Third, once informed, he instructed his team to cooperate with the investigation already underway by the 6th Corps Security Service and military police — a reasonable step toward punishment. The arguments relying on effective control (arg_90253ec7, arg_c15b4b18) and constructive knowledge (arg_b654e80d) are not supported by the facts; the failure-to-act argument (arg_dcd899ab) fails because the duty to prevent had lapsed and the duty to punish was being addressed through the existing investigation.\", \"confidence\": 0.78, \"confidence_reasoning\": \"The factual findings — particularly that the axis commander was not shown to be subordinated to the officer and that the officer learned of the crimes only after they ended — are decisive. ICTY jurisprudence (e.g., Čelebići, Blaškić, Hadžihasanović) consistently requires effective control over the specific perpetrators, not merely coordination or monitoring. The confidence is not higher because the 'coordinating' role and lower-ranking soldiers' perceptions create some ambiguity, but the preponderance of evidence (higher-ranking testimony, written order terms, lack of subordination of axis commander) weighs clearly against effective control.\", \"rulings\": [], \"surviving_argument_ids\": [], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-23T01:18:03.934658Z",
+      "completed_at": "2026-11-23T01:18:38.620392Z",
+      "prompt_tokens": 5611,
+      "completion_tokens": 1852,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-23T01:18:38.621761+00:00",
+  "duration_seconds": 43.61827497201739,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}

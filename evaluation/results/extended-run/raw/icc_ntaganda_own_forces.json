@@ -1,0 +1,187 @@
+{
+  "case_id": "icc_ntaganda_own_forces",
+  "case_title": "Prosecutor v. Bosco Ntaganda — rape and sexual slavery within the same armed group",
+  "court": "ICC",
+  "year": 2017,
+  "difficulty": "contested",
+  "arm": "raw",
+  "arm_label": "A — Single pass, no retrieval",
+  "run_id": "eval_b8cc09e5bd",
+  "question": "Can members of an armed group be victims of the war crimes of rape and sexual slavery under Article 8(2)(e)(vi) of the Rome Statute when the crimes are committed against them by members of the same armed group?",
+  "facts": "The accused was charged with crimes committed during a non-international armed conflict in Ituri, in the Democratic Republic of the Congo, by the Union des Patriotes Congolais/Forces Patriotiques pour la Libération du Congo (UPC/FPLC). Two counts charged the rape and the sexual slavery of UPC/FPLC child soldiers, as war crimes under Article 8(2)(e)(vi) of the Rome Statute; the alleged victims were members of the UPC/FPLC and the alleged perpetrators were also members of the UPC/FPLC. The defence challenged the Court's jurisdiction over these counts, arguing that under the established framework of international law, members of an armed group are not protected against crimes committed by their own group, and that a member of an armed force attains protection only on ceasing to be a member, laying down arms or being placed hors de combat. A Trial Chamber held that the Court had jurisdiction, and the defence appealed.",
+  "ground_truth_outcome": "affirmed",
+  "holding": "In its Judgment of 15 June 2017, the ICC Appeals Chamber unanimously confirmed the Trial Chamber's decision that the Court has jurisdiction over the two counts. Members of an armed force or group are not categorically excluded from protection against the war crimes of rape and sexual slavery under Article 8(2)(b)(xxii) and (e)(vi); there are no requirements that victims be protected persons in the sense of the grave breaches provisions or persons taking no active part in hostilities under Common Article 3. It is the nexus requirement, that the conduct took place in the context of and was associated with an armed conflict, that delineates war crimes from ordinary crimes.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": true,
+  "confidence": 0.6,
+  "confidence_reasoning": "The legal reasoning is coherent and aligns with the protective purpose of IHL and the structure of the Rome Statute. However, confidence is reduced to 0.6 because no corpus context was retrieved to verify the specific treaty text of Article 8(2)(e)(vi), the Elements of Crimes, relevant ICC jurisprudence (e.g., Ntaganda, Lubanga), ICTY/ICTR case law on intra-group sexual violence, or customary IHL rules. The arguments assert these authorities but cannot be checked against the corpus. In a real proceeding, the absence of verified authority would require supplementation before a definitive ruling.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 2,
+  "citation_statuses": {
+    "total": 0,
+    "resolved": 0,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. Members of an armed group can be victims of the war crimes of rape and sexual slavery under Article 8(2)(e)(vi) of the Rome Statute when the crimes are committed by members of the same armed group. The prohibition on sexual violence in non-international armed conflict protects persons based on their status in the conflict — including those hors de combat, detained, or otherwise not taking a direct part in hostilities — and does not require the perpetrator to belong to an opposing force. The statutory elements of Article 8(2)(e)(vi) focus on the act, the context of the armed conflict, and the victim's protected status, not on the organizational relationship between victim and perpetrator. Customary IHL and the jurisprudence of international tribunals support this interpretation. The defence's argument that protection arises only upon formally ceasing membership is inconsistent with the protective purpose of IHL, which recognises that child soldiers and other vulnerable members retain protected status even while formally belonging to the armed group. Individual criminal responsibility under the Rome Statute attaches to the commission of the prohibited conduct with the requisite mental element, irrespective of the victim's group affiliation. However, this conclusion is reached by reasoning from principle; no corpus context was retrieved to verify specific treaty provisions, case law, or customary rules cited in the arguments. All citations in the arguments are therefore treated as unsupported.",
+    "reasoning": "The five arguments presented converge on the same conclusion: Article 8(2)(e)(vi) criminalises rape and sexual slavery when committed in the context of a non-international armed conflict against protected persons. Protected status derives from the victim's situation (e.g., hors de combat, detained, child soldier) rather than from the perpetrator's affiliation. The defence's jurisdictional challenge rests on a mistaken premise that intra-group crimes fall outside the statute. The Rome Statute's framework of individual criminal responsibility and the protective object and purpose of IHL both support jurisdiction over intra-group sexual violence. No objections were filed to challenge these arguments.",
+    "confidence": 0.6,
+    "confidence_reasoning": "The legal reasoning is coherent and aligns with the protective purpose of IHL and the structure of the Rome Statute. However, confidence is reduced to 0.6 because no corpus context was retrieved to verify the specific treaty text of Article 8(2)(e)(vi), the Elements of Crimes, relevant ICC jurisprudence (e.g., Ntaganda, Lubanga), ICTY/ICTR case law on intra-group sexual violence, or customary IHL rules. The arguments assert these authorities but cannot be checked against the corpus. In a real proceeding, the absence of verified authority would require supplementation before a definitive ruling.",
+    "surviving_argument_ids": [
+      "arg_c4e78618",
+      "arg_a595917e",
+      "arg_2c9db752",
+      "arg_57116c9f",
+      "arg_899aa18a"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_c4e78618",
+      "claim": "Members of an armed group, including child soldiers, are protected persons under Article 8(2)(e)(vi) of the Rome Statute and may therefore be victims of the war crimes of rape and sexual slavery even when the crimes are committed by fellow members of the same armed group.",
+      "reasoning": "The definition of \"protected persons\" in the Rome Statute and the Geneva Conventions is based on the person's status in the conflict, not on the identity of the perpetrator. International humanitarian law prohibits sexual violence against any person who is not taking a direct part in hostilities, which includes members of the same armed group who are hors de combat, detained, or otherwise vulnerable. Consequently, the elements of the crime are satisfied when the act of rape or sexual slavery is committed in the context of a non‑international armed conflict, regardless of the perpetrator’s affiliation.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_a595917e",
+      "claim": "The jurisdiction of the ICC under Article 8(2)(e)(vi) is triggered by the commission of the prohibited act in the context of an armed conflict, not by the relationship between victim and perpetrator.",
+      "reasoning": "Article 8(2)(e)(vi) criminalises \"rape, sexual slavery, enforced prostitution, forced pregnancy, enforced sterilisation or any other form of sexual violence\" when committed in a non‑international armed conflict. The statutory elements focus on the act, the context, and the victim’s protected status, not on whether the perpetrator belongs to the same armed group. Therefore, the Court’s jurisdiction is proper where the factual elements are met, irrespective of intra‑group dynamics.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_2c9db752",
+      "claim": "Customary international humanitarian law, as reflected in the jurisprudence of international tribunals, affirms that war crimes may be committed against members of the same armed group.",
+      "reasoning": "Customary IHL treats the prohibition of sexual violence as a universal norm that applies to all parties in a conflict. International tribunals (e.g., the ICTY and ICC) have held that the victim’s status as a member of an armed group does not immunise the perpetrator when the victim is a protected person. This principle supports the view that intra‑group sexual violence falls within the scope of war crimes.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_57116c9f",
+      "claim": "The defence’s contention that protection only arises after a combatant ceases to be a member of the armed group is inconsistent with the established interpretation of \"protected persons\" in IHL.",
+      "reasoning": "Protected persons include those who are \"out of combat\" due to detention, injury, or other circumstances, even while still formally belonging to the armed group. International law recognises that child soldiers and other vulnerable members retain protected status precisely because they are often unable to voluntarily cease participation. Hence, the defence’s argument is contrary to the protective purpose of the statutes.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_899aa18a",
+      "claim": "Even in the absence of specific treaty citations, the principle of individual criminal responsibility under the Rome Statute requires that the perpetrator be held accountable for the prohibited act, regardless of the victim’s group affiliation.",
+      "reasoning": "The Rome Statute’s framework of individual criminal responsibility focuses on the commission of the prohibited conduct and the requisite mental element. The victim’s identity as a fellow member of the armed group does not negate the existence of the crime, nor does it preclude the Court’s jurisdiction. This principle reinforces the legitimacy of prosecuting intra‑group sexual violence as war crimes.",
+      "citations": [],
+      "resolved_citations": []
+    }
+  ],
+  "objections": [],
+  "context": [],
+  "turns": [
+    {
+      "id": "turn_80c6774f",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "30827644d4ee6ef0ce37bc928331cba21e38e669944551f0e034aeb412e47859",
+      "arguments": [
+        {
+          "id": "arg_c4e78618",
+          "claim": "Members of an armed group, including child soldiers, are protected persons under Article 8(2)(e)(vi) of the Rome Statute and may therefore be victims of the war crimes of rape and sexual slavery even when the crimes are committed by fellow members of the same armed group.",
+          "reasoning": "The definition of \"protected persons\" in the Rome Statute and the Geneva Conventions is based on the person's status in the conflict, not on the identity of the perpetrator. International humanitarian law prohibits sexual violence against any person who is not taking a direct part in hostilities, which includes members of the same armed group who are hors de combat, detained, or otherwise vulnerable. Consequently, the elements of the crime are satisfied when the act of rape or sexual slavery is committed in the context of a non‑international armed conflict, regardless of the perpetrator’s affiliation.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_a595917e",
+          "claim": "The jurisdiction of the ICC under Article 8(2)(e)(vi) is triggered by the commission of the prohibited act in the context of an armed conflict, not by the relationship between victim and perpetrator.",
+          "reasoning": "Article 8(2)(e)(vi) criminalises \"rape, sexual slavery, enforced prostitution, forced pregnancy, enforced sterilisation or any other form of sexual violence\" when committed in a non‑international armed conflict. The statutory elements focus on the act, the context, and the victim’s protected status, not on whether the perpetrator belongs to the same armed group. Therefore, the Court’s jurisdiction is proper where the factual elements are met, irrespective of intra‑group dynamics.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_2c9db752",
+          "claim": "Customary international humanitarian law, as reflected in the jurisprudence of international tribunals, affirms that war crimes may be committed against members of the same armed group.",
+          "reasoning": "Customary IHL treats the prohibition of sexual violence as a universal norm that applies to all parties in a conflict. International tribunals (e.g., the ICTY and ICC) have held that the victim’s status as a member of an armed group does not immunise the perpetrator when the victim is a protected person. This principle supports the view that intra‑group sexual violence falls within the scope of war crimes.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_57116c9f",
+          "claim": "The defence’s contention that protection only arises after a combatant ceases to be a member of the armed group is inconsistent with the established interpretation of \"protected persons\" in IHL.",
+          "reasoning": "Protected persons include those who are \"out of combat\" due to detention, injury, or other circumstances, even while still formally belonging to the armed group. International law recognises that child soldiers and other vulnerable members retain protected status precisely because they are often unable to voluntarily cease participation. Hence, the defence’s argument is contrary to the protective purpose of the statutes.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_899aa18a",
+          "claim": "Even in the absence of specific treaty citations, the principle of individual criminal responsibility under the Rome Statute requires that the perpetrator be held accountable for the prohibited act, regardless of the victim’s group affiliation.",
+          "reasoning": "The Rome Statute’s framework of individual criminal responsibility focuses on the commission of the prohibited conduct and the requisite mental element. The victim’s identity as a fellow member of the armed group does not negate the existence of the crime, nor does it preclude the Court’s jurisdiction. This principle reinforces the legitimacy of prosecuting intra‑group sexual violence as war crimes.",
+          "citations": [],
+          "resolved_citations": []
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"Members of an armed group, including child soldiers, are protected persons under Article 8(2)(e)(vi) of the Rome Statute and may therefore be victims of the war crimes of rape and sexual slavery even when the crimes are committed by fellow members of the same armed group.\",\n      \"reasoning\": \"The definition of \\\"protected persons\\\" in the Rome Statute and the Geneva Conventions is based on the person's status in the conflict, not on the identity of the perpetrator. International humanitarian law prohibits sexual violence against any person who is not taking a direct part in hostilities, which includes members of the same armed group who are hors de combat, detained, or otherwise vulnerable. Consequently, the elements of the crime are satisfied when the act of rape or sexual slavery is committed in the context of a non‑international armed conflict, regardless of the perpetrator’s affiliation.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The jurisdiction of the ICC under Article 8(2)(e)(vi) is triggered by the commission of the prohibited act in the context of an armed conflict, not by the relationship between victim and perpetrator.\",\n      \"reasoning\": \"Article 8(2)(e)(vi) criminalises \\\"rape, sexual slavery, enforced prostitution, forced pregnancy, enforced sterilisation or any other form of sexual violence\\\" when committed in a non‑international armed conflict. The statutory elements focus on the act, the context, and the victim’s protected status, not on whether the perpetrator belongs to the same armed group. Therefore, the Court’s jurisdiction is proper where the factual elements are met, irrespective of intra‑group dynamics.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"Customary international humanitarian law, as reflected in the jurisprudence of international tribunals, affirms that war crimes may be committed against members of the same armed group.\",\n      \"reasoning\": \"Customary IHL treats the prohibition of sexual violence as a universal norm that applies to all parties in a conflict. International tribunals (e.g., the ICTY and ICC) have held that the victim’s status as a member of an armed group does not immunise the perpetrator when the victim is a protected person. This principle supports the view that intra‑group sexual violence falls within the scope of war crimes.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The defence’s contention that protection only arises after a combatant ceases to be a member of the armed group is inconsistent with the established interpretation of \\\"protected persons\\\" in IHL.\",\n      \"reasoning\": \"Protected persons include those who are \\\"out of combat\\\" due to detention, injury, or other circumstances, even while still formally belonging to the armed group. International law recognises that child soldiers and other vulnerable members retain protected status precisely because they are often unable to voluntarily cease participation. Hence, the defence’s argument is contrary to the protective purpose of the statutes.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"Even in the absence of specific treaty citations, the principle of individual criminal responsibility under the Rome Statute requires that the perpetrator be held accountable for the prohibited act, regardless of the victim’s group affiliation.\",\n      \"reasoning\": \"The Rome Statute’s framework of individual criminal responsibility focuses on the commission of the prohibited conduct and the requisite mental element. The victim’s identity as a fellow member of the armed group does not negate the existence of the crime, nor does it preclude the Court’s jurisdiction. This principle reinforces the legitimacy of prosecuting intra‑group sexual violence as war crimes.\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:53:46.446262Z",
+      "completed_at": "2026-11-22T17:53:49.474206Z",
+      "prompt_tokens": 1219,
+      "completion_tokens": 1182,
+      "error": null
+    },
+    {
+      "id": "turn_94ea0dc6",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "bdf68b5bac5d7fbc647b96b32aa08711ba4633d436055ca98aef0ea06aa28639",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. Members of an armed group can be victims of the war crimes of rape and sexual slavery under Article 8(2)(e)(vi) of the Rome Statute when the crimes are committed by members of the same armed group. The prohibition on sexual violence in non-international armed conflict protects persons based on their status in the conflict — including those hors de combat, detained, or otherwise not taking a direct part in hostilities — and does not require the perpetrator to belong to an opposing force. The statutory elements of Article 8(2)(e)(vi) focus on the act, the context of the armed conflict, and the victim's protected status, not on the organizational relationship between victim and perpetrator. Customary IHL and the jurisprudence of international tribunals support this interpretation. The defence's argument that protection arises only upon formally ceasing membership is inconsistent with the protective purpose of IHL, which recognises that child soldiers and other vulnerable members retain protected status even while formally belonging to the armed group. Individual criminal responsibility under the Rome Statute attaches to the commission of the prohibited conduct with the requisite mental element, irrespective of the victim's group affiliation. However, this conclusion is reached by reasoning from principle; no corpus context was retrieved to verify specific treaty provisions, case law, or customary rules cited in the arguments. All citations in the arguments are therefore treated as unsupported.\", \"reasoning\": \"The five arguments presented converge on the same conclusion: Article 8(2)(e)(vi) criminalises rape and sexual slavery when committed in the context of a non-international armed conflict against protected persons. Protected status derives from the victim's situation (e.g., hors de combat, detained, child soldier) rather than from the perpetrator's affiliation. The defence's jurisdictional challenge rests on a mistaken premise that intra-group crimes fall outside the statute. The Rome Statute's framework of individual criminal responsibility and the protective object and purpose of IHL both support jurisdiction over intra-group sexual violence. No objections were filed to challenge these arguments.\", \"confidence\": 0.6, \"confidence_reasoning\": \"The legal reasoning is coherent and aligns with the protective purpose of IHL and the structure of the Rome Statute. However, confidence is reduced to 0.6 because no corpus context was retrieved to verify the specific treaty text of Article 8(2)(e)(vi), the Elements of Crimes, relevant ICC jurisprudence (e.g., Ntaganda, Lubanga), ICTY/ICTR case law on intra-group sexual violence, or customary IHL rules. The arguments assert these authorities but cannot be checked against the corpus. In a real proceeding, the absence of verified authority would require supplementation before a definitive ruling.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_c4e78618\", \"arg_a595917e\", \"arg_2c9db752\", \"arg_57116c9f\", \"arg_899aa18a\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-22T17:53:49.479288Z",
+      "completed_at": "2026-11-22T17:54:23.512323Z",
+      "prompt_tokens": 2282,
+      "completion_tokens": 1150,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-22T17:54:23.513894+00:00",
+  "duration_seconds": 37.07372124103131,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}

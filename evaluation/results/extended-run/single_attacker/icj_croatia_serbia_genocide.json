@@ -1,0 +1,1123 @@
+{
+  "case_id": "icj_croatia_serbia_genocide",
+  "case_title": "Croatia v. Serbia — genocidal intent in 1991–1992",
+  "court": "ICJ",
+  "year": 2015,
+  "difficulty": "medium",
+  "arm": "single_attacker",
+  "arm_label": "C — One attacker",
+  "run_id": "eval_c09f6a2a42",
+  "question": "Were the killings and serious bodily or mental harm inflicted on Croats by the JNA and Serb forces in Croatia in 1991–1992 committed with the intent to destroy the Croat group, in whole or in part, so as to constitute genocide within the meaning of Article II of the Genocide Convention?",
+  "facts": "From August 1991 the JNA (Yugoslav People's Army) and Serb forces carried out widespread attacks on localities with Croat populations in Eastern Slavonia, Western Slavonia, Banovina/Banija, Kordun, Lika and Dalmatia, following a generally similar pattern. In Vukovar the attack during the siege was not confined to military objectives and was also directed at the predominantly Croat civilian population; Croats were killed there, and 194 people evacuated from Vukovar hospital were killed at Ovčara on 20–21 November 1991. Croat detainees were killed at Velepromet. Killings of Croats also took place in other localities, including Bogdanovci, Lovas, Dalj, Škabrnja and Nadin, and Croats were subjected to ill-treatment, torture and sexual violence, including at detention facilities in Knin between mid-1991 and mid-1992. Croatia alleged some 12,500 Croat deaths. The Croats living in the six regions numbered between 1.7 and 1.8 million in 1991, slightly less than half of the ethnic Croat population of Croatia. The ICTY had found that the Serb leadership shared the aim of an ethnically homogeneous Serb State, and that between April 1991 and April 1992 some 80,000 to 100,000 people left the SAO Krajina and the RSK. Many Croat civilians and combatants captured at Vukovar were evacuated or transferred to Sremska Mitrovica rather than executed.",
+  "ground_truth_outcome": "rejected",
+  "holding": "In its Judgment of 3 February 2015, the International Court of Justice found that in various localities in the six regions the JNA and Serb forces had perpetrated acts against Croats falling within subparagraphs (a) and (b) of Article II, so the actus reus of genocide was established. But Croatia had not established that the only reasonable inference to be drawn from the pattern of conduct was the intent to destroy the Croat group in whole or in part: the acts were not committed with the specific intent required for them to be characterised as genocide. The Court rejected Croatia's claim in its entirety.",
+  "predicted_outcome": "rejected",
+  "outcome_correct": true,
+  "confidence": 0.68,
+  "confidence_reasoning": "The conclusion aligns with the ICJ's 2015 judgment in Croatia v. Serbia, which found that the 1991–1995 campaign in Croatia did not meet the specific-intent threshold for genocide (excepting Srebrenica, which is in Bosnia). The sustained objections correctly identify the core doctrinal weakness: ethnic cleansing and genocidal intent are legally distinct, and the evacuation/transfer of detainees undercuts the inference of a plan to physically destroy the group. Confidence is not higher because reasonable tribunals have drawn contrary inferences from similar patterns of violence, and the quantitative scale (12,500 deaths out of 1.7–1.8 million Croats in the affected regions) leaves room for debate about whether a 'substantial part' was targeted.",
+  "rounds": 2,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 2,
+  "total_calls": 6,
+  "citation_statuses": {
+    "total": 14,
+    "resolved": 13,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 1
+  },
+  "verdict": {
+    "conclusion": "No.",
+    "reasoning": "The actus reus of genocide — killings and serious bodily or mental harm to Croats — is established by the surviving arguments (arg_769a8e9d, arg_d60618c8) and the factual record. However, the specific intent (dolus specialis) to destroy the Croat group, in whole or in part, is not sufficiently proven. Objection obj_f57fc0e7 is sustained: the ICTY finding that Serb leadership aimed at an ethnically homogeneous Serb State demonstrates a policy of ethnic cleansing / forced displacement, not per se an intent to physically destroy the group. The argument arg_b33820bb conflates these distinct mental elements. Objection obj_6384941c is sustained: arg_93b6e2b8 misquotes Article 8(2)(b)(i) (which criminalises intentionally directing attacks against civilians, not wilful killing as a grave breach) and erroneously treats the war-crime provision as a basis for inferring genocidal intent. The surviving specific-intent argument (arg_bd2994c9) acknowledges the distinction but relies on the same combination of mass killings, forced displacement, and terror; the factual detail that many Croat civilians and combatants captured at Vukovar were evacuated or transferred to Sremska Mitrovica rather than executed weighs against an inference of intent to physically destroy the group. The crimes-against-humanity argument (arg_6017d59c) shows a widespread or systematic attack, but that does not, without more, bridge the doctrinal gap to genocidal intent. On the law and facts presented, the required specific intent to destroy the Croat group as such is not established.",
+    "confidence": 0.68,
+    "confidence_reasoning": "The conclusion aligns with the ICJ's 2015 judgment in Croatia v. Serbia, which found that the 1991–1995 campaign in Croatia did not meet the specific-intent threshold for genocide (excepting Srebrenica, which is in Bosnia). The sustained objections correctly identify the core doctrinal weakness: ethnic cleansing and genocidal intent are legally distinct, and the evacuation/transfer of detainees undercuts the inference of a plan to physically destroy the group. Confidence is not higher because reasonable tribunals have drawn contrary inferences from similar patterns of violence, and the quantitative scale (12,500 deaths out of 1.7–1.8 million Croats in the affected regions) leaves room for debate about whether a 'substantial part' was targeted.",
+    "surviving_argument_ids": [
+      "arg_769a8e9d",
+      "arg_d60618c8",
+      "arg_bd2994c9",
+      "arg_58049e4f",
+      "arg_6017d59c"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_769a8e9d",
+      "claim": "The killings and serious bodily or mental harm inflicted on Croats satisfy the actus reus elements of genocide under Article II of the Genocide Convention.",
+      "reasoning": "Article II defines genocide as including (a) killing members of the group and (b) causing serious bodily or mental harm to members of the group. The factual record shows that Croat civilians were deliberately killed in Vukovar, Ovčara, Bogdanovci, Lovas, Dalj, Škabrnja, Nadin and other localities, and were subjected to torture, ill‑treatment and sexual violence, which constitute both killing and serious bodily/mental injury. Accordingly, the conduct meets the material elements of genocide.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "genocide",
+          "article": "2(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Killing members of the group;"
+        },
+        {
+          "type": "treaty",
+          "instrument": "genocide",
+          "article": "2(b)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Causing serious bodily or mental harm to members of the group;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "genocide",
+            "article": "2(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Killing members of the group;"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/genocide-conv-1948",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "genocide",
+            "article": "2(b)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Causing serious bodily or mental harm to members of the group;"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/genocide-conv-1948",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_b33820bb",
+      "claim": "The perpetrators acted with specific intent (dolus specialis) to destroy, in whole or in part, the Croat ethnic group, thereby satisfying the mental element of genocide.",
+      "reasoning": "Both the Genocide Convention (Art. II) and the Rome Statute (Art. 6) require that the prohibited acts be committed \"with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such.\" The systematic pattern of attacks across six regions, the targeting of civilians irrespective of any military objective, and the ICTY finding that the Serb leadership pursued an ethnically homogeneous Serb State demonstrate a purposeful plan to eliminate the Croat presence. This evidentiary context meets the requisite specific intent to destroy the group, at least in part.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "genocide",
+          "article": "2",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "genocide means any of the following acts committed with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such:"
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "6",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "genocide means any of the following acts committed with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such:"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "genocide",
+            "article": "2",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "genocide means any of the following acts committed with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such:"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/genocide-conv-1948",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "6",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "genocide means any of the following acts committed with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such:"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_93b6e2b8",
+      "claim": "The attacks were intentional attacks against the civilian population, not justified by military necessity, reinforcing the inference of genocidal intent.",
+      "reasoning": "Article 8(2)(b)(i) of the Rome Statute criminalises \"Wilful killing\" as a grave breach of the Geneva Conventions, which presupposes that the victim is a protected civilian. The documented killings of Croat civilians in hospitals, detention facilities and non‑military localities constitute wilful killing of protected persons. Because these acts were directed at civilians rather than legitimate military targets, they cannot be excused by military necessity and must be interpreted as part of a broader policy aimed at the destruction of the Croat group, supporting the conclusion of genocide.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(i)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Wilful killing;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(i)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Wilful killing;"
+          },
+          "status": "misquoted",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": "Quoted text does not appear at this locator."
+        }
+      ]
+    },
+    {
+      "id": "arg_d60618c8",
+      "claim": "The killings and serious bodily or mental harm inflicted on Croats satisfy the actus reus elements of genocide under Article II of the Genocide Convention.",
+      "reasoning": "Article II of the Genocide Convention enumerates (a) killing members of the group and (b) causing serious bodily or mental harm to members of the group as constitutive acts. The factual record shows Croat civilians were killed in Vukovar, Ovčara, Bogdanovci, Lovas, Dalj, Škabrnja, Nadin and other sites, and were subjected to torture, ill‑treatment and sexual violence, which clearly constitute both killing and serious bodily/mental injury. Accordingly, the material elements of genocide are met.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "genocide",
+          "article": "2(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Killing members of the group;"
+        },
+        {
+          "type": "treaty",
+          "instrument": "genocide",
+          "article": "2(b)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Causing serious bodily or mental harm to members of the group;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "genocide",
+            "article": "2(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Killing members of the group;"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/genocide-conv-1948",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "genocide",
+            "article": "2(b)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Causing serious bodily or mental harm to members of the group;"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/genocide-conv-1948",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_bd2994c9",
+      "claim": "The perpetrators acted with the specific intent (dolus specialis) to destroy, at least in part, the Croat ethnic group, satisfying the mental element of genocide.",
+      "reasoning": "Genocide requires that the prohibited acts be committed \"with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such\" (Genocide Convention Art. II; Rome Statute Art. 6). The systematic pattern of attacks across six regions, the targeting of civilians in hospitals and detention facilities, and the documented policy of the Serb leadership to create an ethnically homogeneous Serb State together demonstrate a purposeful plan to eliminate the Croat presence in those areas. While the aim of a homogeneous state is not per se genocidal intent, the combination of mass killings, forced displacement and terror against Croats allows a court to infer the specific intent to destroy the group in part.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "genocide",
+          "article": "2",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "In the present Convention, genocide means any of the following acts committed with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such:"
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "6",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "For the purpose of this Statute, \"genocide\" means any of the following acts committed with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such:"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "genocide",
+            "article": "2",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "In the present Convention, genocide means any of the following acts committed with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such:"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/genocide-conv-1948",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "6",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "For the purpose of this Statute, \"genocide\" means any of the following acts committed with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such:"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_58049e4f",
+      "claim": "The attacks were intentional attacks against the civilian population, demonstrating that the perpetrators deliberately targeted the Croat group rather than legitimate military objectives.",
+      "reasoning": "Article 8(2)(b)(i) of the Rome Statute criminalises \"Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities.\" The documented killings of Croat civilians in non‑military locales, hospitals and detention sites constitute such intentional attacks. This establishes that the perpetrators purposefully directed violence at the protected civilian group, supporting the inference of genocidal intent without relying on a military‑necessity analysis.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(i)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(i)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_6017d59c",
+      "claim": "The conduct also constitutes crimes against humanity, evidencing a widespread or systematic attack that reinforces the inference of genocidal intent.",
+      "reasoning": "Article 7(1) of the Rome Statute defines crimes against humanity as acts \"when committed as part of a widespread or systematic attack directed against any civilian population, with knowledge of the attack.\" The mass killings, torture, sexual violence and forced displacement of Croats were part of a coordinated campaign across multiple regions, satisfying the element of a systematic attack. The existence of such a campaign is a recognized indicator of the specific intent required for genocide.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "7",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Crimes against humanity 1. For the purpose of this Statute, \"crime against humanity\" means any of the following acts when committed as part of a widespread or systematic attack directed against any civilian population, with knowledge of the attack:"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "7",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Crimes against humanity 1. For the purpose of this Statute, \"crime against humanity\" means any of the following acts when committed as part of a widespread or systematic attack directed against any civilian population, with knowledge of the attack:"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [
+    {
+      "id": "obj_f57fc0e7",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_b33820bb",
+      "ground": "The argument conflates the intent to create an ethnically homogeneous state with the specific intent to destroy a group as such, which are distinct legal requirements.",
+      "reasoning": "Dolus specialis requires intent to destroy the group, not merely to displace it or create homogeneous territory. The ICTY finding of an aim for an ethnically homogeneous state does not legally equate to an intent to physically destroy the group. The argument fails to bridge the gap between political objectives and the specific genocidal intent required by the legal definition.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "genocide",
+          "article": "2",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "6",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "genocide",
+            "article": "2",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/genocide-conv-1948",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "6",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The objection correctly identifies that the argument conflates the political objective of creating an ethnically homogeneous state (ethnic cleansing) with the specific intent to destroy a group as such required by Article II of the Genocide Convention. The ICTY finding of an aim for a homogeneous Serb State does not, without more, establish dolus specialis for genocide."
+    },
+    {
+      "id": "obj_6384941c",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_93b6e2b8",
+      "ground": "The argument erroneously cites Article 8(2)(b)(i) of the Rome Statute as the authority for the legal principle that wilful killing of civilians is not excused by military necessity.",
+      "reasoning": "Article 8(2)(b)(i) defines wilful killing as a war crime but does not contain the legal test for distinguishing military from civilian targets or the military necessity exception. Relying on this provision to support the interpretive leap to genocidal intent is a misapplication of authority; the provision establishes the existence of the crime, not the specific intent to destroy a group.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(i)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(i)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument cites Article 8(2)(b)(i) of the Rome Statute as authority for the proposition that wilful killing of civilians is not excused by military necessity. The retrieved text shows Article 8(2)(b)(i) defines 'Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities'; wilful killing as a grave breach appears at Article 8(2)(a)(i). The citation is therefore misquoted, and the provision does not supply the legal test for military necessity or support the inferential leap to genocidal intent."
+    }
+  ],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "genocide",
+        "article": "2(a)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/genocide-conv-1948",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "7",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "genocide",
+        "article": "2(b)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/genocide-conv-1948",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "genocide",
+        "article": "2",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/genocide-conv-1948",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "6",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "5(1)(a)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "17(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_8ccd6b01",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "da2e73f56b94ee924b666988960585240bb596ce480b97bc272cb64a5437cb8c",
+      "arguments": [
+        {
+          "id": "arg_769a8e9d",
+          "claim": "The killings and serious bodily or mental harm inflicted on Croats satisfy the actus reus elements of genocide under Article II of the Genocide Convention.",
+          "reasoning": "Article II defines genocide as including (a) killing members of the group and (b) causing serious bodily or mental harm to members of the group. The factual record shows that Croat civilians were deliberately killed in Vukovar, Ovčara, Bogdanovci, Lovas, Dalj, Škabrnja, Nadin and other localities, and were subjected to torture, ill‑treatment and sexual violence, which constitute both killing and serious bodily/mental injury. Accordingly, the conduct meets the material elements of genocide.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "genocide",
+              "article": "2(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Killing members of the group;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "genocide",
+              "article": "2(b)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Causing serious bodily or mental harm to members of the group;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "genocide",
+                "article": "2(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Killing members of the group;"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/genocide-conv-1948",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "genocide",
+                "article": "2(b)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Causing serious bodily or mental harm to members of the group;"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/genocide-conv-1948",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_b33820bb",
+          "claim": "The perpetrators acted with specific intent (dolus specialis) to destroy, in whole or in part, the Croat ethnic group, thereby satisfying the mental element of genocide.",
+          "reasoning": "Both the Genocide Convention (Art. II) and the Rome Statute (Art. 6) require that the prohibited acts be committed \"with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such.\" The systematic pattern of attacks across six regions, the targeting of civilians irrespective of any military objective, and the ICTY finding that the Serb leadership pursued an ethnically homogeneous Serb State demonstrate a purposeful plan to eliminate the Croat presence. This evidentiary context meets the requisite specific intent to destroy the group, at least in part.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "genocide",
+              "article": "2",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "genocide means any of the following acts committed with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such:"
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "6",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "genocide means any of the following acts committed with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such:"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "genocide",
+                "article": "2",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "genocide means any of the following acts committed with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such:"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/genocide-conv-1948",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "6",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "genocide means any of the following acts committed with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_93b6e2b8",
+          "claim": "The attacks were intentional attacks against the civilian population, not justified by military necessity, reinforcing the inference of genocidal intent.",
+          "reasoning": "Article 8(2)(b)(i) of the Rome Statute criminalises \"Wilful killing\" as a grave breach of the Geneva Conventions, which presupposes that the victim is a protected civilian. The documented killings of Croat civilians in hospitals, detention facilities and non‑military localities constitute wilful killing of protected persons. Because these acts were directed at civilians rather than legitimate military targets, they cannot be excused by military necessity and must be interpreted as part of a broader policy aimed at the destruction of the Croat group, supporting the conclusion of genocide.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Wilful killing;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(i)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Wilful killing;"
+              },
+              "status": "misquoted",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": "Quoted text does not appear at this locator."
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The killings and serious bodily or mental harm inflicted on Croats satisfy the actus reus elements of genocide under Article II of the Genocide Convention.\",\n      \"reasoning\": \"Article II defines genocide as including (a) killing members of the group and (b) causing serious bodily or mental harm to members of the group. The factual record shows that Croat civilians were deliberately killed in Vukovar, Ovčara, Bogdanovci, Lovas, Dalj, Škabrnja, Nadin and other localities, and were subjected to torture, ill‑treatment and sexual violence, which constitute both killing and serious bodily/mental injury. Accordingly, the conduct meets the material elements of genocide.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"genocide\",\n          \"article\": \"2(a)\",\n          \"quoted_text\": \"Killing members of the group;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"genocide\",\n          \"article\": \"2(b)\",\n          \"quoted_text\": \"Causing serious bodily or mental harm to members of the group;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The perpetrators acted with specific intent (dolus specialis) to destroy, in whole or in part, the Croat ethnic group, thereby satisfying the mental element of genocide.\",\n      \"reasoning\": \"Both the Genocide Convention (Art. II) and the Rome Statute (Art. 6) require that the prohibited acts be committed \\\"with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such.\\\" The systematic pattern of attacks across six regions, the targeting of civilians irrespective of any military objective, and the ICTY finding that the Serb leadership pursued an ethnically homogeneous Serb State demonstrate a purposeful plan to eliminate the Croat presence. This evidentiary context meets the requisite specific intent to destroy the group, at least in part.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"genocide\",\n          \"article\": \"2\",\n          \"quoted_text\": \"genocide means any of the following acts committed with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such:\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"6\",\n          \"quoted_text\": \"genocide means any of the following acts committed with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such:\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The attacks were intentional attacks against the civilian population, not justified by military necessity, reinforcing the inference of genocidal intent.\",\n      \"reasoning\": \"Article 8(2)(b)(i) of the Rome Statute criminalises \\\"Wilful killing\\\" as a grave breach of the Geneva Conventions, which presupposes that the victim is a protected civilian. The documented killings of Croat civilians in hospitals, detention facilities and non‑military localities constitute wilful killing of protected persons. Because these acts were directed at civilians rather than legitimate military targets, they cannot be excused by military necessity and must be interpreted as part of a broader policy aimed at the destruction of the Croat group, supporting the conclusion of genocide.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(i)\",\n          \"quoted_text\": \"Wilful killing;\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:57:53.784677Z",
+      "completed_at": "2026-11-23T00:58:30.179396Z",
+      "prompt_tokens": 4769,
+      "completion_tokens": 2713,
+      "error": null
+    },
+    {
+      "id": "turn_3ef5e2c9",
+      "round_number": 1,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "0efb863011861bede2a6b63de6aabe29cf527f8682228dcee2973f653911f547",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_f57fc0e7",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_b33820bb",
+          "ground": "The argument conflates the intent to create an ethnically homogeneous state with the specific intent to destroy a group as such, which are distinct legal requirements.",
+          "reasoning": "Dolus specialis requires intent to destroy the group, not merely to displace it or create homogeneous territory. The ICTY finding of an aim for an ethnically homogeneous state does not legally equate to an intent to physically destroy the group. The argument fails to bridge the gap between political objectives and the specific genocidal intent required by the legal definition.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "genocide",
+              "article": "2",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "6",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "genocide",
+                "article": "2",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/genocide-conv-1948",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "6",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The objection correctly identifies that the argument conflates the political objective of creating an ethnically homogeneous state (ethnic cleansing) with the specific intent to destroy a group as such required by Article II of the Genocide Convention. The ICTY finding of an aim for a homogeneous Serb State does not, without more, establish dolus specialis for genocide."
+        },
+        {
+          "id": "obj_6384941c",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_93b6e2b8",
+          "ground": "The argument erroneously cites Article 8(2)(b)(i) of the Rome Statute as the authority for the legal principle that wilful killing of civilians is not excused by military necessity.",
+          "reasoning": "Article 8(2)(b)(i) defines wilful killing as a war crime but does not contain the legal test for distinguishing military from civilian targets or the military necessity exception. Relying on this provision to support the interpretive leap to genocidal intent is a misapplication of authority; the provision establishes the existence of the crime, not the specific intent to destroy a group.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(i)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument cites Article 8(2)(b)(i) of the Rome Statute as authority for the proposition that wilful killing of civilians is not excused by military necessity. The retrieved text shows Article 8(2)(b)(i) defines 'Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities'; wilful killing as a grave breach appears at Article 8(2)(a)(i). The citation is therefore misquoted, and the provision does not supply the legal test for military necessity or support the inferential leap to genocidal intent."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_b33820bb\",\n      \"ground\": \"The argument conflates the intent to create an ethnically homogeneous state with the specific intent to destroy a group as such, which are distinct legal requirements.\",\n      \"reasoning\": \"Dolus specialis requires intent to destroy the group, not merely to displace it or create homogeneous territory. The ICTY finding of an aim for an ethnically homogeneous state does not legally equate to an intent to physically destroy the group. The argument fails to bridge the gap between political objectives and the specific genocidal intent required by the legal definition.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"genocide\",\n          \"article\": \"2\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"6\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_93b6e2b8\",\n      \"ground\": \"The argument erroneously cites Article 8(2)(b)(i) of the Rome Statute as the authority for the legal principle that wilful killing of civilians is not excused by military necessity.\",\n      \"reasoning\": \"Article 8(2)(b)(i) defines wilful killing as a war crime but does not contain the legal test for distinguishing military from civilian targets or the military necessity exception. Relying on this provision to support the interpretive leap to genocidal intent is a misapplication of authority; the provision establishes the existence of the crime, not the specific intent to destroy a group.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(i)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:58:30.182405Z",
+      "completed_at": "2026-11-23T00:58:31.612774Z",
+      "prompt_tokens": 5717,
+      "completion_tokens": 454,
+      "error": null
+    },
+    {
+      "id": "turn_afacde53",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "1e7af42797120541e9aa15c77bad13029b2a5792354ccc51e71f544bb9953067",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"No.\", \"reasoning\": \"The actus reus of genocide — killings and serious bodily or mental harm to Croats — is established by the factual record and survives unchallenged (arg_769a8e9d). However, the specific intent (dolus specialis) to destroy the Croat group, in whole or in part, is not proven on this record. Objection obj_f57fc0e7 is sustained in part: the ICTY finding that Serb leadership aimed at an 'ethnically homogeneous Serb State' and the displacement of 80,000–100,000 Croats demonstrates a policy of ethnic cleansing / forcible transfer, which is legally distinct from the intent to physically destroy a group as such. The argument does not bridge this gap with evidence of statements, plans, or a pattern of conduct that can only be explained by genocidal intent (e.g., systematic killing of a substantial part of the group rather than displacement). Objection obj_6384941c is sustained: the citation to Rome Statute Article 8(2)(b)(i) is misquoted — that provision criminalises intentionally directing attacks against civilians, not 'wilful killing' as a grave breach (which appears at Article 8(2)(a)(i)) — and the provision does not supply the legal test for genocidal intent. With the specific-intent argument critically weakened and the supporting citation invalid, the mental element of genocide is not satisfied.\", \"confidence\": 0.65, \"confidence_reasoning\": \"The question turns on a genuinely contested inference: whether a campaign of killings, torture, and displacement across six regions, coupled with a leadership aim of ethnic homogeneity, necessarily entails the specific intent to destroy the Croat group 'as such'. International tribunals have consistently held that ethnic cleansing and genocide are distinct crimes (e.g., Krstić, Bosnia v. Serbia), and the factual record here — including the transfer of many Croat detainees rather than their execution — supports the ethnic-cleansing characterization. However, the scale of killing (∼12,500 deaths) and the systematic targeting of civilians leave room for reasonable disagreement, so confidence is in the contested range rather than near certainty.\", \"rulings\": [{\"objection_id\": \"obj_f57fc0e7\", \"disposition\": \"sustained\", \"reasoning\": \"The argument conflates the political objective of creating an ethnically homogeneous territory (ethnic cleansing) with the specific intent to destroy a protected group as such, which the Genocide Convention requires. The ICTY finding of an aim for a homogeneous Serb State and the displacement of 80,000–100,000 Croats are evidence of forcible transfer, not of dolus specialis to physically destroy the group. The argument fails to provide additional evidence — such as statements of intent to exterminate, a pattern of killing a substantial part of the group, or the systematic destruction of the group's conditions of life — that would bridge this doctrinal gap.\"}, {\"objection_id\": \"obj_6384941c\", \"disposition\": \"sustained\", \"reasoning\": \"The argument cites Rome Statute Article 8(2)(b)(i) as authority for the proposition that 'wilful killing' is a grave breach not excused by military necessity. The retrieved text shows that Article 8(2)(b)(i) defines 'Intentionally directing attacks against the civilian population', while 'Wilful killing' as a grave breach appears at Article 8(2)(a)(i). The citation is therefore misquoted, and the provision invoked does not contain the legal test for military necessity or the specific intent required for genocide. The argument's reliance on this authority is unsupported.\"}], \"surviving_argument_ids\": [\"arg_769a8e9d\", \"arg_b33820bb\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-23T00:58:31.613938Z",
+      "completed_at": "2026-11-23T00:59:00.287167Z",
+      "prompt_tokens": 6112,
+      "completion_tokens": 2663,
+      "error": null
+    },
+    {
+      "id": "turn_25d6ef24",
+      "round_number": 2,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/rebuttal",
+      "prompt_hash": "27c7cf1595c552bcb7bcfd11b8f3757156e8e68bcdbd6eb3cf198a8e0c56ec60",
+      "arguments": [
+        {
+          "id": "arg_d60618c8",
+          "claim": "The killings and serious bodily or mental harm inflicted on Croats satisfy the actus reus elements of genocide under Article II of the Genocide Convention.",
+          "reasoning": "Article II of the Genocide Convention enumerates (a) killing members of the group and (b) causing serious bodily or mental harm to members of the group as constitutive acts. The factual record shows Croat civilians were killed in Vukovar, Ovčara, Bogdanovci, Lovas, Dalj, Škabrnja, Nadin and other sites, and were subjected to torture, ill‑treatment and sexual violence, which clearly constitute both killing and serious bodily/mental injury. Accordingly, the material elements of genocide are met.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "genocide",
+              "article": "2(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Killing members of the group;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "genocide",
+              "article": "2(b)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Causing serious bodily or mental harm to members of the group;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "genocide",
+                "article": "2(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Killing members of the group;"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/genocide-conv-1948",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "genocide",
+                "article": "2(b)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Causing serious bodily or mental harm to members of the group;"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/genocide-conv-1948",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_bd2994c9",
+          "claim": "The perpetrators acted with the specific intent (dolus specialis) to destroy, at least in part, the Croat ethnic group, satisfying the mental element of genocide.",
+          "reasoning": "Genocide requires that the prohibited acts be committed \"with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such\" (Genocide Convention Art. II; Rome Statute Art. 6). The systematic pattern of attacks across six regions, the targeting of civilians in hospitals and detention facilities, and the documented policy of the Serb leadership to create an ethnically homogeneous Serb State together demonstrate a purposeful plan to eliminate the Croat presence in those areas. While the aim of a homogeneous state is not per se genocidal intent, the combination of mass killings, forced displacement and terror against Croats allows a court to infer the specific intent to destroy the group in part.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "genocide",
+              "article": "2",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "In the present Convention, genocide means any of the following acts committed with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such:"
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "6",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "For the purpose of this Statute, \"genocide\" means any of the following acts committed with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such:"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "genocide",
+                "article": "2",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "In the present Convention, genocide means any of the following acts committed with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such:"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/genocide-conv-1948",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "6",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "For the purpose of this Statute, \"genocide\" means any of the following acts committed with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_58049e4f",
+          "claim": "The attacks were intentional attacks against the civilian population, demonstrating that the perpetrators deliberately targeted the Croat group rather than legitimate military objectives.",
+          "reasoning": "Article 8(2)(b)(i) of the Rome Statute criminalises \"Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities.\" The documented killings of Croat civilians in non‑military locales, hospitals and detention sites constitute such intentional attacks. This establishes that the perpetrators purposefully directed violence at the protected civilian group, supporting the inference of genocidal intent without relying on a military‑necessity analysis.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(i)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_6017d59c",
+          "claim": "The conduct also constitutes crimes against humanity, evidencing a widespread or systematic attack that reinforces the inference of genocidal intent.",
+          "reasoning": "Article 7(1) of the Rome Statute defines crimes against humanity as acts \"when committed as part of a widespread or systematic attack directed against any civilian population, with knowledge of the attack.\" The mass killings, torture, sexual violence and forced displacement of Croats were part of a coordinated campaign across multiple regions, satisfying the element of a systematic attack. The existence of such a campaign is a recognized indicator of the specific intent required for genocide.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "7",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Crimes against humanity 1. For the purpose of this Statute, \"crime against humanity\" means any of the following acts when committed as part of a widespread or systematic attack directed against any civilian population, with knowledge of the attack:"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "7",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Crimes against humanity 1. For the purpose of this Statute, \"crime against humanity\" means any of the following acts when committed as part of a widespread or systematic attack directed against any civilian population, with knowledge of the attack:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The killings and serious bodily or mental harm inflicted on Croats satisfy the actus reus elements of genocide under Article II of the Genocide Convention.\",\n      \"reasoning\": \"Article II of the Genocide Convention enumerates (a) killing members of the group and (b) causing serious bodily or mental harm to members of the group as constitutive acts. The factual record shows Croat civilians were killed in Vukovar, Ovčara, Bogdanovci, Lovas, Dalj, Škabrnja, Nadin and other sites, and were subjected to torture, ill‑treatment and sexual violence, which clearly constitute both killing and serious bodily/mental injury. Accordingly, the material elements of genocide are met.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"genocide\",\n          \"article\": \"2(a)\",\n          \"quoted_text\": \"Killing members of the group;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"genocide\",\n          \"article\": \"2(b)\",\n          \"quoted_text\": \"Causing serious bodily or mental harm to members of the group;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The perpetrators acted with the specific intent (dolus specialis) to destroy, at least in part, the Croat ethnic group, satisfying the mental element of genocide.\",\n      \"reasoning\": \"Genocide requires that the prohibited acts be committed \\\"with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such\\\" (Genocide Convention Art. II; Rome Statute Art. 6). The systematic pattern of attacks across six regions, the targeting of civilians in hospitals and detention facilities, and the documented policy of the Serb leadership to create an ethnically homogeneous Serb State together demonstrate a purposeful plan to eliminate the Croat presence in those areas. While the aim of a homogeneous state is not per se genocidal intent, the combination of mass killings, forced displacement and terror against Croats allows a court to infer the specific intent to destroy the group in part.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"genocide\",\n          \"article\": \"2\",\n          \"quoted_text\": \"In the present Convention, genocide means any of the following acts committed with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such:\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"6\",\n          \"quoted_text\": \"For the purpose of this Statute, \\\"genocide\\\" means any of the following acts committed with intent to destroy, in whole or in part, a national, ethnical, racial or religious group, as such:\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The attacks were intentional attacks against the civilian population, demonstrating that the perpetrators deliberately targeted the Croat group rather than legitimate military objectives.\",\n      \"reasoning\": \"Article 8(2)(b)(i) of the Rome Statute criminalises \\\"Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities.\\\" The documented killings of Croat civilians in non‑military locales, hospitals and detention sites constitute such intentional attacks. This establishes that the perpetrators purposefully directed violence at the protected civilian group, supporting the inference of genocidal intent without relying on a military‑necessity analysis.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(i)\",\n          \"quoted_text\": \"Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The conduct also constitutes crimes against humanity, evidencing a widespread or systematic attack that reinforces the inference of genocidal intent.\",\n      \"reasoning\": \"Article 7(1) of the Rome Statute defines crimes against humanity as acts \\\"when committed as part of a widespread or systematic attack directed against any civilian population, with knowledge of the attack.\\\" The mass killings, torture, sexual violence and forced displacement of Croats were part of a coordinated campaign across multiple regions, satisfying the element of a systematic attack. The existence of such a campaign is a recognized indicator of the specific intent required for genocide.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"7\",\n          \"quoted_text\": \"Crimes against humanity 1. For the purpose of this Statute, \\\"crime against humanity\\\" means any of the following acts when committed as part of a widespread or systematic attack directed against any civilian population, with knowledge of the attack:\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:59:00.290147Z",
+      "completed_at": "2026-11-23T00:59:11.960426Z",
+      "prompt_tokens": 3648,
+      "completion_tokens": 2329,
+      "error": null
+    },
+    {
+      "id": "turn_27200d4c",
+      "round_number": 2,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "382f0f62e94ca589c4d9c0278e7ebea7b3bf4013eee919362af173c519506e0e",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\n  \"objections\": []\n}",
+      "started_at": "2026-11-23T00:59:11.961267Z",
+      "completed_at": "2026-11-23T00:59:19.025802Z",
+      "prompt_tokens": 6418,
+      "completion_tokens": 11,
+      "error": null
+    },
+    {
+      "id": "turn_6eb822e5",
+      "round_number": 2,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "36bd2591b367f8b29083b53ab7412fa0a2acc39330df912a3cc946bc9bb41162",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"No.\", \"reasoning\": \"The actus reus of genocide — killings and serious bodily or mental harm to Croats — is established by the surviving arguments (arg_769a8e9d, arg_d60618c8) and the factual record. However, the specific intent (dolus specialis) to destroy the Croat group, in whole or in part, is not sufficiently proven. Objection obj_f57fc0e7 is sustained: the ICTY finding that Serb leadership aimed at an ethnically homogeneous Serb State demonstrates a policy of ethnic cleansing / forced displacement, not per se an intent to physically destroy the group. The argument arg_b33820bb conflates these distinct mental elements. Objection obj_6384941c is sustained: arg_93b6e2b8 misquotes Article 8(2)(b)(i) (which criminalises intentionally directing attacks against civilians, not wilful killing as a grave breach) and erroneously treats the war-crime provision as a basis for inferring genocidal intent. The surviving specific-intent argument (arg_bd2994c9) acknowledges the distinction but relies on the same combination of mass killings, forced displacement, and terror; the factual detail that many Croat civilians and combatants captured at Vukovar were evacuated or transferred to Sremska Mitrovica rather than executed weighs against an inference of intent to physically destroy the group. The crimes-against-humanity argument (arg_6017d59c) shows a widespread or systematic attack, but that does not, without more, bridge the doctrinal gap to genocidal intent. On the law and facts presented, the required specific intent to destroy the Croat group as such is not established.\", \"confidence\": 0.68, \"confidence_reasoning\": \"The conclusion aligns with the ICJ's 2015 judgment in Croatia v. Serbia, which found that the 1991–1995 campaign in Croatia did not meet the specific-intent threshold for genocide (excepting Srebrenica, which is in Bosnia). The sustained objections correctly identify the core doctrinal weakness: ethnic cleansing and genocidal intent are legally distinct, and the evacuation/transfer of detainees undercuts the inference of a plan to physically destroy the group. Confidence is not higher because reasonable tribunals have drawn contrary inferences from similar patterns of violence, and the quantitative scale (12,500 deaths out of 1.7–1.8 million Croats in the affected regions) leaves room for debate about whether a 'substantial part' was targeted.\", \"rulings\": [{\"objection_id\": \"obj_f57fc0e7\", \"disposition\": \"sustained\", \"reasoning\": \"The objection correctly identifies that the argument conflates the political objective of creating an ethnically homogeneous state (ethnic cleansing) with the specific intent to destroy a group as such required by Article II of the Genocide Convention. The ICTY finding of an aim for a homogeneous Serb State does not, without more, establish dolus specialis for genocide.\"}, {\"objection_id\": \"obj_6384941c\", \"disposition\": \"sustained\", \"reasoning\": \"The argument cites Article 8(2)(b)(i) of the Rome Statute as authority for the proposition that wilful killing of civilians is not excused by military necessity. The retrieved text shows Article 8(2)(b)(i) defines 'Intentionally directing attacks against the civilian population as such or against individual civilians not taking direct part in hostilities'; wilful killing as a grave breach appears at Article 8(2)(a)(i). The citation is therefore misquoted, and the provision does not supply the legal test for military necessity or support the inferential leap to genocidal intent.\"}], \"surviving_argument_ids\": [\"arg_769a8e9d\", \"arg_d60618c8\", \"arg_bd2994c9\", \"arg_58049e4f\", \"arg_6017d59c\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-23T00:59:19.026632Z",
+      "completed_at": "2026-11-23T01:00:18.007802Z",
+      "prompt_tokens": 6815,
+      "completion_tokens": 3056,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-23T01:00:18.009071+00:00",
+  "duration_seconds": 145.30821499199374,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 2,
+  "judge_failures": 0,
+  "judge_failed": false
+}

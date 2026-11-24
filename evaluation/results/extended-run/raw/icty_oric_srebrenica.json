@@ -1,0 +1,187 @@
+{
+  "case_id": "icty_oric_srebrenica",
+  "case_title": "Prosecutor v. Naser Orić — superior responsibility for detention crimes",
+  "court": "ICTY",
+  "year": 2008,
+  "difficulty": "contested",
+  "arm": "raw",
+  "arm_label": "A — Single pass, no retrieval",
+  "run_id": "eval_63edc1ea0e",
+  "question": "Has it been established beyond reasonable doubt that the commander of the Srebrenica armed forces was criminally responsible as a superior, under Article 7(3) of the ICTY Statute, for failing to take necessary and reasonable measures to prevent the murder and cruel treatment of Serb detainees in Srebrenica between 27 December 1992 and 20 March 1993?",
+  "facts": "Between September 1992 and March 1993, Serbs were detained in Srebrenica, Bosnia and Herzegovina, at the police station and at a building behind the Srebrenica Municipal Building. The Trial Chamber found that crimes of murder and cruel treatment were committed against the detainees during two periods: from 24 September to 16 October 1992, and from 15 December 1992 to 20 March 1993. It found that the Military Police was responsible for the occurrence of all these crimes, and that the Military Police was subordinated to the commander of the Srebrenica armed forces, through the successive Chiefs of Staff, only after 27 November 1992. The persons who physically committed the crimes were not found to be members of the Military Police or to be directly subordinated to the commander. The head of the Military Police after 27 November 1992 was found to be subordinated to the commander and responsible for the crimes committed between December 1992 and March 1993. The Trial Chamber's findings on the commander's mental state concerned his knowledge of, or reason to know of, the crimes committed in the two detention facilities. The Trial Chamber convicted him under Article 7(3) for failing to prevent the murder and cruel treatment committed between 27 December 1992 and 20 March 1993, and sentenced him to two years' imprisonment.",
+  "ground_truth_outcome": "rejected",
+  "holding": "In its Judgement of 3 July 2008, the ICTY Appeals Chamber reversed the convictions and acquitted the accused of all charges. The Trial Chamber had identified only one culpable subordinate, the head of the Military Police, but had failed to resolve whether and on what basis that subordinate incurred criminal responsibility, and had failed to make a finding on whether the accused knew or had reason to know that this subordinate was about to engage, or had engaged, in criminal conduct. Without these findings the convictions under Article 7(3) could not stand. The Prosecution's alternative basis, superior responsibility for unidentified guards, had not been pleaded in the Indictment.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": false,
+  "confidence": 0.7,
+  "confidence_reasoning": "Confidence is 0.7 because the conclusion rests on the Trial Chamber's conviction as a stated fact in the prompt, which is a strong indicator. However, no corpus context was retrieved to verify the legal standards for command responsibility under Article 7(3) ICTY Statute, the scope of 'effective control' over non-subordinate perpetrators, or the specific evidentiary record. The arguments are unopposed but uncited; the perpetrator-subordination gap is addressed only by a general principle (arg_f194c083) without case authority. A higher confidence would require corroboration from the corpus.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 2,
+  "citation_statuses": {
+    "total": 0,
+    "resolved": 0,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. The Trial Chamber convicted the commander under Article 7(3) for the period 27 December 1992 to 20 March 1993, which constitutes a judicial determination that his criminal responsibility as a superior was established beyond reasonable doubt.",
+    "reasoning": "The facts as given state that the Trial Chamber convicted the commander under Article 7(3) for failing to prevent murder and cruel treatment during the specified period. A conviction by a trial chamber is, by definition, a finding that the prosecution proved each element beyond reasonable doubt. The surviving arguments collectively address the three elements of command responsibility: (1) effective control over the Military Police after 27 November 1992 (arg_2674a700); (2) knowledge or reason to know of the crimes (arg_510afc8e); and (3) failure to take necessary and reasonable measures (arg_a1edbfb4). Argument arg_f194c083 addresses the critical factual gap — that the physical perpetrators were not Military Police members — by invoking the principle that command responsibility extends to persons acting under the influence of a subordinate unit the superior effectively controls. Argument arg_1dcbdfd9 asserts the cumulative case meets the reasonable-doubt standard. No objections were filed to challenge any of these arguments.",
+    "confidence": 0.7,
+    "confidence_reasoning": "Confidence is 0.7 because the conclusion rests on the Trial Chamber's conviction as a stated fact in the prompt, which is a strong indicator. However, no corpus context was retrieved to verify the legal standards for command responsibility under Article 7(3) ICTY Statute, the scope of 'effective control' over non-subordinate perpetrators, or the specific evidentiary record. The arguments are unopposed but uncited; the perpetrator-subordination gap is addressed only by a general principle (arg_f194c083) without case authority. A higher confidence would require corroboration from the corpus.",
+    "surviving_argument_ids": [
+      "arg_2674a700",
+      "arg_510afc8e",
+      "arg_a1edbfb4",
+      "arg_f194c083",
+      "arg_1dcbdfd9"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_2674a700",
+      "claim": "The commander exercised effective control over the Military Police after 27 November 1992, establishing the requisite superior-subordinate relationship for command responsibility.",
+      "reasoning": "Effective control is satisfied when the superior has the material ability to prevent or punish the commission of crimes by subordinates. The factual record shows that the Military Police was subordinated to the commander through the Chiefs of Staff after 27 November 1992, and the commander retained authority to issue orders and enforce discipline over that unit. This relationship meets the established legal threshold for command responsibility, even though the individual perpetrators were not direct members of the Military Police.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_510afc8e",
+      "claim": "The commander knew, or had reason to know, of the murders and cruel treatment of Serb detainees between 27 December 1992 and 20 March 1993.",
+      "reasoning": "Knowledge for command responsibility includes actual knowledge or constructive knowledge—i.e., the commander should have been aware of facts indicating the commission of crimes. The commander was in a position to receive reports from the Military Police, and the scale and duration of the abuses (spanning several months) would have been apparent to a commander exercising effective control. Therefore, the knowledge element of Article 7(3) is satisfied.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_a1edbfb4",
+      "claim": "The commander failed to take necessary and reasonable measures to prevent or punish the murders and cruel treatment, thereby breaching his obligations under Article 7(3) of the ICTY Statute.",
+      "reasoning": "The legal test requires that a superior either prevent the crime, order its cessation, or take disciplinary, criminal, or other appropriate measures against the perpetrators. The factual record indicates that no such measures were undertaken by the commander during the period in question; the crimes continued unabated. This omission constitutes a failure to fulfill the duty imposed by Article 7(3).",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_f194c083",
+      "claim": "The absence of direct subordination of the individual perpetrators to the commander does not defeat liability under the doctrine of command responsibility.",
+      "reasoning": "Command responsibility is predicated on the existence of effective control, not on formal hierarchical placement of each perpetrator. Jurisprudence has consistently held that a superior can be liable for crimes committed by persons who act under the influence of the subordinate unit that the superior controls, even if those persons are not formally members of that unit. Accordingly, the commander’s liability stands despite the perpetrators not being members of the Military Police.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_1dcbdfd9",
+      "claim": "The evidence meets the standard of proof beyond reasonable doubt that the commander is criminally responsible as a superior for the crimes committed between 27 December 1992 and 20 March 1993.",
+      "reasoning": "Beyond reasonable doubt requires that the prosecution’s case be so convincing that there is no reasonable hypothesis consistent with the evidence except that the defendant is guilty. The Trial Chamber’s findings on the commander’s effective control, knowledge, and failure to act are based on documented chain‑of‑command evidence and the continuity of the abuses. No credible alternative explanation undermines these findings, satisfying the high evidentiary threshold.",
+      "citations": [],
+      "resolved_citations": []
+    }
+  ],
+  "objections": [],
+  "context": [],
+  "turns": [
+    {
+      "id": "turn_b6a8a653",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "b42211021dea1a6596a61639951322ffc36481c2900e392274b07dd7dbcde63f",
+      "arguments": [
+        {
+          "id": "arg_2674a700",
+          "claim": "The commander exercised effective control over the Military Police after 27 November 1992, establishing the requisite superior-subordinate relationship for command responsibility.",
+          "reasoning": "Effective control is satisfied when the superior has the material ability to prevent or punish the commission of crimes by subordinates. The factual record shows that the Military Police was subordinated to the commander through the Chiefs of Staff after 27 November 1992, and the commander retained authority to issue orders and enforce discipline over that unit. This relationship meets the established legal threshold for command responsibility, even though the individual perpetrators were not direct members of the Military Police.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_510afc8e",
+          "claim": "The commander knew, or had reason to know, of the murders and cruel treatment of Serb detainees between 27 December 1992 and 20 March 1993.",
+          "reasoning": "Knowledge for command responsibility includes actual knowledge or constructive knowledge—i.e., the commander should have been aware of facts indicating the commission of crimes. The commander was in a position to receive reports from the Military Police, and the scale and duration of the abuses (spanning several months) would have been apparent to a commander exercising effective control. Therefore, the knowledge element of Article 7(3) is satisfied.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_a1edbfb4",
+          "claim": "The commander failed to take necessary and reasonable measures to prevent or punish the murders and cruel treatment, thereby breaching his obligations under Article 7(3) of the ICTY Statute.",
+          "reasoning": "The legal test requires that a superior either prevent the crime, order its cessation, or take disciplinary, criminal, or other appropriate measures against the perpetrators. The factual record indicates that no such measures were undertaken by the commander during the period in question; the crimes continued unabated. This omission constitutes a failure to fulfill the duty imposed by Article 7(3).",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_f194c083",
+          "claim": "The absence of direct subordination of the individual perpetrators to the commander does not defeat liability under the doctrine of command responsibility.",
+          "reasoning": "Command responsibility is predicated on the existence of effective control, not on formal hierarchical placement of each perpetrator. Jurisprudence has consistently held that a superior can be liable for crimes committed by persons who act under the influence of the subordinate unit that the superior controls, even if those persons are not formally members of that unit. Accordingly, the commander’s liability stands despite the perpetrators not being members of the Military Police.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_1dcbdfd9",
+          "claim": "The evidence meets the standard of proof beyond reasonable doubt that the commander is criminally responsible as a superior for the crimes committed between 27 December 1992 and 20 March 1993.",
+          "reasoning": "Beyond reasonable doubt requires that the prosecution’s case be so convincing that there is no reasonable hypothesis consistent with the evidence except that the defendant is guilty. The Trial Chamber’s findings on the commander’s effective control, knowledge, and failure to act are based on documented chain‑of‑command evidence and the continuity of the abuses. No credible alternative explanation undermines these findings, satisfying the high evidentiary threshold.",
+          "citations": [],
+          "resolved_citations": []
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The commander exercised effective control over the Military Police after 27 November 1992, establishing the requisite superior-subordinate relationship for command responsibility.\",\n      \"reasoning\": \"Effective control is satisfied when the superior has the material ability to prevent or punish the commission of crimes by subordinates. The factual record shows that the Military Police was subordinated to the commander through the Chiefs of Staff after 27 November 1992, and the commander retained authority to issue orders and enforce discipline over that unit. This relationship meets the established legal threshold for command responsibility, even though the individual perpetrators were not direct members of the Military Police.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The commander knew, or had reason to know, of the murders and cruel treatment of Serb detainees between 27 December 1992 and 20 March 1993.\",\n      \"reasoning\": \"Knowledge for command responsibility includes actual knowledge or constructive knowledge—i.e., the commander should have been aware of facts indicating the commission of crimes. The commander was in a position to receive reports from the Military Police, and the scale and duration of the abuses (spanning several months) would have been apparent to a commander exercising effective control. Therefore, the knowledge element of Article 7(3) is satisfied.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The commander failed to take necessary and reasonable measures to prevent or punish the murders and cruel treatment, thereby breaching his obligations under Article 7(3) of the ICTY Statute.\",\n      \"reasoning\": \"The legal test requires that a superior either prevent the crime, order its cessation, or take disciplinary, criminal, or other appropriate measures against the perpetrators. The factual record indicates that no such measures were undertaken by the commander during the period in question; the crimes continued unabated. This omission constitutes a failure to fulfill the duty imposed by Article 7(3).\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The absence of direct subordination of the individual perpetrators to the commander does not defeat liability under the doctrine of command responsibility.\",\n      \"reasoning\": \"Command responsibility is predicated on the existence of effective control, not on formal hierarchical placement of each perpetrator. Jurisprudence has consistently held that a superior can be liable for crimes committed by persons who act under the influence of the subordinate unit that the superior controls, even if those persons are not formally members of that unit. Accordingly, the commander’s liability stands despite the perpetrators not being members of the Military Police.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The evidence meets the standard of proof beyond reasonable doubt that the commander is criminally responsible as a superior for the crimes committed between 27 December 1992 and 20 March 1993.\",\n      \"reasoning\": \"Beyond reasonable doubt requires that the prosecution’s case be so convincing that there is no reasonable hypothesis consistent with the evidence except that the defendant is guilty. The Trial Chamber’s findings on the commander’s effective control, knowledge, and failure to act are based on documented chain‑of‑command evidence and the continuity of the abuses. No credible alternative explanation undermines these findings, satisfying the high evidentiary threshold.\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:39:07.969440Z",
+      "completed_at": "2026-11-23T00:39:10.771904Z",
+      "prompt_tokens": 1348,
+      "completion_tokens": 1111,
+      "error": null
+    },
+    {
+      "id": "turn_2da3ce36",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "f5ec510db77be0048f1f986cd53023c6a7c77cb7d14912f0dcf73d3d360d162e",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The Trial Chamber convicted the commander under Article 7(3) for the period 27 December 1992 to 20 March 1993, which constitutes a judicial determination that his criminal responsibility as a superior was established beyond reasonable doubt.\", \"reasoning\": \"The facts as given state that the Trial Chamber convicted the commander under Article 7(3) for failing to prevent murder and cruel treatment during the specified period. A conviction by a trial chamber is, by definition, a finding that the prosecution proved each element beyond reasonable doubt. The surviving arguments collectively address the three elements of command responsibility: (1) effective control over the Military Police after 27 November 1992 (arg_2674a700); (2) knowledge or reason to know of the crimes (arg_510afc8e); and (3) failure to take necessary and reasonable measures (arg_a1edbfb4). Argument arg_f194c083 addresses the critical factual gap — that the physical perpetrators were not Military Police members — by invoking the principle that command responsibility extends to persons acting under the influence of a subordinate unit the superior effectively controls. Argument arg_1dcbdfd9 asserts the cumulative case meets the reasonable-doubt standard. No objections were filed to challenge any of these arguments.\", \"confidence\": 0.7, \"confidence_reasoning\": \"Confidence is 0.7 because the conclusion rests on the Trial Chamber's conviction as a stated fact in the prompt, which is a strong indicator. However, no corpus context was retrieved to verify the legal standards for command responsibility under Article 7(3) ICTY Statute, the scope of 'effective control' over non-subordinate perpetrators, or the specific evidentiary record. The arguments are unopposed but uncited; the perpetrator-subordination gap is addressed only by a general principle (arg_f194c083) without case authority. A higher confidence would require corroboration from the corpus.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_2674a700\", \"arg_510afc8e\", \"arg_a1edbfb4\", \"arg_f194c083\", \"arg_1dcbdfd9\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-23T00:39:10.777976Z",
+      "completed_at": "2026-11-23T00:40:05.085788Z",
+      "prompt_tokens": 2371,
+      "completion_tokens": 2225,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-23T00:40:05.087301+00:00",
+  "duration_seconds": 57.13254295499064,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}

@@ -1,0 +1,1680 @@
+{
+  "case_id": "hyp_perfidy_ambulance",
+  "case_title": "Fictional: the Ostrel checkpoint ambulance",
+  "court": "Hypothetical",
+  "year": 2026,
+  "difficulty": "settled",
+  "arm": "full_council",
+  "arm_label": "D — Full council",
+  "run_id": "eval_0e457320be",
+  "question": "Did the members of the Drennick team kill and wound adversaries by resort to perfidy, in violation of the law of international armed conflict?",
+  "facts": "An international armed conflict has existed since March 2025 between the Republic of Calvaro and the Federation of Drennick, both parties to the four Geneva Conventions of 1949, Additional Protocol I and the Rome Statute. On 14 May 2025 a four-person Drennick infantry team drove a white van marked on its roof and sides with a red cross on a white ground towards a Calvaran checkpoint outside the town of Ostrel. The van was not assigned to any medical service and carried no wounded or sick. The team members wore Drennick uniforms under white smocks with red cross armlets. At the checkpoint the driver called out that they were carrying wounded civilians to hospital. The Calvaran soldiers lowered their weapons and approached the van to help. The team then opened fire with rifles concealed in the van, killing three Calvaran soldiers and wounding two, and drove through the checkpoint. The Drennick defence ministry later described the operation as a legitimate ruse carried out under orders to break through the checkpoint by any available means.",
+  "ground_truth_outcome": "affirmed",
+  "holding": "Authored ground truth for a fictional case; no tribunal has ruled on it. Yes. By displaying the red cross emblem on a vehicle not assigned to medical purposes, wearing red cross armlets, and announcing that they carried wounded civilians, the team invited the Calvaran soldiers' confidence that the vehicle and its occupants were entitled to protection under the law of armed conflict, with intent to betray that confidence, and then killed and wounded them. That is perfidy under Article 37(1) of Additional Protocol I and customary Rule 65, combined with improper use of the distinctive emblem under Article 38. It is not a ruse under Article 37(2), because a ruse must not invite the adversary's confidence with respect to protection under that law. The killing and wounding would be war crimes under Article 8(2)(b)(xi) and 8(2)(b)(vii) of the Rome Statute.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": true,
+  "confidence": 0.85,
+  "confidence_reasoning": "The confidence is high because the factual pattern is a textbook example of perfidy as defined in AP I Art. 37 and criminalized in the Rome Statute. The only weaknesses are the erroneous citation of GC IV Art. 22 (which is corrected by other treaty provisions in the corpus) and the lack of granular role allocation among the four team members (which is addressed by modes of liability for joint action). The intent and reliance elements are strongly supported by the circumstantial evidence. The legal conclusion is consistent with ICTY and ICC jurisprudence on perfidy and treacherous killing.",
+  "rounds": 2,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 2,
+  "total_calls": 8,
+  "citation_statuses": {
+    "total": 15,
+    "resolved": 15,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. The Drennick team killed and wounded Calvaran soldiers by resort to perfidy in violation of the law of international armed conflict. The facts establish that the team made improper use of the distinctive red cross emblem — a protected emblem under the Geneva Conventions and Additional Protocol I — on a combat vehicle that was not engaged in any medical function, while simultaneously wearing red cross armlets and falsely claiming to transport wounded civilians. This conduct invited the confidence of the Calvaran soldiers, who lowered their weapons and approached the van in reliance on the protection the emblem signifies. The team then opened fire with concealed rifles, killing three and wounding two. This satisfies the elements of perfidy under Article 37 of Additional Protocol I and constitutes the war crimes of improper use of a distinctive emblem resulting in death or serious personal injury (Rome Statute, Art. 8(2)(b)(vii)) and killing or wounding treacherously (Rome Statute, Art. 8(2)(b)(xi)). Individual criminal liability attaches to each team member through co-perpetration or joint criminal enterprise, as they acted in concert to plan and execute the deception and the lethal attack. The sustained objections concerning the erroneous citation of Geneva Convention IV, Article 22 (which governs medical aircraft) do not defeat the conclusion, because the protective status of the red cross emblem for ground medical transports and personnel is firmly established in Geneva Convention I (Arts. 38–44) and Additional Protocol I (Arts. 18, 38), and the perfidy prohibition is codified in Additional Protocol I, Article 37.",
+    "reasoning": "The core factual sequence — marking a combat van with the red cross, donning red cross armlets, falsely announcing a medical mission, inducing the adversary to lower weapons, and then attacking — is the paradigm of perfidy. The doctrinal objections correctly identify that GC IV Art. 22 is the wrong treaty provision for a ground vehicle; however, the protective regime for the red cross emblem on land is found in GC I and AP I, which are part of the parties' treaty obligations and were incorporated into the Rome Statute's war crimes provisions. The evidentiary objections challenging intent and reliance fail because intent to deceive is properly inferred from the deliberate, coordinated use of the emblem, the false verbal claim, and the concealment of weapons; the soldiers' response (lowering weapons and approaching to help) demonstrates actual reliance on the protection the emblem and the claim signified. The objection that the victims were not hors de combat misunderstands treacherous killing under Art. 8(2)(b)(xi), which criminalizes killing by perfidy — i.e., by inviting confidence of protection — and does not require a formal surrender. The individual liability objections are partially sustained in that the record does not specify each member's precise role, but the facts describe a four-person team acting in unison ('the team then opened fire'), which supports liability as co-perpetrators under Art. 25(3)(a) of the Rome Statute.",
+    "confidence": 0.85,
+    "confidence_reasoning": "The confidence is high because the factual pattern is a textbook example of perfidy as defined in AP I Art. 37 and criminalized in the Rome Statute. The only weaknesses are the erroneous citation of GC IV Art. 22 (which is corrected by other treaty provisions in the corpus) and the lack of granular role allocation among the four team members (which is addressed by modes of liability for joint action). The intent and reliance elements are strongly supported by the circumstantial evidence. The legal conclusion is consistent with ICTY and ICC jurisprudence on perfidy and treacherous killing.",
+    "surviving_argument_ids": [
+      "arg_48bd8e2e",
+      "arg_21ecda18",
+      "arg_75f2cde0",
+      "arg_1dff281c",
+      "arg_6c87cf49"
+    ],
+    "dissent": [
+      {
+        "id": "obj_0386c0f6",
+        "raised_by": "attacker_evidentiary",
+        "target_argument_id": "arg_78e028fa",
+        "ground": "The facts do not establish that the Drennick team intended to mislead by using the red cross emblem; mere presence of the emblem does not prove improper use.",
+        "reasoning": "The argument infers intent to deceive from the van’s marking, but the record only states that the van carried a red cross and was not a medical vehicle; there is no evidence that the team intended to use the emblem to mislead. The Rome Statute requires intent for perfidy, and the facts do not provide that.",
+        "citations": [
+          {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          }
+        ],
+        "resolved_citations": [
+          {
+            "citation": {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            "status": "resolved",
+            "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+            "note": null
+          }
+        ],
+        "severity": "fatal",
+        "disposition": "overruled",
+        "disposition_reasoning": "Intent to deceive is properly inferred from the totality of the conduct: the van was marked with the red cross despite having no medical function, the team wore red cross armlets, the driver made a false claim about transporting wounded, and rifles were concealed for a surprise attack. These facts permit a reasonable inference of the specific intent required for perfidy."
+      },
+      {
+        "id": "obj_d2d2b2e9",
+        "raised_by": "attacker_evidentiary",
+        "target_argument_id": "arg_48bd8e2e",
+        "ground": "The record does not show that the Calvaran soldiers believed the van was protected by the emblem, nor that the team intentionally used the emblem to deceive them; the deception element is not established.",
+        "reasoning": "The facts describe the team announcing they were carrying wounded and that soldiers lowered weapons and approached to help, but they do not indicate that the soldiers believed the van was protected by the red cross emblem. The argument relies on an inference of intent to deceive that is not supported by the evidence.",
+        "citations": [
+          {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          }
+        ],
+        "resolved_citations": [
+          {
+            "citation": {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            "status": "resolved",
+            "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+            "note": null
+          }
+        ],
+        "severity": "fatal",
+        "disposition": "overruled",
+        "disposition_reasoning": "The soldiers' actions — lowering weapons and approaching to help immediately after the false claim and upon seeing the red cross — demonstrate reliance on the protection the emblem and claim signified. The team's coordinated deception (emblem, armlets, false statement, concealed weapons) establishes intentional use of the emblem to deceive."
+      },
+      {
+        "id": "obj_b123c217",
+        "raised_by": "attacker_evidentiary",
+        "target_argument_id": "arg_1dff281c",
+        "ground": "Without evidence of intentional misuse of the emblem, the conduct cannot be characterized as perfidy, so the claim of a war crime and individual liability fails.",
+        "reasoning": "The argument depends on the prior two elements of perfidy. Since the facts do not establish the team’s intent to deceive by using the emblem, the conduct does not meet the definition of perfidy under the Rome Statute, and therefore individual liability cannot be inferred.",
+        "citations": [
+          {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          }
+        ],
+        "resolved_citations": [
+          {
+            "citation": {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            "status": "resolved",
+            "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+            "note": null
+          }
+        ],
+        "severity": "fatal",
+        "disposition": "overruled",
+        "disposition_reasoning": "Because the preceding evidentiary objections are overruled, the elements of perfidy are established, and the war crime and individual liability conclusions follow."
+      },
+      {
+        "id": "obj_76357d46",
+        "raised_by": "attacker_evidentiary",
+        "target_argument_id": "arg_75f2cde0",
+        "ground": "The facts do not establish that the Calvaran soldiers were hors de combat, so the killing cannot be characterised as treacherous.",
+        "reasoning": "Treacherous killing requires that the victim was hors de combat (e.g., had surrendered). The record shows the Calvaran soldiers merely lowered their weapons and approached the van; it does not indicate they had surrendered or were otherwise hors de combat. Without that status, the killing does not meet the treacherous killing element.",
+        "citations": [
+          {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          }
+        ],
+        "resolved_citations": [
+          {
+            "citation": {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            "status": "resolved",
+            "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+            "note": null
+          }
+        ],
+        "severity": "fatal",
+        "disposition": "overruled",
+        "disposition_reasoning": "Treacherous killing under Art. 8(2)(b)(xi) does not require the victim to be formally hors de combat; it criminalizes killing by perfidy — i.e., by inviting the adversary's confidence that they are entitled to protection. The Calvaran soldiers were rendered defenseless by the perfidious ruse, which is the essence of treacherous killing."
+      }
+    ]
+  },
+  "dissent": [
+    {
+      "id": "obj_0386c0f6",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_78e028fa",
+      "ground": "The facts do not establish that the Drennick team intended to mislead by using the red cross emblem; mere presence of the emblem does not prove improper use.",
+      "reasoning": "The argument infers intent to deceive from the van’s marking, but the record only states that the van carried a red cross and was not a medical vehicle; there is no evidence that the team intended to use the emblem to mislead. The Rome Statute requires intent for perfidy, and the facts do not provide that.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "overruled",
+      "disposition_reasoning": "Intent to deceive is properly inferred from the totality of the conduct: the van was marked with the red cross despite having no medical function, the team wore red cross armlets, the driver made a false claim about transporting wounded, and rifles were concealed for a surprise attack. These facts permit a reasonable inference of the specific intent required for perfidy."
+    },
+    {
+      "id": "obj_d2d2b2e9",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_48bd8e2e",
+      "ground": "The record does not show that the Calvaran soldiers believed the van was protected by the emblem, nor that the team intentionally used the emblem to deceive them; the deception element is not established.",
+      "reasoning": "The facts describe the team announcing they were carrying wounded and that soldiers lowered weapons and approached to help, but they do not indicate that the soldiers believed the van was protected by the red cross emblem. The argument relies on an inference of intent to deceive that is not supported by the evidence.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "overruled",
+      "disposition_reasoning": "The soldiers' actions — lowering weapons and approaching to help immediately after the false claim and upon seeing the red cross — demonstrate reliance on the protection the emblem and claim signified. The team's coordinated deception (emblem, armlets, false statement, concealed weapons) establishes intentional use of the emblem to deceive."
+    },
+    {
+      "id": "obj_b123c217",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_1dff281c",
+      "ground": "Without evidence of intentional misuse of the emblem, the conduct cannot be characterized as perfidy, so the claim of a war crime and individual liability fails.",
+      "reasoning": "The argument depends on the prior two elements of perfidy. Since the facts do not establish the team’s intent to deceive by using the emblem, the conduct does not meet the definition of perfidy under the Rome Statute, and therefore individual liability cannot be inferred.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "overruled",
+      "disposition_reasoning": "Because the preceding evidentiary objections are overruled, the elements of perfidy are established, and the war crime and individual liability conclusions follow."
+    },
+    {
+      "id": "obj_76357d46",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_75f2cde0",
+      "ground": "The facts do not establish that the Calvaran soldiers were hors de combat, so the killing cannot be characterised as treacherous.",
+      "reasoning": "Treacherous killing requires that the victim was hors de combat (e.g., had surrendered). The record shows the Calvaran soldiers merely lowered their weapons and approached the van; it does not indicate they had surrendered or were otherwise hors de combat. Without that status, the killing does not meet the treacherous killing element.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "overruled",
+      "disposition_reasoning": "Treacherous killing under Art. 8(2)(b)(xi) does not require the victim to be formally hors de combat; it criminalizes killing by perfidy — i.e., by inviting the adversary's confidence that they are entitled to protection. The Calvaran soldiers were rendered defenseless by the perfidious ruse, which is the essence of treacherous killing."
+    }
+  ],
+  "arguments": [
+    {
+      "id": "arg_78e028fa",
+      "claim": "The Drennick team’s placement of the red cross emblem on a non‑medical vehicle constitutes improper use of a distinctive emblem of the Geneva Conventions, fulfilling the first element of perfidy under international law.",
+      "reasoning": "Article 38 of the Geneva Conventions creates a protective emblem (the red cross) for medical personnel and transports. The Convention IV provision on aircraft expressly states that the emblem may be used only for vehicles engaged in the removal of wounded and sick, confirming its protected status. By marking a combat van with the red cross while it was not engaged in any medical function, the Drennick team misused a protected emblem, which the Rome Statute criminalises as perfidy.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iv",
+          "article": "22",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Aircraft exclusively employed for the removal of wounded and sick civilians... shall be marked with the distinctive emblem provided for in Article 38 of the Geneva Convention for the Amelioration of the Condition of the Wounded and Sick..."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iv",
+            "article": "22",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Aircraft exclusively employed for the removal of wounded and sick civilians... shall be marked with the distinctive emblem provided for in Article 38 of the Geneva Convention for the Amelioration of the Condition of the Wounded and Sick..."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_48bd8e2e",
+      "claim": "The misuse of the red cross emblem was employed to deceive Calvaran soldiers into believing the vehicle was protected, causing them to lay down their weapons, and the subsequent attack that killed and wounded them satisfies the result element of perfidy under the Rome Statute.",
+      "reasoning": "Rome Statute art. 8(b)(vii) criminalises \"making improper use of … the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury.\" The facts show the Drennick team announced they were transporting wounded, prompting the Calvaran soldiers to approach unarmed. The concealed rifles were then used to fire, killing three and wounding two. The death and injury were a direct consequence of the deception, meeting the statutory requirement of result.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_1dff281c",
+      "claim": "The conduct of the Drennick team amounts to a war crime of perfidy, making each member individually criminally liable under the Rome Statute.",
+      "reasoning": "Perfidy is defined in customary IHL and incorporated into the Rome Statute as a war crime. Having satisfied both the element of improper use of a protected emblem and the element of resulting death or serious injury, the act falls squarely within the scope of art. 8(b)(vii). Individual liability follows because the perpetrators themselves performed the deceptive act and the lethal attack; command responsibility is not required for liability under this provision.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_21ecda18",
+      "claim": "The Drennick team’s use of the red cross emblem on a non‑medical vehicle, coupled with a false claim of transporting wounded, constitutes improper use of a distinctive emblem resulting in death and serious injury, a war crime under the Rome Statute.",
+      "reasoning": "Article 8(b)(vii) of the Rome Statute criminalises making improper use of the distinctive emblems of the Geneva Conventions when it results in death or serious personal injury. The van was marked with the red cross despite not being engaged in any medical function. The team announced they were carrying wounded civilians, causing Calvaran soldiers to lower their weapons and approach the vehicle. The concealed rifles were then used to fire, killing three soldiers and wounding two. The combination of the emblem and the false claim demonstrates the requisite intent to deceive, satisfying the elements of improper emblem use and the resulting lethal outcome.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_75f2cde0",
+      "claim": "The killings constitute treacherous killing of combatants who had laid down their arms, violating Article 8(b)(xi) of the Rome Statute.",
+      "reasoning": "Article 8(b)(xi) criminalises killing or wounding treacherously individuals belonging to the hostile nation or army. The Calvaran soldiers, having laid down their weapons in reliance on the protected emblem and the false statement of transporting wounded, were effectively hors de combat. The Drennick team’s attack under those circumstances is treacherous, meeting the statutory element of treacherous killing.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Killing or wounding treacherously individuals belonging to the hostile nation or army;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Killing or wounding treacherously individuals belonging to the hostile nation or army;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_6c87cf49",
+      "claim": "Each member of the Drennick team is individually criminally liable for the war crimes of improper emblem use and treacherous killing.",
+      "reasoning": "Article 8 of the Rome Statute defines war crimes and imposes individual criminal responsibility on persons who commit such acts. The team members themselves performed the deceptive use of the emblem and the subsequent lethal attack; therefore, liability attaches directly to them without the need to invoke command responsibility.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "War crimes ... For the purpose of this Statute, \"war crimes\" means: (a) Grave breaches of the Geneva Conventions ... (b) Other serious violations of the laws and customs applicable in international armed conflict, within the established framework of international law, namely, any of the following acts: (vii) Making improper use of ... the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury; (xi) Killing or wounding treacherously individuals belonging to the hostile nation or army;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "War crimes ... For the purpose of this Statute, \"war crimes\" means: (a) Grave breaches of the Geneva Conventions ... (b) Other serious violations of the laws and customs applicable in international armed conflict, within the established framework of international law, namely, any of the following acts: (vii) Making improper use of ... the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury; (xi) Killing or wounding treacherously individuals belonging to the hostile nation or army;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [
+    {
+      "id": "obj_f38861be",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_48bd8e2e",
+      "ground": "The argument mischaracterizes the legal test by relying on Art. 8(2)(b)(vii) of the Rome Statute, which covers improper use of emblems, rather than the specific prohibition on 'killing or wounding treacherously' found in Art. 8(2)(b)(xi).",
+      "reasoning": "While Art. 8(2)(b)(vii) criminalizes emblem misuse resulting in death, the specific conduct of killing or wounding adversaries via perfidy is explicitly captured by Art. 8(2)(b)(xi) ('killing or wounding treacherously'). Citing the emblem provision as the primary basis for the homicide charge is a legal error; the correct charge for the lethal act is treacherous killing, not merely emblem misuse.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(xi)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(xi)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "partial",
+      "disposition_reasoning": "The objection correctly notes that Art. 8(2)(b)(xi) (treacherous killing) is the more specific provision for the lethal outcome of perfidy, but Art. 8(2)(b)(vii) (improper use of distinctive emblems resulting in death or serious injury) also applies and is not mutually exclusive. The argument's reliance on (vii) is not a legal error; both provisions capture the conduct."
+    },
+    {
+      "id": "obj_54d414ca",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_78e028fa",
+      "ground": "The argument relies on GC IV Art. 22 to define the protected status of the emblem, which is textually inapplicable to the facts involving infantry personnel and a ground vehicle in an armed conflict context.",
+      "reasoning": "GC IV Art. 22 specifically governs 'aircraft exclusively employed for the removal of wounded and sick.' It does not establish the general rule for ground vehicles or personnel, which is governed by the First Geneva Convention and AP I. Citing an aircraft-specific provision to define the emblem's status for an infantry van is an incorrect application of the legal instrument.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iv",
+          "article": "22",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iv",
+            "article": "22",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "GC IV Art. 22 governs medical aircraft exclusively and does not establish the protective status of the red cross emblem for ground vehicles or personnel. The argument's citation is inapposite. The correct sources are GC I Arts. 38–44 and AP I Arts. 18, 38."
+    },
+    {
+      "id": "obj_0386c0f6",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_78e028fa",
+      "ground": "The facts do not establish that the Drennick team intended to mislead by using the red cross emblem; mere presence of the emblem does not prove improper use.",
+      "reasoning": "The argument infers intent to deceive from the van’s marking, but the record only states that the van carried a red cross and was not a medical vehicle; there is no evidence that the team intended to use the emblem to mislead. The Rome Statute requires intent for perfidy, and the facts do not provide that.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "overruled",
+      "disposition_reasoning": "Intent to deceive is properly inferred from the totality of the conduct: the van was marked with the red cross despite having no medical function, the team wore red cross armlets, the driver made a false claim about transporting wounded, and rifles were concealed for a surprise attack. These facts permit a reasonable inference of the specific intent required for perfidy."
+    },
+    {
+      "id": "obj_d2d2b2e9",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_48bd8e2e",
+      "ground": "The record does not show that the Calvaran soldiers believed the van was protected by the emblem, nor that the team intentionally used the emblem to deceive them; the deception element is not established.",
+      "reasoning": "The facts describe the team announcing they were carrying wounded and that soldiers lowered weapons and approached to help, but they do not indicate that the soldiers believed the van was protected by the red cross emblem. The argument relies on an inference of intent to deceive that is not supported by the evidence.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "overruled",
+      "disposition_reasoning": "The soldiers' actions — lowering weapons and approaching to help immediately after the false claim and upon seeing the red cross — demonstrate reliance on the protection the emblem and claim signified. The team's coordinated deception (emblem, armlets, false statement, concealed weapons) establishes intentional use of the emblem to deceive."
+    },
+    {
+      "id": "obj_b123c217",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_1dff281c",
+      "ground": "Without evidence of intentional misuse of the emblem, the conduct cannot be characterized as perfidy, so the claim of a war crime and individual liability fails.",
+      "reasoning": "The argument depends on the prior two elements of perfidy. Since the facts do not establish the team’s intent to deceive by using the emblem, the conduct does not meet the definition of perfidy under the Rome Statute, and therefore individual liability cannot be inferred.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "overruled",
+      "disposition_reasoning": "Because the preceding evidentiary objections are overruled, the elements of perfidy are established, and the war crime and individual liability conclusions follow."
+    },
+    {
+      "id": "obj_db101eee",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_78e028fa",
+      "ground": "The argument mischaracterises the legal basis of perfidy by relying on a non-operative provision regarding medical aircraft.",
+      "reasoning": "Article 22 of the Fourth Geneva Convention governs the protection of medical aircraft in international armed conflict. The conduct in question involves a ground vehicle (white van) and infantry, not aircraft. Citing this provision to establish the 'improper use' of the emblem is legally inapposite. The proper legal basis for the prohibition on perfidious use of the emblem in international armed conflict is found in Article 37 of Additional Protocol I, not in the specific aircraft provisions of GC IV.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iv",
+          "article": "22",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iv",
+            "article": "22",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "GC IV Art. 22 applies only to medical aircraft. The proper legal basis for the prohibition on perfidious use of the distinctive emblem in international armed conflict is AP I Art. 37 (perfidy) and Art. 38 (recognized emblems), read with GC I Arts. 38–44."
+    },
+    {
+      "id": "obj_76357d46",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_75f2cde0",
+      "ground": "The facts do not establish that the Calvaran soldiers were hors de combat, so the killing cannot be characterised as treacherous.",
+      "reasoning": "Treacherous killing requires that the victim was hors de combat (e.g., had surrendered). The record shows the Calvaran soldiers merely lowered their weapons and approached the van; it does not indicate they had surrendered or were otherwise hors de combat. Without that status, the killing does not meet the treacherous killing element.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "overruled",
+      "disposition_reasoning": "Treacherous killing under Art. 8(2)(b)(xi) does not require the victim to be formally hors de combat; it criminalizes killing by perfidy — i.e., by inviting the adversary's confidence that they are entitled to protection. The Calvaran soldiers were rendered defenseless by the perfidious ruse, which is the essence of treacherous killing."
+    },
+    {
+      "id": "obj_36e4365f",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_1dff281c",
+      "ground": "The record does not identify which individual members performed the deceptive act and the lethal attack, so individual liability cannot be established for each member.",
+      "reasoning": "Individual criminal responsibility requires attribution of the act to a specific person. The facts merely state that a four‑person team opened fire; they do not specify which member fired the weapons or who directed the deception. Therefore the attribution to each member is unsupported.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "partial",
+      "disposition_reasoning": "The record does not specify which team member fired, drove, or made the false claim. However, the facts describe a four-person team acting in concert ('the team then opened fire'), which supports individual liability as co-perpetrators under Rome Statute Art. 25(3)(a) or through a joint criminal enterprise. The objection is sustained only to the extent that the argument asserts individualized role attribution without evidentiary support."
+    },
+    {
+      "id": "obj_78edb2b8",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_6c87cf49",
+      "ground": "The facts do not provide sufficient evidence that each member individually committed the perfidy and treacherous killing acts, so the claim of individual liability is not fully supported.",
+      "reasoning": "Although the team as a whole engaged in improper emblem use and killed soldiers, the record does not establish that every member personally performed the deceptive use of the emblem or the lethal attack. Attribution of each individual’s conduct is therefore incomplete, weakening the claim of individual liability.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "partial",
+      "disposition_reasoning": "Same reasoning as obj_36e4365f. The claim of individual liability for each member is supported by the mode of liability (co-perpetration/JCE), not by proof of each member's discrete physical acts."
+    }
+  ],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(c)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "64(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iv",
+        "article": "3",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iii",
+        "article": "3",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_i",
+        "article": "3",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gci-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "26(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iv",
+        "article": "22",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_22b65383",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "9bbd2819f3f559d368cf9e55614d491a4df32f13830449799f2eb714bee3499d",
+      "arguments": [
+        {
+          "id": "arg_78e028fa",
+          "claim": "The Drennick team’s placement of the red cross emblem on a non‑medical vehicle constitutes improper use of a distinctive emblem of the Geneva Conventions, fulfilling the first element of perfidy under international law.",
+          "reasoning": "Article 38 of the Geneva Conventions creates a protective emblem (the red cross) for medical personnel and transports. The Convention IV provision on aircraft expressly states that the emblem may be used only for vehicles engaged in the removal of wounded and sick, confirming its protected status. By marking a combat van with the red cross while it was not engaged in any medical function, the Drennick team misused a protected emblem, which the Rome Statute criminalises as perfidy.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iv",
+              "article": "22",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Aircraft exclusively employed for the removal of wounded and sick civilians... shall be marked with the distinctive emblem provided for in Article 38 of the Geneva Convention for the Amelioration of the Condition of the Wounded and Sick..."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iv",
+                "article": "22",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Aircraft exclusively employed for the removal of wounded and sick civilians... shall be marked with the distinctive emblem provided for in Article 38 of the Geneva Convention for the Amelioration of the Condition of the Wounded and Sick..."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_48bd8e2e",
+          "claim": "The misuse of the red cross emblem was employed to deceive Calvaran soldiers into believing the vehicle was protected, causing them to lay down their weapons, and the subsequent attack that killed and wounded them satisfies the result element of perfidy under the Rome Statute.",
+          "reasoning": "Rome Statute art. 8(b)(vii) criminalises \"making improper use of … the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury.\" The facts show the Drennick team announced they were transporting wounded, prompting the Calvaran soldiers to approach unarmed. The concealed rifles were then used to fire, killing three and wounding two. The death and injury were a direct consequence of the deception, meeting the statutory requirement of result.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_1dff281c",
+          "claim": "The conduct of the Drennick team amounts to a war crime of perfidy, making each member individually criminally liable under the Rome Statute.",
+          "reasoning": "Perfidy is defined in customary IHL and incorporated into the Rome Statute as a war crime. Having satisfied both the element of improper use of a protected emblem and the element of resulting death or serious injury, the act falls squarely within the scope of art. 8(b)(vii). Individual liability follows because the perpetrators themselves performed the deceptive act and the lethal attack; command responsibility is not required for liability under this provision.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The Drennick team’s placement of the red cross emblem on a non‑medical vehicle constitutes improper use of a distinctive emblem of the Geneva Conventions, fulfilling the first element of perfidy under international law.\",\n      \"reasoning\": \"Article 38 of the Geneva Conventions creates a protective emblem (the red cross) for medical personnel and transports. The Convention IV provision on aircraft expressly states that the emblem may be used only for vehicles engaged in the removal of wounded and sick, confirming its protected status. By marking a combat van with the red cross while it was not engaged in any medical function, the Drennick team misused a protected emblem, which the Rome Statute criminalises as perfidy.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iv\",\n          \"article\": \"22\",\n          \"quoted_text\": \"Aircraft exclusively employed for the removal of wounded and sick civilians... shall be marked with the distinctive emblem provided for in Article 38 of the Geneva Convention for the Amelioration of the Condition of the Wounded and Sick...\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The misuse of the red cross emblem was employed to deceive Calvaran soldiers into believing the vehicle was protected, causing them to lay down their weapons, and the subsequent attack that killed and wounded them satisfies the result element of perfidy under the Rome Statute.\",\n      \"reasoning\": \"Rome Statute art. 8(b)(vii) criminalises \\\"making improper use of … the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury.\\\" The facts show the Drennick team announced they were transporting wounded, prompting the Calvaran soldiers to approach unarmed. The concealed rifles were then used to fire, killing three and wounding two. The death and injury were a direct consequence of the deception, meeting the statutory requirement of result.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The conduct of the Drennick team amounts to a war crime of perfidy, making each member individually criminally liable under the Rome Statute.\",\n      \"reasoning\": \"Perfidy is defined in customary IHL and incorporated into the Rome Statute as a war crime. Having satisfied both the element of improper use of a protected emblem and the element of resulting death or serious injury, the act falls squarely within the scope of art. 8(b)(vii). Individual liability follows because the perpetrators themselves performed the deceptive act and the lethal attack; command responsibility is not required for liability under this provision.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T11:13:36.700235Z",
+      "completed_at": "2026-11-22T11:13:47.330218Z",
+      "prompt_tokens": 4915,
+      "completion_tokens": 1830,
+      "error": null
+    },
+    {
+      "id": "turn_bbe50ed3",
+      "round_number": 1,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "99895807f7546cbd024d7a11d99813164eb8d3ce623301eacd057160a0d3a22d",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_f38861be",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_48bd8e2e",
+          "ground": "The argument mischaracterizes the legal test by relying on Art. 8(2)(b)(vii) of the Rome Statute, which covers improper use of emblems, rather than the specific prohibition on 'killing or wounding treacherously' found in Art. 8(2)(b)(xi).",
+          "reasoning": "While Art. 8(2)(b)(vii) criminalizes emblem misuse resulting in death, the specific conduct of killing or wounding adversaries via perfidy is explicitly captured by Art. 8(2)(b)(xi) ('killing or wounding treacherously'). Citing the emblem provision as the primary basis for the homicide charge is a legal error; the correct charge for the lethal act is treacherous killing, not merely emblem misuse.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(xi)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(xi)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "partial",
+          "disposition_reasoning": "The objection correctly notes that Art. 8(2)(b)(xi) (treacherous killing) is the more specific provision for the lethal outcome of perfidy, but Art. 8(2)(b)(vii) (improper use of distinctive emblems resulting in death or serious injury) also applies and is not mutually exclusive. The argument's reliance on (vii) is not a legal error; both provisions capture the conduct."
+        },
+        {
+          "id": "obj_54d414ca",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_78e028fa",
+          "ground": "The argument relies on GC IV Art. 22 to define the protected status of the emblem, which is textually inapplicable to the facts involving infantry personnel and a ground vehicle in an armed conflict context.",
+          "reasoning": "GC IV Art. 22 specifically governs 'aircraft exclusively employed for the removal of wounded and sick.' It does not establish the general rule for ground vehicles or personnel, which is governed by the First Geneva Convention and AP I. Citing an aircraft-specific provision to define the emblem's status for an infantry van is an incorrect application of the legal instrument.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iv",
+              "article": "22",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iv",
+                "article": "22",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "GC IV Art. 22 governs medical aircraft exclusively and does not establish the protective status of the red cross emblem for ground vehicles or personnel. The argument's citation is inapposite. The correct sources are GC I Arts. 38–44 and AP I Arts. 18, 38."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_48bd8e2e\",\n      \"ground\": \"The argument mischaracterizes the legal test by relying on Art. 8(2)(b)(vii) of the Rome Statute, which covers improper use of emblems, rather than the specific prohibition on 'killing or wounding treacherously' found in Art. 8(2)(b)(xi).\",\n      \"reasoning\": \"While Art. 8(2)(b)(vii) criminalizes emblem misuse resulting in death, the specific conduct of killing or wounding adversaries via perfidy is explicitly captured by Art. 8(2)(b)(xi) ('killing or wounding treacherously'). Citing the emblem provision as the primary basis for the homicide charge is a legal error; the correct charge for the lethal act is treacherous killing, not merely emblem misuse.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(xi)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_78e028fa\",\n      \"ground\": \"The argument relies on GC IV Art. 22 to define the protected status of the emblem, which is textually inapplicable to the facts involving infantry personnel and a ground vehicle in an armed conflict context.\",\n      \"reasoning\": \"GC IV Art. 22 specifically governs 'aircraft exclusively employed for the removal of wounded and sick.' It does not establish the general rule for ground vehicles or personnel, which is governed by the First Geneva Convention and AP I. Citing an aircraft-specific provision to define the emblem's status for an infantry van is an incorrect application of the legal instrument.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iv\",\n          \"article\": \"22\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T11:13:47.331291Z",
+      "completed_at": "2026-11-22T11:13:48.867514Z",
+      "prompt_tokens": 5809,
+      "completion_tokens": 475,
+      "error": null
+    },
+    {
+      "id": "turn_03eb957d",
+      "round_number": 1,
+      "role": "attacker_evidentiary",
+      "model_id": "groq/openai/gpt-oss-20b",
+      "prompt_id": "attacker_evidentiary/challenge",
+      "prompt_hash": "4fa47a83cf118e1c276e1af46005dcda70c70cdc33cbad7a59bc1cbb94b3d2ca",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_0386c0f6",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_78e028fa",
+          "ground": "The facts do not establish that the Drennick team intended to mislead by using the red cross emblem; mere presence of the emblem does not prove improper use.",
+          "reasoning": "The argument infers intent to deceive from the van’s marking, but the record only states that the van carried a red cross and was not a medical vehicle; there is no evidence that the team intended to use the emblem to mislead. The Rome Statute requires intent for perfidy, and the facts do not provide that.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "overruled",
+          "disposition_reasoning": "Intent to deceive is properly inferred from the totality of the conduct: the van was marked with the red cross despite having no medical function, the team wore red cross armlets, the driver made a false claim about transporting wounded, and rifles were concealed for a surprise attack. These facts permit a reasonable inference of the specific intent required for perfidy."
+        },
+        {
+          "id": "obj_d2d2b2e9",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_48bd8e2e",
+          "ground": "The record does not show that the Calvaran soldiers believed the van was protected by the emblem, nor that the team intentionally used the emblem to deceive them; the deception element is not established.",
+          "reasoning": "The facts describe the team announcing they were carrying wounded and that soldiers lowered weapons and approached to help, but they do not indicate that the soldiers believed the van was protected by the red cross emblem. The argument relies on an inference of intent to deceive that is not supported by the evidence.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "overruled",
+          "disposition_reasoning": "The soldiers' actions — lowering weapons and approaching to help immediately after the false claim and upon seeing the red cross — demonstrate reliance on the protection the emblem and claim signified. The team's coordinated deception (emblem, armlets, false statement, concealed weapons) establishes intentional use of the emblem to deceive."
+        },
+        {
+          "id": "obj_b123c217",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_1dff281c",
+          "ground": "Without evidence of intentional misuse of the emblem, the conduct cannot be characterized as perfidy, so the claim of a war crime and individual liability fails.",
+          "reasoning": "The argument depends on the prior two elements of perfidy. Since the facts do not establish the team’s intent to deceive by using the emblem, the conduct does not meet the definition of perfidy under the Rome Statute, and therefore individual liability cannot be inferred.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "overruled",
+          "disposition_reasoning": "Because the preceding evidentiary objections are overruled, the elements of perfidy are established, and the war crime and individual liability conclusions follow."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_78e028fa\",\n      \"ground\": \"The facts do not establish that the Drennick team intended to mislead by using the red cross emblem; mere presence of the emblem does not prove improper use.\",\n      \"reasoning\": \"The argument infers intent to deceive from the van’s marking, but the record only states that the van carried a red cross and was not a medical vehicle; there is no evidence that the team intended to use the emblem to mislead. The Rome Statute requires intent for perfidy, and the facts do not provide that.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_48bd8e2e\",\n      \"ground\": \"The record does not show that the Calvaran soldiers believed the van was protected by the emblem, nor that the team intentionally used the emblem to deceive them; the deception element is not established.\",\n      \"reasoning\": \"The facts describe the team announcing they were carrying wounded and that soldiers lowered weapons and approached to help, but they do not indicate that the soldiers believed the van was protected by the red cross emblem. The argument relies on an inference of intent to deceive that is not supported by the evidence.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_1dff281c\",\n      \"ground\": \"Without evidence of intentional misuse of the emblem, the conduct cannot be characterized as perfidy, so the claim of a war crime and individual liability fails.\",\n      \"reasoning\": \"The argument depends on the prior two elements of perfidy. Since the facts do not establish the team’s intent to deceive by using the emblem, the conduct does not meet the definition of perfidy under the Rome Statute, and therefore individual liability cannot be inferred.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T11:13:47.334744Z",
+      "completed_at": "2026-11-22T11:13:50.813570Z",
+      "prompt_tokens": 5560,
+      "completion_tokens": 2514,
+      "error": null
+    },
+    {
+      "id": "turn_da2f9923",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "5079f98a1900f6a063d6427f1ab98c3ad1a93fb2d4917dcfe8714ff4eb9bb3a4",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The Drennick team killed and wounded Calvaran soldiers by resort to perfidy in violation of the law of international armed conflict.\", \"reasoning\": \"The facts establish all elements of perfidy: (1) the team used the red cross emblem and verbal representations to invite the confidence of the adversary that the vehicle was a protected medical transport; (2) they did so with intent to betray that confidence, as shown by the deliberate marking of a combat vehicle, the wearing of red cross armlets, and the false claim of carrying wounded; (3) the Calvaran soldiers relied on the deception, lowering their weapons and approaching to help; and (4) the team then opened fire, killing three and wounding two. This conduct constitutes 'killing or wounding treacherously' under Rome Statute Art. 8(2)(b)(xi) and also 'making improper use of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury' under Art. 8(2)(b)(vii). The sustained objection regarding GC IV Art. 22 does not defeat the conclusion because the protective status of the red cross emblem for medical transports is well-established in the Geneva Conventions (GC I) and AP I, and the Rome Statute's reference to 'distinctive emblems of the Geneva Conventions' encompasses this protection. The evidentiary objections fail because the totality of the facts — markings, armlets, false verbal claim, and immediate lethal attack — permits a clear inference of intent to deceive and of successful deception.\", \"confidence\": 0.85, \"confidence_reasoning\": \"The facts present a textbook case of perfidy. The only substantial objection was the citation error in arg_78e028fa (GC IV Art. 22 applies to aircraft), but the underlying legal principle — that the red cross emblem is reserved for medical units and transports — is undisputed and reflected in the Rome Statute provisions that were correctly cited. The evidentiary objections ask the tribunal to ignore the obvious inference of intent from the team's coordinated actions, which is unreasonable. Confidence is not 0.9+ because the retrieved context lacks the specific GC I/AP I articles governing ground medical transports, requiring reliance on the Rome Statute's general reference to 'distinctive emblems of the Geneva Conventions.'\", \"rulings\": [{\"objection_id\": \"obj_f38861be\", \"disposition\": \"partial\", \"reasoning\": \"Art. 8(2)(b)(vii) correctly covers improper use of distinctive emblems resulting in death or serious injury, which squarely fits the facts. However, Art. 8(2)(b)(xi) ('killing or wounding treacherously') is the more specific provision for perfidious killing and should be cited as the primary basis for the homicide charge. The argument is not legally erroneous but is incomplete.\"}, {\"objection_id\": \"obj_54d414ca\", \"disposition\": \"sustained\", \"reasoning\": \"GC IV Art. 22 governs exclusively 'aircraft employed for the removal of wounded and sick.' It does not establish the rules for ground vehicles or the general protective status of the red cross emblem. The argument's reliance on this provision is misplaced. The proper sources (GC I Arts. 38-44, AP I Arts. 18, 21-22) are not in the retrieved context, but the Rome Statute's reference to 'distinctive emblems of the Geneva Conventions' in Art. 8(2)(b)(vii) and (xxiv) incorporates that protection.\"}, {\"objection_id\": \"obj_0386c0f6\", \"disposition\": \"overruled\", \"reasoning\": \"The facts show the team affirmatively marked a combat vehicle with the red cross, wore red cross armlets, and falsely announced they were transporting wounded. This constellation of actions constitutes strong evidence of intent to deceive; intent need not be proven by direct testimony.\"}, {\"objection_id\": \"obj_d2d2b2e9\", \"disposition\": \"overruled\", \"reasoning\": \"The Calvaran soldiers' response — lowering weapons and approaching to help immediately after the driver's claim — demonstrates they were deceived into believing the vehicle was a protected medical transport. The team's conduct was calculated to exploit that belief.\"}, {\"objection_id\": \"obj_b123c217\", \"disposition\": \"overruled\", \"reasoning\": \"This objection depends entirely on the two evidentiary objections above, both of which are overruled. The elements of perfidy are satisfied on the facts.\"}], \"surviving_argument_ids\": [\"arg_48bd8e2e\", \"arg_1dff281c\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-22T11:13:50.814685Z",
+      "completed_at": "2026-11-22T11:14:57.473384Z",
+      "prompt_tokens": 6666,
+      "completion_tokens": 3436,
+      "error": null
+    },
+    {
+      "id": "turn_086041aa",
+      "round_number": 2,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/rebuttal",
+      "prompt_hash": "fc3ec0fe1af478c02b741771900fa386f684de062b9a96e20ded670a6b4951dc",
+      "arguments": [
+        {
+          "id": "arg_21ecda18",
+          "claim": "The Drennick team’s use of the red cross emblem on a non‑medical vehicle, coupled with a false claim of transporting wounded, constitutes improper use of a distinctive emblem resulting in death and serious injury, a war crime under the Rome Statute.",
+          "reasoning": "Article 8(b)(vii) of the Rome Statute criminalises making improper use of the distinctive emblems of the Geneva Conventions when it results in death or serious personal injury. The van was marked with the red cross despite not being engaged in any medical function. The team announced they were carrying wounded civilians, causing Calvaran soldiers to lower their weapons and approach the vehicle. The concealed rifles were then used to fire, killing three soldiers and wounding two. The combination of the emblem and the false claim demonstrates the requisite intent to deceive, satisfying the elements of improper emblem use and the resulting lethal outcome.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_75f2cde0",
+          "claim": "The killings constitute treacherous killing of combatants who had laid down their arms, violating Article 8(b)(xi) of the Rome Statute.",
+          "reasoning": "Article 8(b)(xi) criminalises killing or wounding treacherously individuals belonging to the hostile nation or army. The Calvaran soldiers, having laid down their weapons in reliance on the protected emblem and the false statement of transporting wounded, were effectively hors de combat. The Drennick team’s attack under those circumstances is treacherous, meeting the statutory element of treacherous killing.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Killing or wounding treacherously individuals belonging to the hostile nation or army;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Killing or wounding treacherously individuals belonging to the hostile nation or army;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_6c87cf49",
+          "claim": "Each member of the Drennick team is individually criminally liable for the war crimes of improper emblem use and treacherous killing.",
+          "reasoning": "Article 8 of the Rome Statute defines war crimes and imposes individual criminal responsibility on persons who commit such acts. The team members themselves performed the deceptive use of the emblem and the subsequent lethal attack; therefore, liability attaches directly to them without the need to invoke command responsibility.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "War crimes ... For the purpose of this Statute, \"war crimes\" means: (a) Grave breaches of the Geneva Conventions ... (b) Other serious violations of the laws and customs applicable in international armed conflict, within the established framework of international law, namely, any of the following acts: (vii) Making improper use of ... the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury; (xi) Killing or wounding treacherously individuals belonging to the hostile nation or army;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "War crimes ... For the purpose of this Statute, \"war crimes\" means: (a) Grave breaches of the Geneva Conventions ... (b) Other serious violations of the laws and customs applicable in international armed conflict, within the established framework of international law, namely, any of the following acts: (vii) Making improper use of ... the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury; (xi) Killing or wounding treacherously individuals belonging to the hostile nation or army;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The Drennick team’s use of the red cross emblem on a non‑medical vehicle, coupled with a false claim of transporting wounded, constitutes improper use of a distinctive emblem resulting in death and serious injury, a war crime under the Rome Statute.\",\n      \"reasoning\": \"Article 8(b)(vii) of the Rome Statute criminalises making improper use of the distinctive emblems of the Geneva Conventions when it results in death or serious personal injury. The van was marked with the red cross despite not being engaged in any medical function. The team announced they were carrying wounded civilians, causing Calvaran soldiers to lower their weapons and approach the vehicle. The concealed rifles were then used to fire, killing three soldiers and wounding two. The combination of the emblem and the false claim demonstrates the requisite intent to deceive, satisfying the elements of improper emblem use and the resulting lethal outcome.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The killings constitute treacherous killing of combatants who had laid down their arms, violating Article 8(b)(xi) of the Rome Statute.\",\n      \"reasoning\": \"Article 8(b)(xi) criminalises killing or wounding treacherously individuals belonging to the hostile nation or army. The Calvaran soldiers, having laid down their weapons in reliance on the protected emblem and the false statement of transporting wounded, were effectively hors de combat. The Drennick team’s attack under those circumstances is treacherous, meeting the statutory element of treacherous killing.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Killing or wounding treacherously individuals belonging to the hostile nation or army;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Each member of the Drennick team is individually criminally liable for the war crimes of improper emblem use and treacherous killing.\",\n      \"reasoning\": \"Article 8 of the Rome Statute defines war crimes and imposes individual criminal responsibility on persons who commit such acts. The team members themselves performed the deceptive use of the emblem and the subsequent lethal attack; therefore, liability attaches directly to them without the need to invoke command responsibility.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"War crimes ... For the purpose of this Statute, \\\"war crimes\\\" means: (a) Grave breaches of the Geneva Conventions ... (b) Other serious violations of the laws and customs applicable in international armed conflict, within the established framework of international law, namely, any of the following acts: (vii) Making improper use of ... the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury; (xi) Killing or wounding treacherously individuals belonging to the hostile nation or army;\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T11:14:57.474824Z",
+      "completed_at": "2026-11-22T11:15:09.046687Z",
+      "prompt_tokens": 6158,
+      "completion_tokens": 2108,
+      "error": null
+    },
+    {
+      "id": "turn_cb17e572",
+      "round_number": 2,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "450f752a0c311bd82a49b24bcf72506cb6e0ab089093586f4a45d93b22ba0be1",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_db101eee",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_78e028fa",
+          "ground": "The argument mischaracterises the legal basis of perfidy by relying on a non-operative provision regarding medical aircraft.",
+          "reasoning": "Article 22 of the Fourth Geneva Convention governs the protection of medical aircraft in international armed conflict. The conduct in question involves a ground vehicle (white van) and infantry, not aircraft. Citing this provision to establish the 'improper use' of the emblem is legally inapposite. The proper legal basis for the prohibition on perfidious use of the emblem in international armed conflict is found in Article 37 of Additional Protocol I, not in the specific aircraft provisions of GC IV.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iv",
+              "article": "22",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iv",
+                "article": "22",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "GC IV Art. 22 applies only to medical aircraft. The proper legal basis for the prohibition on perfidious use of the distinctive emblem in international armed conflict is AP I Art. 37 (perfidy) and Art. 38 (recognized emblems), read with GC I Arts. 38–44."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_78e028fa\",\n      \"ground\": \"The argument mischaracterises the legal basis of perfidy by relying on a non-operative provision regarding medical aircraft.\",\n      \"reasoning\": \"Article 22 of the Fourth Geneva Convention governs the protection of medical aircraft in international armed conflict. The conduct in question involves a ground vehicle (white van) and infantry, not aircraft. Citing this provision to establish the 'improper use' of the emblem is legally inapposite. The proper legal basis for the prohibition on perfidious use of the emblem in international armed conflict is found in Article 37 of Additional Protocol I, not in the specific aircraft provisions of GC IV.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iv\",\n          \"article\": \"22\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T11:15:09.048785Z",
+      "completed_at": "2026-11-22T11:15:10.171889Z",
+      "prompt_tokens": 6261,
+      "completion_tokens": 225,
+      "error": null
+    },
+    {
+      "id": "turn_09aeeb90",
+      "round_number": 2,
+      "role": "attacker_evidentiary",
+      "model_id": "groq/openai/gpt-oss-20b",
+      "prompt_id": "attacker_evidentiary/challenge",
+      "prompt_hash": "e89a9bf40fe018c1d0c9975de0c2b3f555f17ac6c9f8ccc3160ddf4c7efcbb92",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_76357d46",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_75f2cde0",
+          "ground": "The facts do not establish that the Calvaran soldiers were hors de combat, so the killing cannot be characterised as treacherous.",
+          "reasoning": "Treacherous killing requires that the victim was hors de combat (e.g., had surrendered). The record shows the Calvaran soldiers merely lowered their weapons and approached the van; it does not indicate they had surrendered or were otherwise hors de combat. Without that status, the killing does not meet the treacherous killing element.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "overruled",
+          "disposition_reasoning": "Treacherous killing under Art. 8(2)(b)(xi) does not require the victim to be formally hors de combat; it criminalizes killing by perfidy — i.e., by inviting the adversary's confidence that they are entitled to protection. The Calvaran soldiers were rendered defenseless by the perfidious ruse, which is the essence of treacherous killing."
+        },
+        {
+          "id": "obj_36e4365f",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_1dff281c",
+          "ground": "The record does not identify which individual members performed the deceptive act and the lethal attack, so individual liability cannot be established for each member.",
+          "reasoning": "Individual criminal responsibility requires attribution of the act to a specific person. The facts merely state that a four‑person team opened fire; they do not specify which member fired the weapons or who directed the deception. Therefore the attribution to each member is unsupported.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "partial",
+          "disposition_reasoning": "The record does not specify which team member fired, drove, or made the false claim. However, the facts describe a four-person team acting in concert ('the team then opened fire'), which supports individual liability as co-perpetrators under Rome Statute Art. 25(3)(a) or through a joint criminal enterprise. The objection is sustained only to the extent that the argument asserts individualized role attribution without evidentiary support."
+        },
+        {
+          "id": "obj_78edb2b8",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_6c87cf49",
+          "ground": "The facts do not provide sufficient evidence that each member individually committed the perfidy and treacherous killing acts, so the claim of individual liability is not fully supported.",
+          "reasoning": "Although the team as a whole engaged in improper emblem use and killed soldiers, the record does not establish that every member personally performed the deceptive use of the emblem or the lethal attack. Attribution of each individual’s conduct is therefore incomplete, weakening the claim of individual liability.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "partial",
+          "disposition_reasoning": "Same reasoning as obj_36e4365f. The claim of individual liability for each member is supported by the mode of liability (co-perpetration/JCE), not by proof of each member's discrete physical acts."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_75f2cde0\",\n      \"ground\": \"The facts do not establish that the Calvaran soldiers were hors de combat, so the killing cannot be characterised as treacherous.\",\n      \"reasoning\": \"Treacherous killing requires that the victim was hors de combat (e.g., had surrendered). The record shows the Calvaran soldiers merely lowered their weapons and approached the van; it does not indicate they had surrendered or were otherwise hors de combat. Without that status, the killing does not meet the treacherous killing element.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_1dff281c\",\n      \"ground\": \"The record does not identify which individual members performed the deceptive act and the lethal attack, so individual liability cannot be established for each member.\",\n      \"reasoning\": \"Individual criminal responsibility requires attribution of the act to a specific person. The facts merely state that a four‑person team opened fire; they do not specify which member fired the weapons or who directed the deception. Therefore the attribution to each member is unsupported.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_6c87cf49\",\n      \"ground\": \"The facts do not provide sufficient evidence that each member individually committed the perfidy and treacherous killing acts, so the claim of individual liability is not fully supported.\",\n      \"reasoning\": \"Although the team as a whole engaged in improper emblem use and killed soldiers, the record does not establish that every member personally performed the deceptive use of the emblem or the lethal attack. Attribution of each individual’s conduct is therefore incomplete, weakening the claim of individual liability.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T11:15:09.049935Z",
+      "completed_at": "2026-11-22T11:15:14.371720Z",
+      "prompt_tokens": 6002,
+      "completion_tokens": 2283,
+      "error": null
+    },
+    {
+      "id": "turn_bc47ee86",
+      "round_number": 2,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "ce0382afe2dd7dc3765d503e6f2ba441d1e52e3f4874fae22e5222f497b4e0fc",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The Drennick team killed and wounded Calvaran soldiers by resort to perfidy in violation of the law of international armed conflict. The facts establish that the team made improper use of the distinctive red cross emblem — a protected emblem under the Geneva Conventions and Additional Protocol I — on a combat vehicle that was not engaged in any medical function, while simultaneously wearing red cross armlets and falsely claiming to transport wounded civilians. This conduct invited the confidence of the Calvaran soldiers, who lowered their weapons and approached the van in reliance on the protection the emblem signifies. The team then opened fire with concealed rifles, killing three and wounding two. This satisfies the elements of perfidy under Article 37 of Additional Protocol I and constitutes the war crimes of improper use of a distinctive emblem resulting in death or serious personal injury (Rome Statute, Art. 8(2)(b)(vii)) and killing or wounding treacherously (Rome Statute, Art. 8(2)(b)(xi)). Individual criminal liability attaches to each team member through co-perpetration or joint criminal enterprise, as they acted in concert to plan and execute the deception and the lethal attack. The sustained objections concerning the erroneous citation of Geneva Convention IV, Article 22 (which governs medical aircraft) do not defeat the conclusion, because the protective status of the red cross emblem for ground medical transports and personnel is firmly established in Geneva Convention I (Arts. 38–44) and Additional Protocol I (Arts. 18, 38), and the perfidy prohibition is codified in Additional Protocol I, Article 37.\", \"reasoning\": \"The core factual sequence — marking a combat van with the red cross, donning red cross armlets, falsely announcing a medical mission, inducing the adversary to lower weapons, and then attacking — is the paradigm of perfidy. The doctrinal objections correctly identify that GC IV Art. 22 is the wrong treaty provision for a ground vehicle; however, the protective regime for the red cross emblem on land is found in GC I and AP I, which are part of the parties' treaty obligations and were incorporated into the Rome Statute's war crimes provisions. The evidentiary objections challenging intent and reliance fail because intent to deceive is properly inferred from the deliberate, coordinated use of the emblem, the false verbal claim, and the concealment of weapons; the soldiers' response (lowering weapons and approaching to help) demonstrates actual reliance on the protection the emblem and the claim signified. The objection that the victims were not hors de combat misunderstands treacherous killing under Art. 8(2)(b)(xi), which criminalizes killing by perfidy — i.e., by inviting confidence of protection — and does not require a formal surrender. The individual liability objections are partially sustained in that the record does not specify each member's precise role, but the facts describe a four-person team acting in unison ('the team then opened fire'), which supports liability as co-perpetrators under Art. 25(3)(a) of the Rome Statute.\", \"confidence\": 0.85, \"confidence_reasoning\": \"The confidence is high because the factual pattern is a textbook example of perfidy as defined in AP I Art. 37 and criminalized in the Rome Statute. The only weaknesses are the erroneous citation of GC IV Art. 22 (which is corrected by other treaty provisions in the corpus) and the lack of granular role allocation among the four team members (which is addressed by modes of liability for joint action). The intent and reliance elements are strongly supported by the circumstantial evidence. The legal conclusion is consistent with ICTY and ICC jurisprudence on perfidy and treacherous killing.\", \"rulings\": [{\"objection_id\": \"obj_f38861be\", \"disposition\": \"partial\", \"reasoning\": \"The objection correctly notes that Art. 8(2)(b)(xi) (treacherous killing) is the more specific provision for the lethal outcome of perfidy, but Art. 8(2)(b)(vii) (improper use of distinctive emblems resulting in death or serious injury) also applies and is not mutually exclusive. The argument's reliance on (vii) is not a legal error; both provisions capture the conduct.\"}, {\"objection_id\": \"obj_54d414ca\", \"disposition\": \"sustained\", \"reasoning\": \"GC IV Art. 22 governs medical aircraft exclusively and does not establish the protective status of the red cross emblem for ground vehicles or personnel. The argument's citation is inapposite. The correct sources are GC I Arts. 38–44 and AP I Arts. 18, 38.\"}, {\"objection_id\": \"obj_0386c0f6\", \"disposition\": \"overruled\", \"reasoning\": \"Intent to deceive is properly inferred from the totality of the conduct: the van was marked with the red cross despite having no medical function, the team wore red cross armlets, the driver made a false claim about transporting wounded, and rifles were concealed for a surprise attack. These facts permit a reasonable inference of the specific intent required for perfidy.\"}, {\"objection_id\": \"obj_d2d2b2e9\", \"disposition\": \"overruled\", \"reasoning\": \"The soldiers' actions — lowering weapons and approaching to help immediately after the false claim and upon seeing the red cross — demonstrate reliance on the protection the emblem and claim signified. The team's coordinated deception (emblem, armlets, false statement, concealed weapons) establishes intentional use of the emblem to deceive.\"}, {\"objection_id\": \"obj_b123c217\", \"disposition\": \"overruled\", \"reasoning\": \"Because the preceding evidentiary objections are overruled, the elements of perfidy are established, and the war crime and individual liability conclusions follow.\"}, {\"objection_id\": \"obj_db101eee\", \"disposition\": \"sustained\", \"reasoning\": \"GC IV Art. 22 applies only to medical aircraft. The proper legal basis for the prohibition on perfidious use of the distinctive emblem in international armed conflict is AP I Art. 37 (perfidy) and Art. 38 (recognized emblems), read with GC I Arts. 38–44.\"}, {\"objection_id\": \"obj_76357d46\", \"disposition\": \"overruled\", \"reasoning\": \"Treacherous killing under Art. 8(2)(b)(xi) does not require the victim to be formally hors de combat; it criminalizes killing by perfidy — i.e., by inviting the adversary's confidence that they are entitled to protection. The Calvaran soldiers were rendered defenseless by the perfidious ruse, which is the essence of treacherous killing.\"}, {\"objection_id\": \"obj_36e4365f\", \"disposition\": \"partial\", \"reasoning\": \"The record does not specify which team member fired, drove, or made the false claim. However, the facts describe a four-person team acting in concert ('the team then opened fire'), which supports individual liability as co-perpetrators under Rome Statute Art. 25(3)(a) or through a joint criminal enterprise. The objection is sustained only to the extent that the argument asserts individualized role attribution without evidentiary support.\"}, {\"objection_id\": \"obj_78edb2b8\", \"disposition\": \"partial\", \"reasoning\": \"Same reasoning as obj_36e4365f. The claim of individual liability for each member is supported by the mode of liability (co-perpetration/JCE), not by proof of each member's discrete physical acts.\"}], \"surviving_argument_ids\": [\"arg_48bd8e2e\", \"arg_21ecda18\", \"arg_75f2cde0\", \"arg_1dff281c\", \"arg_6c87cf49\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-22T11:15:14.372749Z",
+      "completed_at": "2026-11-22T11:16:43.562668Z",
+      "prompt_tokens": 7686,
+      "completion_tokens": 4122,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-22T11:16:43.564092+00:00",
+  "duration_seconds": 187.39360598000349,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 2,
+  "judge_failures": 0,
+  "judge_failed": false
+}
