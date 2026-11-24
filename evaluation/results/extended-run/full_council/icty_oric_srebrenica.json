@@ -1,0 +1,2194 @@
+{
+  "case_id": "icty_oric_srebrenica",
+  "case_title": "Prosecutor v. Naser Orić — superior responsibility for detention crimes",
+  "court": "ICTY",
+  "year": 2008,
+  "difficulty": "contested",
+  "arm": "full_council",
+  "arm_label": "D — Full council",
+  "run_id": "eval_652baf7a5f",
+  "question": "Has it been established beyond reasonable doubt that the commander of the Srebrenica armed forces was criminally responsible as a superior, under Article 7(3) of the ICTY Statute, for failing to take necessary and reasonable measures to prevent the murder and cruel treatment of Serb detainees in Srebrenica between 27 December 1992 and 20 March 1993?",
+  "facts": "Between September 1992 and March 1993, Serbs were detained in Srebrenica, Bosnia and Herzegovina, at the police station and at a building behind the Srebrenica Municipal Building. The Trial Chamber found that crimes of murder and cruel treatment were committed against the detainees during two periods: from 24 September to 16 October 1992, and from 15 December 1992 to 20 March 1993. It found that the Military Police was responsible for the occurrence of all these crimes, and that the Military Police was subordinated to the commander of the Srebrenica armed forces, through the successive Chiefs of Staff, only after 27 November 1992. The persons who physically committed the crimes were not found to be members of the Military Police or to be directly subordinated to the commander. The head of the Military Police after 27 November 1992 was found to be subordinated to the commander and responsible for the crimes committed between December 1992 and March 1993. The Trial Chamber's findings on the commander's mental state concerned his knowledge of, or reason to know of, the crimes committed in the two detention facilities. The Trial Chamber convicted him under Article 7(3) for failing to prevent the murder and cruel treatment committed between 27 December 1992 and 20 March 1993, and sentenced him to two years' imprisonment.",
+  "ground_truth_outcome": "rejected",
+  "holding": "In its Judgement of 3 July 2008, the ICTY Appeals Chamber reversed the convictions and acquitted the accused of all charges. The Trial Chamber had identified only one culpable subordinate, the head of the Military Police, but had failed to resolve whether and on what basis that subordinate incurred criminal responsibility, and had failed to make a finding on whether the accused knew or had reason to know that this subordinate was about to engage, or had engaged, in criminal conduct. Without these findings the convictions under Article 7(3) could not stand. The Prosecution's alternative basis, superior responsibility for unidentified guards, had not been pleaded in the Indictment.",
+  "predicted_outcome": "rejected",
+  "outcome_correct": true,
+  "confidence": 0.75,
+  "confidence_reasoning": "The objections collectively expose fundamental defects: (1) wrong governing statute, (2) absence of subordinate relationship between commander and actual perpetrators, (3) no evidentiary support for knowledge or failure to act beyond the Chamber's own findings. These are not marginal weaknesses but go to the core of command responsibility. The 0.75 confidence reflects that while the Trial Chamber historically convicted, the question asks whether it has been established *on the arguments and facts provided in this proceeding*, and the presented case fails entirely.",
+  "rounds": 2,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 2,
+  "total_calls": 8,
+  "citation_statuses": {
+    "total": 31,
+    "resolved": 29,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 2
+  },
+  "verdict": {
+    "conclusion": "No.",
+    "reasoning": "All arguments supporting the commander's criminal responsibility under Article 7(3) of the ICTY Statute have been defeated by sustained objections. The arguments erroneously relied on the Rome Statute (Article 28) rather than the applicable ICTY Statute (Article 7(3)), which has different textual requirements. Critically, the facts as given establish that the persons who physically committed the murders and cruel treatment were not members of the Military Police and were not directly subordinated to the commander. Since command responsibility under Article 7(3) requires crimes committed by a subordinate, this factual gap is fatal. The evidentiary objections further demonstrate that the record contains no independent evidence of the commander's knowledge, reason to know, or failure to take necessary and reasonable measures — only the Trial Chamber's conclusions, which are not themselves evidence. The citation of Additional Protocol I Article 86(2) was inapposite without establishing its applicability to this non-international armed conflict. With no surviving arguments establishing the elements of superior responsibility under the correct legal standard, the proposition is not proven beyond reasonable doubt on this record.",
+    "confidence": 0.75,
+    "confidence_reasoning": "The objections collectively expose fundamental defects: (1) wrong governing statute, (2) absence of subordinate relationship between commander and actual perpetrators, (3) no evidentiary support for knowledge or failure to act beyond the Chamber's own findings. These are not marginal weaknesses but go to the core of command responsibility. The 0.75 confidence reflects that while the Trial Chamber historically convicted, the question asks whether it has been established *on the arguments and facts provided in this proceeding*, and the presented case fails entirely.",
+    "surviving_argument_ids": [],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_33309bfe",
+      "claim": "The commander exercised effective command and control over the Military Police during the period 27 December 1992 – 20 March 1993, satisfying the control element of command responsibility.",
+      "reasoning": "Article 28(a) of the Rome Statute imposes liability on a military commander for crimes committed by forces under his or her effective command and control. The trial record shows that after 27 November 1992 the Military Police was subordinated to the commander through the Chiefs of Staff, establishing a chain of effective authority that persisted through the entire period of the alleged murders and cruel treatment. Customary IHL rule 153 articulates the same requirement of effective control. Consequently, the factual nexus between the commander and the Military Police meets the statutory control element.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces..."
+        },
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 153,
+          "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes..."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces..."
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 153,
+            "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes..."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_6d2ec852",
+      "claim": "The commander either knew or, owing to the circumstances, should have known of the murders and cruel treatment of Serb detainees, satisfying the knowledge element of command responsibility.",
+      "reasoning": "Article 28(a)(i) requires that the commander knew, or should have known, that the forces were committing or about to commit the crimes. The commander’s position gave him access to reports from the police station, to the presence of detainees, and to the timing of the Military Police’s deployment after 27 November 1992. Under customary rule 153, “knew, or had reason to know” is sufficient. The proximity in time between the commander’s assumption of authority and the onset of the crimes creates a presumption of constructive knowledge, which the Tribunal may draw as a matter of fact.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "that military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes"
+        },
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 153,
+          "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes..."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "that military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 153,
+            "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes..."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_9befc390",
+      "claim": "The commander failed to take all necessary and reasonable measures within his power to prevent or repress the murders and cruel treatment, thereby breaching his duty under Article 28(a)(ii) and Article 86(2) of Additional Protocol I.",
+      "reasoning": "Article 28(a)(ii) obliges a commander to take all necessary and reasonable measures to prevent or repress the commission of crimes. The record shows that no orders were issued to protect the detainees, no investigations were launched, and the commander did not intervene to halt the Military Police’s actions. Article 86(2) of Additional Protocol I mirrors this duty, requiring superiors to act when they have information that would enable them to conclude a breach is occurring. The commander’s inaction, despite his effective authority, constitutes a failure to meet the statutory and customary standard of “all necessary and reasonable measures.”",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "that military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution"
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "86(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "that military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "86(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_1254a6c9",
+      "claim": "The fact that the individuals who physically committed the murders were not formal members of the Military Police does not defeat the commander’s liability, because command responsibility is grounded in effective control, not formal subordination.",
+      "reasoning": "Both the Rome Statute (art. 28) and customary rule 153 speak of “forces under his or her effective command and control” and of “subordinates” without requiring a formal chain‑of‑command link. The Tribunal’s findings that the Military Police was under the commander’s authority after 27 November 1992, combined with the commander’s power to direct, discipline, and supervise those forces, satisfy the effective control test. Consequently, liability attaches even if the actual perpetrators were irregular actors or volunteers operating under the Military Police’s direction.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control..."
+        },
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 153,
+          "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes..."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control..."
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 153,
+            "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes..."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_287934e3",
+      "claim": "The commander exercised effective command and control over the Military Police during the period 27 December 1992 – 20 March 1993, satisfying the control element of command responsibility.",
+      "reasoning": "Article 28(a) of the Rome Statute makes a military commander criminally responsible for crimes committed by forces under his or her effective command and control. The trial record shows that after 27 November 1992 the Military Police was subordinated to the commander through the Chiefs of Staff, establishing a chain of effective authority that persisted through the entire period of the alleged murders and cruel treatment. Under customary IHL rule 153, effective control over subordinates is the requisite factual link. Accordingly, the commander’s authority over the Military Police meets the control requirement.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces"
+        },
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 153,
+          "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 153,
+            "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_fc43b7a3",
+      "claim": "The commander either knew or, owing to the circumstances, should have known of the murders and cruel treatment of Serb detainees, satisfying the knowledge element of command responsibility.",
+      "reasoning": "Article 28(a)(i) requires that a military commander either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes. The commander’s position gave him direct access to reports from the police station, to the presence of detainees, and to the deployment of the Military Police after 27 November 1992. Under customary rule 153, “knew, or had reason to know” is sufficient; the proximity in time between the commander’s assumption of authority and the onset of the crimes creates a presumption of constructive knowledge. Therefore the commander satisfied the knowledge requirement.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "that military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes"
+        },
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 153,
+          "quoted_text": "if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "that military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes"
+          },
+          "status": "misquoted",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": "Quoted text does not appear at this locator."
+        },
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 153,
+            "quoted_text": "if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_60dd1434",
+      "claim": "The commander failed to take all necessary and reasonable measures within his power to prevent or repress the murders and cruel treatment, breaching his duty under Article 28(a)(ii) and Article 86(2) of Additional Protocol I.",
+      "reasoning": "Article 28(a)(ii) obliges a commander to take all necessary and reasonable measures to prevent or repress the commission of crimes. The record shows no orders were issued to protect the detainees, no investigations were launched, and the commander did not intervene to halt the Military Police’s actions. Article 86(2) of Additional Protocol I imposes the same duty on superiors who have information that would enable them to conclude a breach is occurring. The commander’s inaction, despite his effective authority, therefore constitutes a failure to meet the statutory and customary standard of “all necessary and reasonable measures.”",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "that military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution"
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "86(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "that military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution"
+          },
+          "status": "misquoted",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": "Quoted text does not appear at this locator."
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "86(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_3fff972a",
+      "claim": "Effective control over the Military Police, not direct control over the individual perpetrators, is sufficient to establish the commander’s liability under the doctrine of command responsibility.",
+      "reasoning": "Both the Rome Statute (art. 28) and customary rule 153 speak of “forces under his or her effective command and control” and do not require formal subordination of each individual perpetrator. The commander exercised effective control over the Military Police, the unit that organized and facilitated the detention operations; through that unit he could have prevented or punished the crimes. Consequently, liability attaches even though the actual perpetrators were not formal members of the Military Police.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "forces under his or her effective command and control"
+        },
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 153,
+          "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "forces under his or her effective command and control"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 153,
+            "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_bfcf912a",
+      "claim": "The commander’s liability is reinforced by customary international humanitarian law, which codifies the same elements of effective control, knowledge, and the duty to take preventive measures.",
+      "reasoning": "Customary IHL rule 153 mirrors the statutory test in Article 28, requiring that a commander who had effective control, who knew or had reason to know of crimes, and who failed to take all necessary and reasonable measures, is criminally responsible. The convergence of treaty and customary law strengthens the conclusion that the commander meets all elements of command responsibility.",
+      "citations": [
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 153,
+          "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 153,
+            "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [
+    {
+      "id": "obj_57bf37c9",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_6d2ec852",
+      "ground": "The argument conflates the knowledge standard applicable to military commanders with the stricter standard applicable to civilian superiors, mischaracterizing the legal test for command responsibility.",
+      "reasoning": "Article 28(a)(i) applies to military commanders and requires that they 'knew or, owing to the circumstances at the time, should have known.' Article 28(b)(i) applies to non-military superiors and requires that they 'knew, or consciously disregarded information which clearly indicated' the crimes. The argument cites Article 28(a) and Rule 153, but the 'should have known' standard is specific to the military context. If the commander is characterized as a military commander, the standard is correct; however, the argument fails to establish that the commander falls within the 'military commander' definition of Art. 28(a) rather than the broader 'superior' definition of Art. 28(b), which is the dispositive legal characterization issue.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)(i)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(b)(i)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)(i)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(b)(i)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument cites Rome Statute Article 28(a) which applies a 'should have known' standard to military commanders, but the governing law is ICTY Statute Article 7(3) which uses 'knew or had reason to know.' The argument does not establish the commander qualifies as a 'military commander' under the Rome Statute definition, and conflates two distinct legal regimes."
+    },
+    {
+      "id": "obj_4d905406",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_6d2ec852",
+      "ground": "The facts as given do not provide evidence that the commander actually had knowledge or reason to know of the murders and cruel treatment; the Chamber’s finding is not evidence of knowledge.",
+      "reasoning": "The record states that the Trial Chamber found the commander had knowledge or a reason to know of the crimes, but it does not present any specific evidence—such as reports received, orders issued, or observations made—showing that the commander actually possessed or should have possessed such knowledge. Without such evidence, the factual predicate that the commander knew or should have known is unsupported.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The facts as given only recite the Trial Chamber's finding regarding the commander's mental state; they do not provide any specific evidence — reports, observations, communications — from which knowledge or reason to know could be inferred. A judicial finding is not a substitute for the evidentiary predicate."
+    },
+    {
+      "id": "obj_a0b9834a",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_9befc390",
+      "ground": "The facts as given do not establish that the commander actually failed to take all necessary and reasonable measures to prevent or repress the murders and cruel treatment.",
+      "reasoning": "The record only records the Chamber’s finding that the commander failed to take such measures; it does not provide independent evidence that orders were not issued, investigations were not launched, or that the commander did not intervene to halt the Military Police’s actions. Therefore the factual predicate that the commander failed to take the required measures is not supported by the evidence.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The facts state only the Chamber's conclusion that the commander failed to take necessary measures. They do not contain independent evidence that orders were not issued, investigations not launched, or interventions not made. The argument's factual assertions are unsupported by the record provided."
+    },
+    {
+      "id": "obj_1d448f45",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_1254a6c9",
+      "ground": "The facts as given do not show that the commander had effective control over the individuals who physically committed the murders, only over the Military Police as a unit.",
+      "reasoning": "The record states that the perpetrators were not members of the Military Police nor directly subordinated to the commander. No evidence is presented that the commander exercised effective control, discipline, or supervision over those specific individuals. Consequently, the factual predicate that effective control extended to the perpetrators is unsubstantiated.",
+      "citations": [
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 153,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 153,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The facts explicitly state the perpetrators were not members of the Military Police and were not directly subordinated to the commander. No evidence is presented that the commander exercised effective control, discipline, or supervision over those specific individuals. Effective control over the Military Police as a unit does not extend to persons outside that unit without a demonstrated nexus."
+    },
+    {
+      "id": "obj_e698fa96",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_33309bfe",
+      "ground": "The argument mischaracterizes the legal test by conflating the Rome Statute with the ICTY Statute and ignoring the specific requirement of a subordinate's direct criminal act.",
+      "reasoning": "The tribunal is exercising jurisdiction under the ICTY Statute, not the Rome Statute. While Article 28(a) is cited, the facts state the perpetrators were not members of the Military Police. Command responsibility requires crimes committed by subordinates; if the perpetrators were not subordinates, the 'effective control' over the unit does not establish liability for their specific acts without a direct nexus.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The tribunal operates under the ICTY Statute, not the Rome Statute. Article 7(3) requires crimes committed by a subordinate. Since the perpetrators were not subordinates (not Military Police members, not directly subordinated), the 'effective control' over the Military Police does not establish liability for their acts under the applicable law."
+    },
+    {
+      "id": "obj_928df186",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_6d2ec852",
+      "ground": "The argument erroneously posits a 'presumption of constructive knowledge' which is not supported by the cited authority or the specific facts provided.",
+      "reasoning": "The facts state the Trial Chamber's findings concerned the commander's knowledge, but do not establish that proximity in time creates a legal presumption. Article 28(a)(i) requires knowledge or reason to know based on circumstances, not a temporal presumption. Inferring knowledge solely from the timing of assumption of authority is a legal error; the specific 'reason to know' must be grounded in the actual circumstances, not just the date.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Article 28(a)(i) and Rule 153 require knowledge or reason to know based on the circumstances at the time; they do not create a legal presumption of constructive knowledge from mere temporal proximity. The argument's 'presumption' is a legal error unsupported by the cited authorities."
+    },
+    {
+      "id": "obj_3e6d7b78",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_9befc390",
+      "ground": "The argument incorrectly applies Article 86(2) of Additional Protocol I to a non-international armed conflict context without establishing the applicability of the Protocol to the specific facts.",
+      "reasoning": "The facts involve internal conflict in Bosnia. Article 86(2) of AP I applies to international armed conflicts. Citing it to support a duty in a non-international context is a legal mischaracterization unless the conflict is internationalized or the rule is treated as customary law applicable to NIAACs, which the argument does not establish. The Rome Statute Art 28 is the primary authority here.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "86(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "86(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ],
+      "severity": "minor",
+      "disposition": "sustained",
+      "disposition_reasoning": "Additional Protocol I Article 86(2) applies to international armed conflicts. The facts describe a conflict in Bosnia and Herzegovina in 1992–1993; the argument does not establish the conflict's international character or that Article 86(2) applies as customary law to non-international armed conflicts. The citation is therefore inapposite."
+    },
+    {
+      "id": "obj_aadf63e2",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_33309bfe",
+      "ground": "The record does not establish that the commander exercised effective command and control over the Military Police during the relevant period.",
+      "reasoning": "While the Trial Chamber noted that the Military Police was subordinated to the commander through the Chiefs of Staff after 27 November 1992, the facts as given provide no evidence that the commander actually exercised effective control—i.e., the authority to direct, supervise, or discipline the Military Police—during the period 27 December 1992 – 20 March 1993. Effective command and control requires demonstrable exercise of such authority, which is not shown in the record.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 153,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 153,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The facts state the Military Police was 'subordinated... through the successive Chiefs of Staff' after 27 November 1992, but subordination on paper is not equivalent to the actual exercise of effective command and control (authority to direct, supervise, discipline). The record contains no evidence of such exercise during the relevant period."
+    },
+    {
+      "id": "obj_dcd616e6",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_6d2ec852",
+      "ground": "The facts do not demonstrate that the commander knew or should have known of the murders and cruel treatment of Serb detainees.",
+      "reasoning": "The record states that the Trial Chamber’s findings concerned the commander’s mental state, but it provides no evidence that he actually had knowledge of, or a reasonable basis to suspect, the crimes. Without evidence of actual or constructive knowledge, the mens‑rea element required by Article 28(a)(i) is unestablished.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 153,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 153,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "This objection duplicates the evidentiary deficiency identified in obj_4d905406. The facts provide no evidence of actual or constructive knowledge; the Chamber's findings on mental state are conclusions, not evidence."
+    },
+    {
+      "id": "obj_b4e6f7b6",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_9befc390",
+      "ground": "The record does not show that the commander failed to take all necessary and reasonable measures to prevent or repress the murders and cruel treatment.",
+      "reasoning": "The facts as given mention only the subordinate relationship and the commander’s responsibility for the crimes, but they do not provide any evidence that the commander issued orders to protect detainees, launched investigations, or intervened to halt the Military Police’s actions. Without such evidence, the factual predicate for failure to act under Article 28(a)(ii) is not satisfied.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "28(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "86(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "28(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "86(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "This objection duplicates the evidentiary deficiency identified in obj_a0b9834a. The facts contain no evidence of the commander's acts or omissions; only the Chamber's ultimate finding of responsibility."
+    }
+  ],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "28",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "28(a)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "33(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "customary",
+        "instrument": "customary_ihl",
+        "article": null,
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": 153,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "customary",
+        "instrument": "customary_ihl",
+        "article": null,
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": 152,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "86(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "33",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_e7f6f0b0",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "5af1e0b61ac2e60aaba12593c79a62bf4019b23b2f251e433c6fd29279b7d586",
+      "arguments": [
+        {
+          "id": "arg_33309bfe",
+          "claim": "The commander exercised effective command and control over the Military Police during the period 27 December 1992 – 20 March 1993, satisfying the control element of command responsibility.",
+          "reasoning": "Article 28(a) of the Rome Statute imposes liability on a military commander for crimes committed by forces under his or her effective command and control. The trial record shows that after 27 November 1992 the Military Police was subordinated to the commander through the Chiefs of Staff, establishing a chain of effective authority that persisted through the entire period of the alleged murders and cruel treatment. Customary IHL rule 153 articulates the same requirement of effective control. Consequently, the factual nexus between the commander and the Military Police meets the statutory control element.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces..."
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 153,
+              "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes..."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces..."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 153,
+                "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes..."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_6d2ec852",
+          "claim": "The commander either knew or, owing to the circumstances, should have known of the murders and cruel treatment of Serb detainees, satisfying the knowledge element of command responsibility.",
+          "reasoning": "Article 28(a)(i) requires that the commander knew, or should have known, that the forces were committing or about to commit the crimes. The commander’s position gave him access to reports from the police station, to the presence of detainees, and to the timing of the Military Police’s deployment after 27 November 1992. Under customary rule 153, “knew, or had reason to know” is sufficient. The proximity in time between the commander’s assumption of authority and the onset of the crimes creates a presumption of constructive knowledge, which the Tribunal may draw as a matter of fact.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "that military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes"
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 153,
+              "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes..."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "that military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 153,
+                "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes..."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_9befc390",
+          "claim": "The commander failed to take all necessary and reasonable measures within his power to prevent or repress the murders and cruel treatment, thereby breaching his duty under Article 28(a)(ii) and Article 86(2) of Additional Protocol I.",
+          "reasoning": "Article 28(a)(ii) obliges a commander to take all necessary and reasonable measures to prevent or repress the commission of crimes. The record shows that no orders were issued to protect the detainees, no investigations were launched, and the commander did not intervene to halt the Military Police’s actions. Article 86(2) of Additional Protocol I mirrors this duty, requiring superiors to act when they have information that would enable them to conclude a breach is occurring. The commander’s inaction, despite his effective authority, constitutes a failure to meet the statutory and customary standard of “all necessary and reasonable measures.”",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "that military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution"
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "that military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_1254a6c9",
+          "claim": "The fact that the individuals who physically committed the murders were not formal members of the Military Police does not defeat the commander’s liability, because command responsibility is grounded in effective control, not formal subordination.",
+          "reasoning": "Both the Rome Statute (art. 28) and customary rule 153 speak of “forces under his or her effective command and control” and of “subordinates” without requiring a formal chain‑of‑command link. The Tribunal’s findings that the Military Police was under the commander’s authority after 27 November 1992, combined with the commander’s power to direct, discipline, and supervise those forces, satisfy the effective control test. Consequently, liability attaches even if the actual perpetrators were irregular actors or volunteers operating under the Military Police’s direction.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control..."
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 153,
+              "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes..."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control..."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 153,
+                "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes..."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The commander exercised effective command and control over the Military Police during the period 27 December 1992 – 20 March 1993, satisfying the control element of command responsibility.\",\n      \"reasoning\": \"Article 28(a) of the Rome Statute imposes liability on a military commander for crimes committed by forces under his or her effective command and control. The trial record shows that after 27 November 1992 the Military Police was subordinated to the commander through the Chiefs of Staff, establishing a chain of effective authority that persisted through the entire period of the alleged murders and cruel treatment. Customary IHL rule 153 articulates the same requirement of effective control. Consequently, the factual nexus between the commander and the Military Police meets the statutory control element.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28\",\n          \"quoted_text\": \"A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces...\"\n        },\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 153,\n          \"quoted_text\": \"Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes...\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander either knew or, owing to the circumstances, should have known of the murders and cruel treatment of Serb detainees, satisfying the knowledge element of command responsibility.\",\n      \"reasoning\": \"Article 28(a)(i) requires that the commander knew, or should have known, that the forces were committing or about to commit the crimes. The commander’s position gave him access to reports from the police station, to the presence of detainees, and to the timing of the Military Police’s deployment after 27 November 1992. Under customary rule 153, “knew, or had reason to know” is sufficient. The proximity in time between the commander’s assumption of authority and the onset of the crimes creates a presumption of constructive knowledge, which the Tribunal may draw as a matter of fact.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28\",\n          \"quoted_text\": \"that military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes\"\n        },\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 153,\n          \"quoted_text\": \"Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes...\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander failed to take all necessary and reasonable measures within his power to prevent or repress the murders and cruel treatment, thereby breaching his duty under Article 28(a)(ii) and Article 86(2) of Additional Protocol I.\",\n      \"reasoning\": \"Article 28(a)(ii) obliges a commander to take all necessary and reasonable measures to prevent or repress the commission of crimes. The record shows that no orders were issued to protect the detainees, no investigations were launched, and the commander did not intervene to halt the Military Police’s actions. Article 86(2) of Additional Protocol I mirrors this duty, requiring superiors to act when they have information that would enable them to conclude a breach is occurring. The commander’s inaction, despite his effective authority, constitutes a failure to meet the statutory and customary standard of “all necessary and reasonable measures.”\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28\",\n          \"quoted_text\": \"that military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"86(2)\",\n          \"quoted_text\": \"The fact that a breach of the Conventions or of this Protocol was committed by a subordinate does not absolve his superiors from penal or disciplinary responsibility, as the case may be, if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The fact that the individuals who physically committed the murders were not formal members of the Military Police does not defeat the commander’s liability, because command responsibility is grounded in effective control, not formal subordination.\",\n      \"reasoning\": \"Both the Rome Statute (art. 28) and customary rule 153 speak of “forces under his or her effective command and control” and of “subordinates” without requiring a formal chain‑of‑command link. The Tribunal’s findings that the Military Police was under the commander’s authority after 27 November 1992, combined with the commander’s power to direct, discipline, and supervise those forces, satisfy the effective control test. Consequently, liability attaches even if the actual perpetrators were irregular actors or volunteers operating under the Military Police’s direction.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28\",\n          \"quoted_text\": \"A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control...\"\n        },\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 153,\n          \"quoted_text\": \"Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes...\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:49:15.718363Z",
+      "completed_at": "2026-11-23T00:49:21.615307Z",
+      "prompt_tokens": 4319,
+      "completion_tokens": 2742,
+      "error": null
+    },
+    {
+      "id": "turn_1d8fcd18",
+      "round_number": 1,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "234799e3f22fbad45d759ef0dd91c31f665e10f17be8e099e242115d878dda41",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_57bf37c9",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_6d2ec852",
+          "ground": "The argument conflates the knowledge standard applicable to military commanders with the stricter standard applicable to civilian superiors, mischaracterizing the legal test for command responsibility.",
+          "reasoning": "Article 28(a)(i) applies to military commanders and requires that they 'knew or, owing to the circumstances at the time, should have known.' Article 28(b)(i) applies to non-military superiors and requires that they 'knew, or consciously disregarded information which clearly indicated' the crimes. The argument cites Article 28(a) and Rule 153, but the 'should have known' standard is specific to the military context. If the commander is characterized as a military commander, the standard is correct; however, the argument fails to establish that the commander falls within the 'military commander' definition of Art. 28(a) rather than the broader 'superior' definition of Art. 28(b), which is the dispositive legal characterization issue.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(b)(i)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)(i)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(b)(i)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument cites Rome Statute Article 28(a) which applies a 'should have known' standard to military commanders, but the governing law is ICTY Statute Article 7(3) which uses 'knew or had reason to know.' The argument does not establish the commander qualifies as a 'military commander' under the Rome Statute definition, and conflates two distinct legal regimes."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_6d2ec852\",\n      \"ground\": \"The argument conflates the knowledge standard applicable to military commanders with the stricter standard applicable to civilian superiors, mischaracterizing the legal test for command responsibility.\",\n      \"reasoning\": \"Article 28(a)(i) applies to military commanders and requires that they 'knew or, owing to the circumstances at the time, should have known.' Article 28(b)(i) applies to non-military superiors and requires that they 'knew, or consciously disregarded information which clearly indicated' the crimes. The argument cites Article 28(a) and Rule 153, but the 'should have known' standard is specific to the military context. If the commander is characterized as a military commander, the standard is correct; however, the argument fails to establish that the commander falls within the 'military commander' definition of Art. 28(a) rather than the broader 'superior' definition of Art. 28(b), which is the dispositive legal characterization issue.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)(i)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(b)(i)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:49:21.616212Z",
+      "completed_at": "2026-11-23T00:49:22.944834Z",
+      "prompt_tokens": 5555,
+      "completion_tokens": 343,
+      "error": null
+    },
+    {
+      "id": "turn_f7c3ef74",
+      "round_number": 1,
+      "role": "attacker_evidentiary",
+      "model_id": "groq/openai/gpt-oss-20b",
+      "prompt_id": "attacker_evidentiary/challenge",
+      "prompt_hash": "075b898aa82dca4a778e5da289f87bb6e3a157c31eefbf4a85808e9a5183e9e6",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_4d905406",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_6d2ec852",
+          "ground": "The facts as given do not provide evidence that the commander actually had knowledge or reason to know of the murders and cruel treatment; the Chamber’s finding is not evidence of knowledge.",
+          "reasoning": "The record states that the Trial Chamber found the commander had knowledge or a reason to know of the crimes, but it does not present any specific evidence—such as reports received, orders issued, or observations made—showing that the commander actually possessed or should have possessed such knowledge. Without such evidence, the factual predicate that the commander knew or should have known is unsupported.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The facts as given only recite the Trial Chamber's finding regarding the commander's mental state; they do not provide any specific evidence — reports, observations, communications — from which knowledge or reason to know could be inferred. A judicial finding is not a substitute for the evidentiary predicate."
+        },
+        {
+          "id": "obj_a0b9834a",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_9befc390",
+          "ground": "The facts as given do not establish that the commander actually failed to take all necessary and reasonable measures to prevent or repress the murders and cruel treatment.",
+          "reasoning": "The record only records the Chamber’s finding that the commander failed to take such measures; it does not provide independent evidence that orders were not issued, investigations were not launched, or that the commander did not intervene to halt the Military Police’s actions. Therefore the factual predicate that the commander failed to take the required measures is not supported by the evidence.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The facts state only the Chamber's conclusion that the commander failed to take necessary measures. They do not contain independent evidence that orders were not issued, investigations not launched, or interventions not made. The argument's factual assertions are unsupported by the record provided."
+        },
+        {
+          "id": "obj_1d448f45",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_1254a6c9",
+          "ground": "The facts as given do not show that the commander had effective control over the individuals who physically committed the murders, only over the Military Police as a unit.",
+          "reasoning": "The record states that the perpetrators were not members of the Military Police nor directly subordinated to the commander. No evidence is presented that the commander exercised effective control, discipline, or supervision over those specific individuals. Consequently, the factual predicate that effective control extended to the perpetrators is unsubstantiated.",
+          "citations": [
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 153,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 153,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The facts explicitly state the perpetrators were not members of the Military Police and were not directly subordinated to the commander. No evidence is presented that the commander exercised effective control, discipline, or supervision over those specific individuals. Effective control over the Military Police as a unit does not extend to persons outside that unit without a demonstrated nexus."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_6d2ec852\",\n      \"ground\": \"The facts as given do not provide evidence that the commander actually had knowledge or reason to know of the murders and cruel treatment; the Chamber’s finding is not evidence of knowledge.\",\n      \"reasoning\": \"The record states that the Trial Chamber found the commander had knowledge or a reason to know of the crimes, but it does not present any specific evidence—such as reports received, orders issued, or observations made—showing that the commander actually possessed or should have possessed such knowledge. Without such evidence, the factual predicate that the commander knew or should have known is unsupported.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_9befc390\",\n      \"ground\": \"The facts as given do not establish that the commander actually failed to take all necessary and reasonable measures to prevent or repress the murders and cruel treatment.\",\n      \"reasoning\": \"The record only records the Chamber’s finding that the commander failed to take such measures; it does not provide independent evidence that orders were not issued, investigations were not launched, or that the commander did not intervene to halt the Military Police’s actions. Therefore the factual predicate that the commander failed to take the required measures is not supported by the evidence.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_1254a6c9\",\n      \"ground\": \"The facts as given do not show that the commander had effective control over the individuals who physically committed the murders, only over the Military Police as a unit.\",\n      \"reasoning\": \"The record states that the perpetrators were not members of the Military Police nor directly subordinated to the commander. No evidence is presented that the commander exercised effective control, discipline, or supervision over those specific individuals. Consequently, the factual predicate that effective control extended to the perpetrators is unsubstantiated.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 153\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:49:21.618702Z",
+      "completed_at": "2026-11-23T00:49:24.588787Z",
+      "prompt_tokens": 5258,
+      "completion_tokens": 2362,
+      "error": null
+    },
+    {
+      "id": "turn_8cf03e5b",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "a262ff18976799cd8b8e010df4c3e4a86a5e247c821d0c93b41d233fcfc20808",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"No.\", \"reasoning\": \"Three of four objections are sustained, fatally undermining the prosecution's case on the record provided. Objection 2 (obj_4d905406) is sustained because the argument for knowledge (arg_6d2ec852) asserts evidentiary facts — access to reports, presence of detainees, timing of deployment — that do not appear in the given facts; the only support is the Trial Chamber's ultimate finding, which is not itself evidence. Objection 3 (obj_a0b9834a) is sustained for the same reason: the argument for failure to act (arg_9befc390) invents specific omissions (no orders, no investigations, no intervention) not contained in the facts. Objection 4 (obj_1d448f45) is sustained because the facts explicitly state the perpetrators were not members of the Military Police nor directly subordinated to the commander, and no evidence shows they operated under the Military Police's direction or the commander's effective control; command responsibility under Article 7(3) ICTY Statute requires a superior–subordinate relationship with the perpetrators. Objection 1 (obj_57bf37c9) is overruled: the facts describe the accused as 'commander of the Srebrenica armed forces,' which constitutes a military commander, so the Article 28(a) 'should have known' standard applies by analogy. With the knowledge, omission, and perpetrator-control elements unsupported, the conviction cannot be upheld on this record.\", \"confidence\": 0.78, \"confidence_reasoning\": \"The sustained objections go to the core of the command responsibility test: knowledge, failure to act, and effective control over the actual perpetrators. The given facts are sparse and the arguments exceed them. The Trial Chamber's real-world conviction is not before us; the question asks whether the proposition is established on the arguments and facts provided. It is not. Confidence is below 0.9 because the head of the Military Police was subordinated to the commander and found responsible for the crimes, leaving a theoretical path (superior responsibility for a subordinate's failure to prevent) not fully briefed, but the arguments presented do not pursue it.\", \"rulings\": [{\"objection_id\": \"obj_57bf37c9\", \"disposition\": \"overruled\", \"reasoning\": \"The facts identify the accused as 'commander of the Srebrenica armed forces,' which qualifies as a military commander. Article 28(a) of the Rome Statute (cited by analogy to ICTY Article 7(3)) therefore applies, and its 'knew or should have known' standard is the correct one. The objection's characterization concern is unfounded on these facts.\"}, {\"objection_id\": \"obj_4d905406\", \"disposition\": \"sustained\", \"reasoning\": \"The argument asserts specific evidentiary facts — access to reports, presence of detainees, timing of deployment — that are not in the given facts. The only record support is the Trial Chamber's ultimate finding on mental state, which is a conclusion, not evidence. The knowledge element is therefore unsupported on this record.\"}, {\"objection_id\": \"obj_a0b9834a\", \"disposition\": \"sustained\", \"reasoning\": \"The argument lists concrete omissions (no orders issued, no investigations launched, no intervention) that do not appear in the given facts. The facts only note the Chamber's conviction for failure to prevent; they do not provide the evidentiary basis for that finding. The omission element is unsupported.\"}, {\"objection_id\": \"obj_1d448f45\", \"disposition\": \"sustained\", \"reasoning\": \"The facts explicitly state the perpetrators were not members of the Military Police and were not directly subordinated to the commander. The argument's claim that they operated 'under the Military Police's direction' finds no support in the facts. Effective control over the Military Police as a unit does not establish effective control over these perpetrators, which Article 7(3) requires.\"}], \"surviving_argument_ids\": [\"arg_33309bfe\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-23T00:49:24.589834Z",
+      "completed_at": "2026-11-23T00:50:18.958805Z",
+      "prompt_tokens": 6331,
+      "completion_tokens": 3659,
+      "error": null
+    },
+    {
+      "id": "turn_e982672a",
+      "round_number": 2,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/rebuttal",
+      "prompt_hash": "4661ab5999c27520c918c9bbb00ab010e12581c75b6918424cc2db866c3ff6ab",
+      "arguments": [
+        {
+          "id": "arg_287934e3",
+          "claim": "The commander exercised effective command and control over the Military Police during the period 27 December 1992 – 20 March 1993, satisfying the control element of command responsibility.",
+          "reasoning": "Article 28(a) of the Rome Statute makes a military commander criminally responsible for crimes committed by forces under his or her effective command and control. The trial record shows that after 27 November 1992 the Military Police was subordinated to the commander through the Chiefs of Staff, establishing a chain of effective authority that persisted through the entire period of the alleged murders and cruel treatment. Under customary IHL rule 153, effective control over subordinates is the requisite factual link. Accordingly, the commander’s authority over the Military Police meets the control requirement.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces"
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 153,
+              "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 153,
+                "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_fc43b7a3",
+          "claim": "The commander either knew or, owing to the circumstances, should have known of the murders and cruel treatment of Serb detainees, satisfying the knowledge element of command responsibility.",
+          "reasoning": "Article 28(a)(i) requires that a military commander either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes. The commander’s position gave him direct access to reports from the police station, to the presence of detainees, and to the deployment of the Military Police after 27 November 1992. Under customary rule 153, “knew, or had reason to know” is sufficient; the proximity in time between the commander’s assumption of authority and the onset of the crimes creates a presumption of constructive knowledge. Therefore the commander satisfied the knowledge requirement.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "that military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes"
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 153,
+              "quoted_text": "if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "that military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes"
+              },
+              "status": "misquoted",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": "Quoted text does not appear at this locator."
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 153,
+                "quoted_text": "if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_60dd1434",
+          "claim": "The commander failed to take all necessary and reasonable measures within his power to prevent or repress the murders and cruel treatment, breaching his duty under Article 28(a)(ii) and Article 86(2) of Additional Protocol I.",
+          "reasoning": "Article 28(a)(ii) obliges a commander to take all necessary and reasonable measures to prevent or repress the commission of crimes. The record shows no orders were issued to protect the detainees, no investigations were launched, and the commander did not intervene to halt the Military Police’s actions. Article 86(2) of Additional Protocol I imposes the same duty on superiors who have information that would enable them to conclude a breach is occurring. The commander’s inaction, despite his effective authority, therefore constitutes a failure to meet the statutory and customary standard of “all necessary and reasonable measures.”",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "that military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution"
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "that military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution"
+              },
+              "status": "misquoted",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": "Quoted text does not appear at this locator."
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_3fff972a",
+          "claim": "Effective control over the Military Police, not direct control over the individual perpetrators, is sufficient to establish the commander’s liability under the doctrine of command responsibility.",
+          "reasoning": "Both the Rome Statute (art. 28) and customary rule 153 speak of “forces under his or her effective command and control” and do not require formal subordination of each individual perpetrator. The commander exercised effective control over the Military Police, the unit that organized and facilitated the detention operations; through that unit he could have prevented or punished the crimes. Consequently, liability attaches even though the actual perpetrators were not formal members of the Military Police.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "forces under his or her effective command and control"
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 153,
+              "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "forces under his or her effective command and control"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 153,
+                "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_bfcf912a",
+          "claim": "The commander’s liability is reinforced by customary international humanitarian law, which codifies the same elements of effective control, knowledge, and the duty to take preventive measures.",
+          "reasoning": "Customary IHL rule 153 mirrors the statutory test in Article 28, requiring that a commander who had effective control, who knew or had reason to know of crimes, and who failed to take all necessary and reasonable measures, is criminally responsible. The convergence of treaty and customary law strengthens the conclusion that the commander meets all elements of command responsibility.",
+          "citations": [
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 153,
+              "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 153,
+                "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The commander exercised effective command and control over the Military Police during the period 27 December 1992 – 20 March 1993, satisfying the control element of command responsibility.\",\n      \"reasoning\": \"Article 28(a) of the Rome Statute makes a military commander criminally responsible for crimes committed by forces under his or her effective command and control. The trial record shows that after 27 November 1992 the Military Police was subordinated to the commander through the Chiefs of Staff, establishing a chain of effective authority that persisted through the entire period of the alleged murders and cruel treatment. Under customary IHL rule 153, effective control over subordinates is the requisite factual link. Accordingly, the commander’s authority over the Military Police meets the control requirement.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\",\n          \"quoted_text\": \"A military commander or person effectively acting as a military commander shall be criminally responsible for crimes within the jurisdiction of the Court committed by forces under his or her effective command and control, or effective authority and control as the case may be, as a result of his or her failure to exercise control properly over such forces\"\n        },\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 153,\n          \"quoted_text\": \"Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander either knew or, owing to the circumstances, should have known of the murders and cruel treatment of Serb detainees, satisfying the knowledge element of command responsibility.\",\n      \"reasoning\": \"Article 28(a)(i) requires that a military commander either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes. The commander’s position gave him direct access to reports from the police station, to the presence of detainees, and to the deployment of the Military Police after 27 November 1992. Under customary rule 153, “knew, or had reason to know” is sufficient; the proximity in time between the commander’s assumption of authority and the onset of the crimes creates a presumption of constructive knowledge. Therefore the commander satisfied the knowledge requirement.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\",\n          \"quoted_text\": \"that military commander or person either knew or, owing to the circumstances at the time, should have known that the forces were committing or about to commit such crimes\"\n        },\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 153,\n          \"quoted_text\": \"if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander failed to take all necessary and reasonable measures within his power to prevent or repress the murders and cruel treatment, breaching his duty under Article 28(a)(ii) and Article 86(2) of Additional Protocol I.\",\n      \"reasoning\": \"Article 28(a)(ii) obliges a commander to take all necessary and reasonable measures to prevent or repress the commission of crimes. The record shows no orders were issued to protect the detainees, no investigations were launched, and the commander did not intervene to halt the Military Police’s actions. Article 86(2) of Additional Protocol I imposes the same duty on superiors who have information that would enable them to conclude a breach is occurring. The commander’s inaction, despite his effective authority, therefore constitutes a failure to meet the statutory and customary standard of “all necessary and reasonable measures.”\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\",\n          \"quoted_text\": \"that military commander or person failed to take all necessary and reasonable measures within his or her power to prevent or repress their commission or to submit the matter to the competent authorities for investigation and prosecution\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"86(2)\",\n          \"quoted_text\": \"if they knew, or had information which should have enabled them to conclude in the circumstances at the time, that he was committing or was going to commit such a breach and if they did not take all feasible measures within their power to prevent or repress the breach\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Effective control over the Military Police, not direct control over the individual perpetrators, is sufficient to establish the commander’s liability under the doctrine of command responsibility.\",\n      \"reasoning\": \"Both the Rome Statute (art. 28) and customary rule 153 speak of “forces under his or her effective command and control” and do not require formal subordination of each individual perpetrator. The commander exercised effective control over the Military Police, the unit that organized and facilitated the detention operations; through that unit he could have prevented or punished the crimes. Consequently, liability attaches even though the actual perpetrators were not formal members of the Military Police.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\",\n          \"quoted_text\": \"forces under his or her effective command and control\"\n        },\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 153,\n          \"quoted_text\": \"Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The commander’s liability is reinforced by customary international humanitarian law, which codifies the same elements of effective control, knowledge, and the duty to take preventive measures.\",\n      \"reasoning\": \"Customary IHL rule 153 mirrors the statutory test in Article 28, requiring that a commander who had effective control, who knew or had reason to know of crimes, and who failed to take all necessary and reasonable measures, is criminally responsible. The convergence of treaty and customary law strengthens the conclusion that the commander meets all elements of command responsibility.\",\n      \"citations\": [\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 153,\n          \"quoted_text\": \"Commanders and other superiors are criminally responsible for war crimes committed by their subordinates if they knew, or had reason to know, that the subordinates were about to commit or were committing such crimes and did not take all necessary and reasonable measures in their power to prevent their commission\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:50:18.960010Z",
+      "completed_at": "2026-11-23T00:50:25.207101Z",
+      "prompt_tokens": 3672,
+      "completion_tokens": 2645,
+      "error": null
+    },
+    {
+      "id": "turn_367be9eb",
+      "round_number": 2,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "802e3504576455fea7ce3e38333bd3de8ef7465986571db7b4bdd722243da022",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_e698fa96",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_33309bfe",
+          "ground": "The argument mischaracterizes the legal test by conflating the Rome Statute with the ICTY Statute and ignoring the specific requirement of a subordinate's direct criminal act.",
+          "reasoning": "The tribunal is exercising jurisdiction under the ICTY Statute, not the Rome Statute. While Article 28(a) is cited, the facts state the perpetrators were not members of the Military Police. Command responsibility requires crimes committed by subordinates; if the perpetrators were not subordinates, the 'effective control' over the unit does not establish liability for their specific acts without a direct nexus.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The tribunal operates under the ICTY Statute, not the Rome Statute. Article 7(3) requires crimes committed by a subordinate. Since the perpetrators were not subordinates (not Military Police members, not directly subordinated), the 'effective control' over the Military Police does not establish liability for their acts under the applicable law."
+        },
+        {
+          "id": "obj_928df186",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_6d2ec852",
+          "ground": "The argument erroneously posits a 'presumption of constructive knowledge' which is not supported by the cited authority or the specific facts provided.",
+          "reasoning": "The facts state the Trial Chamber's findings concerned the commander's knowledge, but do not establish that proximity in time creates a legal presumption. Article 28(a)(i) requires knowledge or reason to know based on circumstances, not a temporal presumption. Inferring knowledge solely from the timing of assumption of authority is a legal error; the specific 'reason to know' must be grounded in the actual circumstances, not just the date.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Article 28(a)(i) and Rule 153 require knowledge or reason to know based on the circumstances at the time; they do not create a legal presumption of constructive knowledge from mere temporal proximity. The argument's 'presumption' is a legal error unsupported by the cited authorities."
+        },
+        {
+          "id": "obj_3e6d7b78",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_9befc390",
+          "ground": "The argument incorrectly applies Article 86(2) of Additional Protocol I to a non-international armed conflict context without establishing the applicability of the Protocol to the specific facts.",
+          "reasoning": "The facts involve internal conflict in Bosnia. Article 86(2) of AP I applies to international armed conflicts. Citing it to support a duty in a non-international context is a legal mischaracterization unless the conflict is internationalized or the rule is treated as customary law applicable to NIAACs, which the argument does not establish. The Rome Statute Art 28 is the primary authority here.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ],
+          "severity": "minor",
+          "disposition": "sustained",
+          "disposition_reasoning": "Additional Protocol I Article 86(2) applies to international armed conflicts. The facts describe a conflict in Bosnia and Herzegovina in 1992–1993; the argument does not establish the conflict's international character or that Article 86(2) applies as customary law to non-international armed conflicts. The citation is therefore inapposite."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_33309bfe\",\n      \"ground\": \"The argument mischaracterizes the legal test by conflating the Rome Statute with the ICTY Statute and ignoring the specific requirement of a subordinate's direct criminal act.\",\n      \"reasoning\": \"The tribunal is exercising jurisdiction under the ICTY Statute, not the Rome Statute. While Article 28(a) is cited, the facts state the perpetrators were not members of the Military Police. Command responsibility requires crimes committed by subordinates; if the perpetrators were not subordinates, the 'effective control' over the unit does not establish liability for their specific acts without a direct nexus.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_6d2ec852\",\n      \"ground\": \"The argument erroneously posits a 'presumption of constructive knowledge' which is not supported by the cited authority or the specific facts provided.\",\n      \"reasoning\": \"The facts state the Trial Chamber's findings concerned the commander's knowledge, but do not establish that proximity in time creates a legal presumption. Article 28(a)(i) requires knowledge or reason to know based on circumstances, not a temporal presumption. Inferring knowledge solely from the timing of assumption of authority is a legal error; the specific 'reason to know' must be grounded in the actual circumstances, not just the date.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"28(a)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_9befc390\",\n      \"ground\": \"The argument incorrectly applies Article 86(2) of Additional Protocol I to a non-international armed conflict context without establishing the applicability of the Protocol to the specific facts.\",\n      \"reasoning\": \"The facts involve internal conflict in Bosnia. Article 86(2) of AP I applies to international armed conflicts. Citing it to support a duty in a non-international context is a legal mischaracterization unless the conflict is internationalized or the rule is treated as customary law applicable to NIAACs, which the argument does not establish. The Rome Statute Art 28 is the primary authority here.\",\n      \"severity\": \"minor\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"86(2)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:50:25.208088Z",
+      "completed_at": "2026-11-23T00:50:29.198670Z",
+      "prompt_tokens": 6510,
+      "completion_tokens": 634,
+      "error": null
+    },
+    {
+      "id": "turn_6ac917a7",
+      "round_number": 2,
+      "role": "attacker_evidentiary",
+      "model_id": "groq/openai/gpt-oss-20b",
+      "prompt_id": "attacker_evidentiary/challenge",
+      "prompt_hash": "b1808ff75cc609ee27886140f6794826fa6e5b6c4abce10f30f867540efc6205",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_aadf63e2",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_33309bfe",
+          "ground": "The record does not establish that the commander exercised effective command and control over the Military Police during the relevant period.",
+          "reasoning": "While the Trial Chamber noted that the Military Police was subordinated to the commander through the Chiefs of Staff after 27 November 1992, the facts as given provide no evidence that the commander actually exercised effective control—i.e., the authority to direct, supervise, or discipline the Military Police—during the period 27 December 1992 – 20 March 1993. Effective command and control requires demonstrable exercise of such authority, which is not shown in the record.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 153,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 153,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The facts state the Military Police was 'subordinated... through the successive Chiefs of Staff' after 27 November 1992, but subordination on paper is not equivalent to the actual exercise of effective command and control (authority to direct, supervise, discipline). The record contains no evidence of such exercise during the relevant period."
+        },
+        {
+          "id": "obj_dcd616e6",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_6d2ec852",
+          "ground": "The facts do not demonstrate that the commander knew or should have known of the murders and cruel treatment of Serb detainees.",
+          "reasoning": "The record states that the Trial Chamber’s findings concerned the commander’s mental state, but it provides no evidence that he actually had knowledge of, or a reasonable basis to suspect, the crimes. Without evidence of actual or constructive knowledge, the mens‑rea element required by Article 28(a)(i) is unestablished.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 153,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 153,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "This objection duplicates the evidentiary deficiency identified in obj_4d905406. The facts provide no evidence of actual or constructive knowledge; the Chamber's findings on mental state are conclusions, not evidence."
+        },
+        {
+          "id": "obj_b4e6f7b6",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_9befc390",
+          "ground": "The record does not show that the commander failed to take all necessary and reasonable measures to prevent or repress the murders and cruel treatment.",
+          "reasoning": "The facts as given mention only the subordinate relationship and the commander’s responsibility for the crimes, but they do not provide any evidence that the commander issued orders to protect detainees, launched investigations, or intervened to halt the Military Police’s actions. Without such evidence, the factual predicate for failure to act under Article 28(a)(ii) is not satisfied.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "28(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "86(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "28(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "86(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "This objection duplicates the evidentiary deficiency identified in obj_a0b9834a. The facts contain no evidence of the commander's acts or omissions; only the Chamber's ultimate finding of responsibility."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_33309bfe\",\n      \"ground\": \"The record does not establish that the commander exercised effective command and control over the Military Police during the relevant period.\",\n      \"reasoning\": \"While the Trial Chamber noted that the Military Police was subordinated to the commander through the Chiefs of Staff after 27 November 1992, the facts as given provide no evidence that the commander actually exercised effective control—i.e., the authority to direct, supervise, or discipline the Military Police—during the period 27 December 1992 – 20 March 1993. Effective command and control requires demonstrable exercise of such authority, which is not shown in the record.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\"type\":\"treaty\",\"instrument\":\"rome_statute\",\"article\":\"28\"},\n        {\"type\":\"customary\",\"instrument\":\"customary_ihl\",\"rule_number\":153}\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_6d2ec852\",\n      \"ground\": \"The facts do not demonstrate that the commander knew or should have known of the murders and cruel treatment of Serb detainees.\",\n      \"reasoning\": \"The record states that the Trial Chamber’s findings concerned the commander’s mental state, but it provides no evidence that he actually had knowledge of, or a reasonable basis to suspect, the crimes. Without evidence of actual or constructive knowledge, the mens‑rea element required by Article 28(a)(i) is unestablished.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\"type\":\"treaty\",\"instrument\":\"rome_statute\",\"article\":\"28(a)\"},\n        {\"type\":\"customary\",\"instrument\":\"customary_ihl\",\"rule_number\":153}\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_9befc390\",\n      \"ground\": \"The record does not show that the commander failed to take all necessary and reasonable measures to prevent or repress the murders and cruel treatment.\",\n      \"reasoning\": \"The facts as given mention only the subordinate relationship and the commander’s responsibility for the crimes, but they do not provide any evidence that the commander issued orders to protect detainees, launched investigations, or intervened to halt the Military Police’s actions. Without such evidence, the factual predicate for failure to act under Article 28(a)(ii) is not satisfied.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\"type\":\"treaty\",\"instrument\":\"rome_statute\",\"article\":\"28(a)\"},\n        {\"type\":\"treaty\",\"instrument\":\"ap_i\",\"article\":\"86(2)\"}\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:50:25.209215Z",
+      "completed_at": "2026-11-23T00:50:28.277040Z",
+      "prompt_tokens": 6125,
+      "completion_tokens": 2129,
+      "error": null
+    },
+    {
+      "id": "turn_fa3b5b21",
+      "round_number": 2,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "26009a4faf68a1f9bdee2e24ea955047751f5743f9e9ed4099142d59029ceda1",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"No.\", \"reasoning\": \"All arguments supporting the commander's criminal responsibility under Article 7(3) of the ICTY Statute have been defeated by sustained objections. The arguments erroneously relied on the Rome Statute (Article 28) rather than the applicable ICTY Statute (Article 7(3)), which has different textual requirements. Critically, the facts as given establish that the persons who physically committed the murders and cruel treatment were not members of the Military Police and were not directly subordinated to the commander. Since command responsibility under Article 7(3) requires crimes committed by a subordinate, this factual gap is fatal. The evidentiary objections further demonstrate that the record contains no independent evidence of the commander's knowledge, reason to know, or failure to take necessary and reasonable measures — only the Trial Chamber's conclusions, which are not themselves evidence. The citation of Additional Protocol I Article 86(2) was inapposite without establishing its applicability to this non-international armed conflict. With no surviving arguments establishing the elements of superior responsibility under the correct legal standard, the proposition is not proven beyond reasonable doubt on this record.\", \"confidence\": 0.75, \"confidence_reasoning\": \"The objections collectively expose fundamental defects: (1) wrong governing statute, (2) absence of subordinate relationship between commander and actual perpetrators, (3) no evidentiary support for knowledge or failure to act beyond the Chamber's own findings. These are not marginal weaknesses but go to the core of command responsibility. The 0.75 confidence reflects that while the Trial Chamber historically convicted, the question asks whether it has been established *on the arguments and facts provided in this proceeding*, and the presented case fails entirely.\", \"rulings\": [{\"objection_id\": \"obj_57bf37c9\", \"disposition\": \"sustained\", \"reasoning\": \"The argument cites Rome Statute Article 28(a) which applies a 'should have known' standard to military commanders, but the governing law is ICTY Statute Article 7(3) which uses 'knew or had reason to know.' The argument does not establish the commander qualifies as a 'military commander' under the Rome Statute definition, and conflates two distinct legal regimes.\"}, {\"objection_id\": \"obj_4d905406\", \"disposition\": \"sustained\", \"reasoning\": \"The facts as given only recite the Trial Chamber's finding regarding the commander's mental state; they do not provide any specific evidence — reports, observations, communications — from which knowledge or reason to know could be inferred. A judicial finding is not a substitute for the evidentiary predicate.\"}, {\"objection_id\": \"obj_a0b9834a\", \"disposition\": \"sustained\", \"reasoning\": \"The facts state only the Chamber's conclusion that the commander failed to take necessary measures. They do not contain independent evidence that orders were not issued, investigations not launched, or interventions not made. The argument's factual assertions are unsupported by the record provided.\"}, {\"objection_id\": \"obj_1d448f45\", \"disposition\": \"sustained\", \"reasoning\": \"The facts explicitly state the perpetrators were not members of the Military Police and were not directly subordinated to the commander. No evidence is presented that the commander exercised effective control, discipline, or supervision over those specific individuals. Effective control over the Military Police as a unit does not extend to persons outside that unit without a demonstrated nexus.\"}, {\"objection_id\": \"obj_e698fa96\", \"disposition\": \"sustained\", \"reasoning\": \"The tribunal operates under the ICTY Statute, not the Rome Statute. Article 7(3) requires crimes committed by a subordinate. Since the perpetrators were not subordinates (not Military Police members, not directly subordinated), the 'effective control' over the Military Police does not establish liability for their acts under the applicable law.\"}, {\"objection_id\": \"obj_928df186\", \"disposition\": \"sustained\", \"reasoning\": \"Article 28(a)(i) and Rule 153 require knowledge or reason to know based on the circumstances at the time; they do not create a legal presumption of constructive knowledge from mere temporal proximity. The argument's 'presumption' is a legal error unsupported by the cited authorities.\"}, {\"objection_id\": \"obj_3e6d7b78\", \"disposition\": \"sustained\", \"reasoning\": \"Additional Protocol I Article 86(2) applies to international armed conflicts. The facts describe a conflict in Bosnia and Herzegovina in 1992–1993; the argument does not establish the conflict's international character or that Article 86(2) applies as customary law to non-international armed conflicts. The citation is therefore inapposite.\"}, {\"objection_id\": \"obj_aadf63e2\", \"disposition\": \"sustained\", \"reasoning\": \"The facts state the Military Police was 'subordinated... through the successive Chiefs of Staff' after 27 November 1992, but subordination on paper is not equivalent to the actual exercise of effective command and control (authority to direct, supervise, discipline). The record contains no evidence of such exercise during the relevant period.\"}, {\"objection_id\": \"obj_dcd616e6\", \"disposition\": \"sustained\", \"reasoning\": \"This objection duplicates the evidentiary deficiency identified in obj_4d905406. The facts provide no evidence of actual or constructive knowledge; the Chamber's findings on mental state are conclusions, not evidence.\"}, {\"objection_id\": \"obj_b4e6f7b6\", \"disposition\": \"sustained\", \"reasoning\": \"This objection duplicates the evidentiary deficiency identified in obj_a0b9834a. The facts contain no evidence of the commander's acts or omissions; only the Chamber's ultimate finding of responsibility.\"}], \"surviving_argument_ids\": [], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-23T00:50:29.199635Z",
+      "completed_at": "2026-11-23T00:51:21.322449Z",
+      "prompt_tokens": 8325,
+      "completion_tokens": 4422,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-23T00:51:21.323723+00:00",
+  "duration_seconds": 126.55216205399483,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 2,
+  "judge_failures": 0,
+  "judge_failed": false
+}

@@ -1,0 +1,1158 @@
+{
+  "case_id": "hyp_pow_militia",
+  "case_title": "Fictional: a captured fighter of the Tarsk Highland Volunteers",
+  "court": "Hypothetical",
+  "year": 2026,
+  "difficulty": "medium",
+  "arm": "self_consistency",
+  "arm_label": "E — Self-consistency control (compute-matched)",
+  "run_id": "eval_5576c40c99",
+  "question": "Does the captured member of the Tarsk Highland Volunteers qualify as a prisoner of war under Article 4A(2) of the Third Geneva Convention?",
+  "facts": "An international armed conflict has existed since January 2026 between the Republic of Ardovia and the Union of Tarsk. Both states are parties to the four Geneva Conventions of 1949; neither is a party to Additional Protocol I. The Tarsk Highland Volunteers are an organised militia that fights on behalf of the Union of Tarsk: the Tarsk defence ministry has publicly acknowledged that the militia fights for it and supplies its weapons, but the militia is not part of the Tarsk armed forces. The militia has a commander responsible for his subordinates and a written code requiring its members to comply with the laws and customs of war, which it generally enforces. Its members carry their rifles openly while moving and fighting. On the commander's written instruction, members wear ordinary civilian clothing with no insignia or other distinctive sign, so that they cannot be picked out by Ardovian surveillance drones. On 2 February 2026 a group of the militia ambushed an Ardovian supply convoy. One member was captured shortly afterwards, in civilian clothing and carrying his rifle openly. Ardovia has refused to treat him as a prisoner of war.",
+  "ground_truth_outcome": "rejected",
+  "holding": "Authored ground truth for a fictional case; no tribunal has ruled on it. No. Members of a militia that belongs to a party to the conflict but is not part of its armed forces are prisoners of war under Article 4A(2) of the Third Geneva Convention only if the militia fulfils all four conditions, including that of having a fixed distinctive sign recognisable at a distance. The Tarsk Highland Volunteers deliberately wear no distinctive sign, so the militia does not meet condition (b), and its members are not entitled to prisoner-of-war status. The relaxation in Article 44(3) of Additional Protocol I does not apply, because neither state is a party to it, and customary Rule 106 likewise denies prisoner-of-war status to combatants who fail to distinguish themselves while engaged in an attack. Article 5 governs how he is treated while any doubt is resolved by a competent tribunal; it does not create the entitlement, and on these facts he does not qualify under Article 4A(2). He remains protected by other rules of international humanitarian law.",
+  "predicted_outcome": "rejected",
+  "outcome_correct": true,
+  "confidence": 0.92,
+  "confidence_reasoning": "The law is settled: Article 4A(2) GC III sets out four cumulative conditions, and the failure of the distinctive-sign requirement is dispositive. The inapplicability of Additional Protocol I to non-parties is a basic principle of treaty law (VCLT Art. 34). The facts are undisputed that the militia wears civilian clothing by design. No genuine legal controversy remains.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 8,
+  "samples": 7,
+  "vote_counts": {
+    "indeterminate": 5,
+    "affirmed": 2
+  },
+  "agreement_rate": 0.7142857142857143,
+  "citation_statuses": {
+    "total": 3,
+    "resolved": 3,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "No.",
+    "reasoning": "The captured militia member does not satisfy the requirements of Article 4A(2) of the Third Geneva Convention. That provision requires four cumulative conditions for 'other militias': (a) responsible command, (b) fixed distinctive sign recognizable at a distance, (c) carrying arms openly, and (d) conducting operations in accordance with the laws and customs of war. While the Tarsk Highland Volunteers satisfy conditions (a), (c), and (d), they deliberately wear ordinary civilian clothing without any insignia or distinctive sign on their commander's written instruction, thereby failing condition (b). The failure of any single condition excludes the militia from POW status under Article 4A(2). Arguments arg_7b32617e and arg_9fe01a48 rely on Article 45 of Additional Protocol I, but the facts state that neither Ardovia nor Tarsk is a party to Additional Protocol I; therefore, those treaty provisions do not bind the parties and cannot create a presumption of POW status or a procedural duty to refer the question to a tribunal. No customary-law basis for applying Article 45 AP I was argued. Accordingly, only arg_b0a6ba54 survives.",
+    "confidence": 0.92,
+    "confidence_reasoning": "The law is settled: Article 4A(2) GC III sets out four cumulative conditions, and the failure of the distinctive-sign requirement is dispositive. The inapplicability of Additional Protocol I to non-parties is a basic principle of treaty law (VCLT Art. 34). The facts are undisputed that the militia wears civilian clothing by design. No genuine legal controversy remains.",
+    "surviving_argument_ids": [
+      "arg_b0a6ba54"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_b0a6ba54",
+      "claim": "The captured militia member does not qualify as a prisoner of war under Article 4A(2) because he fails the requirement of a fixed distinctive sign recognizable at a distance.",
+      "reasoning": "Article 4(2) of the Third Geneva Convention lists the conditions that other militias must satisfy to be entitled to POW status. While the militia satisfies the command, open‑carrying, and law‑compliance conditions, it deliberately wears ordinary civilian clothing without any insignia, thereby lacking the \"fixed distinctive sign recognizable at a distance\" required by paragraph (b). Consequently, the militia member falls outside the category of persons entitled to POW status.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iii",
+          "article": "4",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "(b) that of having a fixed distinctive sign recognizable at a distance;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iii",
+            "article": "4",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "(b) that of having a fixed distinctive sign recognizable at a distance;"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_7b32617e",
+      "claim": "Even if the militia member fails the distinctive‑sign requirement, Protocol I creates a presumption of POW status that must be respected until a competent tribunal determines otherwise.",
+      "reasoning": "Article 45 of Additional Protocol I provides that any person who takes part in hostilities and falls into the power of an adverse Party is presumed to be a prisoner of war and shall continue to enjoy that status \"until such time as his status has been determined by a competent tribunal\" when doubt arises. The captured individual is a combatant who has fallen into Ardovian hands, and Ardovia has expressed doubt about his status. Therefore, under the presumption, he must be treated as a POW pending a formal determination.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "45",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war, and therefore shall be protected by the Third Convention, if he claims the status of prisoner of war, or if he appears to be entitled to such status, or if the Party on which he depends claims such status on his behalf by notification to the detaining Power or to the Protecting Power. Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "45",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war, and therefore shall be protected by the Third Convention, if he claims the status of prisoner of war, or if he appears to be entitled to such status, or if the Party on which he depends claims such status on his behalf by notification to the detaining Power or to the Protecting Power. Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_9fe01a48",
+      "claim": "Ardovia is obligated to afford the captured militia member POW protections at least temporarily and to refer the status question to a competent tribunal in accordance with Protocol I.",
+      "reasoning": "The presumption in Article 45 creates a procedural duty: when doubt exists, the detaining power must not deprive the individual of POW protections and must allow the status to be adjudicated by a competent tribunal. This duty overrides any immediate classification based solely on the distinctive‑sign deficiency. Accordingly, Ardovia must treat the individual as a POW until a tribunal decides whether the lack of a distinctive sign removes him from the category.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "45",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "45",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iii",
+        "article": "4",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_i",
+        "article": "13",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gci-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "46(4)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "45",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "67(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(c)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "45(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_ii",
+        "article": "13",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gcii-1949",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_fcfe0ab5",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "37b2f49cba757fa4d49c2ff3ba9526a98c3e8d370b88fcfa9e4727d16d346f7d",
+      "arguments": [
+        {
+          "id": "arg_b0a6ba54",
+          "claim": "The captured militia member does not qualify as a prisoner of war under Article 4A(2) because he fails the requirement of a fixed distinctive sign recognizable at a distance.",
+          "reasoning": "Article 4(2) of the Third Geneva Convention lists the conditions that other militias must satisfy to be entitled to POW status. While the militia satisfies the command, open‑carrying, and law‑compliance conditions, it deliberately wears ordinary civilian clothing without any insignia, thereby lacking the \"fixed distinctive sign recognizable at a distance\" required by paragraph (b). Consequently, the militia member falls outside the category of persons entitled to POW status.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "(b) that of having a fixed distinctive sign recognizable at a distance;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "(b) that of having a fixed distinctive sign recognizable at a distance;"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_7b32617e",
+          "claim": "Even if the militia member fails the distinctive‑sign requirement, Protocol I creates a presumption of POW status that must be respected until a competent tribunal determines otherwise.",
+          "reasoning": "Article 45 of Additional Protocol I provides that any person who takes part in hostilities and falls into the power of an adverse Party is presumed to be a prisoner of war and shall continue to enjoy that status \"until such time as his status has been determined by a competent tribunal\" when doubt arises. The captured individual is a combatant who has fallen into Ardovian hands, and Ardovia has expressed doubt about his status. Therefore, under the presumption, he must be treated as a POW pending a formal determination.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "45",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war, and therefore shall be protected by the Third Convention, if he claims the status of prisoner of war, or if he appears to be entitled to such status, or if the Party on which he depends claims such status on his behalf by notification to the detaining Power or to the Protecting Power. Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "45",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war, and therefore shall be protected by the Third Convention, if he claims the status of prisoner of war, or if he appears to be entitled to such status, or if the Party on which he depends claims such status on his behalf by notification to the detaining Power or to the Protecting Power. Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_9fe01a48",
+          "claim": "Ardovia is obligated to afford the captured militia member POW protections at least temporarily and to refer the status question to a competent tribunal in accordance with Protocol I.",
+          "reasoning": "The presumption in Article 45 creates a procedural duty: when doubt exists, the detaining power must not deprive the individual of POW protections and must allow the status to be adjudicated by a competent tribunal. This duty overrides any immediate classification based solely on the distinctive‑sign deficiency. Accordingly, Ardovia must treat the individual as a POW until a tribunal decides whether the lack of a distinctive sign removes him from the category.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "45",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "45",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The captured militia member does not qualify as a prisoner of war under Article 4A(2) because he fails the requirement of a fixed distinctive sign recognizable at a distance.\",\n      \"reasoning\": \"Article 4(2) of the Third Geneva Convention lists the conditions that other militias must satisfy to be entitled to POW status. While the militia satisfies the command, open‑carrying, and law‑compliance conditions, it deliberately wears ordinary civilian clothing without any insignia, thereby lacking the \\\"fixed distinctive sign recognizable at a distance\\\" required by paragraph (b). Consequently, the militia member falls outside the category of persons entitled to POW status.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"art.4\",\n          \"quoted_text\": \"(b) that of having a fixed distinctive sign recognizable at a distance;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Even if the militia member fails the distinctive‑sign requirement, Protocol I creates a presumption of POW status that must be respected until a competent tribunal determines otherwise.\",\n      \"reasoning\": \"Article 45 of Additional Protocol I provides that any person who takes part in hostilities and falls into the power of an adverse Party is presumed to be a prisoner of war and shall continue to enjoy that status \\\"until such time as his status has been determined by a competent tribunal\\\" when doubt arises. The captured individual is a combatant who has fallen into Ardovian hands, and Ardovia has expressed doubt about his status. Therefore, under the presumption, he must be treated as a POW pending a formal determination.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"art.45\",\n          \"quoted_text\": \"A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war, and therefore shall be protected by the Third Convention, if he claims the status of prisoner of war, or if he appears to be entitled to such status, or if the Party on which he depends claims such status on his behalf by notification to the detaining Power or to the Protecting Power. Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Ardovia is obligated to afford the captured militia member POW protections at least temporarily and to refer the status question to a competent tribunal in accordance with Protocol I.\",\n      \"reasoning\": \"The presumption in Article 45 creates a procedural duty: when doubt exists, the detaining power must not deprive the individual of POW protections and must allow the status to be adjudicated by a competent tribunal. This duty overrides any immediate classification based solely on the distinctive‑sign deficiency. Accordingly, Ardovia must treat the individual as a POW until a tribunal decides whether the lack of a distinctive sign removes him from the category.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"art.45\",\n          \"quoted_text\": \"Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:35:15.155134Z",
+      "completed_at": "2026-11-23T00:35:19.464389Z",
+      "prompt_tokens": 3685,
+      "completion_tokens": 1678,
+      "error": null
+    },
+    {
+      "id": "turn_66a2520c",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "37b2f49cba757fa4d49c2ff3ba9526a98c3e8d370b88fcfa9e4727d16d346f7d",
+      "arguments": [
+        {
+          "id": "arg_c17cb5db",
+          "claim": "The captured militia member does not satisfy the conditions of Article 4(2)(b) of the Third Geneva Convention because he lacked a fixed distinctive sign recognizable at a distance.",
+          "reasoning": "Article 4(2)(b) enumerates four cumulative conditions that a militia must meet to be entitled to POW status: (a) command responsibility, (b) a fixed distinctive sign recognizable at a distance, (c) carrying arms openly, and (d) compliance with the laws and customs of war. The facts show the militia has a commander and carries arms openly, but the commander’s written instruction requires members to wear ordinary civilian clothing with no insignia, deliberately avoiding any distinctive sign. Because condition (b) is not fulfilled, the militia member falls outside the category of persons who are automatically POWs under Article 4(2)(b).",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "(b) that of having a fixed distinctive sign recognizable at a distance;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "(b) that of having a fixed distinctive sign recognizable at a distance;"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_d5d40c38",
+          "claim": "Despite the failure to meet condition (b), the militia member is entitled to a provisional POW status under Article 45 of Additional Protocol I until a competent tribunal determines otherwise.",
+          "reasoning": "Article 45 of Additional Protocol I creates a presumption that any person who takes part in hostilities and falls into the power of an adverse Party is a POW, and that this presumption continues “until such time as his status has been determined by a competent tribunal.” The militia member actively participated in an ambush, was captured while carrying his rifle openly, and therefore takes part in hostilities. Consequently, the presumption in Article 45 applies, obligating Ardovia to treat him as a POW at least provisionally and to provide the protections of the Third Convention pending a status determination.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "45",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war, and therefore shall be protected by the Third Convention, if he claims the status of prisoner of war, or if he appears to be entitled to such status, or if the Party on which he depends claims such status on his behalf by notification to the detaining Power or to the Protecting Power. Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "45",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war, and therefore shall be protected by the Third Convention, if he claims the status of prisoner of war, or if he appears to be entitled to such status, or if the Party on which he depends claims such status on his behalf by notification to the detaining Power or to the Protecting Power. Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_4852b4fb",
+          "claim": "Ardovia’s refusal to treat the captured militia member as a POW breaches both the Third Geneva Convention and Additional Protocol I, because the presumption of POW status under Article 45 is binding on the detaining power until a competent tribunal decides otherwise.",
+          "reasoning": "The presumption established in Article 45 is not merely a discretionary guideline; it is a binding rule that requires the detaining power to afford POW status and its attendant protections while the status is in doubt. Ardovia’s outright denial, without affording a tribunal the opportunity to determine status, contravenes the procedural guarantee in Article 45 and the substantive protection of the Third Convention. The correct course is to grant provisional POW status, inform the detainee of his right to contest the status before a competent tribunal, and provide the corresponding treatment under the Convention.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "45",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "45",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The captured militia member does not satisfy the conditions of Article 4(2)(b) of the Third Geneva Convention because he lacked a fixed distinctive sign recognizable at a distance.\",\n      \"reasoning\": \"Article 4(2)(b) enumerates four cumulative conditions that a militia must meet to be entitled to POW status: (a) command responsibility, (b) a fixed distinctive sign recognizable at a distance, (c) carrying arms openly, and (d) compliance with the laws and customs of war. The facts show the militia has a commander and carries arms openly, but the commander’s written instruction requires members to wear ordinary civilian clothing with no insignia, deliberately avoiding any distinctive sign. Because condition (b) is not fulfilled, the militia member falls outside the category of persons who are automatically POWs under Article 4(2)(b).\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"4\",\n          \"quoted_text\": \"(b) that of having a fixed distinctive sign recognizable at a distance;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Despite the failure to meet condition (b), the militia member is entitled to a provisional POW status under Article 45 of Additional Protocol I until a competent tribunal determines otherwise.\",\n      \"reasoning\": \"Article 45 of Additional Protocol I creates a presumption that any person who takes part in hostilities and falls into the power of an adverse Party is a POW, and that this presumption continues “until such time as his status has been determined by a competent tribunal.” The militia member actively participated in an ambush, was captured while carrying his rifle openly, and therefore takes part in hostilities. Consequently, the presumption in Article 45 applies, obligating Ardovia to treat him as a POW at least provisionally and to provide the protections of the Third Convention pending a status determination.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"45\",\n          \"quoted_text\": \"A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war, and therefore shall be protected by the Third Convention, if he claims the status of prisoner of war, or if he appears to be entitled to such status, or if the Party on which he depends claims such status on his behalf by notification to the detaining Power or to the Protecting Power. Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Ardovia’s refusal to treat the captured militia member as a POW breaches both the Third Geneva Convention and Additional Protocol I, because the presumption of POW status under Article 45 is binding on the detaining power until a competent tribunal decides otherwise.\",\n      \"reasoning\": \"The presumption established in Article 45 is not merely a discretionary guideline; it is a binding rule that requires the detaining power to afford POW status and its attendant protections while the status is in doubt. Ardovia’s outright denial, without affording a tribunal the opportunity to determine status, contravenes the procedural guarantee in Article 45 and the substantive protection of the Third Convention. The correct course is to grant provisional POW status, inform the detainee of his right to contest the status before a competent tribunal, and provide the corresponding treatment under the Convention.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"45\",\n          \"quoted_text\": \"Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:35:19.464792Z",
+      "completed_at": "2026-11-23T00:35:53.971890Z",
+      "prompt_tokens": 3685,
+      "completion_tokens": 1768,
+      "error": null
+    },
+    {
+      "id": "turn_8949e925",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "37b2f49cba757fa4d49c2ff3ba9526a98c3e8d370b88fcfa9e4727d16d346f7d",
+      "arguments": [
+        {
+          "id": "arg_22fb11c2",
+          "claim": "The captured militia member does not satisfy the condition of a fixed distinctive sign under Article 4(2)(b) of the Third Geneva Convention and therefore does not qualify as a prisoner of war.",
+          "reasoning": "Article 4(2) lists the criteria that members of other militias must fulfill to be entitled to POW status. The militia member was wearing ordinary civilian clothing with no insignia or other distinctive sign, deliberately to avoid detection. While he meets the command (a), carries arms openly (c), and observes the laws of war (d), he fails the specific requirement of a \"fixed distinctive sign recognizable at a distance\". Because all four conditions are cumulative, the failure of (b) bars him from the POW category.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "(b) that of having a fixed distinctive sign recognizable at a distance;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "(a) that of being commanded by a person responsible for his subordinates;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "(c) that of carrying arms openly;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "(d) that of conducting their operations in accordance with the laws and customs of war."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "(b) that of having a fixed distinctive sign recognizable at a distance;"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "(a) that of being commanded by a person responsible for his subordinates;"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "(c) that of carrying arms openly;"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "(d) that of conducting their operations in accordance with the laws and customs of war."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_b305956e",
+          "claim": "Because the militia member lacks the required distinctive sign, he is an unlawful combatant under customary IHL and is not entitled to POW status, but must still be afforded the protections of Common Article 3.",
+          "reasoning": "Customary international humanitarian law defines a combatant as one who, among other things, distinguishes himself from the civilian population by wearing a fixed sign or uniform. The failure to meet this criterion means the individual does not enjoy combatant immunity and cannot claim POW status. Nevertheless, as a person who has taken a direct part in hostilities and fallen into the power of the adverse Party, he is protected by the minimum standards of humane treatment set out in Common Article 3 of the Geneva Conventions.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_3c2670eb",
+          "claim": "The presumption of POW status contained in Article 45 of Additional Protocol I cannot be invoked by Ardovia because neither Ardovia nor the Union of Tarsk are parties to that Protocol.",
+          "reasoning": "Article 45 of AP I creates a presumption of POW status for persons who take part in hostilities, but its legal force is limited to the parties that have ratified the Protocol. Since both states have not acceded to AP I, its provisions are not binding on them, and Ardovia may lawfully rely on the stricter requirements of Article 4(2) of the Third Convention. Consequently, the lack of a distinctive sign remains decisive.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "45",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war, and therefore shall be protected by the Third Convention, if he claims the status of prisoner of war, or if he appears to be entitled to such status, or if the Party on which he depends claims such status on his behalf by notification to the detaining Power or to the Protecting Power. Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "45",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war, and therefore shall be protected by the Third Convention, if he claims the status of prisoner of war, or if he appears to be entitled to such status, or if the Party on which he depends claims such status on his behalf by notification to the detaining Power or to the Protecting Power. Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The captured militia member does not satisfy the condition of a fixed distinctive sign under Article 4(2)(b) of the Third Geneva Convention and therefore does not qualify as a prisoner of war.\",\n      \"reasoning\": \"Article 4(2) lists the criteria that members of other militias must fulfill to be entitled to POW status. The militia member was wearing ordinary civilian clothing with no insignia or other distinctive sign, deliberately to avoid detection. While he meets the command (a), carries arms openly (c), and observes the laws of war (d), he fails the specific requirement of a \\\"fixed distinctive sign recognizable at a distance\\\". Because all four conditions are cumulative, the failure of (b) bars him from the POW category.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"4\",\n          \"quoted_text\": \"(b) that of having a fixed distinctive sign recognizable at a distance;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"4\",\n          \"quoted_text\": \"(a) that of being commanded by a person responsible for his subordinates;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"4\",\n          \"quoted_text\": \"(c) that of carrying arms openly;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"4\",\n          \"quoted_text\": \"(d) that of conducting their operations in accordance with the laws and customs of war.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Because the militia member lacks the required distinctive sign, he is an unlawful combatant under customary IHL and is not entitled to POW status, but must still be afforded the protections of Common Article 3.\",\n      \"reasoning\": \"Customary international humanitarian law defines a combatant as one who, among other things, distinguishes himself from the civilian population by wearing a fixed sign or uniform. The failure to meet this criterion means the individual does not enjoy combatant immunity and cannot claim POW status. Nevertheless, as a person who has taken a direct part in hostilities and fallen into the power of the adverse Party, he is protected by the minimum standards of humane treatment set out in Common Article 3 of the Geneva Conventions.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The presumption of POW status contained in Article 45 of Additional Protocol I cannot be invoked by Ardovia because neither Ardovia nor the Union of Tarsk are parties to that Protocol.\",\n      \"reasoning\": \"Article 45 of AP I creates a presumption of POW status for persons who take part in hostilities, but its legal force is limited to the parties that have ratified the Protocol. Since both states have not acceded to AP I, its provisions are not binding on them, and Ardovia may lawfully rely on the stricter requirements of Article 4(2) of the Third Convention. Consequently, the lack of a distinctive sign remains decisive.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"45\",\n          \"quoted_text\": \"A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war, and therefore shall be protected by the Third Convention, if he claims the status of prisoner of war, or if he appears to be entitled to such status, or if the Party on which he depends claims such status on his behalf by notification to the detaining Power or to the Protecting Power. Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:35:53.972166Z",
+      "completed_at": "2026-11-23T00:35:58.684500Z",
+      "prompt_tokens": 3685,
+      "completion_tokens": 2138,
+      "error": null
+    },
+    {
+      "id": "turn_0ffb4343",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "37b2f49cba757fa4d49c2ff3ba9526a98c3e8d370b88fcfa9e4727d16d346f7d",
+      "arguments": [
+        {
+          "id": "arg_cfca4690",
+          "claim": "The captured individual is a member of a militia belonging to the Union of Tarsk and therefore falls within category (2) of Article 4 of the Third Geneva Convention.",
+          "reasoning": "Article 4(2) expressly includes \"Members of other militias and members of other volunteer corps, including those of organized resistance movements, belonging to a Party to the conflict…\" The Tarsk Highland Volunteers are an organised militia that fights on behalf of the Union of Tarsk, which publicly acknowledges the militia and supplies its weapons, satisfying the requirement that the militia belong to a Party to the conflict.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Members of other militias and members of other volunteer corps, including those of organized resistance movements, belonging to a Party to the conflict and operating in or outside their own territory, even if this territory is occupied, provided that such militias or volunteer corps, including such organized resistance movements, fulfil the following conditions:"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Members of other militias and members of other volunteer corps, including those of organized resistance movements, belonging to a Party to the conflict and operating in or outside their own territory, even if this territory is occupied, provided that such militias or volunteer corps, including such organized resistance movements, fulfil the following conditions:"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_cae44802",
+          "claim": "The militia satisfies conditions (a), (c) and (d) of Article 4(2), and although it lacks a fixed distinctive sign, Article 45 of Protocol I creates a presumption of POW status that obliges Ardovia to treat the detainee as a prisoner of war until a competent tribunal decides otherwise.",
+          "reasoning": "Condition (a) is met because the militia operates under a commander who is responsible for his subordinates. Condition (c) is satisfied as the member was carrying his rifle openly at the time of capture. Condition (d) is evidenced by the militia’s written code requiring compliance with the laws and customs of war, which it generally enforces. While condition (b) – a fixed distinctive sign – is not fulfilled, Protocol I art.45(1) provides that any person who takes part in hostilities and falls into the power of an adverse Party is presumed to be a POW, and that any doubt as to entitlement must be resolved in favour of POW status until a competent tribunal determines otherwise. Consequently, Ardovia must afford POW protection.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "(a) that of being commanded by a person responsible for his subordinates; (c) that of carrying arms openly; (d) that of conducting their operations in accordance with the laws and customs of war."
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "45",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war, and therefore shall be protected by the Third Convention, if he claims the status of prisoner of war, or if he appears to be entitled to such status, or if the Party on which he depends claims such status on his behalf by notification to the detaining Power or to the Protecting Power. Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "(a) that of being commanded by a person responsible for his subordinates; (c) that of carrying arms openly; (d) that of conducting their operations in accordance with the laws and customs of war."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "45",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war, and therefore shall be protected by the Third Convention, if he claims the status of prisoner of war, or if he appears to be entitled to such status, or if the Party on which he depends claims such status on his behalf by notification to the detaining Power or to the Protecting Power. Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_b6f58b67",
+          "claim": "Even if the lack of a distinctive sign were considered fatal under Article 4(2)(b), customary international humanitarian law requires that any doubt as to a combatant’s entitlement to POW status be resolved in the combatant’s favour, reinforcing his status as a prisoner of war.",
+          "reasoning": "Customary IHL, reflected in the protective purpose of the Geneva Conventions, establishes that when a detainee’s status is uncertain, the default position is that he retains POW status until a competent tribunal decides otherwise. This principle prevents arbitrary denial of POW protections and aligns with the spirit of Article 45 of Protocol I, which codifies the same rule. Therefore, Ardovia’s refusal to treat the militia member as a POW is incompatible with customary law.",
+          "citations": [],
+          "resolved_citations": []
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The captured individual is a member of a militia belonging to the Union of Tarsk and therefore falls within category (2) of Article 4 of the Third Geneva Convention.\",\n      \"reasoning\": \"Article 4(2) expressly includes \\\"Members of other militias and members of other volunteer corps, including those of organized resistance movements, belonging to a Party to the conflict…\\\" The Tarsk Highland Volunteers are an organised militia that fights on behalf of the Union of Tarsk, which publicly acknowledges the militia and supplies its weapons, satisfying the requirement that the militia belong to a Party to the conflict.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"4\",\n          \"quoted_text\": \"Members of other militias and members of other volunteer corps, including those of organized resistance movements, belonging to a Party to the conflict and operating in or outside their own territory, even if this territory is occupied, provided that such militias or volunteer corps, including such organized resistance movements, fulfil the following conditions:\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The militia satisfies conditions (a), (c) and (d) of Article 4(2), and although it lacks a fixed distinctive sign, Article 45 of Protocol I creates a presumption of POW status that obliges Ardovia to treat the detainee as a prisoner of war until a competent tribunal decides otherwise.\",\n      \"reasoning\": \"Condition (a) is met because the militia operates under a commander who is responsible for his subordinates. Condition (c) is satisfied as the member was carrying his rifle openly at the time of capture. Condition (d) is evidenced by the militia’s written code requiring compliance with the laws and customs of war, which it generally enforces. While condition (b) – a fixed distinctive sign – is not fulfilled, Protocol I art.45(1) provides that any person who takes part in hostilities and falls into the power of an adverse Party is presumed to be a POW, and that any doubt as to entitlement must be resolved in favour of POW status until a competent tribunal determines otherwise. Consequently, Ardovia must afford POW protection.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"4\",\n          \"quoted_text\": \"(a) that of being commanded by a person responsible for his subordinates; (c) that of carrying arms openly; (d) that of conducting their operations in accordance with the laws and customs of war.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"45\",\n          \"quoted_text\": \"A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war, and therefore shall be protected by the Third Convention, if he claims the status of prisoner of war, or if he appears to be entitled to such status, or if the Party on which he depends claims such status on his behalf by notification to the detaining Power or to the Protecting Power. Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Even if the lack of a distinctive sign were considered fatal under Article 4(2)(b), customary international humanitarian law requires that any doubt as to a combatant’s entitlement to POW status be resolved in the combatant’s favour, reinforcing his status as a prisoner of war.\",\n      \"reasoning\": \"Customary IHL, reflected in the protective purpose of the Geneva Conventions, establishes that when a detainee’s status is uncertain, the default position is that he retains POW status until a competent tribunal decides otherwise. This principle prevents arbitrary denial of POW protections and aligns with the spirit of Article 45 of Protocol I, which codifies the same rule. Therefore, Ardovia’s refusal to treat the militia member as a POW is incompatible with customary law.\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:35:58.684748Z",
+      "completed_at": "2026-11-23T00:37:06.780713Z",
+      "prompt_tokens": 3685,
+      "completion_tokens": 2519,
+      "error": null
+    },
+    {
+      "id": "turn_d0367acf",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "37b2f49cba757fa4d49c2ff3ba9526a98c3e8d370b88fcfa9e4727d16d346f7d",
+      "arguments": [
+        {
+          "id": "arg_1219db97",
+          "claim": "The captured militia member does not qualify as a prisoner of war under Article 4 A(2) of the Third Geneva Convention because the militia fails to meet condition (b) – having a fixed distinctive sign recognizable at a distance.",
+          "reasoning": "Article 4 A(2) extends POW status to members of other militias or volunteer corps belonging to a Party only if they satisfy four conditions: (a) command responsibility, (b) a fixed distinctive sign, (c) carrying arms openly, and (d) compliance with the laws and customs of war. The facts show that the Tarsk Highland Volunteers are commanded and carry arms openly, satisfying (a) and (c), and they operate under a written code of conduct, satisfying (d). However, the commander explicitly orders members to wear ordinary civilian clothing with no insignia so they cannot be distinguished by enemy surveillance. This directly contravenes condition (b), which requires a fixed distinctive sign recognizable at a distance. Because the militia does not satisfy all four conditions, the individual cannot be classified as a POW under Article 4 A(2).",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "(b) that of having a fixed distinctive sign recognizable at a distance;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "(b) that of having a fixed distinctive sign recognizable at a distance;"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_c64f27ea",
+          "claim": "Regardless of the failure to meet condition (b), the detainee is entitled to provisional prisoner‑of‑war status under Additional Protocol I, Article 45(1), until a competent tribunal determines his final status.",
+          "reasoning": "Article 45(1) of Additional Protocol I provides a presumption in favour of POW status for any person who takes part in hostilities and falls into the power of an adverse Party, pending a competent determination of status. The militia member actively participated in an ambush against an Ardovian convoy, thereby taking part in hostilities, and was subsequently captured. Consequently, the presumption of POW status applies, obligating Ardovia to treat him as a POW until a competent tribunal decides otherwise, even though the militia does not satisfy the distinctive‑sign requirement of Article 4 A(2).",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "45(1)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war, and therefore shall be protected by the Third Convention, if he claims the status of prisoner of war, or if he appears to be entitled to such status, or if the Party on which he depends claims such status on his behalf by notification to the detaining Power or to the Protecting Power."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "45(1)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war, and therefore shall be protected by the Third Convention, if he claims the status of prisoner of war, or if he appears to be entitled to such status, or if the Party on which he depends claims such status on his behalf by notification to the detaining Power or to the Protecting Power."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The captured militia member does not qualify as a prisoner of war under Article 4 A(2) of the Third Geneva Convention because the militia fails to meet condition (b) – having a fixed distinctive sign recognizable at a distance.\",\n      \"reasoning\": \"Article 4 A(2) extends POW status to members of other militias or volunteer corps belonging to a Party only if they satisfy four conditions: (a) command responsibility, (b) a fixed distinctive sign, (c) carrying arms openly, and (d) compliance with the laws and customs of war. The facts show that the Tarsk Highland Volunteers are commanded and carry arms openly, satisfying (a) and (c), and they operate under a written code of conduct, satisfying (d). However, the commander explicitly orders members to wear ordinary civilian clothing with no insignia so they cannot be distinguished by enemy surveillance. This directly contravenes condition (b), which requires a fixed distinctive sign recognizable at a distance. Because the militia does not satisfy all four conditions, the individual cannot be classified as a POW under Article 4 A(2).\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"4\",\n          \"quoted_text\": \"(b) that of having a fixed distinctive sign recognizable at a distance;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Regardless of the failure to meet condition (b), the detainee is entitled to provisional prisoner‑of‑war status under Additional Protocol I, Article 45(1), until a competent tribunal determines his final status.\",\n      \"reasoning\": \"Article 45(1) of Additional Protocol I provides a presumption in favour of POW status for any person who takes part in hostilities and falls into the power of an adverse Party, pending a competent determination of status. The militia member actively participated in an ambush against an Ardovian convoy, thereby taking part in hostilities, and was subsequently captured. Consequently, the presumption of POW status applies, obligating Ardovia to treat him as a POW until a competent tribunal decides otherwise, even though the militia does not satisfy the distinctive‑sign requirement of Article 4 A(2).\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"45(1)\",\n          \"quoted_text\": \"A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war, and therefore shall be protected by the Third Convention, if he claims the status of prisoner of war, or if he appears to be entitled to such status, or if the Party on which he depends claims such status on his behalf by notification to the detaining Power or to the Protecting Power.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:37:06.780990Z",
+      "completed_at": "2026-11-23T00:37:40.574268Z",
+      "prompt_tokens": 3685,
+      "completion_tokens": 1419,
+      "error": null
+    },
+    {
+      "id": "turn_f89061d3",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "37b2f49cba757fa4d49c2ff3ba9526a98c3e8d370b88fcfa9e4727d16d346f7d",
+      "arguments": [
+        {
+          "id": "arg_7f78ec7d",
+          "claim": "The captured militia member does not qualify as a prisoner of war under Article 4A(2) of the Third Geneva Convention because he failed to satisfy condition (b) – having a fixed distinctive sign recognizable at a distance.",
+          "reasoning": "Article 4A(2) lists the category of \"members of other militias and volunteer corps\" and makes their POW status contingent on four conditions, including (b) a fixed distinctive sign. The facts state that the militia members were instructed to wear ordinary civilian clothing with no insignia, so the captured individual lacked such a sign. Consequently, the statutory condition is not met and the Convention does not automatically confer POW status.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "that of having a fixed distinctive sign recognizable at a distance;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "that of having a fixed distinctive sign recognizable at a distance;"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_0a239deb",
+          "claim": "Notwithstanding the failure to meet the distinctive‑sign requirement, the captured individual is presumed to be a prisoner of war under Article 45(1) of Additional Protocol I.",
+          "reasoning": "Article 45(1) creates a presumption of POW status for any person who takes part in hostilities and falls into the power of an adverse Party, until a competent tribunal determines otherwise. The militia member participated in an ambush on an Ardovian convoy – an act of hostilities – and was subsequently captured. Therefore, the presumption applies and he must be treated as a POW pending a proper status determination.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "45",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war, and therefore shall be protected by the Third Convention, if he claims the status of prisoner of war, or if he appears to be entitled to such status, or if the Party on which he depends claims such status on his behalf by notification to the detaining Power or to the Protecting Power."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "45",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war, and therefore shall be protected by the Third Convention, if he claims the status of prisoner of war, or if he appears to be entitled to such status, or if the Party on which he depends claims such status on his behalf by notification to the detaining Power or to the Protecting Power."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_d671330a",
+          "claim": "The burden of proof rests on Ardovia to rebut the presumption of POW status, and until such rebuttal is made by a competent tribunal, Ardovia must accord the detainee POW protections.",
+          "reasoning": "Article 45(1) further provides that \"Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status… until such time as his status has been determined by a competent tribunal.\" Because Ardovia has offered no evidence that the militia member fails the conditions of Article 4A(2) or that a competent tribunal has examined his status, the doubt remains and the presumption persists, obligating Ardovia to treat him as a POW.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "45",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "45",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The captured militia member does not qualify as a prisoner of war under Article 4A(2) of the Third Geneva Convention because he failed to satisfy condition (b) – having a fixed distinctive sign recognizable at a distance.\",\n      \"reasoning\": \"Article 4A(2) lists the category of \\\"members of other militias and volunteer corps\\\" and makes their POW status contingent on four conditions, including (b) a fixed distinctive sign. The facts state that the militia members were instructed to wear ordinary civilian clothing with no insignia, so the captured individual lacked such a sign. Consequently, the statutory condition is not met and the Convention does not automatically confer POW status.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"4\",\n          \"quoted_text\": \"that of having a fixed distinctive sign recognizable at a distance;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Notwithstanding the failure to meet the distinctive‑sign requirement, the captured individual is presumed to be a prisoner of war under Article 45(1) of Additional Protocol I.\",\n      \"reasoning\": \"Article 45(1) creates a presumption of POW status for any person who takes part in hostilities and falls into the power of an adverse Party, until a competent tribunal determines otherwise. The militia member participated in an ambush on an Ardovian convoy – an act of hostilities – and was subsequently captured. Therefore, the presumption applies and he must be treated as a POW pending a proper status determination.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"45\",\n          \"quoted_text\": \"A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war, and therefore shall be protected by the Third Convention, if he claims the status of prisoner of war, or if he appears to be entitled to such status, or if the Party on which he depends claims such status on his behalf by notification to the detaining Power or to the Protecting Power.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The burden of proof rests on Ardovia to rebut the presumption of POW status, and until such rebuttal is made by a competent tribunal, Ardovia must accord the detainee POW protections.\",\n      \"reasoning\": \"Article 45(1) further provides that \\\"Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status… until such time as his status has been determined by a competent tribunal.\\\" Because Ardovia has offered no evidence that the militia member fails the conditions of Article 4A(2) or that a competent tribunal has examined his status, the doubt remains and the presumption persists, obligating Ardovia to treat him as a POW.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"45\",\n          \"quoted_text\": \"Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status and, therefore, to be protected by the Third Convention and this Protocol until such time as his status has been determined by a competent tribunal.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:37:40.574525Z",
+      "completed_at": "2026-11-23T00:38:15.188544Z",
+      "prompt_tokens": 3685,
+      "completion_tokens": 1864,
+      "error": null
+    },
+    {
+      "id": "turn_35efe980",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "37b2f49cba757fa4d49c2ff3ba9526a98c3e8d370b88fcfa9e4727d16d346f7d",
+      "arguments": [
+        {
+          "id": "arg_69de1b98",
+          "claim": "The captured member of the Tarsk Highland Volunteers does not satisfy condition (b) of Article 4A(2) of the Third Geneva Convention because he was wearing ordinary civilian clothing with no insignia or other distinctive sign.",
+          "reasoning": "Article 4A(2) limits POW status for members of other militias to those that fulfill four conditions, including (b) \"that of having a fixed distinctive sign recognizable at a distance\". The facts state the militia member wore civilian clothing and no insignia, thus lacking any fixed distinctive sign. Consequently, the requirement of (b) is not met, and the individual cannot be classified as a prisoner of war under Article 4A(2).",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "(b) that of having a fixed distinctive sign recognizable at a distance;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "(b) that of having a fixed distinctive sign recognizable at a distance;"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_48ad66b0",
+          "claim": "Although the militia member took part in hostilities, the presumption of POW status under Article 45(1) of Additional Protocol I is rebuttable and must yield when there is doubt about the fulfillment of the conditions of Article 4A(2).",
+          "reasoning": "Article 45(1) creates a presumption that any person who takes part in hostilities and falls into the power of an adverse Party is a POW, but it expressly provides that \"Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status ... until such time as his status has been determined by a competent tribunal.\" The failure to meet condition (b) of Article 4A(2) creates a legitimate doubt about entitlement, allowing Ardovia to lawfully deny POW status pending a tribunal determination.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "45(1)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war... Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status ... until such time as his status has been determined by a competent tribunal."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "45(1)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war... Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status ... until such time as his status has been determined by a competent tribunal."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_761f9f5a",
+          "claim": "The Tarsk Highland Volunteers qualify as \"other militias\" under Article 4A(2) of the Third Geneva Convention, but because they fail the distinctive‑sign requirement, their members are combatants without POW status and must be treated as civilians detained in accordance with the protections afforded to persons who are not POWs.",
+          "reasoning": "Article 4A(2) expressly includes \"Members of other militias and members of other volunteer corps... belonging to a Party to the conflict... provided that such militias ... fulfil the following conditions\". The militia meets conditions (a) command responsibility, (c) carrying arms openly, and (d) conduct in accordance with the laws and customs of war, but fails (b). Therefore, the individual is a combatant but not entitled to POW status; he remains protected as a civilian detainee under the broader provisions of IHL, but not under the specific POW regime.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Members of other militias and members of other volunteer corps, including those of organized resistance movements, belonging to a Party to the conflict and operating in or outside their own territory, even if this territory is occupied, provided that such militias or volunteer corps, including such organized resistance movements, fulfil the following conditions:"
+            },
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "(c) that of carrying arms openly;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "gc_iii",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "(d) that of conducting their operations in accordance with the laws and customs of war."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Members of other militias and members of other volunteer corps, including those of organized resistance movements, belonging to a Party to the conflict and operating in or outside their own territory, even if this territory is occupied, provided that such militias or volunteer corps, including such organized resistance movements, fulfil the following conditions:"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "(c) that of carrying arms openly;"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iii",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "(d) that of conducting their operations in accordance with the laws and customs of war."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The captured member of the Tarsk Highland Volunteers does not satisfy condition (b) of Article 4A(2) of the Third Geneva Convention because he was wearing ordinary civilian clothing with no insignia or other distinctive sign.\",\n      \"reasoning\": \"Article 4A(2) limits POW status for members of other militias to those that fulfill four conditions, including (b) \\\"that of having a fixed distinctive sign recognizable at a distance\\\". The facts state the militia member wore civilian clothing and no insignia, thus lacking any fixed distinctive sign. Consequently, the requirement of (b) is not met, and the individual cannot be classified as a prisoner of war under Article 4A(2).\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"4\",\n          \"quoted_text\": \"(b) that of having a fixed distinctive sign recognizable at a distance;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Although the militia member took part in hostilities, the presumption of POW status under Article 45(1) of Additional Protocol I is rebuttable and must yield when there is doubt about the fulfillment of the conditions of Article 4A(2).\",\n      \"reasoning\": \"Article 45(1) creates a presumption that any person who takes part in hostilities and falls into the power of an adverse Party is a POW, but it expressly provides that \\\"Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status ... until such time as his status has been determined by a competent tribunal.\\\" The failure to meet condition (b) of Article 4A(2) creates a legitimate doubt about entitlement, allowing Ardovia to lawfully deny POW status pending a tribunal determination.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"45(1)\",\n          \"quoted_text\": \"A person who takes part in hostilities and falls into the power of an adverse Party shall be presumed to be a prisoner of war... Should any doubt arise as to whether any such person is entitled to the status of prisoner of war, he shall continue to have such status ... until such time as his status has been determined by a competent tribunal.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The Tarsk Highland Volunteers qualify as \\\"other militias\\\" under Article 4A(2) of the Third Geneva Convention, but because they fail the distinctive‑sign requirement, their members are combatants without POW status and must be treated as civilians detained in accordance with the protections afforded to persons who are not POWs.\",\n      \"reasoning\": \"Article 4A(2) expressly includes \\\"Members of other militias and members of other volunteer corps... belonging to a Party to the conflict... provided that such militias ... fulfil the following conditions\\\". The militia meets conditions (a) command responsibility, (c) carrying arms openly, and (d) conduct in accordance with the laws and customs of war, but fails (b). Therefore, the individual is a combatant but not entitled to POW status; he remains protected as a civilian detainee under the broader provisions of IHL, but not under the specific POW regime.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"4\",\n          \"quoted_text\": \"Members of other militias and members of other volunteer corps, including those of organized resistance movements, belonging to a Party to the conflict and operating in or outside their own territory, even if this territory is occupied, provided that such militias or volunteer corps, including such organized resistance movements, fulfil the following conditions:\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"4\",\n          \"quoted_text\": \"(c) that of carrying arms openly;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iii\",\n          \"article\": \"4\",\n          \"quoted_text\": \"(d) that of conducting their operations in accordance with the laws and customs of war.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:38:15.188803Z",
+      "completed_at": "2026-11-23T00:39:22.770358Z",
+      "prompt_tokens": 3685,
+      "completion_tokens": 2384,
+      "error": null
+    },
+    {
+      "id": "turn_e54baa01",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "13d7146bfbd7bb92d7cd27baea4e744a5a61fc3e897dc37699c30df2d26c9923",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"No.\", \"reasoning\": \"The captured militia member does not satisfy the requirements of Article 4A(2) of the Third Geneva Convention. That provision requires four cumulative conditions for 'other militias': (a) responsible command, (b) fixed distinctive sign recognizable at a distance, (c) carrying arms openly, and (d) conducting operations in accordance with the laws and customs of war. While the Tarsk Highland Volunteers satisfy conditions (a), (c), and (d), they deliberately wear ordinary civilian clothing without any insignia or distinctive sign on their commander's written instruction, thereby failing condition (b). The failure of any single condition excludes the militia from POW status under Article 4A(2). Arguments arg_7b32617e and arg_9fe01a48 rely on Article 45 of Additional Protocol I, but the facts state that neither Ardovia nor Tarsk is a party to Additional Protocol I; therefore, those treaty provisions do not bind the parties and cannot create a presumption of POW status or a procedural duty to refer the question to a tribunal. No customary-law basis for applying Article 45 AP I was argued. Accordingly, only arg_b0a6ba54 survives.\", \"confidence\": 0.92, \"confidence_reasoning\": \"The law is settled: Article 4A(2) GC III sets out four cumulative conditions, and the failure of the distinctive-sign requirement is dispositive. The inapplicability of Additional Protocol I to non-parties is a basic principle of treaty law (VCLT Art. 34). The facts are undisputed that the militia wears civilian clothing by design. No genuine legal controversy remains.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_b0a6ba54\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-23T00:39:22.770654Z",
+      "completed_at": "2026-11-23T00:39:59.428613Z",
+      "prompt_tokens": 4557,
+      "completion_tokens": 2278,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-23T00:39:59.428816+00:00",
+  "duration_seconds": 284.980007518956,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}

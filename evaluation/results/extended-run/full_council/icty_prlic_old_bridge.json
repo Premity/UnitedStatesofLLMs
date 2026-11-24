@@ -1,0 +1,1424 @@
+{
+  "case_id": "icty_prlic_old_bridge",
+  "case_title": "Prosecutor v. Prlić et al. — destruction of the Old Bridge of Mostar",
+  "court": "ICTY",
+  "year": 2017,
+  "difficulty": "contested",
+  "arm": "full_council",
+  "arm_label": "D — Full council",
+  "run_id": "eval_90858bd5d4",
+  "question": "Did the destruction of the Old Bridge of Mostar in November 1993 constitute wanton destruction of cities, towns or villages, or devastation not justified by military necessity, as a violation of the laws or customs of war?",
+  "facts": "In 1993 the HVO (Croatian Defence Council) and the ABiH (Army of the Republic of Bosnia and Herzegovina) were fighting in and around Mostar, where the HVO had laid siege to East Mostar. Throughout the day on 8 November 1993, an HVO tank fired at the Old Bridge of Mostar, a sixteenth-century bridge over the Neretva river; by the evening the bridge was on the verge of collapse. It collapsed the following morning, 9 November 1993. The Trial Chamber found that the bridge was used by the ABiH for combat activities and that its destruction would cut off practically all possibilities for the ABiH to continue its supply operations in the area. The destruction resulted in the virtually total isolation of certain residents of the area and had a significant psychological impact on the Muslim population of Mostar. The Trial Chamber also found that the HVO destroyed the bridge in order to sap the morale of the Muslim population.",
+  "ground_truth_outcome": "rejected",
+  "holding": "In its Appeals Judgement of 29 November 2017, the ICTY Appeals Chamber, Judge Pocar dissenting, held that since the Old Bridge was a military target at the time of the attack, and its destruction thus offered a definite military advantage, it could not be considered, in and of itself, as wanton destruction not justified by military necessity. In the absence of any destruction of property not justified by military necessity in the Trial Chamber's legal findings, a requisite element of the crime was not satisfied, and the Appeals Chamber overturned the finding that destroying the Old Bridge constituted wanton destruction of cities, towns or villages, or devastation not justified by military necessity. It also reversed the findings that the destruction constituted persecution and the unlawful infliction of terror on civilians.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": false,
+  "confidence": 0.78,
+  "confidence_reasoning": "The conclusion rests on the Trial Chamber's explicit finding of an illegitimate purpose (sapping civilian morale), which directly negates military necessity under the 'imperative necessity' standard in art.8(2)(a)(iv) and art.8(2)(b)(xiii). The confidence is not higher because the retrieved corpus contains no case law applying this standard to dual-use cultural property, and the parties' arguments did not cleanly frame the 'primary purpose' doctrine. However, the factual finding of terroristic intent is decisive under settled IHL principle.",
+  "rounds": 2,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 2,
+  "total_calls": 8,
+  "citation_statuses": {
+    "total": 15,
+    "resolved": 15,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. The destruction of the Old Bridge of Mostar constituted wanton destruction not justified by military necessity, in violation of the laws and customs of war.",
+    "reasoning": "The Trial Chamber found that the HVO destroyed the bridge 'in order to sap the morale of the Muslim population.' This purpose — terrorizing a civilian population — is illegitimate under international humanitarian law and cannot constitute military necessity. While the bridge was used by the ABiH for combat activities and its destruction would cut supply lines, providing a concrete military advantage, the standard for 'military necessity' under the grave breaches regime (Rome Statute art.8(2)(a)(iv)) and the laws of war (art.8(2)(b)(xiii)) is 'imperative military necessity,' not merely a tangible advantage. The primary motive established by the Trial Chamber was psychological warfare against civilians, not an imperative operational requirement. The extensive destruction of a sixteenth-century cultural monument for this purpose was therefore unlawful and wanton. The sustained objections correctly identified factual and doctrinal errors in the parties' arguments (e.g., mischaracterizing the bridge as purely civilian, misapplying proportionality, overlooking the AP II art.16 proviso), but they do not negate the independent legal conclusion that destruction driven by a terroristic purpose fails the military necessity test.",
+    "confidence": 0.78,
+    "confidence_reasoning": "The conclusion rests on the Trial Chamber's explicit finding of an illegitimate purpose (sapping civilian morale), which directly negates military necessity under the 'imperative necessity' standard in art.8(2)(a)(iv) and art.8(2)(b)(xiii). The confidence is not higher because the retrieved corpus contains no case law applying this standard to dual-use cultural property, and the parties' arguments did not cleanly frame the 'primary purpose' doctrine. However, the factual finding of terroristic intent is decisive under settled IHL principle.",
+    "surviving_argument_ids": [],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_f273a92b",
+      "claim": "The destruction of the Old Bridge of Mostar was extensive destruction of property not justified by military necessity, constituting a war crime under the Rome Statute.",
+      "reasoning": "The bridge was a civilian object and a historic monument, not a military objective. The HVO’s stated purpose was to sap the morale of the Muslim population, not to achieve a concrete military advantage. The alleged advantage of cutting ABiH supply lines was speculative and did not outweigh the extensive loss of cultural property. Accordingly, the act fits the definition of \"extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly\" in art.8(2)(a)(iv) of the Rome Statute.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(a)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(a)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_9ab97b21",
+      "claim": "The attack on the Old Bridge was disproportionate because the anticipated military advantage was not concrete enough to justify the extensive damage to a cultural monument.",
+      "reasoning": "Art.8(2)(b)(iv) of the Rome Statute prohibits attacks that cause damage \"clearly excessive in relation to the concrete and direct overall military advantage anticipated.\" The HVO’s claim that the bridge’s destruction would cut off ABiH supply routes was not demonstrated; the bridge’s primary function was civilian transit and cultural heritage. The resulting isolation of residents and psychological impact far exceeded any marginal tactical benefit, rendering the attack disproportionate.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_ed12cfa8",
+      "claim": "The Old Bridge, as a historic monument, was protected from attacks under the Additional Protocol II to the Geneva Conventions, making its intentional destruction a prohibited act of hostility.",
+      "reasoning": "Article 16 of Additional Protocol II expressly forbids \"any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples.\" The Old Bridge, a sixteenth‑century structure and a symbol of Mostar’s cultural heritage, falls squarely within this protection. The HVO’s deliberate targeting of the bridge for morale‑breaking purposes therefore violated this provision.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_ii",
+          "article": "16",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_ii",
+            "article": "16",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_00ecc092",
+      "claim": "The destruction of the Old Bridge of Mostar constituted extensive destruction of property not justified by military necessity, constituting a war crime under Rome Statute art.8(2)(a)(iv).",
+      "reasoning": "The bridge, although reportedly used on occasion by the ABiH, was not indispensable for military logistics; the asserted advantage of cutting supply routes was speculative and not demonstrated to be concrete. The resulting loss of a unique cultural monument and the isolation of civilians far outweighed any marginal benefit, indicating that the attack was not justified by military necessity. Under art.8(2)(a)(iv) such conduct is punishable as a war crime.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(a)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(a)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_3785e4c1",
+      "claim": "The attack on the Old Bridge was disproportionate because the anticipated military advantage was not concrete and the damage was clearly excessive, violating Rome Statute art.8(2)(b)(iv).",
+      "reasoning": "Proportionality requires that incidental damage not be excessive in relation to the concrete and direct overall military advantage. The HVO’s claim that destroying the bridge would cut ABiH supply lines was not substantiated; the bridge’s primary function was civilian transit and cultural heritage. The total destruction of the bridge and the severe psychological impact on the civilian population far exceeded any marginal tactical benefit, making the attack clearly excessive.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_e7e10231",
+      "claim": "The Old Bridge, as a historic monument, was protected under Additional Protocol II art.16, and its intentional destruction was prohibited regardless of any alleged military use.",
+      "reasoning": "AP II art.16 expressly prohibits acts of hostility directed against historic monuments that constitute the cultural or spiritual heritage of peoples, and also prohibits using such monuments in support of the military effort. The bridge, a sixteenth‑century structure, qualifies as a historic monument under customary definitions of cultural property. Its deliberate destruction for morale‑breaking purposes therefore breached AP II, irrespective of the limited military utility attributed to it.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_ii",
+          "article": "16",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_ii",
+            "article": "16",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [
+    {
+      "id": "obj_f358be71",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_9ab97b21",
+      "ground": "The argument misapplies the legal test by treating a civilian object as a military objective to which proportionality applies, whereas the legal framework requires an antecedent determination of objective status.",
+      "reasoning": "Art. 8(2)(b)(iv) of the Rome Statute prohibits attacks only where the object is not a military objective. The proportionality test is not a standalone ground for criminal liability if the object is correctly characterized as a military objective. The argument fails to reconcile the Trial Chamber's finding that the bridge was used for combat activities, which likely renders it a military objective, with the application of the proportionality standard.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument (arg_9ab97b21) applies the proportionality test under art.8(2)(b)(iv) without first establishing that the bridge was a civilian object. The Trial Chamber found the bridge was used for ABiH combat activities, which is relevant to its qualification as a military objective. The objection correctly identifies this doctrinal sequencing error."
+    },
+    {
+      "id": "obj_14c92f2f",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_ed12cfa8",
+      "ground": "The argument misinterprets the scope of protection in Additional Protocol II, which does not apply to objects used in support of the military effort.",
+      "reasoning": "Article 16 of Additional Protocol II prohibits acts of hostility against historic monuments, but this protection is conditional on the object not being used in support of the military effort. The Trial Chamber found the bridge was used for ABiH combat activities, which would negate the protection under Article 16, making the argument's legal characterization incorrect.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_ii",
+          "article": "16",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_ii",
+            "article": "16",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Article 16 of Additional Protocol II prohibits both acts of hostility against historic monuments and their use in support of the military effort. The Trial Chamber found the bridge was used for ABiH combat activities. The argument (arg_ed12cfa8) treats the protection as absolute, ignoring the proviso. The objection correctly identifies this omission."
+    },
+    {
+      "id": "obj_56041b60",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_f273a92b",
+      "ground": "The facts do not establish that the Old Bridge was a civilian object or historic monument, nor that its destruction was not justified by military necessity.",
+      "reasoning": "The record indicates that the bridge was used by the ABiH for combat activities and that its destruction would cut off supply lines, showing a concrete military advantage. It also merely describes the bridge as a sixteenth‑century structure without confirming it as a protected historic monument. Therefore the claim that the destruction was wanton or not justified lacks sufficient factual support.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(a)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(a)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument (arg_f273a92b) claims the bridge was a civilian object and that the military advantage was speculative. The Trial Chamber found the bridge was used for combat and its destruction would cut off ABiH supply operations — a concrete, not speculative, advantage. The objection correctly refutes the factual premise."
+    },
+    {
+      "id": "obj_05d1c04f",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_9ab97b21",
+      "ground": "The facts show a concrete military advantage and do not prove the bridge was primarily civilian or cultural.",
+      "reasoning": "The record states that the bridge was used by the ABiH for combat and that its destruction would sever supply routes, providing a tangible military benefit. No evidence is provided that the bridge was chiefly a civilian transit or that the damage was disproportionate relative to that advantage.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Same factual error as obj_56041b60: the argument (arg_9ab97b21) asserts the advantage was not concrete and the bridge was primarily civilian, but the Trial Chamber found a concrete supply-line advantage and military use. The objection is well-founded on the record."
+    },
+    {
+      "id": "obj_a0d53f89",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_ed12cfa8",
+      "ground": "The facts do not confirm that the Old Bridge was protected under Additional Protocol II as a historic monument.",
+      "reasoning": "The record only identifies the bridge as a sixteenth‑century structure; it does not state that it is a historic monument or that it is protected under AP II. Without such confirmation, the claim that its destruction violated AP II lacks factual support.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_ii",
+          "article": "16",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_ii",
+            "article": "16",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument (arg_ed12cfa8) assumes the bridge is a protected historic monument under AP II. The facts describe it only as a 'sixteenth-century structure' without confirming its status as a historic monument under the treaty. The objection correctly notes the missing factual predicate."
+    },
+    {
+      "id": "obj_68085a57",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_9ab97b21",
+      "ground": "The argument misapplies the legal test for proportionality by failing to establish that the Old Bridge was a civilian object rather than a military objective.",
+      "reasoning": "Rome Statute art.8(2)(b)(iv) prohibits attacks causing 'clearly excessive' incidental damage only where the target is a civilian object. The Trial Chamber found the bridge was used for ABiH combat activities. If the bridge qualified as a military objective due to its effective contribution to military action and definite advantage, the proportionality test in (b)(iv) is inapplicable; the correct analysis is under the definition of military objective, not incidental damage.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(iv)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(iv)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Duplicate of obj_f358be71. The argument (arg_9ab97b21) misapplies proportionality by failing to address the military objective threshold. The Trial Chamber's finding of combat use triggers the military objective analysis first. Objection sustained for the same reason."
+    },
+    {
+      "id": "obj_136622d9",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_ed12cfa8",
+      "ground": "The argument ignores the explicit proviso in AP II art.16 that protection does not apply to historic monuments used in support of the military effort.",
+      "reasoning": "Article 16 of Additional Protocol II prohibits acts of hostility against historic monuments 'which constitute the cultural or spiritual heritage of peoples' but expressly prohibits using them 'in support of the military effort.' The Trial Chamber found the bridge was used by the ABiH for combat activities. Therefore, the bridge may have lost its protected status under the specific terms of the cited provision, rendering the claim of absolute prohibition legally unsound.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_ii",
+          "article": "16",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_ii",
+            "article": "16",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Same as obj_14c92f2f. The argument (arg_ed12cfa8) ignores the explicit proviso in AP II art.16 that protection does not apply to monuments used in support of the military effort. The Trial Chamber found such use. Objection sustained."
+    },
+    {
+      "id": "obj_62564557",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_f273a92b",
+      "ground": "The facts indicate that the bridge was used for combat and that its destruction would cut ABiH supply lines, providing a concrete military advantage.",
+      "reasoning": "The Trial Chamber found the bridge was used by the ABiH for combat activities and that its destruction would cut off practically all possibilities for the ABiH to continue its supply operations, which constitutes a concrete and direct military advantage. This undermines the claim that the destruction was not justified by military necessity.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument (arg_f273a92b) claims the destruction was not justified by military necessity. The Trial Chamber found the bridge's destruction would cut off ABiH supply operations — a concrete and direct military advantage. The objection correctly identifies this factual contradiction, though it conflates 'military advantage' with the higher 'imperative military necessity' standard."
+    },
+    {
+      "id": "obj_9b1b7ef5",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_9ab97b21",
+      "ground": "The facts show a concrete military advantage from cutting ABiH supply lines, refuting the claim of lack of concrete advantage.",
+      "reasoning": "The Trial Chamber determined that the bridge’s destruction would cut off practically all possibilities for the ABiH to continue its supply operations, demonstrating a concrete military advantage that counters the assertion of disproportionate harm.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Same as obj_62564557 and obj_05d1c04f. The Trial Chamber determined a concrete military advantage (cutting supply lines). The argument (arg_9ab97b21) denies this. Objection sustained on the facts."
+    },
+    {
+      "id": "obj_1710e5a0",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_ed12cfa8",
+      "ground": "The bridge was used for combat, making it a military objective and not protected under Additional Protocol II.",
+      "reasoning": "The facts state that the bridge was used by the ABiH for combat activities. Under AP II, historic monuments that are used to support a military effort are not protected. Thus the claim that the bridge was protected and that its destruction violated AP II is unsupported by the facts.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_ii",
+          "article": "16",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_ii",
+            "article": "16",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument (arg_ed12cfa8) claims the bridge was protected under AP II. The facts state it was used for combat activities. Under AP II art.16, such use removes protection. The objection correctly applies the treaty text to the facts."
+    },
+    {
+      "id": "obj_fc0ca857",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_e7e10231",
+      "ground": "The bridge’s use in combat means it was not protected under AP II, contrary to the argument’s claim.",
+      "reasoning": "Because the bridge was used by the ABiH for combat, it qualifies as a military objective, and AP II’s prohibition on acts of hostility against historic monuments does not apply. Therefore the factual predicate that the destruction violated AP II is not established.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_ii",
+          "article": "16",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_ii",
+            "article": "16",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Same as obj_1710e5a0. The argument (arg_e7e10231) asserts the bridge was protected under AP II despite combat use. The treaty text and Trial Chamber findings contradict this. Objection sustained."
+    }
+  ],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw_p_v",
+        "article": "4(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-v-2003",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(a)(iv)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw_p_v",
+        "article": "3(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-v-2003",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw_p_v",
+        "article": "3(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-protocol-v-2003",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "54(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "cwc",
+        "article": "3(1)(b)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/cwc-1993",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_ii",
+        "article": "16",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_5a9179c7",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "a77569a7fe437f8ad6395feff050a681a4abcb601e927d7ca85fecbeb0dd2149",
+      "arguments": [
+        {
+          "id": "arg_f273a92b",
+          "claim": "The destruction of the Old Bridge of Mostar was extensive destruction of property not justified by military necessity, constituting a war crime under the Rome Statute.",
+          "reasoning": "The bridge was a civilian object and a historic monument, not a military objective. The HVO’s stated purpose was to sap the morale of the Muslim population, not to achieve a concrete military advantage. The alleged advantage of cutting ABiH supply lines was speculative and did not outweigh the extensive loss of cultural property. Accordingly, the act fits the definition of \"extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly\" in art.8(2)(a)(iv) of the Rome Statute.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_9ab97b21",
+          "claim": "The attack on the Old Bridge was disproportionate because the anticipated military advantage was not concrete enough to justify the extensive damage to a cultural monument.",
+          "reasoning": "Art.8(2)(b)(iv) of the Rome Statute prohibits attacks that cause damage \"clearly excessive in relation to the concrete and direct overall military advantage anticipated.\" The HVO’s claim that the bridge’s destruction would cut off ABiH supply routes was not demonstrated; the bridge’s primary function was civilian transit and cultural heritage. The resulting isolation of residents and psychological impact far exceeded any marginal tactical benefit, rendering the attack disproportionate.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_ed12cfa8",
+          "claim": "The Old Bridge, as a historic monument, was protected from attacks under the Additional Protocol II to the Geneva Conventions, making its intentional destruction a prohibited act of hostility.",
+          "reasoning": "Article 16 of Additional Protocol II expressly forbids \"any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples.\" The Old Bridge, a sixteenth‑century structure and a symbol of Mostar’s cultural heritage, falls squarely within this protection. The HVO’s deliberate targeting of the bridge for morale‑breaking purposes therefore violated this provision.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_ii",
+              "article": "16",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_ii",
+                "article": "16",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The destruction of the Old Bridge of Mostar was extensive destruction of property not justified by military necessity, constituting a war crime under the Rome Statute.\",\n      \"reasoning\": \"The bridge was a civilian object and a historic monument, not a military objective. The HVO’s stated purpose was to sap the morale of the Muslim population, not to achieve a concrete military advantage. The alleged advantage of cutting ABiH supply lines was speculative and did not outweigh the extensive loss of cultural property. Accordingly, the act fits the definition of \\\"extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly\\\" in art.8(2)(a)(iv) of the Rome Statute.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(iv)\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The attack on the Old Bridge was disproportionate because the anticipated military advantage was not concrete enough to justify the extensive damage to a cultural monument.\",\n      \"reasoning\": \"Art.8(2)(b)(iv) of the Rome Statute prohibits attacks that cause damage \\\"clearly excessive in relation to the concrete and direct overall military advantage anticipated.\\\" The HVO’s claim that the bridge’s destruction would cut off ABiH supply routes was not demonstrated; the bridge’s primary function was civilian transit and cultural heritage. The resulting isolation of residents and psychological impact far exceeded any marginal tactical benefit, rendering the attack disproportionate.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(iv)\",\n          \"quoted_text\": \"Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The Old Bridge, as a historic monument, was protected from attacks under the Additional Protocol II to the Geneva Conventions, making its intentional destruction a prohibited act of hostility.\",\n      \"reasoning\": \"Article 16 of Additional Protocol II expressly forbids \\\"any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples.\\\" The Old Bridge, a sixteenth‑century structure and a symbol of Mostar’s cultural heritage, falls squarely within this protection. The HVO’s deliberate targeting of the bridge for morale‑breaking purposes therefore violated this provision.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_ii\",\n          \"article\": \"16\",\n          \"quoted_text\": \"Without prejudice to the provisions of the Hague Convention for the Protection of Cultural Property in the Event of Armed Conflict of 14 May 1954, it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:41:51.334267Z",
+      "completed_at": "2026-11-22T17:41:55.754691Z",
+      "prompt_tokens": 4053,
+      "completion_tokens": 1851,
+      "error": null
+    },
+    {
+      "id": "turn_586c9e49",
+      "round_number": 1,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "2156a257fc21b7a50eb44a5dc5b84fc77a95f3ced0a74d01ae023b509b88685d",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_f358be71",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_9ab97b21",
+          "ground": "The argument misapplies the legal test by treating a civilian object as a military objective to which proportionality applies, whereas the legal framework requires an antecedent determination of objective status.",
+          "reasoning": "Art. 8(2)(b)(iv) of the Rome Statute prohibits attacks only where the object is not a military objective. The proportionality test is not a standalone ground for criminal liability if the object is correctly characterized as a military objective. The argument fails to reconcile the Trial Chamber's finding that the bridge was used for combat activities, which likely renders it a military objective, with the application of the proportionality standard.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument (arg_9ab97b21) applies the proportionality test under art.8(2)(b)(iv) without first establishing that the bridge was a civilian object. The Trial Chamber found the bridge was used for ABiH combat activities, which is relevant to its qualification as a military objective. The objection correctly identifies this doctrinal sequencing error."
+        },
+        {
+          "id": "obj_14c92f2f",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_ed12cfa8",
+          "ground": "The argument misinterprets the scope of protection in Additional Protocol II, which does not apply to objects used in support of the military effort.",
+          "reasoning": "Article 16 of Additional Protocol II prohibits acts of hostility against historic monuments, but this protection is conditional on the object not being used in support of the military effort. The Trial Chamber found the bridge was used for ABiH combat activities, which would negate the protection under Article 16, making the argument's legal characterization incorrect.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_ii",
+              "article": "16",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_ii",
+                "article": "16",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Article 16 of Additional Protocol II prohibits both acts of hostility against historic monuments and their use in support of the military effort. The Trial Chamber found the bridge was used for ABiH combat activities. The argument (arg_ed12cfa8) treats the protection as absolute, ignoring the proviso. The objection correctly identifies this omission."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_9ab97b21\",\n      \"ground\": \"The argument misapplies the legal test by treating a civilian object as a military objective to which proportionality applies, whereas the legal framework requires an antecedent determination of objective status.\",\n      \"reasoning\": \"Art. 8(2)(b)(iv) of the Rome Statute prohibits attacks only where the object is not a military objective. The proportionality test is not a standalone ground for criminal liability if the object is correctly characterized as a military objective. The argument fails to reconcile the Trial Chamber's finding that the bridge was used for combat activities, which likely renders it a military objective, with the application of the proportionality standard.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(iv)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_ed12cfa8\",\n      \"ground\": \"The argument misinterprets the scope of protection in Additional Protocol II, which does not apply to objects used in support of the military effort.\",\n      \"reasoning\": \"Article 16 of Additional Protocol II prohibits acts of hostility against historic monuments, but this protection is conditional on the object not being used in support of the military effort. The Trial Chamber found the bridge was used for ABiH combat activities, which would negate the protection under Article 16, making the argument's legal characterization incorrect.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_ii\",\n          \"article\": \"16\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:41:55.755849Z",
+      "completed_at": "2026-11-22T17:41:57.263663Z",
+      "prompt_tokens": 4887,
+      "completion_tokens": 416,
+      "error": null
+    },
+    {
+      "id": "turn_73838062",
+      "round_number": 1,
+      "role": "attacker_evidentiary",
+      "model_id": "groq/openai/gpt-oss-20b",
+      "prompt_id": "attacker_evidentiary/challenge",
+      "prompt_hash": "8c9d4a317d7fe8ac3cf1da65a005e483e9f26a97b1b1e00f92211c629bc68b0e",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_56041b60",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_f273a92b",
+          "ground": "The facts do not establish that the Old Bridge was a civilian object or historic monument, nor that its destruction was not justified by military necessity.",
+          "reasoning": "The record indicates that the bridge was used by the ABiH for combat activities and that its destruction would cut off supply lines, showing a concrete military advantage. It also merely describes the bridge as a sixteenth‑century structure without confirming it as a protected historic monument. Therefore the claim that the destruction was wanton or not justified lacks sufficient factual support.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument (arg_f273a92b) claims the bridge was a civilian object and that the military advantage was speculative. The Trial Chamber found the bridge was used for combat and its destruction would cut off ABiH supply operations — a concrete, not speculative, advantage. The objection correctly refutes the factual premise."
+        },
+        {
+          "id": "obj_05d1c04f",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_9ab97b21",
+          "ground": "The facts show a concrete military advantage and do not prove the bridge was primarily civilian or cultural.",
+          "reasoning": "The record states that the bridge was used by the ABiH for combat and that its destruction would sever supply routes, providing a tangible military benefit. No evidence is provided that the bridge was chiefly a civilian transit or that the damage was disproportionate relative to that advantage.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Same factual error as obj_56041b60: the argument (arg_9ab97b21) asserts the advantage was not concrete and the bridge was primarily civilian, but the Trial Chamber found a concrete supply-line advantage and military use. The objection is well-founded on the record."
+        },
+        {
+          "id": "obj_a0d53f89",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_ed12cfa8",
+          "ground": "The facts do not confirm that the Old Bridge was protected under Additional Protocol II as a historic monument.",
+          "reasoning": "The record only identifies the bridge as a sixteenth‑century structure; it does not state that it is a historic monument or that it is protected under AP II. Without such confirmation, the claim that its destruction violated AP II lacks factual support.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_ii",
+              "article": "16",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_ii",
+                "article": "16",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument (arg_ed12cfa8) assumes the bridge is a protected historic monument under AP II. The facts describe it only as a 'sixteenth-century structure' without confirming its status as a historic monument under the treaty. The objection correctly notes the missing factual predicate."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_f273a92b\",\n      \"ground\": \"The facts do not establish that the Old Bridge was a civilian object or historic monument, nor that its destruction was not justified by military necessity.\",\n      \"reasoning\": \"The record indicates that the bridge was used by the ABiH for combat activities and that its destruction would cut off supply lines, showing a concrete military advantage. It also merely describes the bridge as a sixteenth‑century structure without confirming it as a protected historic monument. Therefore the claim that the destruction was wanton or not justified lacks sufficient factual support.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(iv)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_9ab97b21\",\n      \"ground\": \"The facts show a concrete military advantage and do not prove the bridge was primarily civilian or cultural.\",\n      \"reasoning\": \"The record states that the bridge was used by the ABiH for combat and that its destruction would sever supply routes, providing a tangible military benefit. No evidence is provided that the bridge was chiefly a civilian transit or that the damage was disproportionate relative to that advantage.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(iv)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_ed12cfa8\",\n      \"ground\": \"The facts do not confirm that the Old Bridge was protected under Additional Protocol II as a historic monument.\",\n      \"reasoning\": \"The record only identifies the bridge as a sixteenth‑century structure; it does not state that it is a historic monument or that it is protected under AP II. Without such confirmation, the claim that its destruction violated AP II lacks factual support.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_ii\",\n          \"article\": \"16\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:41:55.759089Z",
+      "completed_at": "2026-11-22T17:41:58.903485Z",
+      "prompt_tokens": 4685,
+      "completion_tokens": 2301,
+      "error": null
+    },
+    {
+      "id": "turn_22c11b84",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "520c70c54fba48328f4d049d4243da977c161c922de15b75d6c35810f4ccd41e",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"No. The destruction of the Old Bridge of Mostar did not constitute wanton destruction not justified by military necessity. The bridge was a military objective — used by the ABiH for combat activities and as a supply route — and its destruction conferred a concrete and direct military advantage by severing practically all ABiH supply operations. The HVO’s additional motive of sapping civilian morale does not negate that military necessity where a genuine military advantage exists. The collateral effects (isolation of residents, psychological impact) are not established as clearly excessive in relation to that advantage. The cultural-property argument fails because the facts do not confirm the bridge’s status as a protected historic monument under the cited treaty. Accordingly, the act does not meet the elements of extensive destruction not justified by military necessity under the Rome Statute or customary law. \", \"reasoning\": \"Objection obj_f358be71 is sustained: the proportionality argument (arg_9ab97b21) misapplies art.8(2)(b)(iv) by treating the bridge as a civilian object; once the bridge is a military objective, proportionality governs only incidental civilian harm, not the destruction of the objective itself. Objection obj_14c92f2f is overruled: the text of AP II art.16 retrieved in the corpus does not state that protection is conditional on non-use for military effort; it prohibits both hostility against such objects and their use in support of the military effort. Objection obj_56041b60 is sustained: the Trial Chamber’s findings that the bridge was used for combat and that its destruction would cut supply lines directly contradict arg_f273a92b’s claim that the bridge was a civilian object and that the military advantage was speculative. Objection obj_05d1c04f is sustained for the same reasons against arg_9ab97b21. Objection obj_a0d53f89 is sustained: the facts describe the bridge only as a sixteenth-century structure and do not establish it as a protected historic monument under AP II. With all three arguments either legally misdirected or factually unsupported, no surviving argument establishes a violation. The law and facts as given show a legitimate military objective destroyed for a concrete military advantage, which is not wanton destruction unjustified by military necessity. \", \"confidence\": 0.7, \"confidence_reasoning\": \"The military necessity finding is strongly supported by the Trial Chamber’s factual determinations (combat use, supply-line severance), which are binding on this record. That alone defeats the 'not justified by military necessity' element of the charged crime. The proportionality of incidental harm (isolation, psychological impact) is less fully briefed, but the military advantage described — cutting off practically all supply operations — is substantial, making a finding of clear excessiveness unlikely. The cultural-property claim fails on the evidence. Confidence is not higher because a different tribunal could weigh the civilian harm more heavily or find the bridge’s cultural status established by other evidence not in this record. \", \"rulings\": [{\"objection_id\": \"obj_f358be71\", \"disposition\": \"sustained\", \"reasoning\": \"The argument misapplies the proportionality test in art.8(2)(b)(iv). That provision governs incidental damage to civilians/civilian objects from attacks on military objectives. The Trial Chamber found the bridge was used for combat activities, making it a military objective. The argument incorrectly treats the bridge’s destruction itself as the disproportionate damage, rather than assessing whether incidental civilian harm was clearly excessive relative to the military advantage of destroying a valid military objective.\"}, {\"objection_id\": \"obj_14c92f2f\", \"disposition\": \"overruled\", \"reasoning\": \"The objection asserts that AP II art.16 protection is conditional on the object not being used in support of the military effort. The retrieved text of art.16 states: 'it is prohibited to commit any acts of hostility directed against historic monuments... and to use them in support of the military effort.' This phrasing establishes two distinct prohibitions; it does not state that military use terminates protection. The objection’s interpretation is not supported by the cited authority.\"}, {\"objection_id\": \"obj_56041b60\", \"disposition\": \"sustained\", \"reasoning\": \"The facts as given — the Trial Chamber’s findings that the bridge was used for ABiH combat activities and that its destruction would cut off practically all ABiH supply operations — directly contradict the argument’s premises that the bridge was a civilian object and that the military advantage was speculative. The argument’s characterization is therefore unsupported by the evidentiary record.\"}, {\"objection_id\": \"obj_05d1c04f\", \"disposition\": \"sustained\", \"reasoning\": \"The same Trial Chamber findings establish a concrete military advantage (severing supply routes) and military use of the bridge. The argument’s claim that the bridge was primarily civilian and that the advantage was not demonstrated is inconsistent with the factual record.\"}, {\"objection_id\": \"obj_a0d53f89\", \"disposition\": \"sustained\", \"reasoning\": \"The facts describe the bridge only as a 'sixteenth-century bridge.' They do not state that it is a historic monument protected under AP II, nor do they reference any designation or registry. The argument’s legal conclusion therefore lacks the necessary factual foundation.\"}], \"surviving_argument_ids\": [], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-22T17:41:58.904484Z",
+      "completed_at": "2026-11-22T17:44:31.660724Z",
+      "prompt_tokens": 5671,
+      "completion_tokens": 5974,
+      "error": null
+    },
+    {
+      "id": "turn_74c57111",
+      "round_number": 2,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/rebuttal",
+      "prompt_hash": "35b0bcdde409cf6f12ea9f3ded52fef91664716f2ed885a876388e55de17154e",
+      "arguments": [
+        {
+          "id": "arg_00ecc092",
+          "claim": "The destruction of the Old Bridge of Mostar constituted extensive destruction of property not justified by military necessity, constituting a war crime under Rome Statute art.8(2)(a)(iv).",
+          "reasoning": "The bridge, although reportedly used on occasion by the ABiH, was not indispensable for military logistics; the asserted advantage of cutting supply routes was speculative and not demonstrated to be concrete. The resulting loss of a unique cultural monument and the isolation of civilians far outweighed any marginal benefit, indicating that the attack was not justified by military necessity. Under art.8(2)(a)(iv) such conduct is punishable as a war crime.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(a)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(a)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_3785e4c1",
+          "claim": "The attack on the Old Bridge was disproportionate because the anticipated military advantage was not concrete and the damage was clearly excessive, violating Rome Statute art.8(2)(b)(iv).",
+          "reasoning": "Proportionality requires that incidental damage not be excessive in relation to the concrete and direct overall military advantage. The HVO’s claim that destroying the bridge would cut ABiH supply lines was not substantiated; the bridge’s primary function was civilian transit and cultural heritage. The total destruction of the bridge and the severe psychological impact on the civilian population far exceeded any marginal tactical benefit, making the attack clearly excessive.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_e7e10231",
+          "claim": "The Old Bridge, as a historic monument, was protected under Additional Protocol II art.16, and its intentional destruction was prohibited regardless of any alleged military use.",
+          "reasoning": "AP II art.16 expressly prohibits acts of hostility directed against historic monuments that constitute the cultural or spiritual heritage of peoples, and also prohibits using such monuments in support of the military effort. The bridge, a sixteenth‑century structure, qualifies as a historic monument under customary definitions of cultural property. Its deliberate destruction for morale‑breaking purposes therefore breached AP II, irrespective of the limited military utility attributed to it.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_ii",
+              "article": "16",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_ii",
+                "article": "16",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The destruction of the Old Bridge of Mostar constituted extensive destruction of property not justified by military necessity, constituting a war crime under Rome Statute art.8(2)(a)(iv).\",\n      \"reasoning\": \"The bridge, although reportedly used on occasion by the ABiH, was not indispensable for military logistics; the asserted advantage of cutting supply routes was speculative and not demonstrated to be concrete. The resulting loss of a unique cultural monument and the isolation of civilians far outweighed any marginal benefit, indicating that the attack was not justified by military necessity. Under art.8(2)(a)(iv) such conduct is punishable as a war crime.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(a)(iv)\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The attack on the Old Bridge was disproportionate because the anticipated military advantage was not concrete and the damage was clearly excessive, violating Rome Statute art.8(2)(b)(iv).\",\n      \"reasoning\": \"Proportionality requires that incidental damage not be excessive in relation to the concrete and direct overall military advantage. The HVO’s claim that destroying the bridge would cut ABiH supply lines was not substantiated; the bridge’s primary function was civilian transit and cultural heritage. The total destruction of the bridge and the severe psychological impact on the civilian population far exceeded any marginal tactical benefit, making the attack clearly excessive.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(iv)\",\n          \"quoted_text\": \"Intentionally launching an attack in the knowledge that such attack will cause incidental loss of life or injury to civilians or damage to civilian objects or widespread, long-term and severe damage to the natural environment which would be clearly excessive in relation to the concrete and direct overall military advantage anticipated;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The Old Bridge, as a historic monument, was protected under Additional Protocol II art.16, and its intentional destruction was prohibited regardless of any alleged military use.\",\n      \"reasoning\": \"AP II art.16 expressly prohibits acts of hostility directed against historic monuments that constitute the cultural or spiritual heritage of peoples, and also prohibits using such monuments in support of the military effort. The bridge, a sixteenth‑century structure, qualifies as a historic monument under customary definitions of cultural property. Its deliberate destruction for morale‑breaking purposes therefore breached AP II, irrespective of the limited military utility attributed to it.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_ii\",\n          \"article\": \"16\",\n          \"quoted_text\": \"it is prohibited to commit any acts of hostility directed against historic monuments, works of art or places of worship which constitute the cultural or spiritual heritage of peoples, and to use them in support of the military effort.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:44:31.662084Z",
+      "completed_at": "2026-11-22T17:44:37.389056Z",
+      "prompt_tokens": 3224,
+      "completion_tokens": 2402,
+      "error": null
+    },
+    {
+      "id": "turn_4fc13d13",
+      "round_number": 2,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "a8c8f8ea0f1e15ecf1aea471734bed38644cc164a4716d2315c6a53bcbc4a6b2",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_68085a57",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_9ab97b21",
+          "ground": "The argument misapplies the legal test for proportionality by failing to establish that the Old Bridge was a civilian object rather than a military objective.",
+          "reasoning": "Rome Statute art.8(2)(b)(iv) prohibits attacks causing 'clearly excessive' incidental damage only where the target is a civilian object. The Trial Chamber found the bridge was used for ABiH combat activities. If the bridge qualified as a military objective due to its effective contribution to military action and definite advantage, the proportionality test in (b)(iv) is inapplicable; the correct analysis is under the definition of military objective, not incidental damage.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(iv)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(iv)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Duplicate of obj_f358be71. The argument (arg_9ab97b21) misapplies proportionality by failing to address the military objective threshold. The Trial Chamber's finding of combat use triggers the military objective analysis first. Objection sustained for the same reason."
+        },
+        {
+          "id": "obj_136622d9",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_ed12cfa8",
+          "ground": "The argument ignores the explicit proviso in AP II art.16 that protection does not apply to historic monuments used in support of the military effort.",
+          "reasoning": "Article 16 of Additional Protocol II prohibits acts of hostility against historic monuments 'which constitute the cultural or spiritual heritage of peoples' but expressly prohibits using them 'in support of the military effort.' The Trial Chamber found the bridge was used by the ABiH for combat activities. Therefore, the bridge may have lost its protected status under the specific terms of the cited provision, rendering the claim of absolute prohibition legally unsound.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_ii",
+              "article": "16",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_ii",
+                "article": "16",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Same as obj_14c92f2f. The argument (arg_ed12cfa8) ignores the explicit proviso in AP II art.16 that protection does not apply to monuments used in support of the military effort. The Trial Chamber found such use. Objection sustained."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_9ab97b21\",\n      \"ground\": \"The argument misapplies the legal test for proportionality by failing to establish that the Old Bridge was a civilian object rather than a military objective.\",\n      \"reasoning\": \"Rome Statute art.8(2)(b)(iv) prohibits attacks causing 'clearly excessive' incidental damage only where the target is a civilian object. The Trial Chamber found the bridge was used for ABiH combat activities. If the bridge qualified as a military objective due to its effective contribution to military action and definite advantage, the proportionality test in (b)(iv) is inapplicable; the correct analysis is under the definition of military objective, not incidental damage.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(iv)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_ed12cfa8\",\n      \"ground\": \"The argument ignores the explicit proviso in AP II art.16 that protection does not apply to historic monuments used in support of the military effort.\",\n      \"reasoning\": \"Article 16 of Additional Protocol II prohibits acts of hostility against historic monuments 'which constitute the cultural or spiritual heritage of peoples' but expressly prohibits using them 'in support of the military effort.' The Trial Chamber found the bridge was used by the ABiH for combat activities. Therefore, the bridge may have lost its protected status under the specific terms of the cited provision, rendering the claim of absolute prohibition legally unsound.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_ii\",\n          \"article\": \"16\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:44:37.389990Z",
+      "completed_at": "2026-11-22T17:44:38.805050Z",
+      "prompt_tokens": 5352,
+      "completion_tokens": 438,
+      "error": null
+    },
+    {
+      "id": "turn_e5413c65",
+      "round_number": 2,
+      "role": "attacker_evidentiary",
+      "model_id": "groq/openai/gpt-oss-20b",
+      "prompt_id": "attacker_evidentiary/challenge",
+      "prompt_hash": "7cca48c3f5e0d77a035427f39a62eadab90e16ffc21655998fa1e078e2066f7c",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_62564557",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_f273a92b",
+          "ground": "The facts indicate that the bridge was used for combat and that its destruction would cut ABiH supply lines, providing a concrete military advantage.",
+          "reasoning": "The Trial Chamber found the bridge was used by the ABiH for combat activities and that its destruction would cut off practically all possibilities for the ABiH to continue its supply operations, which constitutes a concrete and direct military advantage. This undermines the claim that the destruction was not justified by military necessity.",
+          "citations": [],
+          "resolved_citations": [],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument (arg_f273a92b) claims the destruction was not justified by military necessity. The Trial Chamber found the bridge's destruction would cut off ABiH supply operations — a concrete and direct military advantage. The objection correctly identifies this factual contradiction, though it conflates 'military advantage' with the higher 'imperative military necessity' standard."
+        },
+        {
+          "id": "obj_9b1b7ef5",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_9ab97b21",
+          "ground": "The facts show a concrete military advantage from cutting ABiH supply lines, refuting the claim of lack of concrete advantage.",
+          "reasoning": "The Trial Chamber determined that the bridge’s destruction would cut off practically all possibilities for the ABiH to continue its supply operations, demonstrating a concrete military advantage that counters the assertion of disproportionate harm.",
+          "citations": [],
+          "resolved_citations": [],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Same as obj_62564557 and obj_05d1c04f. The Trial Chamber determined a concrete military advantage (cutting supply lines). The argument (arg_9ab97b21) denies this. Objection sustained on the facts."
+        },
+        {
+          "id": "obj_1710e5a0",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_ed12cfa8",
+          "ground": "The bridge was used for combat, making it a military objective and not protected under Additional Protocol II.",
+          "reasoning": "The facts state that the bridge was used by the ABiH for combat activities. Under AP II, historic monuments that are used to support a military effort are not protected. Thus the claim that the bridge was protected and that its destruction violated AP II is unsupported by the facts.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_ii",
+              "article": "16",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_ii",
+                "article": "16",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument (arg_ed12cfa8) claims the bridge was protected under AP II. The facts state it was used for combat activities. Under AP II art.16, such use removes protection. The objection correctly applies the treaty text to the facts."
+        },
+        {
+          "id": "obj_fc0ca857",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_e7e10231",
+          "ground": "The bridge’s use in combat means it was not protected under AP II, contrary to the argument’s claim.",
+          "reasoning": "Because the bridge was used by the ABiH for combat, it qualifies as a military objective, and AP II’s prohibition on acts of hostility against historic monuments does not apply. Therefore the factual predicate that the destruction violated AP II is not established.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_ii",
+              "article": "16",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_ii",
+                "article": "16",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Same as obj_1710e5a0. The argument (arg_e7e10231) asserts the bridge was protected under AP II despite combat use. The treaty text and Trial Chamber findings contradict this. Objection sustained."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_f273a92b\",\n      \"ground\": \"The facts indicate that the bridge was used for combat and that its destruction would cut ABiH supply lines, providing a concrete military advantage.\",\n      \"reasoning\": \"The Trial Chamber found the bridge was used by the ABiH for combat activities and that its destruction would cut off practically all possibilities for the ABiH to continue its supply operations, which constitutes a concrete and direct military advantage. This undermines the claim that the destruction was not justified by military necessity.\",\n      \"severity\": \"material\",\n      \"citations\": []\n    },\n    {\n      \"target_argument_id\": \"arg_9ab97b21\",\n      \"ground\": \"The facts show a concrete military advantage from cutting ABiH supply lines, refuting the claim of lack of concrete advantage.\",\n      \"reasoning\": \"The Trial Chamber determined that the bridge’s destruction would cut off practically all possibilities for the ABiH to continue its supply operations, demonstrating a concrete military advantage that counters the assertion of disproportionate harm.\",\n      \"severity\": \"material\",\n      \"citations\": []\n    },\n    {\n      \"target_argument_id\": \"arg_ed12cfa8\",\n      \"ground\": \"The bridge was used for combat, making it a military objective and not protected under Additional Protocol II.\",\n      \"reasoning\": \"The facts state that the bridge was used by the ABiH for combat activities. Under AP II, historic monuments that are used to support a military effort are not protected. Thus the claim that the bridge was protected and that its destruction violated AP II is unsupported by the facts.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_ii\",\n          \"article\": \"16\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_e7e10231\",\n      \"ground\": \"The bridge’s use in combat means it was not protected under AP II, contrary to the argument’s claim.\",\n      \"reasoning\": \"Because the bridge was used by the ABiH for combat, it qualifies as a military objective, and AP II’s prohibition on acts of hostility against historic monuments does not apply. Therefore the factual predicate that the destruction violated AP II is not established.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_ii\",\n          \"article\": \"16\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:44:37.390670Z",
+      "completed_at": "2026-11-22T17:44:39.927801Z",
+      "prompt_tokens": 5132,
+      "completion_tokens": 1848,
+      "error": null
+    },
+    {
+      "id": "turn_8c8a2b35",
+      "round_number": 2,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "197faf9b7cce3a67dc982a7920b07214c054aef344255381d883953beb8a1697",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The destruction of the Old Bridge of Mostar constituted wanton destruction not justified by military necessity, in violation of the laws and customs of war.\", \"reasoning\": \"The Trial Chamber found that the HVO destroyed the bridge 'in order to sap the morale of the Muslim population.' This purpose — terrorizing a civilian population — is illegitimate under international humanitarian law and cannot constitute military necessity. While the bridge was used by the ABiH for combat activities and its destruction would cut supply lines, providing a concrete military advantage, the standard for 'military necessity' under the grave breaches regime (Rome Statute art.8(2)(a)(iv)) and the laws of war (art.8(2)(b)(xiii)) is 'imperative military necessity,' not merely a tangible advantage. The primary motive established by the Trial Chamber was psychological warfare against civilians, not an imperative operational requirement. The extensive destruction of a sixteenth-century cultural monument for this purpose was therefore unlawful and wanton. The sustained objections correctly identified factual and doctrinal errors in the parties' arguments (e.g., mischaracterizing the bridge as purely civilian, misapplying proportionality, overlooking the AP II art.16 proviso), but they do not negate the independent legal conclusion that destruction driven by a terroristic purpose fails the military necessity test.\", \"confidence\": 0.78, \"confidence_reasoning\": \"The conclusion rests on the Trial Chamber's explicit finding of an illegitimate purpose (sapping civilian morale), which directly negates military necessity under the 'imperative necessity' standard in art.8(2)(a)(iv) and art.8(2)(b)(xiii). The confidence is not higher because the retrieved corpus contains no case law applying this standard to dual-use cultural property, and the parties' arguments did not cleanly frame the 'primary purpose' doctrine. However, the factual finding of terroristic intent is decisive under settled IHL principle.\", \"rulings\": [{\"objection_id\": \"obj_f358be71\", \"disposition\": \"sustained\", \"reasoning\": \"The argument (arg_9ab97b21) applies the proportionality test under art.8(2)(b)(iv) without first establishing that the bridge was a civilian object. The Trial Chamber found the bridge was used for ABiH combat activities, which is relevant to its qualification as a military objective. The objection correctly identifies this doctrinal sequencing error.\"}, {\"objection_id\": \"obj_14c92f2f\", \"disposition\": \"sustained\", \"reasoning\": \"Article 16 of Additional Protocol II prohibits both acts of hostility against historic monuments and their use in support of the military effort. The Trial Chamber found the bridge was used for ABiH combat activities. The argument (arg_ed12cfa8) treats the protection as absolute, ignoring the proviso. The objection correctly identifies this omission.\"}, {\"objection_id\": \"obj_56041b60\", \"disposition\": \"sustained\", \"reasoning\": \"The argument (arg_f273a92b) claims the bridge was a civilian object and that the military advantage was speculative. The Trial Chamber found the bridge was used for combat and its destruction would cut off ABiH supply operations — a concrete, not speculative, advantage. The objection correctly refutes the factual premise.\"}, {\"objection_id\": \"obj_05d1c04f\", \"disposition\": \"sustained\", \"reasoning\": \"Same factual error as obj_56041b60: the argument (arg_9ab97b21) asserts the advantage was not concrete and the bridge was primarily civilian, but the Trial Chamber found a concrete supply-line advantage and military use. The objection is well-founded on the record.\"}, {\"objection_id\": \"obj_a0d53f89\", \"disposition\": \"sustained\", \"reasoning\": \"The argument (arg_ed12cfa8) assumes the bridge is a protected historic monument under AP II. The facts describe it only as a 'sixteenth-century structure' without confirming its status as a historic monument under the treaty. The objection correctly notes the missing factual predicate.\"}, {\"objection_id\": \"obj_68085a57\", \"disposition\": \"sustained\", \"reasoning\": \"Duplicate of obj_f358be71. The argument (arg_9ab97b21) misapplies proportionality by failing to address the military objective threshold. The Trial Chamber's finding of combat use triggers the military objective analysis first. Objection sustained for the same reason.\"}, {\"objection_id\": \"obj_136622d9\", \"disposition\": \"sustained\", \"reasoning\": \"Same as obj_14c92f2f. The argument (arg_ed12cfa8) ignores the explicit proviso in AP II art.16 that protection does not apply to monuments used in support of the military effort. The Trial Chamber found such use. Objection sustained.\"}, {\"objection_id\": \"obj_62564557\", \"disposition\": \"sustained\", \"reasoning\": \"The argument (arg_f273a92b) claims the destruction was not justified by military necessity. The Trial Chamber found the bridge's destruction would cut off ABiH supply operations — a concrete and direct military advantage. The objection correctly identifies this factual contradiction, though it conflates 'military advantage' with the higher 'imperative military necessity' standard.\"}, {\"objection_id\": \"obj_9b1b7ef5\", \"disposition\": \"sustained\", \"reasoning\": \"Same as obj_62564557 and obj_05d1c04f. The Trial Chamber determined a concrete military advantage (cutting supply lines). The argument (arg_9ab97b21) denies this. Objection sustained on the facts.\"}, {\"objection_id\": \"obj_1710e5a0\", \"disposition\": \"sustained\", \"reasoning\": \"The argument (arg_ed12cfa8) claims the bridge was protected under AP II. The facts state it was used for combat activities. Under AP II art.16, such use removes protection. The objection correctly applies the treaty text to the facts.\"}, {\"objection_id\": \"obj_fc0ca857\", \"disposition\": \"sustained\", \"reasoning\": \"Same as obj_1710e5a0. The argument (arg_e7e10231) asserts the bridge was protected under AP II despite combat use. The treaty text and Trial Chamber findings contradict this. Objection sustained.\"}], \"surviving_argument_ids\": [], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-22T17:44:39.928688Z",
+      "completed_at": "2026-11-22T17:48:02.844599Z",
+      "prompt_tokens": 6936,
+      "completion_tokens": 7227,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-22T17:48:02.845822+00:00",
+  "duration_seconds": 370.3081727930112,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 2,
+  "judge_failures": 0,
+  "judge_failed": false
+}

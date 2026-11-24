@@ -1,0 +1,665 @@
+{
+  "case_id": "hyp_hospital_warning",
+  "case_title": "Fictional: the St Ilven hospital in Varnetsa",
+  "court": "Hypothetical",
+  "year": 2026,
+  "difficulty": "medium",
+  "arm": "rag",
+  "arm_label": "B — Single pass with retrieval",
+  "run_id": "eval_292db3dc3f",
+  "question": "Did the Calvaran strike on the St Ilven hospital on 13 August 2025 violate the protection owed to civilian medical units under the law of international armed conflict?",
+  "facts": "An international armed conflict has existed since March 2025 between the Republic of Calvaro and the Federation of Drennick, both parties to the four Geneva Conventions of 1949, Additional Protocol I and the Rome Statute. St Ilven Hospital in the town of Varnetsa is a civilian hospital recognised by the Drennick authorities and marked with the red cross emblem. From 2 August 2025, after Drennick forces withdrew into Varnetsa, a Drennick artillery observation team occupied the hospital's top floor and from there directed artillery fire onto Calvaran positions; a heavy machine gun mounted on the hospital roof fired on Calvaran troops; and the basement was used to store artillery ammunition. On 9 August Calvaran forces warned, by radio broadcast on frequencies used by Drennick forces, by leaflets, and through a delegate of the International Committee of the Red Cross, that unless all military use of the hospital ceased within 48 hours it would lose its protection and be attacked, and offered a safe corridor for the evacuation of patients and staff. The military use continued: the roof machine gun fired on Calvaran troops on 10 and 11 August. Between 9 and 12 August all patients and medical staff left through the corridor, and on 12 August the hospital director told the ICRC delegate that no patients or medical staff remained in the building. On 13 August Calvaran aircraft struck the top floor and roof with two guided munitions, chosen to avoid the lower floors. The strike killed two Drennick soldiers on the roof and destroyed the top floor. No civilians were in the building.",
+  "ground_truth_outcome": "rejected",
+  "holding": "Authored ground truth for a fictional case; no tribunal has ruled on it. No. Protection of a civilian medical unit ceases when it is used, outside its humanitarian function, to commit acts harmful to the enemy, after a warning setting a reasonable time-limit has remained unheeded (GC IV Art. 19 for civilian hospitals; AP I Art. 13(1) for civilian medical units; customary Rule 28). Directing artillery fire, firing a machine gun and storing ammunition are acts harmful to the enemy and none falls within the exceptions in GC IV Art. 19(2) or AP I Art. 13(2). A warning naming a 48-hour time-limit was given through several channels and went unheeded. With patients and staff evacuated and munitions chosen to limit the damage, the strike involved no incidental civilian harm, and the precautions required by Art. 57 were taken. The strike did not violate the protection owed to the hospital under GC IV Arts. 18–19 or AP I Arts. 12–13.",
+  "predicted_outcome": "rejected",
+  "outcome_correct": true,
+  "confidence": 0.95,
+  "confidence_reasoning": "The conclusion rests on black-letter treaty provisions (GC IV Art. 19, AP I Art. 13) applied to undisputed facts: the hospital was used for artillery observation, heavy machine gun fire, and ammunition storage — classic acts harmful to the enemy; a multi-channel warning with a 48-hour deadline was given and ignored; all civilians had left; the strike was precise and caused zero civilian harm. This is a textbook application of the loss-of-protection regime. No competing interpretation or factual dispute exists in the record. Confidence would be lower only if an objection had raised a genuine issue about warning adequacy, the definition of 'acts harmful to the enemy,' or precautionary measures — but none did.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 2,
+  "citation_statuses": {
+    "total": 8,
+    "resolved": 8,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "No. The Calvaran strike on St Ilven Hospital on 13 August 2025 did not violate the protection owed to civilian medical units under the law of international armed conflict. The hospital lost its protection under Article 19 of the Fourth Geneva Convention and Article 13 of Additional Protocol I because it was used to commit acts harmful to the enemy — specifically, as an artillery observation post, a heavy machine gun position, and an ammunition storage site — none of which fall within the enumerated exemptions. Calvaran forces gave a due warning through multiple channels on 9 August with a reasonable 48-hour time limit, and the hostile use continued. By 13 August, all patients and medical staff had evacuated. The strike was limited to the military-used portions (top floor and roof), employed precision-guided munitions, and caused no civilian casualties, satisfying the principles of distinction, proportionality, and precautions in attack. The general protection of Article 18 GC IV and Article 12 AP I no longer applied once the conditions of Article 19 GC IV / Article 13 AP I were met. All four arguments survive unchallenged. No objections were raised in this round. The proceeding may close. Confidence is high because the treaty provisions are clear, the facts squarely meet the legal tests, and no countervailing authority or objection has been presented. The law on loss of protection for medical units used for military purposes is settled.",
+    "reasoning": "The four arguments collectively establish that (1) the hospital committed acts harmful to the enemy not covered by the exemptions in GC IV Art. 19 and AP I Art. 13(2); (2) a due warning with a reasonable time limit was given and unheeded; (3) the attack complied with distinction, proportionality, and precautions; and (4) Article 18 GC IV's general protection no longer governed once Article 19's conditions were satisfied. The retrieved treaty texts (GC IV Arts. 18, 19; AP I Arts. 12, 13) directly support each step. No objections were filed to challenge any premise or citation. All citations in the arguments resolve to the provided corpus.",
+    "confidence": 0.95,
+    "confidence_reasoning": "The conclusion rests on black-letter treaty provisions (GC IV Art. 19, AP I Art. 13) applied to undisputed facts: the hospital was used for artillery observation, heavy machine gun fire, and ammunition storage — classic acts harmful to the enemy; a multi-channel warning with a 48-hour deadline was given and ignored; all civilians had left; the strike was precise and caused zero civilian harm. This is a textbook application of the loss-of-protection regime. No competing interpretation or factual dispute exists in the record. Confidence would be lower only if an objection had raised a genuine issue about warning adequacy, the definition of 'acts harmful to the enemy,' or precautionary measures — but none did.",
+    "surviving_argument_ids": [
+      "arg_c32d7a66",
+      "arg_db83a5d9",
+      "arg_852d0b59",
+      "arg_470dabdb"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_c32d7a66",
+      "claim": "The protection afforded to St Ilven Hospital under Article 19 of the Fourth Geneva Convention and Article 13 of Additional Protocol I ceased because the hospital was used to commit acts harmful to the enemy that are not among the enumerated exemptions.",
+      "reasoning": "Both the Convention and the Protocol state that protection does not cease unless the medical facility is used for acts harmful to the enemy, and that the loss of protection may occur only after such use. The exemptions listed (light personal weapons, pickets, small arms taken from the wounded, and combatants present for medical reasons) do not cover the use of the hospital as an artillery observation post, the mounting of a heavy machine gun on the roof, nor the storage of artillery ammunition in the basement. These constitute active participation in hostilities, i.e., acts harmful to the enemy, thereby lawfully terminating the hospital’s protected status.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iv",
+          "article": "19",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy. Protection may, however, cease only after due warning has been given, naming, in all appropriate cases, a reasonable time limit, and after such warning has remained unheeded."
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "13",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The protection to which civilian medical units are entitled shall not cease unless they are used to commit, outside their humanitarian function, acts harmful to the enemy. Protection may, however, cease only after a warning has been given setting, whenever appropriate, a reasonable time-limit, and after such warning has remained unheeded."
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "13",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "that the personnel of the unit are equipped with light individual weapons for their own defence or for that of the wounded and sick in their charge; ... that small arms and ammunition taken from the wounded and sick, and not yet handed to the proper service, are found in the units;"
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "12",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Under no circumstances shall medical units be used in an attempt to shield military objectives from attack."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iv",
+            "article": "19",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy. Protection may, however, cease only after due warning has been given, naming, in all appropriate cases, a reasonable time limit, and after such warning has remained unheeded."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "13",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The protection to which civilian medical units are entitled shall not cease unless they are used to commit, outside their humanitarian function, acts harmful to the enemy. Protection may, however, cease only after a warning has been given setting, whenever appropriate, a reasonable time-limit, and after such warning has remained unheeded."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "13",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "that the personnel of the unit are equipped with light individual weapons for their own defence or for that of the wounded and sick in their charge; ... that small arms and ammunition taken from the wounded and sick, and not yet handed to the proper service, are found in the units;"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "12",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Under no circumstances shall medical units be used in an attempt to shield military objectives from attack."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_db83a5d9",
+      "claim": "The warning issued by Calvaran forces on 9 August satisfied the requirement of a due warning with a reasonable time‑limit, and St Ilven Hospital failed to cease its hostile use, so the loss of protection remained in effect on 13 August.",
+      "reasoning": "Article 19 of the Fourth Geneva Convention and Article 13 of Additional Protocol I require that a protected medical facility receive a warning that names a reasonable time‑limit before its protection can be revoked. The warning was transmitted by radio, leaflets, and an ICRC delegate, thereby meeting the “due warning” standard. The hospital continued to host an observation team, fire a heavy machine gun on 10 and 11 August, and store ammunition, demonstrating that the warning was unheeded. Consequently, at the time of the strike the hospital’s protection had lawfully ceased.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iv",
+          "article": "19",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy. Protection may, however, cease only after due warning has been given, naming, in all appropriate cases, a reasonable time limit, and after such warning has remained unheeded."
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "13",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The protection to which civilian medical units are entitled shall not cease unless they are used to commit, outside their humanitarian function, acts harmful to the enemy. Protection may, however, cease only after a warning has been given setting, whenever appropriate, a reasonable time-limit, and after such warning has remained unheeded."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iv",
+            "article": "19",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy. Protection may, however, cease only after due warning has been given, naming, in all appropriate cases, a reasonable time limit, and after such warning has remained unheeded."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "13",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The protection to which civilian medical units are entitled shall not cease unless they are used to commit, outside their humanitarian function, acts harmful to the enemy. Protection may, however, cease only after a warning has been given setting, whenever appropriate, a reasonable time-limit, and after such warning has remained unheeded."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_852d0b59",
+      "claim": "The 13 August air strike complied with the principles of distinction and proportionality because it targeted only the parts of the hospital used for military purposes, employed precision‑guided munitions, and caused no civilian casualties.",
+      "reasoning": "Even after protection has ceased, IHL obliges parties to direct attacks only at legitimate military objectives and to take all feasible precautions to avoid civilian harm. The strike was limited to the roof and top floor where the machine gun and observation post were located, used guided weapons to spare the lower floors, and no patients or civilian staff remained in the building. Accordingly, the attack was proportionate and distinguished between combatants and civilians, satisfying the remaining obligations of IHL.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_470dabdb",
+      "claim": "The continued protection of civilian hospitals under Article 18 of the Fourth Geneva Convention does not apply here because the hospital’s loss of protection under Article 19 was lawfully effected before the attack.",
+      "reasoning": "Article 18 affirms that civilian hospitals may never be the object of attack while they retain protected status. However, Article 19 expressly provides a mechanism for that protection to cease when the hospital is used for hostile acts after a proper warning. Since the conditions of Article 19 were met, the general rule of Article 18 no longer governs the legality of the strike.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iv",
+          "article": "18",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Civilian hospitals ... may in no circumstances be the object of attack, but shall at all times be respected and protected by the Parties to the conflict."
+        },
+        {
+          "type": "treaty",
+          "instrument": "gc_iv",
+          "article": "19",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy. Protection may, however, cease only after due warning has been given, naming, in all appropriate cases, a reasonable time limit, and after such warning has remained unheeded."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iv",
+            "article": "18",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Civilian hospitals ... may in no circumstances be the object of attack, but shall at all times be respected and protected by the Parties to the conflict."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iv",
+            "article": "19",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy. Protection may, however, cease only after due warning has been given, naming, in all appropriate cases, a reasonable time limit, and after such warning has remained unheeded."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iv",
+        "article": "18",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iv",
+        "article": "19",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "13",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iv",
+        "article": "22",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iv",
+        "article": "20",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "13(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "12",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_i",
+        "article": "23",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gci-1949",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_42eed1e1",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "83057b79a1a8fecd863f12182c81d45f2b92953016e79890c574380f555e72c3",
+      "arguments": [
+        {
+          "id": "arg_c32d7a66",
+          "claim": "The protection afforded to St Ilven Hospital under Article 19 of the Fourth Geneva Convention and Article 13 of Additional Protocol I ceased because the hospital was used to commit acts harmful to the enemy that are not among the enumerated exemptions.",
+          "reasoning": "Both the Convention and the Protocol state that protection does not cease unless the medical facility is used for acts harmful to the enemy, and that the loss of protection may occur only after such use. The exemptions listed (light personal weapons, pickets, small arms taken from the wounded, and combatants present for medical reasons) do not cover the use of the hospital as an artillery observation post, the mounting of a heavy machine gun on the roof, nor the storage of artillery ammunition in the basement. These constitute active participation in hostilities, i.e., acts harmful to the enemy, thereby lawfully terminating the hospital’s protected status.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iv",
+              "article": "19",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy. Protection may, however, cease only after due warning has been given, naming, in all appropriate cases, a reasonable time limit, and after such warning has remained unheeded."
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "13",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The protection to which civilian medical units are entitled shall not cease unless they are used to commit, outside their humanitarian function, acts harmful to the enemy. Protection may, however, cease only after a warning has been given setting, whenever appropriate, a reasonable time-limit, and after such warning has remained unheeded."
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "13",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "that the personnel of the unit are equipped with light individual weapons for their own defence or for that of the wounded and sick in their charge; ... that small arms and ammunition taken from the wounded and sick, and not yet handed to the proper service, are found in the units;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "12",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Under no circumstances shall medical units be used in an attempt to shield military objectives from attack."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iv",
+                "article": "19",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy. Protection may, however, cease only after due warning has been given, naming, in all appropriate cases, a reasonable time limit, and after such warning has remained unheeded."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "13",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The protection to which civilian medical units are entitled shall not cease unless they are used to commit, outside their humanitarian function, acts harmful to the enemy. Protection may, however, cease only after a warning has been given setting, whenever appropriate, a reasonable time-limit, and after such warning has remained unheeded."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "13",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "that the personnel of the unit are equipped with light individual weapons for their own defence or for that of the wounded and sick in their charge; ... that small arms and ammunition taken from the wounded and sick, and not yet handed to the proper service, are found in the units;"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "12",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Under no circumstances shall medical units be used in an attempt to shield military objectives from attack."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_db83a5d9",
+          "claim": "The warning issued by Calvaran forces on 9 August satisfied the requirement of a due warning with a reasonable time‑limit, and St Ilven Hospital failed to cease its hostile use, so the loss of protection remained in effect on 13 August.",
+          "reasoning": "Article 19 of the Fourth Geneva Convention and Article 13 of Additional Protocol I require that a protected medical facility receive a warning that names a reasonable time‑limit before its protection can be revoked. The warning was transmitted by radio, leaflets, and an ICRC delegate, thereby meeting the “due warning” standard. The hospital continued to host an observation team, fire a heavy machine gun on 10 and 11 August, and store ammunition, demonstrating that the warning was unheeded. Consequently, at the time of the strike the hospital’s protection had lawfully ceased.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iv",
+              "article": "19",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy. Protection may, however, cease only after due warning has been given, naming, in all appropriate cases, a reasonable time limit, and after such warning has remained unheeded."
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "13",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The protection to which civilian medical units are entitled shall not cease unless they are used to commit, outside their humanitarian function, acts harmful to the enemy. Protection may, however, cease only after a warning has been given setting, whenever appropriate, a reasonable time-limit, and after such warning has remained unheeded."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iv",
+                "article": "19",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy. Protection may, however, cease only after due warning has been given, naming, in all appropriate cases, a reasonable time limit, and after such warning has remained unheeded."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "13",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The protection to which civilian medical units are entitled shall not cease unless they are used to commit, outside their humanitarian function, acts harmful to the enemy. Protection may, however, cease only after a warning has been given setting, whenever appropriate, a reasonable time-limit, and after such warning has remained unheeded."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_852d0b59",
+          "claim": "The 13 August air strike complied with the principles of distinction and proportionality because it targeted only the parts of the hospital used for military purposes, employed precision‑guided munitions, and caused no civilian casualties.",
+          "reasoning": "Even after protection has ceased, IHL obliges parties to direct attacks only at legitimate military objectives and to take all feasible precautions to avoid civilian harm. The strike was limited to the roof and top floor where the machine gun and observation post were located, used guided weapons to spare the lower floors, and no patients or civilian staff remained in the building. Accordingly, the attack was proportionate and distinguished between combatants and civilians, satisfying the remaining obligations of IHL.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_470dabdb",
+          "claim": "The continued protection of civilian hospitals under Article 18 of the Fourth Geneva Convention does not apply here because the hospital’s loss of protection under Article 19 was lawfully effected before the attack.",
+          "reasoning": "Article 18 affirms that civilian hospitals may never be the object of attack while they retain protected status. However, Article 19 expressly provides a mechanism for that protection to cease when the hospital is used for hostile acts after a proper warning. Since the conditions of Article 19 were met, the general rule of Article 18 no longer governs the legality of the strike.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iv",
+              "article": "18",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Civilian hospitals ... may in no circumstances be the object of attack, but shall at all times be respected and protected by the Parties to the conflict."
+            },
+            {
+              "type": "treaty",
+              "instrument": "gc_iv",
+              "article": "19",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy. Protection may, however, cease only after due warning has been given, naming, in all appropriate cases, a reasonable time limit, and after such warning has remained unheeded."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iv",
+                "article": "18",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Civilian hospitals ... may in no circumstances be the object of attack, but shall at all times be respected and protected by the Parties to the conflict."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iv",
+                "article": "19",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy. Protection may, however, cease only after due warning has been given, naming, in all appropriate cases, a reasonable time limit, and after such warning has remained unheeded."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The protection afforded to St Ilven Hospital under Article 19 of the Fourth Geneva Convention and Article 13 of Additional Protocol I ceased because the hospital was used to commit acts harmful to the enemy that are not among the enumerated exemptions.\",\n      \"reasoning\": \"Both the Convention and the Protocol state that protection does not cease unless the medical facility is used for acts harmful to the enemy, and that the loss of protection may occur only after such use. The exemptions listed (light personal weapons, pickets, small arms taken from the wounded, and combatants present for medical reasons) do not cover the use of the hospital as an artillery observation post, the mounting of a heavy machine gun on the roof, nor the storage of artillery ammunition in the basement. These constitute active participation in hostilities, i.e., acts harmful to the enemy, thereby lawfully terminating the hospital’s protected status.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iv\",\n          \"article\": \"19\",\n          \"quoted_text\": \"The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy. Protection may, however, cease only after due warning has been given, naming, in all appropriate cases, a reasonable time limit, and after such warning has remained unheeded.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"13\",\n          \"quoted_text\": \"The protection to which civilian medical units are entitled shall not cease unless they are used to commit, outside their humanitarian function, acts harmful to the enemy. Protection may, however, cease only after a warning has been given setting, whenever appropriate, a reasonable time-limit, and after such warning has remained unheeded.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"13\",\n          \"quoted_text\": \"that the personnel of the unit are equipped with light individual weapons for their own defence or for that of the wounded and sick in their charge; ... that small arms and ammunition taken from the wounded and sick, and not yet handed to the proper service, are found in the units;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"12\",\n          \"quoted_text\": \"Under no circumstances shall medical units be used in an attempt to shield military objectives from attack.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The warning issued by Calvaran forces on 9 August satisfied the requirement of a due warning with a reasonable time‑limit, and St Ilven Hospital failed to cease its hostile use, so the loss of protection remained in effect on 13 August.\",\n      \"reasoning\": \"Article 19 of the Fourth Geneva Convention and Article 13 of Additional Protocol I require that a protected medical facility receive a warning that names a reasonable time‑limit before its protection can be revoked. The warning was transmitted by radio, leaflets, and an ICRC delegate, thereby meeting the “due warning” standard. The hospital continued to host an observation team, fire a heavy machine gun on 10 and 11 August, and store ammunition, demonstrating that the warning was unheeded. Consequently, at the time of the strike the hospital’s protection had lawfully ceased.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iv\",\n          \"article\": \"19\",\n          \"quoted_text\": \"The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy. Protection may, however, cease only after due warning has been given, naming, in all appropriate cases, a reasonable time limit, and after such warning has remained unheeded.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"13\",\n          \"quoted_text\": \"The protection to which civilian medical units are entitled shall not cease unless they are used to commit, outside their humanitarian function, acts harmful to the enemy. Protection may, however, cease only after a warning has been given setting, whenever appropriate, a reasonable time-limit, and after such warning has remained unheeded.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The 13 August air strike complied with the principles of distinction and proportionality because it targeted only the parts of the hospital used for military purposes, employed precision‑guided munitions, and caused no civilian casualties.\",\n      \"reasoning\": \"Even after protection has ceased, IHL obliges parties to direct attacks only at legitimate military objectives and to take all feasible precautions to avoid civilian harm. The strike was limited to the roof and top floor where the machine gun and observation post were located, used guided weapons to spare the lower floors, and no patients or civilian staff remained in the building. Accordingly, the attack was proportionate and distinguished between combatants and civilians, satisfying the remaining obligations of IHL.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The continued protection of civilian hospitals under Article 18 of the Fourth Geneva Convention does not apply here because the hospital’s loss of protection under Article 19 was lawfully effected before the attack.\",\n      \"reasoning\": \"Article 18 affirms that civilian hospitals may never be the object of attack while they retain protected status. However, Article 19 expressly provides a mechanism for that protection to cease when the hospital is used for hostile acts after a proper warning. Since the conditions of Article 19 were met, the general rule of Article 18 no longer governs the legality of the strike.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iv\",\n          \"article\": \"18\",\n          \"quoted_text\": \"Civilian hospitals ... may in no circumstances be the object of attack, but shall at all times be respected and protected by the Parties to the conflict.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iv\",\n          \"article\": \"19\",\n          \"quoted_text\": \"The protection to which civilian hospitals are entitled shall not cease unless they are used to commit, outside their humanitarian duties, acts harmful to the enemy. Protection may, however, cease only after due warning has been given, naming, in all appropriate cases, a reasonable time limit, and after such warning has remained unheeded.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T01:30:19.028053Z",
+      "completed_at": "2026-11-23T01:30:26.251603Z",
+      "prompt_tokens": 2989,
+      "completion_tokens": 3318,
+      "error": null
+    },
+    {
+      "id": "turn_180a4a2b",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "023f019c2716f96b5b678022be748cd18ddf3b1085aba8d20c616c21adf7f51c",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"No. The Calvaran strike on St Ilven Hospital on 13 August 2025 did not violate the protection owed to civilian medical units under the law of international armed conflict. The hospital lost its protection under Article 19 of the Fourth Geneva Convention and Article 13 of Additional Protocol I because it was used to commit acts harmful to the enemy — specifically, as an artillery observation post, a heavy machine gun position, and an ammunition storage site — none of which fall within the enumerated exemptions. Calvaran forces gave a due warning through multiple channels on 9 August with a reasonable 48-hour time limit, and the hostile use continued. By 13 August, all patients and medical staff had evacuated. The strike was limited to the military-used portions (top floor and roof), employed precision-guided munitions, and caused no civilian casualties, satisfying the principles of distinction, proportionality, and precautions in attack. The general protection of Article 18 GC IV and Article 12 AP I no longer applied once the conditions of Article 19 GC IV / Article 13 AP I were met. All four arguments survive unchallenged. No objections were raised in this round. The proceeding may close. Confidence is high because the treaty provisions are clear, the facts squarely meet the legal tests, and no countervailing authority or objection has been presented. The law on loss of protection for medical units used for military purposes is settled.\", \"reasoning\": \"The four arguments collectively establish that (1) the hospital committed acts harmful to the enemy not covered by the exemptions in GC IV Art. 19 and AP I Art. 13(2); (2) a due warning with a reasonable time limit was given and unheeded; (3) the attack complied with distinction, proportionality, and precautions; and (4) Article 18 GC IV's general protection no longer governed once Article 19's conditions were satisfied. The retrieved treaty texts (GC IV Arts. 18, 19; AP I Arts. 12, 13) directly support each step. No objections were filed to challenge any premise or citation. All citations in the arguments resolve to the provided corpus.\", \"confidence\": 0.95, \"confidence_reasoning\": \"The conclusion rests on black-letter treaty provisions (GC IV Art. 19, AP I Art. 13) applied to undisputed facts: the hospital was used for artillery observation, heavy machine gun fire, and ammunition storage — classic acts harmful to the enemy; a multi-channel warning with a 48-hour deadline was given and ignored; all civilians had left; the strike was precise and caused zero civilian harm. This is a textbook application of the loss-of-protection regime. No competing interpretation or factual dispute exists in the record. Confidence would be lower only if an objection had raised a genuine issue about warning adequacy, the definition of 'acts harmful to the enemy,' or precautionary measures — but none did.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_c32d7a66\", \"arg_db83a5d9\", \"arg_852d0b59\", \"arg_470dabdb\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-23T01:30:26.252906Z",
+      "completed_at": "2026-11-23T01:31:05.640517Z",
+      "prompt_tokens": 4191,
+      "completion_tokens": 1402,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-23T01:31:05.641719+00:00",
+  "duration_seconds": 48.8442556039663,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}

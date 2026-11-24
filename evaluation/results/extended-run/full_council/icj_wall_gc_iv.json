@@ -1,0 +1,1262 @@
+{
+  "case_id": "icj_wall_gc_iv",
+  "case_title": "Wall Advisory Opinion — applicability of the Fourth Geneva Convention",
+  "court": "ICJ",
+  "year": 2004,
+  "difficulty": "settled",
+  "arm": "full_council",
+  "arm_label": "D — Full council",
+  "run_id": "eval_bf768cc68e",
+  "question": "Is the Fourth Geneva Convention applicable in the Palestinian territories that lay east of the 1949 Armistice Line and were occupied by Israel during the 1967 conflict?",
+  "facts": "The 1949 General Armistice Agreement between Israel and Jordan fixed a demarcation line, the Green Line, between Israeli and Jordanian forces. During the armed conflict of 1967, Israel occupied the territories lying between the Green Line and the former eastern boundary of Palestine under the British Mandate, including East Jerusalem. Both Israel and Jordan were parties to the Fourth Geneva Convention of 1949 at the time of the 1967 conflict. Israel took the position that the Convention was not applicable de jure to those territories because, under Article 2, paragraph 2, it applies only to the occupation of territory of a High Contracting Party, and Jordan had not been recognised as the sovereign of the territories before 1967.",
+  "ground_truth_outcome": "affirmed",
+  "holding": "In its Advisory Opinion of 9 July 2004, the International Court of Justice held that the Fourth Geneva Convention is applicable in any occupied territory in the event of an armed conflict arising between two or more High Contracting Parties, and that it is therefore applicable in the Palestinian territories which before the 1967 conflict lay to the east of the Green Line and which, during that conflict, were occupied by Israel, there being no need for any enquiry into the precise prior status of those territories.",
+  "predicted_outcome": "indeterminate",
+  "outcome_correct": false,
+  "confidence": 0.65,
+  "confidence_reasoning": "The legal answer under customary IHL and ICJ jurisprudence is well settled (Yes), but the proceeding's record lacks the operative treaty article and all presented arguments have been defeated or are unsupported. Confidence is below 0.7 because the result turns on the incompleteness of the provided corpus, not on the merits of the underlying international law.",
+  "rounds": 2,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 2,
+  "total_calls": 8,
+  "citation_statuses": {
+    "total": 10,
+    "resolved": 10,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Indeterminate.",
+    "reasoning": "All seven arguments for applicability have been either directly defeated by sustained objections or rely on authorities not present in the retrieved context. The doctrinal objections (obj_fcf8796c, obj_b9173558, obj_263568f3, obj_46d4dfcc) correctly identify category errors: Rome Statute Article 8(2)(c) governs non-international armed conflicts, not the international armed conflict at issue; the CCW regulates weapons, not the territorial scope of the Fourth Geneva Convention; and Additional Protocol III concerns emblems, not occupation law. The evidentiary objections (obj_c54de333, obj_6eae8a1e, obj_2ce0f1fa, obj_d7711e69, obj_ddf3fc62, obj_24f8f2e3, obj_232e1c97, obj_29e31798, obj_bcf96e1a) are sustained because the given facts do not establish that Jordan exercised sovereignty or de facto authority over the territories, that Jordan or Israel accepted Additional Protocol I or the CCW, or that the ICC has asserted jurisdiction. The sole unchallenged argument (arg_cb8f37a5) cites Additional Protocol I Article 4 (retrieved), but that provision only states that application of the Conventions does not affect the legal status of territory — it does not establish applicability. Critically, the Fourth Geneva Convention's Article 2, the treaty provision governing the question, is absent from the retrieved corpus. Without the treaty text or any surviving argument that meets its terms on this record, the question cannot be resolved.",
+    "confidence": 0.65,
+    "confidence_reasoning": "The legal answer under customary IHL and ICJ jurisprudence is well settled (Yes), but the proceeding's record lacks the operative treaty article and all presented arguments have been defeated or are unsupported. Confidence is below 0.7 because the result turns on the incompleteness of the provided corpus, not on the merits of the underlying international law.",
+    "surviving_argument_ids": [
+      "arg_cb8f37a5"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_dde66c56",
+      "claim": "The Fourth Geneva Convention applies to any territory occupied by a High Contracting Party, irrespective of the prior sovereign status of that territory.",
+      "reasoning": "Article 2, paragraph 2 of the Fourth Geneva Convention (a universally accepted provision of customary IHL) states that the Convention applies to the occupation of the territory of a High Contracting Party, regardless of whether the occupying power recognizes the prior sovereign. This principle has been affirmed in the practice of states and the jurisprudence of international tribunals, establishing that the existence of a prior recognized sovereign is not a condition for applicability.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_0d5127be",
+      "claim": "Both Israel and Jordan were parties to the Fourth Geneva Convention at the time of the 1967 occupation, so the occupied Palestinian territories constitute \"the territory of a High Contracting Party\" for purposes of Article 2(2).",
+      "reasoning": "Since Jordan had ratified the Fourth Geneva Convention, its former mandate territory, including the West Bank and East Jerusalem, is considered the territory of a High Contracting Party. The occupation by Israel therefore triggers the Convention’s provisions, independent of any dispute over Jordan’s sovereignty over the area.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_3c4cbd76",
+      "claim": "The Rome Statute’s incorporation of Common Article 3 demonstrates that the Geneva Conventions are deemed applicable to the situation in the occupied Palestinian territories.",
+      "reasoning": "Article 8(2)(c) of the Rome Statute expressly makes “serious violations of article 3 common to the four Geneva Conventions” punishable in non‑international armed conflicts. The ICC has asserted jurisdiction over alleged war‑crimes committed in the occupied Palestinian territories, indicating that the Court treats the Geneva Conventions as applicable to that context.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts..."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts..."
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_e9fce9e0",
+      "claim": "Additional Protocol I confirms that the Geneva Conventions apply to the occupied Palestinian territories, because the Protocol applies in the same situations as the Conventions.",
+      "reasoning": "Article 1 of Additional Protocol I states that the Protocol “reaffirms and supplements the provisions of the four Geneva Conventions” and “shall apply in the same situations as those referred to in these provisions.” By accepting the Protocol, a state acknowledges the applicability of the Conventions to any occupation it is involved in, including the 1967 occupation.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_iii",
+          "article": "1",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "This Protocol reaffirms and supplements the provisions of the four Geneva Conventions of 12 August 1949 (\"the Geneva Conventions\") and, where applicable, of their two Additional Protocols of 8 June 1977 (\"the 1977 Additional Protocols\")...shall apply in the same situations as those referred to in these provisions."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_iii",
+            "article": "1",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "This Protocol reaffirms and supplements the provisions of the four Geneva Conventions of 12 August 1949 (\"the Geneva Conventions\") and, where applicable, of their two Additional Protocols of 8 June 1977 (\"the 1977 Additional Protocols\")...shall apply in the same situations as those referred to in these provisions."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apiii-2005",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_f7aac5a4",
+      "claim": "Under the Convention on Certain Conventional Weapons (CCW), a High Contracting Party may accept the applicability of the Geneva Conventions even when the other party is not a party, confirming that Israel is bound by the Fourth Geneva Convention in the occupied territories.",
+      "reasoning": "Article 7(4) of the CCW provides that when an authority accepts and applies the obligations of the Geneva Conventions, “the Geneva Conventions … are brought into force for the parties to the conflict with immediate effect.” Israel’s acceptance of the Conventions’ obligations, irrespective of Jordan’s sovereign status, therefore makes the Fourth Geneva Convention applicable to the occupied Palestinian territories.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccw",
+          "article": "7(4)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Such an acceptance and application shall have in relation to that conflict the following effects: (i) the Geneva Conventions and this Convention and its relevant annexed Protocols are brought into force for the parties to the conflict with immediate effect;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccw",
+            "article": "7(4)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Such an acceptance and application shall have in relation to that conflict the following effects: (i) the Geneva Conventions and this Convention and its relevant annexed Protocols are brought into force for the parties to the conflict with immediate effect;"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-1980",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_cb8f37a5",
+      "claim": "The Fourth Geneva Convention applies to the territories east of the 1949 Armistice Line occupied by Israel in 1967, regardless of the prior sovereign status of those territories.",
+      "reasoning": "Article 2(2) of the Fourth Geneva Convention, as a rule of customary international humanitarian law, extends the Convention’s provisions to any occupation of territory of a High Contracting Party. Jordan was a High Contracting Party to the Convention and exercised de facto authority over the West Bank and East Jerusalem before the 1967 conflict. The Convention’s applicability is independent of questions of sovereignty, as confirmed by Article 4 of Additional Protocol I, which states that the application of the Conventions does not affect the legal status of the occupied territory. Therefore, the Fourth Geneva Convention is binding on Israel with respect to the occupied Palestinian territories.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "4",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "4",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_a665ece8",
+      "claim": "The humanitarian protections embodied in the Geneva Conventions are recognized as applicable to the occupied Palestinian territories by the Rome Statute, reinforcing the applicability of the Fourth Geneva Convention.",
+      "reasoning": "Article 8(2)(c) of the Rome Statute makes serious violations of Article 3 common to the four Geneva Conventions punishable in non‑international armed conflicts. By incorporating Common Article 3, the Statute acknowledges that the Geneva Conventions’ humanitarian norms are binding in the context of the occupied territories, supporting the view that the Fourth Geneva Convention’s provisions are applicable there.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities..."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities..."
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [
+    {
+      "id": "obj_fcf8796c",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_3c4cbd76",
+      "ground": "The argument mischaracterizes the legal basis of the Rome Statute provision cited.",
+      "reasoning": "Article 8(2)(c) of the Rome Statute expressly applies to 'armed conflicts not of an international character.' Citing it to support the applicability of the Fourth Geneva Convention, which governs international armed conflicts, is a category error that conflates two distinct legal regimes.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Rome Statute Article 8(2)(c) expressly addresses 'armed conflicts not of an international character.' The 1967 occupation was an international armed conflict between Israel and Jordan. Citing a NIAC provision to prove Fourth Geneva Convention applicability in an IAC is a category error."
+    },
+    {
+      "id": "obj_23f5f1ec",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_e9fce9e0",
+      "ground": "The argument relies on a misidentified instrument and an inapplicable treaty.",
+      "reasoning": "The argument cites Article 1 of Additional Protocol III (a 2005 protocol concerning emblems) to support a proposition about the 1967 occupation. The retrieved text confirms this instrument governs emblems, not the scope of occupation law, and it postdates the conflict in question.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_iii",
+          "article": "1",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_iii",
+            "article": "1",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apiii-2005",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument cites Additional Protocol III Article 1 (a 2005 protocol on distinctive emblems) but treats it as Additional Protocol I. AP III does not govern the scope of occupation law and postdates the 1967 conflict."
+    },
+    {
+      "id": "obj_c54de333",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_dde66c56",
+      "ground": "The facts do not establish that the territories were territory of a High Contracting Party, as Jordan was not recognised as sovereign over them before 1967.",
+      "reasoning": "The argument requires proof that the occupied area was territory of a High Contracting Party; the record states that Jordan had not been recognised as the sovereign of those territories prior to 1967, undermining the necessary factual predicate.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument asserts that Article 2(2) applies irrespective of prior sovereignty, but the given facts state Jordan was not recognised as sovereign over the territories before 1967. The factual predicate — that the territory was 'of a High Contracting Party' — is not established on this record."
+    },
+    {
+      "id": "obj_6eae8a1e",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_0d5127be",
+      "ground": "The facts do not show that Jordan exercised sovereignty over the former mandate territory, so the occupied Palestinian territories cannot be deemed territory of a High Contracting Party.",
+      "reasoning": "The argument relies on Jordan being a party to the Convention and its territory being occupied; however, the record explicitly notes that Jordan had not been recognised as sovereign of those territories before 1967, leaving the factual basis unsupported.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument relies on Jordan's status as a party to the Convention, but the facts explicitly note Jordan was not recognised as sovereign over the former mandate territory. Without evidence of sovereignty or de facto authority, the 'territory of a High Contracting Party' requirement is unsupported."
+    },
+    {
+      "id": "obj_d7711e69",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_3c4cbd76",
+      "ground": "The facts do not demonstrate that the Rome Statute applies to the situation in the occupied Palestinian territories.",
+      "reasoning": "The argument assumes that the Rome Statute’s incorporation of Common Article 3 makes the Geneva Conventions applicable; yet the record provides no evidence that the ICC has jurisdiction or that the Statute is applicable in this context.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument assumes the Rome Statute's incorporation of Common Article 3 demonstrates Geneva Convention applicability, but the record contains no evidence that the ICC has jurisdiction over the situation or that the Statute applies in this context."
+    },
+    {
+      "id": "obj_ddf3fc62",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_e9fce9e0",
+      "ground": "The facts do not establish that Jordan accepted Additional Protocol I or that it applies to the occupation.",
+      "reasoning": "The argument presumes that acceptance of Additional Protocol I confirms applicability of the Conventions; the record contains no indication that Jordan ratified or accepted the Protocol, so the factual predicate is missing.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument presumes Jordan accepted Additional Protocol I; the retrieved context provides no indication Jordan ratified or accepted AP I, so the factual basis is missing."
+    },
+    {
+      "id": "obj_24f8f2e3",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_f7aac5a4",
+      "ground": "The facts do not show that Israel accepted the applicability of the Geneva Conventions under the CCW.",
+      "reasoning": "The argument depends on Israel’s acceptance of the Convention’s obligations via the CCW; however, the record provides no evidence of such acceptance, rendering the claim unsupported.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument depends on Israel's acceptance of Geneva Convention obligations via the CCW, but the record provides no evidence of such acceptance by Israel."
+    },
+    {
+      "id": "obj_b9173558",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_3c4cbd76",
+      "ground": "The argument mischaracterizes the legal relevance of Rome Statute Article 8(2)(c) by conflating non-international armed conflict (NIAC) norms with the applicability of the Fourth Geneva Convention in an international armed conflict (IAC).",
+      "reasoning": "Article 8(2)(c) applies to 'armed conflicts not of an international character.' The 1967 occupation is an IAC. Citing a NIAC provision to prove the applicability of the GCIV in an IAC is a category error. The existence of a NIAC provision does not expand or define the scope of an IAC treaty; it merely ensures protection in the absence of IAC status. The argument fails to establish the IAC applicability test it purports to support.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Reiterates the category error: Article 8(2)(c) governs NIACs; the 1967 occupation is an IAC. A NIAC provision does not define or expand the scope of an IAC treaty."
+    },
+    {
+      "id": "obj_263568f3",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_f7aac5a4",
+      "ground": "The argument relies on the Convention on Certain Conventional Weapons (CCW) to establish the applicability of the Geneva Conventions, which is legally irrelevant and a non-sequitur.",
+      "reasoning": "The CCW regulates specific weapons, not the general applicability of the Geneva Conventions to occupation. Article 7(4) addresses the acceptance of the CCW's annexed Protocols, not the Geneva Conventions' territorial scope. Citing a weapons convention to resolve a jurisdictional question regarding the Fourth Geneva Convention is an improper citation of authority that does not support the proposition made.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccw",
+          "article": "7(4)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccw",
+            "article": "7(4)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-1980",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The CCW regulates specific weapons; Article 7(4) addresses acceptance of the CCW's annexed Protocols, not the territorial scope of the Fourth Geneva Convention. The citation is legally irrelevant to the question."
+    },
+    {
+      "id": "obj_46d4dfcc",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_e9fce9e0",
+      "ground": "The argument cites Additional Protocol III instead of Additional Protocol I, and misstates the legal effect of the cited provision regarding the scope of the Geneva Conventions.",
+      "reasoning": "The argument claims AP I confirms applicability but cites AP III, which concerns emblems (Red Cross, etc.), not the general applicability of the Conventions to occupation. Furthermore, AP I Article 4 (not cited) states that application does not affect legal status, but does not expand the definition of 'territory of a High Contracting Party' beyond its textual limits. The citation is to the wrong instrument and the reasoning is flawed.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_iii",
+          "article": "1",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_iii",
+            "article": "1",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apiii-2005",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument cites Additional Protocol III (emblems) while claiming it cites Additional Protocol I. AP III does not address the general applicability of the Conventions to occupation."
+    },
+    {
+      "id": "obj_2ce0f1fa",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_dde66c56",
+      "ground": "The facts do not establish that the occupied territories were territory of a High Contracting Party.",
+      "reasoning": "While the record states Jordan was a party to the Fourth Geneva Convention, it does not show that Jordan exercised sovereignty or de facto control over the West Bank and East Jerusalem before 1967. Article 2(2) requires the occupation of territory belonging to a High Contracting Party; without evidence that the territory was Jordanian, the factual predicate fails.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The record states Jordan was a party to GCIV but does not show Jordan exercised sovereignty or de facto control over the West Bank and East Jerusalem before 1967. Article 2(2) requires occupation of territory belonging to a High Contracting Party; the factual predicate fails."
+    },
+    {
+      "id": "obj_232e1c97",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_3c4cbd76",
+      "ground": "There is no record that the ICC asserted jurisdiction over the occupied Palestinian territories.",
+      "reasoning": "The argument assumes that the Rome Statute’s incorporation of Common Article 3 demonstrates applicability because the ICC has jurisdiction in the situation. The facts as given provide no evidence of ICC jurisdiction, so the claim that Rome Statute indicates applicability is unsupported.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument assumes the ICC has asserted jurisdiction over the occupied Palestinian territories; the facts as given provide no such evidence."
+    },
+    {
+      "id": "obj_29e31798",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_e9fce9e0",
+      "ground": "The facts do not show that Jordan accepted Additional Protocol I or that it applies to the occupied territories.",
+      "reasoning": "The argument relies on Jordan’s acceptance of Additional Protocol I to infer that the Geneva Conventions apply. The record contains no information that Jordan accepted the Protocol or that the territories were covered by it, so the factual basis is missing.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument relies on Jordan's acceptance of Additional Protocol I; the record contains no information that Jordan accepted the Protocol or that the territories were covered by it."
+    },
+    {
+      "id": "obj_bcf96e1a",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_f7aac5a4",
+      "ground": "The facts do not establish that Israel accepted the applicability of the Geneva Conventions under the CCW.",
+      "reasoning": "The argument asserts that Israel’s acceptance of the Geneva Conventions’ obligations under the CCW makes them applicable. However, the record provides no evidence that Israel accepted the CCW obligations or that it applied the Convention’s provisions in this conflict, rendering the factual predicate unsubstantiated.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument asserts Israel accepted Geneva Convention obligations under the CCW, but the record provides no evidence of such acceptance or application in this conflict."
+    }
+  ],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_ii",
+        "article": "4",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gcii-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw",
+        "article": "7(4)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-1980",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(c)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw",
+        "article": "7",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-1980",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_iii",
+        "article": "1",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apiii-2005",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "4",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iv",
+        "article": "14",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_c50396c1",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "be67945ec3607c4a7de24cc1086b7b389cdc182772d83c09fe0dada4dda71eb4",
+      "arguments": [
+        {
+          "id": "arg_dde66c56",
+          "claim": "The Fourth Geneva Convention applies to any territory occupied by a High Contracting Party, irrespective of the prior sovereign status of that territory.",
+          "reasoning": "Article 2, paragraph 2 of the Fourth Geneva Convention (a universally accepted provision of customary IHL) states that the Convention applies to the occupation of the territory of a High Contracting Party, regardless of whether the occupying power recognizes the prior sovereign. This principle has been affirmed in the practice of states and the jurisprudence of international tribunals, establishing that the existence of a prior recognized sovereign is not a condition for applicability.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_0d5127be",
+          "claim": "Both Israel and Jordan were parties to the Fourth Geneva Convention at the time of the 1967 occupation, so the occupied Palestinian territories constitute \"the territory of a High Contracting Party\" for purposes of Article 2(2).",
+          "reasoning": "Since Jordan had ratified the Fourth Geneva Convention, its former mandate territory, including the West Bank and East Jerusalem, is considered the territory of a High Contracting Party. The occupation by Israel therefore triggers the Convention’s provisions, independent of any dispute over Jordan’s sovereignty over the area.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_3c4cbd76",
+          "claim": "The Rome Statute’s incorporation of Common Article 3 demonstrates that the Geneva Conventions are deemed applicable to the situation in the occupied Palestinian territories.",
+          "reasoning": "Article 8(2)(c) of the Rome Statute expressly makes “serious violations of article 3 common to the four Geneva Conventions” punishable in non‑international armed conflicts. The ICC has asserted jurisdiction over alleged war‑crimes committed in the occupied Palestinian territories, indicating that the Court treats the Geneva Conventions as applicable to that context.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts..."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts..."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_e9fce9e0",
+          "claim": "Additional Protocol I confirms that the Geneva Conventions apply to the occupied Palestinian territories, because the Protocol applies in the same situations as the Conventions.",
+          "reasoning": "Article 1 of Additional Protocol I states that the Protocol “reaffirms and supplements the provisions of the four Geneva Conventions” and “shall apply in the same situations as those referred to in these provisions.” By accepting the Protocol, a state acknowledges the applicability of the Conventions to any occupation it is involved in, including the 1967 occupation.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_iii",
+              "article": "1",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "This Protocol reaffirms and supplements the provisions of the four Geneva Conventions of 12 August 1949 (\"the Geneva Conventions\") and, where applicable, of their two Additional Protocols of 8 June 1977 (\"the 1977 Additional Protocols\")...shall apply in the same situations as those referred to in these provisions."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_iii",
+                "article": "1",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "This Protocol reaffirms and supplements the provisions of the four Geneva Conventions of 12 August 1949 (\"the Geneva Conventions\") and, where applicable, of their two Additional Protocols of 8 June 1977 (\"the 1977 Additional Protocols\")...shall apply in the same situations as those referred to in these provisions."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apiii-2005",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_f7aac5a4",
+          "claim": "Under the Convention on Certain Conventional Weapons (CCW), a High Contracting Party may accept the applicability of the Geneva Conventions even when the other party is not a party, confirming that Israel is bound by the Fourth Geneva Convention in the occupied territories.",
+          "reasoning": "Article 7(4) of the CCW provides that when an authority accepts and applies the obligations of the Geneva Conventions, “the Geneva Conventions … are brought into force for the parties to the conflict with immediate effect.” Israel’s acceptance of the Conventions’ obligations, irrespective of Jordan’s sovereign status, therefore makes the Fourth Geneva Convention applicable to the occupied Palestinian territories.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccw",
+              "article": "7(4)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Such an acceptance and application shall have in relation to that conflict the following effects: (i) the Geneva Conventions and this Convention and its relevant annexed Protocols are brought into force for the parties to the conflict with immediate effect;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccw",
+                "article": "7(4)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Such an acceptance and application shall have in relation to that conflict the following effects: (i) the Geneva Conventions and this Convention and its relevant annexed Protocols are brought into force for the parties to the conflict with immediate effect;"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-1980",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The Fourth Geneva Convention applies to any territory occupied by a High Contracting Party, irrespective of the prior sovereign status of that territory.\",\n      \"reasoning\": \"Article 2, paragraph 2 of the Fourth Geneva Convention (a universally accepted provision of customary IHL) states that the Convention applies to the occupation of the territory of a High Contracting Party, regardless of whether the occupying power recognizes the prior sovereign. This principle has been affirmed in the practice of states and the jurisprudence of international tribunals, establishing that the existence of a prior recognized sovereign is not a condition for applicability.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"Both Israel and Jordan were parties to the Fourth Geneva Convention at the time of the 1967 occupation, so the occupied Palestinian territories constitute \\\"the territory of a High Contracting Party\\\" for purposes of Article 2(2).\",\n      \"reasoning\": \"Since Jordan had ratified the Fourth Geneva Convention, its former mandate territory, including the West Bank and East Jerusalem, is considered the territory of a High Contracting Party. The occupation by Israel therefore triggers the Convention’s provisions, independent of any dispute over Jordan’s sovereignty over the area.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The Rome Statute’s incorporation of Common Article 3 demonstrates that the Geneva Conventions are deemed applicable to the situation in the occupied Palestinian territories.\",\n      \"reasoning\": \"Article 8(2)(c) of the Rome Statute expressly makes “serious violations of article 3 common to the four Geneva Conventions” punishable in non‑international armed conflicts. The ICC has asserted jurisdiction over alleged war‑crimes committed in the occupied Palestinian territories, indicating that the Court treats the Geneva Conventions as applicable to that context.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(c)\",\n          \"quoted_text\": \"In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts...\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Additional Protocol I confirms that the Geneva Conventions apply to the occupied Palestinian territories, because the Protocol applies in the same situations as the Conventions.\",\n      \"reasoning\": \"Article 1 of Additional Protocol I states that the Protocol “reaffirms and supplements the provisions of the four Geneva Conventions” and “shall apply in the same situations as those referred to in these provisions.” By accepting the Protocol, a state acknowledges the applicability of the Conventions to any occupation it is involved in, including the 1967 occupation.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_iii\",\n          \"article\": \"1\",\n          \"quoted_text\": \"This Protocol reaffirms and supplements the provisions of the four Geneva Conventions of 12 August 1949 (\\\"the Geneva Conventions\\\") and, where applicable, of their two Additional Protocols of 8 June 1977 (\\\"the 1977 Additional Protocols\\\")...shall apply in the same situations as those referred to in these provisions.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Under the Convention on Certain Conventional Weapons (CCW), a High Contracting Party may accept the applicability of the Geneva Conventions even when the other party is not a party, confirming that Israel is bound by the Fourth Geneva Convention in the occupied territories.\",\n      \"reasoning\": \"Article 7(4) of the CCW provides that when an authority accepts and applies the obligations of the Geneva Conventions, “the Geneva Conventions … are brought into force for the parties to the conflict with immediate effect.” Israel’s acceptance of the Conventions’ obligations, irrespective of Jordan’s sovereign status, therefore makes the Fourth Geneva Convention applicable to the occupied Palestinian territories.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccw\",\n          \"article\": \"7(4)\",\n          \"quoted_text\": \"Such an acceptance and application shall have in relation to that conflict the following effects: (i) the Geneva Conventions and this Convention and its relevant annexed Protocols are brought into force for the parties to the conflict with immediate effect;\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-24T01:11:07.958047Z",
+      "completed_at": "2026-11-24T01:11:13.131141Z",
+      "prompt_tokens": 4676,
+      "completion_tokens": 2130,
+      "error": null
+    },
+    {
+      "id": "turn_672ff2f5",
+      "round_number": 1,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "9c56f5269bc67c92e712de513cfab8830b38f8e89831cab27787804d4f05b1ff",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_fcf8796c",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_3c4cbd76",
+          "ground": "The argument mischaracterizes the legal basis of the Rome Statute provision cited.",
+          "reasoning": "Article 8(2)(c) of the Rome Statute expressly applies to 'armed conflicts not of an international character.' Citing it to support the applicability of the Fourth Geneva Convention, which governs international armed conflicts, is a category error that conflates two distinct legal regimes.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Rome Statute Article 8(2)(c) expressly addresses 'armed conflicts not of an international character.' The 1967 occupation was an international armed conflict between Israel and Jordan. Citing a NIAC provision to prove Fourth Geneva Convention applicability in an IAC is a category error."
+        },
+        {
+          "id": "obj_23f5f1ec",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_e9fce9e0",
+          "ground": "The argument relies on a misidentified instrument and an inapplicable treaty.",
+          "reasoning": "The argument cites Article 1 of Additional Protocol III (a 2005 protocol concerning emblems) to support a proposition about the 1967 occupation. The retrieved text confirms this instrument governs emblems, not the scope of occupation law, and it postdates the conflict in question.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_iii",
+              "article": "1",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_iii",
+                "article": "1",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apiii-2005",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument cites Additional Protocol III Article 1 (a 2005 protocol on distinctive emblems) but treats it as Additional Protocol I. AP III does not govern the scope of occupation law and postdates the 1967 conflict."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_3c4cbd76\",\n      \"ground\": \"The argument mischaracterizes the legal basis of the Rome Statute provision cited.\",\n      \"reasoning\": \"Article 8(2)(c) of the Rome Statute expressly applies to 'armed conflicts not of an international character.' Citing it to support the applicability of the Fourth Geneva Convention, which governs international armed conflicts, is a category error that conflates two distinct legal regimes.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(c)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_e9fce9e0\",\n      \"ground\": \"The argument relies on a misidentified instrument and an inapplicable treaty.\",\n      \"reasoning\": \"The argument cites Article 1 of Additional Protocol III (a 2005 protocol concerning emblems) to support a proposition about the 1967 occupation. The retrieved text confirms this instrument governs emblems, not the scope of occupation law, and it postdates the conflict in question.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_iii\",\n          \"article\": \"1\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-24T01:11:13.132083Z",
+      "completed_at": "2026-11-24T01:11:14.567206Z",
+      "prompt_tokens": 5735,
+      "completion_tokens": 344,
+      "error": null
+    },
+    {
+      "id": "turn_8aa34801",
+      "round_number": 1,
+      "role": "attacker_evidentiary",
+      "model_id": "groq/openai/gpt-oss-20b",
+      "prompt_id": "attacker_evidentiary/challenge",
+      "prompt_hash": "e0608c219304ed04bad0db99519cc2ac029f458f0c5e50026b6c3376b6fb43f0",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_c54de333",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_dde66c56",
+          "ground": "The facts do not establish that the territories were territory of a High Contracting Party, as Jordan was not recognised as sovereign over them before 1967.",
+          "reasoning": "The argument requires proof that the occupied area was territory of a High Contracting Party; the record states that Jordan had not been recognised as the sovereign of those territories prior to 1967, undermining the necessary factual predicate.",
+          "citations": [],
+          "resolved_citations": [],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument asserts that Article 2(2) applies irrespective of prior sovereignty, but the given facts state Jordan was not recognised as sovereign over the territories before 1967. The factual predicate — that the territory was 'of a High Contracting Party' — is not established on this record."
+        },
+        {
+          "id": "obj_6eae8a1e",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_0d5127be",
+          "ground": "The facts do not show that Jordan exercised sovereignty over the former mandate territory, so the occupied Palestinian territories cannot be deemed territory of a High Contracting Party.",
+          "reasoning": "The argument relies on Jordan being a party to the Convention and its territory being occupied; however, the record explicitly notes that Jordan had not been recognised as sovereign of those territories before 1967, leaving the factual basis unsupported.",
+          "citations": [],
+          "resolved_citations": [],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument relies on Jordan's status as a party to the Convention, but the facts explicitly note Jordan was not recognised as sovereign over the former mandate territory. Without evidence of sovereignty or de facto authority, the 'territory of a High Contracting Party' requirement is unsupported."
+        },
+        {
+          "id": "obj_d7711e69",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_3c4cbd76",
+          "ground": "The facts do not demonstrate that the Rome Statute applies to the situation in the occupied Palestinian territories.",
+          "reasoning": "The argument assumes that the Rome Statute’s incorporation of Common Article 3 makes the Geneva Conventions applicable; yet the record provides no evidence that the ICC has jurisdiction or that the Statute is applicable in this context.",
+          "citations": [],
+          "resolved_citations": [],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument assumes the Rome Statute's incorporation of Common Article 3 demonstrates Geneva Convention applicability, but the record contains no evidence that the ICC has jurisdiction over the situation or that the Statute applies in this context."
+        },
+        {
+          "id": "obj_ddf3fc62",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_e9fce9e0",
+          "ground": "The facts do not establish that Jordan accepted Additional Protocol I or that it applies to the occupation.",
+          "reasoning": "The argument presumes that acceptance of Additional Protocol I confirms applicability of the Conventions; the record contains no indication that Jordan ratified or accepted the Protocol, so the factual predicate is missing.",
+          "citations": [],
+          "resolved_citations": [],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument presumes Jordan accepted Additional Protocol I; the retrieved context provides no indication Jordan ratified or accepted AP I, so the factual basis is missing."
+        },
+        {
+          "id": "obj_24f8f2e3",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_f7aac5a4",
+          "ground": "The facts do not show that Israel accepted the applicability of the Geneva Conventions under the CCW.",
+          "reasoning": "The argument depends on Israel’s acceptance of the Convention’s obligations via the CCW; however, the record provides no evidence of such acceptance, rendering the claim unsupported.",
+          "citations": [],
+          "resolved_citations": [],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument depends on Israel's acceptance of Geneva Convention obligations via the CCW, but the record provides no evidence of such acceptance by Israel."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_dde66c56\",\n      \"ground\": \"The facts do not establish that the territories were territory of a High Contracting Party, as Jordan was not recognised as sovereign over them before 1967.\",\n      \"reasoning\": \"The argument requires proof that the occupied area was territory of a High Contracting Party; the record states that Jordan had not been recognised as the sovereign of those territories prior to 1967, undermining the necessary factual predicate.\",\n      \"severity\": \"fatal\",\n      \"citations\": []\n    },\n    {\n      \"target_argument_id\": \"arg_0d5127be\",\n      \"ground\": \"The facts do not show that Jordan exercised sovereignty over the former mandate territory, so the occupied Palestinian territories cannot be deemed territory of a High Contracting Party.\",\n      \"reasoning\": \"The argument relies on Jordan being a party to the Convention and its territory being occupied; however, the record explicitly notes that Jordan had not been recognised as sovereign of those territories before 1967, leaving the factual basis unsupported.\",\n      \"severity\": \"fatal\",\n      \"citations\": []\n    },\n    {\n      \"target_argument_id\": \"arg_3c4cbd76\",\n      \"ground\": \"The facts do not demonstrate that the Rome Statute applies to the situation in the occupied Palestinian territories.\",\n      \"reasoning\": \"The argument assumes that the Rome Statute’s incorporation of Common Article 3 makes the Geneva Conventions applicable; yet the record provides no evidence that the ICC has jurisdiction or that the Statute is applicable in this context.\",\n      \"severity\": \"fatal\",\n      \"citations\": []\n    },\n    {\n      \"target_argument_id\": \"arg_e9fce9e0\",\n      \"ground\": \"The facts do not establish that Jordan accepted Additional Protocol I or that it applies to the occupation.\",\n      \"reasoning\": \"The argument presumes that acceptance of Additional Protocol I confirms applicability of the Conventions; the record contains no indication that Jordan ratified or accepted the Protocol, so the factual predicate is missing.\",\n      \"severity\": \"fatal\",\n      \"citations\": []\n    },\n    {\n      \"target_argument_id\": \"arg_f7aac5a4\",\n      \"ground\": \"The facts do not show that Israel accepted the applicability of the Geneva Conventions under the CCW.\",\n      \"reasoning\": \"The argument depends on Israel’s acceptance of the Convention’s obligations via the CCW; however, the record provides no evidence of such acceptance, rendering the claim unsupported.\",\n      \"severity\": \"fatal\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-24T01:11:13.135151Z",
+      "completed_at": "2026-11-24T01:11:15.694561Z",
+      "prompt_tokens": 5490,
+      "completion_tokens": 1599,
+      "error": null
+    },
+    {
+      "id": "turn_d2bf9e01",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "a9dc4c949d5428fcd7b4696a73f0dd942ad2e56ca0e590bceee5dd4a46f5416f",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Indeterminate.\", \"reasoning\": \"All five arguments advanced in support of the Fourth Geneva Convention's applicability were defeated by sustained objections. The doctrinal objections correctly identified that arg_3c4cbd76 misapplied Rome Statute Article 8(2)(c) (which governs non-international armed conflicts) and that arg_e9fce9e0 cited Additional Protocol III (a 2005 emblems protocol) instead of Additional Protocol I. The evidentiary objections were sustained because none of the arguments could anchor their central claims — the text and interpretation of GC IV Article 2(2), Jordan's sovereignty status, ICC jurisdiction, or Israel's acceptance of obligations under the CCW — in the retrieved context. The corpus provided does not contain GC IV Article 2, the ICJ Wall Advisory Opinion, or other authorities that would resolve the core interpretive question. With no surviving arguments and no citable authority on the pivotal treaty provision, the question cannot be answered on this record.\", \"confidence\": 0.5, \"confidence_reasoning\": \"The confidence reflects a tension: as a matter of settled international law (ICJ, ICRC, UNSC practice) the answer is clearly 'Yes' — GC IV applies to the West Bank and East Jerusalem because Jordan was a High Contracting Party administering the territory, irrespective of sovereignty. However, the proceeding's constraints require citations solely from the retrieved context, which lacks GC IV Article 2 and the key judicial decisions. Because the record before me cannot support a cited conclusion, I cannot rule 'Yes' with high confidence, nor 'No' given the legal consensus. 'Indeterminate' at 0.5 honestly captures that the legal answer is known but the evidentiary record provided is insufficient.\", \"rulings\": [{\"objection_id\": \"obj_fcf8796c\", \"disposition\": \"sustained\", \"reasoning\": \"Rome Statute Article 8(2)(c) expressly addresses 'armed conflicts not of an international character' (per the retrieved text). The Fourth Geneva Convention governs international armed conflicts and occupation. Citing a non-international conflict provision to establish the Convention's applicability in an international occupation is a category error.\"}, {\"objection_id\": \"obj_23f5f1ec\", \"disposition\": \"sustained\", \"reasoning\": \"The argument cites Additional Protocol III Article 1, which the retrieved context confirms is a 2005 protocol concerning distinctive emblems. It does not govern the scope of occupation law and post-dates the 1967 conflict by nearly four decades. The argument misidentifies both the instrument and its relevance.\"}, {\"objection_id\": \"obj_c54de333\", \"disposition\": \"sustained\", \"reasoning\": \"The argument asserts that GC IV Article 2(2) applies 'regardless of whether the occupying power recognizes the prior sovereign' and labels this a universally accepted customary rule. However, the retrieved context does not contain GC IV Article 2, and the citation to it is unresolved. Without the treaty text or a supporting authority in the corpus, the argument's central legal premise is unsupported.\"}, {\"objection_id\": \"obj_6eae8a1e\", \"disposition\": \"sustained\", \"reasoning\": \"The argument relies on the proposition that Jordan's ratification of GC IV makes the former mandate territory 'territory of a High Contracting Party.' This turns on the interpretation of GC IV Article 2(2), which is not in the retrieved context. The argument provides no citable authority for its interpretation, and the factual record notes Israel's position that Jordan lacked recognized sovereignty — a contested legal point that cannot be resolved without the treaty text or jurisprudence.\"}, {\"objection_id\": \"obj_d7711e69\", \"disposition\": \"sustained\", \"reasoning\": \"The argument infers GC IV applicability from the Rome Statute's incorporation of Common Article 3 and asserts the ICC has asserted jurisdiction over the occupied Palestinian territories. The retrieved context contains no evidence of ICC jurisdiction over the 1967 occupation, and the Rome Statute provision cited (Article 8(2)(c)) applies to non-international conflicts, not the international occupation at issue.\"}, {\"objection_id\": \"obj_ddf3fc62\", \"disposition\": \"sustained\", \"reasoning\": \"The argument presumes Jordan accepted Additional Protocol I, but the retrieved context shows only Additional Protocol III (2005). No evidence in the record establishes Jordan's ratification of AP I or its applicability to the 1967 occupation. The objection correctly identifies the missing factual predicate.\"}, {\"objection_id\": \"obj_24f8f2e3\", \"disposition\": \"sustained\", \"reasoning\": \"The argument invokes CCW Article 7(4) to claim Israel accepted GC IV obligations through the CCW mechanism. The retrieved context includes CCW Article 7(4) but contains no evidence that Israel is a party to the CCW or has made the acceptance described in that provision. The claim is unsupported on the record.\"}], \"surviving_argument_ids\": [], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-24T01:11:15.695560Z",
+      "completed_at": "2026-11-24T01:12:28.911743Z",
+      "prompt_tokens": 6506,
+      "completion_tokens": 5006,
+      "error": null
+    },
+    {
+      "id": "turn_d56ba951",
+      "round_number": 2,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/rebuttal",
+      "prompt_hash": "34e31befd41ea061014c6469e1de9e7cfde9d59a90ac88b34bd020b73eca18b9",
+      "arguments": [
+        {
+          "id": "arg_cb8f37a5",
+          "claim": "The Fourth Geneva Convention applies to the territories east of the 1949 Armistice Line occupied by Israel in 1967, regardless of the prior sovereign status of those territories.",
+          "reasoning": "Article 2(2) of the Fourth Geneva Convention, as a rule of customary international humanitarian law, extends the Convention’s provisions to any occupation of territory of a High Contracting Party. Jordan was a High Contracting Party to the Convention and exercised de facto authority over the West Bank and East Jerusalem before the 1967 conflict. The Convention’s applicability is independent of questions of sovereignty, as confirmed by Article 4 of Additional Protocol I, which states that the application of the Conventions does not affect the legal status of the occupied territory. Therefore, the Fourth Geneva Convention is binding on Israel with respect to the occupied Palestinian territories.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_a665ece8",
+          "claim": "The humanitarian protections embodied in the Geneva Conventions are recognized as applicable to the occupied Palestinian territories by the Rome Statute, reinforcing the applicability of the Fourth Geneva Convention.",
+          "reasoning": "Article 8(2)(c) of the Rome Statute makes serious violations of Article 3 common to the four Geneva Conventions punishable in non‑international armed conflicts. By incorporating Common Article 3, the Statute acknowledges that the Geneva Conventions’ humanitarian norms are binding in the context of the occupied territories, supporting the view that the Fourth Geneva Convention’s provisions are applicable there.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities..."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities..."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The Fourth Geneva Convention applies to the territories east of the 1949 Armistice Line occupied by Israel in 1967, regardless of the prior sovereign status of those territories.\",\n      \"reasoning\": \"Article 2(2) of the Fourth Geneva Convention, as a rule of customary international humanitarian law, extends the Convention’s provisions to any occupation of territory of a High Contracting Party. Jordan was a High Contracting Party to the Convention and exercised de facto authority over the West Bank and East Jerusalem before the 1967 conflict. The Convention’s applicability is independent of questions of sovereignty, as confirmed by Article 4 of Additional Protocol I, which states that the application of the Conventions does not affect the legal status of the occupied territory. Therefore, the Fourth Geneva Convention is binding on Israel with respect to the occupied Palestinian territories.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"4\",\n          \"quoted_text\": \"Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The humanitarian protections embodied in the Geneva Conventions are recognized as applicable to the occupied Palestinian territories by the Rome Statute, reinforcing the applicability of the Fourth Geneva Convention.\",\n      \"reasoning\": \"Article 8(2)(c) of the Rome Statute makes serious violations of Article 3 common to the four Geneva Conventions punishable in non‑international armed conflicts. By incorporating Common Article 3, the Statute acknowledges that the Geneva Conventions’ humanitarian norms are binding in the context of the occupied territories, supporting the view that the Fourth Geneva Convention’s provisions are applicable there.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(c)\",\n          \"quoted_text\": \"In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities...\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-24T01:12:28.912924Z",
+      "completed_at": "2026-11-24T01:12:33.721849Z",
+      "prompt_tokens": 4021,
+      "completion_tokens": 2034,
+      "error": null
+    },
+    {
+      "id": "turn_faa10d6d",
+      "round_number": 2,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "c2be656c9def309e9d758117cc7584dc4eaf8008098d3e07e45b177b5deed16b",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_b9173558",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_3c4cbd76",
+          "ground": "The argument mischaracterizes the legal relevance of Rome Statute Article 8(2)(c) by conflating non-international armed conflict (NIAC) norms with the applicability of the Fourth Geneva Convention in an international armed conflict (IAC).",
+          "reasoning": "Article 8(2)(c) applies to 'armed conflicts not of an international character.' The 1967 occupation is an IAC. Citing a NIAC provision to prove the applicability of the GCIV in an IAC is a category error. The existence of a NIAC provision does not expand or define the scope of an IAC treaty; it merely ensures protection in the absence of IAC status. The argument fails to establish the IAC applicability test it purports to support.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Reiterates the category error: Article 8(2)(c) governs NIACs; the 1967 occupation is an IAC. A NIAC provision does not define or expand the scope of an IAC treaty."
+        },
+        {
+          "id": "obj_263568f3",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_f7aac5a4",
+          "ground": "The argument relies on the Convention on Certain Conventional Weapons (CCW) to establish the applicability of the Geneva Conventions, which is legally irrelevant and a non-sequitur.",
+          "reasoning": "The CCW regulates specific weapons, not the general applicability of the Geneva Conventions to occupation. Article 7(4) addresses the acceptance of the CCW's annexed Protocols, not the Geneva Conventions' territorial scope. Citing a weapons convention to resolve a jurisdictional question regarding the Fourth Geneva Convention is an improper citation of authority that does not support the proposition made.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccw",
+              "article": "7(4)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccw",
+                "article": "7(4)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-1980",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The CCW regulates specific weapons; Article 7(4) addresses acceptance of the CCW's annexed Protocols, not the territorial scope of the Fourth Geneva Convention. The citation is legally irrelevant to the question."
+        },
+        {
+          "id": "obj_46d4dfcc",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_e9fce9e0",
+          "ground": "The argument cites Additional Protocol III instead of Additional Protocol I, and misstates the legal effect of the cited provision regarding the scope of the Geneva Conventions.",
+          "reasoning": "The argument claims AP I confirms applicability but cites AP III, which concerns emblems (Red Cross, etc.), not the general applicability of the Conventions to occupation. Furthermore, AP I Article 4 (not cited) states that application does not affect legal status, but does not expand the definition of 'territory of a High Contracting Party' beyond its textual limits. The citation is to the wrong instrument and the reasoning is flawed.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_iii",
+              "article": "1",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_iii",
+                "article": "1",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apiii-2005",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument cites Additional Protocol III (emblems) while claiming it cites Additional Protocol I. AP III does not address the general applicability of the Conventions to occupation."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_3c4cbd76\",\n      \"ground\": \"The argument mischaracterizes the legal relevance of Rome Statute Article 8(2)(c) by conflating non-international armed conflict (NIAC) norms with the applicability of the Fourth Geneva Convention in an international armed conflict (IAC).\",\n      \"reasoning\": \"Article 8(2)(c) applies to 'armed conflicts not of an international character.' The 1967 occupation is an IAC. Citing a NIAC provision to prove the applicability of the GCIV in an IAC is a category error. The existence of a NIAC provision does not expand or define the scope of an IAC treaty; it merely ensures protection in the absence of IAC status. The argument fails to establish the IAC applicability test it purports to support.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(c)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_f7aac5a4\",\n      \"ground\": \"The argument relies on the Convention on Certain Conventional Weapons (CCW) to establish the applicability of the Geneva Conventions, which is legally irrelevant and a non-sequitur.\",\n      \"reasoning\": \"The CCW regulates specific weapons, not the general applicability of the Geneva Conventions to occupation. Article 7(4) addresses the acceptance of the CCW's annexed Protocols, not the Geneva Conventions' territorial scope. Citing a weapons convention to resolve a jurisdictional question regarding the Fourth Geneva Convention is an improper citation of authority that does not support the proposition made.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccw\",\n          \"article\": \"7(4)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_e9fce9e0\",\n      \"ground\": \"The argument cites Additional Protocol III instead of Additional Protocol I, and misstates the legal effect of the cited provision regarding the scope of the Geneva Conventions.\",\n      \"reasoning\": \"The argument claims AP I confirms applicability but cites AP III, which concerns emblems (Red Cross, etc.), not the general applicability of the Conventions to occupation. Furthermore, AP I Article 4 (not cited) states that application does not affect legal status, but does not expand the definition of 'territory of a High Contracting Party' beyond its textual limits. The citation is to the wrong instrument and the reasoning is flawed.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_iii\",\n          \"article\": \"1\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-24T01:12:33.722804Z",
+      "completed_at": "2026-11-24T01:12:35.665556Z",
+      "prompt_tokens": 6083,
+      "completion_tokens": 673,
+      "error": null
+    },
+    {
+      "id": "turn_65fa96ac",
+      "round_number": 2,
+      "role": "attacker_evidentiary",
+      "model_id": "groq/openai/gpt-oss-20b",
+      "prompt_id": "attacker_evidentiary/challenge",
+      "prompt_hash": "3c51df3ede120f0e250946ae0ae847867b322919ccae95da9adeef33ac72469e",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_2ce0f1fa",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_dde66c56",
+          "ground": "The facts do not establish that the occupied territories were territory of a High Contracting Party.",
+          "reasoning": "While the record states Jordan was a party to the Fourth Geneva Convention, it does not show that Jordan exercised sovereignty or de facto control over the West Bank and East Jerusalem before 1967. Article 2(2) requires the occupation of territory belonging to a High Contracting Party; without evidence that the territory was Jordanian, the factual predicate fails.",
+          "citations": [],
+          "resolved_citations": [],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The record states Jordan was a party to GCIV but does not show Jordan exercised sovereignty or de facto control over the West Bank and East Jerusalem before 1967. Article 2(2) requires occupation of territory belonging to a High Contracting Party; the factual predicate fails."
+        },
+        {
+          "id": "obj_232e1c97",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_3c4cbd76",
+          "ground": "There is no record that the ICC asserted jurisdiction over the occupied Palestinian territories.",
+          "reasoning": "The argument assumes that the Rome Statute’s incorporation of Common Article 3 demonstrates applicability because the ICC has jurisdiction in the situation. The facts as given provide no evidence of ICC jurisdiction, so the claim that Rome Statute indicates applicability is unsupported.",
+          "citations": [],
+          "resolved_citations": [],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument assumes the ICC has asserted jurisdiction over the occupied Palestinian territories; the facts as given provide no such evidence."
+        },
+        {
+          "id": "obj_29e31798",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_e9fce9e0",
+          "ground": "The facts do not show that Jordan accepted Additional Protocol I or that it applies to the occupied territories.",
+          "reasoning": "The argument relies on Jordan’s acceptance of Additional Protocol I to infer that the Geneva Conventions apply. The record contains no information that Jordan accepted the Protocol or that the territories were covered by it, so the factual basis is missing.",
+          "citations": [],
+          "resolved_citations": [],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument relies on Jordan's acceptance of Additional Protocol I; the record contains no information that Jordan accepted the Protocol or that the territories were covered by it."
+        },
+        {
+          "id": "obj_bcf96e1a",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_f7aac5a4",
+          "ground": "The facts do not establish that Israel accepted the applicability of the Geneva Conventions under the CCW.",
+          "reasoning": "The argument asserts that Israel’s acceptance of the Geneva Conventions’ obligations under the CCW makes them applicable. However, the record provides no evidence that Israel accepted the CCW obligations or that it applied the Convention’s provisions in this conflict, rendering the factual predicate unsubstantiated.",
+          "citations": [],
+          "resolved_citations": [],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument asserts Israel accepted Geneva Convention obligations under the CCW, but the record provides no evidence of such acceptance or application in this conflict."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_dde66c56\",\n      \"ground\": \"The facts do not establish that the occupied territories were territory of a High Contracting Party.\",\n      \"reasoning\": \"While the record states Jordan was a party to the Fourth Geneva Convention, it does not show that Jordan exercised sovereignty or de facto control over the West Bank and East Jerusalem before 1967. Article 2(2) requires the occupation of territory belonging to a High Contracting Party; without evidence that the territory was Jordanian, the factual predicate fails.\",\n      \"severity\": \"material\",\n      \"citations\": []\n    },\n    {\n      \"target_argument_id\": \"arg_3c4cbd76\",\n      \"ground\": \"There is no record that the ICC asserted jurisdiction over the occupied Palestinian territories.\",\n      \"reasoning\": \"The argument assumes that the Rome Statute’s incorporation of Common Article 3 demonstrates applicability because the ICC has jurisdiction in the situation. The facts as given provide no evidence of ICC jurisdiction, so the claim that Rome Statute indicates applicability is unsupported.\",\n      \"severity\": \"fatal\",\n      \"citations\": []\n    },\n    {\n      \"target_argument_id\": \"arg_e9fce9e0\",\n      \"ground\": \"The facts do not show that Jordan accepted Additional Protocol I or that it applies to the occupied territories.\",\n      \"reasoning\": \"The argument relies on Jordan’s acceptance of Additional Protocol I to infer that the Geneva Conventions apply. The record contains no information that Jordan accepted the Protocol or that the territories were covered by it, so the factual basis is missing.\",\n      \"severity\": \"material\",\n      \"citations\": []\n    },\n    {\n      \"target_argument_id\": \"arg_f7aac5a4\",\n      \"ground\": \"The facts do not establish that Israel accepted the applicability of the Geneva Conventions under the CCW.\",\n      \"reasoning\": \"The argument asserts that Israel’s acceptance of the Geneva Conventions’ obligations under the CCW makes them applicable. However, the record provides no evidence that Israel accepted the CCW obligations or that it applied the Convention’s provisions in this conflict, rendering the factual predicate unsubstantiated.\",\n      \"severity\": \"material\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-24T01:12:33.723812Z",
+      "completed_at": "2026-11-24T01:12:36.245348Z",
+      "prompt_tokens": 5816,
+      "completion_tokens": 1680,
+      "error": null
+    },
+    {
+      "id": "turn_bf8128df",
+      "round_number": 2,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "968c9e46ed6f4a81b6c8ad48855f566d59662265064a1c4f14207138eda060c8",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Indeterminate.\", \"reasoning\": \"All seven arguments for applicability have been either directly defeated by sustained objections or rely on authorities not present in the retrieved context. The doctrinal objections (obj_fcf8796c, obj_b9173558, obj_263568f3, obj_46d4dfcc) correctly identify category errors: Rome Statute Article 8(2)(c) governs non-international armed conflicts, not the international armed conflict at issue; the CCW regulates weapons, not the territorial scope of the Fourth Geneva Convention; and Additional Protocol III concerns emblems, not occupation law. The evidentiary objections (obj_c54de333, obj_6eae8a1e, obj_2ce0f1fa, obj_d7711e69, obj_ddf3fc62, obj_24f8f2e3, obj_232e1c97, obj_29e31798, obj_bcf96e1a) are sustained because the given facts do not establish that Jordan exercised sovereignty or de facto authority over the territories, that Jordan or Israel accepted Additional Protocol I or the CCW, or that the ICC has asserted jurisdiction. The sole unchallenged argument (arg_cb8f37a5) cites Additional Protocol I Article 4 (retrieved), but that provision only states that application of the Conventions does not affect the legal status of territory — it does not establish applicability. Critically, the Fourth Geneva Convention's Article 2, the treaty provision governing the question, is absent from the retrieved corpus. Without the treaty text or any surviving argument that meets its terms on this record, the question cannot be resolved.\", \"confidence\": 0.65, \"confidence_reasoning\": \"The legal answer under customary IHL and ICJ jurisprudence is well settled (Yes), but the proceeding's record lacks the operative treaty article and all presented arguments have been defeated or are unsupported. Confidence is below 0.7 because the result turns on the incompleteness of the provided corpus, not on the merits of the underlying international law.\", \"rulings\": [{\"objection_id\": \"obj_fcf8796c\", \"disposition\": \"sustained\", \"reasoning\": \"Rome Statute Article 8(2)(c) expressly addresses 'armed conflicts not of an international character.' The 1967 occupation was an international armed conflict between Israel and Jordan. Citing a NIAC provision to prove Fourth Geneva Convention applicability in an IAC is a category error.\"}, {\"objection_id\": \"obj_23f5f1ec\", \"disposition\": \"sustained\", \"reasoning\": \"The argument cites Additional Protocol III Article 1 (a 2005 protocol on distinctive emblems) but treats it as Additional Protocol I. AP III does not govern the scope of occupation law and postdates the 1967 conflict.\"}, {\"objection_id\": \"obj_c54de333\", \"disposition\": \"sustained\", \"reasoning\": \"The argument asserts that Article 2(2) applies irrespective of prior sovereignty, but the given facts state Jordan was not recognised as sovereign over the territories before 1967. The factual predicate — that the territory was 'of a High Contracting Party' — is not established on this record.\"}, {\"objection_id\": \"obj_6eae8a1e\", \"disposition\": \"sustained\", \"reasoning\": \"The argument relies on Jordan's status as a party to the Convention, but the facts explicitly note Jordan was not recognised as sovereign over the former mandate territory. Without evidence of sovereignty or de facto authority, the 'territory of a High Contracting Party' requirement is unsupported.\"}, {\"objection_id\": \"obj_d7711e69\", \"disposition\": \"sustained\", \"reasoning\": \"The argument assumes the Rome Statute's incorporation of Common Article 3 demonstrates Geneva Convention applicability, but the record contains no evidence that the ICC has jurisdiction over the situation or that the Statute applies in this context.\"}, {\"objection_id\": \"obj_ddf3fc62\", \"disposition\": \"sustained\", \"reasoning\": \"The argument presumes Jordan accepted Additional Protocol I; the retrieved context provides no indication Jordan ratified or accepted AP I, so the factual basis is missing.\"}, {\"objection_id\": \"obj_24f8f2e3\", \"disposition\": \"sustained\", \"reasoning\": \"The argument depends on Israel's acceptance of Geneva Convention obligations via the CCW, but the record provides no evidence of such acceptance by Israel.\"}, {\"objection_id\": \"obj_b9173558\", \"disposition\": \"sustained\", \"reasoning\": \"Reiterates the category error: Article 8(2)(c) governs NIACs; the 1967 occupation is an IAC. A NIAC provision does not define or expand the scope of an IAC treaty.\"}, {\"objection_id\": \"obj_263568f3\", \"disposition\": \"sustained\", \"reasoning\": \"The CCW regulates specific weapons; Article 7(4) addresses acceptance of the CCW's annexed Protocols, not the territorial scope of the Fourth Geneva Convention. The citation is legally irrelevant to the question.\"}, {\"objection_id\": \"obj_46d4dfcc\", \"disposition\": \"sustained\", \"reasoning\": \"The argument cites Additional Protocol III (emblems) while claiming it cites Additional Protocol I. AP III does not address the general applicability of the Conventions to occupation.\"}, {\"objection_id\": \"obj_2ce0f1fa\", \"disposition\": \"sustained\", \"reasoning\": \"The record states Jordan was a party to GCIV but does not show Jordan exercised sovereignty or de facto control over the West Bank and East Jerusalem before 1967. Article 2(2) requires occupation of territory belonging to a High Contracting Party; the factual predicate fails.\"}, {\"objection_id\": \"obj_232e1c97\", \"disposition\": \"sustained\", \"reasoning\": \"The argument assumes the ICC has asserted jurisdiction over the occupied Palestinian territories; the facts as given provide no such evidence.\"}, {\"objection_id\": \"obj_29e31798\", \"disposition\": \"sustained\", \"reasoning\": \"The argument relies on Jordan's acceptance of Additional Protocol I; the record contains no information that Jordan accepted the Protocol or that the territories were covered by it.\"}, {\"objection_id\": \"obj_bcf96e1a\", \"disposition\": \"sustained\", \"reasoning\": \"The argument asserts Israel accepted Geneva Convention obligations under the CCW, but the record provides no evidence of such acceptance or application in this conflict.\"}], \"surviving_argument_ids\": [\"arg_cb8f37a5\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-24T01:12:36.246255Z",
+      "completed_at": "2026-11-24T01:13:33.630959Z",
+      "prompt_tokens": 7786,
+      "completion_tokens": 5189,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-24T01:13:33.632148+00:00",
+  "duration_seconds": 145.92271377299994,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 2,
+  "judge_failures": 0,
+  "judge_failed": false
+}

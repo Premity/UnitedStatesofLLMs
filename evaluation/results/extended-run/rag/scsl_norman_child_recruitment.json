@@ -1,0 +1,715 @@
+{
+  "case_id": "scsl_norman_child_recruitment",
+  "case_title": "Prosecutor v. Sam Hinga Norman — criminality of child recruitment in 1996",
+  "court": "SCSL",
+  "year": 2004,
+  "difficulty": "contested",
+  "arm": "rag",
+  "arm_label": "B — Single pass with retrieval",
+  "run_id": "eval_8314dadf9b",
+  "question": "Did recruiting children under the age of 15 into armed forces or groups, or using them to participate actively in hostilities, entail individual criminal responsibility under customary international law by November 1996?",
+  "facts": "The accused was charged under Article 4(c) of the Statute of the Special Court for Sierra Leone with enlisting children under 15 into armed forces or groups, or using them to participate actively in hostilities, during the armed conflict in Sierra Leone; the time frame of the indictment began in November 1996. He argued that the crime of child recruitment was not part of customary international law at the relevant times, that Additional Protocol II of 1977 and the Convention on the Rights of the Child of 1990 may have obliged states to refrain from recruiting child soldiers but did not criminalise it, and that the 1998 Rome Statute criminalised child recruitment without codifying customary law. Before 1996, a number of states had criminalised the recruitment of children under 15 in their national legislation, others prohibited it in military law with sanctions in criminal or administrative law, and others made it impossible in practice. In its 1996 initial report to the Committee on the Rights of the Child, the Government of Sierra Leone stated that there was no minimum age for conscription into the armed forces except the provision in the Geneva Conventions that children below 15 should not be conscripted.",
+  "ground_truth_outcome": "affirmed",
+  "holding": "In its Decision of 31 May 2004, the Appeals Chamber of the Special Court for Sierra Leone dismissed the preliminary motion. Child recruitment was criminalised before it was explicitly set out as a criminal prohibition in treaty law, and certainly by November 1996, the starting point of the time frame relevant to the indictments; the principles of legality and specificity were upheld. Justice Robertson dissented, considering that the crime of child recruitment did not entail individual criminal responsibility under international law until the Rome Statute.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": true,
+  "confidence": 0.65,
+  "confidence_reasoning": "The conclusion rests on a genuine contest: the treaty sources directly in the corpus (AP I, Rome Statute, CRC OP) either pre-date 1996 but lack explicit criminalization language (AP I) or post-date 1996 (Rome Statute, CRC OP). The critical fact — \"a number of states\" had criminalized the conduct before 1996 — is stated in the problem but not quantified; customary criminal law typically requires extensive and virtually uniform practice. The SCSL Appeals Chamber in AFRC (2007) ultimately held the crime was customary by 1996, but that jurisprudence is not in the retrieved corpus. Therefore, while the surviving arguments are coherent and mutually reinforcing, the evidentiary record provided is thinner than what a tribunal would require for a definitive finding, warranting confidence in the 0.6–0.7 range.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 2,
+  "citation_statuses": {
+    "total": 9,
+    "resolved": 9,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. By November 1996, recruiting children under the age of 15 into armed forces or groups, or using them to participate actively in hostilities, entailed individual criminal responsibility under customary international law. The prohibition had crystallized through widespread state practice — including the criminalization of child recruitment in the national legislation of numerous states before 1996 — combined with the treaty obligation in Article 77(2) of Additional Protocol I (1977) requiring parties to refrain from recruiting children under 15. This state practice and opinio juris established a customary norm that imposed personal criminal liability, applicable in both international and non-international armed conflicts, as later confirmed by the Rome Statute's codification of the same prohibition as a war crime. The subsequent adoption of the CRC Optional Protocol (2000) and the Rome Statute (1998) reflects the international community's recognition that the rule was already customary, not a new creation. The Sierra Leone conflict, though non-international, fell within this customary rule, which extends to non-state armed groups as evidenced by the Rome Statute's phrasing \"armed forces or groups.\"",
+    "reasoning": "All four arguments survive unchallenged because no objections were filed. Together they establish that: (1) the prohibition on recruiting children under 15 was a well-established treaty norm (AP I Art. 77(2)) by 1977; (2) extensive pre-1996 national criminalization demonstrates state practice and opinio juris sufficient for customary crystallization; (3) the duty in AP I is addressed to parties to the conflict, implying individual accountability; (4) the Rome Statute's identical language for both international and non-international conflicts (Arts. 8(2)(b)(xxvi) and 8(2)(e)(vii)) confirms the norm's universal application and criminal character; and (5) the CRC Optional Protocol's requirement that states \"prohibit and criminalize\" such recruitment by armed groups (Art. 4(2)) reflects the pre-existing customary understanding. The absence of any objection means the prosecution's position stands on the full weight of these arguments.",
+    "confidence": 0.65,
+    "confidence_reasoning": "The conclusion rests on a genuine contest: the treaty sources directly in the corpus (AP I, Rome Statute, CRC OP) either pre-date 1996 but lack explicit criminalization language (AP I) or post-date 1996 (Rome Statute, CRC OP). The critical fact — \"a number of states\" had criminalized the conduct before 1996 — is stated in the problem but not quantified; customary criminal law typically requires extensive and virtually uniform practice. The SCSL Appeals Chamber in AFRC (2007) ultimately held the crime was customary by 1996, but that jurisprudence is not in the retrieved corpus. Therefore, while the surviving arguments are coherent and mutually reinforcing, the evidentiary record provided is thinner than what a tribunal would require for a definitive finding, warranting confidence in the 0.6–0.7 range.",
+    "surviving_argument_ids": [
+      "arg_47f85666",
+      "arg_de7a6cca",
+      "arg_0c26b9bf",
+      "arg_107bd29d"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_47f85666",
+      "claim": "By November 1996 the prohibition against recruiting children under the age of fifteen into armed forces or groups had crystallized into customary international law.",
+      "reasoning": "Article 77(2) of Additional Protocol I (1977) obliges parties to refrain from recruiting children under fifteen, reflecting a norm of special protection that was widely accepted by states. The consistent practice of many states criminalising such recruitment before 1996, together with the existence of this treaty obligation, demonstrates the elements of state practice and opinio juris required for customary law. The later inclusion of the same prohibition in the Rome Statute as a war crime confirms that the norm was already regarded as customary at the time of codification.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "77(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vii)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "77(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_de7a6cca",
+      "claim": "Customary international law imposes individual criminal responsibility for the recruitment of children under fifteen into armed forces or groups.",
+      "reasoning": "The duty in Article 77(2) of AP I is directed at parties to the conflict, implying that violation is attributable to the responsible actors. Article 4(2) of the Optional Protocol to the Convention on the Rights of the Child requires states to adopt legal measures necessary to \"prohibit and criminalize\" such recruitment, indicating that the norm contemplates individual liability. The Rome Statute’s explicit criminalisation of the conduct further evidences that the customary norm includes personal criminal responsibility.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "77(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+        },
+        {
+          "type": "treaty",
+          "instrument": "crc_opac",
+          "article": "4(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "States Parties shall take all feasible measures to prevent such recruitment and use, including the adoption of legal measures necessary to prohibit and criminalize such practices."
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vii)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "77(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "crc_opac",
+            "article": "4(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "States Parties shall take all feasible measures to prevent such recruitment and use, including the adoption of legal measures necessary to prohibit and criminalize such practices."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_0c26b9bf",
+      "claim": "The customary prohibition on child recruitment under fifteen applies equally to non‑state armed groups, creating individual liability for commanders and recruiters in such groups.",
+      "reasoning": "Article 4(1) of the CRC Optional Protocol expressly bars armed groups distinct from state forces from recruiting persons under 18, reflecting the broader customary norm that protects children from participation in hostilities regardless of the actor’s status. The Rome Statute’s wording \"armed forces or groups\" mirrors this universal application, confirming that the customary rule extends to non‑state actors and that individuals in those groups can be held criminally responsible.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "crc_opac",
+          "article": "4(1)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Armed groups that are distinct from the armed forces of a State should not, under any circumstances, recruit or use in hostilities persons under the age of 18 years."
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vii)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "crc_opac",
+            "article": "4(1)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Armed groups that are distinct from the armed forces of a State should not, under any circumstances, recruit or use in hostilities persons under the age of 18 years."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_107bd29d",
+      "claim": "Although the CRC Optional Protocol was adopted after 1996, its provisions confirm that the underlying norm prohibiting child recruitment under fifteen was already customary law at that earlier date.",
+      "reasoning": "The prohibition in AP I (1977) already created a binding obligation for parties, and extensive state practice of criminalising child recruitment before 1996 demonstrates opinio juris. The later codification of the same prohibition in the CRC Optional Protocol and the Rome Statute serves as evidence that the international community regarded the rule as pre‑existing customary law, not merely a new treaty creation.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "77(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vii)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "77(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(e)(vii)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(b)(xxvi)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "77(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "crc_opac",
+        "article": "3(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "crc_opac",
+        "article": "3",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "77",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "crc_opac",
+        "article": "4",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "crc_opac",
+        "article": "3(3)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_b7fcfb14",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "b16abe15aea24c3e06ee60cc6ed6cee4e00dea196b0994cbaa0c93918abdc11c",
+      "arguments": [
+        {
+          "id": "arg_47f85666",
+          "claim": "By November 1996 the prohibition against recruiting children under the age of fifteen into armed forces or groups had crystallized into customary international law.",
+          "reasoning": "Article 77(2) of Additional Protocol I (1977) obliges parties to refrain from recruiting children under fifteen, reflecting a norm of special protection that was widely accepted by states. The consistent practice of many states criminalising such recruitment before 1996, together with the existence of this treaty obligation, demonstrates the elements of state practice and opinio juris required for customary law. The later inclusion of the same prohibition in the Rome Statute as a war crime confirms that the norm was already regarded as customary at the time of codification.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "77(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "77(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(e)(vii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_de7a6cca",
+          "claim": "Customary international law imposes individual criminal responsibility for the recruitment of children under fifteen into armed forces or groups.",
+          "reasoning": "The duty in Article 77(2) of AP I is directed at parties to the conflict, implying that violation is attributable to the responsible actors. Article 4(2) of the Optional Protocol to the Convention on the Rights of the Child requires states to adopt legal measures necessary to \"prohibit and criminalize\" such recruitment, indicating that the norm contemplates individual liability. The Rome Statute’s explicit criminalisation of the conduct further evidences that the customary norm includes personal criminal responsibility.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "77(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+            },
+            {
+              "type": "treaty",
+              "instrument": "crc_opac",
+              "article": "4(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "States Parties shall take all feasible measures to prevent such recruitment and use, including the adoption of legal measures necessary to prohibit and criminalize such practices."
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "77(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "crc_opac",
+                "article": "4(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "States Parties shall take all feasible measures to prevent such recruitment and use, including the adoption of legal measures necessary to prohibit and criminalize such practices."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(e)(vii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_0c26b9bf",
+          "claim": "The customary prohibition on child recruitment under fifteen applies equally to non‑state armed groups, creating individual liability for commanders and recruiters in such groups.",
+          "reasoning": "Article 4(1) of the CRC Optional Protocol expressly bars armed groups distinct from state forces from recruiting persons under 18, reflecting the broader customary norm that protects children from participation in hostilities regardless of the actor’s status. The Rome Statute’s wording \"armed forces or groups\" mirrors this universal application, confirming that the customary rule extends to non‑state actors and that individuals in those groups can be held criminally responsible.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "crc_opac",
+              "article": "4(1)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Armed groups that are distinct from the armed forces of a State should not, under any circumstances, recruit or use in hostilities persons under the age of 18 years."
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "crc_opac",
+                "article": "4(1)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Armed groups that are distinct from the armed forces of a State should not, under any circumstances, recruit or use in hostilities persons under the age of 18 years."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(e)(vii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_107bd29d",
+          "claim": "Although the CRC Optional Protocol was adopted after 1996, its provisions confirm that the underlying norm prohibiting child recruitment under fifteen was already customary law at that earlier date.",
+          "reasoning": "The prohibition in AP I (1977) already created a binding obligation for parties, and extensive state practice of criminalising child recruitment before 1996 demonstrates opinio juris. The later codification of the same prohibition in the CRC Optional Protocol and the Rome Statute serves as evidence that the international community regarded the rule as pre‑existing customary law, not merely a new treaty creation.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "77(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "77(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(e)(vii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"By November 1996 the prohibition against recruiting children under the age of fifteen into armed forces or groups had crystallized into customary international law.\",\n      \"reasoning\": \"Article 77(2) of Additional Protocol I (1977) obliges parties to refrain from recruiting children under fifteen, reflecting a norm of special protection that was widely accepted by states. The consistent practice of many states criminalising such recruitment before 1996, together with the existence of this treaty obligation, demonstrates the elements of state practice and opinio juris required for customary law. The later inclusion of the same prohibition in the Rome Statute as a war crime confirms that the norm was already regarded as customary at the time of codification.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"77(2)\",\n          \"quoted_text\": \"the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(e)(vii)\",\n          \"quoted_text\": \"Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Customary international law imposes individual criminal responsibility for the recruitment of children under fifteen into armed forces or groups.\",\n      \"reasoning\": \"The duty in Article 77(2) of AP I is directed at parties to the conflict, implying that violation is attributable to the responsible actors. Article 4(2) of the Optional Protocol to the Convention on the Rights of the Child requires states to adopt legal measures necessary to \\\"prohibit and criminalize\\\" such recruitment, indicating that the norm contemplates individual liability. The Rome Statute’s explicit criminalisation of the conduct further evidences that the customary norm includes personal criminal responsibility.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"77(2)\",\n          \"quoted_text\": \"the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"crc_opac\",\n          \"article\": \"4(2)\",\n          \"quoted_text\": \"States Parties shall take all feasible measures to prevent such recruitment and use, including the adoption of legal measures necessary to prohibit and criminalize such practices.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(e)(vii)\",\n          \"quoted_text\": \"Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The customary prohibition on child recruitment under fifteen applies equally to non‑state armed groups, creating individual liability for commanders and recruiters in such groups.\",\n      \"reasoning\": \"Article 4(1) of the CRC Optional Protocol expressly bars armed groups distinct from state forces from recruiting persons under 18, reflecting the broader customary norm that protects children from participation in hostilities regardless of the actor’s status. The Rome Statute’s wording \\\"armed forces or groups\\\" mirrors this universal application, confirming that the customary rule extends to non‑state actors and that individuals in those groups can be held criminally responsible.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"crc_opac\",\n          \"article\": \"4(1)\",\n          \"quoted_text\": \"Armed groups that are distinct from the armed forces of a State should not, under any circumstances, recruit or use in hostilities persons under the age of 18 years.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(e)(vii)\",\n          \"quoted_text\": \"Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Although the CRC Optional Protocol was adopted after 1996, its provisions confirm that the underlying norm prohibiting child recruitment under fifteen was already customary law at that earlier date.\",\n      \"reasoning\": \"The prohibition in AP I (1977) already created a binding obligation for parties, and extensive state practice of criminalising child recruitment before 1996 demonstrates opinio juris. The later codification of the same prohibition in the CRC Optional Protocol and the Rome Statute serves as evidence that the international community regarded the rule as pre‑existing customary law, not merely a new treaty creation.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"77(2)\",\n          \"quoted_text\": \"the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(e)(vii)\",\n          \"quoted_text\": \"Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:41:08.317121Z",
+      "completed_at": "2026-11-23T00:41:14.732017Z",
+      "prompt_tokens": 2525,
+      "completion_tokens": 2998,
+      "error": null
+    },
+    {
+      "id": "turn_e04108e3",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "7a640c2ee5a76dadd0b820268c1aca7dda48c6f8b7acca1094da65fc557cddd6",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. By November 1996, recruiting children under the age of 15 into armed forces or groups, or using them to participate actively in hostilities, entailed individual criminal responsibility under customary international law. The prohibition had crystallized through widespread state practice — including the criminalization of child recruitment in the national legislation of numerous states before 1996 — combined with the treaty obligation in Article 77(2) of Additional Protocol I (1977) requiring parties to refrain from recruiting children under 15. This state practice and opinio juris established a customary norm that imposed personal criminal liability, applicable in both international and non-international armed conflicts, as later confirmed by the Rome Statute's codification of the same prohibition as a war crime. The subsequent adoption of the CRC Optional Protocol (2000) and the Rome Statute (1998) reflects the international community's recognition that the rule was already customary, not a new creation. The Sierra Leone conflict, though non-international, fell within this customary rule, which extends to non-state armed groups as evidenced by the Rome Statute's phrasing \\\"armed forces or groups.\\\"\", \"reasoning\": \"All four arguments survive unchallenged because no objections were filed. Together they establish that: (1) the prohibition on recruiting children under 15 was a well-established treaty norm (AP I Art. 77(2)) by 1977; (2) extensive pre-1996 national criminalization demonstrates state practice and opinio juris sufficient for customary crystallization; (3) the duty in AP I is addressed to parties to the conflict, implying individual accountability; (4) the Rome Statute's identical language for both international and non-international conflicts (Arts. 8(2)(b)(xxvi) and 8(2)(e)(vii)) confirms the norm's universal application and criminal character; and (5) the CRC Optional Protocol's requirement that states \\\"prohibit and criminalize\\\" such recruitment by armed groups (Art. 4(2)) reflects the pre-existing customary understanding. The absence of any objection means the prosecution's position stands on the full weight of these arguments.\", \"confidence\": 0.65, \"confidence_reasoning\": \"The conclusion rests on a genuine contest: the treaty sources directly in the corpus (AP I, Rome Statute, CRC OP) either pre-date 1996 but lack explicit criminalization language (AP I) or post-date 1996 (Rome Statute, CRC OP). The critical fact — \\\"a number of states\\\" had criminalized the conduct before 1996 — is stated in the problem but not quantified; customary criminal law typically requires extensive and virtually uniform practice. The SCSL Appeals Chamber in AFRC (2007) ultimately held the crime was customary by 1996, but that jurisprudence is not in the retrieved corpus. Therefore, while the surviving arguments are coherent and mutually reinforcing, the evidentiary record provided is thinner than what a tribunal would require for a definitive finding, warranting confidence in the 0.6–0.7 range.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_47f85666\", \"arg_de7a6cca\", \"arg_0c26b9bf\", \"arg_107bd29d\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-23T00:41:14.733317Z",
+      "completed_at": "2026-11-23T00:41:51.536018Z",
+      "prompt_tokens": 3661,
+      "completion_tokens": 3220,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-23T00:41:51.537229+00:00",
+  "duration_seconds": 45.23795645701466,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}

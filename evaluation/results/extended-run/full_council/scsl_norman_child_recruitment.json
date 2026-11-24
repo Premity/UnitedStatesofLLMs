@@ -1,0 +1,2068 @@
+{
+  "case_id": "scsl_norman_child_recruitment",
+  "case_title": "Prosecutor v. Sam Hinga Norman — criminality of child recruitment in 1996",
+  "court": "SCSL",
+  "year": 2004,
+  "difficulty": "contested",
+  "arm": "full_council",
+  "arm_label": "D — Full council",
+  "run_id": "eval_44f8309e3f",
+  "question": "Did recruiting children under the age of 15 into armed forces or groups, or using them to participate actively in hostilities, entail individual criminal responsibility under customary international law by November 1996?",
+  "facts": "The accused was charged under Article 4(c) of the Statute of the Special Court for Sierra Leone with enlisting children under 15 into armed forces or groups, or using them to participate actively in hostilities, during the armed conflict in Sierra Leone; the time frame of the indictment began in November 1996. He argued that the crime of child recruitment was not part of customary international law at the relevant times, that Additional Protocol II of 1977 and the Convention on the Rights of the Child of 1990 may have obliged states to refrain from recruiting child soldiers but did not criminalise it, and that the 1998 Rome Statute criminalised child recruitment without codifying customary law. Before 1996, a number of states had criminalised the recruitment of children under 15 in their national legislation, others prohibited it in military law with sanctions in criminal or administrative law, and others made it impossible in practice. In its 1996 initial report to the Committee on the Rights of the Child, the Government of Sierra Leone stated that there was no minimum age for conscription into the armed forces except the provision in the Geneva Conventions that children below 15 should not be conscripted.",
+  "ground_truth_outcome": "affirmed",
+  "holding": "In its Decision of 31 May 2004, the Appeals Chamber of the Special Court for Sierra Leone dismissed the preliminary motion. Child recruitment was criminalised before it was explicitly set out as a criminal prohibition in treaty law, and certainly by November 1996, the starting point of the time frame relevant to the indictments; the principles of legality and specificity were upheld. Justice Robertson dissented, considering that the crime of child recruitment did not entail individual criminal responsibility under international law until the Rome Statute.",
+  "predicted_outcome": "indeterminate",
+  "outcome_correct": false,
+  "confidence": 0.65,
+  "confidence_reasoning": "The record is genuinely insufficient to answer the question either way. While the Special Court for Sierra Leone later held that the crime existed under customary law by 1996, that judicial determination is not in the provided materials. The facts describe only scattered state practice and treaty obligations (AP II, CRC, Geneva Conventions) without evidence of the general practice and opinio juris required for customary criminal liability. The confidence reflects that the legal answer is known from external jurisprudence, but on the strict record before me the proposition is indeterminate.",
+  "rounds": 2,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 2,
+  "total_calls": 8,
+  "citation_statuses": {
+    "total": 27,
+    "resolved": 27,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Indeterminate.",
+    "reasoning": "The sustained objections have stripped both the affirmative and negative arguments of their evidentiary footing in the provided record. The arguments for customary criminal responsibility (arg_2819595d, arg_ca61cb8a, arg_cc392b78, arg_7535380c, arg_6643ee00) rely on AP I ratification, the Rome Statute, the CRC Optional Protocol, or jus cogens status — but the facts as given mention only AP II and the CRC (1990), provide no data on AP I ratification or state practice, and contain no pre-1996 evidence of opinio juris that the prohibition carried individual criminal liability. The Rome Statute (1998) and CRC Optional Protocol (2000) post-date the relevant period and cannot, without more, prove the state of customary law in November 1996. The sole argument against customary criminal responsibility (arg_48ded5f1) likewise lacks record support for its claim that liability 'was only crystallised later'; the facts are simply silent on whether customary law had already attached individual criminal responsibility by 1996. With no surviving argument adequately supported by the provided facts and retrieved context, the question cannot be resolved on this record.",
+    "confidence": 0.65,
+    "confidence_reasoning": "The record is genuinely insufficient to answer the question either way. While the Special Court for Sierra Leone later held that the crime existed under customary law by 1996, that judicial determination is not in the provided materials. The facts describe only scattered state practice and treaty obligations (AP II, CRC, Geneva Conventions) without evidence of the general practice and opinio juris required for customary criminal liability. The confidence reflects that the legal answer is known from external jurisprudence, but on the strict record before me the proposition is indeterminate.",
+    "surviving_argument_ids": [],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_2819595d",
+      "claim": "By November 1996 the prohibition of recruiting children under the age of fifteen into armed forces or groups had attained the status of customary international law.",
+      "reasoning": "Additional Protocol I to the Geneva Conventions (1977) obliges parties to refrain from recruiting persons who have not attained fifteen years of age (art. 77(2)). The Protocol was ratified by a large majority of states and was implemented through national legislation criminalising such recruitment, demonstrating both widespread state practice and opinio juris. These elements satisfy the criteria for a rule of customary international law, making the prohibition binding on all parties to an armed conflict, irrespective of treaty ratification.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "77(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "77(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_ca61cb8a",
+      "claim": "The customary prohibition on recruiting children under fifteen carries individual criminal responsibility for those who enlist or use them in hostilities.",
+      "reasoning": "Customary IHL imposes individual criminal liability for serious violations of its norms. The Rome Statute (1998) codifies the crime of conscripting or enlisting children under fifteen (art. 8(2)(e)(vii)), expressly stating that the conduct constitutes a war crime. The Statute’s purpose was to crystallise an already existing customary norm, not to create a novel offense. Consequently, at the time of the alleged conduct in 1996, the act already attracted individual criminal responsibility under customary law.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vii)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_cc392b78",
+      "claim": "The obligation to criminalise the recruitment of children under fifteen was already recognized as a norm of customary law before 1996, as reflected in the later Optional Protocol to the Convention on the Rights of the Child (2000).",
+      "reasoning": "Article 4 of the CRC Optional Protocol obliges states to adopt legal measures necessary to prohibit and criminalise the recruitment of persons under eighteen, and specifically bars armed groups from recruiting persons under eighteen. The Protocol was drafted on the basis of an already‑existing, widely‑accepted customary rule protecting children from military recruitment; its provisions therefore confirm the pre‑existing customary status of the prohibition and the duty to criminalise it. Although the Protocol entered into force after 1996, its drafting history demonstrates that the norm was considered customary at the time of the accused’s conduct.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "crc_opac",
+          "article": "4",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Armed groups that are distinct from the armed forces of a State should not, under any circumstances, recruit or use in hostilities persons under the age of 18 years."
+        },
+        {
+          "type": "treaty",
+          "instrument": "crc_opac",
+          "article": "4",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "States Parties shall take all feasible measures to prevent such recruitment and use, including the adoption of legal measures necessary to prohibit and criminalize such practices."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "crc_opac",
+            "article": "4",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Armed groups that are distinct from the armed forces of a State should not, under any circumstances, recruit or use in hostilities persons under the age of 18 years."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "crc_opac",
+            "article": "4",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "States Parties shall take all feasible measures to prevent such recruitment and use, including the adoption of legal measures necessary to prohibit and criminalize such practices."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_7535380c",
+      "claim": "The prohibition against recruiting children under fifteen is a peremptory norm (jus cogens) of international law, rendering any individual who violates it liable irrespective of any domestic legal gaps.",
+      "reasoning": "The special protection afforded to children under fifteen in AP I (art. 77(2)) and the universal condemnation of child recruitment reflected in the CRC Optional Protocol (art. 4) indicate a norm of such fundamental importance that it is accepted as jus cogens. Peremptory norms admit no derogation and generate individual criminal responsibility even where domestic law is silent. Therefore, the accused’s conduct constituted a breach of a jus cogens rule, attracting individual liability under customary international law.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "77(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+        },
+        {
+          "type": "treaty",
+          "instrument": "crc_opac",
+          "article": "4",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Armed groups that are distinct from the armed forces of a State should not, under any circumstances, recruit or use in hostilities persons under the age of 18 years."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "77(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "crc_opac",
+            "article": "4",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Armed groups that are distinct from the armed forces of a State should not, under any circumstances, recruit or use in hostilities persons under the age of 18 years."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_6643ee00",
+      "claim": "By November 1996 a customary norm prohibited the recruitment of children under the age of fifteen into armed forces or armed groups, and the use of such children in hostilities.",
+      "reasoning": "Additional Protocol I to the Geneva Conventions, which had been ratified by the overwhelming majority of states by the mid‑1990s, obliges parties to refrain from recruiting persons who have not attained fifteen years of age (art. 77(2)). The near‑universal ratification and the inclusion of the rule in a treaty that reflects the humanitarian principles of the Geneva Conventions demonstrate both widespread state practice and opinio juris, satisfying the criteria for a rule of customary international law. Consequently, the prohibition was binding on all parties to an armed conflict, irrespective of treaty ratification, by the relevant date.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "77(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "77(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_48ded5f1",
+      "claim": "The existence of that customary prohibition did not, by November 1996, entail individual criminal responsibility for the act of recruiting children under fifteen; the norm that such conduct constitutes a war crime with personal liability was only crystallised later, as reflected by the 1998 Rome Statute.",
+      "reasoning": "While the customary prohibition was established, the international community had not yet articulated a corresponding individual criminal liability. The first treaty to expressly label the recruitment of children under fifteen as a war crime is the Rome Statute (1998), which enumerates the conduct in art. 8(2)(e)(vii). The fact that the norm was only codified in 1998 indicates that, prior to that date, customary IHL did not yet impose a specific individual criminal responsibility for the act. Moreover, the Optional Protocol to the Convention on the Rights of the Child (2000) obliges states to adopt legal measures to criminalise such recruitment (art. 4), showing that the requirement to criminalise was a later development and not yet a universally accepted customary rule before 1996. Therefore, at the time of the accused’s conduct, the act was prohibited but did not automatically give rise to individual criminal liability under customary international law.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vii)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+        },
+        {
+          "type": "treaty",
+          "instrument": "crc_opac",
+          "article": "4",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "States Parties shall take all feasible measures to prevent such recruitment and use, including the adoption of legal measures necessary to prohibit and criminalize such practices."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "crc_opac",
+            "article": "4",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "States Parties shall take all feasible measures to prevent such recruitment and use, including the adoption of legal measures necessary to prohibit and criminalize such practices."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [
+    {
+      "id": "obj_e6262817",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_ca61cb8a",
+      "ground": "The argument improperly relies on a 1998 treaty to establish the existence of a 1996 customary norm.",
+      "reasoning": "Citing the Rome Statute (1998) to prove that a crime existed in 1996 is temporally circular and legally insufficient. A treaty that post-dates the conduct cannot be used to define the scope of that conduct under pre-existing customary law. The argument fails to identify any pre-1996 source establishing the specific *mens rea* and *actus reus* elements of the crime, relying instead on a codification that occurred after the relevant time frame.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vii)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The Rome Statute (1998) post-dates the conduct and cannot by itself establish the content of customary law in November 1996. Citing a later codification to prove a pre-existing custom is temporally circular without independent evidence that the Statute reflected rather than created the norm."
+    },
+    {
+      "id": "obj_9882f010",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_7535380c",
+      "ground": "The argument asserts jus cogens status without the requisite universal and peremptory acceptance in international law.",
+      "reasoning": "Jus cogens status requires a norm accepted and recognized by the international community of states as a whole as a norm from which no derogation is permitted. The retrieved context provides no authority establishing that the prohibition on child recruitment attained this specific peremptory status by 1996. Merely citing AP I and the CRC OPAC (2000) does not satisfy the high threshold for jus cogens, which is a distinct legal category from ordinary customary law.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "77(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "77(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Jus cogens requires universal acceptance as a peremptory norm from which no derogation is permitted. The retrieved context (AP I Art. 77(2), CRC OPAC Art. 4) does not establish this heightened status; it shows treaty obligations, not peremptory customary acceptance by 1996."
+    },
+    {
+      "id": "obj_c7e3b591",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_2819595d",
+      "ground": "The argument requires evidence of widespread state practice and opinio juris up to 1996, which the record does not provide.",
+      "reasoning": "The facts mention that some states criminalised or prohibited child recruitment and that Sierra Leone had no minimum age except the Geneva Conventions, but they do not contain data on the number of states, the extent of national legislation, or evidence of a general and consistent practice with a belief that such practice is obligatory. Without such evidence, customary law status cannot be established.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "77(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "77(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The facts mention only that 'a number of states' criminalised or prohibited recruitment, without data on the number of states, consistency of practice, or evidence of opinio juris. This is insufficient to prove a customary rule binding on all parties, including non-state armed groups."
+    },
+    {
+      "id": "obj_f39392e6",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_ca61cb8a",
+      "ground": "The claim that customary IHL already imposed individual criminal liability for conscripting children under 15 before 1998 is not supported by the facts.",
+      "reasoning": "The only evidence of criminal liability is the Rome Statute provision adopted in 1998; the record contains no earlier evidence that customary law required individual criminal responsibility for such conduct. Therefore the assertion that customary law existed prior to the Statute is unsubstantiated.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vii)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The record contains no pre-1998 source indicating that customary IHL imposed individual criminal responsibility for child recruitment. The Rome Statute is the only cited evidence of criminal liability, and it post-dates the relevant period."
+    },
+    {
+      "id": "obj_45a490bd",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_cc392b78",
+      "ground": "The argument that the obligation to criminalise child recruitment was customary before 1996 relies on drafting history not present in the record.",
+      "reasoning": "The facts provide only the text of the CRC Optional Protocol; they do not contain any information about the drafting process, the sources consulted, or any earlier customary practice that the protocol sought to codify. Consequently, the claim that the norm was customary prior to 1996 cannot be established.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "crc_opac",
+          "article": "4",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "crc_opac",
+            "article": "4",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument invokes the drafting history of the CRC Optional Protocol (2000) to show pre-1996 customary status, but the facts provide only the Protocol's text, not its drafting history or any evidence of the customary rule it allegedly codified."
+    },
+    {
+      "id": "obj_afc641bd",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_7535380c",
+      "ground": "The assertion that the prohibition is a jus cogens norm is unsupported by the facts.",
+      "reasoning": "The record lists the relevant treaty provisions but contains no evidence that these norms are recognized as peremptory or that they are inviolable under customary international law. Without such evidence, the claim that the prohibition is jus cogens cannot be substantiated.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "77(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "crc_opac",
+          "article": "4",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "77(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "crc_opac",
+            "article": "4",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The record lists treaty provisions but contains no evidence — such as ICJ judgments, UNGA resolutions, or widespread state declarations — that the prohibition was accepted as a peremptory norm by 1996."
+    },
+    {
+      "id": "obj_f985a24f",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_2819595d",
+      "ground": "The argument erroneously conflates a treaty obligation to refrain from recruiting with a customary law rule binding on non-parties and non-state armed groups.",
+      "reasoning": "Article 77(2) of AP I is a treaty provision binding only on parties to the conflict. While the Special Court found customary status, the argument's reliance on AP I ratification alone does not address whether the norm binds non-state actors like the RUF. The absence of a specific customary rule binding non-state actors to the same standard as states requires a separate analysis of state practice regarding non-state groups, which is not provided by AP I ratification alone.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "77(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "77(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "AP I Art. 77(2) binds only parties to the treaty. The argument does not demonstrate state practice and opinio juris extending the prohibition to non-state armed groups as a customary matter; ratification of AP I alone does not establish a customary rule binding non-parties or non-state actors."
+    },
+    {
+      "id": "obj_76b73aca",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_7535380c",
+      "ground": "Characterizing the prohibition as jus cogens is legally unsupported and unnecessary for establishing individual criminal responsibility.",
+      "reasoning": "Neither AP I nor the CRC Optional Protocol designates this norm as jus cogens. Jus cogens status is determined by the nature of the norm (non-derogable), not merely its importance. Furthermore, individual criminal responsibility arises from the violation of a serious breach of IHL or a war crime, not from jus cogens status per se. Invoking jus cogens here is a doctrinal overreach that does not assist in establishing the specific elements of the crime under customary law.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "77(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "crc_opac",
+          "article": "4",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "77(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "crc_opac",
+            "article": "4",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+          "note": null
+        }
+      ],
+      "severity": "minor",
+      "disposition": "sustained",
+      "disposition_reasoning": "Individual criminal responsibility for war crimes arises from the gravity of the breach under IHL, not from jus cogens status. Neither AP I nor the CRC OPAC designates the norm as jus cogens, and the argument provides no authority for the claim that jus cogens status is necessary or sufficient for individual liability."
+    },
+    {
+      "id": "obj_f7820ec1",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_2819595d",
+      "ground": "The argument relies on the existence of widespread state practice and opinio juris under AP I, but the facts mention only AP II and provide no evidence of AP I ratification or practice.",
+      "reasoning": "The facts as given state that the accused argued that AP II and the CRC 1990 may have obliged states to refrain from recruiting child soldiers but did not criminalise it. There is no mention of AP I being ratified by a large majority of states, nor any evidence of state practice or opinio juris under AP I. Without such evidence, the claim that the prohibition had attained customary status by November 1996 is unsupported.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "77(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "77(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The facts as given reference AP II and the CRC (1990), not AP I. They contain no mention of AP I ratification rates or state practice under AP I. The argument's factual premise is absent from the record."
+    },
+    {
+      "id": "obj_94b47df7",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_ca61cb8a",
+      "ground": "The argument asserts that customary IHL already imposed individual criminal liability for recruiting children under fifteen, yet the facts provide no evidence of such liability in customary law.",
+      "reasoning": "The facts describe the accused’s contention that the Rome Statute codified the crime but do not contain any evidence that customary international law, prior to 1998, recognized individual criminal responsibility for the conduct. Therefore the factual predicate for the claim that customary law already carried individual liability is missing.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vii)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Duplicate of obj_f39392e6 in substance: the facts provide no evidence of pre-1998 customary criminal liability for recruiting children under fifteen."
+    },
+    {
+      "id": "obj_0e2c40fb",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_cc392b78",
+      "ground": "The argument depends on the Optional Protocol to the CRC (2000) confirming pre‑1996 customary status, but the facts contain no reference to that protocol or evidence of its drafting history.",
+      "reasoning": "The facts do not mention the CRC Optional Protocol, nor do they provide any indication that its provisions were based on a pre‑existing customary rule. Without such evidence, the claim that the obligation to criminalise recruitment was recognized as customary before 1996 cannot be established.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "crc_opac",
+          "article": "4",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "crc_opac",
+            "article": "4",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The facts do not mention the CRC Optional Protocol (2000) or its drafting history. The argument's reliance on an unreferenced instrument and its unrecorded drafting history cannot be sustained on this record."
+    },
+    {
+      "id": "obj_3ebe2d75",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_7535380c",
+      "ground": "The assertion that the prohibition is a jus cogens requires evidence of universal acceptance, which the facts do not provide.",
+      "reasoning": "The facts describe the accused’s arguments but contain no evidence that the prohibition of recruiting children under fifteen was accepted as a peremptory norm by the international community by 1996. Lacking such evidence, the claim of jus cogens status is unsupported.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "77(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "crc_opac",
+          "article": "4",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "77(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "crc_opac",
+            "article": "4",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Same deficiency as obj_9882f010 and obj_afc641bd: the facts contain no evidence of universal acceptance of the prohibition as a peremptory norm by 1996."
+    },
+    {
+      "id": "obj_a9faca4b",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_6643ee00",
+      "ground": "The argument repeats the claim that AP I’s prohibition had become customary, but the facts provide no evidence of AP I ratification or practice.",
+      "reasoning": "As with arg_2819595d, the facts mention only AP II and offer no proof that AP I had been widely ratified or that states practiced the prohibition. Thus the factual basis for the customary claim is missing.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "77(2)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "77(2)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Same deficiency as obj_f7820ec1: the facts provide no evidence of AP I ratification or practice, only AP II."
+    },
+    {
+      "id": "obj_27407dd8",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_48ded5f1",
+      "ground": "The argument that customary law did not impose individual liability until the Rome Statute relies on evidence of customary liability, which the facts do not provide.",
+      "reasoning": "The facts do not contain any evidence that customary international law recognized individual criminal responsibility for recruiting children under fifteen prior to 1998. Without such evidence, the claim that liability was only crystallised by the Rome Statute cannot be substantiated.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(e)(vii)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "crc_opac",
+          "article": "4",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(e)(vii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "crc_opac",
+            "article": "4",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The negative argument (arg_48ded5f1) asserts that individual criminal liability 'was only crystallised later' by the Rome Statute, but the facts contain no evidence on whether customary law had already attached such liability by 1996. The record is silent on the point, so the argument lacks evidentiary support."
+    }
+  ],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(e)(vii)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(b)(xxvi)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "77(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "crc_opac",
+        "article": "3(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "crc_opac",
+        "article": "3",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "77",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "crc_opac",
+        "article": "4",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "crc_opac",
+        "article": "3(3)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_4ff68920",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "b16abe15aea24c3e06ee60cc6ed6cee4e00dea196b0994cbaa0c93918abdc11c",
+      "arguments": [
+        {
+          "id": "arg_2819595d",
+          "claim": "By November 1996 the prohibition of recruiting children under the age of fifteen into armed forces or groups had attained the status of customary international law.",
+          "reasoning": "Additional Protocol I to the Geneva Conventions (1977) obliges parties to refrain from recruiting persons who have not attained fifteen years of age (art. 77(2)). The Protocol was ratified by a large majority of states and was implemented through national legislation criminalising such recruitment, demonstrating both widespread state practice and opinio juris. These elements satisfy the criteria for a rule of customary international law, making the prohibition binding on all parties to an armed conflict, irrespective of treaty ratification.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "77(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "77(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_ca61cb8a",
+          "claim": "The customary prohibition on recruiting children under fifteen carries individual criminal responsibility for those who enlist or use them in hostilities.",
+          "reasoning": "Customary IHL imposes individual criminal liability for serious violations of its norms. The Rome Statute (1998) codifies the crime of conscripting or enlisting children under fifteen (art. 8(2)(e)(vii)), expressly stating that the conduct constitutes a war crime. The Statute’s purpose was to crystallise an already existing customary norm, not to create a novel offense. Consequently, at the time of the alleged conduct in 1996, the act already attracted individual criminal responsibility under customary law.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(e)(vii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_cc392b78",
+          "claim": "The obligation to criminalise the recruitment of children under fifteen was already recognized as a norm of customary law before 1996, as reflected in the later Optional Protocol to the Convention on the Rights of the Child (2000).",
+          "reasoning": "Article 4 of the CRC Optional Protocol obliges states to adopt legal measures necessary to prohibit and criminalise the recruitment of persons under eighteen, and specifically bars armed groups from recruiting persons under eighteen. The Protocol was drafted on the basis of an already‑existing, widely‑accepted customary rule protecting children from military recruitment; its provisions therefore confirm the pre‑existing customary status of the prohibition and the duty to criminalise it. Although the Protocol entered into force after 1996, its drafting history demonstrates that the norm was considered customary at the time of the accused’s conduct.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "crc_opac",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Armed groups that are distinct from the armed forces of a State should not, under any circumstances, recruit or use in hostilities persons under the age of 18 years."
+            },
+            {
+              "type": "treaty",
+              "instrument": "crc_opac",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "States Parties shall take all feasible measures to prevent such recruitment and use, including the adoption of legal measures necessary to prohibit and criminalize such practices."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "crc_opac",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Armed groups that are distinct from the armed forces of a State should not, under any circumstances, recruit or use in hostilities persons under the age of 18 years."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "crc_opac",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "States Parties shall take all feasible measures to prevent such recruitment and use, including the adoption of legal measures necessary to prohibit and criminalize such practices."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_7535380c",
+          "claim": "The prohibition against recruiting children under fifteen is a peremptory norm (jus cogens) of international law, rendering any individual who violates it liable irrespective of any domestic legal gaps.",
+          "reasoning": "The special protection afforded to children under fifteen in AP I (art. 77(2)) and the universal condemnation of child recruitment reflected in the CRC Optional Protocol (art. 4) indicate a norm of such fundamental importance that it is accepted as jus cogens. Peremptory norms admit no derogation and generate individual criminal responsibility even where domestic law is silent. Therefore, the accused’s conduct constituted a breach of a jus cogens rule, attracting individual liability under customary international law.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "77(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+            },
+            {
+              "type": "treaty",
+              "instrument": "crc_opac",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Armed groups that are distinct from the armed forces of a State should not, under any circumstances, recruit or use in hostilities persons under the age of 18 years."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "77(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "crc_opac",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Armed groups that are distinct from the armed forces of a State should not, under any circumstances, recruit or use in hostilities persons under the age of 18 years."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"By November 1996 the prohibition of recruiting children under the age of fifteen into armed forces or groups had attained the status of customary international law.\",\n      \"reasoning\": \"Additional Protocol I to the Geneva Conventions (1977) obliges parties to refrain from recruiting persons who have not attained fifteen years of age (art. 77(2)). The Protocol was ratified by a large majority of states and was implemented through national legislation criminalising such recruitment, demonstrating both widespread state practice and opinio juris. These elements satisfy the criteria for a rule of customary international law, making the prohibition binding on all parties to an armed conflict, irrespective of treaty ratification.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"77(2)\",\n          \"quoted_text\": \"the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The customary prohibition on recruiting children under fifteen carries individual criminal responsibility for those who enlist or use them in hostilities.\",\n      \"reasoning\": \"Customary IHL imposes individual criminal liability for serious violations of its norms. The Rome Statute (1998) codifies the crime of conscripting or enlisting children under fifteen (art. 8(2)(e)(vii)), expressly stating that the conduct constitutes a war crime. The Statute’s purpose was to crystallise an already existing customary norm, not to create a novel offense. Consequently, at the time of the alleged conduct in 1996, the act already attracted individual criminal responsibility under customary law.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(e)(vii)\",\n          \"quoted_text\": \"Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The obligation to criminalise the recruitment of children under fifteen was already recognized as a norm of customary law before 1996, as reflected in the later Optional Protocol to the Convention on the Rights of the Child (2000).\",\n      \"reasoning\": \"Article 4 of the CRC Optional Protocol obliges states to adopt legal measures necessary to prohibit and criminalise the recruitment of persons under eighteen, and specifically bars armed groups from recruiting persons under eighteen. The Protocol was drafted on the basis of an already‑existing, widely‑accepted customary rule protecting children from military recruitment; its provisions therefore confirm the pre‑existing customary status of the prohibition and the duty to criminalise it. Although the Protocol entered into force after 1996, its drafting history demonstrates that the norm was considered customary at the time of the accused’s conduct.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"crc_opac\",\n          \"article\": \"4\",\n          \"quoted_text\": \"Armed groups that are distinct from the armed forces of a State should not, under any circumstances, recruit or use in hostilities persons under the age of 18 years.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"crc_opac\",\n          \"article\": \"4\",\n          \"quoted_text\": \"States Parties shall take all feasible measures to prevent such recruitment and use, including the adoption of legal measures necessary to prohibit and criminalize such practices.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The prohibition against recruiting children under fifteen is a peremptory norm (jus cogens) of international law, rendering any individual who violates it liable irrespective of any domestic legal gaps.\",\n      \"reasoning\": \"The special protection afforded to children under fifteen in AP I (art. 77(2)) and the universal condemnation of child recruitment reflected in the CRC Optional Protocol (art. 4) indicate a norm of such fundamental importance that it is accepted as jus cogens. Peremptory norms admit no derogation and generate individual criminal responsibility even where domestic law is silent. Therefore, the accused’s conduct constituted a breach of a jus cogens rule, attracting individual liability under customary international law.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"77(2)\",\n          \"quoted_text\": \"the Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"crc_opac\",\n          \"article\": \"4\",\n          \"quoted_text\": \"Armed groups that are distinct from the armed forces of a State should not, under any circumstances, recruit or use in hostilities persons under the age of 18 years.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:44:42.696082Z",
+      "completed_at": "2026-11-23T00:44:47.485645Z",
+      "prompt_tokens": 2525,
+      "completion_tokens": 2121,
+      "error": null
+    },
+    {
+      "id": "turn_9f3dee46",
+      "round_number": 1,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "a449552f581971847937faa52411504cf655213396c3cec25881ba45898d4507",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_e6262817",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_ca61cb8a",
+          "ground": "The argument improperly relies on a 1998 treaty to establish the existence of a 1996 customary norm.",
+          "reasoning": "Citing the Rome Statute (1998) to prove that a crime existed in 1996 is temporally circular and legally insufficient. A treaty that post-dates the conduct cannot be used to define the scope of that conduct under pre-existing customary law. The argument fails to identify any pre-1996 source establishing the specific *mens rea* and *actus reus* elements of the crime, relying instead on a codification that occurred after the relevant time frame.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(e)(vii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The Rome Statute (1998) post-dates the conduct and cannot by itself establish the content of customary law in November 1996. Citing a later codification to prove a pre-existing custom is temporally circular without independent evidence that the Statute reflected rather than created the norm."
+        },
+        {
+          "id": "obj_9882f010",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_7535380c",
+          "ground": "The argument asserts jus cogens status without the requisite universal and peremptory acceptance in international law.",
+          "reasoning": "Jus cogens status requires a norm accepted and recognized by the international community of states as a whole as a norm from which no derogation is permitted. The retrieved context provides no authority establishing that the prohibition on child recruitment attained this specific peremptory status by 1996. Merely citing AP I and the CRC OPAC (2000) does not satisfy the high threshold for jus cogens, which is a distinct legal category from ordinary customary law.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "77(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "77(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Jus cogens requires universal acceptance as a peremptory norm from which no derogation is permitted. The retrieved context (AP I Art. 77(2), CRC OPAC Art. 4) does not establish this heightened status; it shows treaty obligations, not peremptory customary acceptance by 1996."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_ca61cb8a\",\n      \"ground\": \"The argument improperly relies on a 1998 treaty to establish the existence of a 1996 customary norm.\",\n      \"reasoning\": \"Citing the Rome Statute (1998) to prove that a crime existed in 1996 is temporally circular and legally insufficient. A treaty that post-dates the conduct cannot be used to define the scope of that conduct under pre-existing customary law. The argument fails to identify any pre-1996 source establishing the specific *mens rea* and *actus reus* elements of the crime, relying instead on a codification that occurred after the relevant time frame.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(e)(vii)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_7535380c\",\n      \"ground\": \"The argument asserts jus cogens status without the requisite universal and peremptory acceptance in international law.\",\n      \"reasoning\": \"Jus cogens status requires a norm accepted and recognized by the international community of states as a whole as a norm from which no derogation is permitted. The retrieved context provides no authority establishing that the prohibition on child recruitment attained this specific peremptory status by 1996. Merely citing AP I and the CRC OPAC (2000) does not satisfy the high threshold for jus cogens, which is a distinct legal category from ordinary customary law.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"77(2)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:44:47.486470Z",
+      "completed_at": "2026-11-23T00:44:48.919271Z",
+      "prompt_tokens": 3575,
+      "completion_tokens": 443,
+      "error": null
+    },
+    {
+      "id": "turn_7db3bacc",
+      "round_number": 1,
+      "role": "attacker_evidentiary",
+      "model_id": "groq/openai/gpt-oss-20b",
+      "prompt_id": "attacker_evidentiary/challenge",
+      "prompt_hash": "2a1f888393c2cde1f91ab5899ea2ced8d87537c1a17a43b9d7ececf358d0bd83",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_c7e3b591",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_2819595d",
+          "ground": "The argument requires evidence of widespread state practice and opinio juris up to 1996, which the record does not provide.",
+          "reasoning": "The facts mention that some states criminalised or prohibited child recruitment and that Sierra Leone had no minimum age except the Geneva Conventions, but they do not contain data on the number of states, the extent of national legislation, or evidence of a general and consistent practice with a belief that such practice is obligatory. Without such evidence, customary law status cannot be established.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "77(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "77(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The facts mention only that 'a number of states' criminalised or prohibited recruitment, without data on the number of states, consistency of practice, or evidence of opinio juris. This is insufficient to prove a customary rule binding on all parties, including non-state armed groups."
+        },
+        {
+          "id": "obj_f39392e6",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_ca61cb8a",
+          "ground": "The claim that customary IHL already imposed individual criminal liability for conscripting children under 15 before 1998 is not supported by the facts.",
+          "reasoning": "The only evidence of criminal liability is the Rome Statute provision adopted in 1998; the record contains no earlier evidence that customary law required individual criminal responsibility for such conduct. Therefore the assertion that customary law existed prior to the Statute is unsubstantiated.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(e)(vii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The record contains no pre-1998 source indicating that customary IHL imposed individual criminal responsibility for child recruitment. The Rome Statute is the only cited evidence of criminal liability, and it post-dates the relevant period."
+        },
+        {
+          "id": "obj_45a490bd",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_cc392b78",
+          "ground": "The argument that the obligation to criminalise child recruitment was customary before 1996 relies on drafting history not present in the record.",
+          "reasoning": "The facts provide only the text of the CRC Optional Protocol; they do not contain any information about the drafting process, the sources consulted, or any earlier customary practice that the protocol sought to codify. Consequently, the claim that the norm was customary prior to 1996 cannot be established.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "crc_opac",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "crc_opac",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument invokes the drafting history of the CRC Optional Protocol (2000) to show pre-1996 customary status, but the facts provide only the Protocol's text, not its drafting history or any evidence of the customary rule it allegedly codified."
+        },
+        {
+          "id": "obj_afc641bd",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_7535380c",
+          "ground": "The assertion that the prohibition is a jus cogens norm is unsupported by the facts.",
+          "reasoning": "The record lists the relevant treaty provisions but contains no evidence that these norms are recognized as peremptory or that they are inviolable under customary international law. Without such evidence, the claim that the prohibition is jus cogens cannot be substantiated.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "77(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "crc_opac",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "77(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "crc_opac",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The record lists treaty provisions but contains no evidence — such as ICJ judgments, UNGA resolutions, or widespread state declarations — that the prohibition was accepted as a peremptory norm by 1996."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_2819595d\",\n      \"ground\": \"The argument requires evidence of widespread state practice and opinio juris up to 1996, which the record does not provide.\",\n      \"reasoning\": \"The facts mention that some states criminalised or prohibited child recruitment and that Sierra Leone had no minimum age except the Geneva Conventions, but they do not contain data on the number of states, the extent of national legislation, or evidence of a general and consistent practice with a belief that such practice is obligatory. Without such evidence, customary law status cannot be established.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"77(2)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_ca61cb8a\",\n      \"ground\": \"The claim that customary IHL already imposed individual criminal liability for conscripting children under 15 before 1998 is not supported by the facts.\",\n      \"reasoning\": \"The only evidence of criminal liability is the Rome Statute provision adopted in 1998; the record contains no earlier evidence that customary law required individual criminal responsibility for such conduct. Therefore the assertion that customary law existed prior to the Statute is unsubstantiated.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(e)(vii)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_cc392b78\",\n      \"ground\": \"The argument that the obligation to criminalise child recruitment was customary before 1996 relies on drafting history not present in the record.\",\n      \"reasoning\": \"The facts provide only the text of the CRC Optional Protocol; they do not contain any information about the drafting process, the sources consulted, or any earlier customary practice that the protocol sought to codify. Consequently, the claim that the norm was customary prior to 1996 cannot be established.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"crc_opac\",\n          \"article\": \"4\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_7535380c\",\n      \"ground\": \"The assertion that the prohibition is a jus cogens norm is unsupported by the facts.\",\n      \"reasoning\": \"The record lists the relevant treaty provisions but contains no evidence that these norms are recognized as peremptory or that they are inviolable under customary international law. Without such evidence, the claim that the prohibition is jus cogens cannot be substantiated.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"77(2)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"crc_opac\",\n          \"article\": \"4\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:44:47.489399Z",
+      "completed_at": "2026-11-23T00:44:50.660240Z",
+      "prompt_tokens": 3361,
+      "completion_tokens": 2331,
+      "error": null
+    },
+    {
+      "id": "turn_efb2d965",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "00921dd8d1f7b989afb14b9374b1c2623d2cce84c418550305c1fc7cd2071a6c",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Indeterminate.\", \"reasoning\": \"All four arguments advanced to establish that recruiting children under 15 entailed individual criminal responsibility under customary international law by November 1996 have been defeated by sustained objections. The arguments relied on treaty provisions (Additional Protocol I, Rome Statute, CRC Optional Protocol) that either post-date the relevant period or do not, by themselves, prove the existence of a customary norm carrying individual criminal liability in 1996. The factual record notes only that 'a number of states' had criminalised or prohibited such recruitment before 1996, without quantifying state practice or demonstrating opinio juris sufficient to establish a customary rule. No surviving argument supports an affirmative answer, and the record does not contain evidence to resolve the question negatively either.\", \"confidence\": 0.7, \"confidence_reasoning\": \"The objections correctly identify that the arguments commit temporal circularity (citing 1998 and 2000 treaties to prove 1996 custom), lack evidentiary support for widespread state practice and opinio juris, and assert jus cogens status without authority. However, confidence is not higher because the absence of proof in this record does not conclusively prove the non-existence of the customary norm; other evidence not presented here might establish it.\", \"rulings\": [{\"objection_id\": \"obj_e6262817\", \"disposition\": \"sustained\", \"reasoning\": \"The Rome Statute (1998) cannot serve as evidence of customary law in 1996. A treaty adopted after the conduct in question may reflect pre-existing custom but does not, without more, prove its existence or content at the earlier date. The argument provides no pre-1996 source for the criminalisation of child recruitment.\"}, {\"objection_id\": \"obj_9882f010\", \"disposition\": \"sustained\", \"reasoning\": \"Jus cogens status requires acceptance by the international community of states as a whole as a peremptory norm from which no derogation is permitted. The cited treaty provisions (AP I art. 77(2), CRC OPAC art. 4) do not establish this elevated status, and the record contains no authority recognising the prohibition as jus cogens by 1996.\"}, {\"objection_id\": \"obj_c7e3b591\", \"disposition\": \"sustained\", \"reasoning\": \"The argument asserts widespread state practice and opinio juris but the factual record states only that 'a number of states' had criminalised or prohibited child recruitment, without data on the number, representativeness, or consistency of practice, or evidence of a belief that the practice is legally obligatory (opinio juris). This is insufficient to establish customary international law.\"}, {\"objection_id\": \"obj_f39392e6\", \"disposition\": \"sustained\", \"reasoning\": \"The argument claims customary IHL imposed individual criminal liability before 1998 but cites only the Rome Statute (1998). The record contains no pre-1998 evidence — such as national prosecutions, military manuals, or international jurisprudence — demonstrating that customary law already criminalised the conduct.\"}, {\"objection_id\": \"obj_45a490bd\", \"disposition\": \"sustained\", \"reasoning\": \"The argument infers pre-1996 customary status from the drafting history of the CRC Optional Protocol (2000), but the record provides only the treaty text, not its drafting history, travaux préparatoires, or any indication of the sources consulted. A later treaty's text alone cannot prove the prior existence of a customary norm.\"}, {\"objection_id\": \"obj_afc641bd\", \"disposition\": \"sustained\", \"reasoning\": \"The jus cogens claim rests on the same treaty provisions already found insufficient in obj_9882f010. The record contains no evidence — such as ICJ judgments, UN General Assembly resolutions, or authoritative scholarly consensus — that the prohibition was recognised as a peremptory norm by 1996.\"}], \"surviving_argument_ids\": [], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-23T00:44:50.661219Z",
+      "completed_at": "2026-11-23T00:45:17.795335Z",
+      "prompt_tokens": 4568,
+      "completion_tokens": 2391,
+      "error": null
+    },
+    {
+      "id": "turn_976284df",
+      "round_number": 2,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/rebuttal",
+      "prompt_hash": "604956bf9e2a69f89f961190ffc909c31d2697770bb5bd2135b07b8b6f5a1c64",
+      "arguments": [
+        {
+          "id": "arg_6643ee00",
+          "claim": "By November 1996 a customary norm prohibited the recruitment of children under the age of fifteen into armed forces or armed groups, and the use of such children in hostilities.",
+          "reasoning": "Additional Protocol I to the Geneva Conventions, which had been ratified by the overwhelming majority of states by the mid‑1990s, obliges parties to refrain from recruiting persons who have not attained fifteen years of age (art. 77(2)). The near‑universal ratification and the inclusion of the rule in a treaty that reflects the humanitarian principles of the Geneva Conventions demonstrate both widespread state practice and opinio juris, satisfying the criteria for a rule of customary international law. Consequently, the prohibition was binding on all parties to an armed conflict, irrespective of treaty ratification, by the relevant date.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "77(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "77(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_48ded5f1",
+          "claim": "The existence of that customary prohibition did not, by November 1996, entail individual criminal responsibility for the act of recruiting children under fifteen; the norm that such conduct constitutes a war crime with personal liability was only crystallised later, as reflected by the 1998 Rome Statute.",
+          "reasoning": "While the customary prohibition was established, the international community had not yet articulated a corresponding individual criminal liability. The first treaty to expressly label the recruitment of children under fifteen as a war crime is the Rome Statute (1998), which enumerates the conduct in art. 8(2)(e)(vii). The fact that the norm was only codified in 1998 indicates that, prior to that date, customary IHL did not yet impose a specific individual criminal responsibility for the act. Moreover, the Optional Protocol to the Convention on the Rights of the Child (2000) obliges states to adopt legal measures to criminalise such recruitment (art. 4), showing that the requirement to criminalise was a later development and not yet a universally accepted customary rule before 1996. Therefore, at the time of the accused’s conduct, the act was prohibited but did not automatically give rise to individual criminal liability under customary international law.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "crc_opac",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "States Parties shall take all feasible measures to prevent such recruitment and use, including the adoption of legal measures necessary to prohibit and criminalize such practices."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(e)(vii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "crc_opac",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "States Parties shall take all feasible measures to prevent such recruitment and use, including the adoption of legal measures necessary to prohibit and criminalize such practices."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"By November 1996 a customary norm prohibited the recruitment of children under the age of fifteen into armed forces or armed groups, and the use of such children in hostilities.\",\n      \"reasoning\": \"Additional Protocol I to the Geneva Conventions, which had been ratified by the overwhelming majority of states by the mid‑1990s, obliges parties to refrain from recruiting persons who have not attained fifteen years of age (art. 77(2)). The near‑universal ratification and the inclusion of the rule in a treaty that reflects the humanitarian principles of the Geneva Conventions demonstrate both widespread state practice and opinio juris, satisfying the criteria for a rule of customary international law. Consequently, the prohibition was binding on all parties to an armed conflict, irrespective of treaty ratification, by the relevant date.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"77(2)\",\n          \"quoted_text\": \"The Parties to the conflict shall take all feasible measures in order that children who have not attained the age of fifteen years do not take a direct part in hostilities and, in particular, they shall refrain from recruiting them into their armed forces.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The existence of that customary prohibition did not, by November 1996, entail individual criminal responsibility for the act of recruiting children under fifteen; the norm that such conduct constitutes a war crime with personal liability was only crystallised later, as reflected by the 1998 Rome Statute.\",\n      \"reasoning\": \"While the customary prohibition was established, the international community had not yet articulated a corresponding individual criminal liability. The first treaty to expressly label the recruitment of children under fifteen as a war crime is the Rome Statute (1998), which enumerates the conduct in art. 8(2)(e)(vii). The fact that the norm was only codified in 1998 indicates that, prior to that date, customary IHL did not yet impose a specific individual criminal responsibility for the act. Moreover, the Optional Protocol to the Convention on the Rights of the Child (2000) obliges states to adopt legal measures to criminalise such recruitment (art. 4), showing that the requirement to criminalise was a later development and not yet a universally accepted customary rule before 1996. Therefore, at the time of the accused’s conduct, the act was prohibited but did not automatically give rise to individual criminal liability under customary international law.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(e)(vii)\",\n          \"quoted_text\": \"Conscripting or enlisting children under the age of fifteen years into armed forces or groups or using them to participate actively in hostilities;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"crc_opac\",\n          \"article\": \"4\",\n          \"quoted_text\": \"States Parties shall take all feasible measures to prevent such recruitment and use, including the adoption of legal measures necessary to prohibit and criminalize such practices.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:45:17.796549Z",
+      "completed_at": "2026-11-23T00:45:23.633349Z",
+      "prompt_tokens": 3944,
+      "completion_tokens": 2689,
+      "error": null
+    },
+    {
+      "id": "turn_4b5b6994",
+      "round_number": 2,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "a7ec1ddb3a5c38020eb7fa611d31a8e791d7508d032393e09f16a42f5a468a67",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_f985a24f",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_2819595d",
+          "ground": "The argument erroneously conflates a treaty obligation to refrain from recruiting with a customary law rule binding on non-parties and non-state armed groups.",
+          "reasoning": "Article 77(2) of AP I is a treaty provision binding only on parties to the conflict. While the Special Court found customary status, the argument's reliance on AP I ratification alone does not address whether the norm binds non-state actors like the RUF. The absence of a specific customary rule binding non-state actors to the same standard as states requires a separate analysis of state practice regarding non-state groups, which is not provided by AP I ratification alone.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "77(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "77(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "AP I Art. 77(2) binds only parties to the treaty. The argument does not demonstrate state practice and opinio juris extending the prohibition to non-state armed groups as a customary matter; ratification of AP I alone does not establish a customary rule binding non-parties or non-state actors."
+        },
+        {
+          "id": "obj_76b73aca",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_7535380c",
+          "ground": "Characterizing the prohibition as jus cogens is legally unsupported and unnecessary for establishing individual criminal responsibility.",
+          "reasoning": "Neither AP I nor the CRC Optional Protocol designates this norm as jus cogens. Jus cogens status is determined by the nature of the norm (non-derogable), not merely its importance. Furthermore, individual criminal responsibility arises from the violation of a serious breach of IHL or a war crime, not from jus cogens status per se. Invoking jus cogens here is a doctrinal overreach that does not assist in establishing the specific elements of the crime under customary law.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "77(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "crc_opac",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "77(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "crc_opac",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+              "note": null
+            }
+          ],
+          "severity": "minor",
+          "disposition": "sustained",
+          "disposition_reasoning": "Individual criminal responsibility for war crimes arises from the gravity of the breach under IHL, not from jus cogens status. Neither AP I nor the CRC OPAC designates the norm as jus cogens, and the argument provides no authority for the claim that jus cogens status is necessary or sufficient for individual liability."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_2819595d\",\n      \"ground\": \"The argument erroneously conflates a treaty obligation to refrain from recruiting with a customary law rule binding on non-parties and non-state armed groups.\",\n      \"reasoning\": \"Article 77(2) of AP I is a treaty provision binding only on parties to the conflict. While the Special Court found customary status, the argument's reliance on AP I ratification alone does not address whether the norm binds non-state actors like the RUF. The absence of a specific customary rule binding non-state actors to the same standard as states requires a separate analysis of state practice regarding non-state groups, which is not provided by AP I ratification alone.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"77(2)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_7535380c\",\n      \"ground\": \"Characterizing the prohibition as jus cogens is legally unsupported and unnecessary for establishing individual criminal responsibility.\",\n      \"reasoning\": \"Neither AP I nor the CRC Optional Protocol designates this norm as jus cogens. Jus cogens status is determined by the nature of the norm (non-derogable), not merely its importance. Furthermore, individual criminal responsibility arises from the violation of a serious breach of IHL or a war crime, not from jus cogens status per se. Invoking jus cogens here is a doctrinal overreach that does not assist in establishing the specific elements of the crime under customary law.\",\n      \"severity\": \"minor\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"77(2)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"crc_opac\",\n          \"article\": \"4\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:45:23.634391Z",
+      "completed_at": "2026-11-23T00:45:25.065333Z",
+      "prompt_tokens": 4074,
+      "completion_tokens": 474,
+      "error": null
+    },
+    {
+      "id": "turn_d750dafd",
+      "round_number": 2,
+      "role": "attacker_evidentiary",
+      "model_id": "groq/openai/gpt-oss-20b",
+      "prompt_id": "attacker_evidentiary/challenge",
+      "prompt_hash": "f6f05403b3f312e5ce46702ed4c79bd4a96630c1ab7afb4bae2ccdd53e357f99",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_f7820ec1",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_2819595d",
+          "ground": "The argument relies on the existence of widespread state practice and opinio juris under AP I, but the facts mention only AP II and provide no evidence of AP I ratification or practice.",
+          "reasoning": "The facts as given state that the accused argued that AP II and the CRC 1990 may have obliged states to refrain from recruiting child soldiers but did not criminalise it. There is no mention of AP I being ratified by a large majority of states, nor any evidence of state practice or opinio juris under AP I. Without such evidence, the claim that the prohibition had attained customary status by November 1996 is unsupported.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "77(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "77(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The facts as given reference AP II and the CRC (1990), not AP I. They contain no mention of AP I ratification rates or state practice under AP I. The argument's factual premise is absent from the record."
+        },
+        {
+          "id": "obj_94b47df7",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_ca61cb8a",
+          "ground": "The argument asserts that customary IHL already imposed individual criminal liability for recruiting children under fifteen, yet the facts provide no evidence of such liability in customary law.",
+          "reasoning": "The facts describe the accused’s contention that the Rome Statute codified the crime but do not contain any evidence that customary international law, prior to 1998, recognized individual criminal responsibility for the conduct. Therefore the factual predicate for the claim that customary law already carried individual liability is missing.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(e)(vii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Duplicate of obj_f39392e6 in substance: the facts provide no evidence of pre-1998 customary criminal liability for recruiting children under fifteen."
+        },
+        {
+          "id": "obj_0e2c40fb",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_cc392b78",
+          "ground": "The argument depends on the Optional Protocol to the CRC (2000) confirming pre‑1996 customary status, but the facts contain no reference to that protocol or evidence of its drafting history.",
+          "reasoning": "The facts do not mention the CRC Optional Protocol, nor do they provide any indication that its provisions were based on a pre‑existing customary rule. Without such evidence, the claim that the obligation to criminalise recruitment was recognized as customary before 1996 cannot be established.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "crc_opac",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "crc_opac",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The facts do not mention the CRC Optional Protocol (2000) or its drafting history. The argument's reliance on an unreferenced instrument and its unrecorded drafting history cannot be sustained on this record."
+        },
+        {
+          "id": "obj_3ebe2d75",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_7535380c",
+          "ground": "The assertion that the prohibition is a jus cogens requires evidence of universal acceptance, which the facts do not provide.",
+          "reasoning": "The facts describe the accused’s arguments but contain no evidence that the prohibition of recruiting children under fifteen was accepted as a peremptory norm by the international community by 1996. Lacking such evidence, the claim of jus cogens status is unsupported.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "77(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "crc_opac",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "77(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "crc_opac",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Same deficiency as obj_9882f010 and obj_afc641bd: the facts contain no evidence of universal acceptance of the prohibition as a peremptory norm by 1996."
+        },
+        {
+          "id": "obj_a9faca4b",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_6643ee00",
+          "ground": "The argument repeats the claim that AP I’s prohibition had become customary, but the facts provide no evidence of AP I ratification or practice.",
+          "reasoning": "As with arg_2819595d, the facts mention only AP II and offer no proof that AP I had been widely ratified or that states practiced the prohibition. Thus the factual basis for the customary claim is missing.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "77(2)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "77(2)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Same deficiency as obj_f7820ec1: the facts provide no evidence of AP I ratification or practice, only AP II."
+        },
+        {
+          "id": "obj_27407dd8",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_48ded5f1",
+          "ground": "The argument that customary law did not impose individual liability until the Rome Statute relies on evidence of customary liability, which the facts do not provide.",
+          "reasoning": "The facts do not contain any evidence that customary international law recognized individual criminal responsibility for recruiting children under fifteen prior to 1998. Without such evidence, the claim that liability was only crystallised by the Rome Statute cannot be substantiated.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(e)(vii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "crc_opac",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(e)(vii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "crc_opac",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/crc-opac-2000",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The negative argument (arg_48ded5f1) asserts that individual criminal liability 'was only crystallised later' by the Rome Statute, but the facts contain no evidence on whether customary law had already attached such liability by 1996. The record is silent on the point, so the argument lacks evidentiary support."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_2819595d\",\n      \"ground\": \"The argument relies on the existence of widespread state practice and opinio juris under AP I, but the facts mention only AP II and provide no evidence of AP I ratification or practice.\",\n      \"reasoning\": \"The facts as given state that the accused argued that AP II and the CRC 1990 may have obliged states to refrain from recruiting child soldiers but did not criminalise it. There is no mention of AP I being ratified by a large majority of states, nor any evidence of state practice or opinio juris under AP I. Without such evidence, the claim that the prohibition had attained customary status by November 1996 is unsupported.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"77(2)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_ca61cb8a\",\n      \"ground\": \"The argument asserts that customary IHL already imposed individual criminal liability for recruiting children under fifteen, yet the facts provide no evidence of such liability in customary law.\",\n      \"reasoning\": \"The facts describe the accused’s contention that the Rome Statute codified the crime but do not contain any evidence that customary international law, prior to 1998, recognized individual criminal responsibility for the conduct. Therefore the factual predicate for the claim that customary law already carried individual liability is missing.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(e)(vii)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_cc392b78\",\n      \"ground\": \"The argument depends on the Optional Protocol to the CRC (2000) confirming pre‑1996 customary status, but the facts contain no reference to that protocol or evidence of its drafting history.\",\n      \"reasoning\": \"The facts do not mention the CRC Optional Protocol, nor do they provide any indication that its provisions were based on a pre‑existing customary rule. Without such evidence, the claim that the obligation to criminalise recruitment was recognized as customary before 1996 cannot be established.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"crc_opac\",\n          \"article\": \"4\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_7535380c\",\n      \"ground\": \"The assertion that the prohibition is a jus cogens requires evidence of universal acceptance, which the facts do not provide.\",\n      \"reasoning\": \"The facts describe the accused’s arguments but contain no evidence that the prohibition of recruiting children under fifteen was accepted as a peremptory norm by the international community by 1996. Lacking such evidence, the claim of jus cogens status is unsupported.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"77(2)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"crc_opac\",\n          \"article\": \"4\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_6643ee00\",\n      \"ground\": \"The argument repeats the claim that AP I’s prohibition had become customary, but the facts provide no evidence of AP I ratification or practice.\",\n      \"reasoning\": \"As with arg_2819595d, the facts mention only AP II and offer no proof that AP I had been widely ratified or that states practiced the prohibition. Thus the factual basis for the customary claim is missing.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"77(2)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_48ded5f1\",\n      \"ground\": \"The argument that customary law did not impose individual liability until the Rome Statute relies on evidence of customary liability, which the facts do not provide.\",\n      \"reasoning\": \"The facts do not contain any evidence that customary international law recognized individual criminal responsibility for recruiting children under fifteen prior to 1998. Without such evidence, the claim that liability was only crystallised by the Rome Statute cannot be substantiated.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(e)(vii)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"crc_opac\",\n          \"article\": \"4\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:45:23.635269Z",
+      "completed_at": "2026-11-23T00:45:27.727713Z",
+      "prompt_tokens": 3829,
+      "completion_tokens": 3148,
+      "error": null
+    },
+    {
+      "id": "turn_1d78d7bb",
+      "round_number": 2,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "cdcea1c1e2746189c8abada73fbd43d9c102eca19967c54c68851d5676c94604",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Indeterminate.\", \"reasoning\": \"The sustained objections have stripped both the affirmative and negative arguments of their evidentiary footing in the provided record. The arguments for customary criminal responsibility (arg_2819595d, arg_ca61cb8a, arg_cc392b78, arg_7535380c, arg_6643ee00) rely on AP I ratification, the Rome Statute, the CRC Optional Protocol, or jus cogens status — but the facts as given mention only AP II and the CRC (1990), provide no data on AP I ratification or state practice, and contain no pre-1996 evidence of opinio juris that the prohibition carried individual criminal liability. The Rome Statute (1998) and CRC Optional Protocol (2000) post-date the relevant period and cannot, without more, prove the state of customary law in November 1996. The sole argument against customary criminal responsibility (arg_48ded5f1) likewise lacks record support for its claim that liability 'was only crystallised later'; the facts are simply silent on whether customary law had already attached individual criminal responsibility by 1996. With no surviving argument adequately supported by the provided facts and retrieved context, the question cannot be resolved on this record.\", \"confidence\": 0.65, \"confidence_reasoning\": \"The record is genuinely insufficient to answer the question either way. While the Special Court for Sierra Leone later held that the crime existed under customary law by 1996, that judicial determination is not in the provided materials. The facts describe only scattered state practice and treaty obligations (AP II, CRC, Geneva Conventions) without evidence of the general practice and opinio juris required for customary criminal liability. The confidence reflects that the legal answer is known from external jurisprudence, but on the strict record before me the proposition is indeterminate.\", \"rulings\": [{\"objection_id\": \"obj_e6262817\", \"disposition\": \"sustained\", \"reasoning\": \"The Rome Statute (1998) post-dates the conduct and cannot by itself establish the content of customary law in November 1996. Citing a later codification to prove a pre-existing custom is temporally circular without independent evidence that the Statute reflected rather than created the norm.\"}, {\"objection_id\": \"obj_9882f010\", \"disposition\": \"sustained\", \"reasoning\": \"Jus cogens requires universal acceptance as a peremptory norm from which no derogation is permitted. The retrieved context (AP I Art. 77(2), CRC OPAC Art. 4) does not establish this heightened status; it shows treaty obligations, not peremptory customary acceptance by 1996.\"}, {\"objection_id\": \"obj_c7e3b591\", \"disposition\": \"sustained\", \"reasoning\": \"The facts mention only that 'a number of states' criminalised or prohibited recruitment, without data on the number of states, consistency of practice, or evidence of opinio juris. This is insufficient to prove a customary rule binding on all parties, including non-state armed groups.\"}, {\"objection_id\": \"obj_f39392e6\", \"disposition\": \"sustained\", \"reasoning\": \"The record contains no pre-1998 source indicating that customary IHL imposed individual criminal responsibility for child recruitment. The Rome Statute is the only cited evidence of criminal liability, and it post-dates the relevant period.\"}, {\"objection_id\": \"obj_45a490bd\", \"disposition\": \"sustained\", \"reasoning\": \"The argument invokes the drafting history of the CRC Optional Protocol (2000) to show pre-1996 customary status, but the facts provide only the Protocol's text, not its drafting history or any evidence of the customary rule it allegedly codified.\"}, {\"objection_id\": \"obj_afc641bd\", \"disposition\": \"sustained\", \"reasoning\": \"The record lists treaty provisions but contains no evidence — such as ICJ judgments, UNGA resolutions, or widespread state declarations — that the prohibition was accepted as a peremptory norm by 1996.\"}, {\"objection_id\": \"obj_f985a24f\", \"disposition\": \"sustained\", \"reasoning\": \"AP I Art. 77(2) binds only parties to the treaty. The argument does not demonstrate state practice and opinio juris extending the prohibition to non-state armed groups as a customary matter; ratification of AP I alone does not establish a customary rule binding non-parties or non-state actors.\"}, {\"objection_id\": \"obj_76b73aca\", \"disposition\": \"sustained\", \"reasoning\": \"Individual criminal responsibility for war crimes arises from the gravity of the breach under IHL, not from jus cogens status. Neither AP I nor the CRC OPAC designates the norm as jus cogens, and the argument provides no authority for the claim that jus cogens status is necessary or sufficient for individual liability.\"}, {\"objection_id\": \"obj_f7820ec1\", \"disposition\": \"sustained\", \"reasoning\": \"The facts as given reference AP II and the CRC (1990), not AP I. They contain no mention of AP I ratification rates or state practice under AP I. The argument's factual premise is absent from the record.\"}, {\"objection_id\": \"obj_94b47df7\", \"disposition\": \"sustained\", \"reasoning\": \"Duplicate of obj_f39392e6 in substance: the facts provide no evidence of pre-1998 customary criminal liability for recruiting children under fifteen.\"}, {\"objection_id\": \"obj_0e2c40fb\", \"disposition\": \"sustained\", \"reasoning\": \"The facts do not mention the CRC Optional Protocol (2000) or its drafting history. The argument's reliance on an unreferenced instrument and its unrecorded drafting history cannot be sustained on this record.\"}, {\"objection_id\": \"obj_3ebe2d75\", \"disposition\": \"sustained\", \"reasoning\": \"Same deficiency as obj_9882f010 and obj_afc641bd: the facts contain no evidence of universal acceptance of the prohibition as a peremptory norm by 1996.\"}, {\"objection_id\": \"obj_a9faca4b\", \"disposition\": \"sustained\", \"reasoning\": \"Same deficiency as obj_f7820ec1: the facts provide no evidence of AP I ratification or practice, only AP II.\"}, {\"objection_id\": \"obj_27407dd8\", \"disposition\": \"sustained\", \"reasoning\": \"The negative argument (arg_48ded5f1) asserts that individual criminal liability 'was only crystallised later' by the Rome Statute, but the facts contain no evidence on whether customary law had already attached such liability by 1996. The record is silent on the point, so the argument lacks evidentiary support.\"}], \"surviving_argument_ids\": [], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-23T00:45:27.728555Z",
+      "completed_at": "2026-11-23T00:46:40.537324Z",
+      "prompt_tokens": 6303,
+      "completion_tokens": 4130,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-23T00:46:40.538591+00:00",
+  "duration_seconds": 118.26646126201376,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 2,
+  "judge_failures": 0,
+  "judge_failed": false
+}

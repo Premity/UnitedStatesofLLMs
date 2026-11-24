@@ -1,0 +1,1428 @@
+{
+  "case_id": "icty_boskoski_ljuboten",
+  "case_title": "Prosecutor v. Johan Tarčulovski — police operation in Ljuboten",
+  "court": "ICTY",
+  "year": 2008,
+  "difficulty": "hard",
+  "arm": "single_attacker",
+  "arm_label": "C — One attacker",
+  "run_id": "eval_feca9ebe5f",
+  "question": "Was a police officer alleged to have led an operation in a village criminally responsible for killings, cruel treatment, and destruction of villagers' homes committed by police during that operation?",
+  "facts": "Whether an internal armed conflict existed in Macedonia at the time was highly contested at trial. The Defence submitted that the events in Ljuboten were part of a law-enforcement operation to search for members of the National Liberation Army (NLA) and prevent future attacks; the Prosecution disputed that account and argued that Ljuboten was neither an NLA stronghold nor a logistics base. The parties presented conflicting evidence about events in the village. On 10 August 2001, a land mine attack at a location close to Ljuboten killed eight soldiers and wounded others. On the morning of 12 August 2001, at least 60 to 70 and possibly more than 100 reserve police, including members of a private security agency called Kometa, entered Ljuboten with incendiary material and an armoured personnel carrier. It was alleged that Johan Tarčulovski, a relatively junior police officer, commanded the police who entered the village and was present when the crimes were committed. Macedonian army units positioned in the surrounding mountains provided mortar and other fire support. At one house, police fired many shots into the house and through its open front door; an unarmed man in civilian clothing was shot and later died there. A car and construction materials in the yard were set on fire. Police then set fire to a nearby house and about ten more houses along the village’s main road. Thirteen men, with women also present, were found sheltering in basements at the family compound of Adem Ametovski. The men were unarmed, wore civilian clothes, and did not resist. Valuables and identification papers were taken from them, and the men were forced to lie on the ground and to pull their clothing over their eyes and heads. Police beat and kicked them, threatened them with knives, and one man was shot in the arm or hand. One man was shot and died while the others were on the ground. Most of the remaining men were escorted to Braca’s house at the village entrance; two elderly men remained at the compound, where one was shot and died. The ten men taken to Braca’s house were further beaten, and some lost consciousness. They were later detained at Mirkovci police station, where they were beaten by other police; one died in hospital the next day. At the outskirts of the village, five men ran from a house as police approached, and came under fire from police and army positions; two escaped and three bodies were found. There was evidence of firearms near the bodies, but the same weapons had also been attributed to some of the men earlier found at Adem Ametovski’s compound. It could not be determined whether the three men died from police or army fire, and the evidence also allowed for the possibility that they had fired at police or army. In the afternoon, men fleeing Ljuboten were separated from women and subjected to cruel treatment at a checkpoint manned by different police, and many were further mistreated at police stations in Skopje. Tarčulovski was himself acting under orders in carrying out the police operation.",
+  "ground_truth_outcome": "affirmed",
+  "holding": "In its Trial Judgment of 10 July 2008, the ICTY Trial Chamber found that an internal armed conflict existed in Macedonia in August 2001. It found Johan Tarčulovski guilty under Article 7(1) of ordering, planning and instigating the murder of three residents, wanton destruction of houses or other property belonging to twelve residents, and cruel treatment of thirteen residents at Adem Ametovski’s house and ten residents at Braca’s house. He received a single sentence of 12 years’ imprisonment. The two accused were treated differently: Tarčulovski was found guilty on the three counts, while Ljube Boškoski was found not guilty on all counts.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": true,
+  "confidence": 0.78,
+  "confidence_reasoning": "The conclusion rests on well-settled law (individual criminal responsibility, superior orders defence, command responsibility for positive orders) and facts that strongly support a non-international armed conflict and Tarčulovski's direct command role over the police who committed the crimes. The confidence is not higher because the NIAC threshold, while factually well-supported, was not rigorously briefed in the surviving arguments, and the 'relatively junior' status of Tarčulovski could raise factual questions about the scope of his effective control that are not fully resolved on this record.",
+  "rounds": 2,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 2,
+  "total_calls": 6,
+  "citation_statuses": {
+    "total": 19,
+    "resolved": 19,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. Johan Tarčulovski, as the police officer who commanded the operation in Ljuboten, is criminally responsible for the war crimes of wilful killing, cruel treatment, and destruction of property committed by police under his command.",
+    "reasoning": "The surviving arguments establish that: (1) the killings, beatings, and arson in Ljuboten satisfy the elements of war crimes under Article 8 of the Rome Statute (arg_ac199b3c), which criminalises wilful killing, torture or inhuman treatment, and extensive destruction of property not justified by military necessity in both international and non-international armed conflicts; (2) the hostilities between Macedonian security forces and the NLA — marked by a land-mine attack killing eight soldiers, sustained fighting, and the use of heavy weapons and armoured vehicles — meet the threshold of a non-international armed conflict, making Article 8(2)(c) and (e) applicable (arg_b3a54bae, though the parallel argument arg_c3b2be99 was partially deficient in articulating the legal test); (3) Tarčulovski bears individual criminal responsibility under customary Rule 151 because he personally commanded the police unit, was present during the crimes, and ordered or permitted the unlawful acts (arg_0daf7405, arg_216524bb); (4) the defence of superior orders is unavailable under Article 33(1) of the Rome Statute, and the self-defence provision in Article 31(1)(c) explicitly does not exclude responsibility for war crimes committed during a defensive operation (arg_0daf7405); and (5) Tarčulovski also incurs command responsibility under customary Rule 152 for crimes committed pursuant to his specific orders — directing police to enter the village with incendiary material, fire into houses, and detain civilians — which directly resulted in the prohibited conduct (arg_8bfe34d7). The sustained objections do not defeat these core propositions: the objection to the NIAC threshold (obj_b290e881) goes to argumentative completeness, not the factual sufficiency; the objections to the failure-to-prevent theory of command responsibility (obj_e6e75422, obj_fbeef004) are correct but do not affect the surviving 'pursuant to orders' theory; and the objection to the misapplication of Article 8(2)(b) (obj_f2d6061f) only removes a duplicative, erroneous argument.",
+    "confidence": 0.78,
+    "confidence_reasoning": "The conclusion rests on well-settled law (individual criminal responsibility, superior orders defence, command responsibility for positive orders) and facts that strongly support a non-international armed conflict and Tarčulovski's direct command role over the police who committed the crimes. The confidence is not higher because the NIAC threshold, while factually well-supported, was not rigorously briefed in the surviving arguments, and the 'relatively junior' status of Tarčulovski could raise factual questions about the scope of his effective control that are not fully resolved on this record.",
+    "surviving_argument_ids": [
+      "arg_ac199b3c",
+      "arg_b3a54bae",
+      "arg_0daf7405",
+      "arg_216524bb",
+      "arg_8bfe34d7"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_ac199b3c",
+      "claim": "The killings, beatings, and arson committed in Ljuboten constitute war crimes of wilful killing, torture or inhuman treatment, and extensive destruction of property.",
+      "reasoning": "Article 8 of the Rome Statute lists \"Wilful killing;\" \"Torture or inhuman treatment, including biological experiments;\" and \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\" as war crimes. The factual record shows unarmed civilians were shot dead, subjected to beatings and cruel treatment, and their homes were set on fire without any demonstrated military necessity, satisfying each listed element.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Wilful killing;"
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Torture or inhuman treatment, including biological experiments;"
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Wilful killing;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Torture or inhuman treatment, including biological experiments;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_c3b2be99",
+      "claim": "The hostilities between Macedonian security forces and the NLA meet the threshold of an armed conflict not of an international character, so Article 8(c) of the Rome Statute applies.",
+      "reasoning": "Article 8 states that \"In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions…\" are war crimes. The facts describe organized armed groups (the NLA), sustained hostilities (land‑mine attack, use of APCs, mortar support), and a level of intensity beyond isolated disturbances, which under customary IHL is sufficient to characterize the situation as a non‑international armed conflict. Consequently, the listed violations fall within the scope of Article 8(c).",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_0daf7405",
+      "claim": "Johan Tarčulovski is individually criminally responsible for the war crimes committed in Ljuboten.",
+      "reasoning": "Customary rule 151 provides that \"Individuals are criminally responsible for war crimes they commit.\" Tarčulovski personally commanded the police unit, was present during the attacks, and ordered or permitted the unlawful acts. The defence of superior orders is unavailable because Article 33(1) of the Rome Statute declares that following an order \"shall not relieve that person of criminal responsibility unless\" (and no exemption applies here). Moreover, the self‑defence justification in Article 31(1)(c) does not excuse war crimes, as it states that participation in a defensive operation \"shall not in itself constitute a ground for excluding criminal responsibility.\"",
+      "citations": [
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 151,
+          "quoted_text": "Individuals are criminally responsible for war crimes they commit."
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "33(1)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:"
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "31(1)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The fact that the person was involved in a defensive operation conducted by forces shall not in itself constitute a ground for excluding criminal responsibility under this subparagraph;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 151,
+            "quoted_text": "Individuals are criminally responsible for war crimes they commit."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "33(1)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "31(1)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The fact that the person was involved in a defensive operation conducted by forces shall not in itself constitute a ground for excluding criminal responsibility under this subparagraph;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_bb2d3728",
+      "claim": "As the commander of the operation, Tarčulovski bears command responsibility for the crimes committed by the police subordinates.",
+      "reasoning": "Customary rule 152 establishes that \"Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders.\" Tarčulovski exercised effective control over the reserve police and the private security unit, directed their entry into Ljuboten, and failed to prevent or punish the unlawful killings, beatings, and arson. This omission satisfies the requisite elements of command responsibility under customary IHL.",
+      "citations": [
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 152,
+          "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 152,
+            "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_b3a54bae",
+      "claim": "The events in Ljuboten occurred in the context of an armed conflict not of an international character, so Article 8(2)(c) of the Rome Statute applies.",
+      "reasoning": "Customary international law recognises that the existence of an organised armed group (the NLA) engaged in sustained hostilities with state security forces, together with the intensity of the fighting (land‑mine attack, use of APCs and mortar support), satisfies the threshold of a non‑international armed conflict. Because such a conflict existed, the serious violations listed in Article 8(2)(c) are war crimes within the Court’s jurisdiction.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities..."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities..."
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_2f6c1649",
+      "claim": "The killings, beatings, and arson committed by the police in Ljuboten constitute war crimes of wilful killing, torture or inhuman treatment, and extensive destruction of property.",
+      "reasoning": "Article 8(2)(b) of the Rome Statute enumerates these acts as war crimes. The factual record shows unarmed civilians were deliberately shot dead (wilful killing), were beaten, threatened with knives and subjected to cruel treatment (torture or inhuman treatment), and their homes were set alight and destroyed without any demonstrated military necessity (extensive destruction of property). Each element of the listed crimes is satisfied by the evidence.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Wilful killing; Torture or inhuman treatment, including biological experiments; Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Wilful killing; Torture or inhuman treatment, including biological experiments; Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_216524bb",
+      "claim": "Johan Tarčulovski is individually criminally responsible for the war crimes committed in Ljuboten.",
+      "reasoning": "Customary rule 151 establishes individual criminal responsibility for war crimes. Tarčulovski personally commanded the police unit, was present during the unlawful acts and either ordered or permitted them. Article 33(1) of the Rome Statute makes clear that the defence of superior orders does not relieve a person of responsibility for crimes committed pursuant to those orders, and no exemption applies here.",
+      "citations": [
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 151,
+          "quoted_text": "Individuals are criminally responsible for war crimes they commit."
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "33(1)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 151,
+            "quoted_text": "Individuals are criminally responsible for war crimes they commit."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "33(1)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_8bfe34d7",
+      "claim": "Tarčulovski bears command responsibility because he gave orders that authorised the unlawful killings, beatings and arson, and therefore is criminally liable for those war crimes.",
+      "reasoning": "Customary rule 152 imposes liability on commanders and other superiors for war crimes committed pursuant to their orders. The evidence shows that Tarčulovski directed the police to enter Ljuboten with incendiary material, to fire into houses and to detain civilians, actions that directly resulted in the prohibited conduct. By issuing those orders, he satisfied the ‘pursuant to their orders’ element of command responsibility. The lack of a defence based on superior orders is reinforced by Article 33(1) of the Rome Statute.",
+      "citations": [
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 152,
+          "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "33(1)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 152,
+            "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "33(1)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [
+    {
+      "id": "obj_b290e881",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_c3b2be99",
+      "ground": "The argument fails to establish that the conflict meets the specific legal threshold required for the applicability of Article 8(2)(c).",
+      "reasoning": "Article 8(2)(c) applies only to 'armed conflicts not of an international character.' The facts state this characterization was 'highly contested' and the Defence argued it was a law-enforcement operation. The argument cites only Article 8 generally, failing to articulate the specific 'protracted armed conflict' or 'intensity' threshold that distinguishes a war crime from a common crime or internal disturbance, which is a prerequisite for the legal viability of the charge.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "partial",
+      "disposition_reasoning": "The argument arg_c3b2be99 cites only Article 8 generally and does not articulate the specific 'protracted armed conflict' threshold in Article 8(2)(f) or the customary intensity/organization test. However, the facts as given — organised armed group (NLA), sustained hostilities, heavy weapons, protracted fighting — are sufficient to meet that threshold, so the objection goes to argumentative rigour, not the legal outcome."
+    },
+    {
+      "id": "obj_e6e75422",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_bb2d3728",
+      "ground": "The argument mischaracterizes the legal standard for command responsibility by relying on a rule regarding orders rather than the doctrine of superior responsibility.",
+      "reasoning": "Customary Rule 152 states superiors are responsible for crimes committed 'pursuant to their orders.' The argument, however, purports to establish liability for a failure to 'prevent or punish' crimes, which is distinct from the positive act of ordering or permitting. Citing Rule 152 for a failure-to-prevent theory is a misapplication of the specific legal standard for command responsibility.",
+      "citations": [
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 152,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 152,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Customary Rule 152, as quoted in the retrieved context, imposes liability on superiors for crimes committed 'pursuant to their orders.' It does not codify the separate doctrine of superior responsibility for failure to prevent or punish. The argument arg_bb2d3728 expressly relies on a failure-to-prevent theory ('failed to prevent or punish'), which Rule 152 does not support."
+    },
+    {
+      "id": "obj_fbeef004",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_bb2d3728",
+      "ground": "The argument misstates the scope of command responsibility by relying solely on liability for orders given, ignoring Tarčulovski's status as a 'relatively junior police officer' who lacked the requisite effective control over the entire operation.",
+      "reasoning": "Command responsibility requires the superior to have effective control over the subordinates. The facts state Tarčulovski was 'relatively junior' and that 'Macedonian army units' provided fire support, which likely fell outside his chain of command. Customary rule 152 is cited, but the legal test for 'effective control' is not met for the army's actions, making this argument legally overbroad.",
+      "citations": [
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 152,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 152,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "partial",
+      "disposition_reasoning": "The argument arg_bb2d3728 asserts effective control over the entire operation, including army units providing mortar support. The facts state Tarčulovski was a 'relatively junior police officer' and that army units operated from surrounding mountains, likely outside his chain of command. The objection correctly identifies overbreadth as to army actions, but does not negate his effective control over the reserve police and private security unit he directly commanded."
+    },
+    {
+      "id": "obj_f2d6061f",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_2f6c1649",
+      "ground": "The argument incorrectly applies the legal framework for international armed conflict (Article 8(2)(b)) to a situation characterized by the defense and prosecution as a non-international armed conflict.",
+      "reasoning": "Article 8(2)(b) strictly applies to 'international armed conflict'. The facts and the other arguments describe a conflict between state forces and the NLA, which is a non-international armed conflict governed by Article 8(2)(c). Applying the wrong paragraph of the Rome Statute is a fundamental error in legal characterization.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Argument arg_2f6c1649 cites Article 8(2)(b), which applies exclusively to international armed conflicts. The facts and all other arguments describe a non-international armed conflict between state forces and the NLA, governed by Article 8(2)(c) and (e). Applying the IAC provision is a fundamental legal error."
+    }
+  ],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "31(1)(c)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "67(1)(d)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "customary",
+        "instrument": "customary_ihl",
+        "article": null,
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": 151,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_ii",
+        "article": "6",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "33(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "customary",
+        "instrument": "customary_ihl",
+        "article": null,
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": 152,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "65(3)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_6e1e5470",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "52754262b007d822ce461fa5b3aba7d5bfc99db2a071705bee4af74d770742f9",
+      "arguments": [
+        {
+          "id": "arg_ac199b3c",
+          "claim": "The killings, beatings, and arson committed in Ljuboten constitute war crimes of wilful killing, torture or inhuman treatment, and extensive destruction of property.",
+          "reasoning": "Article 8 of the Rome Statute lists \"Wilful killing;\" \"Torture or inhuman treatment, including biological experiments;\" and \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\" as war crimes. The factual record shows unarmed civilians were shot dead, subjected to beatings and cruel treatment, and their homes were set on fire without any demonstrated military necessity, satisfying each listed element.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Wilful killing;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Torture or inhuman treatment, including biological experiments;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Wilful killing;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Torture or inhuman treatment, including biological experiments;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_c3b2be99",
+          "claim": "The hostilities between Macedonian security forces and the NLA meet the threshold of an armed conflict not of an international character, so Article 8(c) of the Rome Statute applies.",
+          "reasoning": "Article 8 states that \"In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions…\" are war crimes. The facts describe organized armed groups (the NLA), sustained hostilities (land‑mine attack, use of APCs, mortar support), and a level of intensity beyond isolated disturbances, which under customary IHL is sufficient to characterize the situation as a non‑international armed conflict. Consequently, the listed violations fall within the scope of Article 8(c).",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_0daf7405",
+          "claim": "Johan Tarčulovski is individually criminally responsible for the war crimes committed in Ljuboten.",
+          "reasoning": "Customary rule 151 provides that \"Individuals are criminally responsible for war crimes they commit.\" Tarčulovski personally commanded the police unit, was present during the attacks, and ordered or permitted the unlawful acts. The defence of superior orders is unavailable because Article 33(1) of the Rome Statute declares that following an order \"shall not relieve that person of criminal responsibility unless\" (and no exemption applies here). Moreover, the self‑defence justification in Article 31(1)(c) does not excuse war crimes, as it states that participation in a defensive operation \"shall not in itself constitute a ground for excluding criminal responsibility.\"",
+          "citations": [
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 151,
+              "quoted_text": "Individuals are criminally responsible for war crimes they commit."
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "33(1)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:"
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "31(1)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The fact that the person was involved in a defensive operation conducted by forces shall not in itself constitute a ground for excluding criminal responsibility under this subparagraph;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 151,
+                "quoted_text": "Individuals are criminally responsible for war crimes they commit."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "33(1)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "31(1)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The fact that the person was involved in a defensive operation conducted by forces shall not in itself constitute a ground for excluding criminal responsibility under this subparagraph;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_bb2d3728",
+          "claim": "As the commander of the operation, Tarčulovski bears command responsibility for the crimes committed by the police subordinates.",
+          "reasoning": "Customary rule 152 establishes that \"Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders.\" Tarčulovski exercised effective control over the reserve police and the private security unit, directed their entry into Ljuboten, and failed to prevent or punish the unlawful killings, beatings, and arson. This omission satisfies the requisite elements of command responsibility under customary IHL.",
+          "citations": [
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 152,
+              "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 152,
+                "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The killings, beatings, and arson committed in Ljuboten constitute war crimes of wilful killing, torture or inhuman treatment, and extensive destruction of property.\",\n      \"reasoning\": \"Article 8 of the Rome Statute lists \\\"Wilful killing;\\\" \\\"Torture or inhuman treatment, including biological experiments;\\\" and \\\"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\\\" as war crimes. The factual record shows unarmed civilians were shot dead, subjected to beatings and cruel treatment, and their homes were set on fire without any demonstrated military necessity, satisfying each listed element.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Wilful killing;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Torture or inhuman treatment, including biological experiments;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The hostilities between Macedonian security forces and the NLA meet the threshold of an armed conflict not of an international character, so Article 8(c) of the Rome Statute applies.\",\n      \"reasoning\": \"Article 8 states that \\\"In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions…\\\" are war crimes. The facts describe organized armed groups (the NLA), sustained hostilities (land‑mine attack, use of APCs, mortar support), and a level of intensity beyond isolated disturbances, which under customary IHL is sufficient to characterize the situation as a non‑international armed conflict. Consequently, the listed violations fall within the scope of Article 8(c).\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Johan Tarčulovski is individually criminally responsible for the war crimes committed in Ljuboten.\",\n      \"reasoning\": \"Customary rule 151 provides that \\\"Individuals are criminally responsible for war crimes they commit.\\\" Tarčulovski personally commanded the police unit, was present during the attacks, and ordered or permitted the unlawful acts. The defence of superior orders is unavailable because Article 33(1) of the Rome Statute declares that following an order \\\"shall not relieve that person of criminal responsibility unless\\\" (and no exemption applies here). Moreover, the self‑defence justification in Article 31(1)(c) does not excuse war crimes, as it states that participation in a defensive operation \\\"shall not in itself constitute a ground for excluding criminal responsibility.\\\"\",\n      \"citations\": [\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 151,\n          \"quoted_text\": \"Individuals are criminally responsible for war crimes they commit.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"33(1)\",\n          \"quoted_text\": \"The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"31(1)(c)\",\n          \"quoted_text\": \"The fact that the person was involved in a defensive operation conducted by forces shall not in itself constitute a ground for excluding criminal responsibility under this subparagraph;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"As the commander of the operation, Tarčulovski bears command responsibility for the crimes committed by the police subordinates.\",\n      \"reasoning\": \"Customary rule 152 establishes that \\\"Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders.\\\" Tarčulovski exercised effective control over the reserve police and the private security unit, directed their entry into Ljuboten, and failed to prevent or punish the unlawful killings, beatings, and arson. This omission satisfies the requisite elements of command responsibility under customary IHL.\",\n      \"citations\": [\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 152,\n          \"quoted_text\": \"Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-24T01:21:37.350869Z",
+      "completed_at": "2026-11-24T01:22:48.275349Z",
+      "prompt_tokens": 7434,
+      "completion_tokens": 3159,
+      "error": null
+    },
+    {
+      "id": "turn_812a13b3",
+      "round_number": 1,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "9330626c6bed7612df7cc77749b6febbcaf9ec1dfd2f0db9e71264873fe16679",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_b290e881",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_c3b2be99",
+          "ground": "The argument fails to establish that the conflict meets the specific legal threshold required for the applicability of Article 8(2)(c).",
+          "reasoning": "Article 8(2)(c) applies only to 'armed conflicts not of an international character.' The facts state this characterization was 'highly contested' and the Defence argued it was a law-enforcement operation. The argument cites only Article 8 generally, failing to articulate the specific 'protracted armed conflict' or 'intensity' threshold that distinguishes a war crime from a common crime or internal disturbance, which is a prerequisite for the legal viability of the charge.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "partial",
+          "disposition_reasoning": "The argument arg_c3b2be99 cites only Article 8 generally and does not articulate the specific 'protracted armed conflict' threshold in Article 8(2)(f) or the customary intensity/organization test. However, the facts as given — organised armed group (NLA), sustained hostilities, heavy weapons, protracted fighting — are sufficient to meet that threshold, so the objection goes to argumentative rigour, not the legal outcome."
+        },
+        {
+          "id": "obj_e6e75422",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_bb2d3728",
+          "ground": "The argument mischaracterizes the legal standard for command responsibility by relying on a rule regarding orders rather than the doctrine of superior responsibility.",
+          "reasoning": "Customary Rule 152 states superiors are responsible for crimes committed 'pursuant to their orders.' The argument, however, purports to establish liability for a failure to 'prevent or punish' crimes, which is distinct from the positive act of ordering or permitting. Citing Rule 152 for a failure-to-prevent theory is a misapplication of the specific legal standard for command responsibility.",
+          "citations": [
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 152,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 152,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Customary Rule 152, as quoted in the retrieved context, imposes liability on superiors for crimes committed 'pursuant to their orders.' It does not codify the separate doctrine of superior responsibility for failure to prevent or punish. The argument arg_bb2d3728 expressly relies on a failure-to-prevent theory ('failed to prevent or punish'), which Rule 152 does not support."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_c3b2be99\",\n      \"ground\": \"The argument fails to establish that the conflict meets the specific legal threshold required for the applicability of Article 8(2)(c).\",\n      \"reasoning\": \"Article 8(2)(c) applies only to 'armed conflicts not of an international character.' The facts state this characterization was 'highly contested' and the Defence argued it was a law-enforcement operation. The argument cites only Article 8 generally, failing to articulate the specific 'protracted armed conflict' or 'intensity' threshold that distinguishes a war crime from a common crime or internal disturbance, which is a prerequisite for the legal viability of the charge.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(c)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_bb2d3728\",\n      \"ground\": \"The argument mischaracterizes the legal standard for command responsibility by relying on a rule regarding orders rather than the doctrine of superior responsibility.\",\n      \"reasoning\": \"Customary Rule 152 states superiors are responsible for crimes committed 'pursuant to their orders.' The argument, however, purports to establish liability for a failure to 'prevent or punish' crimes, which is distinct from the positive act of ordering or permitting. Citing Rule 152 for a failure-to-prevent theory is a misapplication of the specific legal standard for command responsibility.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 152\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-24T01:22:48.278640Z",
+      "completed_at": "2026-11-24T01:22:50.320719Z",
+      "prompt_tokens": 5671,
+      "completion_tokens": 428,
+      "error": null
+    },
+    {
+      "id": "turn_2ab0e48d",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "7b7aa96924928697cd4569fa41aa453b5726fdeefdc2bb2e6cb0b71ec7d6983b",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. Johan Tarčulovski was criminally responsible for the war crimes committed in Ljuboten.\", \"reasoning\": \"The surviving arguments establish that: (1) the killings, beatings, and arson constitute war crimes of wilful killing, torture/inhuman treatment, and extensive destruction of property under Rome Statute Article 8 (arg_ac199b3c, uncontested); (2) the hostilities between Macedonian forces and the NLA meet the threshold of a non-international armed conflict — organized armed group, sustained hostilities, use of heavy weapons and mortars — satisfying Article 8(2)(c) and (f) (arg_c3b2be9n, objection overruled); (3) Tarčulovski bears individual criminal responsibility under customary Rule 151 because he personally commanded the police unit, was present, and ordered or permitted the unlawful acts (arg_0daf7405, uncontested); (4) the superior-orders defence is unavailable under Article 33(1) and the defensive-operation justification is excluded by Article 31(1)(c) (arg_0daf7405, uncontested). The command-responsibility argument based on failure to prevent/punish (arg_bb2d3728) was correctly narrowed by the sustained objection (obj_e6e75422) because Rule 152 addresses crimes committed pursuant to orders, not omissions. However, the same facts — that Tarčulovski commanded the unit, directed its entry, and ordered or permitted the crimes — support direct responsibility under Rule 151 and ordering responsibility under Rule 152, which remain intact.\", \"confidence\": 0.78, \"confidence_reasoning\": \"The NIAC threshold is satisfied on the described facts (protracted conflict with organized armed group). Individual responsibility under Rule 151 is well-established in customary IHL and directly supported by the factual allegations of command, presence, and ordering/permitting. The superior-orders defence fails as a matter of law under Article 33(1). The only material objection sustained goes to a secondary theory (failure-to-prevent command responsibility) that is not necessary for the conclusion. The confidence is not higher because the precise scope of Tarčulovski's orders versus mere presence could be contested at trial, and the NIAC characterization, while strongly supported, was contested by the Defence.\", \"rulings\": [{\"objection_id\": \"obj_b290e881\", \"disposition\": \"overruled\", \"reasoning\": \"The argument (arg_c3b2be99) adequately articulates the intensity and organization threshold for a non-international armed conflict by referencing the NLA as an organized armed group, sustained hostilities (land-mine attack, APCs, mortar support), and a level of violence beyond isolated disturbances. This aligns with the 'protracted armed conflict between governmental authorities and organized armed groups' standard in Article 8(2)(f) of the Rome Statute, which is part of the retrieved context. The objection demands a verbatim citation that is not required where the factual predicates are clearly pleaded.\"}, {\"objection_id\": \"obj_e6e75422\", \"disposition\": \"sustained\", \"reasoning\": \"Customary Rule 152 states: 'Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders.' This rule addresses positive ordering responsibility, not the distinct doctrine of superior responsibility for failure to prevent or punish. The argument (arg_bb2d3728) cites Rule 152 for a failure-to-prevent theory, which is a misapplication of the cited authority. The proper legal basis for omission-based command responsibility (e.g., Rome Statute Article 28) is not in the retrieved context.\"}], \"surviving_argument_ids\": [\"arg_ac199b3c\", \"arg_c3b2be99\", \"arg_0daf7405\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-24T01:22:50.325168Z",
+      "completed_at": "2026-11-24T01:23:25.034612Z",
+      "prompt_tokens": 6101,
+      "completion_tokens": 2606,
+      "error": null
+    },
+    {
+      "id": "turn_0d2d5146",
+      "round_number": 2,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/rebuttal",
+      "prompt_hash": "1d7e984938bd5ddb00a4521697689897bcfb6c0c69de80a54dcb0fe8be8dbde1",
+      "arguments": [
+        {
+          "id": "arg_b3a54bae",
+          "claim": "The events in Ljuboten occurred in the context of an armed conflict not of an international character, so Article 8(2)(c) of the Rome Statute applies.",
+          "reasoning": "Customary international law recognises that the existence of an organised armed group (the NLA) engaged in sustained hostilities with state security forces, together with the intensity of the fighting (land‑mine attack, use of APCs and mortar support), satisfies the threshold of a non‑international armed conflict. Because such a conflict existed, the serious violations listed in Article 8(2)(c) are war crimes within the Court’s jurisdiction.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities..."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities..."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_2f6c1649",
+          "claim": "The killings, beatings, and arson committed by the police in Ljuboten constitute war crimes of wilful killing, torture or inhuman treatment, and extensive destruction of property.",
+          "reasoning": "Article 8(2)(b) of the Rome Statute enumerates these acts as war crimes. The factual record shows unarmed civilians were deliberately shot dead (wilful killing), were beaten, threatened with knives and subjected to cruel treatment (torture or inhuman treatment), and their homes were set alight and destroyed without any demonstrated military necessity (extensive destruction of property). Each element of the listed crimes is satisfied by the evidence.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Wilful killing; Torture or inhuman treatment, including biological experiments; Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Wilful killing; Torture or inhuman treatment, including biological experiments; Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_216524bb",
+          "claim": "Johan Tarčulovski is individually criminally responsible for the war crimes committed in Ljuboten.",
+          "reasoning": "Customary rule 151 establishes individual criminal responsibility for war crimes. Tarčulovski personally commanded the police unit, was present during the unlawful acts and either ordered or permitted them. Article 33(1) of the Rome Statute makes clear that the defence of superior orders does not relieve a person of responsibility for crimes committed pursuant to those orders, and no exemption applies here.",
+          "citations": [
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 151,
+              "quoted_text": "Individuals are criminally responsible for war crimes they commit."
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "33(1)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 151,
+                "quoted_text": "Individuals are criminally responsible for war crimes they commit."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "33(1)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_8bfe34d7",
+          "claim": "Tarčulovski bears command responsibility because he gave orders that authorised the unlawful killings, beatings and arson, and therefore is criminally liable for those war crimes.",
+          "reasoning": "Customary rule 152 imposes liability on commanders and other superiors for war crimes committed pursuant to their orders. The evidence shows that Tarčulovski directed the police to enter Ljuboten with incendiary material, to fire into houses and to detain civilians, actions that directly resulted in the prohibited conduct. By issuing those orders, he satisfied the ‘pursuant to their orders’ element of command responsibility. The lack of a defence based on superior orders is reinforced by Article 33(1) of the Rome Statute.",
+          "citations": [
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 152,
+              "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "33(1)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 152,
+                "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "33(1)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The events in Ljuboten occurred in the context of an armed conflict not of an international character, so Article 8(2)(c) of the Rome Statute applies.\",\n      \"reasoning\": \"Customary international law recognises that the existence of an organised armed group (the NLA) engaged in sustained hostilities with state security forces, together with the intensity of the fighting (land‑mine attack, use of APCs and mortar support), satisfies the threshold of a non‑international armed conflict. Because such a conflict existed, the serious violations listed in Article 8(2)(c) are war crimes within the Court’s jurisdiction.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"In the case of an armed conflict not of an international character, serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities...\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The killings, beatings, and arson committed by the police in Ljuboten constitute war crimes of wilful killing, torture or inhuman treatment, and extensive destruction of property.\",\n      \"reasoning\": \"Article 8(2)(b) of the Rome Statute enumerates these acts as war crimes. The factual record shows unarmed civilians were deliberately shot dead (wilful killing), were beaten, threatened with knives and subjected to cruel treatment (torture or inhuman treatment), and their homes were set alight and destroyed without any demonstrated military necessity (extensive destruction of property). Each element of the listed crimes is satisfied by the evidence.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Wilful killing; Torture or inhuman treatment, including biological experiments; Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Johan Tarčulovski is individually criminally responsible for the war crimes committed in Ljuboten.\",\n      \"reasoning\": \"Customary rule 151 establishes individual criminal responsibility for war crimes. Tarčulovski personally commanded the police unit, was present during the unlawful acts and either ordered or permitted them. Article 33(1) of the Rome Statute makes clear that the defence of superior orders does not relieve a person of responsibility for crimes committed pursuant to those orders, and no exemption applies here.\",\n      \"citations\": [\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 151,\n          \"quoted_text\": \"Individuals are criminally responsible for war crimes they commit.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"33(1)\",\n          \"quoted_text\": \"The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Tarčulovski bears command responsibility because he gave orders that authorised the unlawful killings, beatings and arson, and therefore is criminally liable for those war crimes.\",\n      \"reasoning\": \"Customary rule 152 imposes liability on commanders and other superiors for war crimes committed pursuant to their orders. The evidence shows that Tarčulovski directed the police to enter Ljuboten with incendiary material, to fire into houses and to detain civilians, actions that directly resulted in the prohibited conduct. By issuing those orders, he satisfied the ‘pursuant to their orders’ element of command responsibility. The lack of a defence based on superior orders is reinforced by Article 33(1) of the Rome Statute.\",\n      \"citations\": [\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 152,\n          \"quoted_text\": \"Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"33(1)\",\n          \"quoted_text\": \"The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-24T01:23:25.037670Z",
+      "completed_at": "2026-11-24T01:23:30.463320Z",
+      "prompt_tokens": 5582,
+      "completion_tokens": 2158,
+      "error": null
+    },
+    {
+      "id": "turn_0a8777a6",
+      "round_number": 2,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "19812d9e1383f4d6462f52ab172c1ac3cd391e0a19063f895042073af39ebad3",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_fbeef004",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_bb2d3728",
+          "ground": "The argument misstates the scope of command responsibility by relying solely on liability for orders given, ignoring Tarčulovski's status as a 'relatively junior police officer' who lacked the requisite effective control over the entire operation.",
+          "reasoning": "Command responsibility requires the superior to have effective control over the subordinates. The facts state Tarčulovski was 'relatively junior' and that 'Macedonian army units' provided fire support, which likely fell outside his chain of command. Customary rule 152 is cited, but the legal test for 'effective control' is not met for the army's actions, making this argument legally overbroad.",
+          "citations": [
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 152,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 152,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "partial",
+          "disposition_reasoning": "The argument arg_bb2d3728 asserts effective control over the entire operation, including army units providing mortar support. The facts state Tarčulovski was a 'relatively junior police officer' and that army units operated from surrounding mountains, likely outside his chain of command. The objection correctly identifies overbreadth as to army actions, but does not negate his effective control over the reserve police and private security unit he directly commanded."
+        },
+        {
+          "id": "obj_f2d6061f",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_2f6c1649",
+          "ground": "The argument incorrectly applies the legal framework for international armed conflict (Article 8(2)(b)) to a situation characterized by the defense and prosecution as a non-international armed conflict.",
+          "reasoning": "Article 8(2)(b) strictly applies to 'international armed conflict'. The facts and the other arguments describe a conflict between state forces and the NLA, which is a non-international armed conflict governed by Article 8(2)(c). Applying the wrong paragraph of the Rome Statute is a fundamental error in legal characterization.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Argument arg_2f6c1649 cites Article 8(2)(b), which applies exclusively to international armed conflicts. The facts and all other arguments describe a non-international armed conflict between state forces and the NLA, governed by Article 8(2)(c) and (e). Applying the IAC provision is a fundamental legal error."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_bb2d3728\",\n      \"ground\": \"The argument misstates the scope of command responsibility by relying solely on liability for orders given, ignoring Tarčulovski's status as a 'relatively junior police officer' who lacked the requisite effective control over the entire operation.\",\n      \"reasoning\": \"Command responsibility requires the superior to have effective control over the subordinates. The facts state Tarčulovski was 'relatively junior' and that 'Macedonian army units' provided fire support, which likely fell outside his chain of command. Customary rule 152 is cited, but the legal test for 'effective control' is not met for the army's actions, making this argument legally overbroad.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 152\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_2f6c1649\",\n      \"ground\": \"The argument incorrectly applies the legal framework for international armed conflict (Article 8(2)(b)) to a situation characterized by the defense and prosecution as a non-international armed conflict.\",\n      \"reasoning\": \"Article 8(2)(b) strictly applies to 'international armed conflict'. The facts and the other arguments describe a conflict between state forces and the NLA, which is a non-international armed conflict governed by Article 8(2)(c). Applying the wrong paragraph of the Rome Statute is a fundamental error in legal characterization.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(c)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-24T01:23:30.464392Z",
+      "completed_at": "2026-11-24T01:23:34.148638Z",
+      "prompt_tokens": 6304,
+      "completion_tokens": 471,
+      "error": null
+    },
+    {
+      "id": "turn_e43e7873",
+      "round_number": 2,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "36503689ff6d46ede6fcdbb04c41a043c38951fa74d9ff9a7b9c28aa5b97482a",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. Johan Tarčulovski, as the police officer who commanded the operation in Ljuboten, is criminally responsible for the war crimes of wilful killing, cruel treatment, and destruction of property committed by police under his command.\", \"reasoning\": \"The surviving arguments establish that: (1) the killings, beatings, and arson in Ljuboten satisfy the elements of war crimes under Article 8 of the Rome Statute (arg_ac199b3c), which criminalises wilful killing, torture or inhuman treatment, and extensive destruction of property not justified by military necessity in both international and non-international armed conflicts; (2) the hostilities between Macedonian security forces and the NLA — marked by a land-mine attack killing eight soldiers, sustained fighting, and the use of heavy weapons and armoured vehicles — meet the threshold of a non-international armed conflict, making Article 8(2)(c) and (e) applicable (arg_b3a54bae, though the parallel argument arg_c3b2be99 was partially deficient in articulating the legal test); (3) Tarčulovski bears individual criminal responsibility under customary Rule 151 because he personally commanded the police unit, was present during the crimes, and ordered or permitted the unlawful acts (arg_0daf7405, arg_216524bb); (4) the defence of superior orders is unavailable under Article 33(1) of the Rome Statute, and the self-defence provision in Article 31(1)(c) explicitly does not exclude responsibility for war crimes committed during a defensive operation (arg_0daf7405); and (5) Tarčulovski also incurs command responsibility under customary Rule 152 for crimes committed pursuant to his specific orders — directing police to enter the village with incendiary material, fire into houses, and detain civilians — which directly resulted in the prohibited conduct (arg_8bfe34d7). The sustained objections do not defeat these core propositions: the objection to the NIAC threshold (obj_b290e881) goes to argumentative completeness, not the factual sufficiency; the objections to the failure-to-prevent theory of command responsibility (obj_e6e75422, obj_fbeef004) are correct but do not affect the surviving 'pursuant to orders' theory; and the objection to the misapplication of Article 8(2)(b) (obj_f2d6061f) only removes a duplicative, erroneous argument.\", \"confidence\": 0.78, \"confidence_reasoning\": \"The conclusion rests on well-settled law (individual criminal responsibility, superior orders defence, command responsibility for positive orders) and facts that strongly support a non-international armed conflict and Tarčulovski's direct command role over the police who committed the crimes. The confidence is not higher because the NIAC threshold, while factually well-supported, was not rigorously briefed in the surviving arguments, and the 'relatively junior' status of Tarčulovski could raise factual questions about the scope of his effective control that are not fully resolved on this record.\", \"rulings\": [{\"objection_id\": \"obj_b290e881\", \"disposition\": \"partial\", \"reasoning\": \"The argument arg_c3b2be99 cites only Article 8 generally and does not articulate the specific 'protracted armed conflict' threshold in Article 8(2)(f) or the customary intensity/organization test. However, the facts as given — organised armed group (NLA), sustained hostilities, heavy weapons, protracted fighting — are sufficient to meet that threshold, so the objection goes to argumentative rigour, not the legal outcome.\"}, {\"objection_id\": \"obj_e6e75422\", \"disposition\": \"sustained\", \"reasoning\": \"Customary Rule 152, as quoted in the retrieved context, imposes liability on superiors for crimes committed 'pursuant to their orders.' It does not codify the separate doctrine of superior responsibility for failure to prevent or punish. The argument arg_bb2d3728 expressly relies on a failure-to-prevent theory ('failed to prevent or punish'), which Rule 152 does not support.\"}, {\"objection_id\": \"obj_fbeef004\", \"disposition\": \"partial\", \"reasoning\": \"The argument arg_bb2d3728 asserts effective control over the entire operation, including army units providing mortar support. The facts state Tarčulovski was a 'relatively junior police officer' and that army units operated from surrounding mountains, likely outside his chain of command. The objection correctly identifies overbreadth as to army actions, but does not negate his effective control over the reserve police and private security unit he directly commanded.\"}, {\"objection_id\": \"obj_f2d6061f\", \"disposition\": \"sustained\", \"reasoning\": \"Argument arg_2f6c1649 cites Article 8(2)(b), which applies exclusively to international armed conflicts. The facts and all other arguments describe a non-international armed conflict between state forces and the NLA, governed by Article 8(2)(c) and (e). Applying the IAC provision is a fundamental legal error.\"}], \"surviving_argument_ids\": [\"arg_ac199b3c\", \"arg_b3a54bae\", \"arg_0daf7405\", \"arg_216524bb\", \"arg_8bfe34d7\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-24T01:23:34.149491Z",
+      "completed_at": "2026-11-24T01:24:25.145788Z",
+      "prompt_tokens": 7103,
+      "completion_tokens": 3867,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-24T01:24:25.147548+00:00",
+  "duration_seconds": 170.309223169,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 2,
+  "judge_failures": 0,
+  "judge_failed": false
+}

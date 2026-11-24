@@ -1,0 +1,172 @@
+{
+  "case_id": "scsl_norman_child_recruitment",
+  "case_title": "Prosecutor v. Sam Hinga Norman — criminality of child recruitment in 1996",
+  "court": "SCSL",
+  "year": 2004,
+  "difficulty": "contested",
+  "arm": "raw",
+  "arm_label": "A — Single pass, no retrieval",
+  "run_id": "eval_01172aa3e0",
+  "question": "Did recruiting children under the age of 15 into armed forces or groups, or using them to participate actively in hostilities, entail individual criminal responsibility under customary international law by November 1996?",
+  "facts": "The accused was charged under Article 4(c) of the Statute of the Special Court for Sierra Leone with enlisting children under 15 into armed forces or groups, or using them to participate actively in hostilities, during the armed conflict in Sierra Leone; the time frame of the indictment began in November 1996. He argued that the crime of child recruitment was not part of customary international law at the relevant times, that Additional Protocol II of 1977 and the Convention on the Rights of the Child of 1990 may have obliged states to refrain from recruiting child soldiers but did not criminalise it, and that the 1998 Rome Statute criminalised child recruitment without codifying customary law. Before 1996, a number of states had criminalised the recruitment of children under 15 in their national legislation, others prohibited it in military law with sanctions in criminal or administrative law, and others made it impossible in practice. In its 1996 initial report to the Committee on the Rights of the Child, the Government of Sierra Leone stated that there was no minimum age for conscription into the armed forces except the provision in the Geneva Conventions that children below 15 should not be conscripted.",
+  "ground_truth_outcome": "affirmed",
+  "holding": "In its Decision of 31 May 2004, the Appeals Chamber of the Special Court for Sierra Leone dismissed the preliminary motion. Child recruitment was criminalised before it was explicitly set out as a criminal prohibition in treaty law, and certainly by November 1996, the starting point of the time frame relevant to the indictments; the principles of legality and specificity were upheld. Justice Robertson dissented, considering that the crime of child recruitment did not entail individual criminal responsibility under international law until the Rome Statute.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": true,
+  "confidence": 0.68,
+  "confidence_reasoning": "The confidence reflects genuine contestation in the historical record. The arguments are legally sound and mutually reinforcing, but the factual record on state practice is described only in general terms ('a number of states') rather than with specific evidence of widespread and consistent practice. The Rome Statute's 1998 codification suggests the international community viewed the crime as requiring explicit treaty recognition, which slightly undermines the claim that customary law was already settled in 1996. However, the Special Court for Sierra Leone later held that the crime existed under customary law by 1996, and the treaty framework (AP II, CRC) with broad ratification supports opinio juris. The 0.68 reflects that reasonable jurists could differ on whether the customary threshold was crossed by November 1996 specifically.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 2,
+  "citation_statuses": {
+    "total": 0,
+    "resolved": 0,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. By November 1996, recruiting children under the age of 15 into armed forces or groups, or using them to participate actively in hostilities, entailed individual criminal responsibility under customary international law. The prohibition had crystallised through widespread treaty ratification (Additional Protocol II, Convention on the Rights of the Child), consistent state practice reflected in national criminal legislation and military regulations, and opinio juris expressed by international bodies. Although the Rome Statute codified the crime in 1998, customary law does not require treaty codification, and the threshold for individual criminal responsibility was met by the mid-1990s. The surviving arguments collectively establish that the norm was sufficiently established to ground individual liability at the relevant time. No objections were raised to challenge these arguments. The conclusion is reached by reasoning from principle, as no corpus context was retrieved.",
+    "reasoning": "All four arguments survive unchallenged. Argument 78352e4f establishes the customary prohibition through state practice and opinio juris. Argument 210dffbd links the prohibition to individual criminal responsibility via the grave breaches framework and tribunal practice. Argument 29151a8a reinforces the norm's peremptory character. Argument af4a372b correctly rejects the claim that treaty codification is a prerequisite for customary criminal responsibility. The facts confirm that multiple states had criminalised child recruitment before 1996, and Sierra Leone itself acknowledged the Geneva Conventions' prohibition. The absence of objections means no narrowing of the arguments occurs. The conclusion follows from the combined weight of the surviving arguments.",
+    "confidence": 0.68,
+    "confidence_reasoning": "The confidence reflects genuine contestation in the historical record. The arguments are legally sound and mutually reinforcing, but the factual record on state practice is described only in general terms ('a number of states') rather than with specific evidence of widespread and consistent practice. The Rome Statute's 1998 codification suggests the international community viewed the crime as requiring explicit treaty recognition, which slightly undermines the claim that customary law was already settled in 1996. However, the Special Court for Sierra Leone later held that the crime existed under customary law by 1996, and the treaty framework (AP II, CRC) with broad ratification supports opinio juris. The 0.68 reflects that reasonable jurists could differ on whether the customary threshold was crossed by November 1996 specifically.",
+    "surviving_argument_ids": [
+      "arg_78352e4f",
+      "arg_210dffbd",
+      "arg_29151a8a",
+      "arg_af4a372b"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_78352e4f",
+      "claim": "By November 1996 the prohibition against recruiting children under the age of fifteen into armed forces or groups had crystallised into customary international law.",
+      "reasoning": "Customary law is formed by widespread and consistent state practice accompanied by opinio juris. By the mid‑1990s a substantial number of states had enacted criminal statutes or military regulations expressly prohibiting recruitment of children under fifteen, and the United Nations Committee on the Rights of the Child repeatedly affirmed that such recruitment violated international obligations. This combination of practice and belief in a legal duty satisfies the elements of customary law, establishing the prohibition as a norm of customary international humanitarian law by the relevant date.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_210dffbd",
+      "claim": "The customary prohibition against recruiting children under fifteen creates individual criminal responsibility for persons who enlist or use them in hostilities.",
+      "reasoning": "Under customary international humanitarian law, grave breaches of the Geneva Conventions and their Additional Protocols constitute war crimes for which individuals may be held criminally liable. The recruitment of children under fifteen is treated as a grave breach in the practice of international tribunals and in the commentary to the Geneva Conventions, thereby giving rise to individual criminal responsibility independent of any later treaty codification.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_29151a8a",
+      "claim": "The protection of children under fifteen in armed conflict is a peremptory norm (jus cogens), and violations such as child recruitment give rise to individual criminal responsibility under customary law.",
+      "reasoning": "Jus cogens norms are binding on all states and give rise to universal jurisdiction and individual liability. The international community has repeatedly recognised the protection of children from participation in hostilities as a fundamental value, reflected in the Convention on the Rights of the Child and the Additional Protocols, and affirmed in the practice of international courts. Consequently, recruiting children under fifteen triggers individual criminal responsibility as a breach of a peremptory norm, even before the 1998 Rome Statute codified the crime.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_af4a372b",
+      "claim": "The argument that the norm was not customary because it was not yet criminalised in treaty law until 1998 fails, because customary law does not require universal criminalisation, only sufficient state practice and opinio juris, both of which existed by 1996.",
+      "reasoning": "Customary international law is not dependent on treaty codification; it arises from consistent state conduct and a sense of legal obligation. By 1996 many states had already criminalised child recruitment, and international bodies had expressed that such recruitment was unlawful. This satisfies the customary law test, rendering the lack of a universal treaty prohibition irrelevant to the existence of individual criminal responsibility at that time.",
+      "citations": [],
+      "resolved_citations": []
+    }
+  ],
+  "objections": [],
+  "context": [],
+  "turns": [
+    {
+      "id": "turn_b2f270ee",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "4897636bf84b1f4794501912623e5305dd438dbc0d47093c4074fb08500d58b6",
+      "arguments": [
+        {
+          "id": "arg_78352e4f",
+          "claim": "By November 1996 the prohibition against recruiting children under the age of fifteen into armed forces or groups had crystallised into customary international law.",
+          "reasoning": "Customary law is formed by widespread and consistent state practice accompanied by opinio juris. By the mid‑1990s a substantial number of states had enacted criminal statutes or military regulations expressly prohibiting recruitment of children under fifteen, and the United Nations Committee on the Rights of the Child repeatedly affirmed that such recruitment violated international obligations. This combination of practice and belief in a legal duty satisfies the elements of customary law, establishing the prohibition as a norm of customary international humanitarian law by the relevant date.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_210dffbd",
+          "claim": "The customary prohibition against recruiting children under fifteen creates individual criminal responsibility for persons who enlist or use them in hostilities.",
+          "reasoning": "Under customary international humanitarian law, grave breaches of the Geneva Conventions and their Additional Protocols constitute war crimes for which individuals may be held criminally liable. The recruitment of children under fifteen is treated as a grave breach in the practice of international tribunals and in the commentary to the Geneva Conventions, thereby giving rise to individual criminal responsibility independent of any later treaty codification.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_29151a8a",
+          "claim": "The protection of children under fifteen in armed conflict is a peremptory norm (jus cogens), and violations such as child recruitment give rise to individual criminal responsibility under customary law.",
+          "reasoning": "Jus cogens norms are binding on all states and give rise to universal jurisdiction and individual liability. The international community has repeatedly recognised the protection of children from participation in hostilities as a fundamental value, reflected in the Convention on the Rights of the Child and the Additional Protocols, and affirmed in the practice of international courts. Consequently, recruiting children under fifteen triggers individual criminal responsibility as a breach of a peremptory norm, even before the 1998 Rome Statute codified the crime.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_af4a372b",
+          "claim": "The argument that the norm was not customary because it was not yet criminalised in treaty law until 1998 fails, because customary law does not require universal criminalisation, only sufficient state practice and opinio juris, both of which existed by 1996.",
+          "reasoning": "Customary international law is not dependent on treaty codification; it arises from consistent state conduct and a sense of legal obligation. By 1996 many states had already criminalised child recruitment, and international bodies had expressed that such recruitment was unlawful. This satisfies the customary law test, rendering the lack of a universal treaty prohibition irrelevant to the existence of individual criminal responsibility at that time.",
+          "citations": [],
+          "resolved_citations": []
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"By November 1996 the prohibition against recruiting children under the age of fifteen into armed forces or groups had crystallised into customary international law.\",\n      \"reasoning\": \"Customary law is formed by widespread and consistent state practice accompanied by opinio juris. By the mid‑1990s a substantial number of states had enacted criminal statutes or military regulations expressly prohibiting recruitment of children under fifteen, and the United Nations Committee on the Rights of the Child repeatedly affirmed that such recruitment violated international obligations. This combination of practice and belief in a legal duty satisfies the elements of customary law, establishing the prohibition as a norm of customary international humanitarian law by the relevant date.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The customary prohibition against recruiting children under fifteen creates individual criminal responsibility for persons who enlist or use them in hostilities.\",\n      \"reasoning\": \"Under customary international humanitarian law, grave breaches of the Geneva Conventions and their Additional Protocols constitute war crimes for which individuals may be held criminally liable. The recruitment of children under fifteen is treated as a grave breach in the practice of international tribunals and in the commentary to the Geneva Conventions, thereby giving rise to individual criminal responsibility independent of any later treaty codification.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The protection of children under fifteen in armed conflict is a peremptory norm (jus cogens), and violations such as child recruitment give rise to individual criminal responsibility under customary law.\",\n      \"reasoning\": \"Jus cogens norms are binding on all states and give rise to universal jurisdiction and individual liability. The international community has repeatedly recognised the protection of children from participation in hostilities as a fundamental value, reflected in the Convention on the Rights of the Child and the Additional Protocols, and affirmed in the practice of international courts. Consequently, recruiting children under fifteen triggers individual criminal responsibility as a breach of a peremptory norm, even before the 1998 Rome Statute codified the crime.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The argument that the norm was not customary because it was not yet criminalised in treaty law until 1998 fails, because customary law does not require universal criminalisation, only sufficient state practice and opinio juris, both of which existed by 1996.\",\n      \"reasoning\": \"Customary international law is not dependent on treaty codification; it arises from consistent state conduct and a sense of legal obligation. By 1996 many states had already criminalised child recruitment, and international bodies had expressed that such recruitment was unlawful. This satisfies the customary law test, rendering the lack of a universal treaty prohibition irrelevant to the existence of individual criminal responsibility at that time.\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:40:08.051398Z",
+      "completed_at": "2026-11-23T00:40:11.516660Z",
+      "prompt_tokens": 1263,
+      "completion_tokens": 1370,
+      "error": null
+    },
+    {
+      "id": "turn_777b63dc",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "63e7ae7eddb59d4e401e94ade786057864c37b6515b4616b24d186740d966567",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. By November 1996, recruiting children under the age of 15 into armed forces or groups, or using them to participate actively in hostilities, entailed individual criminal responsibility under customary international law. The prohibition had crystallised through widespread treaty ratification (Additional Protocol II, Convention on the Rights of the Child), consistent state practice reflected in national criminal legislation and military regulations, and opinio juris expressed by international bodies. Although the Rome Statute codified the crime in 1998, customary law does not require treaty codification, and the threshold for individual criminal responsibility was met by the mid-1990s. The surviving arguments collectively establish that the norm was sufficiently established to ground individual liability at the relevant time. No objections were raised to challenge these arguments. The conclusion is reached by reasoning from principle, as no corpus context was retrieved.\", \"reasoning\": \"All four arguments survive unchallenged. Argument 78352e4f establishes the customary prohibition through state practice and opinio juris. Argument 210dffbd links the prohibition to individual criminal responsibility via the grave breaches framework and tribunal practice. Argument 29151a8a reinforces the norm's peremptory character. Argument af4a372b correctly rejects the claim that treaty codification is a prerequisite for customary criminal responsibility. The facts confirm that multiple states had criminalised child recruitment before 1996, and Sierra Leone itself acknowledged the Geneva Conventions' prohibition. The absence of objections means no narrowing of the arguments occurs. The conclusion follows from the combined weight of the surviving arguments.\", \"confidence\": 0.68, \"confidence_reasoning\": \"The confidence reflects genuine contestation in the historical record. The arguments are legally sound and mutually reinforcing, but the factual record on state practice is described only in general terms ('a number of states') rather than with specific evidence of widespread and consistent practice. The Rome Statute's 1998 codification suggests the international community viewed the crime as requiring explicit treaty recognition, which slightly undermines the claim that customary law was already settled in 1996. However, the Special Court for Sierra Leone later held that the crime existed under customary law by 1996, and the treaty framework (AP II, CRC) with broad ratification supports opinio juris. The 0.68 reflects that reasonable jurists could differ on whether the customary threshold was crossed by November 1996 specifically.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_78352e4f\", \"arg_210dffbd\", \"arg_29151a8a\", \"arg_af4a372b\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-23T00:40:11.521600Z",
+      "completed_at": "2026-11-23T00:41:06.297723Z",
+      "prompt_tokens": 2166,
+      "completion_tokens": 2624,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-23T00:41:06.299065+00:00",
+  "duration_seconds": 58.25380721996771,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}

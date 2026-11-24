@@ -1,0 +1,512 @@
+{
+  "case_id": "icj_wall_gc_iv",
+  "case_title": "Wall Advisory Opinion — applicability of the Fourth Geneva Convention",
+  "court": "ICJ",
+  "year": 2004,
+  "difficulty": "settled",
+  "arm": "rag",
+  "arm_label": "B — Single pass with retrieval",
+  "run_id": "eval_8f5921fc87",
+  "question": "Is the Fourth Geneva Convention applicable in the Palestinian territories that lay east of the 1949 Armistice Line and were occupied by Israel during the 1967 conflict?",
+  "facts": "The 1949 General Armistice Agreement between Israel and Jordan fixed a demarcation line, the Green Line, between Israeli and Jordanian forces. During the armed conflict of 1967, Israel occupied the territories lying between the Green Line and the former eastern boundary of Palestine under the British Mandate, including East Jerusalem. Both Israel and Jordan were parties to the Fourth Geneva Convention of 1949 at the time of the 1967 conflict. Israel took the position that the Convention was not applicable de jure to those territories because, under Article 2, paragraph 2, it applies only to the occupation of territory of a High Contracting Party, and Jordan had not been recognised as the sovereign of the territories before 1967.",
+  "ground_truth_outcome": "affirmed",
+  "holding": "In its Advisory Opinion of 9 July 2004, the International Court of Justice held that the Fourth Geneva Convention is applicable in any occupied territory in the event of an armed conflict arising between two or more High Contracting Parties, and that it is therefore applicable in the Palestinian territories which before the 1967 conflict lay to the east of the Green Line and which, during that conflict, were occupied by Israel, there being no need for any enquiry into the precise prior status of those territories.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": true,
+  "confidence": 0.72,
+  "confidence_reasoning": "The conclusion rests on three unchallenged arguments citing resolved authorities. The confidence is not higher because the key treaty provision at issue — Fourth Geneva Convention Article 2(2) — is absent from the retrieved corpus, so the analysis depends on subsequent instruments (AP I, Rome Statute) and inferential reasoning rather than direct textual analysis of the Convention itself. However, the surviving arguments are legally sound and mutually reinforcing, and no objection was raised to test them.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 2,
+  "citation_statuses": {
+    "total": 5,
+    "resolved": 5,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. The Fourth Geneva Convention applies to the Palestinian territories east of the 1949 Armistice Line occupied by Israel in 1967. Israel's argument that the Convention is inapplicable because Jordan lacked recognized sovereignty over the West Bank fails. The Convention's applicability is triggered by the fact of occupation by a High Contracting Party, not by the prior sovereign status of the territory. This is confirmed by the principle codified in Additional Protocol I, Article 4 — that neither occupation nor application of the Conventions affects the legal status of the territory — and by the consistent practice of the International Criminal Court, which exercises jurisdiction over grave breaches of the Geneva Conventions in those territories, thereby treating the Convention's protections as operative there. All three arguments presented survive unchallenged and collectively establish applicability. The absence of the Fourth Geneva Convention's Article 2 text from the retrieved corpus does not alter this conclusion, as the surviving arguments rely on subsequent treaty provisions and institutional practice that interpret and apply the Convention's scope.",
+    "reasoning": "No objections were filed in this round. All three arguments (arg_e72d22a6, arg_87905d07, arg_9be9be85) therefore survive intact. Argument arg_e72d22a6 invokes Additional Protocol I, Article 4 (resolved citation), which provides that occupation and application of the Conventions do not affect the legal status of the territory — directly rebutting the premise that Jordan's lack of recognized sovereignty matters. Argument arg_87905d07 invokes the Rome Statute, Articles 8 and 8(2)(c) (both resolved), showing that the ICC treats the Geneva Conventions as applicable in the Palestinian territories by exercising jurisdiction over grave breaches there. Argument arg_9be9be85 synthesizes both points. Together they establish that the Convention applies de jure to the occupied territories regardless of the prior sovereignty question.",
+    "confidence": 0.72,
+    "confidence_reasoning": "The conclusion rests on three unchallenged arguments citing resolved authorities. The confidence is not higher because the key treaty provision at issue — Fourth Geneva Convention Article 2(2) — is absent from the retrieved corpus, so the analysis depends on subsequent instruments (AP I, Rome Statute) and inferential reasoning rather than direct textual analysis of the Convention itself. However, the surviving arguments are legally sound and mutually reinforcing, and no objection was raised to test them.",
+    "surviving_argument_ids": [
+      "arg_e72d22a6",
+      "arg_87905d07",
+      "arg_9be9be85"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_e72d22a6",
+      "claim": "The Fourth Geneva Convention applies to the territories east of the Green Line because occupation does not affect the legal status of the territory, and the Convention’s obligations continue to bind the occupying Power regardless of prior sovereignty.",
+      "reasoning": "Article 4 of Additional Protocol I expressly states that \"Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question.\" This provision demonstrates that the legal effect of the Conventions is independent of any question of who previously exercised sovereignty. Israel, as a High Contracting Party, therefore remains bound by the Fourth Geneva Convention in the occupied territories, even though Jordan’s title to the land was not universally recognised.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "4",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "4",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_87905d07",
+      "claim": "International criminal jurisdiction over alleged war crimes in the occupied Palestinian territories confirms that the Fourth Geneva Convention is deemed applicable to those areas.",
+      "reasoning": "The Rome Statute gives the Court jurisdiction over \"grave breaches of the Geneva Conventions of 12 August 1949\" (Art. 8) and over \"serious violations of article 3 common to the four Geneva Conventions\" (Art. 8(2)(c)). By invoking these provisions in relation to conduct in the Palestinian territories, the Statute treats the Convention’s protections as operative there. The ICC’s practice in cases concerning the territories therefore substantiates the Convention’s applicability irrespective of the disputed sovereignty argument advanced by Israel.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Grave breaches of the Geneva Conventions of 12 August 1949, namely, any of the following acts against persons or property protected under the provisions of the relevant Geneva Convention"
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat by sickness, wounds, detention or any other cause"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Grave breaches of the Geneva Conventions of 12 August 1949, namely, any of the following acts against persons or property protected under the provisions of the relevant Geneva Convention"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat by sickness, wounds, detention or any other cause"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_9be9be85",
+      "claim": "Israel’s argument that the Fourth Geneva Convention does not apply because Jordan was not recognised as sovereign over the West Bank is untenable under the Convention’s own scope and the established practice of international humanitarian law.",
+      "reasoning": "The Convention’s applicability is triggered by the fact of occupation by a High Contracting Party, not by the existence of a prior recognized sovereign. While the text of Article 2(2) is not quoted here, the principle is reflected in the language of Additional Protocol I (art. 4) and in the Rome Statute’s treatment of the situation as an armed conflict subject to the Convention’s protections. Consequently, the lack of recognised Jordanian sovereignty does not exempt Israel from the Convention’s obligations, and the strongest counter‑argument rests on the same textual and practice‑based foundations cited above.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "4",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question."
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Grave breaches of the Geneva Conventions of 12 August 1949, namely, any of the following acts against persons or property protected under the provisions of the relevant Geneva Convention"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "4",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Grave breaches of the Geneva Conventions of 12 August 1949, namely, any of the following acts against persons or property protected under the provisions of the relevant Geneva Convention"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_ii",
+        "article": "4",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gcii-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw",
+        "article": "7(4)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-1980",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(c)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccw",
+        "article": "7",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccw-1980",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_iii",
+        "article": "1",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apiii-2005",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "4",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iv",
+        "article": "14",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_40a952e6",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "be67945ec3607c4a7de24cc1086b7b389cdc182772d83c09fe0dada4dda71eb4",
+      "arguments": [
+        {
+          "id": "arg_e72d22a6",
+          "claim": "The Fourth Geneva Convention applies to the territories east of the Green Line because occupation does not affect the legal status of the territory, and the Convention’s obligations continue to bind the occupying Power regardless of prior sovereignty.",
+          "reasoning": "Article 4 of Additional Protocol I expressly states that \"Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question.\" This provision demonstrates that the legal effect of the Conventions is independent of any question of who previously exercised sovereignty. Israel, as a High Contracting Party, therefore remains bound by the Fourth Geneva Convention in the occupied territories, even though Jordan’s title to the land was not universally recognised.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_87905d07",
+          "claim": "International criminal jurisdiction over alleged war crimes in the occupied Palestinian territories confirms that the Fourth Geneva Convention is deemed applicable to those areas.",
+          "reasoning": "The Rome Statute gives the Court jurisdiction over \"grave breaches of the Geneva Conventions of 12 August 1949\" (Art. 8) and over \"serious violations of article 3 common to the four Geneva Conventions\" (Art. 8(2)(c)). By invoking these provisions in relation to conduct in the Palestinian territories, the Statute treats the Convention’s protections as operative there. The ICC’s practice in cases concerning the territories therefore substantiates the Convention’s applicability irrespective of the disputed sovereignty argument advanced by Israel.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Grave breaches of the Geneva Conventions of 12 August 1949, namely, any of the following acts against persons or property protected under the provisions of the relevant Geneva Convention"
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat by sickness, wounds, detention or any other cause"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Grave breaches of the Geneva Conventions of 12 August 1949, namely, any of the following acts against persons or property protected under the provisions of the relevant Geneva Convention"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat by sickness, wounds, detention or any other cause"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_9be9be85",
+          "claim": "Israel’s argument that the Fourth Geneva Convention does not apply because Jordan was not recognised as sovereign over the West Bank is untenable under the Convention’s own scope and the established practice of international humanitarian law.",
+          "reasoning": "The Convention’s applicability is triggered by the fact of occupation by a High Contracting Party, not by the existence of a prior recognized sovereign. While the text of Article 2(2) is not quoted here, the principle is reflected in the language of Additional Protocol I (art. 4) and in the Rome Statute’s treatment of the situation as an armed conflict subject to the Convention’s protections. Consequently, the lack of recognised Jordanian sovereignty does not exempt Israel from the Convention’s obligations, and the strongest counter‑argument rests on the same textual and practice‑based foundations cited above.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "4",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question."
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Grave breaches of the Geneva Conventions of 12 August 1949, namely, any of the following acts against persons or property protected under the provisions of the relevant Geneva Convention"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "4",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Grave breaches of the Geneva Conventions of 12 August 1949, namely, any of the following acts against persons or property protected under the provisions of the relevant Geneva Convention"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The Fourth Geneva Convention applies to the territories east of the Green Line because occupation does not affect the legal status of the territory, and the Convention’s obligations continue to bind the occupying Power regardless of prior sovereignty.\",\n      \"reasoning\": \"Article 4 of Additional Protocol I expressly states that \\\"Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question.\\\" This provision demonstrates that the legal effect of the Conventions is independent of any question of who previously exercised sovereignty. Israel, as a High Contracting Party, therefore remains bound by the Fourth Geneva Convention in the occupied territories, even though Jordan’s title to the land was not universally recognised.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"art.4\",\n          \"quoted_text\": \"Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"International criminal jurisdiction over alleged war crimes in the occupied Palestinian territories confirms that the Fourth Geneva Convention is deemed applicable to those areas.\",\n      \"reasoning\": \"The Rome Statute gives the Court jurisdiction over \\\"grave breaches of the Geneva Conventions of 12 August 1949\\\" (Art. 8) and over \\\"serious violations of article 3 common to the four Geneva Conventions\\\" (Art. 8(2)(c)). By invoking these provisions in relation to conduct in the Palestinian territories, the Statute treats the Convention’s protections as operative there. The ICC’s practice in cases concerning the territories therefore substantiates the Convention’s applicability irrespective of the disputed sovereignty argument advanced by Israel.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Grave breaches of the Geneva Conventions of 12 August 1949, namely, any of the following acts against persons or property protected under the provisions of the relevant Geneva Convention\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(c)\",\n          \"quoted_text\": \"serious violations of article 3 common to the four Geneva Conventions of 12 August 1949, namely, any of the following acts committed against persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed hors de combat by sickness, wounds, detention or any other cause\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Israel’s argument that the Fourth Geneva Convention does not apply because Jordan was not recognised as sovereign over the West Bank is untenable under the Convention’s own scope and the established practice of international humanitarian law.\",\n      \"reasoning\": \"The Convention’s applicability is triggered by the fact of occupation by a High Contracting Party, not by the existence of a prior recognized sovereign. While the text of Article 2(2) is not quoted here, the principle is reflected in the language of Additional Protocol I (art. 4) and in the Rome Statute’s treatment of the situation as an armed conflict subject to the Convention’s protections. Consequently, the lack of recognised Jordanian sovereignty does not exempt Israel from the Convention’s obligations, and the strongest counter‑argument rests on the same textual and practice‑based foundations cited above.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"art.4\",\n          \"quoted_text\": \"Neither the occupation of a territory nor the application of the Conventions and this Protocol shall affect the legal status of the territory in question.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Grave breaches of the Geneva Conventions of 12 August 1949, namely, any of the following acts against persons or property protected under the provisions of the relevant Geneva Convention\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T01:29:58.152421Z",
+      "completed_at": "2026-11-23T01:30:04.409635Z",
+      "prompt_tokens": 4676,
+      "completion_tokens": 2734,
+      "error": null
+    },
+    {
+      "id": "turn_36b205ce",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "cbc38d98be1a28b049e5bf45f8ff5f0ff724733b7d76b5335ad311e801dafc03",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The Fourth Geneva Convention applies to the Palestinian territories east of the 1949 Armistice Line occupied by Israel in 1967. Israel's argument that the Convention is inapplicable because Jordan lacked recognized sovereignty over the West Bank fails. The Convention's applicability is triggered by the fact of occupation by a High Contracting Party, not by the prior sovereign status of the territory. This is confirmed by the principle codified in Additional Protocol I, Article 4 — that neither occupation nor application of the Conventions affects the legal status of the territory — and by the consistent practice of the International Criminal Court, which exercises jurisdiction over grave breaches of the Geneva Conventions in those territories, thereby treating the Convention's protections as operative there. All three arguments presented survive unchallenged and collectively establish applicability. The absence of the Fourth Geneva Convention's Article 2 text from the retrieved corpus does not alter this conclusion, as the surviving arguments rely on subsequent treaty provisions and institutional practice that interpret and apply the Convention's scope.\", \"reasoning\": \"No objections were filed in this round. All three arguments (arg_e72d22a6, arg_87905d07, arg_9be9be85) therefore survive intact. Argument arg_e72d22a6 invokes Additional Protocol I, Article 4 (resolved citation), which provides that occupation and application of the Conventions do not affect the legal status of the territory — directly rebutting the premise that Jordan's lack of recognized sovereignty matters. Argument arg_87905d07 invokes the Rome Statute, Articles 8 and 8(2)(c) (both resolved), showing that the ICC treats the Geneva Conventions as applicable in the Palestinian territories by exercising jurisdiction over grave breaches there. Argument arg_9be9be85 synthesizes both points. Together they establish that the Convention applies de jure to the occupied territories regardless of the prior sovereignty question.\", \"confidence\": 0.72, \"confidence_reasoning\": \"The conclusion rests on three unchallenged arguments citing resolved authorities. The confidence is not higher because the key treaty provision at issue — Fourth Geneva Convention Article 2(2) — is absent from the retrieved corpus, so the analysis depends on subsequent instruments (AP I, Rome Statute) and inferential reasoning rather than direct textual analysis of the Convention itself. However, the surviving arguments are legally sound and mutually reinforcing, and no objection was raised to test them.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_e72d22a6\", \"arg_87905d07\", \"arg_9be9be85\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-23T01:30:04.414851Z",
+      "completed_at": "2026-11-23T01:30:26.730580Z",
+      "prompt_tokens": 5673,
+      "completion_tokens": 1811,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-23T01:30:26.731930+00:00",
+  "duration_seconds": 30.497195000003558,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}

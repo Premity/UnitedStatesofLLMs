@@ -1,0 +1,2223 @@
+{
+  "case_id": "icty_boskoski_ljuboten",
+  "case_title": "Prosecutor v. Johan Tarčulovski — police operation in Ljuboten",
+  "court": "ICTY",
+  "year": 2008,
+  "difficulty": "hard",
+  "arm": "full_council",
+  "arm_label": "D — Full council",
+  "run_id": "eval_699c01bac9",
+  "question": "Was a police officer alleged to have led an operation in a village criminally responsible for killings, cruel treatment, and destruction of villagers' homes committed by police during that operation?",
+  "facts": "Whether an internal armed conflict existed in Macedonia at the time was highly contested at trial. The Defence submitted that the events in Ljuboten were part of a law-enforcement operation to search for members of the National Liberation Army (NLA) and prevent future attacks; the Prosecution disputed that account and argued that Ljuboten was neither an NLA stronghold nor a logistics base. The parties presented conflicting evidence about events in the village. On 10 August 2001, a land mine attack at a location close to Ljuboten killed eight soldiers and wounded others. On the morning of 12 August 2001, at least 60 to 70 and possibly more than 100 reserve police, including members of a private security agency called Kometa, entered Ljuboten with incendiary material and an armoured personnel carrier. It was alleged that Johan Tarčulovski, a relatively junior police officer, commanded the police who entered the village and was present when the crimes were committed. Macedonian army units positioned in the surrounding mountains provided mortar and other fire support. At one house, police fired many shots into the house and through its open front door; an unarmed man in civilian clothing was shot and later died there. A car and construction materials in the yard were set on fire. Police then set fire to a nearby house and about ten more houses along the village’s main road. Thirteen men, with women also present, were found sheltering in basements at the family compound of Adem Ametovski. The men were unarmed, wore civilian clothes, and did not resist. Valuables and identification papers were taken from them, and the men were forced to lie on the ground and to pull their clothing over their eyes and heads. Police beat and kicked them, threatened them with knives, and one man was shot in the arm or hand. One man was shot and died while the others were on the ground. Most of the remaining men were escorted to Braca’s house at the village entrance; two elderly men remained at the compound, where one was shot and died. The ten men taken to Braca’s house were further beaten, and some lost consciousness. They were later detained at Mirkovci police station, where they were beaten by other police; one died in hospital the next day. At the outskirts of the village, five men ran from a house as police approached, and came under fire from police and army positions; two escaped and three bodies were found. There was evidence of firearms near the bodies, but the same weapons had also been attributed to some of the men earlier found at Adem Ametovski’s compound. It could not be determined whether the three men died from police or army fire, and the evidence also allowed for the possibility that they had fired at police or army. In the afternoon, men fleeing Ljuboten were separated from women and subjected to cruel treatment at a checkpoint manned by different police, and many were further mistreated at police stations in Skopje. Tarčulovski was himself acting under orders in carrying out the police operation.",
+  "ground_truth_outcome": "affirmed",
+  "holding": "In its Trial Judgment of 10 July 2008, the ICTY Trial Chamber found that an internal armed conflict existed in Macedonia in August 2001. It found Johan Tarčulovski guilty under Article 7(1) of ordering, planning and instigating the murder of three residents, wanton destruction of houses or other property belonging to twelve residents, and cruel treatment of thirteen residents at Adem Ametovski’s house and ten residents at Braca’s house. He received a single sentence of 12 years’ imprisonment. The two accused were treated differently: Tarčulovski was found guilty on the three counts, while Ljube Boškoski was found not guilty on all counts.",
+  "predicted_outcome": "indeterminate",
+  "outcome_correct": false,
+  "confidence": 0.68,
+  "confidence_reasoning": "The sustained objections go to the foundation of every argument: the armed-conflict predicate is factually unresolved, the command-responsibility citation is narrower than the argument requires, and the AP I provisions are inapplicable to the actors described. These are not marginal weaknesses; they are fatal to the IHL framework on which all arguments rely. Confidence is not higher because a tribunal could still find an armed conflict existed based on evidence not summarized here, and customary command responsibility is broader than Rule 152's text. Confidence is not lower because the objections are well-grounded in the provided facts and retrieved authorities.",
+  "rounds": 2,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 2,
+  "total_calls": 8,
+  "citation_statuses": {
+    "total": 31,
+    "resolved": 31,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Indeterminate.",
+    "reasoning": "The question cannot be resolved on the arguments and facts provided. The core obstacle is that the existence of an armed conflict — a jurisdictional prerequisite for war crimes under Article 8 of the Rome Statute — was explicitly contested at trial and is not established by the given facts. The evidentiary objections (obj_f9e661e0, obj_7d88b762, obj_a8245a7d, obj_8b9fb587) are sustained: the record states only that the Defence characterized the operation as law-enforcement and the Prosecution disputed it, with no factual determination that a protracted internal armed conflict existed. Without an armed conflict, the war-crime provisions of Article 8 do not apply, and the arguments predicated on them (arg_df6f9a14, arg_aad4c1df, arg_d78f04f4, arg_d99bfad9) fail. The command-responsibility argument (arg_8be5da83, arg_7faee5d8) is also defeated because the cited Rule 152 only covers crimes 'committed pursuant to their orders,' not the broader failure-to-prevent-or-punish standard; the doctrinal objection (obj_6ea4b4fa) is sustained. The arguments invoking AP I civil-defence provisions (arg_633652d4, arg_4896a9a8) are inapposite because the actors were reserve police and private security, not civil-defence personnel; the doctrinal objections (obj_0cdf90ec, obj_785407a7) are sustained. The sole surviving legal point — that a defensive-operation claim does not exclude responsibility under Article 31(1)(c) — is correct as a matter of law (obj_59ed3772 overruled), but it presupposes the Rome Statute's jurisdictional basis, which is not established. No argument addresses domestic criminal liability. Therefore, on this record, criminal responsibility under international humanitarian law cannot be affirmed or denied.",
+    "confidence": 0.68,
+    "confidence_reasoning": "The sustained objections go to the foundation of every argument: the armed-conflict predicate is factually unresolved, the command-responsibility citation is narrower than the argument requires, and the AP I provisions are inapplicable to the actors described. These are not marginal weaknesses; they are fatal to the IHL framework on which all arguments rely. Confidence is not higher because a tribunal could still find an armed conflict existed based on evidence not summarized here, and customary command responsibility is broader than Rule 152's text. Confidence is not lower because the objections are well-grounded in the provided facts and retrieved authorities.",
+    "surviving_argument_ids": [
+      "arg_633652d4",
+      "arg_4896a9a8"
+    ],
+    "dissent": [
+      {
+        "id": "obj_59ed3772",
+        "raised_by": "attacker_evidentiary",
+        "target_argument_id": "arg_633652d4",
+        "ground": "The argument assumes the operation was a lawful law‑enforcement or defensive action, but the facts do not establish that premise.",
+        "reasoning": "The facts state that the Defence submitted the operation was law‑enforcement and the Prosecution disputed it; there is no factual determination that the operation was lawful or defensive, which is a necessary premise for the argument that such a status does not excuse criminal liability.",
+        "citations": [
+          {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "31(1)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          }
+        ],
+        "resolved_citations": [
+          {
+            "citation": {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "31(1)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            "status": "resolved",
+            "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+            "note": null
+          }
+        ],
+        "severity": "material",
+        "disposition": "overruled",
+        "disposition_reasoning": "The argument does not assume the operation was lawful or defensive; it invokes Article 31(1)(c) for the legal principle that even if it were a defensive operation, that fact alone does not exclude criminal responsibility. The objection misreads the argument's structure."
+      }
+    ]
+  },
+  "dissent": [
+    {
+      "id": "obj_59ed3772",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_633652d4",
+      "ground": "The argument assumes the operation was a lawful law‑enforcement or defensive action, but the facts do not establish that premise.",
+      "reasoning": "The facts state that the Defence submitted the operation was law‑enforcement and the Prosecution disputed it; there is no factual determination that the operation was lawful or defensive, which is a necessary premise for the argument that such a status does not excuse criminal liability.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "31(1)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "31(1)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "overruled",
+      "disposition_reasoning": "The argument does not assume the operation was lawful or defensive; it invokes Article 31(1)(c) for the legal principle that even if it were a defensive operation, that fact alone does not exclude criminal responsibility. The objection misreads the argument's structure."
+    }
+  ],
+  "arguments": [
+    {
+      "id": "arg_df6f9a14",
+      "claim": "The killings, cruel treatment and destruction of homes in Ljuboten constitute war crimes under the Rome Statute.",
+      "reasoning": "Article 8 of the Rome Statute enumerates grave breaches that are war crimes, including wilful killing, torture or inhuman treatment, and extensive destruction of property not justified by military necessity. The factual record shows that unarmed civilians were shot dead, subjected to beatings and threats, and that dozens of houses were set alight without any demonstrated military objective. These acts therefore fall within the categories listed in Art. 8(a)(i), 8(a)(ii) and 8(a)(iv), as well as the common Article 3 violation of violence to life and cruel treatment (Art. 8(c)(i)).",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Wilful killing;"
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Torture or inhuman treatment, including biological experiments;"
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Violence to life and person, in particular murder of all kinds, mutilation, cruel treatment and torture;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Wilful killing;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Torture or inhuman treatment, including biological experiments;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Violence to life and person, in particular murder of all kinds, mutilation, cruel treatment and torture;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_d78f04f4",
+      "claim": "An internationalised internal armed conflict existed in Macedonia at the time, so the provisions of Article 8(c) and the common Article 3 of the Geneva Conventions apply.",
+      "reasoning": "Article 8(c) applies to armed conflicts not of an international character that are “protracted armed conflict between governmental authorities and organized armed groups”. The presence of the National Liberation Army, the large‑scale police and army operation, and the systematic attacks on the civilian population demonstrate a protracted conflict rather than a mere disturbance. Consequently, the serious violations listed in Art. 8(c) are applicable, and the acts in Ljuboten are punishable as war crimes.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "For the purpose of this Statute, \"war crimes\" means:"
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Paragraph 2 (c) applies to armed conflicts not of an international character and thus does not apply to situations of internal disturbances and tensions, such as riots, isolated and sporadic acts of violence or other acts of a similar nature."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "For the purpose of this Statute, \"war crimes\" means:"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Paragraph 2 (c) applies to armed conflicts not of an international character and thus does not apply to situations of internal disturbances and tensions, such as riots, isolated and sporadic acts of violence or other acts of a similar nature."
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_8be5da83",
+      "claim": "Johan Tarčulovski is individually criminally responsible for the war crimes committed in Ljuboten, both as a direct perpetrator and under command responsibility.",
+      "reasoning": "Customary international law imposes individual criminal responsibility for war crimes (Rule 151) and holds commanders and superiors liable for crimes committed by forces under their effective control (Rule 152). Tarčulovski commanded the reserve police, was present during the attacks, and ordered or permitted the unlawful use of force. Under Article 33(1) of the Rome Statute, the defence of acting on superior orders does not relieve him of responsibility. Therefore, he can be held liable for the killings, torture, and property destruction.",
+      "citations": [
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 151,
+          "quoted_text": "Individuals are criminally responsible for war crimes they commit."
+        },
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 152,
+          "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "33(1)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 151,
+            "quoted_text": "Individuals are criminally responsible for war crimes they commit."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 152,
+            "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "33(1)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_633652d4",
+      "claim": "The claim that the operation was a lawful law‑enforcement action or a defensive operation does not excuse criminal responsibility under international humanitarian law.",
+      "reasoning": "Article 31(1)(c) of the Rome Statute expressly states that participation in a defensive operation does not itself constitute a ground for excluding criminal responsibility. Moreover, the police units involved were civilian law‑enforcement personnel equipped only with light weapons for order‑keeping (Art. I § 67(1)(d)), which under Article I § 65(3) are to be respected as civilians and not treated as combatants. The indiscriminate attacks on civilians and civilian property therefore cannot be justified as a legitimate security or defensive measure.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "31(1)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The fact that the person was involved in a defensive operation conducted by forces shall not in itself constitute a ground for excluding criminal responsibility under this subparagraph;"
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "67(1)(d)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "such personnel and such units are equipped only with light individual weapons for the purpose of maintaining order or for self-defence. The provisions of Article 65, paragraph 3 shall also apply in this case;"
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "65(3)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "It shall also not be considered as an act harmful to the enemy that civilian civil defence personnel bear light individual weapons for the purpose of maintaining order of for self-defence. However, in areas where land fighting is taking place or is likely to take place, the Parties to the conflict shall undertake the appropriate measures to limit these weapons to handguns, such as pistols or revolvers, in order to assist in distinguishing between civil defence personnel and combatants. Although civil defence personnel bear other light individual weapons in such areas, they shall nevertheless be respected and protected as soon as they have been recognized as such."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "31(1)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The fact that the person was involved in a defensive operation conducted by forces shall not in itself constitute a ground for excluding criminal responsibility under this subparagraph;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "67(1)(d)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "such personnel and such units are equipped only with light individual weapons for the purpose of maintaining order or for self-defence. The provisions of Article 65, paragraph 3 shall also apply in this case;"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "65(3)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "It shall also not be considered as an act harmful to the enemy that civilian civil defence personnel bear light individual weapons for the purpose of maintaining order of for self-defence. However, in areas where land fighting is taking place or is likely to take place, the Parties to the conflict shall undertake the appropriate measures to limit these weapons to handguns, such as pistols or revolvers, in order to assist in distinguishing between civil defence personnel and combatants. Although civil defence personnel bear other light individual weapons in such areas, they shall nevertheless be respected and protected as soon as they have been recognized as such."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_aad4c1df",
+      "claim": "The killings, beatings, and burning of civilian homes in Ljuboten constitute war crimes under the Rome Statute.",
+      "reasoning": "The factual record shows unarmed civilians were shot dead, subjected to cruel treatment, and dozens of houses were set alight without any demonstrated military necessity, satisfying the elements of wilful killing, torture or inhuman treatment, and extensive destruction of property under Art. 8(a)(i), 8(a)(ii) and 8(a)(iv), and also the violence to life and person provision of Art. 8(c)(i).",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Violence to life and person, in particular murder of all kinds, mutilation, cruel treatment and torture;"
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Violence to life and person, in particular murder of all kinds, mutilation, cruel treatment and torture;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_d99bfad9",
+      "claim": "An internal armed conflict existed in Macedonia at the time of the Ljuboten operation.",
+      "reasoning": "The presence of the organized National Liberation Army, the large‑scale police and army deployment, and the protracted nature of the hostilities satisfy the definition in Art. 8(f) that an internal armed conflict is a protracted armed conflict between governmental authorities and organized armed groups.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "It applies to armed conflicts that take place in the territory of a State when there is protracted armed conflict between governmental authorities and organized armed groups or between such groups."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "It applies to armed conflicts that take place in the territory of a State when there is protracted armed conflict between governmental authorities and organized armed groups or between such groups."
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_7faee5d8",
+      "claim": "Johan Tarčulovski is individually criminally responsible for the war crimes both as a direct perpetrator and under command responsibility.",
+      "reasoning": "Customary rule 151 establishes individual liability for war crimes, and rule 152 imposes liability on commanders who have effective control and fail to prevent or punish crimes committed by subordinates; Tarčulovski commanded the reserve police, was present during the unlawful acts, and did not intervene, satisfying both modes of liability. Moreover, Article 33(1) bars the defence of acting on superior orders, and Article 31(1)(c) rejects a defensive‑operation excuse.",
+      "citations": [
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 151,
+          "quoted_text": "Individuals are criminally responsible for war crimes they commit."
+        },
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 152,
+          "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "33(1)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:"
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "31(1)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The fact that the person was involved in a defensive operation conducted by forces shall not in itself constitute a ground for excluding criminal responsibility under this subparagraph;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 151,
+            "quoted_text": "Individuals are criminally responsible for war crimes they commit."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 152,
+            "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "33(1)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "31(1)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The fact that the person was involved in a defensive operation conducted by forces shall not in itself constitute a ground for excluding criminal responsibility under this subparagraph;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_4896a9a8",
+      "claim": "The claim that the operation was a lawful law‑enforcement or defensive action does not excuse criminal responsibility for the war crimes.",
+      "reasoning": "Article 31(1)(c) expressly states that participation in a defensive operation is not a ground for exclusion of liability, and the police units involved were not civil‑defence personnel as defined in AP I, so the AP I provisions on civil‑defence do not apply to shield them from liability.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "31(1)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "The fact that the person was involved in a defensive operation conducted by forces shall not in itself constitute a ground for excluding criminal responsibility under this subparagraph;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "31(1)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "The fact that the person was involved in a defensive operation conducted by forces shall not in itself constitute a ground for excluding criminal responsibility under this subparagraph;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [
+    {
+      "id": "obj_6ea4b4fa",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_8be5da83",
+      "ground": "The argument mischaracterizes the legal standard for command responsibility by conflating the crime of issuing unlawful orders with the distinct mode of liability for superior's failure to prevent or punish.",
+      "reasoning": "Rule 152 addresses liability for commanders who *order* the commission of crimes, not liability for the acts of subordinates absent a specific order. The facts state Tarčulovski was 'present' but do not establish he issued the specific orders for the killings or destruction. Applying Rule 152 to a scenario of mere presence and general command, without proving he ordered the specific unlawful acts, is a legal error; the correct test is the failure to prevent or punish, which is a different element.",
+      "citations": [
+        {
+          "type": "customary",
+          "instrument": "customary_ihl",
+          "article": null,
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": 152,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "customary",
+            "instrument": "customary_ihl",
+            "article": null,
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": 152,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Rule 152 as retrieved states commanders are responsible for war crimes 'committed pursuant to their orders.' It does not articulate the failure-to-prevent-or-punish mode of command responsibility. The argument conflates the two distinct modes, and the objection correctly identifies this legal error."
+    },
+    {
+      "id": "obj_0cdf90ec",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_633652d4",
+      "ground": "The argument erroneously applies provisions concerning civilian civil defence personnel to regular police forces, misidentifying the legal status of the actors.",
+      "reasoning": "Articles 65 and 67 of Additional Protocol I specifically regulate 'civil defence' or 'civilian civil defence' personnel. The facts identify the actors as 'reserve police' and members of a 'private security agency.' These are not civil defence units as defined in AP I. Citing these articles to define the status of police forces is a misapplication of the treaty text; police forces in an IAC are generally treated as combatants or associated forces, not protected civilian civil defence personnel.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "65(3)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "67(1)(d)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "65(3)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "67(1)(d)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Articles 65 and 67 of Additional Protocol I expressly regulate 'civilian civil defence personnel' and 'civil defence' units. The facts identify the actors as 'reserve police' and a 'private security agency,' which are not civil defence personnel under AP I. The argument misapplies these provisions."
+    },
+    {
+      "id": "obj_f9e661e0",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_d78f04f4",
+      "ground": "The record does not establish that a protracted internal armed conflict existed between government authorities and organized armed groups at the time of the Ljuboten operation.",
+      "reasoning": "The facts as given state that whether an internal armed conflict existed was highly contested, and the defence presented the operation as a routine law‑enforcement activity. There is no conclusive evidence of a protracted conflict meeting Article 8(c)’s definition, so the application of Article 8(c) and the common Article 3 cannot be presumed.",
+      "citations": [],
+      "resolved_citations": [],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The facts explicitly state that 'whether an internal armed conflict existed in Macedonia at the time was highly contested at trial.' The argument asserts a protracted conflict as established fact, but the record provides no such determination. The objection is well-founded on the given facts."
+    },
+    {
+      "id": "obj_2944c9bc",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_df6f9a14",
+      "ground": "The argument mischaracterizes the applicable legal regime by citing provisions for international armed conflict.",
+      "reasoning": "The facts establish a non-international armed conflict (NIAC). Article 8(2)(a) of the Rome Statute applies only to international armed conflicts. The correct legal basis for violence to life and cruel treatment in a NIAC is Article 8(2)(c)(i) and (ii), or Article 8(2)(e) for other serious violations. Citing Article 8(2)(a) is legally erroneous for this context.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(f)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(f)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument cites Article 8(2)(a) provisions (grave breaches for international armed conflict), but the context is a non-international armed conflict. The correct provisions for violence to life and cruel treatment in a NIAC are Article 8(2)(c)(i)–(ii) and Article 8(2)(e). The objection correctly identifies the mis-citation."
+    },
+    {
+      "id": "obj_785407a7",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_633652d4",
+      "ground": "The argument incorrectly applies provisions regarding civilian civil defence personnel to police forces.",
+      "reasoning": "Articles 65 and 67 of Additional Protocol I define and protect 'civilian civil defence personnel' and 'medical units/personnel'. Police forces conducting operations in an armed conflict are not 'civilian civil defence personnel' as defined in Article 65(1) of AP I. Therefore, the protections and characterizations in Article 65(3) and 67(1)(d) do not apply to the police officers, rendering this legal characterization inapposite.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "65",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "ap_i",
+          "article": "67",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "65",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ap_i",
+            "article": "67",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Same reasoning as obj_0cdf90ec. The AP I civil-defence provisions do not apply to police forces conducting operations; the argument's legal characterization is inapposite."
+    },
+    {
+      "id": "obj_7d88b762",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_df6f9a14",
+      "ground": "The argument requires that an armed conflict (international or non‑international) existed to apply Article 8 war‑crime provisions, but the record does not establish such a conflict.",
+      "reasoning": "The facts describe a police operation but make no factual determination that an armed conflict existed; the statement that an internal armed conflict was contested indicates the record does not provide a definitive existence of conflict, which is a prerequisite for Article 8 war crimes.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Article 8 war crimes require an armed conflict as a jurisdictional prerequisite. The facts state the existence of an internal armed conflict was 'highly contested' and do not provide a factual determination that one existed. The objection correctly notes this gap."
+    },
+    {
+      "id": "obj_a8245a7d",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_d78f04f4",
+      "ground": "The argument asserts that a protracted internal armed conflict existed, yet the record does not substantiate this.",
+      "reasoning": "The facts explicitly state that whether an internal armed conflict existed was highly contested at trial, leaving no factual basis for the claim that the conflict was protracted and organized, which is required for Article 8(c) applicability.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Duplicate of obj_f9e661e0. The record does not substantiate a protracted internal armed conflict; it was contested at trial. The argument lacks evidentiary support in the given facts."
+    },
+    {
+      "id": "obj_59ed3772",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_633652d4",
+      "ground": "The argument assumes the operation was a lawful law‑enforcement or defensive action, but the facts do not establish that premise.",
+      "reasoning": "The facts state that the Defence submitted the operation was law‑enforcement and the Prosecution disputed it; there is no factual determination that the operation was lawful or defensive, which is a necessary premise for the argument that such a status does not excuse criminal liability.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "31(1)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "31(1)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "overruled",
+      "disposition_reasoning": "The argument does not assume the operation was lawful or defensive; it invokes Article 31(1)(c) for the legal principle that even if it were a defensive operation, that fact alone does not exclude criminal responsibility. The objection misreads the argument's structure."
+    },
+    {
+      "id": "obj_8b9fb587",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_d99bfad9",
+      "ground": "The argument requires that an internal armed conflict existed, but the record does not support this.",
+      "reasoning": "The facts indicate that the existence of an internal armed conflict was contested, providing no factual basis that such a conflict existed, which is essential to apply Article 8(f) and the associated war‑crime provisions.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Duplicate of obj_f9e661e0 and obj_a8245a7d. The facts do not support the existence of an internal armed conflict; it was contested. The argument's premise is unsupported."
+    }
+  ],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "31(1)(c)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "67(1)(d)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "customary",
+        "instrument": "customary_ihl",
+        "article": null,
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": 151,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_ii",
+        "article": "6",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/apii-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "33(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "customary",
+        "instrument": "customary_ihl",
+        "article": null,
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": 152,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "65(3)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_c5b7256a",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "52754262b007d822ce461fa5b3aba7d5bfc99db2a071705bee4af74d770742f9",
+      "arguments": [
+        {
+          "id": "arg_df6f9a14",
+          "claim": "The killings, cruel treatment and destruction of homes in Ljuboten constitute war crimes under the Rome Statute.",
+          "reasoning": "Article 8 of the Rome Statute enumerates grave breaches that are war crimes, including wilful killing, torture or inhuman treatment, and extensive destruction of property not justified by military necessity. The factual record shows that unarmed civilians were shot dead, subjected to beatings and threats, and that dozens of houses were set alight without any demonstrated military objective. These acts therefore fall within the categories listed in Art. 8(a)(i), 8(a)(ii) and 8(a)(iv), as well as the common Article 3 violation of violence to life and cruel treatment (Art. 8(c)(i)).",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Wilful killing;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Torture or inhuman treatment, including biological experiments;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Violence to life and person, in particular murder of all kinds, mutilation, cruel treatment and torture;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Wilful killing;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Torture or inhuman treatment, including biological experiments;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Violence to life and person, in particular murder of all kinds, mutilation, cruel treatment and torture;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_d78f04f4",
+          "claim": "An internationalised internal armed conflict existed in Macedonia at the time, so the provisions of Article 8(c) and the common Article 3 of the Geneva Conventions apply.",
+          "reasoning": "Article 8(c) applies to armed conflicts not of an international character that are “protracted armed conflict between governmental authorities and organized armed groups”. The presence of the National Liberation Army, the large‑scale police and army operation, and the systematic attacks on the civilian population demonstrate a protracted conflict rather than a mere disturbance. Consequently, the serious violations listed in Art. 8(c) are applicable, and the acts in Ljuboten are punishable as war crimes.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "For the purpose of this Statute, \"war crimes\" means:"
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Paragraph 2 (c) applies to armed conflicts not of an international character and thus does not apply to situations of internal disturbances and tensions, such as riots, isolated and sporadic acts of violence or other acts of a similar nature."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "For the purpose of this Statute, \"war crimes\" means:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Paragraph 2 (c) applies to armed conflicts not of an international character and thus does not apply to situations of internal disturbances and tensions, such as riots, isolated and sporadic acts of violence or other acts of a similar nature."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_8be5da83",
+          "claim": "Johan Tarčulovski is individually criminally responsible for the war crimes committed in Ljuboten, both as a direct perpetrator and under command responsibility.",
+          "reasoning": "Customary international law imposes individual criminal responsibility for war crimes (Rule 151) and holds commanders and superiors liable for crimes committed by forces under their effective control (Rule 152). Tarčulovski commanded the reserve police, was present during the attacks, and ordered or permitted the unlawful use of force. Under Article 33(1) of the Rome Statute, the defence of acting on superior orders does not relieve him of responsibility. Therefore, he can be held liable for the killings, torture, and property destruction.",
+          "citations": [
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 151,
+              "quoted_text": "Individuals are criminally responsible for war crimes they commit."
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 152,
+              "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "33(1)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 151,
+                "quoted_text": "Individuals are criminally responsible for war crimes they commit."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 152,
+                "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "33(1)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_633652d4",
+          "claim": "The claim that the operation was a lawful law‑enforcement action or a defensive operation does not excuse criminal responsibility under international humanitarian law.",
+          "reasoning": "Article 31(1)(c) of the Rome Statute expressly states that participation in a defensive operation does not itself constitute a ground for excluding criminal responsibility. Moreover, the police units involved were civilian law‑enforcement personnel equipped only with light weapons for order‑keeping (Art. I § 67(1)(d)), which under Article I § 65(3) are to be respected as civilians and not treated as combatants. The indiscriminate attacks on civilians and civilian property therefore cannot be justified as a legitimate security or defensive measure.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "31(1)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The fact that the person was involved in a defensive operation conducted by forces shall not in itself constitute a ground for excluding criminal responsibility under this subparagraph;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "67(1)(d)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "such personnel and such units are equipped only with light individual weapons for the purpose of maintaining order or for self-defence. The provisions of Article 65, paragraph 3 shall also apply in this case;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "65(3)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "It shall also not be considered as an act harmful to the enemy that civilian civil defence personnel bear light individual weapons for the purpose of maintaining order of for self-defence. However, in areas where land fighting is taking place or is likely to take place, the Parties to the conflict shall undertake the appropriate measures to limit these weapons to handguns, such as pistols or revolvers, in order to assist in distinguishing between civil defence personnel and combatants. Although civil defence personnel bear other light individual weapons in such areas, they shall nevertheless be respected and protected as soon as they have been recognized as such."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "31(1)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The fact that the person was involved in a defensive operation conducted by forces shall not in itself constitute a ground for excluding criminal responsibility under this subparagraph;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "67(1)(d)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "such personnel and such units are equipped only with light individual weapons for the purpose of maintaining order or for self-defence. The provisions of Article 65, paragraph 3 shall also apply in this case;"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "65(3)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "It shall also not be considered as an act harmful to the enemy that civilian civil defence personnel bear light individual weapons for the purpose of maintaining order of for self-defence. However, in areas where land fighting is taking place or is likely to take place, the Parties to the conflict shall undertake the appropriate measures to limit these weapons to handguns, such as pistols or revolvers, in order to assist in distinguishing between civil defence personnel and combatants. Although civil defence personnel bear other light individual weapons in such areas, they shall nevertheless be respected and protected as soon as they have been recognized as such."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The killings, cruel treatment and destruction of homes in Ljuboten constitute war crimes under the Rome Statute.\",\n      \"reasoning\": \"Article 8 of the Rome Statute enumerates grave breaches that are war crimes, including wilful killing, torture or inhuman treatment, and extensive destruction of property not justified by military necessity. The factual record shows that unarmed civilians were shot dead, subjected to beatings and threats, and that dozens of houses were set alight without any demonstrated military objective. These acts therefore fall within the categories listed in Art. 8(a)(i), 8(a)(ii) and 8(a)(iv), as well as the common Article 3 violation of violence to life and cruel treatment (Art. 8(c)(i)).\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Wilful killing;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Torture or inhuman treatment, including biological experiments;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Violence to life and person, in particular murder of all kinds, mutilation, cruel treatment and torture;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"An internationalised internal armed conflict existed in Macedonia at the time, so the provisions of Article 8(c) and the common Article 3 of the Geneva Conventions apply.\",\n      \"reasoning\": \"Article 8(c) applies to armed conflicts not of an international character that are “protracted armed conflict between governmental authorities and organized armed groups”. The presence of the National Liberation Army, the large‑scale police and army operation, and the systematic attacks on the civilian population demonstrate a protracted conflict rather than a mere disturbance. Consequently, the serious violations listed in Art. 8(c) are applicable, and the acts in Ljuboten are punishable as war crimes.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"For the purpose of this Statute, \\\"war crimes\\\" means:\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Paragraph 2 (c) applies to armed conflicts not of an international character and thus does not apply to situations of internal disturbances and tensions, such as riots, isolated and sporadic acts of violence or other acts of a similar nature.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Johan Tarčulovski is individually criminally responsible for the war crimes committed in Ljuboten, both as a direct perpetrator and under command responsibility.\",\n      \"reasoning\": \"Customary international law imposes individual criminal responsibility for war crimes (Rule 151) and holds commanders and superiors liable for crimes committed by forces under their effective control (Rule 152). Tarčulovski commanded the reserve police, was present during the attacks, and ordered or permitted the unlawful use of force. Under Article 33(1) of the Rome Statute, the defence of acting on superior orders does not relieve him of responsibility. Therefore, he can be held liable for the killings, torture, and property destruction.\",\n      \"citations\": [\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 151,\n          \"quoted_text\": \"Individuals are criminally responsible for war crimes they commit.\"\n        },\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 152,\n          \"quoted_text\": \"Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"33(1)\",\n          \"quoted_text\": \"The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The claim that the operation was a lawful law‑enforcement action or a defensive operation does not excuse criminal responsibility under international humanitarian law.\",\n      \"reasoning\": \"Article 31(1)(c) of the Rome Statute expressly states that participation in a defensive operation does not itself constitute a ground for excluding criminal responsibility. Moreover, the police units involved were civilian law‑enforcement personnel equipped only with light weapons for order‑keeping (Art. I § 67(1)(d)), which under Article I § 65(3) are to be respected as civilians and not treated as combatants. The indiscriminate attacks on civilians and civilian property therefore cannot be justified as a legitimate security or defensive measure.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"31(1)(c)\",\n          \"quoted_text\": \"The fact that the person was involved in a defensive operation conducted by forces shall not in itself constitute a ground for excluding criminal responsibility under this subparagraph;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"67(1)(d)\",\n          \"quoted_text\": \"such personnel and such units are equipped only with light individual weapons for the purpose of maintaining order or for self-defence. The provisions of Article 65, paragraph 3 shall also apply in this case;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"65(3)\",\n          \"quoted_text\": \"It shall also not be considered as an act harmful to the enemy that civilian civil defence personnel bear light individual weapons for the purpose of maintaining order of for self-defence. However, in areas where land fighting is taking place or is likely to take place, the Parties to the conflict shall undertake the appropriate measures to limit these weapons to handguns, such as pistols or revolvers, in order to assist in distinguishing between civil defence personnel and combatants. Although civil defence personnel bear other light individual weapons in such areas, they shall nevertheless be respected and protected as soon as they have been recognized as such.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-24T01:12:15.454392Z",
+      "completed_at": "2026-11-24T01:12:24.407581Z",
+      "prompt_tokens": 4618,
+      "completion_tokens": 3472,
+      "error": null
+    },
+    {
+      "id": "turn_859531d6",
+      "round_number": 1,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "aa09a811c9c8dc035db1dcc1cce1c08acd48936a2e307576f73560080f7d363a",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_6ea4b4fa",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_8be5da83",
+          "ground": "The argument mischaracterizes the legal standard for command responsibility by conflating the crime of issuing unlawful orders with the distinct mode of liability for superior's failure to prevent or punish.",
+          "reasoning": "Rule 152 addresses liability for commanders who *order* the commission of crimes, not liability for the acts of subordinates absent a specific order. The facts state Tarčulovski was 'present' but do not establish he issued the specific orders for the killings or destruction. Applying Rule 152 to a scenario of mere presence and general command, without proving he ordered the specific unlawful acts, is a legal error; the correct test is the failure to prevent or punish, which is a different element.",
+          "citations": [
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 152,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 152,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Rule 152 as retrieved states commanders are responsible for war crimes 'committed pursuant to their orders.' It does not articulate the failure-to-prevent-or-punish mode of command responsibility. The argument conflates the two distinct modes, and the objection correctly identifies this legal error."
+        },
+        {
+          "id": "obj_0cdf90ec",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_633652d4",
+          "ground": "The argument erroneously applies provisions concerning civilian civil defence personnel to regular police forces, misidentifying the legal status of the actors.",
+          "reasoning": "Articles 65 and 67 of Additional Protocol I specifically regulate 'civil defence' or 'civilian civil defence' personnel. The facts identify the actors as 'reserve police' and members of a 'private security agency.' These are not civil defence units as defined in AP I. Citing these articles to define the status of police forces is a misapplication of the treaty text; police forces in an IAC are generally treated as combatants or associated forces, not protected civilian civil defence personnel.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "65(3)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "67(1)(d)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "65(3)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "67(1)(d)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Articles 65 and 67 of Additional Protocol I expressly regulate 'civilian civil defence personnel' and 'civil defence' units. The facts identify the actors as 'reserve police' and a 'private security agency,' which are not civil defence personnel under AP I. The argument misapplies these provisions."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_8be5da83\",\n      \"ground\": \"The argument mischaracterizes the legal standard for command responsibility by conflating the crime of issuing unlawful orders with the distinct mode of liability for superior's failure to prevent or punish.\",\n      \"reasoning\": \"Rule 152 addresses liability for commanders who *order* the commission of crimes, not liability for the acts of subordinates absent a specific order. The facts state Tarčulovski was 'present' but do not establish he issued the specific orders for the killings or destruction. Applying Rule 152 to a scenario of mere presence and general command, without proving he ordered the specific unlawful acts, is a legal error; the correct test is the failure to prevent or punish, which is a different element.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 152\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_633652d4\",\n      \"ground\": \"The argument erroneously applies provisions concerning civilian civil defence personnel to regular police forces, misidentifying the legal status of the actors.\",\n      \"reasoning\": \"Articles 65 and 67 of Additional Protocol I specifically regulate 'civil defence' or 'civilian civil defence' personnel. The facts identify the actors as 'reserve police' and members of a 'private security agency.' These are not civil defence units as defined in AP I. Citing these articles to define the status of police forces is a misapplication of the treaty text; police forces in an IAC are generally treated as combatants or associated forces, not protected civilian civil defence personnel.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"65(3)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"67(1)(d)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-24T01:12:24.408486Z",
+      "completed_at": "2026-11-24T01:13:30.250363Z",
+      "prompt_tokens": 6073,
+      "completion_tokens": 500,
+      "error": null
+    },
+    {
+      "id": "turn_6dc01665",
+      "round_number": 1,
+      "role": "attacker_evidentiary",
+      "model_id": "groq/openai/gpt-oss-20b",
+      "prompt_id": "attacker_evidentiary/challenge",
+      "prompt_hash": "3513c8f41dbae908e2f7c52f257bdda3255bab5e5d8ad7dbb6b238ce415ef5ff",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_f9e661e0",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_d78f04f4",
+          "ground": "The record does not establish that a protracted internal armed conflict existed between government authorities and organized armed groups at the time of the Ljuboten operation.",
+          "reasoning": "The facts as given state that whether an internal armed conflict existed was highly contested, and the defence presented the operation as a routine law‑enforcement activity. There is no conclusive evidence of a protracted conflict meeting Article 8(c)’s definition, so the application of Article 8(c) and the common Article 3 cannot be presumed.",
+          "citations": [],
+          "resolved_citations": [],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The facts explicitly state that 'whether an internal armed conflict existed in Macedonia at the time was highly contested at trial.' The argument asserts a protracted conflict as established fact, but the record provides no such determination. The objection is well-founded on the given facts."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_d78f04f4\",\n      \"ground\": \"The record does not establish that a protracted internal armed conflict existed between government authorities and organized armed groups at the time of the Ljuboten operation.\",\n      \"reasoning\": \"The facts as given state that whether an internal armed conflict existed was highly contested, and the defence presented the operation as a routine law‑enforcement activity. There is no conclusive evidence of a protracted conflict meeting Article 8(c)’s definition, so the application of Article 8(c) and the common Article 3 cannot be presumed.\",\n      \"severity\": \"fatal\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-24T01:12:24.411517Z",
+      "completed_at": "2026-11-24T01:12:26.462114Z",
+      "prompt_tokens": 5525,
+      "completion_tokens": 1030,
+      "error": null
+    },
+    {
+      "id": "turn_a293eb35",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "6457b5028432b97c0ede1944b92f9d82df2b1e2f00a7d4b039473a47fc25dd98",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Indeterminate.\", \"reasoning\": \"The prosecution's case fails to establish the threshold requirement for war crimes jurisdiction: the existence of a protracted non-international armed conflict. Objection obj_f9e661e0 is sustained because the facts explicitly state that whether an internal armed conflict existed was 'highly contested at trial,' and the record does not conclusively prove a conflict meeting Article 8(c)/(f)'s definition of 'protracted armed conflict between governmental authorities and organized armed groups.' Without this nexus, the acts — however grave — cannot be classified as war crimes under the Rome Statute. Objection obj_6ea4b4fa is partially sustained: Rule 152 as cited only establishes superior liability for crimes 'committed pursuant to their orders,' not for a broader failure to prevent or punish; the argument's reliance on 'permitted' exceeds the cited authority. Rule 151 (individual responsibility) and Article 33(1) (superior orders no defense) survive but require proof of direct perpetration or specific ordering, which the facts do not clearly establish (Tarčulovski 'commanded' and 'was present' but also 'was himself acting under orders'). Objection obj_0cdf90ec is sustained: Additional Protocol I Articles 65(3) and 67(1)(d) govern civil defence personnel, not reserve police or private security; those citations are inapposite. Article 31(1)(c) of the Rome Statute survives independently but only addresses the defensive-operation defense, not the conflict-nexus requirement. Because the armed conflict predicate is unresolved on this record, criminal responsibility under IHL cannot be affirmed or denied.\", \"confidence\": 0.65, \"confidence_reasoning\": \"The armed conflict threshold is a genuinely contested factual and legal question on these facts — the landmine attack, NLA presence, and army mortar support suggest a conflict, but the defence's law-enforcement characterization and the explicit statement that the issue was 'highly contested' prevent a confident determination. The command responsibility citation error is clear but does not alone defeat individual responsibility if direct perpetration or ordering were proven. The civil defence misapplication is a clear legal error but goes to a subsidiary argument. Overall, the case turns on a predicate (armed conflict) that the provided facts do not resolve, warranting a confidence in the mid-range.\", \"rulings\": [{\"objection_id\": \"obj_6ea4b4fa\", \"disposition\": \"partial\", \"reasoning\": \"Rule 152 as retrieved states only that commanders are responsible for crimes 'committed pursuant to their orders.' It does not articulate the broader doctrine of command responsibility for failure to prevent or punish. The argument's invocation of 'permitted' goes beyond the cited rule. However, Rule 151 (individual criminal responsibility) and Article 33(1) (superior orders not a defense) remain valid and support direct perpetration or ordering liability if factually proven.\"}, {\"objection_id\": \"obj_0cdf90ec\", \"disposition\": \"sustained\", \"reasoning\": \"Articles 65(3) and 67(1)(d) of Additional Protocol I expressly regulate 'civil defence' or 'civilian civil defence' personnel. The facts identify the actors as 'reserve police' and members of a 'private security agency,' which are not civil defence units under the treaty. Citing these provisions to define the status of police forces is a misapplication of the treaty text. Rome Statute Article 31(1)(c) stands on its own but does not cure the conflict-nexus deficiency.\"}, {\"objection_id\": \"obj_f9e661e0\", \"disposition\": \"sustained\", \"reasoning\": \"The facts as given state that 'whether an internal armed conflict existed in Macedonia at the time was highly contested at trial.' The defence characterized the operation as law enforcement; the prosecution disputed this. Article 8(c) and (f) require a 'protracted armed conflict between governmental authorities and organized armed groups.' On this record, that threshold cannot be presumed satisfied. The existence of the armed conflict nexus — a jurisdictional prerequisite for war crimes — remains unproven.\"}], \"surviving_argument_ids\": [\"arg_df6f9a14\", \"arg_8be5da83\", \"arg_633652d4\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-24T01:13:30.251210Z",
+      "completed_at": "2026-11-24T01:14:29.009676Z",
+      "prompt_tokens": 6369,
+      "completion_tokens": 3550,
+      "error": null
+    },
+    {
+      "id": "turn_1ec6b54c",
+      "round_number": 2,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/rebuttal",
+      "prompt_hash": "6448bba7d1cfffde518d247af24df7cb4c428024fa8a7271d19fc76be31942d8",
+      "arguments": [
+        {
+          "id": "arg_aad4c1df",
+          "claim": "The killings, beatings, and burning of civilian homes in Ljuboten constitute war crimes under the Rome Statute.",
+          "reasoning": "The factual record shows unarmed civilians were shot dead, subjected to cruel treatment, and dozens of houses were set alight without any demonstrated military necessity, satisfying the elements of wilful killing, torture or inhuman treatment, and extensive destruction of property under Art. 8(a)(i), 8(a)(ii) and 8(a)(iv), and also the violence to life and person provision of Art. 8(c)(i).",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Violence to life and person, in particular murder of all kinds, mutilation, cruel treatment and torture;"
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Violence to life and person, in particular murder of all kinds, mutilation, cruel treatment and torture;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_d99bfad9",
+          "claim": "An internal armed conflict existed in Macedonia at the time of the Ljuboten operation.",
+          "reasoning": "The presence of the organized National Liberation Army, the large‑scale police and army deployment, and the protracted nature of the hostilities satisfy the definition in Art. 8(f) that an internal armed conflict is a protracted armed conflict between governmental authorities and organized armed groups.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "It applies to armed conflicts that take place in the territory of a State when there is protracted armed conflict between governmental authorities and organized armed groups or between such groups."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "It applies to armed conflicts that take place in the territory of a State when there is protracted armed conflict between governmental authorities and organized armed groups or between such groups."
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_7faee5d8",
+          "claim": "Johan Tarčulovski is individually criminally responsible for the war crimes both as a direct perpetrator and under command responsibility.",
+          "reasoning": "Customary rule 151 establishes individual liability for war crimes, and rule 152 imposes liability on commanders who have effective control and fail to prevent or punish crimes committed by subordinates; Tarčulovski commanded the reserve police, was present during the unlawful acts, and did not intervene, satisfying both modes of liability. Moreover, Article 33(1) bars the defence of acting on superior orders, and Article 31(1)(c) rejects a defensive‑operation excuse.",
+          "citations": [
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 151,
+              "quoted_text": "Individuals are criminally responsible for war crimes they commit."
+            },
+            {
+              "type": "customary",
+              "instrument": "customary_ihl",
+              "article": null,
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": 152,
+              "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "33(1)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:"
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "31(1)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The fact that the person was involved in a defensive operation conducted by forces shall not in itself constitute a ground for excluding criminal responsibility under this subparagraph;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 151,
+                "quoted_text": "Individuals are criminally responsible for war crimes they commit."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "customary",
+                "instrument": "customary_ihl",
+                "article": null,
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": 152,
+                "quoted_text": "Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/customary-ihl",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "33(1)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "31(1)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The fact that the person was involved in a defensive operation conducted by forces shall not in itself constitute a ground for excluding criminal responsibility under this subparagraph;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_4896a9a8",
+          "claim": "The claim that the operation was a lawful law‑enforcement or defensive action does not excuse criminal responsibility for the war crimes.",
+          "reasoning": "Article 31(1)(c) expressly states that participation in a defensive operation is not a ground for exclusion of liability, and the police units involved were not civil‑defence personnel as defined in AP I, so the AP I provisions on civil‑defence do not apply to shield them from liability.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "31(1)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "The fact that the person was involved in a defensive operation conducted by forces shall not in itself constitute a ground for excluding criminal responsibility under this subparagraph;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "31(1)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "The fact that the person was involved in a defensive operation conducted by forces shall not in itself constitute a ground for excluding criminal responsibility under this subparagraph;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The killings, beatings, and burning of civilian homes in Ljuboten constitute war crimes under the Rome Statute.\",\n      \"reasoning\": \"The factual record shows unarmed civilians were shot dead, subjected to cruel treatment, and dozens of houses were set alight without any demonstrated military necessity, satisfying the elements of wilful killing, torture or inhuman treatment, and extensive destruction of property under Art. 8(a)(i), 8(a)(ii) and 8(a)(iv), and also the violence to life and person provision of Art. 8(c)(i).\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Violence to life and person, in particular murder of all kinds, mutilation, cruel treatment and torture;\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Extensive destruction and appropriation of property, not justified by military necessity and carried out unlawfully and wantonly;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"An internal armed conflict existed in Macedonia at the time of the Ljuboten operation.\",\n      \"reasoning\": \"The presence of the organized National Liberation Army, the large‑scale police and army deployment, and the protracted nature of the hostilities satisfy the definition in Art. 8(f) that an internal armed conflict is a protracted armed conflict between governmental authorities and organized armed groups.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"It applies to armed conflicts that take place in the territory of a State when there is protracted armed conflict between governmental authorities and organized armed groups or between such groups.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"Johan Tarčulovski is individually criminally responsible for the war crimes both as a direct perpetrator and under command responsibility.\",\n      \"reasoning\": \"Customary rule 151 establishes individual liability for war crimes, and rule 152 imposes liability on commanders who have effective control and fail to prevent or punish crimes committed by subordinates; Tarčulovski commanded the reserve police, was present during the unlawful acts, and did not intervene, satisfying both modes of liability. Moreover, Article 33(1) bars the defence of acting on superior orders, and Article 31(1)(c) rejects a defensive‑operation excuse.\",\n      \"citations\": [\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 151,\n          \"quoted_text\": \"Individuals are criminally responsible for war crimes they commit.\"\n        },\n        {\n          \"type\": \"customary\",\n          \"instrument\": \"customary_ihl\",\n          \"rule_number\": 152,\n          \"quoted_text\": \"Commanders and other superiors are criminally responsible for war crimes committed pursuant to their orders.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"33(1)\",\n          \"quoted_text\": \"The fact that a crime within the jurisdiction of the Court has been committed by a person pursuant to an order of a Government or of a superior, whether military or civilian, shall not relieve that person of criminal responsibility unless:\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"31(1)(c)\",\n          \"quoted_text\": \"The fact that the person was involved in a defensive operation conducted by forces shall not in itself constitute a ground for excluding criminal responsibility under this subparagraph;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The claim that the operation was a lawful law‑enforcement or defensive action does not excuse criminal responsibility for the war crimes.\",\n      \"reasoning\": \"Article 31(1)(c) expressly states that participation in a defensive operation is not a ground for exclusion of liability, and the police units involved were not civil‑defence personnel as defined in AP I, so the AP I provisions on civil‑defence do not apply to shield them from liability.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"31(1)(c)\",\n          \"quoted_text\": \"The fact that the person was involved in a defensive operation conducted by forces shall not in itself constitute a ground for excluding criminal responsibility under this subparagraph;\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-24T01:14:29.013636Z",
+      "completed_at": "2026-11-24T01:14:39.677846Z",
+      "prompt_tokens": 5781,
+      "completion_tokens": 3757,
+      "error": null
+    },
+    {
+      "id": "turn_7855f79a",
+      "round_number": 2,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "4a49442c6cea5e3b31337ea2d559bb0803ff6b1004bf77203e88974a58f59bc5",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_2944c9bc",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_df6f9a14",
+          "ground": "The argument mischaracterizes the applicable legal regime by citing provisions for international armed conflict.",
+          "reasoning": "The facts establish a non-international armed conflict (NIAC). Article 8(2)(a) of the Rome Statute applies only to international armed conflicts. The correct legal basis for violence to life and cruel treatment in a NIAC is Article 8(2)(c)(i) and (ii), or Article 8(2)(e) for other serious violations. Citing Article 8(2)(a) is legally erroneous for this context.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(f)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(f)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument cites Article 8(2)(a) provisions (grave breaches for international armed conflict), but the context is a non-international armed conflict. The correct provisions for violence to life and cruel treatment in a NIAC are Article 8(2)(c)(i)–(ii) and Article 8(2)(e). The objection correctly identifies the mis-citation."
+        },
+        {
+          "id": "obj_785407a7",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_633652d4",
+          "ground": "The argument incorrectly applies provisions regarding civilian civil defence personnel to police forces.",
+          "reasoning": "Articles 65 and 67 of Additional Protocol I define and protect 'civilian civil defence personnel' and 'medical units/personnel'. Police forces conducting operations in an armed conflict are not 'civilian civil defence personnel' as defined in Article 65(1) of AP I. Therefore, the protections and characterizations in Article 65(3) and 67(1)(d) do not apply to the police officers, rendering this legal characterization inapposite.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "65",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "ap_i",
+              "article": "67",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "65",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ap_i",
+                "article": "67",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Same reasoning as obj_0cdf90ec. The AP I civil-defence provisions do not apply to police forces conducting operations; the argument's legal characterization is inapposite."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_df6f9a14\",\n      \"ground\": \"The argument mischaracterizes the applicable legal regime by citing provisions for international armed conflict.\",\n      \"reasoning\": \"The facts establish a non-international armed conflict (NIAC). Article 8(2)(a) of the Rome Statute applies only to international armed conflicts. The correct legal basis for violence to life and cruel treatment in a NIAC is Article 8(2)(c)(i) and (ii), or Article 8(2)(e) for other serious violations. Citing Article 8(2)(a) is legally erroneous for this context.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(c)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(f)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_633652d4\",\n      \"ground\": \"The argument incorrectly applies provisions regarding civilian civil defence personnel to police forces.\",\n      \"reasoning\": \"Articles 65 and 67 of Additional Protocol I define and protect 'civilian civil defence personnel' and 'medical units/personnel'. Police forces conducting operations in an armed conflict are not 'civilian civil defence personnel' as defined in Article 65(1) of AP I. Therefore, the protections and characterizations in Article 65(3) and 67(1)(d) do not apply to the police officers, rendering this legal characterization inapposite.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"65\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ap_i\",\n          \"article\": \"67\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-24T01:14:39.678724Z",
+      "completed_at": "2026-11-24T01:14:41.225057Z",
+      "prompt_tokens": 6334,
+      "completion_tokens": 493,
+      "error": null
+    },
+    {
+      "id": "turn_a7257be9",
+      "round_number": 2,
+      "role": "attacker_evidentiary",
+      "model_id": "groq/openai/gpt-oss-20b",
+      "prompt_id": "attacker_evidentiary/challenge",
+      "prompt_hash": "9c1d8cc0f7cb4556f541ce4096c834b7f69210bdc704f7bd9c28c210fa5a0bb2",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_7d88b762",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_df6f9a14",
+          "ground": "The argument requires that an armed conflict (international or non‑international) existed to apply Article 8 war‑crime provisions, but the record does not establish such a conflict.",
+          "reasoning": "The facts describe a police operation but make no factual determination that an armed conflict existed; the statement that an internal armed conflict was contested indicates the record does not provide a definitive existence of conflict, which is a prerequisite for Article 8 war crimes.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Article 8 war crimes require an armed conflict as a jurisdictional prerequisite. The facts state the existence of an internal armed conflict was 'highly contested' and do not provide a factual determination that one existed. The objection correctly notes this gap."
+        },
+        {
+          "id": "obj_a8245a7d",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_d78f04f4",
+          "ground": "The argument asserts that a protracted internal armed conflict existed, yet the record does not substantiate this.",
+          "reasoning": "The facts explicitly state that whether an internal armed conflict existed was highly contested at trial, leaving no factual basis for the claim that the conflict was protracted and organized, which is required for Article 8(c) applicability.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Duplicate of obj_f9e661e0. The record does not substantiate a protracted internal armed conflict; it was contested at trial. The argument lacks evidentiary support in the given facts."
+        },
+        {
+          "id": "obj_59ed3772",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_633652d4",
+          "ground": "The argument assumes the operation was a lawful law‑enforcement or defensive action, but the facts do not establish that premise.",
+          "reasoning": "The facts state that the Defence submitted the operation was law‑enforcement and the Prosecution disputed it; there is no factual determination that the operation was lawful or defensive, which is a necessary premise for the argument that such a status does not excuse criminal liability.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "31(1)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "31(1)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "overruled",
+          "disposition_reasoning": "The argument does not assume the operation was lawful or defensive; it invokes Article 31(1)(c) for the legal principle that even if it were a defensive operation, that fact alone does not exclude criminal responsibility. The objection misreads the argument's structure."
+        },
+        {
+          "id": "obj_8b9fb587",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_d99bfad9",
+          "ground": "The argument requires that an internal armed conflict existed, but the record does not support this.",
+          "reasoning": "The facts indicate that the existence of an internal armed conflict was contested, providing no factual basis that such a conflict existed, which is essential to apply Article 8(f) and the associated war‑crime provisions.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Duplicate of obj_f9e661e0 and obj_a8245a7d. The facts do not support the existence of an internal armed conflict; it was contested. The argument's premise is unsupported."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_df6f9a14\",\n      \"ground\": \"The argument requires that an armed conflict (international or non‑international) existed to apply Article 8 war‑crime provisions, but the record does not establish such a conflict.\",\n      \"reasoning\": \"The facts describe a police operation but make no factual determination that an armed conflict existed; the statement that an internal armed conflict was contested indicates the record does not provide a definitive existence of conflict, which is a prerequisite for Article 8 war crimes.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_d78f04f4\",\n      \"ground\": \"The argument asserts that a protracted internal armed conflict existed, yet the record does not substantiate this.\",\n      \"reasoning\": \"The facts explicitly state that whether an internal armed conflict existed was highly contested at trial, leaving no factual basis for the claim that the conflict was protracted and organized, which is required for Article 8(c) applicability.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_633652d4\",\n      \"ground\": \"The argument assumes the operation was a lawful law‑enforcement or defensive action, but the facts do not establish that premise.\",\n      \"reasoning\": \"The facts state that the Defence submitted the operation was law‑enforcement and the Prosecution disputed it; there is no factual determination that the operation was lawful or defensive, which is a necessary premise for the argument that such a status does not excuse criminal liability.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"31(1)(c)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_d99bfad9\",\n      \"ground\": \"The argument requires that an internal armed conflict existed, but the record does not support this.\",\n      \"reasoning\": \"The facts indicate that the existence of an internal armed conflict was contested, providing no factual basis that such a conflict existed, which is essential to apply Article 8(f) and the associated war‑crime provisions.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-24T01:14:39.679659Z",
+      "completed_at": "2026-11-24T01:14:44.797616Z",
+      "prompt_tokens": 6065,
+      "completion_tokens": 4059,
+      "error": null
+    },
+    {
+      "id": "turn_9b6e7ddd",
+      "round_number": 2,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "c37d07c82e46934336d28a858d57583efbb938269db9f811562e4a467a931d4e",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Indeterminate.\", \"reasoning\": \"The question cannot be resolved on the arguments and facts provided. The core obstacle is that the existence of an armed conflict — a jurisdictional prerequisite for war crimes under Article 8 of the Rome Statute — was explicitly contested at trial and is not established by the given facts. The evidentiary objections (obj_f9e661e0, obj_7d88b762, obj_a8245a7d, obj_8b9fb587) are sustained: the record states only that the Defence characterized the operation as law-enforcement and the Prosecution disputed it, with no factual determination that a protracted internal armed conflict existed. Without an armed conflict, the war-crime provisions of Article 8 do not apply, and the arguments predicated on them (arg_df6f9a14, arg_aad4c1df, arg_d78f04f4, arg_d99bfad9) fail. The command-responsibility argument (arg_8be5da83, arg_7faee5d8) is also defeated because the cited Rule 152 only covers crimes 'committed pursuant to their orders,' not the broader failure-to-prevent-or-punish standard; the doctrinal objection (obj_6ea4b4fa) is sustained. The arguments invoking AP I civil-defence provisions (arg_633652d4, arg_4896a9a8) are inapposite because the actors were reserve police and private security, not civil-defence personnel; the doctrinal objections (obj_0cdf90ec, obj_785407a7) are sustained. The sole surviving legal point — that a defensive-operation claim does not exclude responsibility under Article 31(1)(c) — is correct as a matter of law (obj_59ed3772 overruled), but it presupposes the Rome Statute's jurisdictional basis, which is not established. No argument addresses domestic criminal liability. Therefore, on this record, criminal responsibility under international humanitarian law cannot be affirmed or denied.\", \"confidence\": 0.68, \"confidence_reasoning\": \"The sustained objections go to the foundation of every argument: the armed-conflict predicate is factually unresolved, the command-responsibility citation is narrower than the argument requires, and the AP I provisions are inapplicable to the actors described. These are not marginal weaknesses; they are fatal to the IHL framework on which all arguments rely. Confidence is not higher because a tribunal could still find an armed conflict existed based on evidence not summarized here, and customary command responsibility is broader than Rule 152's text. Confidence is not lower because the objections are well-grounded in the provided facts and retrieved authorities.\", \"rulings\": [{\"objection_id\": \"obj_6ea4b4fa\", \"disposition\": \"sustained\", \"reasoning\": \"Rule 152 as retrieved states commanders are responsible for war crimes 'committed pursuant to their orders.' It does not articulate the failure-to-prevent-or-punish mode of command responsibility. The argument conflates the two distinct modes, and the objection correctly identifies this legal error.\"}, {\"objection_id\": \"obj_0cdf90ec\", \"disposition\": \"sustained\", \"reasoning\": \"Articles 65 and 67 of Additional Protocol I expressly regulate 'civilian civil defence personnel' and 'civil defence' units. The facts identify the actors as 'reserve police' and a 'private security agency,' which are not civil defence personnel under AP I. The argument misapplies these provisions.\"}, {\"objection_id\": \"obj_f9e661e0\", \"disposition\": \"sustained\", \"reasoning\": \"The facts explicitly state that 'whether an internal armed conflict existed in Macedonia at the time was highly contested at trial.' The argument asserts a protracted conflict as established fact, but the record provides no such determination. The objection is well-founded on the given facts.\"}, {\"objection_id\": \"obj_2944c9bc\", \"disposition\": \"sustained\", \"reasoning\": \"The argument cites Article 8(2)(a) provisions (grave breaches for international armed conflict), but the context is a non-international armed conflict. The correct provisions for violence to life and cruel treatment in a NIAC are Article 8(2)(c)(i)–(ii) and Article 8(2)(e). The objection correctly identifies the mis-citation.\"}, {\"objection_id\": \"obj_785407a7\", \"disposition\": \"sustained\", \"reasoning\": \"Same reasoning as obj_0cdf90ec. The AP I civil-defence provisions do not apply to police forces conducting operations; the argument's legal characterization is inapposite.\"}, {\"objection_id\": \"obj_7d88b762\", \"disposition\": \"sustained\", \"reasoning\": \"Article 8 war crimes require an armed conflict as a jurisdictional prerequisite. The facts state the existence of an internal armed conflict was 'highly contested' and do not provide a factual determination that one existed. The objection correctly notes this gap.\"}, {\"objection_id\": \"obj_a8245a7d\", \"disposition\": \"sustained\", \"reasoning\": \"Duplicate of obj_f9e661e0. The record does not substantiate a protracted internal armed conflict; it was contested at trial. The argument lacks evidentiary support in the given facts.\"}, {\"objection_id\": \"obj_59ed3772\", \"disposition\": \"overruled\", \"reasoning\": \"The argument does not assume the operation was lawful or defensive; it invokes Article 31(1)(c) for the legal principle that even if it were a defensive operation, that fact alone does not exclude criminal responsibility. The objection misreads the argument's structure.\"}, {\"objection_id\": \"obj_8b9fb587\", \"disposition\": \"sustained\", \"reasoning\": \"Duplicate of obj_f9e661e0 and obj_a8245a7d. The facts do not support the existence of an internal armed conflict; it was contested. The argument's premise is unsupported.\"}], \"surviving_argument_ids\": [\"arg_633652d4\", \"arg_4896a9a8\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-24T01:14:44.798570Z",
+      "completed_at": "2026-11-24T01:16:03.205683Z",
+      "prompt_tokens": 7787,
+      "completion_tokens": 4614,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-24T01:16:03.207020+00:00",
+  "duration_seconds": 228.65935037500003,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 2,
+  "judge_failures": 0,
+  "judge_failed": false
+}

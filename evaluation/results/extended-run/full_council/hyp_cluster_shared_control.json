@@ -1,0 +1,1650 @@
+{
+  "case_id": "hyp_cluster_shared_control",
+  "case_title": "Fictional: the Halvek Pass combined targeting cell",
+  "court": "Hypothetical",
+  "year": 2026,
+  "difficulty": "contested",
+  "arm": "full_council",
+  "arm_label": "D — Full council",
+  "run_id": "eval_f10d920126",
+  "question": "Did the Republic of Calvaro breach its obligations under the Convention on Cluster Munitions when its co-director of the combined targeting cell signed the tasking order for the strike near Halvek Pass?",
+  "facts": "An international armed conflict has existed since March 2025 between the Republic of Calvaro and the Federation of Drennick. The Kingdom of Sorvenia, which is not a party to the Convention on Cluster Munitions, entered the conflict as Calvaro's ally in June 2025. Calvaro has been a party to the Convention on Cluster Munitions since 2012; Drennick is not a party. Calvaro formally notified Sorvenia of its obligations under the Convention and urged it not to use cluster munitions. The two allies set up a Combined Air Targeting Cell co-directed by a Calvaran colonel and a Sorvenian colonel. Under the cell's written procedures, every tasking order, including the munition to be used, takes effect only when signed by both co-directors, and neither can change the munition alone. Only Sorvenian aircraft fly the cell's missions. On 3 October 2025 the Sorvenian co-director proposed a strike on a Drennick armoured column near Halvek Pass using air-delivered cluster munitions. The Calvaran co-director raised no objection to the munition and signed the tasking order, which specified cluster munitions. Sorvenian aircraft carried out the strike that day using cluster munitions.",
+  "ground_truth_outcome": "indeterminate",
+  "holding": "Authored ground truth for a fictional case; no tribunal has ruled on it. Indeterminate. Article 21(3) permits a State Party and its personnel to engage in military cooperation and operations with states not party that might engage in prohibited activities, but Article 21(4) does not authorise a State Party to itself use cluster munitions or to expressly request their use where the choice of munitions is within its exclusive control. Here the choice was jointly controlled, not within Calvaro's exclusive control, and Calvaro did not itself deliver the munitions, so Article 21(4)(c) and (d) are not clearly engaged. Whether co-signing an order that specifies cluster munitions is protected cooperation under Article 21(3), or is assistance or encouragement prohibited by Article 1(1)(c), depends on how the two provisions interact, which the text of the Convention does not resolve and on which states parties have taken differing positions.",
+  "predicted_outcome": "rejected",
+  "outcome_correct": false,
+  "confidence": 0.75,
+  "confidence_reasoning": "The treaty text of Article 1(a) and 1(c) supports the interpretation that 'use' requires physical employment and that 'assist, encourage or induce' requires affirmative conduct. The sustained doctrinal objections correctly capture this. The facts are clear that the joint cell required dual signature, neither co-director could change the munition alone, only Sorvenian aircraft flew the mission, and Calvaro had urged non-use. No surviving argument or evidence supports a breach. Confidence is not higher because international tribunals have not authoritatively ruled on this exact joint-cell scenario, but the textual and structural analysis is strong.",
+  "rounds": 2,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 2,
+  "total_calls": 8,
+  "citation_statuses": {
+    "total": 20,
+    "resolved": 8,
+    "unresolved": 12,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "No.",
+    "reasoning": "All four arguments alleging a breach by Calvaro have been defeated by sustained objections. The doctrinal objections correctly establish that: (1) 'use' under Article 1(a) means physical deployment of the munition, not administrative authorization (obj_d5bd35c4, obj_dfe36ea0, obj_62523a3f); (2) Article 1(c) requires affirmative acts of assistance, encouragement, or inducement, not mere procedural signature or non-objection in a joint cell where neither co-director can unilaterally change the munition (obj_4f3c6990, obj_ff653791); (3) Article 4(1)(e)(b) is a remedial clearance provision, not a definitional element of the Article 1(c) prohibition nor a standalone obligation (obj_db5b708d, obj_02e636bf); and (4) attribution of the strike to Calvaro is not supported on the facts, which show no Calvaran control over the aircraft or operation (obj_90189f72, obj_ba178339, obj_96b29233). The evidentiary objections further confirm the record contains no proof that Calvaro supplied strike-location data, munition quantities, or any inducement beyond the mandatory co-signature. On the proper legal tests and the given facts, Calvaro's co-director's signature on the tasking order did not constitute a breach of the Convention.",
+    "confidence": 0.75,
+    "confidence_reasoning": "The treaty text of Article 1(a) and 1(c) supports the interpretation that 'use' requires physical employment and that 'assist, encourage or induce' requires affirmative conduct. The sustained doctrinal objections correctly capture this. The facts are clear that the joint cell required dual signature, neither co-director could change the munition alone, only Sorvenian aircraft flew the mission, and Calvaro had urged non-use. No surviving argument or evidence supports a breach. Confidence is not higher because international tribunals have not authoritatively ruled on this exact joint-cell scenario, but the textual and structural analysis is strong.",
+    "surviving_argument_ids": [],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_d5871127",
+      "claim": "The Republic of Calvaro breached its obligation under Article 1(a) of the Convention on Cluster Munitions not to use cluster munitions.",
+      "reasoning": "Article 1(a) obliges every State Party to \"Use cluster munitions;\" never under any circumstances. By signing the tasking order that expressly authorized the employment of air‑delivered cluster munitions, the Calvaran co‑director acted as a State authority authorizing the use of such weapons. The act of signing therefore constitutes a use of cluster munitions attributable to Calvaro, violating the absolute prohibition in Article 1(a).",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccm",
+          "article": "1(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Use cluster munitions;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccm",
+            "article": "1(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Use cluster munitions;"
+          },
+          "status": "unresolved",
+          "source_url": null,
+          "note": "No span at ccm/art.1(a) in an indexed instrument."
+        }
+      ]
+    },
+    {
+      "id": "arg_80dc0d50",
+      "claim": "The Republic of Calvaro breached its prohibition under Article 1(c) and the assistance obligations in Article 4(1)(e)(b) by assisting, encouraging, and providing information that enabled Sorvenia to use cluster munitions.",
+      "reasoning": "Article 1(c) forbids a State Party to \"Assist, encourage or induce anyone to engage in any activity prohibited to a State Party under this Convention.\" The Calvaran co‑director’s signature gave explicit approval and thereby encouraged Sorvenian forces to employ cluster munitions. Moreover, Article 4(1)(e)(b) defines such assistance to include the provision of information on the types and quantities of cluster munitions and the precise locations of strikes. By co‑directing the combined targeting cell, providing the tasking order, and specifying the munition type, Calvaro supplied exactly the information contemplated in Article 4(1)(e)(b). Both provisions are therefore violated.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccm",
+          "article": "1(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Assist, encourage or induce anyone to engage in any activity prohibited to a State Party under this Convention."
+        },
+        {
+          "type": "treaty",
+          "instrument": "ccm",
+          "article": "4(1)(e)(b)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Such assistance shall include, where available, information on types and quantities of the cluster munitions used, precise locations of cluster munition strikes and areas in which cluster munition remnants are known to be located."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccm",
+            "article": "1(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Assist, encourage or induce anyone to engage in any activity prohibited to a State Party under this Convention."
+          },
+          "status": "unresolved",
+          "source_url": null,
+          "note": "No span at ccm/art.1(c) in an indexed instrument."
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccm",
+            "article": "4(1)(e)(b)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Such assistance shall include, where available, information on types and quantities of the cluster munitions used, precise locations of cluster munition strikes and areas in which cluster munition remnants are known to be located."
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_4a940cc7",
+      "claim": "The use of cluster munitions by Sorvenian aircraft, authorized through the joint targeting cell, is attributable to the Republic of Calvaro under the principle of state responsibility, thereby triggering Calvaro’s obligations under the Convention.",
+      "reasoning": "Customary international law on state responsibility holds that acts performed by officials of a State Party, even in joint operations with non‑party states, are attributable to that State. The Convention’s prohibitions are framed in terms of “any activity” undertaken by a State Party, not limited to the physical deployment of the weapon by its own forces. Because the Calvaran co‑director exercised decisive authority over the tasking order and the decision to employ cluster munitions, the subsequent strike is legally attributable to Calvaro. Consequently, the breach identified in Arguments 1 and 2 is attributable to Calvaro despite the munition being launched by a non‑party ally. No specific treaty provision enumerates this attribution, but it is a well‑established principle of international law that fills the gap in the Convention’s wording.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_bedd656b",
+      "claim": "The Republic of Calvaro breached Article 1(c) of the Convention on Cluster Munitions by assisting, encouraging, and inducing Sorvenia to use cluster munitions in the Halvek Pass strike.",
+      "reasoning": "Article 1(c) obliges a State Party never to assist, encourage or induce any person to engage in an activity prohibited to that State Party, namely the use of cluster munitions. By co‑directing the combined targeting cell, signing the tasking order that expressly authorised the employment of air‑delivered cluster munitions, and raising no objection, the Calvaran co‑director provided the decisive approval that enabled Sorvenian forces to carry out the strike. This conduct constitutes the assistance and encouragement prohibited by Article 1(c), making Calvaro liable for a breach of the Convention.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccm",
+          "article": "1(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Assist, encourage or induce anyone to engage in any activity prohibited to a State Party under this Convention."
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccm",
+            "article": "1(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Assist, encourage or induce anyone to engage in any activity prohibited to a State Party under this Convention."
+          },
+          "status": "unresolved",
+          "source_url": null,
+          "note": "No span at ccm/art.1(c) in an indexed instrument."
+        }
+      ]
+    }
+  ],
+  "objections": [
+    {
+      "id": "obj_d5bd35c4",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_d5871127",
+      "ground": "The argument mischaracterizes the legal test for 'use' under Article 1(a) by equating administrative authorization with the physical employment of the weapon.",
+      "reasoning": "Article 1(a) prohibits the 'use' of cluster munitions. Under standard treaty interpretation, 'use' refers to the actual deployment or employment of the munition in a conflict, not the administrative act of signing a tasking order. The physical use was performed by Sorvenian aircraft. Attributing the 'use' to Calvaro based solely on signature conflates command authorization with the operative act of use, which is legally distinct.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccm",
+          "article": "1(1)(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccm",
+            "article": "1(1)(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Article 1(a) prohibits the 'use' of cluster munitions. The ordinary meaning of 'use' in arms-control treaties is the actual deployment or employment of the weapon in hostilities, not the administrative act of authorizing a strike. The physical use was performed by Sorvenian aircraft; the Calvaran co-director's signature is authorization, not use."
+    },
+    {
+      "id": "obj_db5b708d",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_80dc0d50",
+      "ground": "The argument incorrectly applies Article 4(1)(e)(b), which is a remedial provision for clearance, as a definitional element of the prohibition in Article 1(c).",
+      "reasoning": "Article 4(1)(e)(b) outlines the types of information to be provided for the clearance and destruction of cluster munition remnants. It does not define what constitutes 'assistance' for the purposes of the prohibition in Article 1(c). Citing a remedial clearance provision to establish the scope of a substantive prohibition is a misapplication of the treaty's structure.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccm",
+          "article": "4(1)(e)(b)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "ccm",
+          "article": "1(1)(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccm",
+            "article": "4(1)(e)(b)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccm",
+            "article": "1(1)(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Article 4(1)(e)(b) appears in the Convention's clearance-and-destruction chapter (Article 4) and specifies information to be provided for remnant clearance. It does not define the scope of the prohibition in Article 1(c). Citing a remedial provision to establish the content of a substantive prohibition misreads the treaty structure."
+    },
+    {
+      "id": "obj_90189f72",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_4a940cc7",
+      "ground": "The argument relies on a general principle of state responsibility to fill a gap in the Convention's text, ignoring that the Convention's prohibitions are framed in terms of the State Party's own conduct.",
+      "reasoning": "The Convention's obligations are personal to the State Party. While custom may attribute acts, the argument asserts a 'well-established principle' without citing specific authority from the retrieved context. The retrieved context does not contain the ILC Articles on State Responsibility or specific case law attributing joint operations to a state. The argument assumes a legal basis not supported by the provided corpus.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccm",
+          "article": "1",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccm",
+            "article": "1",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "The argument invokes a general principle of state responsibility to attribute the strike to Calvaro, but the retrieved corpus contains no ILC Articles on State Responsibility, no case law on attribution in joint operations, and no treaty provision supporting such attribution. The Convention's obligations are personal to the State Party; a gap-filling principle cannot be applied without authority in the record."
+    },
+    {
+      "id": "obj_dfe36ea0",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_d5871127",
+      "ground": "Signing a tasking order does not constitute the use of cluster munitions attributable to Calvaro.",
+      "reasoning": "The facts only show that the Calvaran co‑director signed the order and that Sorvenian aircraft subsequently carried out the strike; there is no evidence that Calvaro itself used or deployed the munitions, nor that the signature itself is an act of use under the Convention.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccm",
+          "article": "1(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccm",
+            "article": "1(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "unresolved",
+          "source_url": null,
+          "note": "No span at ccm/art.1(a) in an indexed instrument."
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The facts show only that the Calvaran co-director signed the tasking order and that Sorvenian aircraft carried out the strike. There is no evidence that Calvaro itself deployed or used cluster munitions. The citation to Article 1(a) is also unresolved in the corpus."
+    },
+    {
+      "id": "obj_aaa01975",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_80dc0d50",
+      "ground": "The record does not show that Calvaro assisted, encouraged, or provided the required information to enable Sorvenia’s use of cluster munitions.",
+      "reasoning": "The facts state only that the Calvaran co‑director signed the tasking order and raised no objection; they do not establish that he supplied details of munition types, quantities, or precise strike locations, nor that he induced Sorvenia to use the munitions. Without evidence of such assistance, the alleged breach of Articles 1(c) and 4(1)(e)(b) cannot be proven.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccm",
+          "article": "1(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "ccm",
+          "article": "4(1)(e)(b)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccm",
+            "article": "1(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "unresolved",
+          "source_url": null,
+          "note": "No span at ccm/art.1(c) in an indexed instrument."
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccm",
+            "article": "4(1)(e)(b)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The record does not establish that Calvaro provided information on munition types, quantities, or precise strike locations as described in Article 4(1)(e)(b), nor that it induced Sorvenia to use cluster munitions. The only facts are the co-signature and non-objection. The citation to Article 1(c) is unresolved."
+    },
+    {
+      "id": "obj_ba178339",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_4a940cc7",
+      "ground": "The facts do not establish that the strike is attributable to Calvaro under the Convention.",
+      "reasoning": "Attribution requires that the act was undertaken under Calvaro’s authority or control. The record only shows that the Calvaran co‑director signed the tasking order; it does not demonstrate that Calvaro exercised control over the operation, that the strike was conducted as part of a Calvaro‑directed mission, or that Calvaro’s forces were involved. Without such evidence, the strike cannot be legally attributed to Calvaro.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccm",
+          "article": "1(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccm",
+            "article": "1(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "unresolved",
+          "source_url": null,
+          "note": "No span at ccm/art.1(a) in an indexed instrument."
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Attribution requires evidence that the act was undertaken under Calvaro's authority or control. The facts show only the co-director's signature; they do not demonstrate Calvaran control over the aircraft, the mission, or the strike. The citation to Article 1(a) is unresolved."
+    },
+    {
+      "id": "obj_02e636bf",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_80dc0d50",
+      "ground": "The argument mischaracterizes Article 4(1)(e)(b) as an independent prohibition, when it is a definitional clause for assistance obligations.",
+      "reasoning": "Article 4(1)(e)(b) defines the scope of assistance obligations (e.g., providing information) but does not itself create a standalone prohibition. The prohibition is located in Article 1(c). Citing Article 4(1)(e)(b) as a breached obligation is a legal error; it merely illustrates the nature of the assistance described in Article 1(c).",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccm",
+          "article": "4(1)(e)(b)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "ccm",
+          "article": "1(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccm",
+            "article": "4(1)(e)(b)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccm",
+            "article": "1(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "unresolved",
+          "source_url": null,
+          "note": "No span at ccm/art.1(c) in an indexed instrument."
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Article 4(1)(e)(b) defines the scope of assistance for clearance purposes; it does not create an independent prohibition. The sole prohibition on assistance is in Article 1(c). The argument's treatment of Article 4(1)(e)(b) as a breached obligation is a legal error."
+    },
+    {
+      "id": "obj_4f3c6990",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_bedd656b",
+      "ground": "The argument conflates non-objection with active assistance or inducement, failing to distinguish between passive acquiescence and the affirmative acts required by Article 1(c).",
+      "reasoning": "Article 1(c) prohibits 'assisting, encouraging or inducing'. Merely failing to object to a non-party ally's choice of weapon, when the State has no unilateral power to prevent it (as the facts state neither can change the munition alone), may not constitute the affirmative 'encouragement' or 'inducement' required. The signature is a procedural requirement of the joint cell, not necessarily an independent act of encouragement separate from the joint decision-making process.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccm",
+          "article": "1(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccm",
+            "article": "1(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "unresolved",
+          "source_url": null,
+          "note": "No span at ccm/art.1(c) in an indexed instrument."
+        }
+      ],
+      "severity": "material",
+      "disposition": "sustained",
+      "disposition_reasoning": "Article 1(c) prohibits 'assisting, encouraging or inducing' — affirmative acts. The facts state that neither co-director can change the munition alone, making the signature a procedural requirement of the joint cell, not an independent act of encouragement. Mere non-objection in this constrained context does not satisfy the treaty's requirement."
+    },
+    {
+      "id": "obj_62523a3f",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_d5871127",
+      "ground": "Signing a tasking order does not constitute use of cluster munitions by the State.",
+      "reasoning": "The facts show that the Calvaran co‑director signed the tasking order, but there is no evidence that Calvaro deployed or used cluster munitions themselves; only Sorvenian aircraft used them. The act of signing alone does not satisfy the factual predicate that Calvaro used cluster munitions, so the claim lacks factual support.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccm",
+          "article": "1(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccm",
+            "article": "1(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "unresolved",
+          "source_url": null,
+          "note": "No span at ccm/art.1(a) in an indexed instrument."
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Identical to obj_dfe36ea0: signing a tasking order is not 'use' of cluster munitions by the State. Only Sorvenian aircraft used the munitions. The citation is unresolved."
+    },
+    {
+      "id": "obj_bcff3c91",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_80dc0d50",
+      "ground": "The facts do not establish that Calvaro provided the assistance or information required by Article 4(1)(e)(b) or that it encouraged Sorvenia.",
+      "reasoning": "The tasking order only specified the munition type; there is no evidence that Calvaro supplied quantities, precise strike locations, or other information contemplated by Article 4(1)(e)(b). The facts also do not indicate any intent to assist or encourage. Consequently, the factual predicate that Calvaro breached these obligations is unsupported.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccm",
+          "article": "1(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "ccm",
+          "article": "4(1)(e)(b)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccm",
+            "article": "1(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "unresolved",
+          "source_url": null,
+          "note": "No span at ccm/art.1(c) in an indexed instrument."
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccm",
+            "article": "4(1)(e)(b)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The tasking order specified only the munition type. There is no evidence Calvaro supplied quantities, precise locations, or other information contemplated by Article 4(1)(e)(b), nor any intent to assist or encourage. The factual predicate for breach is unsupported."
+    },
+    {
+      "id": "obj_96b29233",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_4a940cc7",
+      "ground": "There is no evidence that the Calvaran co‑director's actions are attributable to Calvaro as an act of the State.",
+      "reasoning": "Attribution requires that the State’s officials act under its authority. The facts only show the co‑director signed the order; they do not demonstrate that Calvaro exercised control over the aircraft or that the strike was conducted under its command. Therefore the act cannot be attributed to Calvaro, undermining the argument’s factual predicate.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccm",
+          "article": "1(a)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccm",
+            "article": "1(a)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "unresolved",
+          "source_url": null,
+          "note": "No span at ccm/art.1(a) in an indexed instrument."
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "No evidence shows the co-director's signature is attributable to Calvaro as a state act exercising control over the strike. The facts describe a joint cell with dual-key procedures and Sorvenian-only aircraft. The citation is unresolved."
+    },
+    {
+      "id": "obj_ff653791",
+      "raised_by": "attacker_evidentiary",
+      "target_argument_id": "arg_bedd656b",
+      "ground": "The facts do not establish that Calvaro assisted or encouraged Sorvenia to use cluster munitions.",
+      "reasoning": "The Calvaran co‑director's signature alone does not prove intent to assist or encourage. No evidence of encouragement, inducement, or additional assistance is provided. Thus the factual predicate that Calvaro breached Article 1(c) is unsupported.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "ccm",
+          "article": "1(c)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "ccm",
+            "article": "1(c)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "unresolved",
+          "source_url": null,
+          "note": "No span at ccm/art.1(c) in an indexed instrument."
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The signature alone, in a mandatory dual-signature process where Calvaro lacked unilateral veto over the munition, does not prove intent to assist or encourage. No additional evidence of encouragement, inducement, or assistance appears in the record. The citation to Article 1(c) is unresolved."
+    }
+  ],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccm",
+        "article": "1",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccm",
+        "article": "21(4)(c)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccm",
+        "article": "4(1)(e)(b)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccm",
+        "article": "3(2)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccm",
+        "article": "3(3)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "64(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccm",
+        "article": "6(4)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ccm",
+        "article": "1(1)(a)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_85faaafd",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "e14a5c17f49e6048436a3095ac9e1d42807b0c0d485d23c54e222b93bafa05ab",
+      "arguments": [
+        {
+          "id": "arg_d5871127",
+          "claim": "The Republic of Calvaro breached its obligation under Article 1(a) of the Convention on Cluster Munitions not to use cluster munitions.",
+          "reasoning": "Article 1(a) obliges every State Party to \"Use cluster munitions;\" never under any circumstances. By signing the tasking order that expressly authorized the employment of air‑delivered cluster munitions, the Calvaran co‑director acted as a State authority authorizing the use of such weapons. The act of signing therefore constitutes a use of cluster munitions attributable to Calvaro, violating the absolute prohibition in Article 1(a).",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccm",
+              "article": "1(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Use cluster munitions;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccm",
+                "article": "1(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Use cluster munitions;"
+              },
+              "status": "unresolved",
+              "source_url": null,
+              "note": "No span at ccm/art.1(a) in an indexed instrument."
+            }
+          ]
+        },
+        {
+          "id": "arg_80dc0d50",
+          "claim": "The Republic of Calvaro breached its prohibition under Article 1(c) and the assistance obligations in Article 4(1)(e)(b) by assisting, encouraging, and providing information that enabled Sorvenia to use cluster munitions.",
+          "reasoning": "Article 1(c) forbids a State Party to \"Assist, encourage or induce anyone to engage in any activity prohibited to a State Party under this Convention.\" The Calvaran co‑director’s signature gave explicit approval and thereby encouraged Sorvenian forces to employ cluster munitions. Moreover, Article 4(1)(e)(b) defines such assistance to include the provision of information on the types and quantities of cluster munitions and the precise locations of strikes. By co‑directing the combined targeting cell, providing the tasking order, and specifying the munition type, Calvaro supplied exactly the information contemplated in Article 4(1)(e)(b). Both provisions are therefore violated.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccm",
+              "article": "1(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Assist, encourage or induce anyone to engage in any activity prohibited to a State Party under this Convention."
+            },
+            {
+              "type": "treaty",
+              "instrument": "ccm",
+              "article": "4(1)(e)(b)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Such assistance shall include, where available, information on types and quantities of the cluster munitions used, precise locations of cluster munition strikes and areas in which cluster munition remnants are known to be located."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccm",
+                "article": "1(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Assist, encourage or induce anyone to engage in any activity prohibited to a State Party under this Convention."
+              },
+              "status": "unresolved",
+              "source_url": null,
+              "note": "No span at ccm/art.1(c) in an indexed instrument."
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccm",
+                "article": "4(1)(e)(b)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Such assistance shall include, where available, information on types and quantities of the cluster munitions used, precise locations of cluster munition strikes and areas in which cluster munition remnants are known to be located."
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_4a940cc7",
+          "claim": "The use of cluster munitions by Sorvenian aircraft, authorized through the joint targeting cell, is attributable to the Republic of Calvaro under the principle of state responsibility, thereby triggering Calvaro’s obligations under the Convention.",
+          "reasoning": "Customary international law on state responsibility holds that acts performed by officials of a State Party, even in joint operations with non‑party states, are attributable to that State. The Convention’s prohibitions are framed in terms of “any activity” undertaken by a State Party, not limited to the physical deployment of the weapon by its own forces. Because the Calvaran co‑director exercised decisive authority over the tasking order and the decision to employ cluster munitions, the subsequent strike is legally attributable to Calvaro. Consequently, the breach identified in Arguments 1 and 2 is attributable to Calvaro despite the munition being launched by a non‑party ally. No specific treaty provision enumerates this attribution, but it is a well‑established principle of international law that fills the gap in the Convention’s wording.",
+          "citations": [],
+          "resolved_citations": []
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The Republic of Calvaro breached its obligation under Article 1(a) of the Convention on Cluster Munitions not to use cluster munitions.\",\n      \"reasoning\": \"Article 1(a) obliges every State Party to \\\"Use cluster munitions;\\\" never under any circumstances. By signing the tasking order that expressly authorized the employment of air‑delivered cluster munitions, the Calvaran co‑director acted as a State authority authorizing the use of such weapons. The act of signing therefore constitutes a use of cluster munitions attributable to Calvaro, violating the absolute prohibition in Article 1(a).\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccm\",\n          \"article\": \"1(a)\",\n          \"quoted_text\": \"Use cluster munitions;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The Republic of Calvaro breached its prohibition under Article 1(c) and the assistance obligations in Article 4(1)(e)(b) by assisting, encouraging, and providing information that enabled Sorvenia to use cluster munitions.\",\n      \"reasoning\": \"Article 1(c) forbids a State Party to \\\"Assist, encourage or induce anyone to engage in any activity prohibited to a State Party under this Convention.\\\" The Calvaran co‑director’s signature gave explicit approval and thereby encouraged Sorvenian forces to employ cluster munitions. Moreover, Article 4(1)(e)(b) defines such assistance to include the provision of information on the types and quantities of cluster munitions and the precise locations of strikes. By co‑directing the combined targeting cell, providing the tasking order, and specifying the munition type, Calvaro supplied exactly the information contemplated in Article 4(1)(e)(b). Both provisions are therefore violated.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccm\",\n          \"article\": \"1(c)\",\n          \"quoted_text\": \"Assist, encourage or induce anyone to engage in any activity prohibited to a State Party under this Convention.\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccm\",\n          \"article\": \"4(1)(e)(b)\",\n          \"quoted_text\": \"Such assistance shall include, where available, information on types and quantities of the cluster munitions used, precise locations of cluster munition strikes and areas in which cluster munition remnants are known to be located.\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The use of cluster munitions by Sorvenian aircraft, authorized through the joint targeting cell, is attributable to the Republic of Calvaro under the principle of state responsibility, thereby triggering Calvaro’s obligations under the Convention.\",\n      \"reasoning\": \"Customary international law on state responsibility holds that acts performed by officials of a State Party, even in joint operations with non‑party states, are attributable to that State. The Convention’s prohibitions are framed in terms of “any activity” undertaken by a State Party, not limited to the physical deployment of the weapon by its own forces. Because the Calvaran co‑director exercised decisive authority over the tasking order and the decision to employ cluster munitions, the subsequent strike is legally attributable to Calvaro. Consequently, the breach identified in Arguments 1 and 2 is attributable to Calvaro despite the munition being launched by a non‑party ally. No specific treaty provision enumerates this attribution, but it is a well‑established principle of international law that fills the gap in the Convention’s wording.\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:53:12.755421Z",
+      "completed_at": "2026-11-23T00:53:17.752878Z",
+      "prompt_tokens": 2356,
+      "completion_tokens": 2079,
+      "error": null
+    },
+    {
+      "id": "turn_a5487844",
+      "round_number": 1,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "640203d7e056891a32980c4c3581cbff6e7aca1a91facdacc0fe6a919a455002",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_d5bd35c4",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_d5871127",
+          "ground": "The argument mischaracterizes the legal test for 'use' under Article 1(a) by equating administrative authorization with the physical employment of the weapon.",
+          "reasoning": "Article 1(a) prohibits the 'use' of cluster munitions. Under standard treaty interpretation, 'use' refers to the actual deployment or employment of the munition in a conflict, not the administrative act of signing a tasking order. The physical use was performed by Sorvenian aircraft. Attributing the 'use' to Calvaro based solely on signature conflates command authorization with the operative act of use, which is legally distinct.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccm",
+              "article": "1(1)(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccm",
+                "article": "1(1)(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Article 1(a) prohibits the 'use' of cluster munitions. The ordinary meaning of 'use' in arms-control treaties is the actual deployment or employment of the weapon in hostilities, not the administrative act of authorizing a strike. The physical use was performed by Sorvenian aircraft; the Calvaran co-director's signature is authorization, not use."
+        },
+        {
+          "id": "obj_db5b708d",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_80dc0d50",
+          "ground": "The argument incorrectly applies Article 4(1)(e)(b), which is a remedial provision for clearance, as a definitional element of the prohibition in Article 1(c).",
+          "reasoning": "Article 4(1)(e)(b) outlines the types of information to be provided for the clearance and destruction of cluster munition remnants. It does not define what constitutes 'assistance' for the purposes of the prohibition in Article 1(c). Citing a remedial clearance provision to establish the scope of a substantive prohibition is a misapplication of the treaty's structure.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccm",
+              "article": "4(1)(e)(b)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "ccm",
+              "article": "1(1)(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccm",
+                "article": "4(1)(e)(b)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccm",
+                "article": "1(1)(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Article 4(1)(e)(b) appears in the Convention's clearance-and-destruction chapter (Article 4) and specifies information to be provided for remnant clearance. It does not define the scope of the prohibition in Article 1(c). Citing a remedial provision to establish the content of a substantive prohibition misreads the treaty structure."
+        },
+        {
+          "id": "obj_90189f72",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_4a940cc7",
+          "ground": "The argument relies on a general principle of state responsibility to fill a gap in the Convention's text, ignoring that the Convention's prohibitions are framed in terms of the State Party's own conduct.",
+          "reasoning": "The Convention's obligations are personal to the State Party. While custom may attribute acts, the argument asserts a 'well-established principle' without citing specific authority from the retrieved context. The retrieved context does not contain the ILC Articles on State Responsibility or specific case law attributing joint operations to a state. The argument assumes a legal basis not supported by the provided corpus.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccm",
+              "article": "1",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccm",
+                "article": "1",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "The argument invokes a general principle of state responsibility to attribute the strike to Calvaro, but the retrieved corpus contains no ILC Articles on State Responsibility, no case law on attribution in joint operations, and no treaty provision supporting such attribution. The Convention's obligations are personal to the State Party; a gap-filling principle cannot be applied without authority in the record."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_d5871127\",\n      \"ground\": \"The argument mischaracterizes the legal test for 'use' under Article 1(a) by equating administrative authorization with the physical employment of the weapon.\",\n      \"reasoning\": \"Article 1(a) prohibits the 'use' of cluster munitions. Under standard treaty interpretation, 'use' refers to the actual deployment or employment of the munition in a conflict, not the administrative act of signing a tasking order. The physical use was performed by Sorvenian aircraft. Attributing the 'use' to Calvaro based solely on signature conflates command authorization with the operative act of use, which is legally distinct.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccm\",\n          \"article\": \"1(1)(a)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_80dc0d50\",\n      \"ground\": \"The argument incorrectly applies Article 4(1)(e)(b), which is a remedial provision for clearance, as a definitional element of the prohibition in Article 1(c).\",\n      \"reasoning\": \"Article 4(1)(e)(b) outlines the types of information to be provided for the clearance and destruction of cluster munition remnants. It does not define what constitutes 'assistance' for the purposes of the prohibition in Article 1(c). Citing a remedial clearance provision to establish the scope of a substantive prohibition is a misapplication of the treaty's structure.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccm\",\n          \"article\": \"4(1)(e)(b)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccm\",\n          \"article\": \"1(1)(c)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_4a940cc7\",\n      \"ground\": \"The argument relies on a general principle of state responsibility to fill a gap in the Convention's text, ignoring that the Convention's prohibitions are framed in terms of the State Party's own conduct.\",\n      \"reasoning\": \"The Convention's obligations are personal to the State Party. While custom may attribute acts, the argument asserts a 'well-established principle' without citing specific authority from the retrieved context. The retrieved context does not contain the ILC Articles on State Responsibility or specific case law attributing joint operations to a state. The argument assumes a legal basis not supported by the provided corpus.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccm\",\n          \"article\": \"1\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:53:17.753702Z",
+      "completed_at": "2026-11-23T00:53:19.493681Z",
+      "prompt_tokens": 3251,
+      "completion_tokens": 671,
+      "error": null
+    },
+    {
+      "id": "turn_c6118fff",
+      "round_number": 1,
+      "role": "attacker_evidentiary",
+      "model_id": "groq/openai/gpt-oss-20b",
+      "prompt_id": "attacker_evidentiary/challenge",
+      "prompt_hash": "ddd1f469f6457bc9398001937e18f4388d81437d0518fcfbc9eaf556c154921f",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_dfe36ea0",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_d5871127",
+          "ground": "Signing a tasking order does not constitute the use of cluster munitions attributable to Calvaro.",
+          "reasoning": "The facts only show that the Calvaran co‑director signed the order and that Sorvenian aircraft subsequently carried out the strike; there is no evidence that Calvaro itself used or deployed the munitions, nor that the signature itself is an act of use under the Convention.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccm",
+              "article": "1(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccm",
+                "article": "1(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "unresolved",
+              "source_url": null,
+              "note": "No span at ccm/art.1(a) in an indexed instrument."
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The facts show only that the Calvaran co-director signed the tasking order and that Sorvenian aircraft carried out the strike. There is no evidence that Calvaro itself deployed or used cluster munitions. The citation to Article 1(a) is also unresolved in the corpus."
+        },
+        {
+          "id": "obj_aaa01975",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_80dc0d50",
+          "ground": "The record does not show that Calvaro assisted, encouraged, or provided the required information to enable Sorvenia’s use of cluster munitions.",
+          "reasoning": "The facts state only that the Calvaran co‑director signed the tasking order and raised no objection; they do not establish that he supplied details of munition types, quantities, or precise strike locations, nor that he induced Sorvenia to use the munitions. Without evidence of such assistance, the alleged breach of Articles 1(c) and 4(1)(e)(b) cannot be proven.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccm",
+              "article": "1(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "ccm",
+              "article": "4(1)(e)(b)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccm",
+                "article": "1(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "unresolved",
+              "source_url": null,
+              "note": "No span at ccm/art.1(c) in an indexed instrument."
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccm",
+                "article": "4(1)(e)(b)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The record does not establish that Calvaro provided information on munition types, quantities, or precise strike locations as described in Article 4(1)(e)(b), nor that it induced Sorvenia to use cluster munitions. The only facts are the co-signature and non-objection. The citation to Article 1(c) is unresolved."
+        },
+        {
+          "id": "obj_ba178339",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_4a940cc7",
+          "ground": "The facts do not establish that the strike is attributable to Calvaro under the Convention.",
+          "reasoning": "Attribution requires that the act was undertaken under Calvaro’s authority or control. The record only shows that the Calvaran co‑director signed the tasking order; it does not demonstrate that Calvaro exercised control over the operation, that the strike was conducted as part of a Calvaro‑directed mission, or that Calvaro’s forces were involved. Without such evidence, the strike cannot be legally attributed to Calvaro.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccm",
+              "article": "1(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccm",
+                "article": "1(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "unresolved",
+              "source_url": null,
+              "note": "No span at ccm/art.1(a) in an indexed instrument."
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Attribution requires evidence that the act was undertaken under Calvaro's authority or control. The facts show only the co-director's signature; they do not demonstrate Calvaran control over the aircraft, the mission, or the strike. The citation to Article 1(a) is unresolved."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_d5871127\",\n      \"ground\": \"Signing a tasking order does not constitute the use of cluster munitions attributable to Calvaro.\",\n      \"reasoning\": \"The facts only show that the Calvaran co‑director signed the order and that Sorvenian aircraft subsequently carried out the strike; there is no evidence that Calvaro itself used or deployed the munitions, nor that the signature itself is an act of use under the Convention.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccm\",\n          \"article\": \"1(a)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_80dc0d50\",\n      \"ground\": \"The record does not show that Calvaro assisted, encouraged, or provided the required information to enable Sorvenia’s use of cluster munitions.\",\n      \"reasoning\": \"The facts state only that the Calvaran co‑director signed the tasking order and raised no objection; they do not establish that he supplied details of munition types, quantities, or precise strike locations, nor that he induced Sorvenia to use the munitions. Without evidence of such assistance, the alleged breach of Articles 1(c) and 4(1)(e)(b) cannot be proven.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccm\",\n          \"article\": \"1(c)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccm\",\n          \"article\": \"4(1)(e)(b)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_4a940cc7\",\n      \"ground\": \"The facts do not establish that the strike is attributable to Calvaro under the Convention.\",\n      \"reasoning\": \"Attribution requires that the act was undertaken under Calvaro’s authority or control. The record only shows that the Calvaran co‑director signed the tasking order; it does not demonstrate that Calvaro exercised control over the operation, that the strike was conducted as part of a Calvaro‑directed mission, or that Calvaro’s forces were involved. Without such evidence, the strike cannot be legally attributed to Calvaro.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccm\",\n          \"article\": \"1(a)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:53:17.756679Z",
+      "completed_at": "2026-11-23T00:53:20.107291Z",
+      "prompt_tokens": 3119,
+      "completion_tokens": 1420,
+      "error": null
+    },
+    {
+      "id": "turn_6ac25151",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "07b5a84c239076f8e6ba4f543a3d7cb67fc95f7cd37f60c173cd0edaa596f826",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes.\", \"reasoning\": \"The Republic of Calvaro breached its obligation under Article 1(1)(c) of the Convention on Cluster Munitions. Article 1(1)(c) prohibits a State Party from assisting, encouraging, or inducing anyone to engage in any activity prohibited to a State Party under the Convention — including the use of cluster munitions prohibited by Article 1(1)(a). The facts establish that the Calvaran co-director’s signature was a required condition for the tasking order to take effect, that the order specified air-delivered cluster munitions, and that the Calvaran co-director signed without objection. This deliberate authorization of a cluster-munition strike by a required State Party official constitutes ‘assistance’ or ‘encouragement’ within the ordinary meaning of Article 1(1)(c). The breach does not depend on attributing the physical use to Calvaro (Article 1(1)(a) is not engaged), nor on the remedial clearance provisions of Article 4(1)(e)(b), which are structurally distinct from the substantive prohibition in Article 1(1)(c).\", \"confidence\": 0.8, \"confidence_reasoning\": \"The treaty text (Article 1(1)(c)) is clear and in the retrieved corpus. The facts show a required signature authorizing a cluster-munition strike. IHL treaty practice and the ICRC commentary confirm that ‘assist or encourage’ covers practical support such as required authorization. The only uncertainty is whether a co-signature in a joint cell with a non-party ally might be viewed as mere procedural acquiescence, but the cell’s written procedures gave the Calvaran co-director a veto, making the signature a substantive choice. Confidence is high but not 0.9+ because the CCM does not define ‘assist/encourage’ and no case law on point is in the corpus.\", \"rulings\": [{\"objection_id\": \"obj_d5bd35c4\", \"disposition\": \"sustained\", \"reasoning\": \"Article 1(1)(a) prohibits the ‘use’ of cluster munitions. In weapons treaties, ‘use’ means physical employment or deployment in hostilities, not administrative authorization. The physical use was by Sorvenian aircraft; the Calvaran signature is properly analyzed under Article 1(1)(c), not Article 1(1)(a).\"}, {\"objection_id\": \"obj_db5b708d\", \"disposition\": \"sustained\", \"reasoning\": \"Article 4(1)(e)(b) appears in Article 4 (‘Clearance and destruction of cluster munition remnants’) and specifies information to be provided for clearance purposes. It does not define the scope of ‘assist, encourage or induce’ in Article 1(1)(c). The treaty structure separates substantive prohibitions (Article 1) from remedial obligations (Article 4).\"}, {\"objection_id\": \"obj_90189f72\", \"disposition\": \"sustained\", \"reasoning\": \"The argument invokes customary state responsibility and the ILC Articles to attribute the strike to Calvaro, but the retrieved corpus contains none of these authorities. The CCM’s prohibitions are framed in terms of the State Party’s own conduct (Article 1); attribution of the ally’s physical act is unnecessary to establish an Article 1(1)(c) breach.\"}, {\"objection_id\": \"obj_dfe36ea0\", \"disposition\": \"sustained\", \"reasoning\": \"The facts show only that the Calvaran co-director signed the tasking order and that Sorvenian aircraft executed the strike. There is no evidence Calvaro’s forces deployed or employed cluster munitions. The signature alone does not constitute ‘use’ under Article 1(1)(a).\"}, {\"objection_id\": \"obj_aaa01975\", \"disposition\": \"partial\", \"reasoning\": \"As to Article 4(1)(e)(b): sustained — it is a clearance provision, not probative of assistance under Article 1(1)(c). As to Article 1(1)(c): overruled — the facts show the Calvaran co-director’s signature was a required condition for the strike to proceed, he knew the order specified cluster munitions, and he signed without objection. This constitutes at least ‘encouragement’ or ‘assistance’ within the ordinary meaning of Article 1(1)(c).\"}, {\"objection_id\": \"obj_ba178339\", \"disposition\": \"sustained\", \"reasoning\": \"The facts do not establish that Calvaro exercised authority or control over the strike beyond the co-signature requirement. The joint cell required both signatures; Sorvenian aircraft flew the mission. Attribution of the strike itself to Calvaro is not established and is not required for an Article 1(1)(c) breach.\"}], \"surviving_argument_ids\": [\"arg_80dc0d50\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-23T00:53:20.108187Z",
+      "completed_at": "2026-11-23T00:55:05.685471Z",
+      "prompt_tokens": 4295,
+      "completion_tokens": 6840,
+      "error": null
+    },
+    {
+      "id": "turn_40d3d5bf",
+      "round_number": 2,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/rebuttal",
+      "prompt_hash": "e3313c248fca5d9b35c907f9f81615a6db91dca4d52c66b39d3dec17d23ef736",
+      "arguments": [
+        {
+          "id": "arg_bedd656b",
+          "claim": "The Republic of Calvaro breached Article 1(c) of the Convention on Cluster Munitions by assisting, encouraging, and inducing Sorvenia to use cluster munitions in the Halvek Pass strike.",
+          "reasoning": "Article 1(c) obliges a State Party never to assist, encourage or induce any person to engage in an activity prohibited to that State Party, namely the use of cluster munitions. By co‑directing the combined targeting cell, signing the tasking order that expressly authorised the employment of air‑delivered cluster munitions, and raising no objection, the Calvaran co‑director provided the decisive approval that enabled Sorvenian forces to carry out the strike. This conduct constitutes the assistance and encouragement prohibited by Article 1(c), making Calvaro liable for a breach of the Convention.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccm",
+              "article": "1(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Assist, encourage or induce anyone to engage in any activity prohibited to a State Party under this Convention."
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccm",
+                "article": "1(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Assist, encourage or induce anyone to engage in any activity prohibited to a State Party under this Convention."
+              },
+              "status": "unresolved",
+              "source_url": null,
+              "note": "No span at ccm/art.1(c) in an indexed instrument."
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The Republic of Calvaro breached Article 1(c) of the Convention on Cluster Munitions by assisting, encouraging, and inducing Sorvenia to use cluster munitions in the Halvek Pass strike.\",\n      \"reasoning\": \"Article 1(c) obliges a State Party never to assist, encourage or induce any person to engage in an activity prohibited to that State Party, namely the use of cluster munitions. By co‑directing the combined targeting cell, signing the tasking order that expressly authorised the employment of air‑delivered cluster munitions, and raising no objection, the Calvaran co‑director provided the decisive approval that enabled Sorvenian forces to carry out the strike. This conduct constitutes the assistance and encouragement prohibited by Article 1(c), making Calvaro liable for a breach of the Convention.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccm\",\n          \"article\": \"1(c)\",\n          \"quoted_text\": \"Assist, encourage or induce anyone to engage in any activity prohibited to a State Party under this Convention.\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:55:05.686747Z",
+      "completed_at": "2026-11-23T00:55:09.165640Z",
+      "prompt_tokens": 3824,
+      "completion_tokens": 1568,
+      "error": null
+    },
+    {
+      "id": "turn_23744551",
+      "round_number": 2,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "1bfcd5cf75391d5d4d2e1033d3b1dfa382f403ab9078e128f89ed1d3e8c5680b",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_02e636bf",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_80dc0d50",
+          "ground": "The argument mischaracterizes Article 4(1)(e)(b) as an independent prohibition, when it is a definitional clause for assistance obligations.",
+          "reasoning": "Article 4(1)(e)(b) defines the scope of assistance obligations (e.g., providing information) but does not itself create a standalone prohibition. The prohibition is located in Article 1(c). Citing Article 4(1)(e)(b) as a breached obligation is a legal error; it merely illustrates the nature of the assistance described in Article 1(c).",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccm",
+              "article": "4(1)(e)(b)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "ccm",
+              "article": "1(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccm",
+                "article": "4(1)(e)(b)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccm",
+                "article": "1(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "unresolved",
+              "source_url": null,
+              "note": "No span at ccm/art.1(c) in an indexed instrument."
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Article 4(1)(e)(b) defines the scope of assistance for clearance purposes; it does not create an independent prohibition. The sole prohibition on assistance is in Article 1(c). The argument's treatment of Article 4(1)(e)(b) as a breached obligation is a legal error."
+        },
+        {
+          "id": "obj_4f3c6990",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_bedd656b",
+          "ground": "The argument conflates non-objection with active assistance or inducement, failing to distinguish between passive acquiescence and the affirmative acts required by Article 1(c).",
+          "reasoning": "Article 1(c) prohibits 'assisting, encouraging or inducing'. Merely failing to object to a non-party ally's choice of weapon, when the State has no unilateral power to prevent it (as the facts state neither can change the munition alone), may not constitute the affirmative 'encouragement' or 'inducement' required. The signature is a procedural requirement of the joint cell, not necessarily an independent act of encouragement separate from the joint decision-making process.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccm",
+              "article": "1(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccm",
+                "article": "1(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "unresolved",
+              "source_url": null,
+              "note": "No span at ccm/art.1(c) in an indexed instrument."
+            }
+          ],
+          "severity": "material",
+          "disposition": "sustained",
+          "disposition_reasoning": "Article 1(c) prohibits 'assisting, encouraging or inducing' — affirmative acts. The facts state that neither co-director can change the munition alone, making the signature a procedural requirement of the joint cell, not an independent act of encouragement. Mere non-objection in this constrained context does not satisfy the treaty's requirement."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_80dc0d50\",\n      \"ground\": \"The argument mischaracterizes Article 4(1)(e)(b) as an independent prohibition, when it is a definitional clause for assistance obligations.\",\n      \"reasoning\": \"Article 4(1)(e)(b) defines the scope of assistance obligations (e.g., providing information) but does not itself create a standalone prohibition. The prohibition is located in Article 1(c). Citing Article 4(1)(e)(b) as a breached obligation is a legal error; it merely illustrates the nature of the assistance described in Article 1(c).\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccm\",\n          \"article\": \"4(1)(e)(b)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccm\",\n          \"article\": \"1(c)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_bedd656b\",\n      \"ground\": \"The argument conflates non-objection with active assistance or inducement, failing to distinguish between passive acquiescence and the affirmative acts required by Article 1(c).\",\n      \"reasoning\": \"Article 1(c) prohibits 'assisting, encouraging or inducing'. Merely failing to object to a non-party ally's choice of weapon, when the State has no unilateral power to prevent it (as the facts state neither can change the munition alone), may not constitute the affirmative 'encouragement' or 'inducement' required. The signature is a procedural requirement of the joint cell, not necessarily an independent act of encouragement separate from the joint decision-making process.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccm\",\n          \"article\": \"1(c)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:55:09.166515Z",
+      "completed_at": "2026-11-23T00:55:10.598737Z",
+      "prompt_tokens": 3440,
+      "completion_tokens": 470,
+      "error": null
+    },
+    {
+      "id": "turn_c3ad392a",
+      "round_number": 2,
+      "role": "attacker_evidentiary",
+      "model_id": "groq/openai/gpt-oss-20b",
+      "prompt_id": "attacker_evidentiary/challenge",
+      "prompt_hash": "34d0cdeec8472308bdc4de2ec1f5a604b4046c093834dfff2fd392beb9def30d",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_62523a3f",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_d5871127",
+          "ground": "Signing a tasking order does not constitute use of cluster munitions by the State.",
+          "reasoning": "The facts show that the Calvaran co‑director signed the tasking order, but there is no evidence that Calvaro deployed or used cluster munitions themselves; only Sorvenian aircraft used them. The act of signing alone does not satisfy the factual predicate that Calvaro used cluster munitions, so the claim lacks factual support.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccm",
+              "article": "1(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccm",
+                "article": "1(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "unresolved",
+              "source_url": null,
+              "note": "No span at ccm/art.1(a) in an indexed instrument."
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Identical to obj_dfe36ea0: signing a tasking order is not 'use' of cluster munitions by the State. Only Sorvenian aircraft used the munitions. The citation is unresolved."
+        },
+        {
+          "id": "obj_bcff3c91",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_80dc0d50",
+          "ground": "The facts do not establish that Calvaro provided the assistance or information required by Article 4(1)(e)(b) or that it encouraged Sorvenia.",
+          "reasoning": "The tasking order only specified the munition type; there is no evidence that Calvaro supplied quantities, precise strike locations, or other information contemplated by Article 4(1)(e)(b). The facts also do not indicate any intent to assist or encourage. Consequently, the factual predicate that Calvaro breached these obligations is unsupported.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccm",
+              "article": "1(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "ccm",
+              "article": "4(1)(e)(b)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccm",
+                "article": "1(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "unresolved",
+              "source_url": null,
+              "note": "No span at ccm/art.1(c) in an indexed instrument."
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccm",
+                "article": "4(1)(e)(b)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/ccm-2008",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The tasking order specified only the munition type. There is no evidence Calvaro supplied quantities, precise locations, or other information contemplated by Article 4(1)(e)(b), nor any intent to assist or encourage. The factual predicate for breach is unsupported."
+        },
+        {
+          "id": "obj_96b29233",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_4a940cc7",
+          "ground": "There is no evidence that the Calvaran co‑director's actions are attributable to Calvaro as an act of the State.",
+          "reasoning": "Attribution requires that the State’s officials act under its authority. The facts only show the co‑director signed the order; they do not demonstrate that Calvaro exercised control over the aircraft or that the strike was conducted under its command. Therefore the act cannot be attributed to Calvaro, undermining the argument’s factual predicate.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccm",
+              "article": "1(a)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccm",
+                "article": "1(a)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "unresolved",
+              "source_url": null,
+              "note": "No span at ccm/art.1(a) in an indexed instrument."
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "No evidence shows the co-director's signature is attributable to Calvaro as a state act exercising control over the strike. The facts describe a joint cell with dual-key procedures and Sorvenian-only aircraft. The citation is unresolved."
+        },
+        {
+          "id": "obj_ff653791",
+          "raised_by": "attacker_evidentiary",
+          "target_argument_id": "arg_bedd656b",
+          "ground": "The facts do not establish that Calvaro assisted or encouraged Sorvenia to use cluster munitions.",
+          "reasoning": "The Calvaran co‑director's signature alone does not prove intent to assist or encourage. No evidence of encouragement, inducement, or additional assistance is provided. Thus the factual predicate that Calvaro breached Article 1(c) is unsupported.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "ccm",
+              "article": "1(c)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "ccm",
+                "article": "1(c)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "unresolved",
+              "source_url": null,
+              "note": "No span at ccm/art.1(c) in an indexed instrument."
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The signature alone, in a mandatory dual-signature process where Calvaro lacked unilateral veto over the munition, does not prove intent to assist or encourage. No additional evidence of encouragement, inducement, or assistance appears in the record. The citation to Article 1(c) is unresolved."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_d5871127\",\n      \"ground\": \"Signing a tasking order does not constitute use of cluster munitions by the State.\",\n      \"reasoning\": \"The facts show that the Calvaran co‑director signed the tasking order, but there is no evidence that Calvaro deployed or used cluster munitions themselves; only Sorvenian aircraft used them. The act of signing alone does not satisfy the factual predicate that Calvaro used cluster munitions, so the claim lacks factual support.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccm\",\n          \"article\": \"1(a)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_80dc0d50\",\n      \"ground\": \"The facts do not establish that Calvaro provided the assistance or information required by Article 4(1)(e)(b) or that it encouraged Sorvenia.\",\n      \"reasoning\": \"The tasking order only specified the munition type; there is no evidence that Calvaro supplied quantities, precise strike locations, or other information contemplated by Article 4(1)(e)(b). The facts also do not indicate any intent to assist or encourage. Consequently, the factual predicate that Calvaro breached these obligations is unsupported.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccm\",\n          \"article\": \"1(c)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccm\",\n          \"article\": \"4(1)(e)(b)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_4a940cc7\",\n      \"ground\": \"There is no evidence that the Calvaran co‑director's actions are attributable to Calvaro as an act of the State.\",\n      \"reasoning\": \"Attribution requires that the State’s officials act under its authority. The facts only show the co‑director signed the order; they do not demonstrate that Calvaro exercised control over the aircraft or that the strike was conducted under its command. Therefore the act cannot be attributed to Calvaro, undermining the argument’s factual predicate.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccm\",\n          \"article\": \"1(a)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_bedd656b\",\n      \"ground\": \"The facts do not establish that Calvaro assisted or encouraged Sorvenia to use cluster munitions.\",\n      \"reasoning\": \"The Calvaran co‑director's signature alone does not prove intent to assist or encourage. No evidence of encouragement, inducement, or additional assistance is provided. Thus the factual predicate that Calvaro breached Article 1(c) is unsupported.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"ccm\",\n          \"article\": \"1(c)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-23T00:55:09.167611Z",
+      "completed_at": "2026-11-23T00:55:12.446634Z",
+      "prompt_tokens": 3304,
+      "completion_tokens": 2555,
+      "error": null
+    },
+    {
+      "id": "turn_67baf588",
+      "round_number": 2,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "421a16fd70f831ae8726d16306e3779e1cebe1d41979992ff088fc4730c25489",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"No.\", \"reasoning\": \"All four arguments alleging a breach by Calvaro have been defeated by sustained objections. The doctrinal objections correctly establish that: (1) 'use' under Article 1(a) means physical deployment of the munition, not administrative authorization (obj_d5bd35c4, obj_dfe36ea0, obj_62523a3f); (2) Article 1(c) requires affirmative acts of assistance, encouragement, or inducement, not mere procedural signature or non-objection in a joint cell where neither co-director can unilaterally change the munition (obj_4f3c6990, obj_ff653791); (3) Article 4(1)(e)(b) is a remedial clearance provision, not a definitional element of the Article 1(c) prohibition nor a standalone obligation (obj_db5b708d, obj_02e636bf); and (4) attribution of the strike to Calvaro is not supported on the facts, which show no Calvaran control over the aircraft or operation (obj_90189f72, obj_ba178339, obj_96b29233). The evidentiary objections further confirm the record contains no proof that Calvaro supplied strike-location data, munition quantities, or any inducement beyond the mandatory co-signature. On the proper legal tests and the given facts, Calvaro's co-director's signature on the tasking order did not constitute a breach of the Convention.\", \"confidence\": 0.75, \"confidence_reasoning\": \"The treaty text of Article 1(a) and 1(c) supports the interpretation that 'use' requires physical employment and that 'assist, encourage or induce' requires affirmative conduct. The sustained doctrinal objections correctly capture this. The facts are clear that the joint cell required dual signature, neither co-director could change the munition alone, only Sorvenian aircraft flew the mission, and Calvaro had urged non-use. No surviving argument or evidence supports a breach. Confidence is not higher because international tribunals have not authoritatively ruled on this exact joint-cell scenario, but the textual and structural analysis is strong.\", \"rulings\": [{\"objection_id\": \"obj_d5bd35c4\", \"disposition\": \"sustained\", \"reasoning\": \"Article 1(a) prohibits the 'use' of cluster munitions. The ordinary meaning of 'use' in arms-control treaties is the actual deployment or employment of the weapon in hostilities, not the administrative act of authorizing a strike. The physical use was performed by Sorvenian aircraft; the Calvaran co-director's signature is authorization, not use.\"}, {\"objection_id\": \"obj_db5b708d\", \"disposition\": \"sustained\", \"reasoning\": \"Article 4(1)(e)(b) appears in the Convention's clearance-and-destruction chapter (Article 4) and specifies information to be provided for remnant clearance. It does not define the scope of the prohibition in Article 1(c). Citing a remedial provision to establish the content of a substantive prohibition misreads the treaty structure.\"}, {\"objection_id\": \"obj_90189f72\", \"disposition\": \"sustained\", \"reasoning\": \"The argument invokes a general principle of state responsibility to attribute the strike to Calvaro, but the retrieved corpus contains no ILC Articles on State Responsibility, no case law on attribution in joint operations, and no treaty provision supporting such attribution. The Convention's obligations are personal to the State Party; a gap-filling principle cannot be applied without authority in the record.\"}, {\"objection_id\": \"obj_dfe36ea0\", \"disposition\": \"sustained\", \"reasoning\": \"The facts show only that the Calvaran co-director signed the tasking order and that Sorvenian aircraft carried out the strike. There is no evidence that Calvaro itself deployed or used cluster munitions. The citation to Article 1(a) is also unresolved in the corpus.\"}, {\"objection_id\": \"obj_aaa01975\", \"disposition\": \"sustained\", \"reasoning\": \"The record does not establish that Calvaro provided information on munition types, quantities, or precise strike locations as described in Article 4(1)(e)(b), nor that it induced Sorvenia to use cluster munitions. The only facts are the co-signature and non-objection. The citation to Article 1(c) is unresolved.\"}, {\"objection_id\": \"obj_ba178339\", \"disposition\": \"sustained\", \"reasoning\": \"Attribution requires evidence that the act was undertaken under Calvaro's authority or control. The facts show only the co-director's signature; they do not demonstrate Calvaran control over the aircraft, the mission, or the strike. The citation to Article 1(a) is unresolved.\"}, {\"objection_id\": \"obj_02e636bf\", \"disposition\": \"sustained\", \"reasoning\": \"Article 4(1)(e)(b) defines the scope of assistance for clearance purposes; it does not create an independent prohibition. The sole prohibition on assistance is in Article 1(c). The argument's treatment of Article 4(1)(e)(b) as a breached obligation is a legal error.\"}, {\"objection_id\": \"obj_4f3c6990\", \"disposition\": \"sustained\", \"reasoning\": \"Article 1(c) prohibits 'assisting, encouraging or inducing' — affirmative acts. The facts state that neither co-director can change the munition alone, making the signature a procedural requirement of the joint cell, not an independent act of encouragement. Mere non-objection in this constrained context does not satisfy the treaty's requirement.\"}, {\"objection_id\": \"obj_62523a3f\", \"disposition\": \"sustained\", \"reasoning\": \"Identical to obj_dfe36ea0: signing a tasking order is not 'use' of cluster munitions by the State. Only Sorvenian aircraft used the munitions. The citation is unresolved.\"}, {\"objection_id\": \"obj_bcff3c91\", \"disposition\": \"sustained\", \"reasoning\": \"The tasking order specified only the munition type. There is no evidence Calvaro supplied quantities, precise locations, or other information contemplated by Article 4(1)(e)(b), nor any intent to assist or encourage. The factual predicate for breach is unsupported.\"}, {\"objection_id\": \"obj_96b29233\", \"disposition\": \"sustained\", \"reasoning\": \"No evidence shows the co-director's signature is attributable to Calvaro as a state act exercising control over the strike. The facts describe a joint cell with dual-key procedures and Sorvenian-only aircraft. The citation is unresolved.\"}, {\"objection_id\": \"obj_ff653791\", \"disposition\": \"sustained\", \"reasoning\": \"The signature alone, in a mandatory dual-signature process where Calvaro lacked unilateral veto over the munition, does not prove intent to assist or encourage. No additional evidence of encouragement, inducement, or assistance appears in the record. The citation to Article 1(c) is unresolved.\"}], \"surviving_argument_ids\": [], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-23T00:55:12.447470Z",
+      "completed_at": "2026-11-23T00:56:00.468237Z",
+      "prompt_tokens": 5400,
+      "completion_tokens": 4352,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-23T00:56:00.469556+00:00",
+  "duration_seconds": 168.24517712602392,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 2,
+  "judge_failures": 0,
+  "judge_failed": false
+}

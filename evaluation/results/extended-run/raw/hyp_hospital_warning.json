@@ -1,0 +1,187 @@
+{
+  "case_id": "hyp_hospital_warning",
+  "case_title": "Fictional: the St Ilven hospital in Varnetsa",
+  "court": "Hypothetical",
+  "year": 2026,
+  "difficulty": "medium",
+  "arm": "raw",
+  "arm_label": "A — Single pass, no retrieval",
+  "run_id": "eval_345f1235f7",
+  "question": "Did the Calvaran strike on the St Ilven hospital on 13 August 2025 violate the protection owed to civilian medical units under the law of international armed conflict?",
+  "facts": "An international armed conflict has existed since March 2025 between the Republic of Calvaro and the Federation of Drennick, both parties to the four Geneva Conventions of 1949, Additional Protocol I and the Rome Statute. St Ilven Hospital in the town of Varnetsa is a civilian hospital recognised by the Drennick authorities and marked with the red cross emblem. From 2 August 2025, after Drennick forces withdrew into Varnetsa, a Drennick artillery observation team occupied the hospital's top floor and from there directed artillery fire onto Calvaran positions; a heavy machine gun mounted on the hospital roof fired on Calvaran troops; and the basement was used to store artillery ammunition. On 9 August Calvaran forces warned, by radio broadcast on frequencies used by Drennick forces, by leaflets, and through a delegate of the International Committee of the Red Cross, that unless all military use of the hospital ceased within 48 hours it would lose its protection and be attacked, and offered a safe corridor for the evacuation of patients and staff. The military use continued: the roof machine gun fired on Calvaran troops on 10 and 11 August. Between 9 and 12 August all patients and medical staff left through the corridor, and on 12 August the hospital director told the ICRC delegate that no patients or medical staff remained in the building. On 13 August Calvaran aircraft struck the top floor and roof with two guided munitions, chosen to avoid the lower floors. The strike killed two Drennick soldiers on the roof and destroyed the top floor. No civilians were in the building.",
+  "ground_truth_outcome": "rejected",
+  "holding": "Authored ground truth for a fictional case; no tribunal has ruled on it. No. Protection of a civilian medical unit ceases when it is used, outside its humanitarian function, to commit acts harmful to the enemy, after a warning setting a reasonable time-limit has remained unheeded (GC IV Art. 19 for civilian hospitals; AP I Art. 13(1) for civilian medical units; customary Rule 28). Directing artillery fire, firing a machine gun and storing ammunition are acts harmful to the enemy and none falls within the exceptions in GC IV Art. 19(2) or AP I Art. 13(2). A warning naming a 48-hour time-limit was given through several channels and went unheeded. With patients and staff evacuated and munitions chosen to limit the damage, the strike involved no incidental civilian harm, and the precautions required by Art. 57 were taken. The strike did not violate the protection owed to the hospital under GC IV Arts. 18–19 or AP I Arts. 12–13.",
+  "predicted_outcome": "rejected",
+  "outcome_correct": true,
+  "confidence": 0.85,
+  "confidence_reasoning": "The conclusion follows directly from the undisputed facts and the unchallenged legal framework. Confidence is not higher because the absence of corpus authority means I cannot verify the precise treaty language or jurisprudence, but the factual pattern is a textbook application of the loss-of-protection, warning, distinction, and precaution rules.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 2,
+  "citation_statuses": {
+    "total": 0,
+    "resolved": 0,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "No.",
+    "reasoning": "No objections were filed against the five arguments presented. The facts as given establish that St Ilven Hospital lost its protection as a civilian medical unit under Article 19(2) of Additional Protocol I because it was used for acts harmful to the enemy: an artillery observation team occupied the top floor, a heavy machine gun on the roof engaged Calvaran troops, and the basement stored artillery ammunition. Calvaran forces issued an effective warning through multiple channels (radio, leaflets, ICRC delegate) providing 48 hours for cessation of military use and offering a safe corridor; all patients and staff evacuated. The 13 August strike targeted only the top floor and roof — the portions used for military purposes — with guided munitions, killing two Drennick soldiers and no civilians. On these facts, the hospital had lost its protection, the warning requirement was satisfied, the target was a legitimate military objective, and feasible precautions were taken. I reason from principle because no corpus context was retrieved; all citations in the arguments are unsupported by the provided record.",
+    "confidence": 0.85,
+    "confidence_reasoning": "The conclusion follows directly from the undisputed facts and the unchallenged legal framework. Confidence is not higher because the absence of corpus authority means I cannot verify the precise treaty language or jurisprudence, but the factual pattern is a textbook application of the loss-of-protection, warning, distinction, and precaution rules.",
+    "surviving_argument_ids": [
+      "arg_299de83f",
+      "arg_b82832a0",
+      "arg_a91539a8",
+      "arg_7477afbe",
+      "arg_7243e0a5"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_299de83f",
+      "claim": "The hospital ceased to enjoy protection as a medical unit under Article 19(2) of Additional Protocol I because it was used to mount weapons, store ammunition, and direct artillery fire.",
+      "reasoning": "Customary IHL and Additional Protocol I require that a medical unit retain its protected status only so long as it is not used to commit acts harmful to the enemy. The occupation of the top floor by an artillery observation team, the mounting of a heavy machine gun on the roof, and the storage of ammunition in the basement constitute acts harmful to the enemy, thereby removing the hospital's protection under the treaty text and the jurisprudence of the ICTY on loss of protection for medical facilities used for military purposes.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_b82832a0",
+      "claim": "The warning issued by Calvaran forces on 9 August satisfied the requirement of an effective warning before attacking a former medical facility that had lost its protection.",
+      "reasoning": "International humanitarian law obliges parties to give an effective warning to persons in the vicinity of a protected object that has lost its protection before launching an attack, unless circumstances do not permit. The radio broadcast, leaflets, and ICRC delegate notification provided clear notice and a 48‑hour period for the cessation of military use, meeting the standard set by customary IHL and the practice of the International Committee of the Red Cross.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_a91539a8",
+      "claim": "The attack on 13 August was directed at a legitimate military objective because the hospital’s top floor was being used as an artillery observation post and weapons platform at the time of the strike.",
+      "reasoning": "A military objective is any object which by its nature, location, purpose or use makes an effective contribution to military action and whose destruction offers a definite military advantage. The presence of an observation team directing fire and a machine gun actively engaging Calvaran troops means the top floor met both criteria, rendering it a lawful target under the principle of distinction.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_7477afbe",
+      "claim": "The use of guided munitions aimed at the roof and top floor, avoiding the lower levels, demonstrates compliance with the principle of precaution to minimize incidental civilian harm.",
+      "reasoning": "Precautionary measures require attackers to take all feasible steps to avoid or limit incidental loss of civilian life and damage to civilian objects. Selecting precision‑guided weapons and targeting only the portions of the building that housed combatants reflects adherence to this duty, as recognized in the jurisprudence of the ICC concerning proportionality and precaution.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_7243e0a5",
+      "claim": "Because the hospital had lost its protected status, the warning was effective, the target was a legitimate military objective, and the attack was conducted with feasible precautions, the strike on 13 August did not violate the protections owed to civilian medical units under the law of international armed conflict.",
+      "reasoning": "The convergence of the loss of protection, compliance with the warning requirement, lawful targeting under the distinction rule, and observance of precautionary measures collectively satisfy the legal tests for a permissible attack. Accordingly, the strike falls within the bounds of the Geneva Conventions, Additional Protocol I, and the Rome Statute, and does not constitute a war crime.",
+      "citations": [],
+      "resolved_citations": []
+    }
+  ],
+  "objections": [],
+  "context": [],
+  "turns": [
+    {
+      "id": "turn_bf391984",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "661b4f207da7970fa03f7c7a6baf7dcf16f621fc7df65ceb80918edd8836b8ee",
+      "arguments": [
+        {
+          "id": "arg_299de83f",
+          "claim": "The hospital ceased to enjoy protection as a medical unit under Article 19(2) of Additional Protocol I because it was used to mount weapons, store ammunition, and direct artillery fire.",
+          "reasoning": "Customary IHL and Additional Protocol I require that a medical unit retain its protected status only so long as it is not used to commit acts harmful to the enemy. The occupation of the top floor by an artillery observation team, the mounting of a heavy machine gun on the roof, and the storage of ammunition in the basement constitute acts harmful to the enemy, thereby removing the hospital's protection under the treaty text and the jurisprudence of the ICTY on loss of protection for medical facilities used for military purposes.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_b82832a0",
+          "claim": "The warning issued by Calvaran forces on 9 August satisfied the requirement of an effective warning before attacking a former medical facility that had lost its protection.",
+          "reasoning": "International humanitarian law obliges parties to give an effective warning to persons in the vicinity of a protected object that has lost its protection before launching an attack, unless circumstances do not permit. The radio broadcast, leaflets, and ICRC delegate notification provided clear notice and a 48‑hour period for the cessation of military use, meeting the standard set by customary IHL and the practice of the International Committee of the Red Cross.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_a91539a8",
+          "claim": "The attack on 13 August was directed at a legitimate military objective because the hospital’s top floor was being used as an artillery observation post and weapons platform at the time of the strike.",
+          "reasoning": "A military objective is any object which by its nature, location, purpose or use makes an effective contribution to military action and whose destruction offers a definite military advantage. The presence of an observation team directing fire and a machine gun actively engaging Calvaran troops means the top floor met both criteria, rendering it a lawful target under the principle of distinction.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_7477afbe",
+          "claim": "The use of guided munitions aimed at the roof and top floor, avoiding the lower levels, demonstrates compliance with the principle of precaution to minimize incidental civilian harm.",
+          "reasoning": "Precautionary measures require attackers to take all feasible steps to avoid or limit incidental loss of civilian life and damage to civilian objects. Selecting precision‑guided weapons and targeting only the portions of the building that housed combatants reflects adherence to this duty, as recognized in the jurisprudence of the ICC concerning proportionality and precaution.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_7243e0a5",
+          "claim": "Because the hospital had lost its protected status, the warning was effective, the target was a legitimate military objective, and the attack was conducted with feasible precautions, the strike on 13 August did not violate the protections owed to civilian medical units under the law of international armed conflict.",
+          "reasoning": "The convergence of the loss of protection, compliance with the warning requirement, lawful targeting under the distinction rule, and observance of precautionary measures collectively satisfy the legal tests for a permissible attack. Accordingly, the strike falls within the bounds of the Geneva Conventions, Additional Protocol I, and the Rome Statute, and does not constitute a war crime.",
+          "citations": [],
+          "resolved_citations": []
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The hospital ceased to enjoy protection as a medical unit under Article 19(2) of Additional Protocol I because it was used to mount weapons, store ammunition, and direct artillery fire.\",\n      \"reasoning\": \"Customary IHL and Additional Protocol I require that a medical unit retain its protected status only so long as it is not used to commit acts harmful to the enemy. The occupation of the top floor by an artillery observation team, the mounting of a heavy machine gun on the roof, and the storage of ammunition in the basement constitute acts harmful to the enemy, thereby removing the hospital's protection under the treaty text and the jurisprudence of the ICTY on loss of protection for medical facilities used for military purposes.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The warning issued by Calvaran forces on 9 August satisfied the requirement of an effective warning before attacking a former medical facility that had lost its protection.\",\n      \"reasoning\": \"International humanitarian law obliges parties to give an effective warning to persons in the vicinity of a protected object that has lost its protection before launching an attack, unless circumstances do not permit. The radio broadcast, leaflets, and ICRC delegate notification provided clear notice and a 48‑hour period for the cessation of military use, meeting the standard set by customary IHL and the practice of the International Committee of the Red Cross.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The attack on 13 August was directed at a legitimate military objective because the hospital’s top floor was being used as an artillery observation post and weapons platform at the time of the strike.\",\n      \"reasoning\": \"A military objective is any object which by its nature, location, purpose or use makes an effective contribution to military action and whose destruction offers a definite military advantage. The presence of an observation team directing fire and a machine gun actively engaging Calvaran troops means the top floor met both criteria, rendering it a lawful target under the principle of distinction.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The use of guided munitions aimed at the roof and top floor, avoiding the lower levels, demonstrates compliance with the principle of precaution to minimize incidental civilian harm.\",\n      \"reasoning\": \"Precautionary measures require attackers to take all feasible steps to avoid or limit incidental loss of civilian life and damage to civilian objects. Selecting precision‑guided weapons and targeting only the portions of the building that housed combatants reflects adherence to this duty, as recognized in the jurisprudence of the ICC concerning proportionality and precaution.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"Because the hospital had lost its protected status, the warning was effective, the target was a legitimate military objective, and the attack was conducted with feasible precautions, the strike on 13 August did not violate the protections owed to civilian medical units under the law of international armed conflict.\",\n      \"reasoning\": \"The convergence of the loss of protection, compliance with the warning requirement, lawful targeting under the distinction rule, and observance of precautionary measures collectively satisfy the legal tests for a permissible attack. Accordingly, the strike falls within the bounds of the Geneva Conventions, Additional Protocol I, and the Rome Statute, and does not constitute a war crime.\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-23T01:29:51.771714Z",
+      "completed_at": "2026-11-23T01:29:54.271257Z",
+      "prompt_tokens": 1352,
+      "completion_tokens": 964,
+      "error": null
+    },
+    {
+      "id": "turn_2071f261",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "de9be4e6748dcd47c4410239a2429ef18dae31c100a9d8373f041a8a5f338c50",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"No.\", \"reasoning\": \"No objections were filed against the five arguments presented. The facts as given establish that St Ilven Hospital lost its protection as a civilian medical unit under Article 19(2) of Additional Protocol I because it was used for acts harmful to the enemy: an artillery observation team occupied the top floor, a heavy machine gun on the roof engaged Calvaran troops, and the basement stored artillery ammunition. Calvaran forces issued an effective warning through multiple channels (radio, leaflets, ICRC delegate) providing 48 hours for cessation of military use and offering a safe corridor; all patients and staff evacuated. The 13 August strike targeted only the top floor and roof — the portions used for military purposes — with guided munitions, killing two Drennick soldiers and no civilians. On these facts, the hospital had lost its protection, the warning requirement was satisfied, the target was a legitimate military objective, and feasible precautions were taken. I reason from principle because no corpus context was retrieved; all citations in the arguments are unsupported by the provided record.\", \"confidence\": 0.85, \"confidence_reasoning\": \"The conclusion follows directly from the undisputed facts and the unchallenged legal framework. Confidence is not higher because the absence of corpus authority means I cannot verify the precise treaty language or jurisprudence, but the factual pattern is a textbook application of the loss-of-protection, warning, distinction, and precaution rules.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_299de83f\", \"arg_b82832a0\", \"arg_a91539a8\", \"arg_7477afbe\", \"arg_7243e0a5\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-23T01:29:54.276344Z",
+      "completed_at": "2026-11-23T01:30:16.795973Z",
+      "prompt_tokens": 2350,
+      "completion_tokens": 1013,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-23T01:30:16.797150+00:00",
+  "duration_seconds": 25.031628389959224,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}

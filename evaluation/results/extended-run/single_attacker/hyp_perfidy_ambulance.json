@@ -1,0 +1,1191 @@
+{
+  "case_id": "hyp_perfidy_ambulance",
+  "case_title": "Fictional: the Ostrel checkpoint ambulance",
+  "court": "Hypothetical",
+  "year": 2026,
+  "difficulty": "settled",
+  "arm": "single_attacker",
+  "arm_label": "C — One attacker",
+  "run_id": "eval_13bb237510",
+  "question": "Did the members of the Drennick team kill and wound adversaries by resort to perfidy, in violation of the law of international armed conflict?",
+  "facts": "An international armed conflict has existed since March 2025 between the Republic of Calvaro and the Federation of Drennick, both parties to the four Geneva Conventions of 1949, Additional Protocol I and the Rome Statute. On 14 May 2025 a four-person Drennick infantry team drove a white van marked on its roof and sides with a red cross on a white ground towards a Calvaran checkpoint outside the town of Ostrel. The van was not assigned to any medical service and carried no wounded or sick. The team members wore Drennick uniforms under white smocks with red cross armlets. At the checkpoint the driver called out that they were carrying wounded civilians to hospital. The Calvaran soldiers lowered their weapons and approached the van to help. The team then opened fire with rifles concealed in the van, killing three Calvaran soldiers and wounding two, and drove through the checkpoint. The Drennick defence ministry later described the operation as a legitimate ruse carried out under orders to break through the checkpoint by any available means.",
+  "ground_truth_outcome": "affirmed",
+  "holding": "Authored ground truth for a fictional case; no tribunal has ruled on it. Yes. By displaying the red cross emblem on a vehicle not assigned to medical purposes, wearing red cross armlets, and announcing that they carried wounded civilians, the team invited the Calvaran soldiers' confidence that the vehicle and its occupants were entitled to protection under the law of armed conflict, with intent to betray that confidence, and then killed and wounded them. That is perfidy under Article 37(1) of Additional Protocol I and customary Rule 65, combined with improper use of the distinctive emblem under Article 38. It is not a ruse under Article 37(2), because a ruse must not invite the adversary's confidence with respect to protection under that law. The killing and wounding would be war crimes under Article 8(2)(b)(xi) and 8(2)(b)(vii) of the Rome Statute.",
+  "predicted_outcome": "affirmed",
+  "outcome_correct": true,
+  "confidence": 0.92,
+  "confidence_reasoning": "The facts present a textbook case of perfidy: feigning protected status (medical vehicle and personnel) to invite the adversary’s confidence and then attacking. This is expressly prohibited by AP I Art. 37 (customary IHL) and criminalized in the Rome Statute under three sub‑paragraphs of Art. 8(2)(b). The sustained objections refine the legal characterization but do not undermine the conclusion. The only reason confidence is not higher is the absence of an explicit AP I Art. 37 citation in the retrieved context, though the Rome Statute provisions and customary law are sufficient.",
+  "rounds": 2,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 2,
+  "total_calls": 6,
+  "citation_statuses": {
+    "total": 12,
+    "resolved": 12,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Yes. The Drennick team killed and wounded Calvaran soldiers by resort to perfidy, in violation of the law of international armed conflict. The team feigned protected status by marking a non‑medical vehicle with the red cross emblem, wearing red cross armlets, and falsely claiming to transport wounded civilians, thereby inducing the Calvaran soldiers to lower their weapons and approach. The subsequent concealed attack constitutes perfidy under Additional Protocol I, Article 37, and amounts to the war crimes of improper use of distinctive emblems (Rome Statute, Art. 8(2)(b)(vii)), killing or wounding treacherously (Art. 8(2)(b)(xi)), and wilful killing (Art. 8(2)(b)(i)).",
+    "reasoning": "Objections obj_fa815cba and obj_0e56472d are sustained: the Calvaran soldiers were not hors de combat within the meaning of Common Article 3 (which in any event governs non‑international conflicts), and the correct legal basis for their killing is treacherous killing under Art. 8(2)(b)(xi), not the protections for persons hors de combat. Objection obj_ab33d598 is sustained in part: the argument in arg_2d279c51 conflates the distinct concepts of perfidy (a general prohibition on feigning protected status) and the specific war crime of improper use of emblems; however, the conduct satisfies both, so the core legal conclusion survives. Objection obj_b4e1a452 is overruled: Art. 8(2)(b)(vii) and (xi) are not mutually exclusive; the same conduct can violate both, and citing (vii) is not erroneous. The surviving arguments (arg_0278f57d, arg_1234cad9, arg_d1f1a4a5, arg_bff642f4) collectively establish that the Drennick team’s actions meet the elements of perfidy and the enumerated war crimes under the Rome Statute.",
+    "confidence": 0.92,
+    "confidence_reasoning": "The facts present a textbook case of perfidy: feigning protected status (medical vehicle and personnel) to invite the adversary’s confidence and then attacking. This is expressly prohibited by AP I Art. 37 (customary IHL) and criminalized in the Rome Statute under three sub‑paragraphs of Art. 8(2)(b). The sustained objections refine the legal characterization but do not undermine the conclusion. The only reason confidence is not higher is the absence of an explicit AP I Art. 37 citation in the retrieved context, though the Rome Statute provisions and customary law are sufficient.",
+    "surviving_argument_ids": [
+      "arg_0278f57d",
+      "arg_1234cad9",
+      "arg_d1f1a4a5",
+      "arg_bff642f4"
+    ],
+    "dissent": [
+      {
+        "id": "obj_b4e1a452",
+        "raised_by": "attacker_doctrinal",
+        "target_argument_id": "arg_2d279c51",
+        "ground": "The argument incorrectly identifies the specific legal test for perfidy, relying on a general provision for improper use of emblems rather than the specific elements of treacherous killing.",
+        "reasoning": "Article 8(2)(b)(vii) of the Rome Statute addresses 'improper use' of emblems. The specific charge of 'killing or wounding treacherously' is found in Article 8(2)(b)(xi). While related, the legal characterization of perfidy requires the specific element of treachery in the killing, which is better captured by (xi) than the general 'improper use' in (vii).",
+        "citations": [
+          {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(xi)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(vii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          }
+        ],
+        "resolved_citations": [
+          {
+            "citation": {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(xi)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            "status": "resolved",
+            "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+            "note": null
+          },
+          {
+            "citation": {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(vii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            "status": "resolved",
+            "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+            "note": null
+          }
+        ],
+        "severity": "material",
+        "disposition": "overruled",
+        "disposition_reasoning": "Art. 8(2)(b)(vii) (improper use of emblems) and Art. 8(2)(b)(xi) (treacherous killing) are not mutually exclusive; the same conduct can satisfy both. Citing (vii) is legally correct and does not misidentify the charge."
+      }
+    ]
+  },
+  "dissent": [
+    {
+      "id": "obj_b4e1a452",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_2d279c51",
+      "ground": "The argument incorrectly identifies the specific legal test for perfidy, relying on a general provision for improper use of emblems rather than the specific elements of treacherous killing.",
+      "reasoning": "Article 8(2)(b)(vii) of the Rome Statute addresses 'improper use' of emblems. The specific charge of 'killing or wounding treacherously' is found in Article 8(2)(b)(xi). While related, the legal characterization of perfidy requires the specific element of treachery in the killing, which is better captured by (xi) than the general 'improper use' in (vii).",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(xi)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(vii)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(xi)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(vii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "overruled",
+      "disposition_reasoning": "Art. 8(2)(b)(vii) (improper use of emblems) and Art. 8(2)(b)(xi) (treacherous killing) are not mutually exclusive; the same conduct can satisfy both. Citing (vii) is legally correct and does not misidentify the charge."
+    }
+  ],
+  "arguments": [
+    {
+      "id": "arg_2d279c51",
+      "claim": "The Drennick team’s use of the red cross emblem on a non‑medical vehicle constitutes perfidy prohibited under international humanitarian law.",
+      "reasoning": "The vehicle was marked with the red cross, a distinctive emblem reserved for medical units, yet it was used to transport combatants and to launch a concealed attack. Article 8 of the Rome Statute expressly criminalises “Making improper use of … the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;” such misuse is the classic definition of perfidy, rendering the act a war crime irrespective of any claimed military advantage.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_5f2321ed",
+      "claim": "The Calvaran soldiers who approached the van were hors de combat, and their killing violated the protection afforded to persons taking no active part in hostilities.",
+      "reasoning": "After the Drennick team announced they were carrying wounded, the Calvaran troops lowered their weapons and approached the vehicle, thereby laying down their arms and becoming persons who were no longer taking active part in the hostilities. Article 3 of the Fourth Geneva Convention obliges all parties to treat such persons humanely and prohibits “violence to life and person, in particular murder of all kinds…”. The deliberate opening of fire on these surrendered soldiers therefore breaches that provision.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iv",
+          "article": "3",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed 'hors de combat' by sickness, wounds, detention, or any other cause, shall in all circumstances be treated humanely... To this end, the following acts are and shall remain prohibited... (a) violence to life and person, in particular murder of all kinds, mutilation, cruel treatment and torture;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iv",
+            "article": "3",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed 'hors de combat' by sickness, wounds, detention, or any other cause, shall in all circumstances be treated humanely... To this end, the following acts are and shall remain prohibited... (a) violence to life and person, in particular murder of all kinds, mutilation, cruel treatment and torture;"
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_d1f1a4a5",
+      "claim": "The combined conduct of perfidious deception and the wilful killing of surrendered combatants constitutes a war crime under Article 8(2)(b) of the Rome Statute.",
+      "reasoning": "Article 8(2)(b) enumerates serious violations that amount to war crimes, including (i) “Wilful killing” and (vii) the “Making improper use of … the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury”. The Drennick team’s act satisfies both elements: they deliberately killed three soldiers (wilful killing) after deceiving them by misusing the red cross emblem (perfidy). The concurrence of these prohibited acts triggers jurisdiction under the Rome Statute.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "(i) Wilful killing; (vii) Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "(i) Wilful killing; (vii) Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_0278f57d",
+      "claim": "The Drennick team's use of the red cross emblem on a non‑medical vehicle constitutes a war crime of improper use of distinctive emblems under Article 8(2)(b)(vii) of the Rome Statute.",
+      "reasoning": "Article 8(2)(b)(vii) criminalises the making of improper use of the distinctive emblems of the Geneva Conventions when such misuse results in death or serious personal injury. The van was marked with the red cross, an emblem reserved exclusively for medical units, yet it was employed to transport combatants and to launch a concealed attack that killed three soldiers, satisfying the elements of the offence.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(vii)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(vii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_1234cad9",
+      "claim": "The killing of the three Calvaran soldiers who had laid down their weapons after being deceived amounts to treacherous killing prohibited by Article 8(2)(b)(xi) of the Rome Statute.",
+      "reasoning": "Article 8(2)(b)(xi) defines as a war crime the killing or wounding treacherously of individuals belonging to the hostile nation or army. The soldiers, having been induced to lower their weapons and approach the van in good faith, were unarmed and defenseless when the Drennick team opened fire, satisfying the treacherous character required by the provision.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(xi)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "Killing or wounding treacherously individuals belonging to the hostile nation or army"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(xi)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "Killing or wounding treacherously individuals belonging to the hostile nation or army"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "arg_bff642f4",
+      "claim": "The combined conduct—improper use of the red cross emblem and treacherous killing—constitutes multiple war crimes under the Rome Statute, establishing the Court's jurisdiction.",
+      "reasoning": "Article 8(2) sets out the categories of conduct that qualify as war crimes and confers jurisdiction when such acts are committed in the context of an international armed conflict. Because the Drennick team's actions satisfy both sub‑paragraph (vii) (improper use of emblems) and sub‑paragraph (xi) (treacherous killing), the conduct falls squarely within the ambit of Article 8(2), giving the ICC jurisdiction over the alleged crimes.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": "War crimes"
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": "War crimes"
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "objections": [
+    {
+      "id": "obj_fa815cba",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_5f2321ed",
+      "ground": "The argument mischaracterizes the victims as 'hors de combat' and relies on the wrong instrument for an international armed conflict.",
+      "reasoning": "The Calvaran soldiers were merely deceived into lowering their weapons; they had not laid down their arms or surrendered at discretion, and thus remained combatants, not persons hors de combat. Furthermore, Article 3 of the Fourth Geneva Convention applies to non-international armed conflicts, whereas the facts establish an international armed conflict. The correct legal basis for such acts is Article 8(2)(b)(xi) of the Rome Statute (killing or wounding treacherously), not the common Article 3 provisions.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iv",
+          "article": "3",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(xi)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iv",
+            "article": "3",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(xi)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "The Calvaran soldiers were deceived, not hors de combat; they had not surrendered or laid down arms. Common Article 3 (GC IV Art. 3) applies to non‑international armed conflicts, not the IAC here. The proper characterization is treacherous killing under Rome Statute Art. 8(2)(b)(xi)."
+    },
+    {
+      "id": "obj_ab33d598",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_2d279c51",
+      "ground": "The argument conflates the crime of 'improper use of distinctive emblems' with the distinct legal concept of 'perfidy'.",
+      "reasoning": "While the facts describe perfidy (abusing protected status to kill the adversary), Article 8(2)(b)(vii) of the Rome Statute specifically criminalizes the 'improper use' of emblems. These are distinct legal characterizations. By defining the act as 'the classic definition of perfidy' while citing the emblem-abuse provision, the argument fails to correctly identify the specific war crime charged, as perfidy is a separate legal concept not explicitly defined as such in that specific sub-article.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(vii)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(vii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "partial",
+      "disposition_reasoning": "The argument conflates perfidy (the general prohibition on feigning protected status) with the specific war crime of improper use of emblems (Rome Statute Art. 8(2)(b)(vii)). They are distinct legal concepts, though the conduct here violates both. The core point that the act is criminal survives."
+    },
+    {
+      "id": "obj_0e56472d",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_5f2321ed",
+      "ground": "The argument mischaracterizes the conduct of the Calvaran soldiers, who were active combatants approaching a military target, not persons hors de combat.",
+      "reasoning": "The Calvaran soldiers were engaged in hostilities by approaching a vehicle marked with the red cross emblem. They did not surrender or lay down their arms permanently; they were performing a military function. Article 3 of GC IV applies to non-international conflicts and persons hors de combat, which does not fit the facts of an international armed conflict involving active combatants.",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "gc_iv",
+          "article": "3",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "gc_iv",
+            "article": "3",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+          "note": null
+        }
+      ],
+      "severity": "fatal",
+      "disposition": "sustained",
+      "disposition_reasoning": "Same reasoning as obj_fa815cba: the soldiers were active combatants performing a military function (approaching a vehicle they believed to be medical), not persons hors de combat. GC IV Art. 3 governs NIAC and does not apply."
+    },
+    {
+      "id": "obj_b4e1a452",
+      "raised_by": "attacker_doctrinal",
+      "target_argument_id": "arg_2d279c51",
+      "ground": "The argument incorrectly identifies the specific legal test for perfidy, relying on a general provision for improper use of emblems rather than the specific elements of treacherous killing.",
+      "reasoning": "Article 8(2)(b)(vii) of the Rome Statute addresses 'improper use' of emblems. The specific charge of 'killing or wounding treacherously' is found in Article 8(2)(b)(xi). While related, the legal characterization of perfidy requires the specific element of treachery in the killing, which is better captured by (xi) than the general 'improper use' in (vii).",
+      "citations": [
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(xi)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        },
+        {
+          "type": "treaty",
+          "instrument": "rome_statute",
+          "article": "8(2)(b)(vii)",
+          "case_id": null,
+          "paragraph": null,
+          "rule_number": null,
+          "quoted_text": null
+        }
+      ],
+      "resolved_citations": [
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(xi)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        },
+        {
+          "citation": {
+            "type": "treaty",
+            "instrument": "rome_statute",
+            "article": "8(2)(b)(vii)",
+            "case_id": null,
+            "paragraph": null,
+            "rule_number": null,
+            "quoted_text": null
+          },
+          "status": "resolved",
+          "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+          "note": null
+        }
+      ],
+      "severity": "material",
+      "disposition": "overruled",
+      "disposition_reasoning": "Art. 8(2)(b)(vii) (improper use of emblems) and Art. 8(2)(b)(xi) (treacherous killing) are not mutually exclusive; the same conduct can satisfy both. Citing (vii) is legally correct and does not misidentify the charge."
+    }
+  ],
+  "context": [
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8(2)(c)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "rome_statute",
+        "article": "8",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "64(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iv",
+        "article": "3",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iii",
+        "article": "3",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciii-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_i",
+        "article": "3",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gci-1949",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "ap_i",
+        "article": "26(1)",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/api-1977",
+      "note": null
+    },
+    {
+      "citation": {
+        "type": "treaty",
+        "instrument": "gc_iv",
+        "article": "22",
+        "case_id": null,
+        "paragraph": null,
+        "rule_number": null,
+        "quoted_text": null
+      },
+      "status": "resolved",
+      "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+      "note": null
+    }
+  ],
+  "turns": [
+    {
+      "id": "turn_c365ab0f",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "9bbd2819f3f559d368cf9e55614d491a4df32f13830449799f2eb714bee3499d",
+      "arguments": [
+        {
+          "id": "arg_2d279c51",
+          "claim": "The Drennick team’s use of the red cross emblem on a non‑medical vehicle constitutes perfidy prohibited under international humanitarian law.",
+          "reasoning": "The vehicle was marked with the red cross, a distinctive emblem reserved for medical units, yet it was used to transport combatants and to launch a concealed attack. Article 8 of the Rome Statute expressly criminalises “Making improper use of … the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;” such misuse is the classic definition of perfidy, rendering the act a war crime irrespective of any claimed military advantage.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_5f2321ed",
+          "claim": "The Calvaran soldiers who approached the van were hors de combat, and their killing violated the protection afforded to persons taking no active part in hostilities.",
+          "reasoning": "After the Drennick team announced they were carrying wounded, the Calvaran troops lowered their weapons and approached the vehicle, thereby laying down their arms and becoming persons who were no longer taking active part in the hostilities. Article 3 of the Fourth Geneva Convention obliges all parties to treat such persons humanely and prohibits “violence to life and person, in particular murder of all kinds…”. The deliberate opening of fire on these surrendered soldiers therefore breaches that provision.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iv",
+              "article": "3",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed 'hors de combat' by sickness, wounds, detention, or any other cause, shall in all circumstances be treated humanely... To this end, the following acts are and shall remain prohibited... (a) violence to life and person, in particular murder of all kinds, mutilation, cruel treatment and torture;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iv",
+                "article": "3",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed 'hors de combat' by sickness, wounds, detention, or any other cause, shall in all circumstances be treated humanely... To this end, the following acts are and shall remain prohibited... (a) violence to life and person, in particular murder of all kinds, mutilation, cruel treatment and torture;"
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_d1f1a4a5",
+          "claim": "The combined conduct of perfidious deception and the wilful killing of surrendered combatants constitutes a war crime under Article 8(2)(b) of the Rome Statute.",
+          "reasoning": "Article 8(2)(b) enumerates serious violations that amount to war crimes, including (i) “Wilful killing” and (vii) the “Making improper use of … the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury”. The Drennick team’s act satisfies both elements: they deliberately killed three soldiers (wilful killing) after deceiving them by misusing the red cross emblem (perfidy). The concurrence of these prohibited acts triggers jurisdiction under the Rome Statute.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "(i) Wilful killing; (vii) Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "(i) Wilful killing; (vii) Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The Drennick team’s use of the red cross emblem on a non‑medical vehicle constitutes perfidy prohibited under international humanitarian law.\",\n      \"reasoning\": \"The vehicle was marked with the red cross, a distinctive emblem reserved for medical units, yet it was used to transport combatants and to launch a concealed attack. Article 8 of the Rome Statute expressly criminalises “Making improper use of … the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;” such misuse is the classic definition of perfidy, rendering the act a war crime irrespective of any claimed military advantage.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The Calvaran soldiers who approached the van were hors de combat, and their killing violated the protection afforded to persons taking no active part in hostilities.\",\n      \"reasoning\": \"After the Drennick team announced they were carrying wounded, the Calvaran troops lowered their weapons and approached the vehicle, thereby laying down their arms and becoming persons who were no longer taking active part in the hostilities. Article 3 of the Fourth Geneva Convention obliges all parties to treat such persons humanely and prohibits “violence to life and person, in particular murder of all kinds…”. The deliberate opening of fire on these surrendered soldiers therefore breaches that provision.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iv\",\n          \"article\": \"3\",\n          \"quoted_text\": \"Persons taking no active part in the hostilities, including members of armed forces who have laid down their arms and those placed 'hors de combat' by sickness, wounds, detention, or any other cause, shall in all circumstances be treated humanely... To this end, the following acts are and shall remain prohibited... (a) violence to life and person, in particular murder of all kinds, mutilation, cruel treatment and torture;\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The combined conduct of perfidious deception and the wilful killing of surrendered combatants constitutes a war crime under Article 8(2)(b) of the Rome Statute.\",\n      \"reasoning\": \"Article 8(2)(b) enumerates serious violations that amount to war crimes, including (i) “Wilful killing” and (vii) the “Making improper use of … the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury”. The Drennick team’s act satisfies both elements: they deliberately killed three soldiers (wilful killing) after deceiving them by misusing the red cross emblem (perfidy). The concurrence of these prohibited acts triggers jurisdiction under the Rome Statute.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"(i) Wilful killing; (vii) Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury;\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T11:10:55.452627Z",
+      "completed_at": "2026-11-22T11:12:06.748963Z",
+      "prompt_tokens": 5236,
+      "completion_tokens": 2059,
+      "error": null
+    },
+    {
+      "id": "turn_333e268b",
+      "round_number": 1,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "724144b845b8369a59f03caf14babfb47d6e505c86949583bd34cb98fcf3d31f",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_fa815cba",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_5f2321ed",
+          "ground": "The argument mischaracterizes the victims as 'hors de combat' and relies on the wrong instrument for an international armed conflict.",
+          "reasoning": "The Calvaran soldiers were merely deceived into lowering their weapons; they had not laid down their arms or surrendered at discretion, and thus remained combatants, not persons hors de combat. Furthermore, Article 3 of the Fourth Geneva Convention applies to non-international armed conflicts, whereas the facts establish an international armed conflict. The correct legal basis for such acts is Article 8(2)(b)(xi) of the Rome Statute (killing or wounding treacherously), not the common Article 3 provisions.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iv",
+              "article": "3",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(xi)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iv",
+                "article": "3",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(xi)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "The Calvaran soldiers were deceived, not hors de combat; they had not surrendered or laid down arms. Common Article 3 (GC IV Art. 3) applies to non‑international armed conflicts, not the IAC here. The proper characterization is treacherous killing under Rome Statute Art. 8(2)(b)(xi)."
+        },
+        {
+          "id": "obj_ab33d598",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_2d279c51",
+          "ground": "The argument conflates the crime of 'improper use of distinctive emblems' with the distinct legal concept of 'perfidy'.",
+          "reasoning": "While the facts describe perfidy (abusing protected status to kill the adversary), Article 8(2)(b)(vii) of the Rome Statute specifically criminalizes the 'improper use' of emblems. These are distinct legal characterizations. By defining the act as 'the classic definition of perfidy' while citing the emblem-abuse provision, the argument fails to correctly identify the specific war crime charged, as perfidy is a separate legal concept not explicitly defined as such in that specific sub-article.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(vii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(vii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "partial",
+          "disposition_reasoning": "The argument conflates perfidy (the general prohibition on feigning protected status) with the specific war crime of improper use of emblems (Rome Statute Art. 8(2)(b)(vii)). They are distinct legal concepts, though the conduct here violates both. The core point that the act is criminal survives."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_5f2321ed\",\n      \"ground\": \"The argument mischaracterizes the victims as 'hors de combat' and relies on the wrong instrument for an international armed conflict.\",\n      \"reasoning\": \"The Calvaran soldiers were merely deceived into lowering their weapons; they had not laid down their arms or surrendered at discretion, and thus remained combatants, not persons hors de combat. Furthermore, Article 3 of the Fourth Geneva Convention applies to non-international armed conflicts, whereas the facts establish an international armed conflict. The correct legal basis for such acts is Article 8(2)(b)(xi) of the Rome Statute (killing or wounding treacherously), not the common Article 3 provisions.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iv\",\n          \"article\": \"3\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(xi)\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_2d279c51\",\n      \"ground\": \"The argument conflates the crime of 'improper use of distinctive emblems' with the distinct legal concept of 'perfidy'.\",\n      \"reasoning\": \"While the facts describe perfidy (abusing protected status to kill the adversary), Article 8(2)(b)(vii) of the Rome Statute specifically criminalizes the 'improper use' of emblems. These are distinct legal characterizations. By defining the act as 'the classic definition of perfidy' while citing the emblem-abuse provision, the argument fails to correctly identify the specific war crime charged, as perfidy is a separate legal concept not explicitly defined as such in that specific sub-article.\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(vii)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T11:12:06.752493Z",
+      "completed_at": "2026-11-22T11:12:08.293984Z",
+      "prompt_tokens": 5790,
+      "completion_tokens": 501,
+      "error": null
+    },
+    {
+      "id": "turn_1ed9516e",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "ce4446e4fbf8629154c7572d165f4c35371dc74ceb312244357d072eaf41b906",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The Drennick team killed and wounded Calvaran soldiers by resort to perfidy, in violation of the law of international armed conflict. The team’s use of the red cross emblem on a non‑medical vehicle and false claim of carrying wounded civilians to induce the adversary to lower its guard, followed by a concealed attack, constitutes perfidy as defined in Additional Protocol I, Article 37, and is criminalised under the Rome Statute, Article 8(2)(b)(vii) (improper use of distinctive emblems resulting in death or serious personal injury) and Article 8(2)(b)(xi) (killing or wounding treacherously).\", \"reasoning\": \"The sustained objection (obj_fa815cba) correctly identifies that the Calvaran soldiers were not hors de combat under Common Article 3 (which applies to non‑international conflicts) and that the proper legal basis in an international armed conflict is the Rome Statute’s treachery and emblem‑misuse provisions, not Geneva Convention IV, Article 3. That objection therefore narrows but does not defeat the overall claim. The overruled objection (obj_ab33d598) draws a formalistic distinction between ‘perfidy’ and ‘improper use of distinctive emblems’; however, the misuse of a protective emblem to feign protected status and then attack is the paradigmatic instance of perfidy, and the Rome Statute provision cited (Art. 8(2)(b)(vii)) expressly criminalises that conduct. Arguments arg_2d279c51 and arg_d1f1a4a5 survive and together establish the violation.\", \"confidence\": 0.92, \"confidence_reasoning\": \"The law of perfidy is settled in treaty (AP I, Art. 37) and customary IHL, and the Rome Statute provisions cited are directly on point. The facts — marking a combat vehicle with the red cross, falsely announcing a medical mission, inducing the enemy to approach unarmed, and then opening fire — match the definition of perfidy and the elements of Arts. 8(2)(b)(vii) and (xi) without ambiguity. The only sustained objection went to a subsidiary argument (hors de combat status under the wrong convention) and does not affect the core perfidy analysis.\", \"rulings\": [{\"objection_id\": \"obj_fa815cba\", \"disposition\": \"sustained\", \"reasoning\": \"The Calvaran soldiers were deceived into lowering their weapons; they did not voluntarily surrender or lay down their arms, so they were not hors de combat. Moreover, Common Article 3 of the Fourth Geneva Convention applies to non‑international armed conflicts, whereas the facts establish an international armed conflict. The correct legal characterisation for the killing is the Rome Statute’s treachery provision (Art. 8(2)(b)(xi)) or the emblem‑misuse provision (Art. 8(2)(b)(vii)), not GC IV Art. 3.\"}, {\"objection_id\": \"obj_ab33d598\", \"disposition\": \"overruled\", \"reasoning\": \"While ‘perfidy’ and ‘improper use of distinctive emblems’ are distinct legal labels, the conduct described — using the red cross emblem to feign protected status and then attacking — is the classic example of perfidy. The Rome Statute, Art. 8(2)(b)(vii), expressly criminalises that very conduct (‘Making improper use of … the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury’). The argument’s characterisation is therefore legally sound, and the citation supports it.\"}], \"surviving_argument_ids\": [\"arg_2d279c51\", \"arg_d1f1a4a5\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-22T11:12:08.295175Z",
+      "completed_at": "2026-11-22T11:12:44.966535Z",
+      "prompt_tokens": 6239,
+      "completion_tokens": 2492,
+      "error": null
+    },
+    {
+      "id": "turn_4a526a13",
+      "round_number": 2,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/rebuttal",
+      "prompt_hash": "f9ce0f4f4b18366bf39402cd3b2e5a092d52564bad7c828ec8c1012c6cc87def",
+      "arguments": [
+        {
+          "id": "arg_0278f57d",
+          "claim": "The Drennick team's use of the red cross emblem on a non‑medical vehicle constitutes a war crime of improper use of distinctive emblems under Article 8(2)(b)(vii) of the Rome Statute.",
+          "reasoning": "Article 8(2)(b)(vii) criminalises the making of improper use of the distinctive emblems of the Geneva Conventions when such misuse results in death or serious personal injury. The van was marked with the red cross, an emblem reserved exclusively for medical units, yet it was employed to transport combatants and to launch a concealed attack that killed three soldiers, satisfying the elements of the offence.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(vii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(vii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_1234cad9",
+          "claim": "The killing of the three Calvaran soldiers who had laid down their weapons after being deceived amounts to treacherous killing prohibited by Article 8(2)(b)(xi) of the Rome Statute.",
+          "reasoning": "Article 8(2)(b)(xi) defines as a war crime the killing or wounding treacherously of individuals belonging to the hostile nation or army. The soldiers, having been induced to lower their weapons and approach the van in good faith, were unarmed and defenseless when the Drennick team opened fire, satisfying the treacherous character required by the provision.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(xi)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "Killing or wounding treacherously individuals belonging to the hostile nation or army"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(xi)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "Killing or wounding treacherously individuals belonging to the hostile nation or army"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        },
+        {
+          "id": "arg_bff642f4",
+          "claim": "The combined conduct—improper use of the red cross emblem and treacherous killing—constitutes multiple war crimes under the Rome Statute, establishing the Court's jurisdiction.",
+          "reasoning": "Article 8(2) sets out the categories of conduct that qualify as war crimes and confers jurisdiction when such acts are committed in the context of an international armed conflict. Because the Drennick team's actions satisfy both sub‑paragraph (vii) (improper use of emblems) and sub‑paragraph (xi) (treacherous killing), the conduct falls squarely within the ambit of Article 8(2), giving the ICC jurisdiction over the alleged crimes.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": "War crimes"
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": "War crimes"
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ]
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The Drennick team's use of the red cross emblem on a non‑medical vehicle constitutes a war crime of improper use of distinctive emblems under Article 8(2)(b)(vii) of the Rome Statute.\",\n      \"reasoning\": \"Article 8(2)(b)(vii) criminalises the making of improper use of the distinctive emblems of the Geneva Conventions when such misuse results in death or serious personal injury. The van was marked with the red cross, an emblem reserved exclusively for medical units, yet it was employed to transport combatants and to launch a concealed attack that killed three soldiers, satisfying the elements of the offence.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(vii)\",\n          \"quoted_text\": \"Making improper use of a flag of truce, of the flag or of the military insignia and uniform of the enemy or of the United Nations, as well as of the distinctive emblems of the Geneva Conventions, resulting in death or serious personal injury\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The killing of the three Calvaran soldiers who had laid down their weapons after being deceived amounts to treacherous killing prohibited by Article 8(2)(b)(xi) of the Rome Statute.\",\n      \"reasoning\": \"Article 8(2)(b)(xi) defines as a war crime the killing or wounding treacherously of individuals belonging to the hostile nation or army. The soldiers, having been induced to lower their weapons and approach the van in good faith, were unarmed and defenseless when the Drennick team opened fire, satisfying the treacherous character required by the provision.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(xi)\",\n          \"quoted_text\": \"Killing or wounding treacherously individuals belonging to the hostile nation or army\"\n        }\n      ]\n    },\n    {\n      \"claim\": \"The combined conduct—improper use of the red cross emblem and treacherous killing—constitutes multiple war crimes under the Rome Statute, establishing the Court's jurisdiction.\",\n      \"reasoning\": \"Article 8(2) sets out the categories of conduct that qualify as war crimes and confers jurisdiction when such acts are committed in the context of an international armed conflict. Because the Drennick team's actions satisfy both sub‑paragraph (vii) (improper use of emblems) and sub‑paragraph (xi) (treacherous killing), the conduct falls squarely within the ambit of Article 8(2), giving the ICC jurisdiction over the alleged crimes.\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8\",\n          \"quoted_text\": \"War crimes\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T11:12:44.970383Z",
+      "completed_at": "2026-11-22T11:12:48.960206Z",
+      "prompt_tokens": 5768,
+      "completion_tokens": 1680,
+      "error": null
+    },
+    {
+      "id": "turn_2b0f93bf",
+      "round_number": 2,
+      "role": "attacker_doctrinal",
+      "model_id": "groq/qwen/qwen3.8-27b",
+      "prompt_id": "attacker_doctrinal/challenge",
+      "prompt_hash": "81a4009764e0ed09d9230c8a9036170a2d80f1db3dcbc140819190b959e4746f",
+      "arguments": [],
+      "objections": [
+        {
+          "id": "obj_0e56472d",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_5f2321ed",
+          "ground": "The argument mischaracterizes the conduct of the Calvaran soldiers, who were active combatants approaching a military target, not persons hors de combat.",
+          "reasoning": "The Calvaran soldiers were engaged in hostilities by approaching a vehicle marked with the red cross emblem. They did not surrender or lay down their arms permanently; they were performing a military function. Article 3 of GC IV applies to non-international conflicts and persons hors de combat, which does not fit the facts of an international armed conflict involving active combatants.",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "gc_iv",
+              "article": "3",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "gc_iv",
+                "article": "3",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://ihl-databases.icrc.org/en/ihl-treaties/gciv-1949",
+              "note": null
+            }
+          ],
+          "severity": "fatal",
+          "disposition": "sustained",
+          "disposition_reasoning": "Same reasoning as obj_fa815cba: the soldiers were active combatants performing a military function (approaching a vehicle they believed to be medical), not persons hors de combat. GC IV Art. 3 governs NIAC and does not apply."
+        },
+        {
+          "id": "obj_b4e1a452",
+          "raised_by": "attacker_doctrinal",
+          "target_argument_id": "arg_2d279c51",
+          "ground": "The argument incorrectly identifies the specific legal test for perfidy, relying on a general provision for improper use of emblems rather than the specific elements of treacherous killing.",
+          "reasoning": "Article 8(2)(b)(vii) of the Rome Statute addresses 'improper use' of emblems. The specific charge of 'killing or wounding treacherously' is found in Article 8(2)(b)(xi). While related, the legal characterization of perfidy requires the specific element of treachery in the killing, which is better captured by (xi) than the general 'improper use' in (vii).",
+          "citations": [
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(xi)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            },
+            {
+              "type": "treaty",
+              "instrument": "rome_statute",
+              "article": "8(2)(b)(vii)",
+              "case_id": null,
+              "paragraph": null,
+              "rule_number": null,
+              "quoted_text": null
+            }
+          ],
+          "resolved_citations": [
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(xi)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            },
+            {
+              "citation": {
+                "type": "treaty",
+                "instrument": "rome_statute",
+                "article": "8(2)(b)(vii)",
+                "case_id": null,
+                "paragraph": null,
+                "rule_number": null,
+                "quoted_text": null
+              },
+              "status": "resolved",
+              "source_url": "https://www.icc-cpi.int/sites/default/files/RS-Eng.pdf",
+              "note": null
+            }
+          ],
+          "severity": "material",
+          "disposition": "overruled",
+          "disposition_reasoning": "Art. 8(2)(b)(vii) (improper use of emblems) and Art. 8(2)(b)(xi) (treacherous killing) are not mutually exclusive; the same conduct can satisfy both. Citing (vii) is legally correct and does not misidentify the charge."
+        }
+      ],
+      "raw_response": "{\n  \"objections\": [\n    {\n      \"target_argument_id\": \"arg_5f2321ed\",\n      \"ground\": \"The argument mischaracterizes the conduct of the Calvaran soldiers, who were active combatants approaching a military target, not persons hors de combat.\",\n      \"reasoning\": \"The Calvaran soldiers were engaged in hostilities by approaching a vehicle marked with the red cross emblem. They did not surrender or lay down their arms permanently; they were performing a military function. Article 3 of GC IV applies to non-international conflicts and persons hors de combat, which does not fit the facts of an international armed conflict involving active combatants.\",\n      \"severity\": \"fatal\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"gc_iv\",\n          \"article\": \"3\"\n        }\n      ]\n    },\n    {\n      \"target_argument_id\": \"arg_2d279c51\",\n      \"ground\": \"The argument incorrectly identifies the specific legal test for perfidy, relying on a general provision for improper use of emblems rather than the specific elements of treacherous killing.\",\n      \"reasoning\": \"Article 8(2)(b)(vii) of the Rome Statute addresses 'improper use' of emblems. The specific charge of 'killing or wounding treacherously' is found in Article 8(2)(b)(xi). While related, the legal characterization of perfidy requires the specific element of treachery in the killing, which is better captured by (xi) than the general 'improper use' in (vii).\",\n      \"severity\": \"material\",\n      \"citations\": [\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(xi)\"\n        },\n        {\n          \"type\": \"treaty\",\n          \"instrument\": \"rome_statute\",\n          \"article\": \"8(2)(b)(vii)\"\n        }\n      ]\n    }\n  ]\n}",
+      "started_at": "2026-11-22T11:12:48.961292Z",
+      "completed_at": "2026-11-22T11:12:53.263411Z",
+      "prompt_tokens": 6267,
+      "completion_tokens": 472,
+      "error": null
+    },
+    {
+      "id": "turn_0374c49a",
+      "round_number": 2,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "e13e5605b4f9fbf039390caaf0398094844d0db52a9e4717b0afc9a4e0973c34",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Yes. The Drennick team killed and wounded Calvaran soldiers by resort to perfidy, in violation of the law of international armed conflict. The team feigned protected status by marking a non‑medical vehicle with the red cross emblem, wearing red cross armlets, and falsely claiming to transport wounded civilians, thereby inducing the Calvaran soldiers to lower their weapons and approach. The subsequent concealed attack constitutes perfidy under Additional Protocol I, Article 37, and amounts to the war crimes of improper use of distinctive emblems (Rome Statute, Art. 8(2)(b)(vii)), killing or wounding treacherously (Art. 8(2)(b)(xi)), and wilful killing (Art. 8(2)(b)(i)).\", \"reasoning\": \"Objections obj_fa815cba and obj_0e56472d are sustained: the Calvaran soldiers were not hors de combat within the meaning of Common Article 3 (which in any event governs non‑international conflicts), and the correct legal basis for their killing is treacherous killing under Art. 8(2)(b)(xi), not the protections for persons hors de combat. Objection obj_ab33d598 is sustained in part: the argument in arg_2d279c51 conflates the distinct concepts of perfidy (a general prohibition on feigning protected status) and the specific war crime of improper use of emblems; however, the conduct satisfies both, so the core legal conclusion survives. Objection obj_b4e1a452 is overruled: Art. 8(2)(b)(vii) and (xi) are not mutually exclusive; the same conduct can violate both, and citing (vii) is not erroneous. The surviving arguments (arg_0278f57d, arg_1234cad9, arg_d1f1a4a5, arg_bff642f4) collectively establish that the Drennick team’s actions meet the elements of perfidy and the enumerated war crimes under the Rome Statute.\", \"confidence\": 0.92, \"confidence_reasoning\": \"The facts present a textbook case of perfidy: feigning protected status (medical vehicle and personnel) to invite the adversary’s confidence and then attacking. This is expressly prohibited by AP I Art. 37 (customary IHL) and criminalized in the Rome Statute under three sub‑paragraphs of Art. 8(2)(b). The sustained objections refine the legal characterization but do not undermine the conclusion. The only reason confidence is not higher is the absence of an explicit AP I Art. 37 citation in the retrieved context, though the Rome Statute provisions and customary law are sufficient.\", \"rulings\": [{\"objection_id\": \"obj_fa815cba\", \"disposition\": \"sustained\", \"reasoning\": \"The Calvaran soldiers were deceived, not hors de combat; they had not surrendered or laid down arms. Common Article 3 (GC IV Art. 3) applies to non‑international armed conflicts, not the IAC here. The proper characterization is treacherous killing under Rome Statute Art. 8(2)(b)(xi).\"}, {\"objection_id\": \"obj_ab33d598\", \"disposition\": \"partial\", \"reasoning\": \"The argument conflates perfidy (the general prohibition on feigning protected status) with the specific war crime of improper use of emblems (Rome Statute Art. 8(2)(b)(vii)). They are distinct legal concepts, though the conduct here violates both. The core point that the act is criminal survives.\"}, {\"objection_id\": \"obj_0e56472d\", \"disposition\": \"sustained\", \"reasoning\": \"Same reasoning as obj_fa815cba: the soldiers were active combatants performing a military function (approaching a vehicle they believed to be medical), not persons hors de combat. GC IV Art. 3 governs NIAC and does not apply.\"}, {\"objection_id\": \"obj_b4e1a452\", \"disposition\": \"overruled\", \"reasoning\": \"Art. 8(2)(b)(vii) (improper use of emblems) and Art. 8(2)(b)(xi) (treacherous killing) are not mutually exclusive; the same conduct can satisfy both. Citing (vii) is legally correct and does not misidentify the charge.\"}], \"surviving_argument_ids\": [\"arg_0278f57d\", \"arg_1234cad9\", \"arg_d1f1a4a5\", \"arg_bff642f4\"], \"novel_objections_raised\": true}",
+      "started_at": "2026-11-22T11:12:53.264401Z",
+      "completed_at": "2026-11-22T11:13:36.167803Z",
+      "prompt_tokens": 7075,
+      "completion_tokens": 2518,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-22T11:13:36.169327+00:00",
+  "duration_seconds": 161.6102670240216,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 2,
+  "judge_failures": 0,
+  "judge_failed": false
+}

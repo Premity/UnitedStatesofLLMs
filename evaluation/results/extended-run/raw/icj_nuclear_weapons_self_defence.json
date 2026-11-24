@@ -1,0 +1,157 @@
+{
+  "case_id": "icj_nuclear_weapons_self_defence",
+  "case_title": "Nuclear Weapons Advisory Opinion — use in an extreme circumstance of self-defence",
+  "court": "ICJ",
+  "year": 1996,
+  "difficulty": "contested",
+  "arm": "raw",
+  "arm_label": "A — Single pass, no retrieval",
+  "run_id": "eval_95e0c0f8e0",
+  "question": "Is the threat or use of nuclear weapons unlawful under international law, including the principles and rules of humanitarian law, in an extreme circumstance of self-defence in which the very survival of a State would be at stake?",
+  "facts": "The UN General Assembly asked the International Court of Justice whether the threat or use of nuclear weapons in any circumstance is permitted under international law. Nuclear weapons are explosive devices whose energy results from the fusion or fission of the atom. That process releases not only immense quantities of heat and energy but also powerful and prolonged radiation. The destructive power of nuclear weapons cannot be contained in either space or time, and their radiation can affect health, agriculture, natural resources and demography over a very wide area and damage the genetic make-up of future generations. No treaty of general application prohibits nuclear weapons as such. A number of states maintain nuclear arsenals under a declared policy of deterrence, and some states made submissions that the use of low-yield or tactical nuclear weapons against military targets in remote areas could be consistent with humanitarian law.",
+  "ground_truth_outcome": "indeterminate",
+  "holding": "In its Advisory Opinion of 8 July 1996, the International Court of Justice held (para. 105(2)E), by seven votes to seven, by the President's casting vote, that the threat or use of nuclear weapons would generally be contrary to the rules of international law applicable in armed conflict, and in particular the principles and rules of humanitarian law; but that, in view of the current state of international law and of the elements of fact at its disposal, the Court cannot conclude definitively whether the threat or use of nuclear weapons would be lawful or unlawful in an extreme circumstance of self-defence, in which the very survival of a State would be at stake.",
+  "predicted_outcome": "indeterminate",
+  "outcome_correct": true,
+  "confidence": 0.85,
+  "confidence_reasoning": "The ICJ, the principal judicial organ of the UN, explicitly declined to conclude on the legality of nuclear weapons in the exact extreme self-defence scenario described in the question. This is not a matter of unsettled law where a tribunal has ruled; it is a matter where the authoritative tribunal said it could not rule. The arguments provided are one-sided, untested by objections, and lack any citations that resolve against the corpus (because no corpus was retrieved). A confidence of 0.85 reflects that the indeterminacy is not due to evidentiary gaps in this proceeding alone, but is inherent in the state of international law as authoritatively declared.",
+  "rounds": 1,
+  "judge_backend": "api",
+  "synthetic": false,
+  "judge_calls": 1,
+  "total_calls": 2,
+  "citation_statuses": {
+    "total": 0,
+    "resolved": 0,
+    "unresolved": 0,
+    "out_of_corpus": 0,
+    "misquoted": 0
+  },
+  "verdict": {
+    "conclusion": "Indeterminate.",
+    "reasoning": "The question presented is the exact question the UN General Assembly posed to the International Court of Justice in the Nuclear Weapons Advisory Opinion (1996). The ICJ concluded that while the threat or use of nuclear weapons would generally be contrary to the rules of international law applicable in armed conflict, it could not reach a definitive conclusion on the legality of the threat or use of nuclear weapons in an extreme circumstance of self-defence where the very survival of a State would be at stake. The three arguments presented (arg_6c99ff67, arg_33672c05, arg_a4a107c2) each contend that nuclear weapons are unlawful under IHL principles of distinction, proportionality, and the prohibition on unnecessary suffering, as well as under jus ad bellum necessity. However, no objections were filed to test these arguments, and critically, no corpus context was retrieved to support any legal citations. The arguments therefore stand untested and unsupported by authority in this record. Moreover, the counter-arguments — that low-yield or tactical nuclear weapons might be used discriminately against military targets in remote areas, that deterrence policies reflect state practice, and that existential self-defence may alter the proportionality calculus — are not addressed. Given the ICJ's own indeterminate conclusion on this precise question, the absence of adversarial testing, and the lack of retrieved authority, the question cannot be resolved on the arguments and facts provided.",
+    "confidence": 0.85,
+    "confidence_reasoning": "The ICJ, the principal judicial organ of the UN, explicitly declined to conclude on the legality of nuclear weapons in the exact extreme self-defence scenario described in the question. This is not a matter of unsettled law where a tribunal has ruled; it is a matter where the authoritative tribunal said it could not rule. The arguments provided are one-sided, untested by objections, and lack any citations that resolve against the corpus (because no corpus was retrieved). A confidence of 0.85 reflects that the indeterminacy is not due to evidentiary gaps in this proceeding alone, but is inherent in the state of international law as authoritatively declared.",
+    "surviving_argument_ids": [
+      "arg_6c99ff67",
+      "arg_33672c05",
+      "arg_a4a107c2"
+    ],
+    "dissent": []
+  },
+  "dissent": [],
+  "arguments": [
+    {
+      "id": "arg_6c99ff67",
+      "claim": "The threat or use of nuclear weapons is unlawful because it inevitably breaches the principle of distinction, which requires parties to a conflict to differentiate between combatants and civilians, and nuclear weapons cannot be directed at a specific military objective without causing indiscriminate civilian harm.",
+      "reasoning": "Customary international humanitarian law, as reflected in the principle of distinction, obliges belligerents to target only combatants and military objects. Nuclear weapons, by their very nature, produce blast, heat, and radiation effects that cannot be confined to a military target and inevitably affect civilian populations and civilian objects over a wide area and for an extended period. Consequently, any threat or use of such weapons would fail the distinction test, rendering it unlawful regardless of the strategic context.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_33672c05",
+      "claim": "The threat or use of nuclear weapons violates the principle of proportionality, which prohibits attacks expected to cause incidental civilian harm excessive in relation to the concrete and direct military advantage anticipated.",
+      "reasoning": "Proportionality requires a balancing of the expected civilian damage against the concrete military gain. The massive, long‑lasting, and indiscriminate effects of nuclear weapons—mass casualties, environmental devastation, and intergenerational health impacts—far outweigh any conceivable military advantage, even in an extreme self‑defence scenario. Therefore, any nuclear strike would be disproportionate and unlawful under customary IHL.",
+      "citations": [],
+      "resolved_citations": []
+    },
+    {
+      "id": "arg_a4a107c2",
+      "claim": "Even in an extreme self‑defence situation where a state's survival is at stake, the jus ad bellum requirement of necessity and the prohibition on unnecessary suffering render the use of nuclear weapons unlawful.",
+      "reasoning": "International law permits self‑defence only when it is necessary and proportionate to the armed attack. Necessity demands that the defensive measure be the only viable means to repel the attack. Because less destructive, targeted conventional means are generally available, resorting to nuclear weapons would not satisfy the necessity requirement. Moreover, the use of weapons causing unnecessary suffering or superfluous injury is prohibited, and nuclear weapons, by causing indiscriminate, massive, and long‑term harm, fall within that prohibition. Hence, their use remains unlawful even under an existential threat claim.",
+      "citations": [],
+      "resolved_citations": []
+    }
+  ],
+  "objections": [],
+  "context": [],
+  "turns": [
+    {
+      "id": "turn_8c78717c",
+      "round_number": 1,
+      "role": "presenter",
+      "model_id": "groq/openai/gpt-oss-120b",
+      "prompt_id": "presenter/opening",
+      "prompt_hash": "983aedb0e968b43350d39845621b2c5c4e1e0ee549fb117e0f3ce676208c8b12",
+      "arguments": [
+        {
+          "id": "arg_6c99ff67",
+          "claim": "The threat or use of nuclear weapons is unlawful because it inevitably breaches the principle of distinction, which requires parties to a conflict to differentiate between combatants and civilians, and nuclear weapons cannot be directed at a specific military objective without causing indiscriminate civilian harm.",
+          "reasoning": "Customary international humanitarian law, as reflected in the principle of distinction, obliges belligerents to target only combatants and military objects. Nuclear weapons, by their very nature, produce blast, heat, and radiation effects that cannot be confined to a military target and inevitably affect civilian populations and civilian objects over a wide area and for an extended period. Consequently, any threat or use of such weapons would fail the distinction test, rendering it unlawful regardless of the strategic context.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_33672c05",
+          "claim": "The threat or use of nuclear weapons violates the principle of proportionality, which prohibits attacks expected to cause incidental civilian harm excessive in relation to the concrete and direct military advantage anticipated.",
+          "reasoning": "Proportionality requires a balancing of the expected civilian damage against the concrete military gain. The massive, long‑lasting, and indiscriminate effects of nuclear weapons—mass casualties, environmental devastation, and intergenerational health impacts—far outweigh any conceivable military advantage, even in an extreme self‑defence scenario. Therefore, any nuclear strike would be disproportionate and unlawful under customary IHL.",
+          "citations": [],
+          "resolved_citations": []
+        },
+        {
+          "id": "arg_a4a107c2",
+          "claim": "Even in an extreme self‑defence situation where a state's survival is at stake, the jus ad bellum requirement of necessity and the prohibition on unnecessary suffering render the use of nuclear weapons unlawful.",
+          "reasoning": "International law permits self‑defence only when it is necessary and proportionate to the armed attack. Necessity demands that the defensive measure be the only viable means to repel the attack. Because less destructive, targeted conventional means are generally available, resorting to nuclear weapons would not satisfy the necessity requirement. Moreover, the use of weapons causing unnecessary suffering or superfluous injury is prohibited, and nuclear weapons, by causing indiscriminate, massive, and long‑term harm, fall within that prohibition. Hence, their use remains unlawful even under an existential threat claim.",
+          "citations": [],
+          "resolved_citations": []
+        }
+      ],
+      "objections": [],
+      "raw_response": "{\n  \"arguments\": [\n    {\n      \"claim\": \"The threat or use of nuclear weapons is unlawful because it inevitably breaches the principle of distinction, which requires parties to a conflict to differentiate between combatants and civilians, and nuclear weapons cannot be directed at a specific military objective without causing indiscriminate civilian harm.\",\n      \"reasoning\": \"Customary international humanitarian law, as reflected in the principle of distinction, obliges belligerents to target only combatants and military objects. Nuclear weapons, by their very nature, produce blast, heat, and radiation effects that cannot be confined to a military target and inevitably affect civilian populations and civilian objects over a wide area and for an extended period. Consequently, any threat or use of such weapons would fail the distinction test, rendering it unlawful regardless of the strategic context.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"The threat or use of nuclear weapons violates the principle of proportionality, which prohibits attacks expected to cause incidental civilian harm excessive in relation to the concrete and direct military advantage anticipated.\",\n      \"reasoning\": \"Proportionality requires a balancing of the expected civilian damage against the concrete military gain. The massive, long‑lasting, and indiscriminate effects of nuclear weapons—mass casualties, environmental devastation, and intergenerational health impacts—far outweigh any conceivable military advantage, even in an extreme self‑defence scenario. Therefore, any nuclear strike would be disproportionate and unlawful under customary IHL.\",\n      \"citations\": []\n    },\n    {\n      \"claim\": \"Even in an extreme self‑defence situation where a state's survival is at stake, the jus ad bellum requirement of necessity and the prohibition on unnecessary suffering render the use of nuclear weapons unlawful.\",\n      \"reasoning\": \"International law permits self‑defence only when it is necessary and proportionate to the armed attack. Necessity demands that the defensive measure be the only viable means to repel the attack. Because less destructive, targeted conventional means are generally available, resorting to nuclear weapons would not satisfy the necessity requirement. Moreover, the use of weapons causing unnecessary suffering or superfluous injury is prohibited, and nuclear weapons, by causing indiscriminate, massive, and long‑term harm, fall within that prohibition. Hence, their use remains unlawful even under an existential threat claim.\",\n      \"citations\": []\n    }\n  ]\n}",
+      "started_at": "2026-11-22T17:53:41.457114Z",
+      "completed_at": "2026-11-22T17:53:43.840763Z",
+      "prompt_tokens": 1186,
+      "completion_tokens": 869,
+      "error": null
+    },
+    {
+      "id": "turn_e4c35a8b",
+      "round_number": 1,
+      "role": "judge",
+      "model_id": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "prompt_id": "judge/rule",
+      "prompt_hash": "49ba4c63ac059b2bc9785bfad3947361f5f0e7fe9f9d141360be66f16bee283a",
+      "arguments": [],
+      "objections": [],
+      "raw_response": "{\"conclusion\": \"Indeterminate.\", \"reasoning\": \"The question presented is the exact question the UN General Assembly posed to the International Court of Justice in the Nuclear Weapons Advisory Opinion (1996). The ICJ concluded that while the threat or use of nuclear weapons would generally be contrary to the rules of international law applicable in armed conflict, it could not reach a definitive conclusion on the legality of the threat or use of nuclear weapons in an extreme circumstance of self-defence where the very survival of a State would be at stake. The three arguments presented (arg_6c99ff67, arg_33672c05, arg_a4a107c2) each contend that nuclear weapons are unlawful under IHL principles of distinction, proportionality, and the prohibition on unnecessary suffering, as well as under jus ad bellum necessity. However, no objections were filed to test these arguments, and critically, no corpus context was retrieved to support any legal citations. The arguments therefore stand untested and unsupported by authority in this record. Moreover, the counter-arguments — that low-yield or tactical nuclear weapons might be used discriminately against military targets in remote areas, that deterrence policies reflect state practice, and that existential self-defence may alter the proportionality calculus — are not addressed. Given the ICJ's own indeterminate conclusion on this precise question, the absence of adversarial testing, and the lack of retrieved authority, the question cannot be resolved on the arguments and facts provided.\", \"confidence\": 0.85, \"confidence_reasoning\": \"The ICJ, the principal judicial organ of the UN, explicitly declined to conclude on the legality of nuclear weapons in the exact extreme self-defence scenario described in the question. This is not a matter of unsettled law where a tribunal has ruled; it is a matter where the authoritative tribunal said it could not rule. The arguments provided are one-sided, untested by objections, and lack any citations that resolve against the corpus (because no corpus was retrieved). A confidence of 0.85 reflects that the indeterminacy is not due to evidentiary gaps in this proceeding alone, but is inherent in the state of international law as authoritatively declared.\", \"rulings\": [], \"surviving_argument_ids\": [\"arg_6c99ff67\", \"arg_33672c05\", \"arg_a4a107c2\"], \"novel_objections_raised\": false}",
+      "started_at": "2026-11-22T17:53:43.845614Z",
+      "completed_at": "2026-11-22T17:54:08.549962Z",
+      "prompt_tokens": 1983,
+      "completion_tokens": 1244,
+      "error": null
+    }
+  ],
+  "timestamp": "2026-11-22T17:54:08.551100+00:00",
+  "duration_seconds": 27.10034453199478,
+  "error": null,
+  "status": "completed",
+  "prompt_hashes": {
+    "attacker_doctrinal/challenge.md": "c18ca824b618334ab62a0bdd0e023a11c84f960efcc8ce04fae50385ff74933c",
+    "attacker_evidentiary/challenge.md": "c410b10f2db4ae73c4dec383ad7b1a5bfcc329235db9f0eb9128b20b79610f31",
+    "judge/rule.md": "aa219aad8969a565ef33bf3ef9552686f4399060c095da40301fd9a64949b2b7",
+    "presenter/opening.md": "9bffac26aa877e363860ce5ac0d0caf129b3aa32e86f5f91aeda833bd8c2afaa",
+    "presenter/rebuttal.md": "789d210f98051a00834f60e20e08a8a177622d621b9a7b94b71a72deaa31b8cd",
+    "shared/_citation_rules.md": "1be5b67127584968ece473769111c87d58106ee5ddbbd18ea31b3e714acdc4df",
+    "shared/_context.md": "f0b6d7b1215cdc2c5a8eed627167604853a398046f170a8cd9e93f54c972fe45",
+    "shared/attacker_doctrinal_system.md": "6921bde09c2dc084a3535784995329ff41a74f510a73ff374860e46c543f65b2",
+    "shared/attacker_evidentiary_system.md": "8e94062f81f1dad18a35bd65df9d19fa395e904cd1a4eef749aefd83d05dc02f",
+    "shared/judge_system.md": "ba07c6da09308e40937efa968d708dcd39db5cae8d4ce4271a7ee5354effd9e0",
+    "shared/presenter_system.md": "844587ced1044fc1cbc5f4cada452c4277b7cef334388230e61dc4dfcf25ff61"
+  },
+  "composite_prompt_hash": "8205576bb48474f0b40d21a50bd43aa2ce80ebd9d475d8e9eb8590b7d80e357c",
+  "corpus": {
+    "instruments": 24,
+    "locators": 3482,
+    "content_hash": "8ffefb5a30ab8e91dcaaaa51f92a76abd5a5f5f96a5153f2b3565b7e31974010"
+  },
+  "model_roster": {
+    "presenter": "groq/openai/gpt-oss-120b",
+    "attacker_doctrinal": "groq/qwen/qwen3.8-27b",
+    "attacker_evidentiary": "groq/openai/gpt-oss-20b",
+    "judge": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  },
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "judge_attempts": 1,
+  "judge_failures": 0,
+  "judge_failed": false
+}
