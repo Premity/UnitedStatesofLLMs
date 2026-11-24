@@ -197,7 +197,9 @@ can see it before anyone starts. Each case is run **once**, by one person.
 | `icty_mrksic_vukovar` (stretch) | machine 2 | 2026-11-16 | ✓ |
 
 The scored run is done; its results are in `evaluation/results/scored-run/`
-and its write-up in `evaluation/reports/write-up.md`. Use this table again for
+and its write-up in `evaluation/reports/write-up.md`. The extended tier has run
+too: its results are in `evaluation/results/extended-run/`, and the
+eighteen-case report is `evaluation/reports/evaluation-report-eighteen-cases.md`. Use this table again for
 any later run.
 
 The three stretch cases (`--tier stretch`) come only after all three core cases

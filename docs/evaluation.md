@@ -414,6 +414,11 @@ with the corpus text removed (`python -m harness.artifacts export`; the repo is
 public, ADR 0014). `evaluation/reports/write-up.md` reads them, states the
 limits, and shows how to rebuild either report.
 
+`evaluation-report-eighteen-cases.md` adds the extended tier: the scored run's
+results plus the 70 in `evaluation/results/extended-run/`. To rebuild it, copy
+both folders' arm directories into one folder and point `--results-dir` at it.
+The report reads a single folder.
+
 **Per arm:** accuracy, Brier, ECE, overconfidence, fabrication rate, misquote
 rate, attacker independence and reasoning overlap, each with its `n`. Bootstrap intervals are
 shown only from 10 completed cases (see *Statistical honesty*). Arms are listed

@@ -171,6 +171,17 @@ samples' agreement (ADR 0011, amended). Left: reasoning overlap scored by hand
 tier adds eight real cases and five fictional `hyp_` ones whose ground truth is
 authored. Don't plan around 40–80 cases.
 
+**The extended tier has run** (2026-11-24), and 18 cases are scored: core,
+Mrkšić and all fourteen extended ones. The results, corpus text removed, are
+in `evaluation/results/extended-run/`. The report is
+`evaluation/reports/evaluation-report-eighteen-cases.md`.
+- Martić and Strugar don't count: arm D failed on both, and a stretch case
+  needs all five arms (ADR 0012).
+- Arm E is an error on Nuclear Weapons, Halilović and Bošković.
+- The cause, both times, is a single request over the free tier's
+  8,000-tokens-per-minute cap on Groq. Every free key has the same cap, so a
+  rerun fails the same way.
+
 **The corpus is a per-machine artifact.** `data/cache/` and `data/index/` are
 gitignored (ADR 0007): the corpus travels as manifests, and each machine
 resolves against whatever it last fetched. A fresh clone gets the 24-article
